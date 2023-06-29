@@ -188,6 +188,7 @@ version = "0.1.0"
 dependencies = [
  "deno_core",
  "handlebars",
+ "serde",
  "serde_json",
  "serde_v8",
 ]

@@ -1,119 +1,118 @@
-use std::error::Error;
+use serde::Serialize;
 
-pub trait Series {
-    fn to_json_string(&self) -> Result<String, Box<dyn Error>> {
-        Err("Need to implement Series::build".into())
+pub enum Series {
+    Line(Line),
+}
+
+impl Serialize for Series {
+    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+    where
+        S: serde::ser::Serializer,
+    {
+        match self {
+            Series::Line(series) => series.serialize(serializer),
+        }
     }
 }
 
-pub struct DummySeries {}
-
-impl Series for DummySeries {}
-
-pub struct LineSeries {
-    pub data: Vec<Vec<f64>>,
+#[derive(Serialize)]
+pub struct Line {
+    #[serde(rename = "type")]
+    type_: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    name: Option<String>,
+    smooth: bool,
+    data: Vec<Vec<f64>>,
 }
 
-impl Series for LineSeries {
-    fn to_json_string(&self) -> Result<String, Box<dyn Error>> {
-        Ok(serde_json::to_string(&self.data)?)
+impl Line {
+    pub fn new() -> Self {
+        Self {
+            type_: "line".to_string(),
+            name: None,
+            smooth: false,
+            data: vec![],
+        }
+    }
+
+    /// Series name used for displaying in `tooltip` and filtering with `legend`.
+    pub fn name(mut self, name: String) -> Self {
+        self.name = Some(name);
+        self
+    }
+
+    /// Whether to show as smooth curve.
+    pub fn smooth(mut self, smooth: bool) -> Self {
+        self.smooth = smooth;
+        self
+    }
+
+    /// Data array of series.
+    pub fn data(mut self, data: Vec<Vec<f64>>) -> Self {
+        self.data = data;
+        self
     }
 }
 
+#[derive(Serialize)]
 pub struct BarSeries {}
 
-impl Series for BarSeries {}
-
+#[derive(Serialize)]
 pub struct PieSeries {}
 
-impl Series for PieSeries {}
-
+#[derive(Serialize)]
 pub struct ScatterSeries {}
 
-impl Series for ScatterSeries {}
-
+#[derive(Serialize)]
 pub struct EffectScatterSeries {}
 
-impl Series for EffectScatterSeries {}
-
+#[derive(Serialize)]
 pub struct RadarSeries {}
 
-impl Series for RadarSeries {}
-
+#[derive(Serialize)]
 pub struct TreeSeries {}
 
-impl Series for TreeSeries {}
-
+#[derive(Serialize)]
 pub struct TreemapSeries {}
 
-impl Series for TreemapSeries {}
-
+#[derive(Serialize)]
 pub struct SunburstSeries {}
 
-impl Series for SunburstSeries {}
-
+#[derive(Serialize)]
 pub struct BoxplotSeries {}
 
-impl Series for BoxplotSeries {}
-
+#[derive(Serialize)]
 pub struct CandlestickSeries {}
 
-impl Series for CandlestickSeries {}
-
+#[derive(Serialize)]
 pub struct HeatmapSeries {}
 
-impl Series for HeatmapSeries {}
-
+#[derive(Serialize)]
 pub struct MapSeries {}
 
-impl Series for MapSeries {}
-
+#[derive(Serialize)]
 pub struct ParallelSeries {}
 
-impl Series for ParallelSeries {}
-
+#[derive(Serialize)]
 pub struct LinesSeries {}
 
-impl Series for LinesSeries {}
-
+#[derive(Serialize)]
 pub struct GraphSeries {}
 
-impl Series for GraphSeries {}
-
+#[derive(Serialize)]
 pub struct SankeySeries {}
 
-impl Series for SankeySeries {}
-
+#[derive(Serialize)]
 pub struct FunnelSeries {}
 
-impl Series for FunnelSeries {}
-
+#[derive(Serialize)]
 pub struct GaugeSeries {}
 
-impl Series for GaugeSeries {}
-
+#[derive(Serialize)]
 pub struct PictorialBarSeries {}
 
-impl Series for PictorialBarSeries {}
-
+#[derive(Serialize)]
 pub struct ThemeRiverSeries {}
 
-impl Series for ThemeRiverSeries {}
-
+#[derive(Serialize)]
 pub struct CustomSeries {}
-
-impl Series for CustomSeries {}
-
-#[cfg(test)]
-mod test {
-    use super::*;
-
-    #[test]
-    fn line_series() {
-        let s = LineSeries {
-            data: vec![vec![1.0, 2.0, 3.0], vec![4.0, 5.0, 6.0]],
-        };
-
-        assert_eq!(s.to_json_string().unwrap(), "[[1.0,2.0,3.0],[4.0,5.0,6.0]]")
-    }
-}
