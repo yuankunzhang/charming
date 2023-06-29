@@ -2,6 +2,8 @@ use deno_core::{v8, JsRuntime, RuntimeOptions};
 use handlebars::Handlebars;
 use std::fmt;
 
+use crate::style::Theme;
+
 static CODE_TEMPLATE: &str = r#"
 const chart = echarts.init(null, null, {
     renderer: 'svg',
@@ -83,5 +85,80 @@ fn _render(code: String) -> Result<Vec<u8>, RenderError> {
             }
         }
         Err(error) => Err(RenderError(error.to_string())),
+    }
+}
+
+pub struct Renderer {
+    pub theme: Theme,
+    pub width: u32,
+    pub height: u32,
+    pub ssr: bool,
+}
+
+impl Renderer {
+    pub fn new() -> Self {
+        Self {
+            theme: Theme::Default,
+            width: 800,
+            height: 600,
+            ssr: true,
+        }
+    }
+
+    pub fn theme(mut self, theme: Theme) -> Self {
+        self.theme = theme;
+        self
+    }
+
+    pub fn size(mut self, width: u32, height: u32) -> Self {
+        self.width = width;
+        self.height = height;
+        self
+    }
+
+    pub fn ssr(mut self, ssr: bool) -> Self {
+        self.ssr = ssr;
+        self
+    }
+
+    fn init_chart(&self) -> String {
+        Handlebars::new()
+            .render_template(
+                r#"
+const chart = echarts.init(null, '{{ theme }}', {
+    renderer: 'svg',
+    ssr: {{ ssr}},
+    width: {{ width }},
+    height: {{ height }}
+});
+"#,
+                &serde_json::json!({"theme": self.theme.to_string(), "width": self.width, "height": self.height, "ssr": self.ssr}),
+            )
+            .expect("Failed to render template")
+    }
+}
+
+#[cfg(test)]
+mod test {
+    #[test]
+    fn test_init_chart() {
+        use super::Renderer;
+        let renderer = Renderer::new()
+            .theme(super::Theme::Dark)
+            .size(1000, 900)
+            .ssr(false);
+        let code = renderer.init_chart();
+        println!("{}", code);
+        assert_eq!(
+            code,
+            r#"
+const chart = echarts.init(null, 'dark', {
+    renderer: 'svg',
+    ssr: false,
+    width: 1000,
+    height: 900
+});
+"#
+        );
     }
 }
