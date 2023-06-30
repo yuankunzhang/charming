@@ -3,6 +3,7 @@ use serde::Serialize;
 pub mod axis;
 pub mod grid;
 pub mod legend;
+pub mod radar;
 pub mod title;
 pub mod toolbox;
 pub mod tooltip;
@@ -12,6 +13,7 @@ use crate::series::*;
 use axis::*;
 use grid::*;
 use legend::*;
+use radar::*;
 use title::*;
 use toolbox::*;
 use tooltip::*;
@@ -21,20 +23,32 @@ use tooltip::*;
 pub struct Chart {
     #[serde(skip_serializing_if = "Option::is_none")]
     title: Option<Title>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     tooltip: Option<Tooltip>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     legend: Option<Legend>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     toolbox: Option<Toolbox>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     grid: Option<Grid>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     x_axis: Option<Axis>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     y_axis: Option<Axis>,
+
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    #[serde(rename = "radar")]
+    radars: Vec<Radar>,
+
     #[serde(skip_serializing_if = "Vec::is_empty")]
     color: Vec<Color>,
+
     #[serde(skip_serializing_if = "Vec::is_empty")]
     series: Vec<Series>,
 }
@@ -49,6 +63,7 @@ impl Chart {
             grid: None,
             x_axis: None,
             y_axis: None,
+            radars: vec![],
             color: vec![],
             series: vec![],
         }
@@ -86,6 +101,11 @@ impl Chart {
 
     pub fn y_axis(mut self, y_axis: Axis) -> Self {
         self.y_axis = Some(y_axis);
+        self
+    }
+
+    pub fn radars(mut self, radars: Vec<Radar>) -> Self {
+        self.radars = radars;
         self
     }
 

@@ -2,6 +2,23 @@ use serde::ser::{SerializeStruct, Serializer};
 use serde::Serialize;
 
 #[derive(Serialize)]
+#[serde(rename_all = "snake_case")]
+pub enum ColorBy {
+    Series,
+    Data,
+}
+
+impl From<&str> for ColorBy {
+    fn from(s: &str) -> Self {
+        match s {
+            "series" => Self::Series,
+            "data" => Self::Data,
+            _ => panic!("Invalid ColorBy"),
+        }
+    }
+}
+
+#[derive(Serialize)]
 pub struct ColorStop {
     offset: f64,
     color: String,

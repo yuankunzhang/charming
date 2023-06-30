@@ -19,3 +19,7 @@ path = "examples/graph/les_miserables.rs"
 [[example]]
 name = "from_left_to_right_tree"
 path = "examples/tree/from_left_to_right_tree.rs"
+
+[[example]]
+name = "multiple_radar"
+path = "examples/radar/multiple_radar.rs"

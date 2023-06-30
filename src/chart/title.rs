@@ -29,33 +29,33 @@ impl Title {
         }
     }
 
-    pub fn text(mut self, text: &str) -> Self {
-        self.text = Some(text.to_string());
+    pub fn text<S: Into<String>>(mut self, text: S) -> Self {
+        self.text = Some(text.into());
         self
     }
 
-    pub fn subtext(mut self, subtext: &str) -> Self {
-        self.subtext = Some(subtext.to_string());
+    pub fn subtext<S: Into<String>>(mut self, subtext: S) -> Self {
+        self.subtext = Some(subtext.into());
         self
     }
 
-    pub fn left(mut self, left: &str) -> Self {
-        self.left = Some(left.to_string());
+    pub fn left<S: Into<String>>(mut self, left: S) -> Self {
+        self.left = Some(left.into());
         self
     }
 
-    pub fn top(mut self, top: &str) -> Self {
-        self.top = Some(top.to_string());
+    pub fn top<S: Into<String>>(mut self, top: S) -> Self {
+        self.top = Some(top.into());
         self
     }
 
-    pub fn right(mut self, right: &str) -> Self {
-        self.right = Some(right.to_string());
+    pub fn right<S: Into<String>>(mut self, right: S) -> Self {
+        self.right = Some(right.into());
         self
     }
 
-    pub fn bottom(mut self, bottom: &str) -> Self {
-        self.bottom = Some(bottom.to_string());
+    pub fn bottom<S: Into<String>>(mut self, bottom: S) -> Self {
+        self.bottom = Some(bottom.into());
         self
     }
 }

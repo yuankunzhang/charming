@@ -76,8 +76,8 @@ impl Axis {
         self
     }
 
-    pub fn data(mut self, data: Vec<&str>) -> Self {
-        let data = data.iter().map(|s| s.to_string()).collect();
+    pub fn data<S: Into<String>>(mut self, data: Vec<S>) -> Self {
+        let data = data.into_iter().map(|s| s.into()).collect();
         self.data = Some(data);
         self
     }
