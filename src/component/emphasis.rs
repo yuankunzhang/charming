@@ -10,6 +10,7 @@ pub enum Focus {
     Ancestor,
     Descendant,
     Relative,
+    Adjacency,
 }
 
 #[derive(Serialize)]
