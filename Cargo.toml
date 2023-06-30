@@ -1,5 +1,5 @@
 [package]
-name = "echarts-rs"
+name = "echarts"
 version = "0.1.0"
 edition = "2021"
 
@@ -11,3 +11,11 @@ handlebars = "4.3.7"
 serde = "1.0.164"
 serde_json = "1.0.99"
 serde_v8 = "0.102.0"
+
+[[example]]
+name = "les_miserables"
+path = "examples/graph/les_miserables.rs"
+
+[[example]]
+name = "from_left_to_right_tree"
+path = "examples/tree/from_left_to_right_tree.rs"

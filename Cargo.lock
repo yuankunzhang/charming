@@ -183,7 +183,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "echarts-rs"
+name = "echarts"
 version = "0.1.0"
 dependencies = [
  "deno_core",

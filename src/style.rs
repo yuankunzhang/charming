@@ -13,7 +13,7 @@ impl ToString for Theme {
     }
 }
 
-pub enum ColorPalette {
-    Default,
-    Custom(Vec<String>),
-}
+// pub enum ColorPalette {
+//     Default,
+//     Custom(Vec<String>),
+// }
