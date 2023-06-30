@@ -42,6 +42,8 @@ pub struct Node {
     pub children: Option<Vec<Node>>,
 }
 
+pub type Data = Vec<Node>;
+
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Tree {
@@ -75,7 +77,7 @@ pub struct Tree {
     height: Option<f64>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    center: Option<(f64, f64)>,
+    center: Option<(String, String)>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     layout: Option<Layout>,
@@ -107,8 +109,6 @@ pub struct Tree {
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: Data,
 }
-
-pub type Data = Vec<Node>;
 
 impl Tree {
     pub fn new() -> Self {
@@ -182,8 +182,8 @@ impl Tree {
         self
     }
 
-    pub fn center(mut self, center: (f64, f64)) -> Self {
-        self.center = Some(center);
+    pub fn center(mut self, center: (impl Into<String>, impl Into<String>)) -> Self {
+        self.center = Some((center.0.into(), center.1.into()));
         self
     }
 

@@ -27,3 +27,7 @@ path = "examples/radar/multiple_radar.rs"
 [[example]]
 name = "node_align_left_sankey"
 path = "examples/sankey/node_align_left_sankey.rs"
+
+[[example]]
+name = "drink_flavors"
+path = "examples/sunburst/drink_flavors.rs"
