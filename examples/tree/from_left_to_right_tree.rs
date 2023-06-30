@@ -1,11 +1,12 @@
-use echarts::{
-    chart::{tooltip::*, Chart},
-    component::{emphasis::*, label::*},
-    series::{tree::*, Series},
-};
+use echarts::chart::tooltip;
+use echarts::chart::Chart;
+use echarts::component::emphasis;
+use echarts::component::label;
+use echarts::series::tree;
+use echarts::series::Series;
 
 fn main() {
-    let mut data: TreeNode = serde_json::from_str(SOURCE).unwrap();
+    let mut data: tree::Node = serde_json::from_str(SOURCE).unwrap();
     for (i, d) in data.children.as_mut().unwrap().iter_mut().enumerate() {
         if i % 2 == 0 {
             d.collapsed = Some(true);
@@ -13,12 +14,12 @@ fn main() {
     }
     let chart = Chart::new()
         .tooltip(
-            Tooltip::new()
-                .trigger(TooltipTrigger::Item)
-                .trigger_on(TooltipTriggerOn::Mousemove),
+            tooltip::Tooltip::new()
+                .trigger(tooltip::Trigger::Item)
+                .trigger_on(tooltip::TriggerOn::Mousemove),
         )
         .series(Series::Tree(
-            Tree::new()
+            tree::Tree::new()
                 .name("flare")
                 .top("1%")
                 .left("7%")
@@ -26,13 +27,13 @@ fn main() {
                 .right("20%")
                 .symbol_size(7.0)
                 .label(
-                    Label::new()
-                        .position(LabelPosition::Left)
-                        .vertical_align(LabelVerticalAlign::Middle)
-                        .align(LabelAlign::Right)
+                    label::Label::new()
+                        .position(label::Position::Left)
+                        .vertical_align(label::VerticalAlign::Middle)
+                        .align(label::Align::Right)
                         .font_size(9.0),
                 )
-                .emphasis(Emphasis::new().focus(EmphasisFocus::Descendant))
+                .emphasis(emphasis::Emphasis::new().focus(emphasis::Focus::Descendant))
                 .expand_and_collapse(true)
                 .animation_duration(550.0)
                 .animation_duration_update(750.0)

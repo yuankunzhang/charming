@@ -1,16 +1,10 @@
-use echarts::chart::{
-    legend::Legend,
-    radar::*,
-    title::Title,
-    tooltip::{Tooltip, TooltipTrigger},
-    Chart,
-};
+use echarts::chart::{legend::Legend, radar::*, title::Title, tooltip, Chart};
 use echarts::series;
 
 fn main() {
     let chart = Chart::new()
         .title(Title::new().text("Multiple Radar"))
-        .tooltip(Tooltip::new().trigger(TooltipTrigger::Axis))
+        .tooltip(tooltip::Tooltip::new().trigger(tooltip::Trigger::Axis))
         .legend(Legend::new().left("center").data(vec![
             "A Software",
             "A Phone",

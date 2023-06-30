@@ -5,14 +5,19 @@ use serde::Serialize;
 pub struct Title {
     #[serde(skip_serializing_if = "Option::is_none")]
     text: Option<String>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     subtext: Option<String>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     left: Option<String>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     top: Option<String>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     right: Option<String>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     bottom: Option<String>,
 }

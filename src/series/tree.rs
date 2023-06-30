@@ -4,18 +4,19 @@ use crate::component::{emphasis::Emphasis, label::Label, symbol::Symbol};
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
-pub enum TreeLayout {
+pub enum Layout {
     Orthogonal,
     Radial,
 }
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct TreeLeaves {
+pub struct Leaves {
+    #[serde(skip_serializing_if = "Option::is_none")]
     label: Option<Label>,
 }
 
-impl TreeLeaves {
+impl Leaves {
     pub fn new() -> Self {
         Self { label: None }
     }
@@ -28,61 +29,86 @@ impl TreeLeaves {
 
 #[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct TreeNode {
+pub struct Node {
     pub name: String,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     pub value: Option<f64>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     pub collapsed: Option<bool>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub children: Option<Vec<TreeNode>>,
+    pub children: Option<Vec<Node>>,
 }
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Tree {
     type_: String,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     name: Option<String>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     z_level: Option<u64>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     z: Option<u64>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     left: Option<String>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     top: Option<String>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     right: Option<String>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     bottom: Option<String>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     width: Option<f64>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     height: Option<f64>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     center: Option<(f64, f64)>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
-    layout: Option<TreeLayout>,
+    layout: Option<Layout>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     symbol: Option<Symbol>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     symbol_size: Option<f64>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     label: Option<Label>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     emphasis: Option<Emphasis>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     expand_and_collapse: Option<bool>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     animation_duration: Option<f64>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     animation_duration_update: Option<f64>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
-    leaves: Option<TreeLeaves>,
+    leaves: Option<Leaves>,
+
     #[serde(skip_serializing_if = "Vec::is_empty")]
-    data: Vec<TreeNode>,
+    data: Data,
 }
+
+pub type Data = Vec<Node>;
 
 impl Tree {
     pub fn new() -> Self {
@@ -161,7 +187,7 @@ impl Tree {
         self
     }
 
-    pub fn layout(mut self, layout: TreeLayout) -> Self {
+    pub fn layout(mut self, layout: Layout) -> Self {
         self.layout = Some(layout);
         self
     }
@@ -201,12 +227,12 @@ impl Tree {
         self
     }
 
-    pub fn leaves(mut self, leaves: TreeLeaves) -> Self {
+    pub fn leaves(mut self, leaves: Leaves) -> Self {
         self.leaves = Some(leaves);
         self
     }
 
-    pub fn data(mut self, data: Vec<TreeNode>) -> Self {
+    pub fn data(mut self, data: Data) -> Self {
         self.data = data;
         self
     }

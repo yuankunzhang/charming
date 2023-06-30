@@ -1,14 +1,14 @@
-use echarts::chart::legend::*;
-use echarts::chart::title::*;
-use echarts::chart::tooltip::*;
+use echarts::chart::legend;
+use echarts::chart::title;
+use echarts::chart::tooltip;
 use echarts::chart::Chart;
-use echarts::component::label::*;
-use echarts::component::line_style::*;
-use echarts::series::graph::*;
-use echarts::series::*;
+use echarts::component::label;
+use echarts::component::line_style;
+use echarts::series::graph;
+use echarts::series::Series;
 
 fn main() {
-    let mut data: graph::GraphData = serde_json::from_str(SOURCE).unwrap();
+    let mut data: graph::Data = serde_json::from_str(SOURCE).unwrap();
     for d in data.nodes.iter_mut() {
         if d.symbol_size > 30.0 {
             d.label = Some(graph::NodeLabel::new().show(true));
@@ -17,22 +17,30 @@ fn main() {
     let legend: Vec<String> = data.categories.iter().map(|c| c.name.clone()).collect();
     let chart = Chart::new()
         .title(
-            Title::new()
+            title::Title::new()
                 .text("Les Miserables")
                 .subtext("Circular layout")
                 .top("bottom")
                 .left("right"),
         )
-        .legend(Legend::new().data(legend))
-        .tooltip(Tooltip::new())
+        .legend(legend::Legend::new().data(legend))
+        .tooltip(tooltip::Tooltip::new())
         .series(Series::Graph(
             graph::Graph::new()
                 .name("Les Miserables")
-                .layout(GraphLayout::Circular)
-                .circular(Circular::new().rotate_label(true))
+                .layout(graph::Layout::Circular)
+                .circular(graph::Circular::new().rotate_label(true))
                 .roam(true)
-                .label(Label::new().position(LabelPosition::Right).formatter("{b}"))
-                .line_style(LineStyle::new().color("source".into()).curveness(0.3))
+                .label(
+                    label::Label::new()
+                        .position(label::Position::Right)
+                        .formatter("{b}"),
+                )
+                .line_style(
+                    line_style::LineStyle::new()
+                        .color("source".into())
+                        .curveness(0.3),
+                )
                 .data(data),
         ));
     println!("{}", chart.to_string());

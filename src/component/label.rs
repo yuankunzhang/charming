@@ -4,7 +4,7 @@ use super::color::Color;
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
-pub enum LabelPosition {
+pub enum Position {
     Top,
     Left,
     Right,
@@ -22,7 +22,7 @@ pub enum LabelPosition {
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
-pub enum LabelAlign {
+pub enum Align {
     Left,
     Center,
     Right,
@@ -30,7 +30,7 @@ pub enum LabelAlign {
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
-pub enum LabelVerticalAlign {
+pub enum VerticalAlign {
     Top,
     Middle,
     Bottom,
@@ -43,7 +43,7 @@ pub struct Label {
     show: Option<bool>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    position: Option<LabelPosition>,
+    position: Option<Position>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     distance: Option<f64>,
@@ -64,10 +64,10 @@ pub struct Label {
     font_size: Option<f64>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    align: Option<LabelAlign>,
+    align: Option<Align>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    vertical_align: Option<LabelVerticalAlign>,
+    vertical_align: Option<VerticalAlign>,
 }
 
 impl Label {
@@ -91,7 +91,7 @@ impl Label {
         self
     }
 
-    pub fn position(mut self, position: LabelPosition) -> Self {
+    pub fn position(mut self, position: Position) -> Self {
         self.position = Some(position);
         self
     }
@@ -126,12 +126,12 @@ impl Label {
         self
     }
 
-    pub fn align(mut self, align: LabelAlign) -> Self {
+    pub fn align(mut self, align: Align) -> Self {
         self.align = Some(align);
         self
     }
 
-    pub fn vertical_align(mut self, vertical_align: LabelVerticalAlign) -> Self {
+    pub fn vertical_align(mut self, vertical_align: VerticalAlign) -> Self {
         self.vertical_align = Some(vertical_align);
         self
     }

@@ -28,7 +28,7 @@ fn gradient_stacked_area_chart() {
         .title(title::Title::new().text("Gradient Stacked Area Chart"))
         .tooltip(
             tooltip::Tooltip::new()
-                .trigger(tooltip::TooltipTrigger::Axis)
+                .trigger(tooltip::Trigger::Axis)
                 .axis_pointer(
                     tooltip::AxisPointer::new()
                         .type_(tooltip::AxisPointerType::Cross)

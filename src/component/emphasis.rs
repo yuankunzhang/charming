@@ -2,7 +2,7 @@ use serde::Serialize;
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
-pub enum EmphasisFocus {
+pub enum Focus {
     None,
     #[serde(rename = "self")]
     Self_,
@@ -16,7 +16,7 @@ pub enum EmphasisFocus {
 #[serde(rename_all = "camelCase")]
 pub struct Emphasis {
     #[serde(skip_serializing_if = "Option::is_none")]
-    focus: Option<EmphasisFocus>,
+    focus: Option<Focus>,
 }
 
 impl Emphasis {
@@ -24,7 +24,7 @@ impl Emphasis {
         Self { focus: None }
     }
 
-    pub fn focus(mut self, emphasis: EmphasisFocus) -> Self {
+    pub fn focus(mut self, emphasis: Focus) -> Self {
         self.focus = Some(emphasis);
         self
     }

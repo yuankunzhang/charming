@@ -14,6 +14,7 @@ pub enum AxisType {
 pub struct AxisLabel {
     #[serde(skip_serializing_if = "Option::is_none")]
     interval: Option<f64>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     formatter: Option<String>,
 }
@@ -43,10 +44,13 @@ pub struct Axis {
     #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(rename = "type")]
     type_: Option<AxisType>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     boundary_gap: Option<bool>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     axis_label: Option<AxisLabel>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     data: Option<Vec<String>>,
 }

@@ -4,7 +4,7 @@ use crate::component::color::Color;
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
-pub enum TooltipTriggerOn {
+pub enum TriggerOn {
     Mousemove,
     Click,
     #[serde(rename = "mousemove|click")]
@@ -14,7 +14,7 @@ pub enum TooltipTriggerOn {
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
-pub enum TooltipTrigger {
+pub enum Trigger {
     Item,
     Axis,
     None,
@@ -64,8 +64,10 @@ pub struct AxisPointer {
     #[serde(rename = "type")]
     #[serde(skip_serializing_if = "Option::is_none")]
     type_: Option<AxisPointerType>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     axis: Option<AxisPointerAxis>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     label: Option<AxisPointerLabel>,
 }
@@ -99,9 +101,11 @@ impl AxisPointer {
 #[serde(rename_all = "camelCase")]
 pub struct Tooltip {
     #[serde(skip_serializing_if = "Option::is_none")]
-    trigger: Option<TooltipTrigger>,
+    trigger: Option<Trigger>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
-    trigger_on: Option<TooltipTriggerOn>,
+    trigger_on: Option<TriggerOn>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     axis_pointer: Option<AxisPointer>,
 }
@@ -115,12 +119,12 @@ impl Tooltip {
         }
     }
 
-    pub fn trigger(mut self, trigger: TooltipTrigger) -> Self {
+    pub fn trigger(mut self, trigger: Trigger) -> Self {
         self.trigger = Some(trigger);
         self
     }
 
-    pub fn trigger_on(mut self, trigger_on: TooltipTriggerOn) -> Self {
+    pub fn trigger_on(mut self, trigger_on: TriggerOn) -> Self {
         self.trigger_on = Some(trigger_on);
         self
     }

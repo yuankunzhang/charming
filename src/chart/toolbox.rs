@@ -14,8 +14,10 @@ pub struct SaveAsImage {
     #[serde(rename = "type")]
     #[serde(skip_serializing_if = "Option::is_none")]
     type_: Option<SaveAsImageType>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     name: Option<String>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     background_color: Option<String>,
 }
@@ -34,13 +36,13 @@ impl SaveAsImage {
         self
     }
 
-    pub fn name(mut self, name: &str) -> Self {
-        self.name = Some(name.to_string());
+    pub fn name<S: Into<String>>(mut self, name: S) -> Self {
+        self.name = Some(name.into());
         self
     }
 
-    pub fn background_color(mut self, background_color: &str) -> Self {
-        self.background_color = Some(background_color.to_string());
+    pub fn background_color<S: Into<String>>(mut self, background_color: S) -> Self {
+        self.background_color = Some(background_color.into());
         self
     }
 }
@@ -57,6 +59,7 @@ pub struct Restore {
 pub struct DataView {
     #[serde(skip_serializing_if = "Option::is_none")]
     title: Option<String>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     read_only: Option<bool>,
 }
@@ -69,8 +72,8 @@ impl DataView {
         }
     }
 
-    pub fn title(mut self, title: &str) -> Self {
-        self.title = Some(title.to_string());
+    pub fn title<S: Into<String>>(mut self, title: S) -> Self {
+        self.title = Some(title.into());
         self
     }
 
@@ -107,6 +110,7 @@ impl From<&str> for MagicTypeType {
 pub struct MagicType {
     #[serde(skip_serializing_if = "Option::is_none")]
     type_: Option<Vec<MagicTypeType>>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     title: Option<String>,
 }
@@ -124,8 +128,8 @@ impl MagicType {
         self
     }
 
-    pub fn title(mut self, title: &str) -> Self {
-        self.title = Some(title.to_string());
+    pub fn title<S: Into<String>>(mut self, title: S) -> Self {
+        self.title = Some(title.into());
         self
     }
 }
@@ -135,10 +139,13 @@ impl MagicType {
 pub struct Feature {
     #[serde(skip_serializing_if = "Option::is_none")]
     save_as_image: Option<SaveAsImage>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     restore: Option<Restore>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     data_view: Option<DataView>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     magic_type: Option<MagicType>,
 }

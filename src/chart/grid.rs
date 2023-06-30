@@ -5,12 +5,16 @@ use serde::Serialize;
 pub struct Grid {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub left: Option<String>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     pub top: Option<String>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     pub right: Option<String>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     pub bottom: Option<String>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     pub contain_label: Option<bool>,
 }
