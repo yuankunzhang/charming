@@ -17,6 +17,10 @@ name = "bar_with_background"
 path = "examples/bar/bar_with_background.rs"
 
 [[example]]
+name = "boxplot_light_velocity"
+path = "examples/boxplot/boxplot_light_velocity.rs"
+
+[[example]]
 name = "les_miserables"
 path = "examples/graph/les_miserables.rs"
 
@@ -49,10 +53,6 @@ name = "nightingale"
 path = "examples/pie/nightingale.rs"
 
 [[example]]
-name = "from_left_to_right_tree"
-path = "examples/tree/from_left_to_right_tree.rs"
-
-[[example]]
 name = "multiple_radar"
 path = "examples/radar/multiple_radar.rs"
 
@@ -63,3 +63,7 @@ path = "examples/sankey/node_align_left_sankey.rs"
 [[example]]
 name = "drink_flavors"
 path = "examples/sunburst/drink_flavors.rs"
+
+[[example]]
+name = "from_left_to_right_tree"
+path = "examples/tree/from_left_to_right_tree.rs"

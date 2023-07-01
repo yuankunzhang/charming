@@ -46,8 +46,8 @@ impl LineStyle {
         self
     }
 
-    pub fn width(mut self, width: f64) -> Self {
-        self.width = Some(width);
+    pub fn width<F: Into<f64>>(mut self, width: F) -> Self {
+        self.width = Some(width.into());
         self
     }
 
@@ -56,13 +56,13 @@ impl LineStyle {
         self
     }
 
-    pub fn opacity(mut self, opacity: f64) -> Self {
-        self.opacity = Some(opacity);
+    pub fn opacity<F: Into<f64>>(mut self, opacity: F) -> Self {
+        self.opacity = Some(opacity.into());
         self
     }
 
-    pub fn curveness(mut self, curveness: f64) -> Self {
-        self.curveness = Some(curveness);
+    pub fn curveness<F: Into<f64>>(mut self, curveness: F) -> Self {
+        self.curveness = Some(curveness.into());
         self
     }
 }

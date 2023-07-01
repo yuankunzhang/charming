@@ -3,6 +3,7 @@ pub mod axis;
 pub mod brush;
 pub mod calendar;
 pub mod data_zoom;
+pub mod dataset;
 pub mod geo;
 pub mod graphic;
 pub mod grid;

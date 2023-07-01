@@ -7,4 +7,7 @@ pub mod emphasis;
 pub mod item_style;
 pub mod label;
 pub mod line_style;
+pub mod split_area;
+pub mod split_line;
 pub mod symbol;
+pub mod text_style;

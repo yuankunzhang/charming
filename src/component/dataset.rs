@@ -66,7 +66,11 @@ impl Dataset {
         }
     }
 
-    pub fn source(mut self, source: DataFrame) -> Self {
+    pub fn source<D: Into<Datum>>(mut self, source: Vec<Vec<D>>) -> Self {
+        let source = source
+            .into_iter()
+            .map(|row| row.into_iter().map(|datum| datum.into()).collect())
+            .collect();
         self.source = source;
         self
     }

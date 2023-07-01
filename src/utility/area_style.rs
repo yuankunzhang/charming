@@ -15,8 +15,10 @@ pub enum OriginPosition {
 pub struct AreaStyle {
     #[serde(skip_serializing_if = "Option::is_none")]
     color: Option<Color>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     origin: Option<OriginPosition>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     opacity: Option<f64>,
 }
@@ -40,8 +42,8 @@ impl AreaStyle {
         self
     }
 
-    pub fn opacity(mut self, opacity: f64) -> Self {
-        self.opacity = Some(opacity);
+    pub fn opacity<F: Into<f64>>(mut self, opacity: F) -> Self {
+        self.opacity = Some(opacity.into());
         self
     }
 }

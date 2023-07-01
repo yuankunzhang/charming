@@ -1,7 +1,7 @@
+use component::dataset::Dataset;
 use serde::Serialize;
 
 pub mod component;
-pub mod dataset;
 pub mod renderer;
 pub mod series;
 pub mod style;
@@ -20,8 +20,9 @@ use utility::color::Color;
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Chart {
-    #[serde(skip_serializing_if = "Option::is_none")]
-    title: Option<Title>,
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    #[serde(rename = "title")]
+    titles: Vec<Title>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     tooltip: Option<Tooltip>,
@@ -41,6 +42,9 @@ pub struct Chart {
     #[serde(skip_serializing_if = "Option::is_none")]
     y_axis: Option<Axis>,
 
+    #[serde(skip_serializing_if = "Option::is_none")]
+    dataset: Option<Dataset>,
+
     #[serde(skip_serializing_if = "Vec::is_empty")]
     #[serde(rename = "radar")]
     radars: Vec<RadarCoordinate>,
@@ -55,13 +59,14 @@ pub struct Chart {
 impl Chart {
     pub fn new() -> Self {
         Self {
-            title: None,
+            titles: vec![],
             toolbox: None,
             legend: None,
             tooltip: None,
             grid: None,
             x_axis: None,
             y_axis: None,
+            dataset: None,
             radars: vec![],
             color: vec![],
             series: vec![],
@@ -69,7 +74,7 @@ impl Chart {
     }
 
     pub fn title(mut self, title: Title) -> Self {
-        self.title = Some(title);
+        self.titles.push(title);
         self
     }
 
@@ -100,6 +105,11 @@ impl Chart {
 
     pub fn y_axis(mut self, y_axis: Axis) -> Self {
         self.y_axis = Some(y_axis);
+        self
+    }
+
+    pub fn dataset(mut self, dataset: Dataset) -> Self {
+        self.dataset = Some(dataset);
         self
     }
 
