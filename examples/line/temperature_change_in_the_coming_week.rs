@@ -1,7 +1,7 @@
 use echarts::{
+    basic::{label, symbol::Symbol},
     component::{axis, legend, title, toolbox, tooltip},
     series::{line, Series},
-    utility::{label, symbol::Symbol},
     Chart,
 };
 

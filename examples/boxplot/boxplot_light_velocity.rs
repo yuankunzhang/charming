@@ -1,7 +1,7 @@
 use echarts::{
+    basic::{split_area, split_line, text_style},
     component::{axis, dataset, grid, title, tooltip},
     series::{boxplot, scatter, Series},
-    utility::{split_area, split_line, text_style},
     Chart,
 };
 

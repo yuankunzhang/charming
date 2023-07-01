@@ -1,6 +1,6 @@
 use serde::Serialize;
 
-use crate::utility::{color::ColorBy, coordinate::CoordinateSystem};
+use crate::basic::{color::ColorBy, coordinate::CoordinateSystem};
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]

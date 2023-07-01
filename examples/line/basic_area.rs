@@ -1,7 +1,7 @@
 use echarts::{
+    basic::area_style,
     component::axis,
     series::{line, Series},
-    utility::area_style,
     Chart,
 };
 

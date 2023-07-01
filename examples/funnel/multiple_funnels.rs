@@ -1,7 +1,7 @@
 use echarts::{
+    basic::{label, orient::Orient, sort},
     component::{legend, title, toolbox, tooltip},
     series::{funnel, Series},
-    utility::{label, orient::Orient, sort},
     Chart,
 };
 

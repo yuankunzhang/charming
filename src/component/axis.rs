@@ -1,6 +1,6 @@
 use serde::Serialize;
 
-use crate::utility::{split_area::SplitArea, split_line::SplitLine};
+use crate::basic::{split_area::SplitArea, split_line::SplitLine};
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]

@@ -1,7 +1,7 @@
 use echarts::{
+    basic::item_style,
     component::{legend, toolbox},
     series::{pie, Series},
-    utility::item_style,
     Chart,
 };
 

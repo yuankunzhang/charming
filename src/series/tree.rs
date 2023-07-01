@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::utility::{emphasis::Emphasis, label::Label, symbol::Symbol};
+use crate::basic::{emphasis::Emphasis, label::Label, symbol::Symbol};
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]

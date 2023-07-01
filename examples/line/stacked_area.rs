@@ -1,7 +1,7 @@
 use echarts::{
+    basic::{area_style, emphasis},
     component::{axis, grid, legend, title, toolbox, tooltip},
     series::{line, Series},
-    utility::{area_style, emphasis},
     Chart,
 };
 

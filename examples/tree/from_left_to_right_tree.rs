@@ -1,8 +1,8 @@
+use echarts::basic::emphasis;
+use echarts::basic::label;
 use echarts::component::tooltip;
 use echarts::series::tree;
 use echarts::series::Series;
-use echarts::utility::emphasis;
-use echarts::utility::label;
 use echarts::Chart;
 
 fn main() {

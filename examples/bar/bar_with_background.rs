@@ -1,7 +1,7 @@
 use echarts::{
+    basic::background_style,
     component::axis,
     series::{bar, Series},
-    utility::background_style,
     Chart,
 };
 

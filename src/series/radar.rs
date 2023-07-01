@@ -1,6 +1,6 @@
 use serde::Serialize;
 
-use crate::utility::{color::ColorBy, symbol::Symbol};
+use crate::basic::{color::ColorBy, symbol::Symbol};
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]

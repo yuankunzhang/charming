@@ -1,6 +1,6 @@
 use serde::Serialize;
 
-use crate::utility::orient::Orient;
+use crate::basic::orient::Orient;
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]

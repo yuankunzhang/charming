@@ -1,11 +1,11 @@
 use serde::ser::SerializeSeq;
 use serde::{Deserialize, Serialize};
 
-use crate::utility::area_style::AreaStyle;
-use crate::utility::emphasis::Emphasis;
-use crate::utility::label::Label;
-use crate::utility::line_style::LineStyle;
-use crate::utility::symbol::Symbol;
+use crate::basic::area_style::AreaStyle;
+use crate::basic::emphasis::Emphasis;
+use crate::basic::label::Label;
+use crate::basic::line_style::LineStyle;
+use crate::basic::symbol::Symbol;
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]

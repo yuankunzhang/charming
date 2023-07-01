@@ -1,12 +1,13 @@
 use component::dataset::Dataset;
 use serde::Serialize;
 
+pub mod basic;
 pub mod component;
 pub mod renderer;
 pub mod series;
 pub mod style;
-pub mod utility;
 
+use basic::color::Color;
 use component::axis::Axis;
 use component::grid::Grid;
 use component::legend::Legend;
@@ -15,7 +16,6 @@ use component::title::Title;
 use component::toolbox::Toolbox;
 use component::tooltip::Tooltip;
 use series::Series;
-use utility::color::Color;
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]

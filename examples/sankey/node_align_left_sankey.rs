@@ -1,9 +1,9 @@
+use echarts::basic::emphasis;
+use echarts::basic::line_style;
 use echarts::component::title;
 use echarts::component::tooltip;
 use echarts::series::sankey;
 use echarts::series::Series;
-use echarts::utility::emphasis;
-use echarts::utility::line_style;
 use echarts::Chart;
 
 fn main() {

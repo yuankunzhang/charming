@@ -1,10 +1,10 @@
+use echarts::basic::label;
+use echarts::basic::line_style;
 use echarts::component::legend;
 use echarts::component::title;
 use echarts::component::tooltip;
 use echarts::series::graph;
 use echarts::series::Series;
-use echarts::utility::label;
-use echarts::utility::line_style;
 use echarts::Chart;
 
 fn main() {
