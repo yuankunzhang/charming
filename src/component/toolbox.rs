@@ -178,6 +178,24 @@ impl MagicType {
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
+pub struct DataZoom {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    y_axis_index: Option<String>,
+}
+
+impl DataZoom {
+    pub fn new() -> Self {
+        Self { y_axis_index: None }
+    }
+
+    pub fn y_axis_index<S: Into<String>>(mut self, y_axis_index: S) -> Self {
+        self.y_axis_index = Some(y_axis_index.into());
+        self
+    }
+}
+
+#[derive(Serialize)]
+#[serde(rename_all = "camelCase")]
 pub struct Feature {
     #[serde(skip_serializing_if = "Option::is_none")]
     save_as_image: Option<SaveAsImage>,
@@ -190,6 +208,9 @@ pub struct Feature {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     magic_type: Option<MagicType>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    data_zoom: Option<DataZoom>,
 }
 
 impl Feature {
@@ -199,6 +220,7 @@ impl Feature {
             restore: None,
             data_view: None,
             magic_type: None,
+            data_zoom: None,
         }
     }
 
@@ -219,6 +241,11 @@ impl Feature {
 
     pub fn magic_type(mut self, magic_type: MagicType) -> Self {
         self.magic_type = Some(magic_type);
+        self
+    }
+
+    pub fn data_zoom(mut self, data_zoom: DataZoom) -> Self {
+        self.data_zoom = Some(data_zoom);
         self
     }
 }

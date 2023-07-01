@@ -53,6 +53,10 @@ name = "gradient_stacked_area"
 path = "examples/line/gradient_stacked_area.rs"
 
 [[example]]
+name = "temperature_change_in_the_coming_week"
+path = "examples/line/temperature_change_in_the_coming_week.rs"
+
+[[example]]
 name = "nightingale"
 path = "examples/pie/nightingale.rs"
 

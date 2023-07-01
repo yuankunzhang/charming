@@ -9,11 +9,11 @@ fn main() {
     let chart = Chart::new()
         .x_axis(
             axis::Axis::new()
-                .type_(axis::AxisType::Category)
+                .type_(axis::Type::Category)
                 .boundary_gap(false)
                 .data(vec!["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]),
         )
-        .y_axis(axis::Axis::new().type_(axis::AxisType::Value))
+        .y_axis(axis::Axis::new().type_(axis::Type::Value))
         .series(Series::Line(
             line::Line::new()
                 .area_style(area_style::AreaStyle::new())

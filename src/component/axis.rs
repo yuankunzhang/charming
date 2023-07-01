@@ -4,7 +4,7 @@ use crate::utility::{split_area::SplitArea, split_line::SplitLine};
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
-pub enum AxisType {
+pub enum Type {
     Value,
     Category,
     Time,
@@ -45,7 +45,7 @@ impl AxisLabel {
 pub struct Axis {
     #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(rename = "type")]
-    type_: Option<AxisType>,
+    type_: Option<Type>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     name: Option<String>,
@@ -83,7 +83,7 @@ impl Axis {
         }
     }
 
-    pub fn type_(mut self, type_: AxisType) -> Self {
+    pub fn type_(mut self, type_: Type) -> Self {
         self.type_ = Some(type_);
         self
     }

@@ -64,7 +64,7 @@ fn main() {
         .grid(grid::Grid::new().left("10%").right("10%").bottom("15%"))
         .x_axis(
             axis::Axis::new()
-                .type_(axis::AxisType::Category)
+                .type_(axis::Type::Category)
                 .boundary_gap(true)
                 .name_gap(30)
                 .split_area(split_area::SplitArea::new().show(false))
@@ -72,7 +72,7 @@ fn main() {
         )
         .y_axis(
             axis::Axis::new()
-                .type_(axis::AxisType::Value)
+                .type_(axis::Type::Value)
                 .name("km/s minus 299,000")
                 .split_area(split_area::SplitArea::new().show(true)),
         )
