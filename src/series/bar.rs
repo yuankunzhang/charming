@@ -1,8 +1,8 @@
 use serde::Serialize;
 
-use crate::component::color::*;
-use crate::component::coordinate::*;
-use crate::component::data::*;
+use crate::utility::color::*;
+use crate::utility::coordinate::*;
+use crate::utility::data::*;
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]

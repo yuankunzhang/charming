@@ -1,7 +1,7 @@
 use serde::Serialize;
 
-use crate::component::color::*;
-use crate::component::data::*;
+use crate::utility::color::*;
+use crate::utility::data::*;
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]

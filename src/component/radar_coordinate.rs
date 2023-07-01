@@ -1,6 +1,6 @@
 use serde::Serialize;
 
-use crate::component::color::Color;
+use crate::utility::color::Color;
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -51,7 +51,7 @@ impl RadarIndicator {
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct Radar {
+pub struct RadarCoordinate {
     #[serde(skip_serializing_if = "Option::is_none")]
     center: Option<(String, String)>,
 
@@ -65,7 +65,7 @@ pub struct Radar {
     indicator: Vec<RadarIndicator>,
 }
 
-impl Radar {
+impl RadarCoordinate {
     pub fn new() -> Self {
         Self {
             center: None,

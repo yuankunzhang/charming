@@ -1,11 +1,11 @@
-use echarts::chart::legend;
-use echarts::chart::title;
-use echarts::chart::tooltip;
-use echarts::chart::Chart;
-use echarts::component::label;
-use echarts::component::line_style;
+use echarts::component::legend;
+use echarts::component::title;
+use echarts::component::tooltip;
 use echarts::series::graph;
 use echarts::series::Series;
+use echarts::utility::label;
+use echarts::utility::line_style;
+use echarts::Chart;
 
 fn main() {
     let mut data: graph::Data = serde_json::from_str(SOURCE).unwrap();

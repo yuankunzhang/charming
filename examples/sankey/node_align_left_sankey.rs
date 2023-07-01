@@ -1,10 +1,10 @@
-use echarts::chart::title;
-use echarts::chart::tooltip;
-use echarts::chart::Chart;
-use echarts::component::emphasis;
-use echarts::component::line_style;
+use echarts::component::title;
+use echarts::component::tooltip;
 use echarts::series::sankey;
 use echarts::series::Series;
+use echarts::utility::emphasis;
+use echarts::utility::line_style;
+use echarts::Chart;
 
 fn main() {
     let data: sankey::Data = serde_json::from_str(SOURCE).unwrap();

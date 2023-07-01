@@ -1,9 +1,9 @@
-use echarts::chart::tooltip;
-use echarts::chart::Chart;
-use echarts::component::emphasis;
-use echarts::component::label;
+use echarts::component::tooltip;
 use echarts::series::tree;
 use echarts::series::Series;
+use echarts::utility::emphasis;
+use echarts::utility::label;
+use echarts::Chart;
 
 fn main() {
     let mut data: tree::Node = serde_json::from_str(SOURCE).unwrap();

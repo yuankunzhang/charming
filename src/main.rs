@@ -1,14 +1,21 @@
 // main.rs
-mod chart;
 mod component;
 mod dataset;
 mod renderer;
 mod series;
 mod style;
+mod utility;
 
-use chart::*;
-use component::color::*;
-use series::*;
+use echarts::component::axis;
+use echarts::component::grid;
+use echarts::component::legend;
+use echarts::component::title;
+use echarts::component::toolbox;
+use echarts::component::tooltip;
+use echarts::series::line;
+use echarts::series::Series;
+use echarts::utility::color;
+use echarts::Chart;
 
 fn main() {
     // let s = renderer::render_string().unwrap();
@@ -55,21 +62,21 @@ fn gradient_stacked_area_chart() {
         )
         .y_axis(axis::Axis::new().type_(axis::AxisType::Value))
         .series(Series::Line(
-            series::line::Line::new()
+            line::Line::new()
                 .name("Line 1")
                 .show_symbol(false)
                 .stack("Total")
-                .line_style(series::line::LineStyle::new().width(0.0))
+                .line_style(line::LineStyle::new().width(0.0))
                 .area_style(
-                    series::line::AreaStyle::new()
-                        .color(Color::LinearGradient {
+                    line::AreaStyle::new()
+                        .color(color::Color::LinearGradient {
                             x: 0.0,
                             y: 0.0,
                             x2: 0.0,
                             y2: 1.0,
                             color_stops: vec![
-                                ColorStop::new(0.0, "rgb(128, 255, 165)"),
-                                ColorStop::new(1.0, "rgb(1, 191, 236)"),
+                                color::ColorStop::new(0.0, "rgb(128, 255, 165)"),
+                                color::ColorStop::new(1.0, "rgb(1, 191, 236)"),
                             ],
                         })
                         .opacity(0.8),
@@ -86,21 +93,21 @@ fn gradient_stacked_area_chart() {
                 ]),
         ))
         .series(Series::Line(
-            series::line::Line::new()
+            line::Line::new()
                 .name("Line 2")
                 .show_symbol(false)
                 .stack("Total")
-                .line_style(series::line::LineStyle::new().width(0.0))
+                .line_style(line::LineStyle::new().width(0.0))
                 .area_style(
-                    series::line::AreaStyle::new()
-                        .color(Color::LinearGradient {
+                    line::AreaStyle::new()
+                        .color(color::Color::LinearGradient {
                             x: 0.0,
                             y: 0.0,
                             x2: 0.0,
                             y2: 1.0,
                             color_stops: vec![
-                                ColorStop::new(0.0, "rgb(0, 221, 255)"),
-                                ColorStop::new(1.0, "rgb(77, 119, 255)"),
+                                color::ColorStop::new(0.0, "rgb(0, 221, 255)"),
+                                color::ColorStop::new(1.0, "rgb(77, 119, 255)"),
                             ],
                         })
                         .opacity(0.8),
@@ -117,21 +124,21 @@ fn gradient_stacked_area_chart() {
                 ]),
         ))
         .series(Series::Line(
-            series::line::Line::new()
+            line::Line::new()
                 .name("Line 3")
                 .show_symbol(false)
                 .stack("Total")
-                .line_style(series::line::LineStyle::new().width(0.0))
+                .line_style(line::LineStyle::new().width(0.0))
                 .area_style(
-                    series::line::AreaStyle::new()
-                        .color(Color::LinearGradient {
+                    line::AreaStyle::new()
+                        .color(color::Color::LinearGradient {
                             x: 0.0,
                             y: 0.0,
                             x2: 0.0,
                             y2: 1.0,
                             color_stops: vec![
-                                ColorStop::new(0.0, "rgb(55, 162, 255)"),
-                                ColorStop::new(1.0, "rgb(116, 21, 219)"),
+                                color::ColorStop::new(0.0, "rgb(55, 162, 255)"),
+                                color::ColorStop::new(1.0, "rgb(116, 21, 219)"),
                             ],
                         })
                         .opacity(0.8),
@@ -148,21 +155,21 @@ fn gradient_stacked_area_chart() {
                 ]),
         ))
         .series(Series::Line(
-            series::line::Line::new()
+            line::Line::new()
                 .name("Line 4")
                 .show_symbol(false)
                 .stack("Total")
-                .line_style(series::line::LineStyle::new().width(0.0))
+                .line_style(line::LineStyle::new().width(0.0))
                 .area_style(
-                    series::line::AreaStyle::new()
-                        .color(Color::LinearGradient {
+                    line::AreaStyle::new()
+                        .color(color::Color::LinearGradient {
                             x: 0.0,
                             y: 0.0,
                             x2: 0.0,
                             y2: 1.0,
                             color_stops: vec![
-                                ColorStop::new(0.0, "rgb(255, 0, 135)"),
-                                ColorStop::new(1.0, "rgb(135, 0, 157)"),
+                                color::ColorStop::new(0.0, "rgb(255, 0, 135)"),
+                                color::ColorStop::new(1.0, "rgb(135, 0, 157)"),
                             ],
                         })
                         .opacity(0.8),
@@ -179,21 +186,21 @@ fn gradient_stacked_area_chart() {
                 ]),
         ))
         .series(Series::Line(
-            series::line::Line::new()
+            line::Line::new()
                 .name("Line 5")
                 .show_symbol(false)
                 .stack("Total")
-                .line_style(series::line::LineStyle::new().width(0.0))
+                .line_style(line::LineStyle::new().width(0.0))
                 .area_style(
-                    series::line::AreaStyle::new()
-                        .color(Color::LinearGradient {
+                    line::AreaStyle::new()
+                        .color(color::Color::LinearGradient {
                             x: 0.0,
                             y: 0.0,
                             x2: 0.0,
                             y2: 1.0,
                             color_stops: vec![
-                                ColorStop::new(0.0, "rgb(255, 191, 0)"),
-                                ColorStop::new(1.0, "rgb(224, 62, 76)"),
+                                color::ColorStop::new(0.0, "rgb(255, 191, 0)"),
+                                color::ColorStop::new(1.0, "rgb(224, 62, 76)"),
                             ],
                         })
                         .opacity(0.8),

@@ -1,11 +1,15 @@
-use echarts::chart::{legend::Legend, radar::*, title::Title, tooltip, Chart};
+use echarts::component::legend;
+use echarts::component::radar_coordinate;
+use echarts::component::title;
+use echarts::component::tooltip;
 use echarts::series;
+use echarts::Chart;
 
 fn main() {
     let chart = Chart::new()
-        .title(Title::new().text("Multiple Radar"))
+        .title(title::Title::new().text("Multiple Radar"))
         .tooltip(tooltip::Tooltip::new().trigger(tooltip::Trigger::Axis))
-        .legend(Legend::new().left("center").data(vec![
+        .legend(legend::Legend::new().left("center").data(vec![
             "A Software",
             "A Phone",
             "Another Phone",
@@ -13,39 +17,63 @@ fn main() {
             "Evaporation",
         ]))
         .radars(vec![
-            Radar::new()
+            radar_coordinate::RadarCoordinate::new()
                 .indicator(vec![
-                    RadarIndicator::new().name("Brand").max(100),
-                    RadarIndicator::new().name("Content").max(100),
-                    RadarIndicator::new().name("Usability").max(100),
-                    RadarIndicator::new().name("Function").max(100),
+                    radar_coordinate::RadarIndicator::new()
+                        .name("Brand")
+                        .max(100),
+                    radar_coordinate::RadarIndicator::new()
+                        .name("Content")
+                        .max(100),
+                    radar_coordinate::RadarIndicator::new()
+                        .name("Usability")
+                        .max(100),
+                    radar_coordinate::RadarIndicator::new()
+                        .name("Function")
+                        .max(100),
                 ])
                 .center(("25%", "40%"))
                 .radius(80.0),
-            Radar::new()
+            radar_coordinate::RadarCoordinate::new()
                 .indicator(vec![
-                    RadarIndicator::new().name("Look").max(100),
-                    RadarIndicator::new().name("Photo").max(100),
-                    RadarIndicator::new().name("System").max(100),
-                    RadarIndicator::new().name("Performance").max(100),
-                    RadarIndicator::new().name("Screen").max(100),
+                    radar_coordinate::RadarIndicator::new()
+                        .name("Look")
+                        .max(100),
+                    radar_coordinate::RadarIndicator::new()
+                        .name("Photo")
+                        .max(100),
+                    radar_coordinate::RadarIndicator::new()
+                        .name("System")
+                        .max(100),
+                    radar_coordinate::RadarIndicator::new()
+                        .name("Performance")
+                        .max(100),
+                    radar_coordinate::RadarIndicator::new()
+                        .name("Screen")
+                        .max(100),
                 ])
                 .center(("50%", "60%"))
                 .radius(80.0),
-            Radar::new()
+            radar_coordinate::RadarCoordinate::new()
                 .indicator(vec![
-                    RadarIndicator::new().name("1月").max(100),
-                    RadarIndicator::new().name("2月").max(100),
-                    RadarIndicator::new().name("3月").max(100),
-                    RadarIndicator::new().name("4月").max(100),
-                    RadarIndicator::new().name("5月").max(100),
-                    RadarIndicator::new().name("6月").max(100),
-                    RadarIndicator::new().name("7月").max(100),
-                    RadarIndicator::new().name("8月").max(100),
-                    RadarIndicator::new().name("9月").max(100),
-                    RadarIndicator::new().name("10月").max(100),
-                    RadarIndicator::new().name("11月").max(100),
-                    RadarIndicator::new().name("12月").max(100),
+                    radar_coordinate::RadarIndicator::new().name("1月").max(100),
+                    radar_coordinate::RadarIndicator::new().name("2月").max(100),
+                    radar_coordinate::RadarIndicator::new().name("3月").max(100),
+                    radar_coordinate::RadarIndicator::new().name("4月").max(100),
+                    radar_coordinate::RadarIndicator::new().name("5月").max(100),
+                    radar_coordinate::RadarIndicator::new().name("6月").max(100),
+                    radar_coordinate::RadarIndicator::new().name("7月").max(100),
+                    radar_coordinate::RadarIndicator::new().name("8月").max(100),
+                    radar_coordinate::RadarIndicator::new().name("9月").max(100),
+                    radar_coordinate::RadarIndicator::new()
+                        .name("10月")
+                        .max(100),
+                    radar_coordinate::RadarIndicator::new()
+                        .name("11月")
+                        .max(100),
+                    radar_coordinate::RadarIndicator::new()
+                        .name("12月")
+                        .max(100),
                 ])
                 .center(("75%", "40%"))
                 .radius(80.0),
