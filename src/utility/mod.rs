@@ -1,3 +1,4 @@
+pub mod area_style;
 pub mod color;
 pub mod coordinate;
 pub mod data;

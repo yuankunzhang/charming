@@ -14,7 +14,9 @@ use echarts::component::toolbox;
 use echarts::component::tooltip;
 use echarts::series::line;
 use echarts::series::Series;
+use echarts::utility::area_style;
 use echarts::utility::color;
+use echarts::utility::line_style;
 use echarts::Chart;
 
 fn main() {
@@ -66,9 +68,9 @@ fn gradient_stacked_area_chart() {
                 .name("Line 1")
                 .show_symbol(false)
                 .stack("Total")
-                .line_style(line::LineStyle::new().width(0.0))
+                .line_style(line_style::LineStyle::new().width(0.0))
                 .area_style(
-                    line::AreaStyle::new()
+                    area_style::AreaStyle::new()
                         .color(color::Color::LinearGradient {
                             x: 0.0,
                             y: 0.0,
@@ -97,9 +99,9 @@ fn gradient_stacked_area_chart() {
                 .name("Line 2")
                 .show_symbol(false)
                 .stack("Total")
-                .line_style(line::LineStyle::new().width(0.0))
+                .line_style(line_style::LineStyle::new().width(0.0))
                 .area_style(
-                    line::AreaStyle::new()
+                    area_style::AreaStyle::new()
                         .color(color::Color::LinearGradient {
                             x: 0.0,
                             y: 0.0,
@@ -128,9 +130,9 @@ fn gradient_stacked_area_chart() {
                 .name("Line 3")
                 .show_symbol(false)
                 .stack("Total")
-                .line_style(line::LineStyle::new().width(0.0))
+                .line_style(line_style::LineStyle::new().width(0.0))
                 .area_style(
-                    line::AreaStyle::new()
+                    area_style::AreaStyle::new()
                         .color(color::Color::LinearGradient {
                             x: 0.0,
                             y: 0.0,
@@ -159,9 +161,9 @@ fn gradient_stacked_area_chart() {
                 .name("Line 4")
                 .show_symbol(false)
                 .stack("Total")
-                .line_style(line::LineStyle::new().width(0.0))
+                .line_style(line_style::LineStyle::new().width(0.0))
                 .area_style(
-                    line::AreaStyle::new()
+                    area_style::AreaStyle::new()
                         .color(color::Color::LinearGradient {
                             x: 0.0,
                             y: 0.0,
@@ -190,9 +192,9 @@ fn gradient_stacked_area_chart() {
                 .name("Line 5")
                 .show_symbol(false)
                 .stack("Total")
-                .line_style(line::LineStyle::new().width(0.0))
+                .line_style(line_style::LineStyle::new().width(0.0))
                 .area_style(
-                    line::AreaStyle::new()
+                    area_style::AreaStyle::new()
                         .color(color::Color::LinearGradient {
                             x: 0.0,
                             y: 0.0,

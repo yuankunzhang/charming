@@ -1,79 +1,7 @@
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
-use crate::utility::color::*;
-use crate::utility::data::*;
-
-#[derive(Serialize)]
-#[serde(rename_all = "camelCase")]
-pub struct LineStyle {
-    #[serde(skip_serializing_if = "Option::is_none")]
-    color: Option<Color>,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    width: Option<f64>,
-}
-
-impl LineStyle {
-    pub fn new() -> Self {
-        Self {
-            color: None,
-            width: None,
-        }
-    }
-
-    pub fn color(mut self, color: Color) -> Self {
-        self.color = Some(color);
-        self
-    }
-
-    pub fn width(mut self, width: f64) -> Self {
-        self.width = Some(width);
-        self
-    }
-}
-
-#[derive(Serialize)]
-#[serde(rename_all = "snake_case")]
-pub enum OriginPosition {
-    Auto,
-    Start,
-    End,
-}
-
-#[derive(Serialize)]
-#[serde(rename_all = "camelCase")]
-pub struct AreaStyle {
-    #[serde(skip_serializing_if = "Option::is_none")]
-    color: Option<Color>,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    origin: Option<OriginPosition>,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    opacity: Option<f64>,
-}
-
-impl AreaStyle {
-    pub fn new() -> Self {
-        Self {
-            color: None,
-            origin: None,
-            opacity: None,
-        }
-    }
-
-    pub fn color(mut self, color: Color) -> Self {
-        self.color = Some(color);
-        self
-    }
-
-    pub fn origin(mut self, origin: OriginPosition) -> Self {
-        self.origin = Some(origin);
-        self
-    }
-
-    pub fn opacity(mut self, opacity: f64) -> Self {
-        self.opacity = Some(opacity);
-        self
-    }
-}
+use crate::utility::area_style::AreaStyle;
+use crate::utility::line_style::LineStyle;
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
@@ -160,28 +88,47 @@ pub struct MarkLine {
     data: Option<Vec<MarkLineData>>,
 }
 
+#[derive(Serialize, Deserialize)]
+pub struct DataPoint {
+    pub value: Vec<f64>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub name: Option<String>,
+}
+
+pub type Data = Vec<DataPoint>;
+
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Line {
     #[serde(rename = "type")]
     type_: String,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     name: Option<String>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     show_symbol: Option<bool>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     stack: Option<String>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     line_style: Option<LineStyle>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     area_style: Option<AreaStyle>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     smooth: Option<f64>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     mark_point: Option<MarkPoint>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     mark_line: Option<MarkLine>,
-    data: DataFrame,
+
+    data: Data,
 }
 
 impl Line {
@@ -196,7 +143,7 @@ impl Line {
             smooth: None,
             mark_point: None,
             mark_line: None,
-            data: DataFrame::new(),
+            data: vec![],
         }
     }
 
@@ -242,15 +189,13 @@ impl Line {
         self
     }
 
-    pub fn data(mut self, data: DataFrameOneDimension) -> Self {
+    pub fn data(mut self, data: Vec<f64>) -> Self {
         for (i, d) in data.into_iter().enumerate() {
-            self.data.push(vec![(i as f64).into(), d.into()]);
+            self.data.push(DataPoint {
+                value: vec![(i as f64).into(), d.into()],
+                name: None,
+            });
         }
-        self
-    }
-
-    pub fn dataframe(mut self, data: DataFrame) -> Self {
-        self.data = data;
         self
     }
 }

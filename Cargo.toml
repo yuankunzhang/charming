@@ -6,11 +6,15 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-deno_core = "0.191.0"
+deno_core = "0.192.0"
 handlebars = "4.3.7"
 serde = "1.0.164"
 serde_json = "1.0.99"
-serde_v8 = "0.102.0"
+serde_v8 = "0.103.0"
+
+[[example]]
+name = "basic_line"
+path = "examples/line/basic_line.rs"
 
 [[example]]
 name = "les_miserables"
