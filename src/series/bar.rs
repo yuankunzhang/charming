@@ -1,122 +1,68 @@
-use serde::Serialize;
+use std::vec;
 
-use crate::utility::color::*;
-use crate::utility::coordinate::*;
-use crate::utility::data::*;
+use serde::{Deserialize, Serialize};
 
-#[derive(Serialize)]
-#[serde(rename_all = "snake_case")]
-pub enum ColorBy {
-    Series,
-    Data,
+use crate::utility::{
+    background_style::BackgroundStyle, color::ColorBy, coordinate::CoordinateSystem,
+    emphasis::Emphasis, label::Label,
+};
+
+#[derive(Serialize, Deserialize)]
+pub struct DataPoint {
+    pub value: Vec<f64>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub name: Option<String>,
 }
 
-impl From<&str> for ColorBy {
-    fn from(s: &str) -> Self {
-        match s {
-            "series" => Self::Series,
-            "data" => Self::Data,
-            _ => panic!("Invalid ColorBy"),
-        }
-    }
-}
-
-#[derive(Serialize)]
-#[serde(rename_all = "snake_case")]
-pub enum BorderType {
-    Solid,
-    Dashed,
-    Dotted,
-}
-
-#[derive(Serialize)]
-#[serde(rename_all = "camelCase")]
-pub struct BackgroundStyle {
-    #[serde(skip_serializing_if = "Option::is_none")]
-    color: Option<Color>,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    border_color: Option<Color>,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    border_width: Option<u64>,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    border_type: Option<BorderType>,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    border_radius: Option<u64>,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    opacity: Option<f64>,
-}
-
-impl BackgroundStyle {
-    pub fn new() -> Self {
-        Self {
-            color: None,
-            border_color: None,
-            border_width: None,
-            border_type: None,
-            border_radius: None,
-            opacity: None,
-        }
-    }
-
-    pub fn color(mut self, color: Color) -> Self {
-        self.color = Some(color);
-        self
-    }
-
-    pub fn border_color(mut self, border_color: Color) -> Self {
-        self.border_color = Some(border_color);
-        self
-    }
-
-    pub fn border_width(mut self, border_width: u64) -> Self {
-        self.border_width = Some(border_width);
-        self
-    }
-
-    pub fn border_type(mut self, border_type: BorderType) -> Self {
-        self.border_type = Some(border_type);
-        self
-    }
-
-    pub fn border_radius(mut self, border_radius: u64) -> Self {
-        self.border_radius = Some(border_radius);
-        self
-    }
-
-    pub fn opacity(mut self, opacity: f64) -> Self {
-        self.opacity = Some(opacity);
-        self
-    }
-}
+pub type Data = Vec<DataPoint>;
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Bar {
     #[serde(rename = "type")]
     type_: String,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     name: Option<String>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     color_by: Option<ColorBy>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     legend_hover_link: Option<bool>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     coordiate_system: Option<CoordinateSystem>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     x_axis_index: Option<u64>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     y_axis_index: Option<u64>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     polar_index: Option<u64>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     round_cap: Option<bool>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     realtime_sort: Option<bool>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     show_background: Option<bool>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     background_style: Option<BackgroundStyle>,
-    data: DataFrame,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    label: Option<Label>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    emphais: Option<Emphasis>,
+
+    data: Data,
 }
 
 impl Bar {
@@ -134,7 +80,9 @@ impl Bar {
             realtime_sort: None,
             show_background: None,
             background_style: None,
-            data: DataFrame::new(),
+            label: None,
+            emphais: None,
+            data: vec![],
         }
     }
 
@@ -193,15 +141,23 @@ impl Bar {
         self
     }
 
-    pub fn data(mut self, data: DataFrameOneDimension) -> Self {
-        for (i, d) in data.into_iter().enumerate() {
-            self.data.push(vec![(i as f64).into(), d.into()]);
-        }
+    pub fn label(mut self, label: Label) -> Self {
+        self.label = Some(label);
         self
     }
 
-    pub fn dataframe(mut self, data: DataFrame) -> Self {
-        self.data = data;
+    pub fn emphasis(mut self, emphasis: Emphasis) -> Self {
+        self.emphais = Some(emphasis);
+        self
+    }
+
+    pub fn data(mut self, data: Vec<f64>) -> Self {
+        for (i, d) in data.into_iter().enumerate() {
+            self.data.push(DataPoint {
+                value: vec![(i as f64).into(), d.into()],
+                name: None,
+            });
+        }
         self
     }
 }

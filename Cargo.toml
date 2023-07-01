@@ -37,6 +37,10 @@ name = "gradient_stacked_area"
 path = "examples/line/gradient_stacked_area.rs"
 
 [[example]]
+name = "bar_with_background"
+path = "examples/bar/bar_with_background.rs"
+
+[[example]]
 name = "les_miserables"
 path = "examples/graph/les_miserables.rs"
 
