@@ -17,6 +17,26 @@ name = "basic_line"
 path = "examples/line/basic_line.rs"
 
 [[example]]
+name = "smoothed_line"
+path = "examples/line/smoothed_line.rs"
+
+[[example]]
+name = "basic_area"
+path = "examples/line/basic_area.rs"
+
+[[example]]
+name = "stacked_line"
+path = "examples/line/stacked_line.rs"
+
+[[example]]
+name = "stacked_area"
+path = "examples/line/stacked_area.rs"
+
+[[example]]
+name = "gradient_stacked_area"
+path = "examples/line/gradient_stacked_area.rs"
+
+[[example]]
 name = "les_miserables"
 path = "examples/graph/les_miserables.rs"
 

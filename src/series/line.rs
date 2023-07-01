@@ -1,6 +1,7 @@
 use serde::{Deserialize, Serialize};
 
 use crate::utility::area_style::AreaStyle;
+use crate::utility::emphasis::Emphasis;
 use crate::utility::line_style::LineStyle;
 
 #[derive(Serialize)]
@@ -120,6 +121,9 @@ pub struct Line {
     area_style: Option<AreaStyle>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    emphasis: Option<Emphasis>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     smooth: Option<f64>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -140,6 +144,7 @@ impl Line {
             stack: None,
             line_style: None,
             area_style: None,
+            emphasis: None,
             smooth: None,
             mark_point: None,
             mark_line: None,
@@ -170,6 +175,11 @@ impl Line {
 
     pub fn area_style(mut self, area_style: AreaStyle) -> Self {
         self.area_style = Some(area_style);
+        self
+    }
+
+    pub fn emphasis(mut self, emphasis: Emphasis) -> Self {
+        self.emphasis = Some(emphasis);
         self
     }
 
