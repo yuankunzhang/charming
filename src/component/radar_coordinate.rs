@@ -28,7 +28,7 @@ impl RadarIndicator {
         }
     }
 
-    pub fn name(mut self, name: impl Into<String>) -> Self {
+    pub fn name<S: Into<String>>(mut self, name: S) -> Self {
         self.name = Some(name.into());
         self
     }
@@ -43,8 +43,8 @@ impl RadarIndicator {
         self
     }
 
-    pub fn color(mut self, color: impl Into<Color>) -> Self {
-        self.color = Some(color.into());
+    pub fn color(mut self, color: Color) -> Self {
+        self.color = Some(color);
         self
     }
 }
@@ -75,17 +75,17 @@ impl RadarCoordinate {
         }
     }
 
-    pub fn center(mut self, center: (impl Into<String>, impl Into<String>)) -> Self {
+    pub fn center<S: Into<String>>(mut self, center: (S, S)) -> Self {
         self.center = Some((center.0.into(), center.1.into()));
         self
     }
 
-    pub fn radius(mut self, radius: impl Into<f64>) -> Self {
+    pub fn radius<F: Into<f64>>(mut self, radius: F) -> Self {
         self.radius = Some(radius.into());
         self
     }
 
-    pub fn start_angle(mut self, start_angle: impl Into<f64>) -> Self {
+    pub fn start_angle<F: Into<f64>>(mut self, start_angle: F) -> Self {
         self.start_angle = Some(start_angle.into());
         self
     }

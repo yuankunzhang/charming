@@ -182,7 +182,7 @@ impl Tree {
         self
     }
 
-    pub fn center(mut self, center: (impl Into<String>, impl Into<String>)) -> Self {
+    pub fn center<S: Into<String>>(mut self, center: (S, S)) -> Self {
         self.center = Some((center.0.into(), center.1.into()));
         self
     }

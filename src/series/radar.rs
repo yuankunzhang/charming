@@ -51,7 +51,7 @@ impl Radar {
         }
     }
 
-    pub fn name(mut self, name: impl Into<String>) -> Self {
+    pub fn name<S: Into<String>>(mut self, name: S) -> Self {
         self.name = Some(name.into());
         self
     }

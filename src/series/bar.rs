@@ -151,7 +151,7 @@ impl Bar {
         self
     }
 
-    pub fn data(mut self, data: Vec<f64>) -> Self {
+    pub fn data<F: Into<f64>>(mut self, data: Vec<F>) -> Self {
         for (i, d) in data.into_iter().enumerate() {
             self.data.push(DataPoint {
                 value: vec![(i as f64).into(), d.into()],

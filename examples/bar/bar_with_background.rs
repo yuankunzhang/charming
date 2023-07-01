@@ -20,7 +20,7 @@ fn main() {
                     background_style::BackgroundStyle::new()
                         .color("rgba(180, 180, 180, 0.2)".into()),
                 )
-                .data(vec![120.0, 200.0, 150.0, 80.0, 70.0, 110.0, 130.0]),
+                .data(vec![120, 200, 150, 80, 70, 110, 130]),
         ));
     println!("{}", chart.to_string());
 }

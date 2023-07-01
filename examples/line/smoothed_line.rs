@@ -15,7 +15,7 @@ fn main() {
         .series(Series::Line(
             line::Line::new()
                 .smooth(0.5)
-                .data(vec![820.0, 932.0, 901.0, 934.0, 1290.0, 1330.0, 1320.0]),
+                .data(vec![820, 932, 901, 934, 1290, 1330, 1320]),
         ));
     println!("{}", chart.to_string());
 }

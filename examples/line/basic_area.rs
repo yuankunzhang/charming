@@ -17,7 +17,7 @@ fn main() {
         .series(Series::Line(
             line::Line::new()
                 .area_style(area_style::AreaStyle::new())
-                .data(vec![150.0, 230.0, 224.0, 218.0, 135.0, 147.0, 260.0]),
+                .data(vec![150, 230, 224, 218, 135, 147, 260]),
         ));
     println!("{}", chart.to_string());
 }

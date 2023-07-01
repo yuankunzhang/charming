@@ -64,7 +64,7 @@ fn main() {
                         .opacity(0.8),
                 )
                 .smooth(0.5)
-                .data(vec![140.0, 232.0, 101.0, 264.0, 90.0, 340.0, 250.0]),
+                .data(vec![140, 232, 101, 264, 90, 340, 250]),
         ))
         .series(Series::Line(
             line::Line::new()
@@ -87,7 +87,7 @@ fn main() {
                         .opacity(0.8),
                 )
                 .smooth(0.5)
-                .data(vec![120.0, 282.0, 111.0, 234.0, 220.0, 340.0, 310.0]),
+                .data(vec![120, 282, 111, 234, 220, 340, 310]),
         ))
         .series(Series::Line(
             line::Line::new()
@@ -110,7 +110,7 @@ fn main() {
                         .opacity(0.8),
                 )
                 .smooth(0.5)
-                .data(vec![320.0, 132.0, 201.0, 334.0, 190.0, 130.0, 220.0]),
+                .data(vec![320, 132, 201, 334, 190, 130, 220]),
         ))
         .series(Series::Line(
             line::Line::new()
@@ -133,7 +133,7 @@ fn main() {
                         .opacity(0.8),
                 )
                 .smooth(0.5)
-                .data(vec![220.0, 402.0, 231.0, 134.0, 190.0, 230.0, 120.0]),
+                .data(vec![220, 402, 231, 134, 190, 230, 120]),
         ))
         .series(Series::Line(
             line::Line::new()
@@ -156,7 +156,7 @@ fn main() {
                         .opacity(0.8),
                 )
                 .smooth(0.5)
-                .data(vec![220.0, 302.0, 181.0, 234.0, 210.0, 290.0, 150.0]),
+                .data(vec![220, 302, 181, 234, 210, 290, 150]),
         ));
     println!("{}", chart.to_string());
 }
