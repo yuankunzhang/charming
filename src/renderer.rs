@@ -121,44 +121,44 @@ impl Renderer {
         self
     }
 
-    fn init_chart(&self) -> String {
-        Handlebars::new()
-            .render_template(
-                r#"
-const chart = echarts.init(null, '{{ theme }}', {
-    renderer: 'svg',
-    ssr: {{ ssr}},
-    width: {{ width }},
-    height: {{ height }}
-});
-"#,
-                &serde_json::json!({"theme": self.theme.to_string(), "width": self.width, "height": self.height, "ssr": self.ssr}),
-            )
-            .expect("Failed to render template")
-    }
+    //     fn init_chart(&self) -> String {
+    //         Handlebars::new()
+    //             .render_template(
+    //                 r#"
+    // const chart = echarts.init(null, '{{ theme }}', {
+    //     renderer: 'svg',
+    //     ssr: {{ ssr}},
+    //     width: {{ width }},
+    //     height: {{ height }}
+    // });
+    // "#,
+    //                 &serde_json::json!({"theme": self.theme.to_string(), "width": self.width, "height": self.height, "ssr": self.ssr}),
+    //             )
+    //             .expect("Failed to render template")
+    //     }
 }
 
-#[cfg(test)]
-mod test {
-    #[test]
-    fn test_init_chart() {
-        use super::Renderer;
-        let renderer = Renderer::new()
-            .theme(super::Theme::Dark)
-            .size(1000, 900)
-            .ssr(false);
-        let code = renderer.init_chart();
-        println!("{}", code);
-        assert_eq!(
-            code,
-            r#"
-const chart = echarts.init(null, 'dark', {
-    renderer: 'svg',
-    ssr: false,
-    width: 1000,
-    height: 900
-});
-"#
-        );
-    }
-}
+// #[cfg(test)]
+// mod test {
+//     #[test]
+//     fn test_init_chart() {
+//         use super::Renderer;
+//         let renderer = Renderer::new()
+//             .theme(super::Theme::Dark)
+//             .size(1000, 900)
+//             .ssr(false);
+//         let code = renderer.init_chart();
+//         println!("{}", code);
+//         assert_eq!(
+//             code,
+//             r#"
+// const chart = echarts.init(null, 'dark', {
+//     renderer: 'svg',
+//     ssr: false,
+//     width: 1000,
+//     height: 900
+// });
+// "#
+//         );
+//     }
+// }

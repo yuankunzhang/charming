@@ -1,5 +1,7 @@
 use serde::Serialize;
 
+use crate::utility::orient::Orient;
+
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
 pub enum SaveAsImageType {
@@ -229,6 +231,12 @@ pub struct Toolbox {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     feature: Option<Feature>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    orient: Option<Orient>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    top: Option<String>,
 }
 
 impl Toolbox {
@@ -236,6 +244,8 @@ impl Toolbox {
         Self {
             show: None,
             feature: None,
+            orient: None,
+            top: None,
         }
     }
 
@@ -246,6 +256,16 @@ impl Toolbox {
 
     pub fn feature(mut self, feature: Feature) -> Self {
         self.feature = Some(feature);
+        self
+    }
+
+    pub fn orient(mut self, orient: Orient) -> Self {
+        self.orient = Some(orient);
+        self
+    }
+
+    pub fn top<S: Into<String>>(mut self, top: S) -> Self {
+        self.top = Some(top.into());
         self
     }
 }

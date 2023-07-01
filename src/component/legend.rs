@@ -1,5 +1,7 @@
 use serde::Serialize;
 
+use crate::utility::orient::Orient;
+
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Legend {
@@ -22,6 +24,9 @@ pub struct Legend {
     height: Option<f64>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    orient: Option<Orient>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     data: Option<Vec<String>>,
 }
 
@@ -34,6 +39,7 @@ impl Legend {
             bottom: None,
             width: None,
             height: None,
+            orient: None,
             data: None,
         }
     }
@@ -65,6 +71,11 @@ impl Legend {
 
     pub fn height(mut self, height: f64) -> Self {
         self.height = Some(height);
+        self
+    }
+
+    pub fn orient(mut self, orient: Orient) -> Self {
+        self.orient = Some(orient);
         self
     }
 

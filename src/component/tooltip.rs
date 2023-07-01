@@ -108,6 +108,9 @@ pub struct Tooltip {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     axis_pointer: Option<AxisPointer>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    formatter: Option<String>,
 }
 
 impl Tooltip {
@@ -116,6 +119,7 @@ impl Tooltip {
             trigger: None,
             trigger_on: None,
             axis_pointer: None,
+            formatter: None,
         }
     }
 
@@ -131,6 +135,11 @@ impl Tooltip {
 
     pub fn axis_pointer(mut self, axis_pointer: AxisPointer) -> Self {
         self.axis_pointer = Some(axis_pointer);
+        self
+    }
+
+    pub fn formatter<S: Into<String>>(mut self, formatter: S) -> Self {
+        self.formatter = Some(formatter.into());
         self
     }
 }
