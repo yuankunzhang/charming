@@ -13,6 +13,14 @@ serde_json = "1.0.99"
 serde_v8 = "0.103.0"
 
 [[example]]
+name = "bar_with_background"
+path = "examples/bar/bar_with_background.rs"
+
+[[example]]
+name = "les_miserables"
+path = "examples/graph/les_miserables.rs"
+
+[[example]]
 name = "basic_line"
 path = "examples/line/basic_line.rs"
 
@@ -37,12 +45,8 @@ name = "gradient_stacked_area"
 path = "examples/line/gradient_stacked_area.rs"
 
 [[example]]
-name = "bar_with_background"
-path = "examples/bar/bar_with_background.rs"
-
-[[example]]
-name = "les_miserables"
-path = "examples/graph/les_miserables.rs"
+name = "nightingale"
+path = "examples/pie/nightingale.rs"
 
 [[example]]
 name = "from_left_to_right_tree"

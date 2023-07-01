@@ -11,6 +11,9 @@ pub enum SaveAsImageType {
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct SaveAsImage {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    show: Option<bool>,
+
     #[serde(rename = "type")]
     #[serde(skip_serializing_if = "Option::is_none")]
     type_: Option<SaveAsImageType>,
@@ -25,10 +28,16 @@ pub struct SaveAsImage {
 impl SaveAsImage {
     pub fn new() -> Self {
         Self {
+            show: None,
             type_: None,
             name: None,
             background_color: None,
         }
+    }
+
+    pub fn show(mut self, show: bool) -> Self {
+        self.show = Some(show);
+        self
     }
 
     pub fn type_(mut self, type_: SaveAsImageType) -> Self {
@@ -51,12 +60,37 @@ impl SaveAsImage {
 #[serde(rename_all = "camelCase")]
 pub struct Restore {
     #[serde(skip_serializing_if = "Option::is_none")]
+    show: Option<bool>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     title: Option<String>,
+}
+
+impl Restore {
+    pub fn new() -> Self {
+        Self {
+            show: None,
+            title: None,
+        }
+    }
+
+    pub fn show(mut self, show: bool) -> Self {
+        self.show = Some(show);
+        self
+    }
+
+    pub fn title<S: Into<String>>(mut self, title: S) -> Self {
+        self.title = Some(title.into());
+        self
+    }
 }
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct DataView {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    show: Option<bool>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     title: Option<String>,
 
@@ -67,9 +101,15 @@ pub struct DataView {
 impl DataView {
     pub fn new() -> Self {
         Self {
+            show: None,
             title: None,
             read_only: None,
         }
+    }
+
+    pub fn show(mut self, show: bool) -> Self {
+        self.show = Some(show);
+        self
     }
 
     pub fn title<S: Into<String>>(mut self, title: S) -> Self {
@@ -185,12 +225,23 @@ impl Feature {
 #[serde(rename_all = "camelCase")]
 pub struct Toolbox {
     #[serde(skip_serializing_if = "Option::is_none")]
+    show: Option<bool>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     feature: Option<Feature>,
 }
 
 impl Toolbox {
     pub fn new() -> Self {
-        Self { feature: None }
+        Self {
+            show: None,
+            feature: None,
+        }
+    }
+
+    pub fn show(mut self, show: bool) -> Self {
+        self.show = Some(show);
+        self
     }
 
     pub fn feature(mut self, feature: Feature) -> Self {

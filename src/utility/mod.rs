@@ -4,6 +4,7 @@ pub mod border_type;
 pub mod color;
 pub mod coordinate;
 pub mod emphasis;
+pub mod item_style;
 pub mod label;
 pub mod line_style;
 pub mod symbol;

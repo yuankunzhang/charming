@@ -1,6 +1,13 @@
 use serde::{Deserialize, Serialize};
 
-use crate::utility::{color::ColorBy, coordinate::CoordinateSystem};
+use crate::utility::{color::ColorBy, coordinate::CoordinateSystem, item_style::ItemStyle};
+
+#[derive(Serialize)]
+#[serde(rename_all = "snake_case")]
+pub enum RoseType {
+    Radius,
+    Area,
+}
 
 #[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -50,6 +57,12 @@ pub struct Pie {
     start_angle: Option<f64>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    rose_type: Option<RoseType>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    item_style: Option<ItemStyle>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     center: Option<(String, String)>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -72,6 +85,8 @@ impl Pie {
             selected_offset: None,
             clockwise: None,
             start_angle: None,
+            rose_type: None,
+            item_style: None,
             center: None,
             radius: None,
             data: vec![],
@@ -123,8 +138,18 @@ impl Pie {
         self
     }
 
-    pub fn start_angle(mut self, start_angle: f64) -> Self {
-        self.start_angle = Some(start_angle);
+    pub fn start_angle<F: Into<f64>>(mut self, start_angle: F) -> Self {
+        self.start_angle = Some(start_angle.into());
+        self
+    }
+
+    pub fn rose_type(mut self, rose_type: RoseType) -> Self {
+        self.rose_type = Some(rose_type);
+        self
+    }
+
+    pub fn item_style(mut self, item_style: ItemStyle) -> Self {
+        self.item_style = Some(item_style);
         self
     }
 
@@ -138,13 +163,8 @@ impl Pie {
         self
     }
 
-    pub fn data(mut self, data: Vec<f64>) -> Self {
-        for d in data.into_iter() {
-            self.data.push(DataPoint {
-                value: d,
-                name: None,
-            });
-        }
+    pub fn data(mut self, data: Data) -> Self {
+        self.data = data;
         self
     }
 }
