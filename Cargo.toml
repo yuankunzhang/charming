@@ -6,11 +6,11 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-deno_core = "0.192.0"
+deno_core = "0.193.0"
 handlebars = "4.3.7"
 serde = "1.0.164"
 serde_json = "1.0.99"
-serde_v8 = "0.103.0"
+serde_v8 = "0.104.0"
 
 [[example]]
 name = "bar_with_background"
@@ -83,6 +83,10 @@ path = "examples/sankey/node_align_left_sankey.rs"
 [[example]]
 name = "drink_flavors"
 path = "examples/sunburst/drink_flavors.rs"
+
+[[example]]
+name = "theme_river_lastfm"
+path = "examples/theme_river/theme_river_lastfm.rs"
 
 [[example]]
 name = "from_left_to_right_tree"

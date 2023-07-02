@@ -5,4 +5,5 @@ use serde::Serialize;
 pub enum CoordinateSystem {
     Cartesian2d,
     Polar,
+    Single,
 }

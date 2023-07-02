@@ -13,6 +13,7 @@ pub mod label_layout;
 pub mod line_style;
 pub mod orient;
 pub mod scale_limit;
+pub mod single_axis;
 pub mod sort;
 pub mod split_area;
 pub mod split_line;
