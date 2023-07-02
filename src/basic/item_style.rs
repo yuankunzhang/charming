@@ -44,13 +44,13 @@ impl ItemStyle {
         }
     }
 
-    pub fn color(mut self, color: Color) -> Self {
-        self.color = Some(color);
+    pub fn color<C: Into<Color>>(mut self, color: C) -> Self {
+        self.color = Some(color.into());
         self
     }
 
-    pub fn border_color(mut self, border_color: Color) -> Self {
-        self.border_color = Some(border_color);
+    pub fn border_color<C: Into<Color>>(mut self, border_color: C) -> Self {
+        self.border_color = Some(border_color.into());
         self
     }
 
@@ -82,5 +82,11 @@ impl ItemStyle {
     pub fn shadow_blur<F: Into<f64>>(mut self, shadow_blur: F) -> Self {
         self.shadow_blur = Some(shadow_blur.into());
         self
+    }
+}
+
+impl From<Color> for ItemStyle {
+    fn from(color: Color) -> Self {
+        Self::new().color(color)
     }
 }

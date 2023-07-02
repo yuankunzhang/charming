@@ -19,6 +19,7 @@ pub enum Position {
     InsideTopRight,
     InsideBottomRight,
     Start,
+    Outside,
 }
 
 #[derive(Serialize)]
@@ -50,7 +51,7 @@ pub struct Label {
     distance: Option<f64>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    rotate: Option<f64>,
+    rotate: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     offset: Option<(f64, f64)>,
@@ -65,10 +66,16 @@ pub struct Label {
     font_size: Option<f64>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    padding: Option<(f64, f64, f64, f64)>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     align: Option<Align>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     vertical_align: Option<VerticalAlign>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    silent: Option<bool>,
 }
 
 impl Label {
@@ -82,8 +89,10 @@ impl Label {
             formatter: None,
             color: None,
             font_size: None,
+            padding: None,
             align: None,
             vertical_align: None,
+            silent: None,
         }
     }
 
@@ -102,8 +111,8 @@ impl Label {
         self
     }
 
-    pub fn rotate(mut self, rotate: f64) -> Self {
-        self.rotate = Some(rotate);
+    pub fn rotate<S: Into<String>>(mut self, rotate: S) -> Self {
+        self.rotate = Some(rotate.into());
         self
     }
 
@@ -127,6 +136,16 @@ impl Label {
         self
     }
 
+    pub fn padding<F: Into<f64>>(mut self, padding: (F, F, F, F)) -> Self {
+        self.padding = Some((
+            padding.0.into(),
+            padding.1.into(),
+            padding.2.into(),
+            padding.3.into(),
+        ));
+        self
+    }
+
     pub fn align(mut self, align: Align) -> Self {
         self.align = Some(align);
         self
@@ -134,6 +153,11 @@ impl Label {
 
     pub fn vertical_align(mut self, vertical_align: VerticalAlign) -> Self {
         self.vertical_align = Some(vertical_align);
+        self
+    }
+
+    pub fn silent(mut self, silent: bool) -> Self {
+        self.silent = Some(silent);
         self
     }
 }

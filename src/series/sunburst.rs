@@ -1,15 +1,114 @@
 use serde::{Deserialize, Serialize};
 
+use crate::basic::{emphasis::Emphasis, item_style::ItemStyle, label::Label, sort::Sort};
+
+#[derive(Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct Level {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    r0: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    r: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    item_style: Option<ItemStyle>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    label: Option<Label>,
+}
+
+impl Level {
+    pub fn new() -> Self {
+        Self {
+            r0: None,
+            r: None,
+            item_style: None,
+            label: None,
+        }
+    }
+
+    pub fn r0<S: Into<String>>(mut self, r0: S) -> Self {
+        self.r0 = Some(r0.into());
+        self
+    }
+
+    pub fn r<S: Into<String>>(mut self, r: S) -> Self {
+        self.r = Some(r.into());
+        self
+    }
+
+    pub fn item_style(mut self, item_style: ItemStyle) -> Self {
+        self.item_style = Some(item_style);
+        self
+    }
+
+    pub fn label(mut self, label: Label) -> Self {
+        self.label = Some(label);
+        self
+    }
+}
+
 #[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Node {
-    pub name: String,
+    name: String,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub value: Option<f64>,
+    value: Option<f64>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub children: Option<Vec<Node>>,
+    #[serde(skip_deserializing)]
+    item_style: Option<ItemStyle>,
+
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    children: Vec<Node>,
+}
+
+impl Node {
+    pub fn new<S: Into<String>>(name: S) -> Self {
+        Self {
+            name: name.into(),
+            value: None,
+            item_style: None,
+            children: vec![],
+        }
+    }
+
+    pub fn value(mut self, value: f64) -> Self {
+        self.value = Some(value);
+        self
+    }
+
+    pub fn item_style(mut self, item_style: ItemStyle) -> Self {
+        self.item_style = Some(item_style);
+        self
+    }
+
+    pub fn children(mut self, children: Vec<Node>) -> Self {
+        self.children = children;
+        self
+    }
+}
+
+impl From<&str> for Node {
+    fn from(name: &str) -> Self {
+        Self::new(name)
+    }
+}
+
+impl From<(&str, f64)> for Node {
+    fn from((name, value): (&str, f64)) -> Self {
+        Self::new(name).value(value)
+    }
+}
+
+impl From<(&str, f64, &str)> for Node {
+    fn from((name, value, color): (&str, f64, &str)) -> Self {
+        Self::new(name)
+            .value(value)
+            .item_style(ItemStyle::new().color(color))
+    }
 }
 
 pub type Data = Vec<Node>;
@@ -33,7 +132,16 @@ pub struct Sunburst {
     center: Option<(String, String)>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    radius: Option<f64>,
+    radius: Option<(String, String)>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    emphasis: Option<Emphasis>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    sort: Option<Sort>,
+
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    levels: Vec<Level>,
 
     data: Data,
 }
@@ -47,6 +155,9 @@ impl Sunburst {
             z: None,
             center: None,
             radius: None,
+            emphasis: None,
+            sort: None,
+            levels: vec![],
             data: vec![],
         }
     }
@@ -71,8 +182,23 @@ impl Sunburst {
         self
     }
 
-    pub fn radius(mut self, radius: f64) -> Self {
-        self.radius = Some(radius);
+    pub fn radius<S: Into<String>>(mut self, radius: (S, S)) -> Self {
+        self.radius = Some((radius.0.into(), radius.1.into()));
+        self
+    }
+
+    pub fn emphasis(mut self, emphasis: Emphasis) -> Self {
+        self.emphasis = Some(emphasis);
+        self
+    }
+
+    pub fn sort(mut self, sort: Sort) -> Self {
+        self.sort = Some(sort);
+        self
+    }
+
+    pub fn levels(mut self, levels: Vec<Level>) -> Self {
+        self.levels = levels;
         self
     }
 

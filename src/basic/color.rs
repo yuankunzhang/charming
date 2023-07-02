@@ -96,3 +96,9 @@ impl From<&str> for Color {
         Color::Value(s.to_string())
     }
 }
+
+impl From<String> for Color {
+    fn from(s: String) -> Self {
+        Color::Value(s)
+    }
+}

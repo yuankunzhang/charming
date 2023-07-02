@@ -22,6 +22,9 @@ pub struct TextStyle {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     line_height: Option<f64>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    align: Option<String>,
 }
 
 impl TextStyle {
@@ -33,6 +36,7 @@ impl TextStyle {
             font_family: None,
             font_size: None,
             line_height: None,
+            align: None,
         }
     }
 
@@ -63,6 +67,11 @@ impl TextStyle {
 
     pub fn line_height<F: Into<f64>>(mut self, line_height: F) -> Self {
         self.line_height = Some(line_height.into());
+        self
+    }
+
+    pub fn align<S: Into<String>>(mut self, align: S) -> Self {
+        self.align = Some(align.into());
         self
     }
 }

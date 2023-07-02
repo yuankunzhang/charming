@@ -12,6 +12,9 @@ pub struct Title {
     subtext: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    sublink: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     left: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -27,6 +30,9 @@ pub struct Title {
     text_style: Option<TextStyle>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    subtext_style: Option<TextStyle>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     border_color: Option<Color>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -38,11 +44,13 @@ impl Title {
         Self {
             text: None,
             subtext: None,
+            sublink: None,
             left: None,
             top: None,
             right: None,
             bottom: None,
             text_style: None,
+            subtext_style: None,
             border_color: None,
             border_width: None,
         }
@@ -55,6 +63,11 @@ impl Title {
 
     pub fn subtext<S: Into<String>>(mut self, subtext: S) -> Self {
         self.subtext = Some(subtext.into());
+        self
+    }
+
+    pub fn sublink<S: Into<String>>(mut self, sublink: S) -> Self {
+        self.sublink = Some(sublink.into());
         self
     }
 
@@ -80,6 +93,11 @@ impl Title {
 
     pub fn text_style(mut self, text_style: TextStyle) -> Self {
         self.text_style = Some(text_style);
+        self
+    }
+
+    pub fn subtext_style(mut self, subtext_style: TextStyle) -> Self {
+        self.subtext_style = Some(subtext_style);
         self
     }
 
