@@ -85,6 +85,10 @@ name = "node_align_left_sankey"
 path = "examples/sankey/node_align_left_sankey.rs"
 
 [[example]]
+name = "basic_scatter_chart"
+path = "examples/scatter/basic_scatter_chart.rs"
+
+[[example]]
 name = "drink_flavors"
 path = "examples/sunburst/drink_flavors.rs"
 
