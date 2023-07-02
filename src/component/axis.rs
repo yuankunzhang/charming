@@ -1,6 +1,6 @@
 use serde::Serialize;
 
-use crate::basic::{split_area::SplitArea, split_line::SplitLine};
+use crate::basic::{boundary_gap::BoundaryGap, split_area::SplitArea, split_line::SplitLine};
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
@@ -51,7 +51,7 @@ pub struct Axis {
     name: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    boundary_gap: Option<bool>,
+    boundary_gap: Option<BoundaryGap>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     name_gap: Option<f64>,
@@ -93,8 +93,8 @@ impl Axis {
         self
     }
 
-    pub fn boundary_gap(mut self, boundary_gap: bool) -> Self {
-        self.boundary_gap = Some(boundary_gap);
+    pub fn boundary_gap<B: Into<BoundaryGap>>(mut self, boundary_gap: B) -> Self {
+        self.boundary_gap = Some(boundary_gap.into());
         self
     }
 

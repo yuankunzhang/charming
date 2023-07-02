@@ -1,4 +1,5 @@
 use component::dataset::Dataset;
+use component::visual_map::VisualMap;
 use serde::Serialize;
 
 pub mod basic;
@@ -43,6 +44,9 @@ pub struct Chart {
     y_axis: Option<Axis>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    visual_map: Option<VisualMap>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     dataset: Option<Dataset>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
@@ -66,6 +70,7 @@ impl Chart {
             grid: None,
             x_axis: None,
             y_axis: None,
+            visual_map: None,
             dataset: None,
             radars: vec![],
             color: vec![],
@@ -105,6 +110,11 @@ impl Chart {
 
     pub fn y_axis(mut self, y_axis: Axis) -> Self {
         self.y_axis = Some(y_axis);
+        self
+    }
+
+    pub fn visual_map(mut self, visual_map: VisualMap) -> Self {
+        self.visual_map = Some(visual_map);
         self
     }
 

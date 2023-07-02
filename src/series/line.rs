@@ -6,6 +6,7 @@ use crate::basic::emphasis::Emphasis;
 use crate::basic::label::Label;
 use crate::basic::line_style::LineStyle;
 use crate::basic::symbol::Symbol;
+use crate::basic::Value;
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
@@ -145,7 +146,10 @@ pub struct MarkLineData {
     x: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    y_axis: Option<String>,
+    x_axis: Option<Value>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    y_axis: Option<Value>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     label: Option<Label>,
@@ -158,6 +162,7 @@ impl MarkLineData {
             name: None,
             symbol: None,
             x: None,
+            x_axis: None,
             y_axis: None,
             label: None,
         }
@@ -183,7 +188,12 @@ impl MarkLineData {
         self
     }
 
-    pub fn y_axis<S: Into<String>>(mut self, y_axis: S) -> Self {
+    pub fn x_axis<V: Into<Value>>(mut self, x_axis: V) -> Self {
+        self.x_axis = Some(x_axis.into());
+        self
+    }
+
+    pub fn y_axis<V: Into<Value>>(mut self, y_axis: V) -> Self {
         self.y_axis = Some(y_axis.into());
         self
     }
@@ -222,13 +232,33 @@ impl Serialize for MarkLineVariant {
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct MarkLine {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    label: Option<Label>,
+
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    symbol: Vec<Symbol>,
+
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: Vec<MarkLineVariant>,
 }
 
 impl MarkLine {
     pub fn new() -> Self {
-        Self { data: vec![] }
+        Self {
+            label: None,
+            symbol: vec![],
+            data: vec![],
+        }
+    }
+
+    pub fn label(mut self, label: Label) -> Self {
+        self.label = Some(label);
+        self
+    }
+
+    pub fn symbol(mut self, symbol: Vec<Symbol>) -> Self {
+        self.symbol = symbol;
+        self
     }
 
     pub fn data(mut self, data: Vec<MarkLineVariant>) -> Self {
@@ -239,10 +269,79 @@ impl MarkLine {
 
 #[derive(Serialize, Deserialize)]
 pub struct Datum {
-    pub value: Vec<f64>,
+    pub value: Vec<Value>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
+}
+
+impl From<Value> for Datum {
+    fn from(value: Value) -> Self {
+        Self {
+            value: vec![value],
+            name: None,
+        }
+    }
+}
+
+impl From<f64> for Datum {
+    fn from(value: f64) -> Self {
+        Self {
+            value: vec![value.into()],
+            name: None,
+        }
+    }
+}
+
+impl From<i64> for Datum {
+    fn from(value: i64) -> Self {
+        Self {
+            value: vec![value.into()],
+            name: None,
+        }
+    }
+}
+
+impl From<Vec<Value>> for Datum {
+    fn from(value: Vec<Value>) -> Self {
+        Self { value, name: None }
+    }
+}
+
+impl From<Vec<f64>> for Datum {
+    fn from(value: Vec<f64>) -> Self {
+        Self {
+            value: value.into_iter().map(|f| f.into()).collect(),
+            name: None,
+        }
+    }
+}
+
+impl From<Vec<i64>> for Datum {
+    fn from(value: Vec<i64>) -> Self {
+        Self {
+            value: value.into_iter().map(|n| n.into()).collect(),
+            name: None,
+        }
+    }
+}
+
+impl From<(&str, Vec<f64>)> for Datum {
+    fn from((name, value): (&str, Vec<f64>)) -> Self {
+        Self {
+            value: value.into_iter().map(|f| f.into()).collect(),
+            name: Some(name.to_string()),
+        }
+    }
+}
+
+impl From<(&str, Vec<i64>)> for Datum {
+    fn from((name, value): (&str, Vec<i64>)) -> Self {
+        Self {
+            value: value.into_iter().map(|n| n.into()).collect(),
+            name: Some(name.to_string()),
+        }
+    }
 }
 
 pub type Data = Vec<Datum>;
@@ -255,6 +354,9 @@ pub struct Line {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     name: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    symbol: Option<Symbol>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     show_symbol: Option<bool>,
@@ -288,6 +390,7 @@ impl Line {
         Self {
             type_: "line".to_string(),
             name: None,
+            symbol: None,
             show_symbol: None,
             stack: None,
             line_style: None,
@@ -303,6 +406,11 @@ impl Line {
     /// Series name used for displaying in `tooltip` and filtering with `legend`.
     pub fn name<S: Into<String>>(mut self, name: S) -> Self {
         self.name = Some(name.into());
+        self
+    }
+
+    pub fn symbol(mut self, symbol: Symbol) -> Self {
+        self.symbol = Some(symbol);
         self
     }
 
@@ -347,13 +455,8 @@ impl Line {
         self
     }
 
-    pub fn data<S: Into<f64>>(mut self, data: Vec<S>) -> Self {
-        for (i, d) in data.into_iter().enumerate() {
-            self.data.push(Datum {
-                value: vec![(i as f64).into(), d.into()],
-                name: None,
-            });
-        }
+    pub fn data<S: Into<Datum>>(mut self, data: Vec<S>) -> Self {
+        self.data = data.into_iter().map(|d| d.into()).collect();
         self
     }
 }

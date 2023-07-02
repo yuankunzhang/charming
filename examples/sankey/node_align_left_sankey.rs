@@ -19,11 +19,7 @@ fn main() {
             sankey::Sankey::new()
                 .emphasis(emphasis::Emphasis::new().focus(emphasis::Focus::Adjacency))
                 .node_align(sankey::NodeAlign::Left)
-                .line_style(
-                    line_style::LineStyle::new()
-                        .color("source".into())
-                        .curveness(0.5),
-                )
+                .line_style(line_style::LineStyle::new().color("source").curveness(0.5))
                 .data(data),
         ));
     println!("{}", chart.to_string());

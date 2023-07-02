@@ -36,11 +36,7 @@ fn main() {
                         .position(label::Position::Right)
                         .formatter("{b}"),
                 )
-                .line_style(
-                    line_style::LineStyle::new()
-                        .color("source".into())
-                        .curveness(0.3),
-                )
+                .line_style(line_style::LineStyle::new().color("source").curveness(0.3))
                 .data(data),
         ));
     println!("{}", chart.to_string());

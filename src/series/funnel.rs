@@ -34,9 +34,9 @@ impl From<f64> for Datum {
     }
 }
 
-impl From<i32> for Datum {
-    fn from(value: i32) -> Self {
-        Self::new(value, None)
+impl From<i64> for Datum {
+    fn from(value: i64) -> Self {
+        Self::new(value as f64, None)
     }
 }
 
@@ -46,9 +46,9 @@ impl From<(f64, &str)> for Datum {
     }
 }
 
-impl From<(i32, &str)> for Datum {
-    fn from((value, name): (i32, &str)) -> Self {
-        Self::new(value, name.to_string())
+impl From<(i64, &str)> for Datum {
+    fn from((value, name): (i64, &str)) -> Self {
+        Self::new(value as f64, name.to_string())
     }
 }
 

@@ -57,6 +57,10 @@ name = "temperature_change_in_the_coming_week"
 path = "examples/line/temperature_change_in_the_coming_week.rs"
 
 [[example]]
+name = "area_pieces"
+path = "examples/line/area_pieces.rs"
+
+[[example]]
 name = "nightingale"
 path = "examples/pie/nightingale.rs"
 

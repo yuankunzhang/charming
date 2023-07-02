@@ -41,8 +41,8 @@ impl LineStyle {
         }
     }
 
-    pub fn color(mut self, color: Color) -> Self {
-        self.color = Some(color);
+    pub fn color<C: Into<Color>>(mut self, color: C) -> Self {
+        self.color = Some(color.into());
         self
     }
 
