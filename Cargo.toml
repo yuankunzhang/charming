@@ -29,6 +29,10 @@ name = "multiple_funnels"
 path = "examples/funnel/multiple_funnels.rs"
 
 [[example]]
+name = "gauge_barometer_chart"
+path = "examples/gauge/gauge_barometer_chart.rs"
+
+[[example]]
 name = "hide_overlapped_label"
 path = "examples/graph/hide_overlapped_label.rs"
 

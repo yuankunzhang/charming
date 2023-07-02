@@ -1,12 +1,15 @@
 use serde::{Deserialize, Serialize};
 
+pub mod anchor;
 pub mod area_style;
+pub mod axis_style;
 pub mod background_style;
 pub mod border_type;
 pub mod boundary_gap;
 pub mod color;
 pub mod coordinate;
 pub mod emphasis;
+pub mod icon;
 pub mod item_style;
 pub mod label;
 pub mod label_layout;
@@ -14,6 +17,7 @@ pub mod line_style;
 pub mod link_target;
 pub mod orient;
 pub mod padding;
+pub mod pointer;
 pub mod scale_limit;
 pub mod single_axis;
 pub mod sort;
