@@ -1,3 +1,4 @@
+use echarts::basic::area_style;
 use echarts::component::legend;
 use echarts::component::radar_coordinate;
 use echarts::component::title;
@@ -19,61 +20,37 @@ fn main() {
         .radars(vec![
             radar_coordinate::RadarCoordinate::new()
                 .indicator(vec![
-                    radar_coordinate::RadarIndicator::new()
-                        .name("Brand")
-                        .max(100),
-                    radar_coordinate::RadarIndicator::new()
-                        .name("Content")
-                        .max(100),
-                    radar_coordinate::RadarIndicator::new()
-                        .name("Usability")
-                        .max(100),
-                    radar_coordinate::RadarIndicator::new()
-                        .name("Function")
-                        .max(100),
+                    ("Brand", 0, 100),
+                    ("Content", 0, 100),
+                    ("Usability", 0, 100),
+                    ("Function", 0, 100),
                 ])
                 .center(("25%", "40%"))
                 .radius(80.0),
             radar_coordinate::RadarCoordinate::new()
                 .indicator(vec![
-                    radar_coordinate::RadarIndicator::new()
-                        .name("Look")
-                        .max(100),
-                    radar_coordinate::RadarIndicator::new()
-                        .name("Photo")
-                        .max(100),
-                    radar_coordinate::RadarIndicator::new()
-                        .name("System")
-                        .max(100),
-                    radar_coordinate::RadarIndicator::new()
-                        .name("Performance")
-                        .max(100),
-                    radar_coordinate::RadarIndicator::new()
-                        .name("Screen")
-                        .max(100),
+                    ("Look", 0, 100),
+                    ("Photo", 0, 100),
+                    ("System", 0, 100),
+                    ("Performance", 0, 100),
+                    ("Screen", 0, 100),
                 ])
                 .center(("50%", "60%"))
                 .radius(80.0),
             radar_coordinate::RadarCoordinate::new()
                 .indicator(vec![
-                    radar_coordinate::RadarIndicator::new().name("1月").max(100),
-                    radar_coordinate::RadarIndicator::new().name("2月").max(100),
-                    radar_coordinate::RadarIndicator::new().name("3月").max(100),
-                    radar_coordinate::RadarIndicator::new().name("4月").max(100),
-                    radar_coordinate::RadarIndicator::new().name("5月").max(100),
-                    radar_coordinate::RadarIndicator::new().name("6月").max(100),
-                    radar_coordinate::RadarIndicator::new().name("7月").max(100),
-                    radar_coordinate::RadarIndicator::new().name("8月").max(100),
-                    radar_coordinate::RadarIndicator::new().name("9月").max(100),
-                    radar_coordinate::RadarIndicator::new()
-                        .name("10月")
-                        .max(100),
-                    radar_coordinate::RadarIndicator::new()
-                        .name("11月")
-                        .max(100),
-                    radar_coordinate::RadarIndicator::new()
-                        .name("12月")
-                        .max(100),
+                    ("1月", 0, 100),
+                    ("2月", 0, 100),
+                    ("3月", 0, 100),
+                    ("4月", 0, 100),
+                    ("5月", 0, 100),
+                    ("6月", 0, 100),
+                    ("7月", 0, 100),
+                    ("8月", 0, 100),
+                    ("9月", 0, 100),
+                    ("10月", 0, 100),
+                    ("11月", 0, 100),
+                    ("12月", 0, 100),
                 ])
                 .center(("75%", "40%"))
                 .radius(80.0),
@@ -81,22 +58,37 @@ fn main() {
         .series(series::Series::Radar(
             series::radar::Radar::new()
                 .name("Radar")
-                .data(vec![series::radar::RadarData {
-                    name: "A Software".into(),
-                    value: vec![60.0, 73.0, 85.0, 40.0],
-                }]),
+                .tooltip(tooltip::Tooltip::new().trigger(tooltip::Trigger::Item))
+                .area_style(area_style::AreaStyle::new())
+                .data(vec![("A Software", vec![60, 73, 85, 40])]),
         ))
         .series(series::Series::Radar(
-            series::radar::Radar::new().name("A Phone").data(vec![
-                series::radar::RadarData {
-                    name: "A Phone".into(),
-                    value: vec![85.0, 90.0, 90.0, 95.0, 95.0],
-                },
-                series::radar::RadarData {
-                    name: "Another Phone".into(),
-                    value: vec![95.0, 80.0, 95.0, 90.0, 93.0],
-                },
-            ]),
+            series::radar::Radar::new()
+                .radar_index(1)
+                .area_style(area_style::AreaStyle::new())
+                .data(vec![
+                    ("A Phone", vec![85, 90, 90, 95, 95]),
+                    ("Another Phone", vec![95, 80, 95, 90, 93]),
+                ]),
+        ))
+        .series(series::Series::Radar(
+            series::radar::Radar::new()
+                .radar_index(2)
+                .area_style(area_style::AreaStyle::new())
+                .data(vec![
+                    (
+                        "Precipitation",
+                        vec![
+                            2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 75.6, 82.2, 48.7, 18.8, 6.0, 2.3,
+                        ],
+                    ),
+                    (
+                        "Evaporation",
+                        vec![
+                            2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 35.6, 62.2, 32.6, 20.0, 6.4, 3.3,
+                        ],
+                    ),
+                ]),
         ));
     println!("{}", chart.to_string());
 }

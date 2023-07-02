@@ -378,7 +378,7 @@ impl Line {
         self
     }
 
-    pub fn data<S: Into<DataPoint>>(mut self, data: Vec<S>) -> Self {
+    pub fn data<D: Into<DataPoint>>(mut self, data: Vec<D>) -> Self {
         self.data = data.into_iter().map(|d| d.into()).collect();
         self
     }

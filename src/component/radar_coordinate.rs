@@ -49,6 +49,28 @@ impl RadarIndicator {
     }
 }
 
+impl From<(&str, f64, f64)> for RadarIndicator {
+    fn from((name, min, max): (&str, f64, f64)) -> Self {
+        Self {
+            name: Some(name.into()),
+            min: Some(min),
+            max: Some(max),
+            color: None,
+        }
+    }
+}
+
+impl From<(&str, i64, i64)> for RadarIndicator {
+    fn from((name, min, max): (&str, i64, i64)) -> Self {
+        Self {
+            name: Some(name.into()),
+            min: Some(min as f64),
+            max: Some(max as f64),
+            color: None,
+        }
+    }
+}
+
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct RadarCoordinate {
@@ -90,8 +112,8 @@ impl RadarCoordinate {
         self
     }
 
-    pub fn indicator(mut self, indicator: Vec<RadarIndicator>) -> Self {
-        self.indicator = indicator;
+    pub fn indicator<I: Into<RadarIndicator>>(mut self, indicator: Vec<I>) -> Self {
+        self.indicator = indicator.into_iter().map(|i| i.into()).collect();
         self
     }
 }
