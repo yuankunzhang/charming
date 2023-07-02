@@ -111,6 +111,9 @@ pub struct Tooltip {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     formatter: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    position: Option<String>,
 }
 
 impl Tooltip {
@@ -120,6 +123,7 @@ impl Tooltip {
             trigger_on: None,
             axis_pointer: None,
             formatter: None,
+            position: None,
         }
     }
 
@@ -140,6 +144,11 @@ impl Tooltip {
 
     pub fn formatter<S: Into<String>>(mut self, formatter: S) -> Self {
         self.formatter = Some(formatter.into());
+        self
+    }
+
+    pub fn position<S: Into<String>>(mut self, position: S) -> Self {
+        self.position = Some(position.into());
         self
     }
 }

@@ -22,6 +22,12 @@ pub struct ItemStyle {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     opacity: Option<f64>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    shadow_color: Option<Color>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    shadow_blur: Option<f64>,
 }
 
 impl ItemStyle {
@@ -33,6 +39,8 @@ impl ItemStyle {
             border_radius: None,
             border_type: None,
             opacity: None,
+            shadow_color: None,
+            shadow_blur: None,
         }
     }
 
@@ -63,6 +71,16 @@ impl ItemStyle {
 
     pub fn opacity<F: Into<f64>>(mut self, opacity: F) -> Self {
         self.opacity = Some(opacity.into());
+        self
+    }
+
+    pub fn shadow_color<C: Into<Color>>(mut self, shadow_color: C) -> Self {
+        self.shadow_color = Some(shadow_color.into());
+        self
+    }
+
+    pub fn shadow_blur<F: Into<f64>>(mut self, shadow_blur: F) -> Self {
+        self.shadow_blur = Some(shadow_blur.into());
         self
     }
 }

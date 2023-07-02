@@ -29,6 +29,10 @@ name = "les_miserables"
 path = "examples/graph/les_miserables.rs"
 
 [[example]]
+name = "heatmap_on_cartesian"
+path = "examples/heatmap/heatmap_on_cartesian.rs"
+
+[[example]]
 name = "basic_line"
 path = "examples/line/basic_line.rs"
 

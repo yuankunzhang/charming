@@ -1,12 +1,12 @@
 use serde::ser::SerializeSeq;
-use serde::{Deserialize, Serialize};
+use serde::Serialize;
 
 use crate::basic::area_style::AreaStyle;
 use crate::basic::emphasis::Emphasis;
 use crate::basic::label::Label;
 use crate::basic::line_style::LineStyle;
 use crate::basic::symbol::Symbol;
-use crate::basic::Value;
+use crate::basic::{DataFrame, DataPoint, Value};
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
@@ -267,84 +267,7 @@ impl MarkLine {
     }
 }
 
-#[derive(Serialize, Deserialize)]
-pub struct Datum {
-    pub value: Vec<Value>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<String>,
-}
-
-impl From<Value> for Datum {
-    fn from(value: Value) -> Self {
-        Self {
-            value: vec![value],
-            name: None,
-        }
-    }
-}
-
-impl From<f64> for Datum {
-    fn from(value: f64) -> Self {
-        Self {
-            value: vec![value.into()],
-            name: None,
-        }
-    }
-}
-
-impl From<i64> for Datum {
-    fn from(value: i64) -> Self {
-        Self {
-            value: vec![value.into()],
-            name: None,
-        }
-    }
-}
-
-impl From<Vec<Value>> for Datum {
-    fn from(value: Vec<Value>) -> Self {
-        Self { value, name: None }
-    }
-}
-
-impl From<Vec<f64>> for Datum {
-    fn from(value: Vec<f64>) -> Self {
-        Self {
-            value: value.into_iter().map(|f| f.into()).collect(),
-            name: None,
-        }
-    }
-}
-
-impl From<Vec<i64>> for Datum {
-    fn from(value: Vec<i64>) -> Self {
-        Self {
-            value: value.into_iter().map(|n| n.into()).collect(),
-            name: None,
-        }
-    }
-}
-
-impl From<(&str, Vec<f64>)> for Datum {
-    fn from((name, value): (&str, Vec<f64>)) -> Self {
-        Self {
-            value: value.into_iter().map(|f| f.into()).collect(),
-            name: Some(name.to_string()),
-        }
-    }
-}
-
-impl From<(&str, Vec<i64>)> for Datum {
-    fn from((name, value): (&str, Vec<i64>)) -> Self {
-        Self {
-            value: value.into_iter().map(|n| n.into()).collect(),
-            name: Some(name.to_string()),
-        }
-    }
-}
-
-pub type Data = Vec<Datum>;
+pub type Data = DataFrame;
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -455,7 +378,7 @@ impl Line {
         self
     }
 
-    pub fn data<S: Into<Datum>>(mut self, data: Vec<S>) -> Self {
+    pub fn data<S: Into<DataPoint>>(mut self, data: Vec<S>) -> Self {
         self.data = data.into_iter().map(|d| d.into()).collect();
         self
     }

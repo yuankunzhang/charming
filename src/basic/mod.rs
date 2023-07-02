@@ -69,3 +69,82 @@ impl From<String> for Value {
 pub fn value<T: Into<Value>>(v: T) -> Value {
     v.into()
 }
+
+#[derive(Serialize, Deserialize)]
+pub struct DataPoint {
+    pub value: Vec<Value>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub name: Option<String>,
+}
+
+impl From<Value> for DataPoint {
+    fn from(value: Value) -> Self {
+        Self {
+            value: vec![value],
+            name: None,
+        }
+    }
+}
+
+impl From<f64> for DataPoint {
+    fn from(value: f64) -> Self {
+        Self {
+            value: vec![value.into()],
+            name: None,
+        }
+    }
+}
+
+impl From<i64> for DataPoint {
+    fn from(value: i64) -> Self {
+        Self {
+            value: vec![value.into()],
+            name: None,
+        }
+    }
+}
+
+impl From<Vec<Value>> for DataPoint {
+    fn from(value: Vec<Value>) -> Self {
+        Self { value, name: None }
+    }
+}
+
+impl From<Vec<f64>> for DataPoint {
+    fn from(value: Vec<f64>) -> Self {
+        Self {
+            value: value.into_iter().map(|f| f.into()).collect(),
+            name: None,
+        }
+    }
+}
+
+impl From<Vec<i64>> for DataPoint {
+    fn from(value: Vec<i64>) -> Self {
+        Self {
+            value: value.into_iter().map(|n| n.into()).collect(),
+            name: None,
+        }
+    }
+}
+
+impl From<(&str, Vec<f64>)> for DataPoint {
+    fn from((name, value): (&str, Vec<f64>)) -> Self {
+        Self {
+            value: value.into_iter().map(|f| f.into()).collect(),
+            name: Some(name.to_string()),
+        }
+    }
+}
+
+impl From<(&str, Vec<i64>)> for DataPoint {
+    fn from((name, value): (&str, Vec<i64>)) -> Self {
+        Self {
+            value: value.into_iter().map(|n| n.into()).collect(),
+            name: Some(name.to_string()),
+        }
+    }
+}
+
+pub type DataFrame = Vec<DataPoint>;

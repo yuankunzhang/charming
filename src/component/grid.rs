@@ -4,19 +4,25 @@ use serde::Serialize;
 #[serde(rename_all = "camelCase")]
 pub struct Grid {
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub left: Option<String>,
+    left: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub top: Option<String>,
+    top: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub right: Option<String>,
+    right: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub bottom: Option<String>,
+    bottom: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub contain_label: Option<bool>,
+    height: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    width: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    contain_label: Option<bool>,
 }
 
 impl Grid {
@@ -26,6 +32,8 @@ impl Grid {
             top: None,
             right: None,
             bottom: None,
+            height: None,
+            width: None,
             contain_label: None,
         }
     }
@@ -47,6 +55,16 @@ impl Grid {
 
     pub fn bottom<S: Into<String>>(mut self, bottom: S) -> Self {
         self.bottom = Some(bottom.into());
+        self
+    }
+
+    pub fn height<S: Into<String>>(mut self, height: S) -> Self {
+        self.height = Some(height.into());
+        self
+    }
+
+    pub fn width<S: Into<String>>(mut self, width: S) -> Self {
+        self.width = Some(width.into());
         self
     }
 

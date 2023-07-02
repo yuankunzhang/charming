@@ -18,8 +18,9 @@ fn main() {
                 .boundary_gap(("0", "20%")),
         )
         .visual_map(
-            visual_map::VisualMap::new().piecewise(
-                visual_map::Piecewise::new()
+            visual_map::VisualMap::new().map(
+                visual_map::VisualMapItem::new()
+                    .type_("piecewise")
                     .show(false)
                     .dimension(0)
                     .series_index(0)

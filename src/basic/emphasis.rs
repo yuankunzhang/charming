@@ -1,5 +1,7 @@
 use serde::Serialize;
 
+use super::item_style::ItemStyle;
+
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
 pub enum Focus {
@@ -18,15 +20,26 @@ pub enum Focus {
 pub struct Emphasis {
     #[serde(skip_serializing_if = "Option::is_none")]
     focus: Option<Focus>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    item_style: Option<ItemStyle>,
 }
 
 impl Emphasis {
     pub fn new() -> Self {
-        Self { focus: None }
+        Self {
+            focus: None,
+            item_style: None,
+        }
     }
 
     pub fn focus(mut self, emphasis: Focus) -> Self {
         self.focus = Some(emphasis);
+        self
+    }
+
+    pub fn item_style(mut self, item_style: ItemStyle) -> Self {
+        self.item_style = Some(item_style);
         self
     }
 }
