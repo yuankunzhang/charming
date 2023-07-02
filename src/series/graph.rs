@@ -1,6 +1,9 @@
 use serde::{Deserialize, Serialize};
 
-use crate::basic::{coordinate::CoordinateSystem, label::Label, line_style::LineStyle};
+use crate::basic::{
+    coordinate::CoordinateSystem, label::Label, label_layout::LabelLayout, line_style::LineStyle,
+    scale_limit::ScaleLimit,
+};
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -235,6 +238,12 @@ pub struct Graph {
     label: Option<Label>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    label_layout: Option<LabelLayout>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    scale_limit: Option<ScaleLimit>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     line_style: Option<LineStyle>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
@@ -264,6 +273,8 @@ impl Graph {
             force: None,
             roam: None,
             label: None,
+            label_layout: None,
+            scale_limit: None,
             line_style: None,
             categories: vec![],
             links: vec![],
@@ -333,6 +344,16 @@ impl Graph {
 
     pub fn label(mut self, label: Label) -> Self {
         self.label = Some(label);
+        self
+    }
+
+    pub fn label_layout(mut self, label_layout: LabelLayout) -> Self {
+        self.label_layout = Some(label_layout);
+        self
+    }
+
+    pub fn scale_limit(mut self, scale_limit: ScaleLimit) -> Self {
+        self.scale_limit = Some(scale_limit);
         self
     }
 

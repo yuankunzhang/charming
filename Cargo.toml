@@ -25,6 +25,10 @@ name = "multiple_funnels"
 path = "examples/funnel/multiple_funnels.rs"
 
 [[example]]
+name = "hide_overlapped_label"
+path = "examples/graph/hide_overlapped_label.rs"
+
+[[example]]
 name = "les_miserables"
 path = "examples/graph/les_miserables.rs"
 
