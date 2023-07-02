@@ -1,63 +1,180 @@
 use serde::Serialize;
 
-use crate::basic::{color::Color, text_style::TextStyle};
+use crate::basic::{
+    color::Color,
+    link_target::LinkTarget,
+    padding::Padding,
+    text_align::{TextAlign, TextVerticalAlign},
+    text_style::TextStyle,
+};
 
+/// Title component, including main title and subtitle.
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Title {
     #[serde(skip_serializing_if = "Option::is_none")]
+    show: Option<bool>,
+
+    /// The main title text, supporting for `\n` for newlines.
+    #[serde(skip_serializing_if = "Option::is_none")]
     text: Option<String>,
 
+    /// The hyper link of main title text.
     #[serde(skip_serializing_if = "Option::is_none")]
-    subtext: Option<String>,
+    link: Option<String>,
 
+    /// Open the hyper link of main title in specified target.
     #[serde(skip_serializing_if = "Option::is_none")]
-    sublink: Option<String>,
+    target: Option<LinkTarget>,
 
-    #[serde(skip_serializing_if = "Option::is_none")]
-    left: Option<String>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
-    top: Option<String>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
-    right: Option<String>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
-    bottom: Option<String>,
-
+    /// The text style of main title.
     #[serde(skip_serializing_if = "Option::is_none")]
     text_style: Option<TextStyle>,
 
+    /// The sub title text, supporting for `\n` for newlines.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    subtext: Option<String>,
+
+    /// The hyper link of sub title text.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    sublink: Option<String>,
+
+    /// Open the hyper link of sub title in specified target.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    subtarget: Option<LinkTarget>,
+
+    /// The text style of sub title.
     #[serde(skip_serializing_if = "Option::is_none")]
     subtext_style: Option<TextStyle>,
 
+    /// The horizontal align of the component.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    text_align: Option<TextAlign>,
+
+    /// The vertical align of the component.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    text_vertical_align: Option<TextVerticalAlign>,
+
+    /// Title padding, the unit is px.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    padding: Option<Padding>,
+
+    /// The gap between the main title and the sub title, the unit is px.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    item_gap: Option<f64>,
+
+    /// The `zlevel` value of all graphical elements in.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    zlevel: Option<f64>,
+
+    /// The `z` value of all graphical elements in.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    z: Option<f64>,
+
+    /// Distance between title component and the left side of the container.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    left: Option<String>,
+
+    /// Distance between title component and the top side of the container.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    top: Option<String>,
+
+    /// Distance between title component and the right side of the container.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    right: Option<String>,
+
+    /// Distance between title component and the bottom side of the container.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    bottom: Option<String>,
+
+    /// Background color of title, default to be transparent.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    background_color: Option<Color>,
+
+    /// Border color of title.
     #[serde(skip_serializing_if = "Option::is_none")]
     border_color: Option<Color>,
 
+    /// Border width of title.
     #[serde(skip_serializing_if = "Option::is_none")]
     border_width: Option<f64>,
+
+    /// Border radius of title.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    border_radius: Option<f64>,
+
+    /// Shadow color of title.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    shadow_color: Option<Color>,
+
+    /// Size of shadow blur.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    shadow_blur: Option<f64>,
+
+    /// Offset distance on the horizontal direction of shadow.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    shadow_offset_x: Option<f64>,
+
+    /// Offset distance on the vertical direction of shadow.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    shadow_offset_y: Option<f64>,
 }
 
 impl Title {
     pub fn new() -> Self {
         Self {
+            show: None,
             text: None,
+            link: None,
+            target: None,
+            text_style: None,
             subtext: None,
             sublink: None,
+            subtarget: None,
+            subtext_style: None,
+            text_align: None,
+            text_vertical_align: None,
+            padding: None,
+            item_gap: None,
+            zlevel: None,
+            z: None,
             left: None,
             top: None,
             right: None,
             bottom: None,
-            text_style: None,
-            subtext_style: None,
+            background_color: None,
             border_color: None,
             border_width: None,
+            border_radius: None,
+            shadow_color: None,
+            shadow_blur: None,
+            shadow_offset_x: None,
+            shadow_offset_y: None,
         }
+    }
+
+    pub fn show(mut self, show: bool) -> Self {
+        self.show = Some(show);
+        self
     }
 
     pub fn text<S: Into<String>>(mut self, text: S) -> Self {
         self.text = Some(text.into());
+        self
+    }
+
+    pub fn link<S: Into<String>>(mut self, link: S) -> Self {
+        self.link = Some(link.into());
+        self
+    }
+
+    pub fn target(mut self, target: LinkTarget) -> Self {
+        self.target = Some(target);
+        self
+    }
+
+    pub fn text_style(mut self, text_style: TextStyle) -> Self {
+        self.text_style = Some(text_style);
         self
     }
 
@@ -68,6 +185,46 @@ impl Title {
 
     pub fn sublink<S: Into<String>>(mut self, sublink: S) -> Self {
         self.sublink = Some(sublink.into());
+        self
+    }
+
+    pub fn subtarget(mut self, subtarget: LinkTarget) -> Self {
+        self.subtarget = Some(subtarget);
+        self
+    }
+
+    pub fn subtext_style(mut self, subtext_style: TextStyle) -> Self {
+        self.subtext_style = Some(subtext_style);
+        self
+    }
+
+    pub fn text_align(mut self, text_align: TextAlign) -> Self {
+        self.text_align = Some(text_align);
+        self
+    }
+
+    pub fn text_vertical_align(mut self, text_vertical_align: TextVerticalAlign) -> Self {
+        self.text_vertical_align = Some(text_vertical_align);
+        self
+    }
+
+    pub fn padding<P: Into<Padding>>(mut self, padding: P) -> Self {
+        self.padding = Some(padding.into());
+        self
+    }
+
+    pub fn item_gap<F: Into<f64>>(mut self, item_gap: F) -> Self {
+        self.item_gap = Some(item_gap.into());
+        self
+    }
+
+    pub fn zlevel<F: Into<f64>>(mut self, zlevel: F) -> Self {
+        self.zlevel = Some(zlevel.into());
+        self
+    }
+
+    pub fn z<F: Into<f64>>(mut self, z: F) -> Self {
+        self.z = Some(z.into());
         self
     }
 
@@ -91,13 +248,8 @@ impl Title {
         self
     }
 
-    pub fn text_style(mut self, text_style: TextStyle) -> Self {
-        self.text_style = Some(text_style);
-        self
-    }
-
-    pub fn subtext_style(mut self, subtext_style: TextStyle) -> Self {
-        self.subtext_style = Some(subtext_style);
+    pub fn background_color<C: Into<Color>>(mut self, background_color: C) -> Self {
+        self.background_color = Some(background_color.into());
         self
     }
 
@@ -108,6 +260,31 @@ impl Title {
 
     pub fn border_width<F: Into<f64>>(mut self, border_width: F) -> Self {
         self.border_width = Some(border_width.into());
+        self
+    }
+
+    pub fn border_radius<F: Into<f64>>(mut self, border_radius: F) -> Self {
+        self.border_radius = Some(border_radius.into());
+        self
+    }
+
+    pub fn shadow_color<C: Into<Color>>(mut self, shadow_color: C) -> Self {
+        self.shadow_color = Some(shadow_color.into());
+        self
+    }
+
+    pub fn shadow_blur<F: Into<f64>>(mut self, shadow_blur: F) -> Self {
+        self.shadow_blur = Some(shadow_blur.into());
+        self
+    }
+
+    pub fn shadow_offset_x<F: Into<f64>>(mut self, shadow_offset_x: F) -> Self {
+        self.shadow_offset_x = Some(shadow_offset_x.into());
+        self
+    }
+
+    pub fn shadow_offset_y<F: Into<f64>>(mut self, shadow_offset_y: F) -> Self {
+        self.shadow_offset_y = Some(shadow_offset_y.into());
         self
     }
 }

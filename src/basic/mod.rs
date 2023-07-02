@@ -11,13 +11,16 @@ pub mod item_style;
 pub mod label;
 pub mod label_layout;
 pub mod line_style;
+pub mod link_target;
 pub mod orient;
+pub mod padding;
 pub mod scale_limit;
 pub mod single_axis;
 pub mod sort;
 pub mod split_area;
 pub mod split_line;
 pub mod symbol;
+pub mod text_align;
 pub mod text_style;
 
 pub enum Value {
