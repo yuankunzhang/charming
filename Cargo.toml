@@ -21,6 +21,10 @@ name = "boxplot_light_velocity"
 path = "examples/boxplot/boxplot_light_velocity.rs"
 
 [[example]]
+name = "basic_candlestick"
+path = "examples/candlestick/basic_candlestick.rs"
+
+[[example]]
 name = "multiple_funnels"
 path = "examples/funnel/multiple_funnels.rs"
 
