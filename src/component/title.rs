@@ -12,6 +12,7 @@ use crate::basic::{
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Title {
+    /// Whether to show the title component.
     #[serde(skip_serializing_if = "Option::is_none")]
     show: Option<bool>,
 
@@ -168,13 +169,13 @@ impl Title {
         self
     }
 
-    pub fn target(mut self, target: LinkTarget) -> Self {
-        self.target = Some(target);
+    pub fn target<T: Into<LinkTarget>>(mut self, target: T) -> Self {
+        self.target = Some(target.into());
         self
     }
 
-    pub fn text_style(mut self, text_style: TextStyle) -> Self {
-        self.text_style = Some(text_style);
+    pub fn text_style<S: Into<TextStyle>>(mut self, text_style: S) -> Self {
+        self.text_style = Some(text_style.into());
         self
     }
 
@@ -188,23 +189,26 @@ impl Title {
         self
     }
 
-    pub fn subtarget(mut self, subtarget: LinkTarget) -> Self {
-        self.subtarget = Some(subtarget);
+    pub fn subtarget<T: Into<LinkTarget>>(mut self, subtarget: T) -> Self {
+        self.subtarget = Some(subtarget.into());
         self
     }
 
-    pub fn subtext_style(mut self, subtext_style: TextStyle) -> Self {
-        self.subtext_style = Some(subtext_style);
+    pub fn subtext_style<S: Into<TextStyle>>(mut self, subtext_style: S) -> Self {
+        self.subtext_style = Some(subtext_style.into());
         self
     }
 
-    pub fn text_align(mut self, text_align: TextAlign) -> Self {
-        self.text_align = Some(text_align);
+    pub fn text_align<A: Into<TextAlign>>(mut self, text_align: A) -> Self {
+        self.text_align = Some(text_align.into());
         self
     }
 
-    pub fn text_vertical_align(mut self, text_vertical_align: TextVerticalAlign) -> Self {
-        self.text_vertical_align = Some(text_vertical_align);
+    pub fn text_vertical_align<A: Into<TextVerticalAlign>>(
+        mut self,
+        text_vertical_align: A,
+    ) -> Self {
+        self.text_vertical_align = Some(text_vertical_align.into());
         self
     }
 
@@ -253,8 +257,8 @@ impl Title {
         self
     }
 
-    pub fn border_color(mut self, border_color: Color) -> Self {
-        self.border_color = Some(border_color);
+    pub fn border_color<C: Into<Color>>(mut self, border_color: C) -> Self {
+        self.border_color = Some(border_color.into());
         self
     }
 

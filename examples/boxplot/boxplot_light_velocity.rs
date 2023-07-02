@@ -44,7 +44,7 @@ fn main() {
         .title(
             title::Title::new()
                 .text("upper: Q3 + 1.5 * IQR \nlower: Q1 - 1.5 * IQR")
-                .border_color("#999".into())
+                .border_color("#999")
                 .border_width(1)
                 .text_style(
                     text_style::TextStyle::new()
