@@ -4,6 +4,7 @@ use element::single_axis::SingleAxis;
 use serde::Serialize;
 
 pub mod component;
+pub mod datatype;
 pub mod element;
 pub mod renderer;
 pub mod series;

@@ -1,5 +1,6 @@
 use echarts::{
     component::{axis, visual_map},
+    datatype::value,
     element::{self, area_style, label, line_style, symbol},
     series::{line, Series},
     Chart,
@@ -54,15 +55,15 @@ fn main() {
                         ]),
                 )
                 .data(vec![
-                    vec![element::value("2019-10-10"), element::value(200)],
-                    vec![element::value("2019-10-11"), element::value(560)],
-                    vec![element::value("2019-10-12"), element::value(750)],
-                    vec![element::value("2019-10-13"), element::value(580)],
-                    vec![element::value("2019-10-14"), element::value(250)],
-                    vec![element::value("2019-10-15"), element::value(300)],
-                    vec![element::value("2019-10-16"), element::value(450)],
-                    vec![element::value("2019-10-17"), element::value(300)],
-                    vec![element::value("2019-10-18"), element::value(100)],
+                    vec![value("2019-10-10"), value(200)],
+                    vec![value("2019-10-11"), value(560)],
+                    vec![value("2019-10-12"), value(750)],
+                    vec![value("2019-10-13"), value(580)],
+                    vec![value("2019-10-14"), value(250)],
+                    vec![value("2019-10-15"), value(300)],
+                    vec![value("2019-10-16"), value(450)],
+                    vec![value("2019-10-17"), value(300)],
+                    vec![value("2019-10-18"), value(100)],
                 ]),
         ));
 

@@ -49,6 +49,10 @@ name = "basic_line"
 path = "examples/line/basic_line.rs"
 
 [[example]]
+name = "smoothed_line_chart"
+path = "examples/line/smoothed_line_chart.rs"
+
+[[example]]
 name = "smoothed_line"
 path = "examples/line/smoothed_line.rs"
 

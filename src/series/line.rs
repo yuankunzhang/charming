@@ -1,12 +1,12 @@
 use serde::ser::SerializeSeq;
 use serde::Serialize;
 
+use crate::datatype::{DataFrame, DataPoint, Value};
 use crate::element::area_style::AreaStyle;
 use crate::element::emphasis::Emphasis;
 use crate::element::label::Label;
 use crate::element::line_style::LineStyle;
 use crate::element::symbol::Symbol;
-use crate::element::{DataFrame, DataPoint, Value};
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
@@ -267,7 +267,7 @@ impl MarkLine {
     }
 }
 
-pub type Data = DataFrame;
+pub type DataType = DataFrame;
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -305,7 +305,7 @@ pub struct Line {
     #[serde(skip_serializing_if = "Option::is_none")]
     mark_line: Option<MarkLine>,
 
-    data: Data,
+    data: DataType,
 }
 
 impl Line {
