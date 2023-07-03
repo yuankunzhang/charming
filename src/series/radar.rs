@@ -2,38 +2,9 @@ use serde::Serialize;
 
 use crate::{
     component::tooltip::Tooltip,
+    datatype::{DataFrame, DataPoint},
     element::{area_style::AreaStyle, color::ColorBy, symbol::Symbol},
 };
-
-#[derive(Serialize)]
-#[serde(rename_all = "camelCase")]
-pub struct DataPoint {
-    name: String,
-    value: Vec<f64>,
-}
-
-impl DataPoint {
-    pub fn new<S: Into<String>, F: Into<f64>>(name: S, value: Vec<F>) -> Self {
-        Self {
-            name: name.into(),
-            value: value.into_iter().map(|v| v.into()).collect(),
-        }
-    }
-}
-
-impl From<(&str, Vec<f64>)> for DataPoint {
-    fn from((name, value): (&str, Vec<f64>)) -> Self {
-        Self::new(name, value)
-    }
-}
-
-impl From<(&str, Vec<i64>)> for DataPoint {
-    fn from((name, value): (&str, Vec<i64>)) -> Self {
-        Self::new(name, value.into_iter().map(|v| v as f64).collect())
-    }
-}
-
-pub type Data = Vec<DataPoint>;
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -69,7 +40,7 @@ pub struct Radar {
     area_style: Option<AreaStyle>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
-    data: Data,
+    data: DataFrame,
 }
 
 impl Radar {

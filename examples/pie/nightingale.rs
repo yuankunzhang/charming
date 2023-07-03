@@ -24,38 +24,14 @@ fn main() {
                 .center(("50%", "50%"))
                 .item_style(item_style::ItemStyle::new().border_radius(8))
                 .data(vec![
-                    pie::DataPoint {
-                        value: 40.0,
-                        name: Some("rose 1".to_string()),
-                    },
-                    pie::DataPoint {
-                        value: 38.0,
-                        name: Some("rose 2".to_string()),
-                    },
-                    pie::DataPoint {
-                        value: 32.0,
-                        name: Some("rose 3".to_string()),
-                    },
-                    pie::DataPoint {
-                        value: 30.0,
-                        name: Some("rose 4".to_string()),
-                    },
-                    pie::DataPoint {
-                        value: 28.0,
-                        name: Some("rose 5".to_string()),
-                    },
-                    pie::DataPoint {
-                        value: 26.0,
-                        name: Some("rose 6".to_string()),
-                    },
-                    pie::DataPoint {
-                        value: 22.0,
-                        name: Some("rose 7".to_string()),
-                    },
-                    pie::DataPoint {
-                        value: 18.0,
-                        name: Some("rose 8".to_string()),
-                    },
+                    (40.0, "rose 1"),
+                    (38.0, "rose 2"),
+                    (32.0, "rose 3"),
+                    (30.0, "rose 4"),
+                    (28.0, "rose 5"),
+                    (26.0, "rose 6"),
+                    (22.0, "rose 7"),
+                    (18.0, "rose 8"),
                 ]),
         ));
     println!("{}", chart.to_string());

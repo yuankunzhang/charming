@@ -267,8 +267,6 @@ impl MarkLine {
     }
 }
 
-pub type DataType = DataFrame;
-
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Line {
@@ -305,7 +303,8 @@ pub struct Line {
     #[serde(skip_serializing_if = "Option::is_none")]
     mark_line: Option<MarkLine>,
 
-    data: DataType,
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    data: DataFrame,
 }
 
 impl Line {

@@ -1,38 +1,11 @@
 use serde::Serialize;
 
-use crate::element::{
-    boundary_gap::BoundaryGap, color::ColorBy, coordinate::CoordinateSystem, label::Label, Value,
+use crate::{
+    datatype::{DataFrame, DataPoint},
+    element::{
+        boundary_gap::BoundaryGap, color::ColorBy, coordinate::CoordinateSystem, label::Label,
+    },
 };
-
-#[derive(Serialize)]
-#[serde(rename_all = "camelCase")]
-pub struct DataPoint(Value, f64, String);
-
-impl DataPoint {
-    pub fn new<V: Into<Value>, S: Into<String>, F: Into<f64>>(date: V, value: F, name: S) -> Self {
-        Self(date.into(), value.into(), name.into())
-    }
-}
-
-impl From<(&str, f64, &str)> for DataPoint {
-    fn from((date, value, name): (&str, f64, &str)) -> Self {
-        Self::new(date, value, name)
-    }
-}
-
-impl From<(f64, f64, &str)> for DataPoint {
-    fn from((date, value, name): (f64, f64, &str)) -> Self {
-        Self::new(date, value, name)
-    }
-}
-
-impl From<(i64, i64, &str)> for DataPoint {
-    fn from((date, value, name): (i64, i64, &str)) -> Self {
-        Self::new(date, value as f64, name)
-    }
-}
-
-pub type Data = Vec<DataPoint>;
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -74,7 +47,7 @@ pub struct ThemeRiver {
     label: Option<Label>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
-    data: Data,
+    data: DataFrame,
 }
 
 impl ThemeRiver {
@@ -151,8 +124,8 @@ impl ThemeRiver {
         self
     }
 
-    pub fn data(mut self, data: Data) -> Self {
-        self.data = data;
+    pub fn data<D: Into<DataPoint>>(mut self, data: Vec<D>) -> Self {
+        self.data = data.into_iter().map(|d| d.into()).collect();
         self
     }
 }

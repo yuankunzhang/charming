@@ -1,6 +1,7 @@
 use echarts::{
     component::{axis, grid, tooltip, visual_map},
-    element::{emphasis, item_style, label, orient, split_area, value, DataFrame, DataPoint},
+    datatype::{value, DataFrame, DataPoint},
+    element::{emphasis, item_style, label, orient, split_area},
     series::{heatmap, Series},
     Chart,
 };

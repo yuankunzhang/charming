@@ -1,21 +1,14 @@
 use std::vec;
 
-use serde::{Deserialize, Serialize};
+use serde::Serialize;
 
-use crate::element::{
-    background_style::BackgroundStyle, color::ColorBy, coordinate::CoordinateSystem,
-    emphasis::Emphasis, label::Label,
+use crate::{
+    datatype::{DataFrame, DataPoint},
+    element::{
+        background_style::BackgroundStyle, color::ColorBy, coordinate::CoordinateSystem,
+        emphasis::Emphasis, label::Label,
+    },
 };
-
-#[derive(Serialize, Deserialize)]
-pub struct DataPoint {
-    pub value: Vec<f64>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<String>,
-}
-
-pub type Data = Vec<DataPoint>;
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -62,7 +55,8 @@ pub struct Bar {
     #[serde(skip_serializing_if = "Option::is_none")]
     emphais: Option<Emphasis>,
 
-    data: Data,
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    data: DataFrame,
 }
 
 impl Bar {
@@ -151,13 +145,8 @@ impl Bar {
         self
     }
 
-    pub fn data<F: Into<f64>>(mut self, data: Vec<F>) -> Self {
-        for (i, d) in data.into_iter().enumerate() {
-            self.data.push(DataPoint {
-                value: vec![(i as f64).into(), d.into()],
-                name: None,
-            });
-        }
+    pub fn data<D: Into<DataPoint>>(mut self, data: Vec<D>) -> Self {
+        self.data = data.into_iter().map(|d| d.into()).collect();
         self
     }
 }

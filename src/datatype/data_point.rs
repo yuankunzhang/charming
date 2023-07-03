@@ -6,8 +6,12 @@ use super::Value;
 pub enum DataPoint {
     Value(Value),
     Values(Vec<Value>),
-    Item {
-        value: Vec<Value>,
+    ValueItem {
+        value: Value,
+        name: Option<String>,
+    },
+    ValuesItem {
+        values: Vec<Value>,
         name: Option<String>,
     },
 }
@@ -17,7 +21,19 @@ impl Serialize for DataPoint {
         match self {
             DataPoint::Value(v) => v.serialize(serializer),
             DataPoint::Values(v) => v.serialize(serializer),
-            DataPoint::Item { value, name } => {
+            DataPoint::ValueItem { value, name } => {
+                let mut s = serializer
+                    .serialize_struct("DataItem", if let Some(_) = name { 2 } else { 1 })?;
+                s.serialize_field("value", value)?;
+                if let Some(name) = name {
+                    s.serialize_field("name", name)?;
+                }
+                s.end()
+            }
+            DataPoint::ValuesItem {
+                values: value,
+                name,
+            } => {
                 let mut s = serializer
                     .serialize_struct("DataItem", if let Some(_) = name { 2 } else { 1 })?;
                 s.serialize_field("value", value)?;
@@ -48,13 +64,25 @@ where
     }
 }
 
+impl<V> From<(V, &str)> for DataPoint
+where
+    V: Into<Value>,
+{
+    fn from(v: (V, &str)) -> Self {
+        DataPoint::ValueItem {
+            value: v.0.into(),
+            name: Some(v.1.to_string()),
+        }
+    }
+}
+
 impl<V> From<(Vec<V>, &str)> for DataPoint
 where
     V: Into<Value>,
 {
     fn from(v: (Vec<V>, &str)) -> Self {
-        DataPoint::Item {
-            value: v.0.into_iter().map(Into::into).collect(),
+        DataPoint::ValuesItem {
+            values: v.0.into_iter().map(Into::into).collect(),
             name: Some(v.1.to_string()),
         }
     }
@@ -94,18 +122,43 @@ mod test {
     }
 
     #[test]
-    fn serialize_item() {
+    fn serialize_value_item() {
+        assert_eq!(
+            DataPoint::from((1, "Today")),
+            DataPoint::ValueItem {
+                value: 1.into(),
+                name: Some("Today".to_string())
+            }
+        );
+        assert_eq!(
+            DataPoint::from((3.14, "Today")),
+            DataPoint::ValueItem {
+                value: 3.14.into(),
+                name: Some("Today".to_string())
+            }
+        );
+        assert_eq!(
+            DataPoint::from(("Monday", "Today")),
+            DataPoint::ValueItem {
+                value: "Monday".into(),
+                name: Some("Today".to_string())
+            }
+        );
+    }
+
+    #[test]
+    fn serialize_values_item() {
         assert_eq!(
             DataPoint::from((vec![1, 2, 3], "Today")),
-            DataPoint::Item {
-                value: vec![1, 2, 3].into_iter().map(Value::from).collect(),
+            DataPoint::ValuesItem {
+                values: vec![1, 2, 3].into_iter().map(Value::from).collect(),
                 name: Some("Today".to_string())
             }
         );
         assert_eq!(
             DataPoint::from((vec![value(42), value(3.14), value("Monday")], "Today")),
-            DataPoint::Item {
-                value: vec![value(42), value(3.14), value("Monday")]
+            DataPoint::ValuesItem {
+                values: vec![value(42), value(3.14), value("Monday")]
                     .into_iter()
                     .map(Value::from)
                     .collect(),

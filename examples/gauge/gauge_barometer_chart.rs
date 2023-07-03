@@ -47,7 +47,7 @@ fn main() {
                 )
                 .title(gauge::GaugeTitle::new().offset_center(("0", "-50%")))
                 .detail(gauge::GaugeDetail::new().value_animation(true).precision(1))
-                .data(vec![("PLP", 58.46)]),
+                .data(vec![(58.46, "PLP")]),
         ))
         .series(Series::Gauge(
             gauge::Gauge::new()

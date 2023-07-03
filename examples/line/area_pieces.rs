@@ -1,7 +1,7 @@
 use echarts::{
     component::{axis, visual_map},
     datatype::value,
-    element::{self, area_style, label, line_style, symbol},
+    element::{area_style, label, line_style, symbol},
     series::{line, Series},
     Chart,
 };

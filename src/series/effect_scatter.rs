@@ -1,13 +1,15 @@
 use serde::Serialize;
 
-use crate::element::{
-    color::{Color, ColorBy},
-    coordinate::CoordinateSystem,
-    emphasis::Emphasis,
-    item_style::ItemStyle,
-    label::{Label, LabelLayout, LabelLine},
-    symbol::Symbol,
-    DataFrame, DataPoint,
+use crate::{
+    datatype::{DataFrame, DataPoint},
+    element::{
+        color::{Color, ColorBy},
+        coordinate::CoordinateSystem,
+        emphasis::Emphasis,
+        item_style::ItemStyle,
+        label::{Label, LabelLayout, LabelLine},
+        symbol::Symbol,
+    },
 };
 
 #[derive(Serialize)]
@@ -155,10 +157,9 @@ pub struct EffectScatter {
     #[serde(skip_serializing_if = "Option::is_none")]
     emphasis: Option<Emphasis>,
 
-    data: Data,
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    data: DataFrame,
 }
-
-pub type Data = DataFrame;
 
 impl EffectScatter {
     pub fn new() -> Self {

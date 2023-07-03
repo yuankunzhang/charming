@@ -143,6 +143,7 @@ pub struct Sunburst {
     #[serde(skip_serializing_if = "Vec::is_empty")]
     levels: Vec<Level>,
 
+    #[serde(skip_serializing_if = "Vec::is_empty")]
     data: Data,
 }
 

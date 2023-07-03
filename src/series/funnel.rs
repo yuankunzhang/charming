@@ -1,6 +1,9 @@
-use serde::{Deserialize, Serialize};
+use serde::Serialize;
 
-use crate::element::{color::ColorBy, label::Label, orient::Orient, sort::Sort};
+use crate::{
+    datatype::{DataFrame, DataPoint},
+    element::{color::ColorBy, label::Label, orient::Orient, sort::Sort},
+};
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
@@ -9,50 +12,6 @@ pub enum Align {
     Right,
     Center,
 }
-
-#[derive(Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct Datum {
-    value: f64,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
-    name: Option<String>,
-}
-
-impl Datum {
-    fn new<F: Into<f64>, S: Into<Option<String>>>(value: F, name: S) -> Self {
-        Self {
-            value: value.into(),
-            name: name.into(),
-        }
-    }
-}
-
-impl From<f64> for Datum {
-    fn from(value: f64) -> Self {
-        Self::new(value, None)
-    }
-}
-
-impl From<i64> for Datum {
-    fn from(value: i64) -> Self {
-        Self::new(value as f64, None)
-    }
-}
-
-impl From<(f64, &str)> for Datum {
-    fn from((value, name): (f64, &str)) -> Self {
-        Self::new(value, name.to_string())
-    }
-}
-
-impl From<(i64, &str)> for Datum {
-    fn from((value, name): (i64, &str)) -> Self {
-        Self::new(value as f64, name.to_string())
-    }
-}
-
-pub type Data = Vec<Datum>;
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -114,7 +73,8 @@ pub struct Funnel {
     #[serde(skip_serializing_if = "Option::is_none")]
     label: Option<Label>,
 
-    data: Data,
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    data: DataFrame,
 }
 
 impl Funnel {
@@ -233,7 +193,7 @@ impl Funnel {
         self
     }
 
-    pub fn data<D: Into<Datum>>(mut self, data: Vec<D>) -> Self {
+    pub fn data<D: Into<DataPoint>>(mut self, data: Vec<D>) -> Self {
         self.data = data.into_iter().map(|d| d.into()).collect();
         self
     }

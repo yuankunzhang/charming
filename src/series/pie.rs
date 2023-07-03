@@ -1,6 +1,9 @@
-use serde::{Deserialize, Serialize};
+use serde::Serialize;
 
-use crate::element::{color::ColorBy, coordinate::CoordinateSystem, item_style::ItemStyle};
+use crate::{
+    datatype::{DataFrame, DataPoint},
+    element::{color::ColorBy, coordinate::CoordinateSystem, item_style::ItemStyle},
+};
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
@@ -8,17 +11,6 @@ pub enum RoseType {
     Radius,
     Area,
 }
-
-#[derive(Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct DataPoint {
-    pub value: f64,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub name: Option<String>,
-}
-
-pub type Data = Vec<DataPoint>;
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -68,7 +60,8 @@ pub struct Pie {
     #[serde(skip_serializing_if = "Option::is_none")]
     radius: Option<(String, String)>,
 
-    data: Data,
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    data: DataFrame,
 }
 
 impl Pie {
@@ -163,8 +156,8 @@ impl Pie {
         self
     }
 
-    pub fn data(mut self, data: Data) -> Self {
-        self.data = data;
+    pub fn data<D: Into<DataPoint>>(mut self, data: Vec<D>) -> Self {
+        self.data = data.into_iter().map(|d| d.into()).collect();
         self
     }
 }

@@ -1,10 +1,9 @@
 use serde::Serialize;
 
-use crate::element::{
-    color::ColorBy, coordinate::CoordinateSystem, symbol::Symbol, DataFrame, DataPoint,
+use crate::{
+    datatype::{DataFrame, DataPoint},
+    element::{color::ColorBy, coordinate::CoordinateSystem, symbol::Symbol},
 };
-
-pub type Data = DataFrame;
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -36,7 +35,8 @@ pub struct Scatter {
     #[serde(skip_serializing_if = "Option::is_none")]
     symbol_size: Option<f64>,
 
-    data: Data,
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    data: DataFrame,
 }
 
 impl Scatter {

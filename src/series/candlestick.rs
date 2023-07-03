@@ -1,8 +1,9 @@
 use serde::Serialize;
 
-use crate::element::{color::ColorBy, coordinate::CoordinateSystem, DataFrame, DataPoint};
-
-pub type Data = DataFrame;
+use crate::{
+    datatype::{DataFrame, DataPoint},
+    element::{color::ColorBy, coordinate::CoordinateSystem},
+};
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -22,7 +23,8 @@ pub struct Candlestick {
     #[serde(skip_serializing_if = "Option::is_none")]
     legend_hover_link: Option<bool>,
 
-    data: Data,
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    data: DataFrame,
 }
 
 impl Candlestick {

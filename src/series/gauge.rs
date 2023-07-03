@@ -1,11 +1,14 @@
 use serde::Serialize;
 
-use crate::element::{
-    anchor::Anchor,
-    axis_style::{AxisLabel, AxisLine, AxisTick},
-    color::{Color, ColorBy},
-    pointer::Pointer,
-    split_line::SplitLine,
+use crate::{
+    datatype::{DataFrame, DataPoint},
+    element::{
+        anchor::Anchor,
+        axis_style::{AxisLabel, AxisLine, AxisTick},
+        color::{Color, ColorBy},
+        pointer::Pointer,
+        split_line::SplitLine,
+    },
 };
 
 #[derive(Serialize)]
@@ -122,36 +125,6 @@ impl GaugeTitle {
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct DataPoint {
-    name: String,
-    value: f64,
-}
-
-impl DataPoint {
-    pub fn new<S: Into<String>, F: Into<f64>>(name: S, value: F) -> Self {
-        Self {
-            name: name.into(),
-            value: value.into(),
-        }
-    }
-}
-
-impl From<(&str, f64)> for DataPoint {
-    fn from(tuple: (&str, f64)) -> Self {
-        Self::new(tuple.0, tuple.1)
-    }
-}
-
-impl From<(&str, i64)> for DataPoint {
-    fn from(tuple: (&str, i64)) -> Self {
-        Self::new(tuple.0, tuple.1 as f64)
-    }
-}
-
-pub type Data = Vec<DataPoint>;
-
-#[derive(Serialize)]
-#[serde(rename_all = "camelCase")]
 pub struct Gauge {
     #[serde(rename = "type")]
     type_: String,
@@ -219,7 +192,8 @@ pub struct Gauge {
     #[serde(skip_serializing_if = "Option::is_none")]
     title: Option<GaugeTitle>,
 
-    data: Data,
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    data: DataFrame,
 }
 
 impl Gauge {

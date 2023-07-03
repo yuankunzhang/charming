@@ -1,4 +1,5 @@
 use echarts::{
+    datatype::{value, DataPoint},
     element::{label, single_axis},
     series::{theme_river, Series},
     Chart,
@@ -102,7 +103,7 @@ fn main() {
         .map(|(name, data)| {
             data.iter()
                 .enumerate()
-                .map(|(idx, value)| theme_river::DataPoint::new(idx as i64, *value, *name))
+                .map(|(idx, v)| DataPoint::from(vec![value(idx as i64), value(*v), value(*name)]))
                 .collect::<Vec<_>>()
         })
         .flatten()

@@ -46,10 +46,8 @@ struct InputSelector {
     from_transform_result: u64,
 }
 
-pub type DataFrame = Vec<Vec<Datum>>;
-
 pub struct Dataset {
-    source: DataFrame,
+    source: Vec<Vec<Datum>>,
     transforms: Vec<serde_json::Value>,
     input_selector: InputSelector,
 }
@@ -96,7 +94,7 @@ impl Serialize for Dataset {
     fn serialize<S: serde::Serializer>(&self, serializer: S) -> Result<S::Ok, S::Error> {
         #[derive(Serialize)]
         struct SourceHelper<'a> {
-            source: &'a DataFrame,
+            source: &'a Vec<Vec<Datum>>,
         }
 
         #[derive(Serialize)]

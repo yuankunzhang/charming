@@ -1,11 +1,11 @@
 use serde::Serialize;
 
-use crate::element::{
-    coordinate::CoordinateSystem, emphasis::Emphasis, item_style::ItemStyle, label::Label,
-    DataFrame, DataPoint,
+use crate::{
+    datatype::{DataFrame, DataPoint},
+    element::{
+        coordinate::CoordinateSystem, emphasis::Emphasis, item_style::ItemStyle, label::Label,
+    },
 };
-
-pub type Data = DataFrame;
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -58,7 +58,8 @@ pub struct Heatmap {
     #[serde(skip_serializing_if = "Option::is_none")]
     emphasis: Option<Emphasis>,
 
-    data: Data,
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    data: DataFrame,
 }
 
 impl Heatmap {

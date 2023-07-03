@@ -60,15 +60,15 @@ fn main() {
                 .name("Radar")
                 .tooltip(tooltip::Tooltip::new().trigger(tooltip::Trigger::Item))
                 .area_style(area_style::AreaStyle::new())
-                .data(vec![("A Software", vec![60, 73, 85, 40])]),
+                .data(vec![(vec![60, 73, 85, 40], "A Software")]),
         ))
         .series(series::Series::Radar(
             series::radar::Radar::new()
                 .radar_index(1)
                 .area_style(area_style::AreaStyle::new())
                 .data(vec![
-                    ("A Phone", vec![85, 90, 90, 95, 95]),
-                    ("Another Phone", vec![95, 80, 95, 90, 93]),
+                    (vec![85, 90, 90, 95, 95], "A Phone"),
+                    (vec![95, 80, 95, 90, 93], "Another Phone"),
                 ]),
         ))
         .series(series::Series::Radar(
@@ -77,16 +77,16 @@ fn main() {
                 .area_style(area_style::AreaStyle::new())
                 .data(vec![
                     (
-                        "Precipitation",
                         vec![
                             2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 75.6, 82.2, 48.7, 18.8, 6.0, 2.3,
                         ],
+                        "Precipitation",
                     ),
                     (
-                        "Evaporation",
                         vec![
                             2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 35.6, 62.2, 32.6, 20.0, 6.4, 3.3,
                         ],
+                        "Evaporation",
                     ),
                 ]),
         ));
