@@ -1,43 +1,7 @@
 use serde::ser::SerializeSeq;
 use serde::Serialize;
 
-pub enum Datum {
-    Number(f64),
-    String(String),
-}
-
-impl Serialize for Datum {
-    fn serialize<S: serde::Serializer>(&self, serializer: S) -> Result<S::Ok, S::Error> {
-        match self {
-            Datum::Number(number) => number.serialize(serializer),
-            Datum::String(string) => string.serialize(serializer),
-        }
-    }
-}
-
-impl From<f64> for Datum {
-    fn from(number: f64) -> Self {
-        Datum::Number(number)
-    }
-}
-
-impl From<u64> for Datum {
-    fn from(number: u64) -> Self {
-        Datum::Number(number as f64)
-    }
-}
-
-impl From<&str> for Datum {
-    fn from(string: &str) -> Self {
-        Datum::String(string.to_string())
-    }
-}
-
-impl From<String> for Datum {
-    fn from(string: String) -> Self {
-        Datum::String(string)
-    }
-}
+use crate::datatype::Value;
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -47,7 +11,7 @@ struct InputSelector {
 }
 
 pub struct Dataset {
-    source: Vec<Vec<Datum>>,
+    source: Vec<Vec<Value>>,
     transforms: Vec<serde_json::Value>,
     input_selector: InputSelector,
 }
@@ -64,10 +28,10 @@ impl Dataset {
         }
     }
 
-    pub fn source<D: Into<Datum>>(mut self, source: Vec<Vec<D>>) -> Self {
+    pub fn source<V: Into<Value>>(mut self, source: Vec<Vec<V>>) -> Self {
         let source = source
             .into_iter()
-            .map(|row| row.into_iter().map(|datum| datum.into()).collect())
+            .map(|row| row.into_iter().map(|d| d.into()).collect())
             .collect();
         self.source = source;
         self
@@ -94,7 +58,7 @@ impl Serialize for Dataset {
     fn serialize<S: serde::Serializer>(&self, serializer: S) -> Result<S::Ok, S::Error> {
         #[derive(Serialize)]
         struct SourceHelper<'a> {
-            source: &'a Vec<Vec<Datum>>,
+            source: &'a Vec<Vec<Value>>,
         }
 
         #[derive(Serialize)]

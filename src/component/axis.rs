@@ -4,7 +4,7 @@ use crate::element::{boundary_gap::BoundaryGap, split_area::SplitArea, split_lin
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
-pub enum Type {
+pub enum AxisType {
     Value,
     Category,
     Time,
@@ -45,7 +45,7 @@ impl AxisLabel {
 pub struct Axis {
     #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(rename = "type")]
-    type_: Option<Type>,
+    type_: Option<AxisType>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     name: Option<String>,
@@ -66,6 +66,9 @@ pub struct Axis {
     split_line: Option<SplitLine>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    name_location: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     scale: Option<bool>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -82,12 +85,13 @@ impl Axis {
             axis_label: None,
             split_area: None,
             split_line: None,
+            name_location: None,
             scale: None,
             data: None,
         }
     }
 
-    pub fn type_(mut self, type_: Type) -> Self {
+    pub fn type_(mut self, type_: AxisType) -> Self {
         self.type_ = Some(type_);
         self
     }
@@ -119,6 +123,11 @@ impl Axis {
 
     pub fn split_line(mut self, split_line: SplitLine) -> Self {
         self.split_line = Some(split_line);
+        self
+    }
+
+    pub fn name_location<S: Into<String>>(mut self, name_location: S) -> Self {
+        self.name_location = Some(name_location.into());
         self
     }
 

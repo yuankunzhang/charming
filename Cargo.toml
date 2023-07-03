@@ -77,6 +77,10 @@ name = "area_pieces"
 path = "examples/line/area_pieces.rs"
 
 [[example]]
+name = "data_transform_filter"
+path = "examples/line/data_transform_filter.rs"
+
+[[example]]
 name = "nightingale"
 path = "examples/pie/nightingale.rs"
 

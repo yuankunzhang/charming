@@ -10,12 +10,12 @@ fn main() {
     let chart = Chart::new()
         .x_axis(
             axis::Axis::new()
-                .type_(axis::Type::Category)
+                .type_(axis::AxisType::Category)
                 .boundary_gap(false),
         )
         .y_axis(
             axis::Axis::new()
-                .type_(axis::Type::Value)
+                .type_(axis::AxisType::Value)
                 .boundary_gap(("0", "20%")),
         )
         .visual_map(

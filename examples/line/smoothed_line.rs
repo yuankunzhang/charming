@@ -8,10 +8,10 @@ fn main() {
     let chart = Chart::new()
         .x_axis(
             axis::Axis::new()
-                .type_(axis::Type::Category)
+                .type_(axis::AxisType::Category)
                 .data(vec!["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]),
         )
-        .y_axis(axis::Axis::new().type_(axis::Type::Value))
+        .y_axis(axis::Axis::new().type_(axis::AxisType::Value))
         .series(Series::Line(
             line::Line::new()
                 .smooth(0.5)

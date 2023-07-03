@@ -269,6 +269,53 @@ impl MarkLine {
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
+pub struct Encode {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    x: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    y: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    item_name: Option<String>,
+
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    tooltip: Vec<String>,
+}
+
+impl Encode {
+    pub fn new() -> Self {
+        Self {
+            x: None,
+            y: None,
+            item_name: None,
+            tooltip: vec![],
+        }
+    }
+
+    pub fn x<S: Into<String>>(mut self, x: S) -> Self {
+        self.x = Some(x.into());
+        self
+    }
+
+    pub fn y<S: Into<String>>(mut self, y: S) -> Self {
+        self.y = Some(y.into());
+        self
+    }
+
+    pub fn item_name<S: Into<String>>(mut self, item_name: S) -> Self {
+        self.item_name = Some(item_name.into());
+        self
+    }
+
+    pub fn tooltip<S: Into<String>>(mut self, tooltip: Vec<S>) -> Self {
+        self.tooltip = tooltip.into_iter().map(|s| s.into()).collect();
+        self
+    }
+}
+
+#[derive(Serialize)]
+#[serde(rename_all = "camelCase")]
 pub struct Line {
     #[serde(rename = "type")]
     type_: String,
@@ -303,6 +350,12 @@ pub struct Line {
     #[serde(skip_serializing_if = "Option::is_none")]
     mark_line: Option<MarkLine>,
 
+    #[serde(skip_serializing_if = "Option::is_none")]
+    dataset_id: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    encode: Option<Encode>,
+
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: DataFrame,
 }
@@ -321,6 +374,8 @@ impl Line {
             smooth: None,
             mark_point: None,
             mark_line: None,
+            dataset_id: None,
+            encode: None,
             data: vec![],
         }
     }
@@ -374,6 +429,16 @@ impl Line {
 
     pub fn mark_line(mut self, mark_line: MarkLine) -> Self {
         self.mark_line = Some(mark_line);
+        self
+    }
+
+    pub fn dataset_id<S: Into<String>>(mut self, dataset_id: S) -> Self {
+        self.dataset_id = Some(dataset_id.into());
+        self
+    }
+
+    pub fn encode<E: Into<Encode>>(mut self, encode: E) -> Self {
+        self.encode = Some(encode.into());
         self
     }
 

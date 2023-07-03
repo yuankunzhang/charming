@@ -25,13 +25,13 @@ fn main() {
         )
         .x_axis(
             axis::Axis::new()
-                .type_(axis::Type::Category)
+                .type_(axis::AxisType::Category)
                 .boundary_gap(false)
                 .data(vec!["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]),
         )
         .y_axis(
             axis::Axis::new()
-                .type_(axis::Type::Value)
+                .type_(axis::AxisType::Value)
                 .axis_label(axis::AxisLabel::new().formatter("{value} °C")),
         )
         .series(Series::Line(

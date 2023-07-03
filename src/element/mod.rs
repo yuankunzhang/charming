@@ -1,5 +1,3 @@
-use serde::{Deserialize, Serialize};
-
 pub mod anchor;
 pub mod area_style;
 pub mod axis_style;
