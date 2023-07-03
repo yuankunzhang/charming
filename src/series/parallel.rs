@@ -21,6 +21,9 @@ pub struct Parallel {
     type_: String,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    id: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     coordinate_system: Option<CoordinateSystem>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -67,6 +70,7 @@ impl Parallel {
     pub fn new() -> Self {
         Self {
             type_: "parallel".to_string(),
+            id: None,
             coordinate_system: None,
             parallel_index: None,
             name: None,
@@ -82,6 +86,11 @@ impl Parallel {
             progressive_chunk_mode: None,
             data: vec![],
         }
+    }
+
+    pub fn id<S: Into<String>>(mut self, id: S) -> Self {
+        self.id = Some(id.into());
+        self
     }
 
     pub fn coordinate_system<C: Into<CoordinateSystem>>(mut self, coordinate_system: C) -> Self {

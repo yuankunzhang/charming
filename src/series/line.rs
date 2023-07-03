@@ -321,6 +321,9 @@ pub struct Line {
     type_: String,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    id: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     name: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -364,6 +367,7 @@ impl Line {
     pub fn new() -> Self {
         Self {
             type_: "line".to_string(),
+            id: None,
             name: None,
             symbol: None,
             show_symbol: None,
@@ -378,6 +382,11 @@ impl Line {
             encode: None,
             data: vec![],
         }
+    }
+
+    pub fn id<S: Into<String>>(mut self, id: S) -> Self {
+        self.id = Some(id.into());
+        self
     }
 
     /// Series name used for displaying in `tooltip` and filtering with `legend`.

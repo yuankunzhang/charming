@@ -201,6 +201,9 @@ pub struct Graph {
     type_: String,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    id: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     name: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -262,6 +265,7 @@ impl Graph {
     pub fn new() -> Self {
         Self {
             type_: "graph".into(),
+            id: None,
             name: None,
             legend_hover_link: None,
             coordinate_system: None,
@@ -282,6 +286,11 @@ impl Graph {
             links: vec![],
             data: vec![],
         }
+    }
+
+    pub fn id<S: Into<String>>(mut self, id: S) -> Self {
+        self.id = Some(id.into());
+        self
     }
 
     pub fn name<S: Into<String>>(mut self, name: S) -> Self {

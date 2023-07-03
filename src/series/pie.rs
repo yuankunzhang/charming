@@ -19,6 +19,9 @@ pub struct Pie {
     type_: String,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    id: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     name: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -68,6 +71,7 @@ impl Pie {
     pub fn new() -> Pie {
         Pie {
             type_: "pie".to_string(),
+            id: None,
             name: None,
             color_by: None,
             legend_hover_link: None,
@@ -84,6 +88,11 @@ impl Pie {
             radius: None,
             data: vec![],
         }
+    }
+
+    pub fn id<S: Into<String>>(mut self, id: S) -> Self {
+        self.id = Some(id.into());
+        self
     }
 
     pub fn name<S: Into<String>>(mut self, name: S) -> Self {

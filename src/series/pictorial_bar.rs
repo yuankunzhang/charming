@@ -16,6 +16,9 @@ pub struct PictorialBar {
     type_: String,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    id: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     name: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]

@@ -47,7 +47,11 @@ pub type Data = Vec<Node>;
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Tree {
+    #[serde(rename = "type")]
     type_: String,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    id: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     name: Option<String>,
@@ -114,6 +118,7 @@ impl Tree {
     pub fn new() -> Self {
         Self {
             type_: "tree".into(),
+            id: None,
             name: None,
             z_level: None,
             z: None,
@@ -135,6 +140,11 @@ impl Tree {
             leaves: None,
             data: vec![],
         }
+    }
+
+    pub fn id<S: Into<String>>(mut self, id: S) -> Self {
+        self.id = Some(id.into());
+        self
     }
 
     pub fn name<S: Into<String>>(mut self, name: S) -> Self {

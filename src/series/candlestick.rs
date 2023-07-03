@@ -12,6 +12,9 @@ pub struct Candlestick {
     type_: String,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    id: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     name: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -31,12 +34,18 @@ impl Candlestick {
     pub fn new() -> Self {
         Self {
             type_: "candlestick".to_string(),
+            id: None,
             name: None,
             coordiate_system: None,
             color_by: None,
             legend_hover_link: None,
             data: vec![],
         }
+    }
+
+    pub fn id<S: Into<String>>(mut self, id: S) -> Self {
+        self.id = Some(id.into());
+        self
     }
 
     pub fn name<S: Into<String>>(mut self, name: S) -> Self {

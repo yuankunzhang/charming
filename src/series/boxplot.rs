@@ -9,6 +9,9 @@ pub struct Boxplot {
     type_: String,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    id: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     name: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -31,6 +34,7 @@ impl Boxplot {
     pub fn new() -> Boxplot {
         Boxplot {
             type_: String::from("boxplot"),
+            id: None,
             name: None,
             coordinate_system: None,
             color_by: None,
@@ -38,6 +42,11 @@ impl Boxplot {
             hover_animation: None,
             dataset_index: None,
         }
+    }
+
+    pub fn id<S: Into<String>>(mut self, id: S) -> Boxplot {
+        self.id = Some(id.into());
+        self
     }
 
     pub fn name<S: Into<String>>(mut self, name: S) -> Boxplot {
