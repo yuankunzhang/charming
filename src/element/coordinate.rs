@@ -8,4 +8,5 @@ pub enum CoordinateSystem {
     Single,
     Geo,
     Calendar,
+    Parallel,
 }

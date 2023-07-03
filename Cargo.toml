@@ -81,6 +81,10 @@ name = "data_transform_filter"
 path = "examples/line/data_transform_filter.rs"
 
 [[example]]
+name = "basic_parallel"
+path = "examples/parallel/basic_parallel.rs"
+
+[[example]]
 name = "nightingale"
 path = "examples/pie/nightingale.rs"
 

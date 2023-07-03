@@ -1,4 +1,5 @@
 use component::dataset::Dataset;
+use component::parallel_axis::ParallelAxis;
 use component::visual_map::VisualMap;
 use element::single_axis::SingleAxis;
 use serde::Serialize;
@@ -48,6 +49,9 @@ pub struct Chart {
     #[serde(skip_serializing_if = "Option::is_none")]
     single_axis: Option<SingleAxis>,
 
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    parallel_axis: Vec<ParallelAxis>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     visual_map: Option<VisualMap>,
 
@@ -76,6 +80,7 @@ impl Chart {
             x_axis: None,
             y_axis: None,
             single_axis: None,
+            parallel_axis: vec![],
             visual_map: None,
             dataset: None,
             radars: vec![],
@@ -121,6 +126,11 @@ impl Chart {
 
     pub fn single_axis(mut self, single_axis: SingleAxis) -> Self {
         self.single_axis = Some(single_axis);
+        self
+    }
+
+    pub fn parallel_axis(mut self, parallel_axis: ParallelAxis) -> Self {
+        self.parallel_axis.push(parallel_axis);
         self
     }
 

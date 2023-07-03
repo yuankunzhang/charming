@@ -9,6 +9,7 @@ pub mod graphic;
 pub mod grid;
 pub mod legend;
 pub mod parallel;
+pub mod parallel_axis;
 pub mod polar;
 pub mod radar_coordinate;
 pub mod timeline;
