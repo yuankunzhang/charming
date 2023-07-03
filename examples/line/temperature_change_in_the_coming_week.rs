@@ -1,6 +1,6 @@
 use echarts::{
     component::{axis, legend, title, toolbox, tooltip},
-    element::{label, symbol::Symbol},
+    element::{label, mark_line, mark_point, symbol::Symbol},
     series::{line, Series},
     Chart,
 };
@@ -38,37 +38,39 @@ fn main() {
             line::Line::new()
                 .name("Highest")
                 .data(vec![10, 11, 13, 11, 12, 12, 9])
-                .mark_point(line::MarkPoint::new().data(vec![("max", "Max"), ("min", "Min")]))
-                .mark_line(
-                    line::MarkLine::new().data(vec![line::MarkLineVariant::Simple(
-                        line::MarkLineData::new()
-                            .type_(line::MarkLineDataType::Average)
+                .mark_point(mark_point::MarkPoint::new().data(vec![("max", "Max"), ("min", "Min")]))
+                .mark_line(mark_line::MarkLine::new().data(
+                    vec![mark_line::MarkLineVariant::Simple(
+                        mark_line::MarkLineData::new()
+                            .type_(mark_line::MarkLineDataType::Average)
                             .name("Avg"),
-                    )]),
-                ),
+                    )],
+                )),
         ))
         .series(Series::Line(
             line::Line::new()
                 .name("Lowest")
                 .data(vec![1, -2, 2, 5, 3, 2, 0])
-                .mark_point(line::MarkPoint::new().data(vec![line::MarkPointData::new()
+                .mark_point(mark_point::MarkPoint::new().data(
+                    vec![mark_point::MarkPointData::new()
                         .name("周最低")
                         .value(-2)
                         .x_axis(1)
-                        .y_axis(-1.5)]))
-                .mark_line(line::MarkLine::new().data(vec![
-                        line::MarkLineVariant::Simple(
-                            line::MarkLineData::new()
-                                .type_(line::MarkLineDataType::Average)
+                        .y_axis(-1.5)],
+                ))
+                .mark_line(mark_line::MarkLine::new().data(vec![
+                        mark_line::MarkLineVariant::Simple(
+                            mark_line::MarkLineData::new()
+                                .type_(mark_line::MarkLineDataType::Average)
                                 .name("Avg"),
                         ),
-                        line::MarkLineVariant::StartToEnd(
-                            line::MarkLineData::new()
+                        mark_line::MarkLineVariant::StartToEnd(
+                            mark_line::MarkLineData::new()
                                 .symbol(Symbol::None)
                                 .x("90%")
                                 .y_axis("max"),
-                            line::MarkLineData::new()
-                                .type_(line::MarkLineDataType::Max)
+                            mark_line::MarkLineData::new()
+                                .type_(mark_line::MarkLineDataType::Max)
                                 .name("最高点")
                                 .symbol(Symbol::Circle)
                                 .label(

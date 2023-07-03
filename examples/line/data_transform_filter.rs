@@ -44,4 +44,6 @@ fn main() {
                 ),
         ))
         .dataset(dataset);
+
+    println!("{}", chart.to_string());
 }

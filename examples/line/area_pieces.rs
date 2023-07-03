@@ -1,7 +1,7 @@
 use echarts::{
     component::{axis, visual_map},
     datatype::value,
-    element::{area_style, label, line_style, symbol},
+    element::{area_style, label, line_style, mark_line, symbol},
     series::{line, Series},
     Chart,
 };
@@ -44,14 +44,22 @@ fn main() {
                 .line_style(line_style::LineStyle::new().width(5).color("#5470C6"))
                 .area_style(area_style::AreaStyle::new())
                 .mark_line(
-                    line::MarkLine::new()
+                    mark_line::MarkLine::new()
                         .symbol(vec![symbol::Symbol::None, symbol::Symbol::None])
                         .label(label::Label::new().show(false))
                         .data(vec![
-                            line::MarkLineVariant::Simple(line::MarkLineData::new().x_axis(1)),
-                            line::MarkLineVariant::Simple(line::MarkLineData::new().x_axis(3)),
-                            line::MarkLineVariant::Simple(line::MarkLineData::new().x_axis(5)),
-                            line::MarkLineVariant::Simple(line::MarkLineData::new().x_axis(7)),
+                            mark_line::MarkLineVariant::Simple(
+                                mark_line::MarkLineData::new().x_axis(1),
+                            ),
+                            mark_line::MarkLineVariant::Simple(
+                                mark_line::MarkLineData::new().x_axis(3),
+                            ),
+                            mark_line::MarkLineVariant::Simple(
+                                mark_line::MarkLineData::new().x_axis(5),
+                            ),
+                            mark_line::MarkLineVariant::Simple(
+                                mark_line::MarkLineData::new().x_axis(7),
+                            ),
                         ]),
                 )
                 .data(vec![
