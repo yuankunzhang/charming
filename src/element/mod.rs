@@ -14,6 +14,7 @@ pub mod item_style;
 pub mod label;
 pub mod line_style;
 pub mod link_target;
+pub mod mark_area;
 pub mod mark_line;
 pub mod mark_point;
 pub mod orient;
