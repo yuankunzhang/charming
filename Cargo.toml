@@ -25,10 +25,6 @@ name = "basic_candlestick"
 path = "examples/candlestick/basic_candlestick.rs"
 
 [[example]]
-name = "effect_scatter_chart"
-path = "examples/effect_scatter/effect_scatter_chart.rs"
-
-[[example]]
 name = "multiple_funnels"
 path = "examples/funnel/multiple_funnels.rs"
 
@@ -95,6 +91,10 @@ path = "examples/sankey/node_align_left_sankey.rs"
 [[example]]
 name = "basic_scatter_chart"
 path = "examples/scatter/basic_scatter_chart.rs"
+
+[[example]]
+name = "effect_scatter_chart"
+path = "examples/scatter/effect_scatter_chart.rs"
 
 [[example]]
 name = "drink_flavors"
