@@ -29,8 +29,8 @@ name = "multiple_funnels"
 path = "examples/funnel/multiple_funnels.rs"
 
 [[example]]
-name = "gauge_barometer_chart"
-path = "examples/gauge/gauge_barometer_chart.rs"
+name = "gauge_barometer"
+path = "examples/gauge/gauge_barometer.rs"
 
 [[example]]
 name = "hide_overlapped_label"
@@ -47,10 +47,6 @@ path = "examples/heatmap/heatmap_on_cartesian.rs"
 [[example]]
 name = "basic_line"
 path = "examples/line/basic_line.rs"
-
-[[example]]
-name = "smoothed_line_chart"
-path = "examples/line/smoothed_line_chart.rs"
 
 [[example]]
 name = "smoothed_line"
@@ -93,12 +89,12 @@ name = "node_align_left_sankey"
 path = "examples/sankey/node_align_left_sankey.rs"
 
 [[example]]
-name = "basic_scatter_chart"
-path = "examples/scatter/basic_scatter_chart.rs"
+name = "basic_scatter"
+path = "examples/scatter/basic_scatter.rs"
 
 [[example]]
-name = "effect_scatter_chart"
-path = "examples/scatter/effect_scatter_chart.rs"
+name = "effect_scatter"
+path = "examples/scatter/effect_scatter.rs"
 
 [[example]]
 name = "drink_flavors"
