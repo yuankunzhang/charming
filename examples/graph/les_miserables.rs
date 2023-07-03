@@ -1,8 +1,8 @@
-use echarts::basic::label;
-use echarts::basic::line_style;
 use echarts::component::legend;
 use echarts::component::title;
 use echarts::component::tooltip;
+use echarts::element::label;
+use echarts::element::line_style;
 use echarts::series::graph;
 use echarts::series::Series;
 use echarts::Chart;

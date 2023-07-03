@@ -1,15 +1,14 @@
-use basic::single_axis::SingleAxis;
 use component::dataset::Dataset;
 use component::visual_map::VisualMap;
+use element::single_axis::SingleAxis;
 use serde::Serialize;
 
-pub mod basic;
 pub mod component;
+pub mod element;
 pub mod renderer;
 pub mod series;
 pub mod style;
 
-use basic::color::Color;
 use component::axis::Axis;
 use component::grid::Grid;
 use component::legend::Legend;
@@ -17,6 +16,7 @@ use component::radar_coordinate::RadarCoordinate;
 use component::title::Title;
 use component::toolbox::Toolbox;
 use component::tooltip::Tooltip;
+use element::color::Color;
 use series::Series;
 
 #[derive(Serialize)]

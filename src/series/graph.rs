@@ -1,7 +1,9 @@
 use serde::{Deserialize, Serialize};
 
-use crate::basic::{
-    coordinate::CoordinateSystem, label::Label, label_layout::LabelLayout, line_style::LineStyle,
+use crate::element::{
+    coordinate::CoordinateSystem,
+    label::{Label, LabelLayout},
+    line_style::LineStyle,
     scale_limit::ScaleLimit,
 };
 

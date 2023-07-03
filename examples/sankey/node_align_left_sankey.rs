@@ -1,7 +1,7 @@
-use echarts::basic::emphasis;
-use echarts::basic::line_style;
 use echarts::component::title;
 use echarts::component::tooltip;
+use echarts::element::emphasis;
+use echarts::element::line_style;
 use echarts::series::sankey;
 use echarts::series::Series;
 use echarts::Chart;

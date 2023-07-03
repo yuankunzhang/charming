@@ -1,6 +1,6 @@
 use echarts::{
-    basic::{label, label_layout, line_style, scale_limit},
     component::{legend, tooltip},
+    element::{label, line_style, scale_limit},
     series::{graph, Series},
     Chart,
 };
@@ -23,7 +23,7 @@ fn main() {
                         .position(label::Position::Right)
                         .formatter("{b}"),
                 )
-                .label_layout(label_layout::LabelLayout::new().hide_overlap(true))
+                .label_layout(label::LabelLayout::new().hide_overlap(true))
                 .scale_limit(scale_limit::ScaleLimit::new().min(0.4).max(2.0))
                 .line_style(line_style::LineStyle::new().color("source").curveness(0.3))
                 .data(data),

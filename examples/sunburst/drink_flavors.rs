@@ -1,6 +1,6 @@
 use echarts::{
-    basic::{emphasis, item_style, label, sort, text_style},
     component::title,
+    element::{emphasis, item_style, label, sort, text_style},
     series::{sunburst, Series},
     Chart,
 };

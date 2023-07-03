@@ -1,6 +1,6 @@
 use serde::Serialize;
 
-use crate::basic::{
+use crate::element::{
     color::Color,
     link_target::LinkTarget,
     padding::Padding,

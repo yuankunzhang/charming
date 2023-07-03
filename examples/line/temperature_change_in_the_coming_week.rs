@@ -1,6 +1,6 @@
 use echarts::{
-    basic::{label, symbol::Symbol},
     component::{axis, legend, title, toolbox, tooltip},
+    element::{label, symbol::Symbol},
     series::{line, Series},
     Chart,
 };

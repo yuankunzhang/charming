@@ -1,6 +1,6 @@
 use serde::Serialize;
 
-use crate::basic::{
+use crate::element::{
     anchor::Anchor,
     axis_style::{AxisLabel, AxisLine, AxisTick},
     color::{Color, ColorBy},

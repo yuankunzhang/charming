@@ -1,6 +1,6 @@
 use echarts::{
-    basic::{area_style, emphasis},
     component::{axis, grid, legend, title, toolbox, tooltip},
+    element::{area_style, emphasis},
     series::{line, Series},
     Chart,
 };

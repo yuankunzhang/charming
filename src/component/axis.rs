@@ -1,6 +1,6 @@
 use serde::Serialize;
 
-use crate::basic::{boundary_gap::BoundaryGap, split_area::SplitArea, split_line::SplitLine};
+use crate::element::{boundary_gap::BoundaryGap, split_area::SplitArea, split_line::SplitLine};
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
@@ -66,6 +66,9 @@ pub struct Axis {
     split_line: Option<SplitLine>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    scale: Option<bool>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     data: Option<Vec<String>>,
 }
 
@@ -79,6 +82,7 @@ impl Axis {
             axis_label: None,
             split_area: None,
             split_line: None,
+            scale: None,
             data: None,
         }
     }
@@ -115,6 +119,11 @@ impl Axis {
 
     pub fn split_line(mut self, split_line: SplitLine) -> Self {
         self.split_line = Some(split_line);
+        self
+    }
+
+    pub fn scale(mut self, scale: bool) -> Self {
+        self.scale = Some(scale);
         self
     }
 

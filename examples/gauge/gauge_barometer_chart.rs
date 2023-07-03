@@ -1,5 +1,5 @@
 use echarts::{
-    basic::{anchor, axis_style, item_style, line_style, pointer, split_line},
+    element::{anchor, axis_style, item_style, line_style, pointer, split_line},
     series::{gauge, Series},
     Chart,
 };

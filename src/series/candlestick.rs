@@ -1,6 +1,6 @@
 use serde::Serialize;
 
-use crate::basic::{color::ColorBy, coordinate::CoordinateSystem, DataFrame, DataPoint};
+use crate::element::{color::ColorBy, coordinate::CoordinateSystem, DataFrame, DataPoint};
 
 pub type Data = DataFrame;
 

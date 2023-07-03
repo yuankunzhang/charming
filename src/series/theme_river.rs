@@ -1,6 +1,6 @@
 use serde::Serialize;
 
-use crate::basic::{
+use crate::element::{
     boundary_gap::BoundaryGap, color::ColorBy, coordinate::CoordinateSystem, label::Label, Value,
 };
 

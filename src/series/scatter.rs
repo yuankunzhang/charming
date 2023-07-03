@@ -1,6 +1,6 @@
 use serde::Serialize;
 
-use crate::basic::{
+use crate::element::{
     color::ColorBy, coordinate::CoordinateSystem, symbol::Symbol, DataFrame, DataPoint,
 };
 

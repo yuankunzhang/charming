@@ -1,6 +1,6 @@
 use echarts::{
-    basic::{label, orient::Orient, sort},
     component::{legend, title, toolbox, tooltip},
+    element::{label, orient::Orient, sort},
     series::{funnel, Series},
     Chart,
 };

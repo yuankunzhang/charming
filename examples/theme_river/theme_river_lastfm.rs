@@ -1,5 +1,5 @@
 use echarts::{
-    basic::{label, single_axis},
+    element::{label, single_axis},
     series::{theme_river, Series},
     Chart,
 };

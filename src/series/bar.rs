@@ -2,7 +2,7 @@ use std::vec;
 
 use serde::{Deserialize, Serialize};
 
-use crate::basic::{
+use crate::element::{
     background_style::BackgroundStyle, color::ColorBy, coordinate::CoordinateSystem,
     emphasis::Emphasis, label::Label,
 };

@@ -6,11 +6,11 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-deno_core = "0.193.0"
+deno_core = "0.194.0"
 handlebars = "4.3.7"
 serde = "1.0.164"
 serde_json = "1.0.99"
-serde_v8 = "0.104.0"
+serde_v8 = "0.105.0"
 
 [[example]]
 name = "bar_with_background"
@@ -23,6 +23,10 @@ path = "examples/boxplot/boxplot_light_velocity.rs"
 [[example]]
 name = "basic_candlestick"
 path = "examples/candlestick/basic_candlestick.rs"
+
+[[example]]
+name = "effect_scatter_chart"
+path = "examples/effect_scatter/effect_scatter_chart.rs"
 
 [[example]]
 name = "multiple_funnels"

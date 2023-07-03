@@ -1,6 +1,6 @@
 use serde::Serialize;
 
-use super::color::Color;
+use super::{color::Color, line_style::LineStyle};
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -158,6 +158,109 @@ impl Label {
 
     pub fn silent(mut self, silent: bool) -> Self {
         self.silent = Some(silent);
+        self
+    }
+}
+
+#[derive(Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct LabelLine {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    show: Option<bool>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    show_above: Option<bool>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    length2: Option<f64>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    smooth: Option<bool>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    min_turn_angle: Option<f64>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    line_style: Option<LineStyle>,
+}
+
+impl LabelLine {
+    pub fn new() -> Self {
+        Self {
+            show: None,
+            show_above: None,
+            length2: None,
+            smooth: None,
+            min_turn_angle: None,
+            line_style: None,
+        }
+    }
+
+    pub fn show(mut self, show: bool) -> Self {
+        self.show = Some(show);
+        self
+    }
+
+    pub fn show_above(mut self, show_above: bool) -> Self {
+        self.show_above = Some(show_above);
+        self
+    }
+
+    pub fn length2<F: Into<f64>>(mut self, length2: F) -> Self {
+        self.length2 = Some(length2.into());
+        self
+    }
+
+    pub fn smooth(mut self, smooth: bool) -> Self {
+        self.smooth = Some(smooth);
+        self
+    }
+
+    pub fn min_turn_angle<F: Into<f64>>(mut self, min_turn_angle: F) -> Self {
+        self.min_turn_angle = Some(min_turn_angle.into());
+        self
+    }
+
+    pub fn line_style<S: Into<LineStyle>>(mut self, line_style: S) -> Self {
+        self.line_style = Some(line_style.into());
+        self
+    }
+}
+
+#[derive(Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct LabelLayout {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    hide_overlap: Option<bool>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    overlap: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    rotate: Option<f64>,
+}
+
+impl LabelLayout {
+    pub fn new() -> Self {
+        Self {
+            hide_overlap: None,
+            overlap: None,
+            rotate: None,
+        }
+    }
+
+    pub fn hide_overlap(mut self, hide_overlap: bool) -> Self {
+        self.hide_overlap = Some(hide_overlap);
+        self
+    }
+
+    pub fn overlap<S: Into<String>>(mut self, overlap: S) -> Self {
+        self.overlap = Some(overlap.into());
+        self
+    }
+
+    pub fn rotate<F: Into<f64>>(mut self, rotate: F) -> Self {
+        self.rotate = Some(rotate.into());
         self
     }
 }

@@ -1,6 +1,6 @@
 use echarts::{
-    basic::area_style,
     component::axis,
+    element::area_style,
     series::{line, Series},
     Chart,
 };

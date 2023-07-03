@@ -1,6 +1,6 @@
 use serde::Serialize;
 
-use crate::basic::{
+use crate::element::{
     coordinate::CoordinateSystem, emphasis::Emphasis, item_style::ItemStyle, label::Label,
     DataFrame, DataPoint,
 };

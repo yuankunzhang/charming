@@ -1,8 +1,8 @@
-use echarts::basic::area_style;
 use echarts::component::legend;
 use echarts::component::radar_coordinate;
 use echarts::component::title;
 use echarts::component::tooltip;
+use echarts::element::area_style;
 use echarts::series;
 use echarts::Chart;
 

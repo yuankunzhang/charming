@@ -1,6 +1,6 @@
 use echarts::{
-    basic::{self, area_style, label, line_style, symbol},
     component::{axis, visual_map},
+    element::{self, area_style, label, line_style, symbol},
     series::{line, Series},
     Chart,
 };
@@ -54,15 +54,15 @@ fn main() {
                         ]),
                 )
                 .data(vec![
-                    vec![basic::value("2019-10-10"), basic::value(200)],
-                    vec![basic::value("2019-10-11"), basic::value(560)],
-                    vec![basic::value("2019-10-12"), basic::value(750)],
-                    vec![basic::value("2019-10-13"), basic::value(580)],
-                    vec![basic::value("2019-10-14"), basic::value(250)],
-                    vec![basic::value("2019-10-15"), basic::value(300)],
-                    vec![basic::value("2019-10-16"), basic::value(450)],
-                    vec![basic::value("2019-10-17"), basic::value(300)],
-                    vec![basic::value("2019-10-18"), basic::value(100)],
+                    vec![element::value("2019-10-10"), element::value(200)],
+                    vec![element::value("2019-10-11"), element::value(560)],
+                    vec![element::value("2019-10-12"), element::value(750)],
+                    vec![element::value("2019-10-13"), element::value(580)],
+                    vec![element::value("2019-10-14"), element::value(250)],
+                    vec![element::value("2019-10-15"), element::value(300)],
+                    vec![element::value("2019-10-16"), element::value(450)],
+                    vec![element::value("2019-10-17"), element::value(300)],
+                    vec![element::value("2019-10-18"), element::value(100)],
                 ]),
         ));
 

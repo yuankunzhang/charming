@@ -1,12 +1,12 @@
 use serde::ser::SerializeSeq;
 use serde::Serialize;
 
-use crate::basic::area_style::AreaStyle;
-use crate::basic::emphasis::Emphasis;
-use crate::basic::label::Label;
-use crate::basic::line_style::LineStyle;
-use crate::basic::symbol::Symbol;
-use crate::basic::{DataFrame, DataPoint, Value};
+use crate::element::area_style::AreaStyle;
+use crate::element::emphasis::Emphasis;
+use crate::element::label::Label;
+use crate::element::line_style::LineStyle;
+use crate::element::symbol::Symbol;
+use crate::element::{DataFrame, DataPoint, Value};
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]

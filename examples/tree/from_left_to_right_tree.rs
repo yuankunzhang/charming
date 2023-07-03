@@ -1,6 +1,6 @@
-use echarts::basic::emphasis;
-use echarts::basic::label;
 use echarts::component::tooltip;
+use echarts::element::emphasis;
+use echarts::element::label;
 use echarts::series::tree;
 use echarts::series::Series;
 use echarts::Chart;

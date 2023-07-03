@@ -1,6 +1,6 @@
 use serde::Serialize;
 
-use crate::basic::{
+use crate::element::{
     item_style::ItemStyle, label::Align, line_style::LineStyle, orient::Orient, padding::Padding,
 };
 

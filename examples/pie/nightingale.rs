@@ -1,6 +1,6 @@
 use echarts::{
-    basic::item_style,
     component::{legend, toolbox},
+    element::item_style,
     series::{pie, Series},
     Chart,
 };

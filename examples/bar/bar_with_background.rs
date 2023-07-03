@@ -1,6 +1,6 @@
 use echarts::{
-    basic::background_style,
     component::axis,
+    element::background_style,
     series::{bar, Series},
     Chart,
 };

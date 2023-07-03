@@ -1,8 +1,8 @@
 use serde::Serialize;
 
 use crate::{
-    basic::{area_style::AreaStyle, color::ColorBy, symbol::Symbol},
     component::tooltip::Tooltip,
+    element::{area_style::AreaStyle, color::ColorBy, symbol::Symbol},
 };
 
 #[derive(Serialize)]

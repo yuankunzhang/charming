@@ -1,6 +1,6 @@
 use echarts::{
-    basic::{split_area, split_line, text_style},
     component::{axis, dataset, grid, title, tooltip},
+    element::{split_area, split_line, text_style},
     series::{boxplot, scatter, Series},
     Chart,
 };
