@@ -1,27 +1,9 @@
 use serde::Serialize;
 
 use crate::element::{
-    axis_label::AxisLabel, axis_type::AxisType, boundary_gap::BoundaryGap, split_area::SplitArea,
-    split_line::SplitLine,
+    axis_label::AxisLabel, axis_pointer::AxisPointer, axis_type::AxisType,
+    boundary_gap::BoundaryGap, split_area::SplitArea, split_line::SplitLine,
 };
-
-#[derive(Serialize)]
-#[serde(rename_all = "camelCase")]
-pub struct AxisPointer {
-    #[serde(skip_serializing_if = "Option::is_none")]
-    snap: Option<bool>,
-}
-
-impl AxisPointer {
-    pub fn new() -> Self {
-        Self { snap: None }
-    }
-
-    pub fn snap(mut self, snap: bool) -> Self {
-        self.snap = Some(snap);
-        self
-    }
-}
 
 /// Axis in cartesian coordinate.
 #[derive(Serialize)]

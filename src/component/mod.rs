@@ -1,7 +1,6 @@
 pub mod angle_axis;
 pub mod aria;
 pub mod axis;
-pub mod axis_pointer;
 pub mod brush;
 pub mod calendar;
 pub mod data_zoom;

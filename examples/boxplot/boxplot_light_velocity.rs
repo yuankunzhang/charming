@@ -1,6 +1,6 @@
 use echarts::{
     component::{axis, dataset, grid, title, tooltip},
-    element::{axis_type, split_area, split_line, text_style, tooltip_trigger},
+    element::{axis_pointer, axis_type, split_area, split_line, text_style, tooltip_trigger},
     series::{boxplot, scatter, Series},
     Chart,
 };
@@ -62,7 +62,9 @@ fn main() {
         .tooltip(
             tooltip::Tooltip::new()
                 .trigger(tooltip_trigger::TooltipTrigger::Item)
-                .axis_pointer(tooltip::AxisPointer::new().type_(tooltip::AxisPointerType::Shadow)),
+                .axis_pointer(
+                    axis_pointer::AxisPointer::new().type_(axis_pointer::AxisPointerType::Shadow),
+                ),
         )
         .grid(grid::Grid::new().left("10%").right("10%").bottom("15%"))
         .x_axis(

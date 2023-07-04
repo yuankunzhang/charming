@@ -1,6 +1,6 @@
 use echarts::{
     component::{axis, grid, legend, title, toolbox, tooltip},
-    element::{area_style, axis_type, color, line_style, tooltip_trigger},
+    element::{area_style, axis_pointer, axis_type, color, line_style, tooltip_trigger},
     series::{line, Series},
     Chart,
 };
@@ -19,9 +19,12 @@ fn main() {
             tooltip::Tooltip::new()
                 .trigger(tooltip_trigger::TooltipTrigger::Axis)
                 .axis_pointer(
-                    tooltip::AxisPointer::new()
-                        .type_(tooltip::AxisPointerType::Cross)
-                        .label(tooltip::AxisPointerLabel::new().background_color("#6a7985".into())),
+                    axis_pointer::AxisPointer::new()
+                        .type_(axis_pointer::AxisPointerType::Cross)
+                        .label(
+                            axis_pointer::AxisPointerLabel::new()
+                                .background_color("#6a7985".into()),
+                        ),
                 ),
         )
         .legend(legend::Legend::new().data(vec!["Line 1", "Line 2", "Line 3", "Line 4", "Line 5"]))
