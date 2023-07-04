@@ -1,6 +1,6 @@
 use echarts::{
     component::{legend, title, toolbox, tooltip},
-    element::{label, orient::Orient, sort},
+    element::{label, orient::Orient, sort, tooltip_trigger},
     series::{funnel, Series},
     Chart,
 };
@@ -15,7 +15,7 @@ fn main() {
         )
         .tooltip(
             tooltip::Tooltip::new()
-                .trigger(tooltip::Trigger::Item)
+                .trigger(tooltip_trigger::TooltipTrigger::Item)
                 .formatter("{a} <br/>{b} : {c}%"),
         )
         .toolbox(

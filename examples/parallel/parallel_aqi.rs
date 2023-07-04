@@ -1,7 +1,7 @@
 use echarts::{
     component::{legend, parallel_axis, parallel_coordinate, tooltip, visual_map},
     datatype::Value,
-    element::{axis_label, axis_line, axis_type, line_style, split_line, text_style},
+    element::{axis_label, axis_tick, axis_type, line_style, split_line, text_style},
     series::{parallel, Series},
     Chart,
 };
@@ -74,7 +74,7 @@ fn main() {
                         .name_gap(20)
                         .name_text_style(text_style::TextStyle::new().color("#fff").font_size(12))
                         .axis_tick(
-                            axis_line::AxisTick::new()
+                            axis_tick::AxisTick::new()
                                 .line_style(line_style::LineStyle::new().color("#777")),
                         )
                         .axis_label(axis_label::AxisLabel::new().color("#fff"))

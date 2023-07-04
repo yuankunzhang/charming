@@ -32,4 +32,4 @@ pub mod split_line;
 pub mod symbol;
 pub mod text_align;
 pub mod text_style;
-pub mod tooltip_style;
+pub mod tooltip_trigger;

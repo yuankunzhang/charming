@@ -1,6 +1,6 @@
 use echarts::{
     component::{axis, grid, title, tooltip},
-    element::{axis_type, emphasis, item_style, label, split_line},
+    element::{axis_type, emphasis, item_style, label, split_line, tooltip_trigger},
     series::{bar, Series},
     Chart,
 };
@@ -14,7 +14,7 @@ fn main() {
         )
         .tooltip(
             tooltip::Tooltip::new()
-                .trigger(tooltip::Trigger::Axis)
+                .trigger(tooltip_trigger::TooltipTrigger::Axis)
                 .formatter(r#"{b0}<br />{a1}: {c1}"#)
                 .axis_pointer(tooltip::AxisPointer::new().type_(tooltip::AxisPointerType::Shadow)),
         )

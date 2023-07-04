@@ -1,6 +1,6 @@
 use echarts::{
     component::{axis, grid, legend, title, toolbox, tooltip},
-    element::{area_style, axis_type, color, line_style},
+    element::{area_style, axis_type, color, line_style, tooltip_trigger},
     series::{line, Series},
     Chart,
 };
@@ -17,7 +17,7 @@ fn main() {
         .title(title::Title::new().text("Gradient Stacked Area Chart"))
         .tooltip(
             tooltip::Tooltip::new()
-                .trigger(tooltip::Trigger::Axis)
+                .trigger(tooltip_trigger::TooltipTrigger::Axis)
                 .axis_pointer(
                     tooltip::AxisPointer::new()
                         .type_(tooltip::AxisPointerType::Cross)

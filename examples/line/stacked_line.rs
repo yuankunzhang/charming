@@ -1,6 +1,6 @@
 use echarts::{
     component::{axis, grid, legend, title, toolbox, tooltip},
-    element::axis_type,
+    element::{axis_type, tooltip_trigger},
     series::{line, Series},
     Chart,
 };
@@ -8,7 +8,7 @@ use echarts::{
 fn main() {
     let chart = Chart::new()
         .title(title::Title::new().text("Stacked Line"))
-        .tooltip(tooltip::Tooltip::new().trigger(tooltip::Trigger::Axis))
+        .tooltip(tooltip::Tooltip::new().trigger(tooltip_trigger::TooltipTrigger::Axis))
         .legend(legend::Legend::new().data(vec![
             "Email",
             "Union Ads",

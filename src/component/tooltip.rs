@@ -1,6 +1,6 @@
 use serde::Serialize;
 
-use crate::element::{color::Color, padding::Padding};
+use crate::element::{color::Color, padding::Padding, tooltip_trigger::TooltipTrigger};
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
@@ -9,14 +9,6 @@ pub enum TriggerOn {
     Click,
     #[serde(rename = "mousemove|click")]
     MousemoveAndClick,
-    None,
-}
-
-#[derive(Serialize)]
-#[serde(rename_all = "snake_case")]
-pub enum Trigger {
-    Item,
-    Axis,
     None,
 }
 
@@ -101,7 +93,7 @@ impl AxisPointer {
 #[serde(rename_all = "camelCase")]
 pub struct Tooltip {
     #[serde(skip_serializing_if = "Option::is_none")]
-    trigger: Option<Trigger>,
+    trigger: Option<TooltipTrigger>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     trigger_on: Option<TriggerOn>,
@@ -143,7 +135,7 @@ impl Tooltip {
         }
     }
 
-    pub fn trigger<T: Into<Trigger>>(mut self, trigger: T) -> Self {
+    pub fn trigger<T: Into<TooltipTrigger>>(mut self, trigger: T) -> Self {
         self.trigger = Some(trigger.into());
         self
     }

@@ -1,6 +1,6 @@
 use echarts::{
     component::tooltip,
-    element::{emphasis, label},
+    element::{emphasis, label, tooltip_trigger},
     series::{tree, Series},
     Chart,
 };
@@ -15,7 +15,7 @@ fn main() {
     let chart = Chart::new()
         .tooltip(
             tooltip::Tooltip::new()
-                .trigger(tooltip::Trigger::Item)
+                .trigger(tooltip_trigger::TooltipTrigger::Item)
                 .trigger_on(tooltip::TriggerOn::Mousemove),
         )
         .series(Series::Tree(

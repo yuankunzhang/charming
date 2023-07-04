@@ -1,7 +1,7 @@
 use echarts::{
     component::{axis, dataset, title, tooltip},
     datatype::Value,
-    element::axis_type,
+    element::{axis_type, tooltip_trigger},
     series::{line, Series},
     Chart,
 };
@@ -46,7 +46,7 @@ fn main() {
 
     let chart = Chart::new()
         .title(title::Title::new().text("Income of Germany and France since 1950"))
-        .tooltip(tooltip::Tooltip::new().trigger(tooltip::Trigger::Axis))
+        .tooltip(tooltip::Tooltip::new().trigger(tooltip_trigger::TooltipTrigger::Axis))
         .x_axis(
             axis::Axis::new()
                 .type_(axis_type::AxisType::Category)

@@ -1,6 +1,6 @@
 use echarts::{
     component::{axis, title, toolbox, tooltip, visual_map},
-    element::{axis_label, axis_type, item_style, mark_area},
+    element::{axis_label, axis_type, item_style, mark_area, tooltip_trigger},
     series::{line, Series},
     Chart,
 };
@@ -14,7 +14,7 @@ fn main() {
         )
         .tooltip(
             tooltip::Tooltip::new()
-                .trigger(tooltip::Trigger::Axis)
+                .trigger(tooltip_trigger::TooltipTrigger::Axis)
                 .axis_pointer(tooltip::AxisPointer::new().type_(tooltip::AxisPointerType::Cross)),
         )
         .toolbox(

@@ -1,5 +1,7 @@
 use echarts::{
-    element::{anchor, axis_label, axis_line, item_style, line_style, pointer, split_line},
+    element::{
+        anchor, axis_label, axis_line, axis_tick, item_style, line_style, pointer, split_line,
+    },
     series::{gauge, Series},
     Chart,
 };
@@ -14,7 +16,7 @@ fn main() {
                 .radius("80%")
                 .axis_line(axis_line::AxisLine::new().line_style((1.0, "#f00", 3.0)))
                 .axis_tick(
-                    axis_line::AxisTick::new()
+                    axis_tick::AxisTick::new()
                         .distance(-12)
                         .length(10)
                         .line_style(line_style::LineStyle::new().color("#f00")),
@@ -56,7 +58,7 @@ fn main() {
                 .split_number(6)
                 .axis_line(axis_line::AxisLine::new().line_style((1.0, "#000", 3.0)))
                 .axis_tick(
-                    axis_line::AxisTick::new()
+                    axis_tick::AxisTick::new()
                         .distance(0)
                         .length(10)
                         .line_style(line_style::LineStyle::new().color("#000")),

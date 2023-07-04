@@ -1,7 +1,7 @@
 use serde::Serialize;
 
 use crate::element::{
-    color::Color, padding::Padding, text_style::TextStyle, tooltip_style::Trigger,
+    color::Color, padding::Padding, text_style::TextStyle, tooltip_trigger::TooltipTrigger,
 };
 
 #[derive(Serialize)]
@@ -13,7 +13,7 @@ pub struct GridTooltip {
 
     /// Type of triggering.
     #[serde(skip_serializing_if = "Option::is_none")]
-    trigger: Option<Trigger>,
+    trigger: Option<TooltipTrigger>,
 
     /// The position of the tooltip's floating layer, which would follow the
     /// position of mouse by default.
@@ -75,7 +75,7 @@ impl GridTooltip {
         self
     }
 
-    pub fn trigger<T: Into<Trigger>>(mut self, trigger: T) -> Self {
+    pub fn trigger<T: Into<TooltipTrigger>>(mut self, trigger: T) -> Self {
         self.trigger = Some(trigger.into());
         self
     }

@@ -1,6 +1,8 @@
 use echarts::{
     component::{axis, legend, title, toolbox, tooltip},
-    element::{axis_label, axis_type, label, mark_line, mark_point, symbol::Symbol},
+    element::{
+        axis_label, axis_type, label, mark_line, mark_point, symbol::Symbol, tooltip_trigger,
+    },
     series::{line, Series},
     Chart,
 };
@@ -8,7 +10,7 @@ use echarts::{
 fn main() {
     let chart = Chart::new()
         .title(title::Title::new().text("Temperature change in the coming week"))
-        .tooltip(tooltip::Tooltip::new().trigger(tooltip::Trigger::Axis))
+        .tooltip(tooltip::Tooltip::new().trigger(tooltip_trigger::TooltipTrigger::Axis))
         .legend(legend::Legend::new())
         .toolbox(
             toolbox::Toolbox::new().show(true).feature(

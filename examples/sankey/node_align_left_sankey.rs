@@ -1,10 +1,9 @@
-use echarts::component::title;
-use echarts::component::tooltip;
-use echarts::element::emphasis;
-use echarts::element::line_style;
-use echarts::series::sankey;
-use echarts::series::Series;
-use echarts::Chart;
+use echarts::{
+    component::{title, tooltip},
+    element::{emphasis, line_style, tooltip_trigger},
+    series::{sankey, Series},
+    Chart,
+};
 
 fn main() {
     let data: sankey::Data = serde_json::from_str(SOURCE).unwrap();
@@ -12,7 +11,7 @@ fn main() {
         .title(title::Title::new().text("Node Align Left Sankey"))
         .tooltip(
             tooltip::Tooltip::new()
-                .trigger(tooltip::Trigger::Item)
+                .trigger(tooltip_trigger::TooltipTrigger::Item)
                 .trigger_on(tooltip::TriggerOn::Mousemove),
         )
         .series(Series::Sankey(

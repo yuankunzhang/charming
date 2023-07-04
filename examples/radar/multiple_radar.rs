@@ -1,15 +1,14 @@
-use echarts::component::legend;
-use echarts::component::radar_coordinate;
-use echarts::component::title;
-use echarts::component::tooltip;
-use echarts::element::area_style;
-use echarts::series;
-use echarts::Chart;
+use echarts::{
+    component::{legend, radar_coordinate, title, tooltip},
+    element::{area_style, tooltip_trigger},
+    series::{radar, Series},
+    Chart,
+};
 
 fn main() {
     let chart = Chart::new()
         .title(title::Title::new().text("Multiple Radar"))
-        .tooltip(tooltip::Tooltip::new().trigger(tooltip::Trigger::Axis))
+        .tooltip(tooltip::Tooltip::new().trigger(tooltip_trigger::TooltipTrigger::Axis))
         .legend(legend::Legend::new().left("center").data(vec![
             "A Software",
             "A Phone",
@@ -55,15 +54,15 @@ fn main() {
                 .center(("75%", "40%"))
                 .radius(80.0),
         ])
-        .series(series::Series::Radar(
-            series::radar::Radar::new()
+        .series(Series::Radar(
+            radar::Radar::new()
                 .name("Radar")
-                .tooltip(tooltip::Tooltip::new().trigger(tooltip::Trigger::Item))
+                .tooltip(tooltip::Tooltip::new().trigger(tooltip_trigger::TooltipTrigger::Item))
                 .area_style(area_style::AreaStyle::new())
                 .data(vec![(vec![60, 73, 85, 40], "A Software")]),
         ))
-        .series(series::Series::Radar(
-            series::radar::Radar::new()
+        .series(Series::Radar(
+            radar::Radar::new()
                 .radar_index(1)
                 .area_style(area_style::AreaStyle::new())
                 .data(vec![
@@ -71,8 +70,8 @@ fn main() {
                     (vec![95, 80, 95, 90, 93], "Another Phone"),
                 ]),
         ))
-        .series(series::Series::Radar(
-            series::radar::Radar::new()
+        .series(Series::Radar(
+            radar::Radar::new()
                 .radar_index(2)
                 .area_style(area_style::AreaStyle::new())
                 .data(vec![

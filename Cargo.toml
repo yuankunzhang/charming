@@ -25,6 +25,10 @@ name = "tangential_polar_par"
 path = "examples/bar/tangential_polar_bar.rs"
 
 [[example]]
+name = "stacked_column"
+path = "examples/bar/stacked_column.rs"
+
+[[example]]
 name = "boxplot_light_velocity"
 path = "examples/boxplot/boxplot_light_velocity.rs"
 
