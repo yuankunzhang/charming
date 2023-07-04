@@ -20,6 +20,7 @@ pub enum Position {
     InsideBottomRight,
     Start,
     Outside,
+    Middle,
 }
 
 #[derive(Serialize)]

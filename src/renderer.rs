@@ -60,13 +60,13 @@ fn _render(code: String) -> Result<Vec<u8>, RenderError> {
     runtime
         .execute_script(
             "[runtime.js]",
-            include_str!("./assets/runtime.js").to_string().into(),
+            include_str!("./asset/runtime.js").to_string().into(),
         )
         .unwrap();
     runtime
         .execute_script(
             "[echarts.js]",
-            include_str!("./assets/echarts-5.4.2.min.js")
+            include_str!("./asset/echarts-5.4.2.min.js")
                 .to_string()
                 .into(),
         )

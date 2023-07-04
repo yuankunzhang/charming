@@ -1,5 +1,9 @@
+use component::angle_axis::AngleAxis;
+use component::data_zoom::DataZoom;
 use component::dataset::Dataset;
 use component::parallel_axis::ParallelAxis;
+use component::polar::Polar;
+use component::radius_axis::RadiusAxis;
 use component::visual_map::VisualMap;
 use element::single_axis::SingleAxis;
 use serde::Serialize;
@@ -37,14 +41,23 @@ pub struct Chart {
     #[serde(skip_serializing_if = "Option::is_none")]
     toolbox: Option<Toolbox>,
 
-    #[serde(skip_serializing_if = "Option::is_none")]
-    grid: Option<Grid>,
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    grid: Vec<Grid>,
 
-    #[serde(skip_serializing_if = "Option::is_none")]
-    x_axis: Option<Axis>,
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    x_axis: Vec<Axis>,
 
-    #[serde(skip_serializing_if = "Option::is_none")]
-    y_axis: Option<Axis>,
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    y_axis: Vec<Axis>,
+
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    polar: Vec<Polar>,
+
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    angle_axis: Vec<AngleAxis>,
+
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    radius_axis: Vec<RadiusAxis>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     single_axis: Option<SingleAxis>,
@@ -52,21 +65,26 @@ pub struct Chart {
     #[serde(skip_serializing_if = "Vec::is_empty")]
     parallel_axis: Vec<ParallelAxis>,
 
-    #[serde(skip_serializing_if = "Option::is_none")]
-    visual_map: Option<VisualMap>,
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    visual_map: Vec<VisualMap>,
+
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    data_zoom: Vec<DataZoom>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     dataset: Option<Dataset>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
-    #[serde(rename = "radar")]
-    radars: Vec<RadarCoordinate>,
+    radar: Vec<RadarCoordinate>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
     color: Vec<Color>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
     series: Vec<Series>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    background_color: Option<Color>,
 }
 
 impl Chart {
@@ -76,16 +94,21 @@ impl Chart {
             toolbox: None,
             legend: None,
             tooltip: None,
-            grid: None,
-            x_axis: None,
-            y_axis: None,
+            grid: vec![],
+            x_axis: vec![],
+            y_axis: vec![],
+            polar: vec![],
+            angle_axis: vec![],
+            radius_axis: vec![],
             single_axis: None,
             parallel_axis: vec![],
-            visual_map: None,
+            visual_map: vec![],
+            data_zoom: vec![],
             dataset: None,
-            radars: vec![],
+            radar: vec![],
             color: vec![],
             series: vec![],
+            background_color: None,
         }
     }
 
@@ -110,17 +133,32 @@ impl Chart {
     }
 
     pub fn grid(mut self, grid: Grid) -> Self {
-        self.grid = Some(grid);
+        self.grid.push(grid);
         self
     }
 
     pub fn x_axis(mut self, x_axis: Axis) -> Self {
-        self.x_axis = Some(x_axis);
+        self.x_axis.push(x_axis);
         self
     }
 
     pub fn y_axis(mut self, y_axis: Axis) -> Self {
-        self.y_axis = Some(y_axis);
+        self.y_axis.push(y_axis);
+        self
+    }
+
+    pub fn polar(mut self, polar: Polar) -> Self {
+        self.polar.push(polar);
+        self
+    }
+
+    pub fn angle_axis(mut self, angle_axis: AngleAxis) -> Self {
+        self.angle_axis.push(angle_axis);
+        self
+    }
+
+    pub fn radius_axis(mut self, radius_axis: RadiusAxis) -> Self {
+        self.radius_axis.push(radius_axis);
         self
     }
 
@@ -135,7 +173,12 @@ impl Chart {
     }
 
     pub fn visual_map(mut self, visual_map: VisualMap) -> Self {
-        self.visual_map = Some(visual_map);
+        self.visual_map.push(visual_map);
+        self
+    }
+
+    pub fn data_zoom(mut self, data_zoom: DataZoom) -> Self {
+        self.data_zoom.push(data_zoom);
         self
     }
 
@@ -144,8 +187,8 @@ impl Chart {
         self
     }
 
-    pub fn radars(mut self, radars: Vec<RadarCoordinate>) -> Self {
-        self.radars = radars;
+    pub fn radar(mut self, radars: Vec<RadarCoordinate>) -> Self {
+        self.radar = radars;
         self
     }
 
@@ -156,6 +199,11 @@ impl Chart {
 
     pub fn series(mut self, series: Series) -> Self {
         self.series.push(series);
+        self
+    }
+
+    pub fn background_color<C: Into<Color>>(mut self, color: C) -> Self {
+        self.background_color = Some(color.into());
         self
     }
 }

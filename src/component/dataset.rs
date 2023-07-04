@@ -5,27 +5,25 @@ use crate::datatype::Value;
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
-struct InputSelector {
-    from_dataset_index: u64,
-    from_transform_result: u64,
-}
+pub struct Source {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    id: Option<String>,
 
-pub struct Dataset {
+    #[serde(skip_serializing_if = "Vec::is_empty")]
     source: Vec<Vec<Value>>,
-    transforms: Vec<serde_json::Value>,
-    input_selector: InputSelector,
 }
 
-impl Dataset {
+impl Source {
     pub fn new() -> Self {
         Self {
+            id: None,
             source: vec![],
-            transforms: vec![],
-            input_selector: InputSelector {
-                from_dataset_index: 0,
-                from_transform_result: 0,
-            },
         }
+    }
+
+    pub fn id<S: Into<String>>(mut self, id: S) -> Self {
+        self.id = Some(id.into());
+        self
     }
 
     pub fn source<V: Into<Value>>(mut self, source: Vec<Vec<V>>) -> Self {
@@ -36,44 +34,112 @@ impl Dataset {
         self.source = source;
         self
     }
+}
+
+impl<V> From<Vec<Vec<V>>> for Source
+where
+    V: Into<Value>,
+{
+    fn from(source: Vec<Vec<V>>) -> Self {
+        Self::new().source(source)
+    }
+}
+
+#[derive(Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct Transform {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    id: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    transform: Option<serde_json::Value>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    from_dataset_id: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    from_dataset_index: Option<f64>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    from_transform_result: Option<f64>,
+}
+
+impl Transform {
+    pub fn new() -> Self {
+        Self {
+            id: None,
+            transform: None,
+            from_dataset_id: None,
+            from_dataset_index: None,
+            from_transform_result: None,
+        }
+    }
+
+    pub fn id<S: Into<String>>(mut self, id: S) -> Self {
+        self.id = Some(id.into());
+        self
+    }
 
     pub fn transform(mut self, transform: &str) -> Self {
-        self.transforms
-            .push(serde_json::from_str(transform).unwrap());
+        self.transform = Some(serde_json::from_str(transform).unwrap());
         self
     }
 
-    pub fn from_dataset_index(mut self, from_dataset_index: u64) -> Self {
-        self.input_selector.from_dataset_index = from_dataset_index;
+    pub fn from_dataset_id<S: Into<String>>(mut self, from_dataset_id: S) -> Self {
+        self.from_dataset_id = Some(from_dataset_id.into());
         self
     }
 
-    pub fn from_transform_result(mut self, from_transform_result: u64) -> Self {
-        self.input_selector.from_transform_result = from_transform_result;
+    pub fn from_dataset_index<F: Into<f64>>(mut self, from_dataset_index: F) -> Self {
+        self.from_dataset_index = Some(from_dataset_index.into());
+        self
+    }
+
+    pub fn from_transform_result<F: Into<f64>>(mut self, from_transform_result: F) -> Self {
+        self.from_transform_result = Some(from_transform_result.into());
+        self
+    }
+}
+
+impl From<&str> for Transform {
+    fn from(transform: &str) -> Self {
+        Self::new().transform(transform)
+    }
+}
+
+pub struct Dataset {
+    sources: Vec<Source>,
+    transforms: Vec<Transform>,
+}
+
+impl Dataset {
+    pub fn new() -> Self {
+        Self {
+            sources: vec![],
+            transforms: vec![],
+        }
+    }
+
+    pub fn source<S: Into<Source>>(mut self, source: S) -> Self {
+        self.sources.push(source.into());
+        self
+    }
+
+    pub fn transform<T: Into<Transform>>(mut self, transform: T) -> Self {
+        self.transforms.push(transform.into());
         self
     }
 }
 
 impl Serialize for Dataset {
     fn serialize<S: serde::Serializer>(&self, serializer: S) -> Result<S::Ok, S::Error> {
-        #[derive(Serialize)]
-        struct SourceHelper<'a> {
-            source: &'a Vec<Vec<Value>>,
+        let mut s = serializer.serialize_seq(Some(self.sources.len() + self.transforms.len()))?;
+        for source in &self.sources {
+            s.serialize_element(&source)?;
         }
-
-        #[derive(Serialize)]
-        struct TransformHelper<'a> {
-            transform: &'a serde_json::Value,
-        }
-
-        let mut s = serializer.serialize_seq(Some(2 + self.transforms.len()))?;
-        s.serialize_element(&SourceHelper {
-            source: &self.source,
-        })?;
         for transform in &self.transforms {
-            s.serialize_element(&TransformHelper { transform })?;
+            s.serialize_element(&transform)?;
         }
-        s.serialize_element(&self.input_selector)?;
         s.end()
     }
 }

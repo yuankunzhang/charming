@@ -4,6 +4,7 @@ use crate::datatype::{DataFrame, DataPoint};
 use crate::element::area_style::AreaStyle;
 use crate::element::emphasis::Emphasis;
 use crate::element::line_style::LineStyle;
+use crate::element::mark_area::MarkArea;
 use crate::element::mark_line::MarkLine;
 use crate::element::mark_point::MarkPoint;
 use crate::element::symbol::Symbol;
@@ -95,10 +96,19 @@ pub struct Line {
     mark_line: Option<MarkLine>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    mark_area: Option<MarkArea>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     dataset_id: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     encode: Option<Encode>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    x_axis_index: Option<f64>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    y_axis_index: Option<f64>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: DataFrame,
@@ -119,8 +129,11 @@ impl Line {
             smooth: None,
             mark_point: None,
             mark_line: None,
+            mark_area: None,
             dataset_id: None,
             encode: None,
+            x_axis_index: None,
+            y_axis_index: None,
             data: vec![],
         }
     }
@@ -182,6 +195,11 @@ impl Line {
         self
     }
 
+    pub fn mark_area(mut self, mark_area: MarkArea) -> Self {
+        self.mark_area = Some(mark_area);
+        self
+    }
+
     pub fn dataset_id<S: Into<String>>(mut self, dataset_id: S) -> Self {
         self.dataset_id = Some(dataset_id.into());
         self
@@ -189,6 +207,16 @@ impl Line {
 
     pub fn encode<E: Into<Encode>>(mut self, encode: E) -> Self {
         self.encode = Some(encode.into());
+        self
+    }
+
+    pub fn x_axis_index<F: Into<f64>>(mut self, x_axis_index: F) -> Self {
+        self.x_axis_index = Some(x_axis_index.into());
+        self
+    }
+
+    pub fn y_axis_index<F: Into<f64>>(mut self, y_axis_index: F) -> Self {
+        self.y_axis_index = Some(y_axis_index.into());
         self
     }
 

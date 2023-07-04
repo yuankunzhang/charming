@@ -1,7 +1,7 @@
 use echarts::{
     component::{axis, visual_map},
     datatype::value,
-    element::{area_style, label, line_style, mark_line, symbol},
+    element::{area_style, axis_attr, label, line_style, mark_line, symbol},
     series::{line, Series},
     Chart,
 };
@@ -10,32 +10,30 @@ fn main() {
     let chart = Chart::new()
         .x_axis(
             axis::Axis::new()
-                .type_(axis::AxisType::Category)
+                .type_(axis_attr::AxisType::Category)
                 .boundary_gap(false),
         )
         .y_axis(
             axis::Axis::new()
-                .type_(axis::AxisType::Value)
+                .type_(axis_attr::AxisType::Value)
                 .boundary_gap(("0", "20%")),
         )
         .visual_map(
-            visual_map::VisualMap::new().map(
-                visual_map::VisualMapItem::new()
-                    .type_("piecewise")
-                    .show(false)
-                    .dimension(0)
-                    .series_index(0)
-                    .pieces(vec![
-                        visual_map::Piece::new()
-                            .min(1)
-                            .max(3)
-                            .color("rgba(0, 0, 180, 0.4)"),
-                        visual_map::Piece::new()
-                            .min(5)
-                            .max(7)
-                            .color("rgba(0, 0, 180, 0.4)"),
-                    ]),
-            ),
+            visual_map::VisualMap::new()
+                .type_(visual_map::VisualMapType::Piecewise)
+                .show(false)
+                .dimension(0)
+                .series_index(0)
+                .pieces(vec![
+                    visual_map::Piece::new()
+                        .min(1)
+                        .max(3)
+                        .color("rgba(0, 0, 180, 0.4)"),
+                    visual_map::Piece::new()
+                        .min(5)
+                        .max(7)
+                        .color("rgba(0, 0, 180, 0.4)"),
+                ]),
         )
         .series(Series::Line(
             line::Line::new()

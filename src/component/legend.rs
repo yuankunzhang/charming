@@ -2,6 +2,7 @@ use serde::Serialize;
 
 use crate::element::{
     item_style::ItemStyle, label::Align, line_style::LineStyle, orient::Orient, padding::Padding,
+    text_style::TextStyle,
 };
 
 #[derive(Serialize)]
@@ -90,6 +91,9 @@ pub struct Legend {
     #[serde(skip_serializing_if = "Option::is_none")]
     line_style: Option<LineStyle>,
 
+    #[serde(skip_serializing_if = "Option::is_none")]
+    text_style: Option<TextStyle>,
+
     /// Rotation of the symbol.
     #[serde(skip_serializing_if = "Option::is_none")]
     symbol_rotate: Option<String>,
@@ -123,6 +127,7 @@ impl Legend {
             item_height: None,
             item_style: None,
             line_style: None,
+            text_style: None,
             symbol_rotate: None,
             formatter: None,
             data: None,
@@ -216,6 +221,11 @@ impl Legend {
 
     pub fn line_style<S: Into<LineStyle>>(mut self, line_style: S) -> Self {
         self.line_style = Some(line_style.into());
+        self
+    }
+
+    pub fn text_style<S: Into<TextStyle>>(mut self, text_style: S) -> Self {
+        self.text_style = Some(text_style.into());
         self
     }
 

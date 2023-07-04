@@ -17,7 +17,7 @@ fn main() {
             "Precipitation",
             "Evaporation",
         ]))
-        .radars(vec![
+        .radar(vec![
             radar_coordinate::RadarCoordinate::new()
                 .indicator(vec![
                     ("Brand", 0, 100),

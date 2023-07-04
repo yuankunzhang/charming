@@ -34,6 +34,15 @@ pub struct ParallelAxis {
     #[serde(skip_serializing_if = "Option::is_none")]
     name_gap: Option<f64>,
 
+    #[serde(skip_serializing_if = "Option::is_none")]
+    inverse: Option<bool>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    max: Option<f64>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    min: Option<f64>,
+
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: Vec<String>,
 }
@@ -48,6 +57,9 @@ impl ParallelAxis {
             name: None,
             name_location: None,
             name_gap: None,
+            inverse: None,
+            max: None,
+            min: None,
             data: vec![],
         }
     }
@@ -84,6 +96,21 @@ impl ParallelAxis {
 
     pub fn name_gap<F: Into<f64>>(mut self, name_gap: F) -> Self {
         self.name_gap = Some(name_gap.into());
+        self
+    }
+
+    pub fn inverse(mut self, inverse: bool) -> Self {
+        self.inverse = Some(inverse);
+        self
+    }
+
+    pub fn max<F: Into<f64>>(mut self, max: F) -> Self {
+        self.max = Some(max.into());
+        self
+    }
+
+    pub fn min<F: Into<f64>>(mut self, min: F) -> Self {
+        self.min = Some(min.into());
         self
     }
 

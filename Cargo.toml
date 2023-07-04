@@ -17,8 +17,20 @@ name = "bar_with_background"
 path = "examples/bar/bar_with_background.rs"
 
 [[example]]
+name = "waterfall"
+path = "examples/bar/waterfall.rs"
+
+[[example]]
+name = "tangential_polar_par"
+path = "examples/bar/tangential_polar_bar.rs"
+
+[[example]]
 name = "boxplot_light_velocity"
 path = "examples/boxplot/boxplot_light_velocity.rs"
+
+[[example]]
+name = "multiple_categories"
+path = "examples/boxplot/multiple_categories.rs"
 
 [[example]]
 name = "basic_candlestick"
@@ -81,8 +93,20 @@ name = "data_transform_filter"
 path = "examples/line/data_transform_filter.rs"
 
 [[example]]
+name = "line_gradient"
+path = "examples/line/line_gradient.rs"
+
+[[example]]
+name = "distribution_of_electricity"
+path = "examples/line/distribution_of_electricity.rs"
+
+[[example]]
 name = "basic_parallel"
 path = "examples/parallel/basic_parallel.rs"
+
+[[example]]
+name = "parallel_aqi"
+path = "examples/parallel/parallel_aqi.rs"
 
 [[example]]
 name = "nightingale"
@@ -115,3 +139,7 @@ path = "examples/theme_river/theme_river_lastfm.rs"
 [[example]]
 name = "from_left_to_right_tree"
 path = "examples/tree/from_left_to_right_tree.rs"
+
+[[example]]
+name = "disk_usage"
+path = "examples/treemap/disk_usage.rs"

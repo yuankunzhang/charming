@@ -3,6 +3,13 @@ use serde::Serialize;
 use crate::element::{color::Color, orient::Orient};
 
 #[derive(Serialize)]
+#[serde(rename_all = "snake_case")]
+pub enum VisualMapType {
+    Continuous,
+    Piecewise,
+}
+
+#[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Piece {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -10,6 +17,18 @@ pub struct Piece {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     max: Option<f64>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    lt: Option<f64>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    lte: Option<f64>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    gt: Option<f64>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    gte: Option<f64>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     label: Option<String>,
@@ -23,6 +42,10 @@ impl Piece {
         Self {
             min: None,
             max: None,
+            lt: None,
+            lte: None,
+            gt: None,
+            gte: None,
             label: None,
             color: None,
         }
@@ -35,6 +58,26 @@ impl Piece {
 
     pub fn max<F: Into<f64>>(mut self, max: F) -> Self {
         self.max = Some(max.into());
+        self
+    }
+
+    pub fn lt<F: Into<f64>>(mut self, lt: F) -> Self {
+        self.lt = Some(lt.into());
+        self
+    }
+
+    pub fn lte<F: Into<f64>>(mut self, lte: F) -> Self {
+        self.lte = Some(lte.into());
+        self
+    }
+
+    pub fn gt<F: Into<f64>>(mut self, gt: F) -> Self {
+        self.gt = Some(gt.into());
+        self
+    }
+
+    pub fn gte<F: Into<f64>>(mut self, gte: F) -> Self {
+        self.gte = Some(gte.into());
         self
     }
 
@@ -75,10 +118,28 @@ impl From<(i64, i64, &str)> for Piece {
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct VisualMapItem {
+pub struct InRange {
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    color: Vec<Color>,
+}
+
+impl InRange {
+    pub fn new() -> Self {
+        Self { color: vec![] }
+    }
+
+    pub fn color<C: Into<Color>>(mut self, color: Vec<C>) -> Self {
+        self.color = color.into_iter().map(|c| c.into()).collect();
+        self
+    }
+}
+
+#[derive(Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct VisualMap {
     #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(rename = "type")]
-    type_: Option<String>,
+    type_: Option<VisualMapType>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     show: Option<bool>,
@@ -132,10 +193,13 @@ pub struct VisualMapItem {
     item_height: Option<f64>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    in_range: Option<InRange>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     pieces: Option<Vec<Piece>>,
 }
 
-impl VisualMapItem {
+impl VisualMap {
     pub fn new() -> Self {
         Self {
             type_: None,
@@ -156,11 +220,12 @@ impl VisualMapItem {
             precision: None,
             item_width: None,
             item_height: None,
+            in_range: None,
             pieces: None,
         }
     }
 
-    pub fn type_<S: Into<String>>(mut self, type_: S) -> Self {
+    pub fn type_<S: Into<VisualMapType>>(mut self, type_: S) -> Self {
         self.type_ = Some(type_.into());
         self
     }
@@ -250,23 +315,13 @@ impl VisualMapItem {
         self
     }
 
-    pub fn pieces(mut self, pieces: Vec<Piece>) -> Self {
-        self.pieces = Some(pieces);
+    pub fn in_range<I: Into<InRange>>(mut self, in_range: I) -> Self {
+        self.in_range = Some(in_range.into());
         self
     }
-}
 
-#[derive(Serialize)]
-#[serde(rename_all = "camelCase")]
-pub struct VisualMap(Vec<VisualMapItem>);
-
-impl VisualMap {
-    pub fn new() -> Self {
-        Self(vec![])
-    }
-
-    pub fn map(mut self, map: VisualMapItem) -> Self {
-        self.0.push(map);
+    pub fn pieces(mut self, pieces: Vec<Piece>) -> Self {
+        self.pieces = Some(pieces);
         self
     }
 }

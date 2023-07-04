@@ -1,11 +1,9 @@
-use echarts::component::legend;
-use echarts::component::title;
-use echarts::component::tooltip;
-use echarts::element::label;
-use echarts::element::line_style;
-use echarts::series::graph;
-use echarts::series::Series;
-use echarts::Chart;
+use echarts::{
+    component::{legend, title, tooltip},
+    element::{label, line_style},
+    series::{graph, Series},
+    Chart,
+};
 
 fn main() {
     let mut data: graph::Data = serde_json::from_str(include_str!("les-miserables.json")).unwrap();

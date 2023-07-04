@@ -1,6 +1,6 @@
 use echarts::{
     component::axis,
-    element::background_style,
+    element::{axis_attr, background},
     series::{bar, Series},
     Chart,
 };
@@ -9,16 +9,15 @@ fn main() {
     let chart = Chart::new()
         .x_axis(
             axis::Axis::new()
-                .type_(axis::AxisType::Category)
+                .type_(axis_attr::AxisType::Category)
                 .data(vec!["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]),
         )
-        .y_axis(axis::Axis::new().type_(axis::AxisType::Value))
+        .y_axis(axis::Axis::new().type_(axis_attr::AxisType::Value))
         .series(Series::Bar(
             bar::Bar::new()
                 .show_background(true)
                 .background_style(
-                    background_style::BackgroundStyle::new()
-                        .color("rgba(180, 180, 180, 0.2)".into()),
+                    background::BackgroundStyle::new().color("rgba(180, 180, 180, 0.2)"),
                 )
                 .data(vec![120, 200, 150, 80, 70, 110, 130]),
         ));

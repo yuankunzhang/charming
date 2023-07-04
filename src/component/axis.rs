@@ -1,15 +1,8 @@
 use serde::Serialize;
 
-use crate::element::{boundary_gap::BoundaryGap, split_area::SplitArea, split_line::SplitLine};
-
-#[derive(Serialize)]
-#[serde(rename_all = "snake_case")]
-pub enum AxisType {
-    Value,
-    Category,
-    Time,
-    Log,
-}
+use crate::element::{
+    axis_attr::AxisType, boundary_gap::BoundaryGap, split_area::SplitArea, split_line::SplitLine,
+};
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -29,24 +22,49 @@ impl AxisLabel {
         }
     }
 
-    pub fn interval(mut self, interval: f64) -> Self {
-        self.interval = Some(interval);
+    pub fn interval<F: Into<f64>>(mut self, interval: F) -> Self {
+        self.interval = Some(interval.into());
         self
     }
 
-    pub fn formatter(mut self, formatter: &str) -> Self {
-        self.formatter = Some(formatter.to_string());
+    pub fn formatter<S: Into<String>>(mut self, formatter: S) -> Self {
+        self.formatter = Some(formatter.into());
         self
     }
 }
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
+pub struct AxisPointer {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    snap: Option<bool>,
+}
+
+impl AxisPointer {
+    pub fn new() -> Self {
+        Self { snap: None }
+    }
+
+    pub fn snap(mut self, snap: bool) -> Self {
+        self.snap = Some(snap);
+        self
+    }
+}
+
+/// Axis in cartesian coordinate.
+#[derive(Serialize)]
+#[serde(rename_all = "camelCase")]
 pub struct Axis {
+    /// Type of axis.
     #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(rename = "type")]
     type_: Option<AxisType>,
 
+    /// Id of axis.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    id: Option<String>,
+
+    /// Name of axis.
     #[serde(skip_serializing_if = "Option::is_none")]
     name: Option<String>,
 
@@ -58,6 +76,9 @@ pub struct Axis {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     axis_label: Option<AxisLabel>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    axis_pointer: Option<AxisPointer>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     split_area: Option<SplitArea>,
@@ -72,27 +93,46 @@ pub struct Axis {
     scale: Option<bool>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    data: Option<Vec<String>>,
+    grid_index: Option<f64>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    min: Option<f64>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    max: Option<f64>,
+
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    data: Vec<String>,
 }
 
 impl Axis {
     pub fn new() -> Self {
         Self {
             type_: None,
+            id: None,
             name: None,
             boundary_gap: None,
             name_gap: None,
             axis_label: None,
+            axis_pointer: None,
             split_area: None,
             split_line: None,
             name_location: None,
             scale: None,
-            data: None,
+            grid_index: None,
+            min: None,
+            max: None,
+            data: vec![],
         }
     }
 
-    pub fn type_(mut self, type_: AxisType) -> Self {
-        self.type_ = Some(type_);
+    pub fn type_<T: Into<AxisType>>(mut self, type_: T) -> Self {
+        self.type_ = Some(type_.into());
+        self
+    }
+
+    pub fn id<S: Into<String>>(mut self, id: S) -> Self {
+        self.id = Some(id.into());
         self
     }
 
@@ -111,18 +151,23 @@ impl Axis {
         self
     }
 
-    pub fn axis_label(mut self, axis_label: AxisLabel) -> Self {
-        self.axis_label = Some(axis_label);
+    pub fn axis_label<L: Into<AxisLabel>>(mut self, axis_label: L) -> Self {
+        self.axis_label = Some(axis_label.into());
         self
     }
 
-    pub fn split_area(mut self, split_area: SplitArea) -> Self {
-        self.split_area = Some(split_area);
+    pub fn axis_pointer<P: Into<AxisPointer>>(mut self, axis_pointer: P) -> Self {
+        self.axis_pointer = Some(axis_pointer.into());
         self
     }
 
-    pub fn split_line(mut self, split_line: SplitLine) -> Self {
-        self.split_line = Some(split_line);
+    pub fn split_area<A: Into<SplitArea>>(mut self, split_area: A) -> Self {
+        self.split_area = Some(split_area.into());
+        self
+    }
+
+    pub fn split_line<A: Into<SplitLine>>(mut self, split_line: A) -> Self {
+        self.split_line = Some(split_line.into());
         self
     }
 
@@ -136,9 +181,23 @@ impl Axis {
         self
     }
 
+    pub fn grid_index<F: Into<f64>>(mut self, grid_index: F) -> Self {
+        self.grid_index = Some(grid_index.into());
+        self
+    }
+
+    pub fn min<F: Into<f64>>(mut self, min: F) -> Self {
+        self.min = Some(min.into());
+        self
+    }
+
+    pub fn max<F: Into<f64>>(mut self, max: F) -> Self {
+        self.max = Some(max.into());
+        self
+    }
+
     pub fn data<S: Into<String>>(mut self, data: Vec<S>) -> Self {
-        let data = data.into_iter().map(|s| s.into()).collect();
-        self.data = Some(data);
+        self.data = data.into_iter().map(|s| s.into()).collect();
         self
     }
 }

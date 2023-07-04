@@ -1,6 +1,6 @@
 use echarts::{
     component::{axis, dataset, grid, title, tooltip},
-    element::{split_area, split_line, text_style},
+    element::{axis_attr, split_area, split_line, text_style},
     series::{boxplot, scatter, Series},
     Chart,
 };
@@ -32,8 +32,11 @@ fn main() {
     let ds = dataset::Dataset::new()
         .source(data)
         .transform(r#"{ "type": "boxplot", "config": { "itemNameFormatter": "expr {value}" } }"#)
-        .from_dataset_index(1)
-        .from_transform_result(1);
+        .transform(
+            dataset::Transform::new()
+                .from_dataset_index(1)
+                .from_transform_result(1),
+        );
 
     let chart = Chart::new()
         .title(
@@ -64,7 +67,7 @@ fn main() {
         .grid(grid::Grid::new().left("10%").right("10%").bottom("15%"))
         .x_axis(
             axis::Axis::new()
-                .type_(axis::AxisType::Category)
+                .type_(axis_attr::AxisType::Category)
                 .boundary_gap(true)
                 .name_gap(30)
                 .split_area(split_area::SplitArea::new().show(false))
@@ -72,7 +75,7 @@ fn main() {
         )
         .y_axis(
             axis::Axis::new()
-                .type_(axis::AxisType::Value)
+                .type_(axis_attr::AxisType::Value)
                 .name("km/s minus 299,000")
                 .split_area(split_area::SplitArea::new().show(true)),
         )

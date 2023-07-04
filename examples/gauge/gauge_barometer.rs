@@ -1,5 +1,5 @@
 use echarts::{
-    element::{anchor, axis_style, item_style, line_style, pointer, split_line},
+    element::{anchor, axis_attr, item_style, line_style, pointer, split_line},
     series::{gauge, Series},
     Chart,
 };
@@ -12,15 +12,15 @@ fn main() {
                 .max(100)
                 .split_number(10)
                 .radius("80%")
-                .axis_line(axis_style::AxisLine::new().line_style((1.0, "#f00", 3.0)))
+                .axis_line(axis_attr::AxisLine::new().line_style((1.0, "#f00", 3.0)))
                 .axis_tick(
-                    axis_style::AxisTick::new()
+                    axis_attr::AxisTick::new()
                         .distance(-12)
                         .length(10)
                         .line_style(line_style::LineStyle::new().color("#f00")),
                 )
                 .axis_label(
-                    axis_style::AxisLabel::new()
+                    axis_attr::AxisLabel::new()
                         .distance(-50)
                         .font_size(25)
                         .color("#f00"),
@@ -54,15 +54,15 @@ fn main() {
                 .min(0)
                 .max(60)
                 .split_number(6)
-                .axis_line(axis_style::AxisLine::new().line_style((1.0, "#000", 3.0)))
+                .axis_line(axis_attr::AxisLine::new().line_style((1.0, "#000", 3.0)))
                 .axis_tick(
-                    axis_style::AxisTick::new()
+                    axis_attr::AxisTick::new()
                         .distance(0)
                         .length(10)
                         .line_style(line_style::LineStyle::new().color("#000")),
                 )
                 .axis_label(
-                    axis_style::AxisLabel::new()
+                    axis_attr::AxisLabel::new()
                         .distance(10)
                         .font_size(25)
                         .color("#000"),

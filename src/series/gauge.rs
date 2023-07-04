@@ -4,7 +4,7 @@ use crate::{
     datatype::{DataFrame, DataPoint},
     element::{
         anchor::Anchor,
-        axis_style::{AxisLabel, AxisLine, AxisTick},
+        axis_attr::{AxisLabel, AxisLine, AxisTick},
         color::{Color, ColorBy},
         pointer::Pointer,
         split_line::SplitLine,

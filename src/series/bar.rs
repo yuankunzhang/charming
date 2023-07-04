@@ -5,8 +5,8 @@ use serde::Serialize;
 use crate::{
     datatype::{DataFrame, DataPoint},
     element::{
-        background_style::BackgroundStyle, color::ColorBy, coordinate::CoordinateSystem,
-        emphasis::Emphasis, label::Label,
+        background::BackgroundStyle, color::ColorBy, coordinate::CoordinateSystem,
+        emphasis::Emphasis, item_style::ItemStyle, label::Label,
     },
 };
 
@@ -29,16 +29,16 @@ pub struct Bar {
     legend_hover_link: Option<bool>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    coordiate_system: Option<CoordinateSystem>,
+    coordinate_system: Option<CoordinateSystem>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    x_axis_index: Option<u64>,
+    x_axis_index: Option<f64>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    y_axis_index: Option<u64>,
+    y_axis_index: Option<f64>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    polar_index: Option<u64>,
+    polar_index: Option<f64>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     round_cap: Option<bool>,
@@ -56,7 +56,13 @@ pub struct Bar {
     label: Option<Label>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    item_style: Option<ItemStyle>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     emphais: Option<Emphasis>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    stack: Option<String>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: DataFrame,
@@ -70,7 +76,7 @@ impl Bar {
             name: None,
             color_by: None,
             legend_hover_link: None,
-            coordiate_system: None,
+            coordinate_system: None,
             x_axis_index: None,
             y_axis_index: None,
             polar_index: None,
@@ -79,7 +85,9 @@ impl Bar {
             show_background: None,
             background_style: None,
             label: None,
+            item_style: None,
             emphais: None,
+            stack: None,
             data: vec![],
         }
     }
@@ -94,8 +102,8 @@ impl Bar {
         self
     }
 
-    pub fn color_by(mut self, color_by: ColorBy) -> Self {
-        self.color_by = Some(color_by);
+    pub fn color_by<C: Into<ColorBy>>(mut self, color_by: C) -> Self {
+        self.color_by = Some(color_by.into());
         self
     }
 
@@ -104,23 +112,23 @@ impl Bar {
         self
     }
 
-    pub fn coordiate_system(mut self, coordiate_system: CoordinateSystem) -> Self {
-        self.coordiate_system = Some(coordiate_system);
+    pub fn coordinate_system<C: Into<CoordinateSystem>>(mut self, coordiate_system: C) -> Self {
+        self.coordinate_system = Some(coordiate_system.into());
         self
     }
 
-    pub fn x_axis_index(mut self, x_axis_index: u64) -> Self {
-        self.x_axis_index = Some(x_axis_index);
+    pub fn x_axis_index<F: Into<f64>>(mut self, x_axis_index: F) -> Self {
+        self.x_axis_index = Some(x_axis_index.into());
         self
     }
 
-    pub fn y_axis_index(mut self, y_axis_index: u64) -> Self {
-        self.y_axis_index = Some(y_axis_index);
+    pub fn y_axis_index<F: Into<f64>>(mut self, y_axis_index: F) -> Self {
+        self.y_axis_index = Some(y_axis_index.into());
         self
     }
 
-    pub fn polar_index(mut self, polar_index: u64) -> Self {
-        self.polar_index = Some(polar_index);
+    pub fn polar_index<F: Into<f64>>(mut self, polar_index: F) -> Self {
+        self.polar_index = Some(polar_index.into());
         self
     }
 
@@ -139,18 +147,28 @@ impl Bar {
         self
     }
 
-    pub fn background_style(mut self, background_style: BackgroundStyle) -> Self {
-        self.background_style = Some(background_style);
+    pub fn background_style<S: Into<BackgroundStyle>>(mut self, background_style: S) -> Self {
+        self.background_style = Some(background_style.into());
         self
     }
 
-    pub fn label(mut self, label: Label) -> Self {
-        self.label = Some(label);
+    pub fn label<L: Into<Label>>(mut self, label: L) -> Self {
+        self.label = Some(label.into());
         self
     }
 
-    pub fn emphasis(mut self, emphasis: Emphasis) -> Self {
-        self.emphais = Some(emphasis);
+    pub fn item_style<S: Into<ItemStyle>>(mut self, item_style: S) -> Self {
+        self.item_style = Some(item_style.into());
+        self
+    }
+
+    pub fn emphasis<E: Into<Emphasis>>(mut self, emphasis: E) -> Self {
+        self.emphais = Some(emphasis.into());
+        self
+    }
+
+    pub fn stack<S: Into<String>>(mut self, stack: S) -> Self {
+        self.stack = Some(stack.into());
         self
     }
 

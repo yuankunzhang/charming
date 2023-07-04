@@ -1,7 +1,7 @@
 pub mod anchor;
 pub mod area_style;
-pub mod axis_style;
-pub mod background_style;
+pub mod axis_attr;
+pub mod background;
 pub mod blur;
 pub mod border_type;
 pub mod boundary_gap;
