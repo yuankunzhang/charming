@@ -6,7 +6,7 @@ use crate::{
     datatype::{DataFrame, DataPoint},
     element::{
         background::BackgroundStyle, color::ColorBy, coordinate::CoordinateSystem,
-        emphasis::Emphasis, item_style::ItemStyle, label::Label,
+        emphasis::Emphasis, item_style::ItemStyle, label::Label, mark_line::MarkLine,
     },
 };
 
@@ -62,7 +62,13 @@ pub struct Bar {
     emphais: Option<Emphasis>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    mark_line: Option<MarkLine>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     stack: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    bar_width: Option<f64>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: DataFrame,
@@ -87,7 +93,9 @@ impl Bar {
             label: None,
             item_style: None,
             emphais: None,
+            mark_line: None,
             stack: None,
+            bar_width: None,
             data: vec![],
         }
     }
@@ -167,8 +175,18 @@ impl Bar {
         self
     }
 
+    pub fn mark_line<M: Into<MarkLine>>(mut self, mark_line: M) -> Self {
+        self.mark_line = Some(mark_line.into());
+        self
+    }
+
     pub fn stack<S: Into<String>>(mut self, stack: S) -> Self {
         self.stack = Some(stack.into());
+        self
+    }
+
+    pub fn bar_width<F: Into<f64>>(mut self, bar_width: F) -> Self {
+        self.bar_width = Some(bar_width.into());
         self
     }
 

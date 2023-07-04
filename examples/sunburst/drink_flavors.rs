@@ -21,7 +21,7 @@ fn main() {
         .series(Series::Sunburst(
             sunburst::Sunburst::new()
                 .radius(("0%", "95%"))
-                .emphasis(emphasis::Emphasis::new().focus(emphasis::Focus::Ancestor))
+                .emphasis(emphasis::Emphasis::new().focus(emphasis::EmphasisFocus::Ancestor))
                 .sort(sort::Sort::None)
                 .levels(vec![
                     sunburst::Level::new(),

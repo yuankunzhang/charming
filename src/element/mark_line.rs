@@ -2,7 +2,7 @@ use serde::{ser::SerializeSeq, Serialize};
 
 use crate::datatype::Value;
 
-use super::{label::Label, symbol::Symbol};
+use super::{label::Label, line_style::LineStyle, symbol::Symbol};
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
@@ -131,6 +131,9 @@ pub struct MarkLine {
     #[serde(skip_serializing_if = "Option::is_none")]
     label: Option<Label>,
 
+    #[serde(skip_serializing_if = "Option::is_none")]
+    line_style: Option<LineStyle>,
+
     #[serde(skip_serializing_if = "Vec::is_empty")]
     symbol: Vec<Symbol>,
 
@@ -142,18 +145,24 @@ impl MarkLine {
     pub fn new() -> Self {
         Self {
             label: None,
+            line_style: None,
             symbol: vec![],
             data: vec![],
         }
     }
 
-    pub fn label(mut self, label: Label) -> Self {
-        self.label = Some(label);
+    pub fn label<L: Into<Label>>(mut self, label: L) -> Self {
+        self.label = Some(label.into());
         self
     }
 
-    pub fn symbol(mut self, symbol: Vec<Symbol>) -> Self {
-        self.symbol = symbol;
+    pub fn line_style<L: Into<LineStyle>>(mut self, line_style: L) -> Self {
+        self.line_style = Some(line_style.into());
+        self
+    }
+
+    pub fn symbol<S: Into<Symbol>>(mut self, symbol: Vec<S>) -> Self {
+        self.symbol = symbol.into_iter().map(|s| s.into()).collect();
         self
     }
 

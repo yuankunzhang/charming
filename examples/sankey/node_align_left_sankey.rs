@@ -16,7 +16,7 @@ fn main() {
         )
         .series(Series::Sankey(
             sankey::Sankey::new()
-                .emphasis(emphasis::Emphasis::new().focus(emphasis::Focus::Adjacency))
+                .emphasis(emphasis::Emphasis::new().focus(emphasis::EmphasisFocus::Adjacency))
                 .node_align(sankey::NodeAlign::Left)
                 .line_style(line_style::LineStyle::new().color("source").curveness(0.5))
                 .data(data),

@@ -33,7 +33,7 @@ fn main() {
                         .align(label::Align::Right)
                         .font_size(9.0),
                 )
-                .emphasis(emphasis::Emphasis::new().focus(emphasis::Focus::Descendant))
+                .emphasis(emphasis::Emphasis::new().focus(emphasis::EmphasisFocus::Descendant))
                 .expand_and_collapse(true)
                 .animation_duration(550.0)
                 .animation_duration_update(750.0)

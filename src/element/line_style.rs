@@ -4,7 +4,7 @@ use super::color::Color;
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
-pub enum Type {
+pub enum LineStyleType {
     Solid,
     Dashed,
     Dotted,
@@ -21,7 +21,7 @@ pub struct LineStyle {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(rename = "type")]
-    type_: Option<Type>,
+    type_: Option<LineStyleType>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     opacity: Option<f64>,
@@ -51,8 +51,8 @@ impl LineStyle {
         self
     }
 
-    pub fn type_(mut self, type_: Type) -> Self {
-        self.type_ = Some(type_);
+    pub fn type_<L: Into<LineStyleType>>(mut self, type_: L) -> Self {
+        self.type_ = Some(type_.into());
         self
     }
 

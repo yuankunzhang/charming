@@ -39,7 +39,7 @@ fn main() {
                 .name("Email")
                 .stack("Total")
                 .area_style(area_style::AreaStyle::new())
-                .emphasis(emphasis::Emphasis::new().focus(emphasis::Focus::Series))
+                .emphasis(emphasis::Emphasis::new().focus(emphasis::EmphasisFocus::Series))
                 .data(vec![120, 132, 101, 134, 90, 230, 210]),
         ))
         .series(Series::Line(
@@ -47,7 +47,7 @@ fn main() {
                 .name("Union Ads")
                 .stack("Total")
                 .area_style(area_style::AreaStyle::new())
-                .emphasis(emphasis::Emphasis::new().focus(emphasis::Focus::Series))
+                .emphasis(emphasis::Emphasis::new().focus(emphasis::EmphasisFocus::Series))
                 .data(vec![220, 182, 191, 234, 290, 330, 310]),
         ))
         .series(Series::Line(
@@ -55,7 +55,7 @@ fn main() {
                 .name("Video Ads")
                 .stack("Total")
                 .area_style(area_style::AreaStyle::new())
-                .emphasis(emphasis::Emphasis::new().focus(emphasis::Focus::Series))
+                .emphasis(emphasis::Emphasis::new().focus(emphasis::EmphasisFocus::Series))
                 .data(vec![150, 232, 201, 154, 190, 330, 410]),
         ))
         .series(Series::Line(
@@ -63,7 +63,7 @@ fn main() {
                 .name("Direct")
                 .stack("Total")
                 .area_style(area_style::AreaStyle::new())
-                .emphasis(emphasis::Emphasis::new().focus(emphasis::Focus::Series))
+                .emphasis(emphasis::Emphasis::new().focus(emphasis::EmphasisFocus::Series))
                 .data(vec![320, 332, 301, 334, 390, 330, 320]),
         ))
         .series(Series::Line(
@@ -71,7 +71,7 @@ fn main() {
                 .name("Search Engine")
                 .stack("Total")
                 .area_style(area_style::AreaStyle::new())
-                .emphasis(emphasis::Emphasis::new().focus(emphasis::Focus::Series))
+                .emphasis(emphasis::Emphasis::new().focus(emphasis::EmphasisFocus::Series))
                 .data(vec![820, 932, 901, 934, 1290, 1330, 1320]),
         ));
     println!("{}", chart.to_string());
