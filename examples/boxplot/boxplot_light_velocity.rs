@@ -1,6 +1,6 @@
 use echarts::{
     component::{axis, dataset, grid, title, tooltip},
-    element::{axis_attr, split_area, split_line, text_style},
+    element::{axis_type, split_area, split_line, text_style},
     series::{boxplot, scatter, Series},
     Chart,
 };
@@ -67,7 +67,7 @@ fn main() {
         .grid(grid::Grid::new().left("10%").right("10%").bottom("15%"))
         .x_axis(
             axis::Axis::new()
-                .type_(axis_attr::AxisType::Category)
+                .type_(axis_type::AxisType::Category)
                 .boundary_gap(true)
                 .name_gap(30)
                 .split_area(split_area::SplitArea::new().show(false))
@@ -75,7 +75,7 @@ fn main() {
         )
         .y_axis(
             axis::Axis::new()
-                .type_(axis_attr::AxisType::Value)
+                .type_(axis_type::AxisType::Value)
                 .name("km/s minus 299,000")
                 .split_area(split_area::SplitArea::new().show(true)),
         )

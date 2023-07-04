@@ -1,7 +1,7 @@
 use echarts::{
     component::{axis, visual_map},
     datatype::value,
-    element::{area_style, axis_attr, label, line_style, mark_line, symbol},
+    element::{area_style, axis_line, axis_type, label, line_style, mark_line, symbol},
     series::{line, Series},
     Chart,
 };
@@ -10,12 +10,12 @@ fn main() {
     let chart = Chart::new()
         .x_axis(
             axis::Axis::new()
-                .type_(axis_attr::AxisType::Category)
+                .type_(axis_type::AxisType::Category)
                 .boundary_gap(false),
         )
         .y_axis(
             axis::Axis::new()
-                .type_(axis_attr::AxisType::Value)
+                .type_(axis_type::AxisType::Value)
                 .boundary_gap(("0", "20%")),
         )
         .visual_map(

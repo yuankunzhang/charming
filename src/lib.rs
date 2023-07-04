@@ -2,6 +2,7 @@ use component::angle_axis::AngleAxis;
 use component::data_zoom::DataZoom;
 use component::dataset::Dataset;
 use component::parallel_axis::ParallelAxis;
+use component::parallel_coordinate::ParallelCoordinate;
 use component::polar::Polar;
 use component::radius_axis::RadiusAxis;
 use component::visual_map::VisualMap;
@@ -72,6 +73,9 @@ pub struct Chart {
     data_zoom: Vec<DataZoom>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    parallel: Option<ParallelCoordinate>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     dataset: Option<Dataset>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
@@ -104,6 +108,7 @@ impl Chart {
             parallel_axis: vec![],
             visual_map: vec![],
             data_zoom: vec![],
+            parallel: None,
             dataset: None,
             radar: vec![],
             color: vec![],
@@ -179,6 +184,11 @@ impl Chart {
 
     pub fn data_zoom(mut self, data_zoom: DataZoom) -> Self {
         self.data_zoom.push(data_zoom);
+        self
+    }
+
+    pub fn parallel(mut self, parallel: ParallelCoordinate) -> Self {
+        self.parallel = Some(parallel);
         self
     }
 

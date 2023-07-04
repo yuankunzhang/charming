@@ -1,6 +1,9 @@
 pub mod anchor;
 pub mod area_style;
-pub mod axis_attr;
+pub mod axis_label;
+pub mod axis_line;
+pub mod axis_tick;
+pub mod axis_type;
 pub mod background;
 pub mod blur;
 pub mod border_type;

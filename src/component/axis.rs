@@ -1,37 +1,9 @@
 use serde::Serialize;
 
 use crate::element::{
-    axis_attr::AxisType, boundary_gap::BoundaryGap, split_area::SplitArea, split_line::SplitLine,
+    axis_label::AxisLabel, axis_type::AxisType, boundary_gap::BoundaryGap, split_area::SplitArea,
+    split_line::SplitLine,
 };
-
-#[derive(Serialize)]
-#[serde(rename_all = "camelCase")]
-pub struct AxisLabel {
-    #[serde(skip_serializing_if = "Option::is_none")]
-    interval: Option<f64>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
-    formatter: Option<String>,
-}
-
-impl AxisLabel {
-    pub fn new() -> Self {
-        Self {
-            interval: None,
-            formatter: None,
-        }
-    }
-
-    pub fn interval<F: Into<f64>>(mut self, interval: F) -> Self {
-        self.interval = Some(interval.into());
-        self
-    }
-
-    pub fn formatter<S: Into<String>>(mut self, formatter: S) -> Self {
-        self.formatter = Some(formatter.into());
-        self
-    }
-}
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]

@@ -1,6 +1,6 @@
 use echarts::{
     component::{axis, grid, title, tooltip},
-    element::{axis_attr, emphasis, item_style, label, split_line},
+    element::{axis_type, emphasis, item_style, label, split_line},
     series::{bar, Series},
     Chart,
 };
@@ -27,7 +27,7 @@ fn main() {
         )
         .x_axis(
             axis::Axis::new()
-                .type_(axis_attr::AxisType::Category)
+                .type_(axis_type::AxisType::Category)
                 .split_line(split_line::SplitLine::new().show(false))
                 .data(vec![
                     "Total",
@@ -38,7 +38,7 @@ fn main() {
                     "Other",
                 ]),
         )
-        .y_axis(axis::Axis::new().type_(axis_attr::AxisType::Value))
+        .y_axis(axis::Axis::new().type_(axis_type::AxisType::Value))
         .series(Series::Bar(
             bar::Bar::new()
                 .name("Placeholder")

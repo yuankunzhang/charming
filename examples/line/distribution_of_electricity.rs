@@ -1,6 +1,6 @@
 use echarts::{
     component::{axis, title, toolbox, tooltip, visual_map},
-    element::{axis_attr, item_style, mark_area},
+    element::{axis_label, axis_type, item_style, mark_area},
     series::{line, Series},
     Chart,
 };
@@ -24,7 +24,7 @@ fn main() {
         )
         .x_axis(
             axis::Axis::new()
-                .type_(axis_attr::AxisType::Category)
+                .type_(axis_type::AxisType::Category)
                 .boundary_gap(false)
                 .data(vec![
                     "00:00", "01:15", "02:30", "03:45", "05:00", "06:15", "07:30", "08:45",
@@ -34,8 +34,8 @@ fn main() {
         )
         .y_axis(
             axis::Axis::new()
-                .type_(axis_attr::AxisType::Value)
-                .axis_label(axis::AxisLabel::new().formatter("{value} W"))
+                .type_(axis_type::AxisType::Value)
+                .axis_label(axis_label::AxisLabel::new().formatter("{value} W"))
                 .axis_pointer(axis::AxisPointer::new().snap(true)),
         )
         .visual_map(

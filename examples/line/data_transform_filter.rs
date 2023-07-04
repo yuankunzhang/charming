@@ -1,7 +1,7 @@
 use echarts::{
     component::{axis, dataset, title, tooltip},
     datatype::Value,
-    element::axis_attr,
+    element::axis_type,
     series::{line, Series},
     Chart,
 };
@@ -49,7 +49,7 @@ fn main() {
         .tooltip(tooltip::Tooltip::new().trigger(tooltip::Trigger::Axis))
         .x_axis(
             axis::Axis::new()
-                .type_(axis_attr::AxisType::Category)
+                .type_(axis_type::AxisType::Category)
                 .name_location("middle"),
         )
         .y_axis(axis::Axis::new().name("Income"))

@@ -1,6 +1,6 @@
 use echarts::{
     component::{angle_axis, polar, radius_axis, title, tooltip},
-    element::{axis_attr, coordinate, label},
+    element::{axis_type, coordinate, label},
     series::{bar, Series},
     Chart,
 };
@@ -12,7 +12,7 @@ fn main() {
         .angle_axis(angle_axis::AngleAxis::new().start_angle(75).max(4))
         .radius_axis(
             radius_axis::RadiusAxis::new()
-                .type_(axis_attr::AxisType::Category)
+                .type_(axis_type::AxisType::Category)
                 .data(vec!["a", "b", "c", "d"]),
         )
         .tooltip(tooltip::Tooltip::new())

@@ -1,6 +1,6 @@
 use echarts::{
     component::{axis, data_zoom, grid, legend, title, tooltip},
-    element::{axis_attr, split_area, split_line},
+    element::{axis_type, split_area, split_line},
     series::{boxplot, Series},
     Chart,
 };
@@ -27,7 +27,7 @@ fn main() {
         )
         .x_axis(
             axis::Axis::new()
-                .type_(axis_attr::AxisType::Category)
+                .type_(axis_type::AxisType::Category)
                 .boundary_gap(true)
                 .name_gap(30)
                 .split_area(split_area::SplitArea::new().show(true))
@@ -35,7 +35,7 @@ fn main() {
         )
         .y_axis(
             axis::Axis::new()
-                .type_(axis_attr::AxisType::Value)
+                .type_(axis_type::AxisType::Value)
                 .name("Value")
                 .min(-400)
                 .max(600)

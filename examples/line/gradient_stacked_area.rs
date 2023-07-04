@@ -1,6 +1,6 @@
 use echarts::{
     component::{axis, grid, legend, title, toolbox, tooltip},
-    element::{area_style, axis_attr, color, line_style},
+    element::{area_style, axis_type, color, line_style},
     series::{line, Series},
     Chart,
 };
@@ -38,11 +38,11 @@ fn main() {
         )
         .x_axis(
             axis::Axis::new()
-                .type_(axis_attr::AxisType::Category)
+                .type_(axis_type::AxisType::Category)
                 .boundary_gap(false)
                 .data(vec!["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]),
         )
-        .y_axis(axis::Axis::new().type_(axis_attr::AxisType::Value))
+        .y_axis(axis::Axis::new().type_(axis_type::AxisType::Value))
         .series(Series::Line(
             line::Line::new()
                 .name("Line 1")

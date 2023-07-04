@@ -1,12 +1,12 @@
 use serde::Serialize;
 
-use crate::element::axis_attr;
+use crate::element::axis_type::AxisType;
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct RadiusAxis {
     #[serde(skip_serializing_if = "Option::is_none")]
-    type_: Option<axis_attr::AxisType>,
+    type_: Option<AxisType>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: Vec<String>,
@@ -20,7 +20,7 @@ impl RadiusAxis {
         }
     }
 
-    pub fn type_<T: Into<axis_attr::AxisType>>(mut self, type_: T) -> Self {
+    pub fn type_<T: Into<AxisType>>(mut self, type_: T) -> Self {
         self.type_ = Some(type_.into());
         self
     }

@@ -1,6 +1,6 @@
 use serde::Serialize;
 
-use crate::element::axis_attr::AxisType;
+use crate::element::axis_type::AxisType;
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
