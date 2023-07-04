@@ -7,7 +7,7 @@ use crate::element::{
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
-pub enum Type {
+pub enum LegendType {
     /// Simple legend.
     Plain,
 
@@ -16,12 +16,22 @@ pub enum Type {
 }
 
 #[derive(Serialize)]
+#[serde(rename_all = "snake_case")]
+pub enum SelectedMode {
+    /// Multiple selection.
+    Multiple,
+
+    /// Single selection.
+    Single,
+}
+
+#[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Legend {
     /// Type of legend.
     #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(rename = "type")]
-    type_: Option<Type>,
+    type_: Option<LegendType>,
 
     /// Whether to show the legend component.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -103,6 +113,9 @@ pub struct Legend {
     formatter: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    selected_mode: Option<SelectedMode>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     data: Option<Vec<String>>,
 }
 
@@ -130,11 +143,12 @@ impl Legend {
             text_style: None,
             symbol_rotate: None,
             formatter: None,
+            selected_mode: None,
             data: None,
         }
     }
 
-    pub fn type_<T: Into<Type>>(mut self, type_: T) -> Self {
+    pub fn type_<T: Into<LegendType>>(mut self, type_: T) -> Self {
         self.type_ = Some(type_.into());
         self
     }
@@ -236,6 +250,11 @@ impl Legend {
 
     pub fn formatter<S: Into<String>>(mut self, formatter: S) -> Self {
         self.formatter = Some(formatter.into());
+        self
+    }
+
+    pub fn selected_mode<S: Into<SelectedMode>>(mut self, selected_mode: S) -> Self {
+        self.selected_mode = Some(selected_mode.into());
         self
     }
 

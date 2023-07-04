@@ -1,8 +1,8 @@
 use serde::Serialize;
 
 use crate::element::{
-    axis_label::AxisLabel, axis_pointer::AxisPointer, axis_type::AxisType,
-    boundary_gap::BoundaryGap, split_area::SplitArea, split_line::SplitLine,
+    axis_label::AxisLabel, axis_line::AxisLine, axis_pointer::AxisPointer, axis_tick::AxisTick,
+    axis_type::AxisType, boundary_gap::BoundaryGap, split_area::SplitArea, split_line::SplitLine,
 };
 
 /// Axis in cartesian coordinate.
@@ -32,6 +32,12 @@ pub struct Axis {
     axis_label: Option<AxisLabel>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    axis_tick: Option<AxisTick>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    axis_line: Option<AxisLine>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     axis_pointer: Option<AxisPointer>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -55,6 +61,9 @@ pub struct Axis {
     #[serde(skip_serializing_if = "Option::is_none")]
     max: Option<f64>,
 
+    #[serde(skip_serializing_if = "Option::is_none")]
+    offset: Option<f64>,
+
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: Vec<String>,
 }
@@ -68,6 +77,8 @@ impl Axis {
             boundary_gap: None,
             name_gap: None,
             axis_label: None,
+            axis_tick: None,
+            axis_line: None,
             axis_pointer: None,
             split_area: None,
             split_line: None,
@@ -76,6 +87,7 @@ impl Axis {
             grid_index: None,
             min: None,
             max: None,
+            offset: None,
             data: vec![],
         }
     }
@@ -107,6 +119,16 @@ impl Axis {
 
     pub fn axis_label<L: Into<AxisLabel>>(mut self, axis_label: L) -> Self {
         self.axis_label = Some(axis_label.into());
+        self
+    }
+
+    pub fn axis_tick<T: Into<AxisTick>>(mut self, axis_tick: T) -> Self {
+        self.axis_tick = Some(axis_tick.into());
+        self
+    }
+
+    pub fn axis_line<L: Into<AxisLine>>(mut self, axis_line: L) -> Self {
+        self.axis_line = Some(axis_line.into());
         self
     }
 
@@ -147,6 +169,11 @@ impl Axis {
 
     pub fn max<F: Into<f64>>(mut self, max: F) -> Self {
         self.max = Some(max.into());
+        self
+    }
+
+    pub fn offset<F: Into<f64>>(mut self, offset: F) -> Self {
+        self.offset = Some(offset.into());
         self
     }
 

@@ -134,6 +134,12 @@ pub struct MarkLine {
     #[serde(skip_serializing_if = "Option::is_none")]
     line_style: Option<LineStyle>,
 
+    #[serde(skip_serializing_if = "Option::is_none")]
+    zlevel: Option<f64>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    z: Option<f64>,
+
     #[serde(skip_serializing_if = "Vec::is_empty")]
     symbol: Vec<Symbol>,
 
@@ -146,6 +152,8 @@ impl MarkLine {
         Self {
             label: None,
             line_style: None,
+            zlevel: None,
+            z: None,
             symbol: vec![],
             data: vec![],
         }
@@ -158,6 +166,16 @@ impl MarkLine {
 
     pub fn line_style<L: Into<LineStyle>>(mut self, line_style: L) -> Self {
         self.line_style = Some(line_style.into());
+        self
+    }
+
+    pub fn zlevel<F: Into<f64>>(mut self, zlevel: F) -> Self {
+        self.zlevel = Some(zlevel.into());
+        self
+    }
+
+    pub fn z<F: Into<f64>>(mut self, z: F) -> Self {
+        self.z = Some(z.into());
         self
     }
 

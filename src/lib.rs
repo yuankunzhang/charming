@@ -6,6 +6,7 @@ use component::parallel_coordinate::ParallelCoordinate;
 use component::polar::Polar;
 use component::radius_axis::RadiusAxis;
 use component::visual_map::VisualMap;
+use element::mark_line::MarkLine;
 use element::single_axis::SingleAxis;
 use serde::Serialize;
 
@@ -89,6 +90,9 @@ pub struct Chart {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     background_color: Option<Color>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    mark_line: Option<MarkLine>,
 }
 
 impl Chart {
@@ -114,6 +118,7 @@ impl Chart {
             color: vec![],
             series: vec![],
             background_color: None,
+            mark_line: None,
         }
     }
 
@@ -214,6 +219,11 @@ impl Chart {
 
     pub fn background_color<C: Into<Color>>(mut self, color: C) -> Self {
         self.background_color = Some(color.into());
+        self
+    }
+
+    pub fn mark_line(mut self, mark_line: MarkLine) -> Self {
+        self.mark_line = Some(mark_line);
         self
     }
 }

@@ -6,6 +6,9 @@ use super::color::Color;
 #[serde(rename_all = "camelCase")]
 pub struct AxisLabel {
     #[serde(skip_serializing_if = "Option::is_none")]
+    show: Option<bool>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     distance: Option<f64>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -21,11 +24,17 @@ pub struct AxisLabel {
 impl AxisLabel {
     pub fn new() -> Self {
         Self {
+            show: None,
             distance: None,
             font_size: None,
             color: None,
             formatter: None,
         }
+    }
+
+    pub fn show(mut self, show: bool) -> Self {
+        self.show = Some(show);
+        self
     }
 
     pub fn distance<F: Into<f64>>(mut self, distance: F) -> Self {

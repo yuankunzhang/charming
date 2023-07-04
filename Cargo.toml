@@ -113,6 +113,10 @@ name = "parallel_aqi"
 path = "examples/parallel/parallel_aqi.rs"
 
 [[example]]
+name = "water_content"
+path = "examples/pictorial_bar/water_content.rs"
+
+[[example]]
 name = "nightingale"
 path = "examples/pie/nightingale.rs"
 
