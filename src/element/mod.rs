@@ -21,6 +21,8 @@ pub mod link_target;
 pub mod mark_area;
 pub mod mark_line;
 pub mod mark_point;
+pub mod minor_split_line;
+pub mod minor_tick;
 pub mod orient;
 pub mod padding;
 pub mod pointer;
