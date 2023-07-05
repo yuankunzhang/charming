@@ -1,6 +1,6 @@
 use echarts::{
     component::{legend, toolbox},
-    element::item_style,
+    element::ItemStyle,
     series::{pie, Series},
     Chart,
 };
@@ -22,7 +22,7 @@ pub fn chart() -> Chart {
                 .rose_type(pie::RoseType::Radius)
                 .radius(("50", "250"))
                 .center(("50%", "50%"))
-                .item_style(item_style::ItemStyle::new().border_radius(8))
+                .item_style(ItemStyle::new().border_radius(8))
                 .data(vec![
                     (40.0, "rose 1"),
                     (38.0, "rose 2"),

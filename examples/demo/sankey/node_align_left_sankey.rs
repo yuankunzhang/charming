@@ -1,6 +1,6 @@
 use echarts::{
     component::{title, tooltip},
-    element::{emphasis, line_style, tooltip_trigger},
+    element::{Emphasis, EmphasisFocus, LineStyle, TooltipTrigger},
     series::{sankey, Series},
     Chart,
 };
@@ -11,14 +11,14 @@ pub fn chart() -> Chart {
         .title(title::Title::new().text("Node Align Left Sankey"))
         .tooltip(
             tooltip::Tooltip::new()
-                .trigger(tooltip_trigger::TooltipTrigger::Item)
+                .trigger(TooltipTrigger::Item)
                 .trigger_on(tooltip::TriggerOn::Mousemove),
         )
         .series(Series::Sankey(
             sankey::Sankey::new()
-                .emphasis(emphasis::Emphasis::new().focus(emphasis::EmphasisFocus::Adjacency))
+                .emphasis(Emphasis::new().focus(EmphasisFocus::Adjacency))
                 .node_align(sankey::NodeAlign::Left)
-                .line_style(line_style::LineStyle::new().color("source").curveness(0.5))
+                .line_style(LineStyle::new().color("source").curveness(0.5))
                 .data(data),
         ))
 }

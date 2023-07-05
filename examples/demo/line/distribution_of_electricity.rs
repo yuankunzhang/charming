@@ -1,6 +1,9 @@
 use echarts::{
     component::{axis, title, toolbox, tooltip, visual_map},
-    element::{axis_label, axis_pointer, axis_type, item_style, mark_area, tooltip_trigger},
+    element::{
+        AxisLabel, AxisPointer, AxisPointerType, AxisType, ItemStyle, MarkArea, MarkAreaData,
+        TooltipTrigger,
+    },
     series::{line, Series},
     Chart,
 };
@@ -14,10 +17,8 @@ pub fn chart() -> Chart {
         )
         .tooltip(
             tooltip::Tooltip::new()
-                .trigger(tooltip_trigger::TooltipTrigger::Axis)
-                .axis_pointer(
-                    axis_pointer::AxisPointer::new().type_(axis_pointer::AxisPointerType::Cross),
-                ),
+                .trigger(TooltipTrigger::Axis)
+                .axis_pointer(AxisPointer::new().type_(AxisPointerType::Cross)),
         )
         .toolbox(
             toolbox::Toolbox::new().show(true).feature(
@@ -26,7 +27,7 @@ pub fn chart() -> Chart {
         )
         .x_axis(
             axis::Axis::new()
-                .type_(axis_type::AxisType::Category)
+                .type_(AxisType::Category)
                 .boundary_gap(false)
                 .data(vec![
                     "00:00", "01:15", "02:30", "03:45", "05:00", "06:15", "07:30", "08:45",
@@ -36,9 +37,9 @@ pub fn chart() -> Chart {
         )
         .y_axis(
             axis::Axis::new()
-                .type_(axis_type::AxisType::Value)
-                .axis_label(axis_label::AxisLabel::new().formatter("{value} W"))
-                .axis_pointer(axis_pointer::AxisPointer::new().snap(true)),
+                .type_(AxisType::Value)
+                .axis_label(AxisLabel::new().formatter("{value} W"))
+                .axis_pointer(AxisPointer::new().snap(true)),
         )
         .visual_map(
             visual_map::VisualMap::new()
@@ -61,20 +62,16 @@ pub fn chart() -> Chart {
                     800, 700, 600, 400,
                 ])
                 .mark_area(
-                    mark_area::MarkArea::new()
-                        .item_style(item_style::ItemStyle::new().color("rgba(255, 173, 177, 0.4)"))
+                    MarkArea::new()
+                        .item_style(ItemStyle::new().color("rgba(255, 173, 177, 0.4)"))
                         .data(vec![
                             (
-                                mark_area::MarkAreaData::new()
-                                    .name("Morning Peak")
-                                    .x_axis("07:30"),
-                                mark_area::MarkAreaData::new().x_axis("10:00"),
+                                MarkAreaData::new().name("Morning Peak").x_axis("07:30"),
+                                MarkAreaData::new().x_axis("10:00"),
                             ),
                             (
-                                mark_area::MarkAreaData::new()
-                                    .name("Evening Peak")
-                                    .x_axis("17:30"),
-                                mark_area::MarkAreaData::new().x_axis("21:15"),
+                                MarkAreaData::new().name("Evening Peak").x_axis("17:30"),
+                                MarkAreaData::new().x_axis("21:15"),
                             ),
                         ]),
                 ),

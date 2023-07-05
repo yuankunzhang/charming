@@ -2,7 +2,7 @@ use serde::Serialize;
 
 use crate::{
     datatype::{DataForest, DataNode},
-    element::{emphasis::Emphasis, item_style::ItemStyle, label::Label},
+    element::{Emphasis, ItemStyle, Label},
 };
 
 #[derive(Serialize)]

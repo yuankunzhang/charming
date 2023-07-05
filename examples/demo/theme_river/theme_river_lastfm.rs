@@ -1,6 +1,6 @@
 use echarts::{
     datatype::{value, DataPoint},
-    element::{label, single_axis},
+    element::{Label, SingleAxis},
     series::{theme_river, Series},
     Chart,
 };
@@ -110,10 +110,10 @@ pub fn chart() -> Chart {
         .collect::<Vec<_>>();
 
     Chart::new()
-        .single_axis(single_axis::SingleAxis::new().max("dataMax"))
+        .single_axis(SingleAxis::new().max("dataMax"))
         .series(Series::ThemeRiver(
             theme_river::ThemeRiver::new()
-                .label(label::Label::new().show(false))
+                .label(Label::new().show(false))
                 .data(data),
         ))
 }

@@ -1,6 +1,9 @@
 use echarts::{
     component::{axis, grid, legend, title, toolbox, tooltip},
-    element::{area_style, axis_pointer, axis_type, color, line_style, tooltip_trigger},
+    element::{
+        AreaStyle, AxisPointer, AxisPointerLabel, AxisPointerType, AxisType, Color, ColorStop,
+        LineStyle, TooltipTrigger,
+    },
     series::{line, Series},
     Chart,
 };
@@ -17,14 +20,11 @@ pub fn chart() -> Chart {
         .title(title::Title::new().text("Gradient Stacked Area Chart"))
         .tooltip(
             tooltip::Tooltip::new()
-                .trigger(tooltip_trigger::TooltipTrigger::Axis)
+                .trigger(TooltipTrigger::Axis)
                 .axis_pointer(
-                    axis_pointer::AxisPointer::new()
-                        .type_(axis_pointer::AxisPointerType::Cross)
-                        .label(
-                            axis_pointer::AxisPointerLabel::new()
-                                .background_color("#6a7985".into()),
-                        ),
+                    AxisPointer::new()
+                        .type_(AxisPointerType::Cross)
+                        .label(AxisPointerLabel::new().background_color("#6a7985".into())),
                 ),
         )
         .legend(legend::Legend::new().data(vec!["Line 1", "Line 2", "Line 3", "Line 4", "Line 5"]))
@@ -41,27 +41,27 @@ pub fn chart() -> Chart {
         )
         .x_axis(
             axis::Axis::new()
-                .type_(axis_type::AxisType::Category)
+                .type_(AxisType::Category)
                 .boundary_gap(false)
                 .data(vec!["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]),
         )
-        .y_axis(axis::Axis::new().type_(axis_type::AxisType::Value))
+        .y_axis(axis::Axis::new().type_(AxisType::Value))
         .series(Series::Line(
             line::Line::new()
                 .name("Line 1")
                 .show_symbol(false)
                 .stack("Total")
-                .line_style(line_style::LineStyle::new().width(0.0))
+                .line_style(LineStyle::new().width(0.0))
                 .area_style(
-                    area_style::AreaStyle::new()
-                        .color(color::Color::LinearGradient {
+                    AreaStyle::new()
+                        .color(Color::LinearGradient {
                             x: 0.0,
                             y: 0.0,
                             x2: 0.0,
                             y2: 1.0,
                             color_stops: vec![
-                                color::ColorStop::new(0.0, "rgb(128, 255, 165)"),
-                                color::ColorStop::new(1.0, "rgb(1, 191, 236)"),
+                                ColorStop::new(0.0, "rgb(128, 255, 165)"),
+                                ColorStop::new(1.0, "rgb(1, 191, 236)"),
                             ],
                         })
                         .opacity(0.8),
@@ -74,17 +74,17 @@ pub fn chart() -> Chart {
                 .name("Line 2")
                 .show_symbol(false)
                 .stack("Total")
-                .line_style(line_style::LineStyle::new().width(0.0))
+                .line_style(LineStyle::new().width(0.0))
                 .area_style(
-                    area_style::AreaStyle::new()
-                        .color(color::Color::LinearGradient {
+                    AreaStyle::new()
+                        .color(Color::LinearGradient {
                             x: 0.0,
                             y: 0.0,
                             x2: 0.0,
                             y2: 1.0,
                             color_stops: vec![
-                                color::ColorStop::new(0.0, "rgb(0, 221, 255)"),
-                                color::ColorStop::new(1.0, "rgb(77, 119, 255)"),
+                                ColorStop::new(0.0, "rgb(0, 221, 255)"),
+                                ColorStop::new(1.0, "rgb(77, 119, 255)"),
                             ],
                         })
                         .opacity(0.8),
@@ -97,17 +97,17 @@ pub fn chart() -> Chart {
                 .name("Line 3")
                 .show_symbol(false)
                 .stack("Total")
-                .line_style(line_style::LineStyle::new().width(0.0))
+                .line_style(LineStyle::new().width(0.0))
                 .area_style(
-                    area_style::AreaStyle::new()
-                        .color(color::Color::LinearGradient {
+                    AreaStyle::new()
+                        .color(Color::LinearGradient {
                             x: 0.0,
                             y: 0.0,
                             x2: 0.0,
                             y2: 1.0,
                             color_stops: vec![
-                                color::ColorStop::new(0.0, "rgb(55, 162, 255)"),
-                                color::ColorStop::new(1.0, "rgb(116, 21, 219)"),
+                                ColorStop::new(0.0, "rgb(55, 162, 255)"),
+                                ColorStop::new(1.0, "rgb(116, 21, 219)"),
                             ],
                         })
                         .opacity(0.8),
@@ -120,17 +120,17 @@ pub fn chart() -> Chart {
                 .name("Line 4")
                 .show_symbol(false)
                 .stack("Total")
-                .line_style(line_style::LineStyle::new().width(0.0))
+                .line_style(LineStyle::new().width(0.0))
                 .area_style(
-                    area_style::AreaStyle::new()
-                        .color(color::Color::LinearGradient {
+                    AreaStyle::new()
+                        .color(Color::LinearGradient {
                             x: 0.0,
                             y: 0.0,
                             x2: 0.0,
                             y2: 1.0,
                             color_stops: vec![
-                                color::ColorStop::new(0.0, "rgb(255, 0, 135)"),
-                                color::ColorStop::new(1.0, "rgb(135, 0, 157)"),
+                                ColorStop::new(0.0, "rgb(255, 0, 135)"),
+                                ColorStop::new(1.0, "rgb(135, 0, 157)"),
                             ],
                         })
                         .opacity(0.8),
@@ -143,17 +143,17 @@ pub fn chart() -> Chart {
                 .name("Line 5")
                 .show_symbol(false)
                 .stack("Total")
-                .line_style(line_style::LineStyle::new().width(0.0))
+                .line_style(LineStyle::new().width(0.0))
                 .area_style(
-                    area_style::AreaStyle::new()
-                        .color(color::Color::LinearGradient {
+                    AreaStyle::new()
+                        .color(Color::LinearGradient {
                             x: 0.0,
                             y: 0.0,
                             x2: 0.0,
                             y2: 1.0,
                             color_stops: vec![
-                                color::ColorStop::new(0.0, "rgb(255, 191, 0)"),
-                                color::ColorStop::new(1.0, "rgb(224, 62, 76)"),
+                                ColorStop::new(0.0, "rgb(255, 191, 0)"),
+                                ColorStop::new(1.0, "rgb(224, 62, 76)"),
                             ],
                         })
                         .opacity(0.8),

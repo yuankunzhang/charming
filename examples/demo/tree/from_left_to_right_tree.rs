@@ -1,6 +1,6 @@
 use echarts::{
     component::tooltip,
-    element::{emphasis, label, tooltip_trigger},
+    element::{Align, Emphasis, EmphasisFocus, Label, Position, TooltipTrigger, VerticalAlign},
     series::{tree, Series},
     Chart,
 };
@@ -15,7 +15,7 @@ pub fn chart() -> Chart {
     Chart::new()
         .tooltip(
             tooltip::Tooltip::new()
-                .trigger(tooltip_trigger::TooltipTrigger::Item)
+                .trigger(TooltipTrigger::Item)
                 .trigger_on(tooltip::TriggerOn::Mousemove),
         )
         .series(Series::Tree(
@@ -27,13 +27,13 @@ pub fn chart() -> Chart {
                 .right("20%")
                 .symbol_size(7.0)
                 .label(
-                    label::Label::new()
-                        .position(label::Position::Left)
-                        .vertical_align(label::VerticalAlign::Middle)
-                        .align(label::Align::Right)
+                    Label::new()
+                        .position(Position::Left)
+                        .vertical_align(VerticalAlign::Middle)
+                        .align(Align::Right)
                         .font_size(9.0),
                 )
-                .emphasis(emphasis::Emphasis::new().focus(emphasis::EmphasisFocus::Descendant))
+                .emphasis(Emphasis::new().focus(EmphasisFocus::Descendant))
                 .expand_and_collapse(true)
                 .animation_duration(550.0)
                 .animation_duration_update(750.0)

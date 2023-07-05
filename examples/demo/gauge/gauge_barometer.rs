@@ -1,7 +1,5 @@
 use echarts::{
-    element::{
-        anchor, axis_label, axis_line, axis_tick, item_style, line_style, pointer, split_line,
-    },
+    element::{Anchor, AxisLabel, AxisLine, AxisTick, ItemStyle, LineStyle, Pointer, SplitLine},
     series::{gauge, Series},
     Chart,
 };
@@ -14,36 +12,30 @@ pub fn chart() -> Chart {
                 .max(100)
                 .split_number(10)
                 .radius("80%")
-                .axis_line(axis_line::AxisLine::new().line_style((1.0, "#f00", 3.0)))
+                .axis_line(AxisLine::new().line_style((1.0, "#f00", 3.0)))
                 .axis_tick(
-                    axis_tick::AxisTick::new()
+                    AxisTick::new()
                         .distance(-12)
                         .length(10)
-                        .line_style(line_style::LineStyle::new().color("#f00")),
+                        .line_style(LineStyle::new().color("#f00")),
                 )
-                .axis_label(
-                    axis_label::AxisLabel::new()
-                        .distance(-50)
-                        .font_size(25)
-                        .color("#f00"),
-                )
+                .axis_label(AxisLabel::new().distance(-50).font_size(25).color("#f00"))
                 .split_line(
-                    split_line::SplitLine::new()
+                    SplitLine::new()
                         .distance(-18)
                         .length(18)
-                        .line_style(line_style::LineStyle::new().color("#f00")),
+                        .line_style(LineStyle::new().color("#f00")),
                 )
                 .anchor(
-                    anchor::Anchor::new().show(true).size(20).item_style(
-                        item_style::ItemStyle::new()
-                            .border_color("#000")
-                            .border_width(2),
-                    ),
+                    Anchor::new()
+                        .show(true)
+                        .size(20)
+                        .item_style(ItemStyle::new().border_color("#000").border_width(2)),
                 )
                 .pointer(
-                    pointer::Pointer::new()
+                    Pointer::new()
                         .length("115%")
-                        .item_style(item_style::ItemStyle::new().color("#000"))
+                        .item_style(ItemStyle::new().color("#000"))
                         .offset_center(("0", "10%"))
                         .icon(ICON),
                 )
@@ -56,33 +48,27 @@ pub fn chart() -> Chart {
                 .min(0)
                 .max(60)
                 .split_number(6)
-                .axis_line(axis_line::AxisLine::new().line_style((1.0, "#000", 3.0)))
+                .axis_line(AxisLine::new().line_style((1.0, "#000", 3.0)))
                 .axis_tick(
-                    axis_tick::AxisTick::new()
+                    AxisTick::new()
                         .distance(0)
                         .length(10)
-                        .line_style(line_style::LineStyle::new().color("#000")),
+                        .line_style(LineStyle::new().color("#000")),
                 )
-                .axis_label(
-                    axis_label::AxisLabel::new()
-                        .distance(10)
-                        .font_size(25)
-                        .color("#000"),
-                )
+                .axis_label(AxisLabel::new().distance(10).font_size(25).color("#000"))
                 .split_line(
-                    split_line::SplitLine::new()
+                    SplitLine::new()
                         .distance(-3)
                         .length(18)
-                        .line_style(line_style::LineStyle::new().color("#000")),
+                        .line_style(LineStyle::new().color("#000")),
                 )
                 .anchor(
-                    anchor::Anchor::new().show(true).size(14).item_style(
-                        item_style::ItemStyle::new()
-                            .border_color("#000")
-                            .border_width(2),
-                    ),
+                    Anchor::new()
+                        .show(true)
+                        .size(14)
+                        .item_style(ItemStyle::new().border_color("#000").border_width(2)),
                 )
-                .pointer(pointer::Pointer::new().show(false))
+                .pointer(Pointer::new().show(false))
                 .title(gauge::GaugeTitle::new().show(false)),
         ))
 }

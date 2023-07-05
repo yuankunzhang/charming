@@ -1,12 +1,6 @@
 use serde::Serialize;
 
-use crate::element::{
-    color::Color,
-    link_target::LinkTarget,
-    padding::Padding,
-    text_align::{TextAlign, TextVerticalAlign},
-    text_style::TextStyle,
-};
+use crate::element::{Color, LinkTarget, Padding, TextAlign, TextStyle, TextVerticalAlign};
 
 /// Title component, including main title and subtitle.
 #[derive(Serialize)]

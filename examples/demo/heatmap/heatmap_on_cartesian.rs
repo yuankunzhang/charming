@@ -1,7 +1,7 @@
 use echarts::{
     component::{axis, grid, tooltip, visual_map},
     datatype::{value, DataFrame, DataPoint},
-    element::{axis_type, emphasis, item_style, label, orient, split_area},
+    element::{AxisType, Emphasis, ItemStyle, Label, Orient, SplitArea},
     series::{heatmap, Series},
     Chart,
 };
@@ -193,16 +193,16 @@ pub fn chart() -> Chart {
         .grid(grid::Grid::new().height("50%").top("10%"))
         .x_axis(
             axis::Axis::new()
-                .type_(axis_type::AxisType::Category)
+                .type_(AxisType::Category)
                 .data(vec![
                     "12a", "1a", "2a", "3a", "4a", "5a", "6a", "7a", "8a", "9a", "10a", "11a",
                     "12p", "1p", "2p", "3p", "4p", "5p", "6p", "7p", "8p", "9p", "10p", "11p",
                 ])
-                .split_area(split_area::SplitArea::new().show(true)),
+                .split_area(SplitArea::new().show(true)),
         )
         .y_axis(
             axis::Axis::new()
-                .type_(axis_type::AxisType::Category)
+                .type_(AxisType::Category)
                 .data(vec![
                     "Saturday",
                     "Friday",
@@ -212,24 +212,24 @@ pub fn chart() -> Chart {
                     "Monday",
                     "Sunday",
                 ])
-                .split_area(split_area::SplitArea::new().show(true)),
+                .split_area(SplitArea::new().show(true)),
         )
         .visual_map(
             visual_map::VisualMap::new()
                 .min(0)
                 .max(10)
                 .calculable(true)
-                .orient(orient::Orient::Horizontal)
+                .orient(Orient::Horizontal)
                 .left("center")
                 .bottom("15%"),
         )
         .series(Series::Heatmap(
             heatmap::Heatmap::new()
                 .name("Punch Card")
-                .label(label::Label::new().show(true))
+                .label(Label::new().show(true))
                 .emphasis(
-                    emphasis::Emphasis::new().item_style(
-                        item_style::ItemStyle::new()
+                    Emphasis::new().item_style(
+                        ItemStyle::new()
                             .shadow_blur(10)
                             .shadow_color("rgba(0, 0, 0, 0.5)"),
                     ),

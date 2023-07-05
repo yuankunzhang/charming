@@ -4,10 +4,7 @@ use serde::Serialize;
 
 use crate::{
     datatype::{DataFrame, DataPoint},
-    element::{
-        background::BackgroundStyle, color::ColorBy, coordinate::CoordinateSystem,
-        emphasis::Emphasis, item_style::ItemStyle, label::Label, mark_line::MarkLine,
-    },
+    element::{BackgroundStyle, ColorBy, CoordinateSystem, Emphasis, ItemStyle, Label, MarkLine},
 };
 
 #[derive(Serialize)]

@@ -1,6 +1,6 @@
 use echarts::{
     component::title,
-    element::{emphasis, item_style, label, sort, text_style},
+    element::{Align, Emphasis, EmphasisFocus, ItemStyle, Label, Position, Sort, TextStyle},
     series::{sunburst, Series},
     Chart,
 };
@@ -14,33 +14,33 @@ pub fn chart() -> Chart {
             title::Title::new()
                 .text("WORLD COFFEE RESEARCH SENSORY LEXICON")
                 .subtext("Source: https://worldcoffeeresearch.org/work/sensory-lexicon/")
-                .text_style(text_style::TextStyle::new().font_size(14).align("center"))
-                .subtext_style(text_style::TextStyle::new().align("center"))
+                .text_style(TextStyle::new().font_size(14).align("center"))
+                .subtext_style(TextStyle::new().align("center"))
                 .sublink("https://worldcoffeeresearch.org/work/sensory-lexicon/"),
         )
         .series(Series::Sunburst(
             sunburst::Sunburst::new()
                 .radius(("0%", "95%"))
-                .emphasis(emphasis::Emphasis::new().focus(emphasis::EmphasisFocus::Ancestor))
-                .sort(sort::Sort::None)
+                .emphasis(Emphasis::new().focus(EmphasisFocus::Ancestor))
+                .sort(Sort::None)
                 .levels(vec![
                     sunburst::Level::new(),
                     sunburst::Level::new()
                         .r0("15%")
                         .r("35%")
-                        .item_style(item_style::ItemStyle::new().border_width(2))
-                        .label(label::Label::new().rotate("tangential")),
+                        .item_style(ItemStyle::new().border_width(2))
+                        .label(Label::new().rotate("tangential")),
                     sunburst::Level::new()
                         .r0("35%")
                         .r("70%")
-                        .label(label::Label::new().align(label::Align::Right)),
+                        .label(Label::new().align(Align::Right)),
                     sunburst::Level::new()
                         .r0("70%")
                         .r("72%")
-                        .item_style(item_style::ItemStyle::new().border_width(3))
+                        .item_style(ItemStyle::new().border_width(3))
                         .label(
-                            label::Label::new()
-                                .position(label::Position::Outside)
+                            Label::new()
+                                .position(Position::Outside)
                                 .padding((3, 3, 3, 3))
                                 .silent(false),
                         ),
@@ -56,7 +56,7 @@ fn convert(data: Vec<Node>) -> Vec<sunburst::Node> {
             if let Some(value) = node.value {
                 n = n.value(value);
             }
-            n = n.item_style(item_style::ItemStyle::new().color(node.item_style.color));
+            n = n.item_style(ItemStyle::new().color(node.item_style.color));
             if let Some(children) = node.children {
                 n = n.children(convert(children));
             }
@@ -66,7 +66,7 @@ fn convert(data: Vec<Node>) -> Vec<sunburst::Node> {
 }
 
 #[derive(Serialize, Deserialize)]
-struct ItemStyle {
+struct Style {
     color: String,
 }
 
@@ -75,7 +75,7 @@ struct ItemStyle {
 struct Node {
     name: String,
     value: Option<f64>,
-    item_style: ItemStyle,
+    item_style: Style,
     children: Option<Vec<Node>>,
 }
 

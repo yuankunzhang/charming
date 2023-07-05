@@ -1,8 +1,6 @@
 use serde::Serialize;
 
-use crate::element::{
-    blur::Blur, emphasis::Emphasis, item_style::ItemStyle, label::Label, select::Select,
-};
+use crate::element::{Blur, Emphasis, ItemStyle, Label, Select};
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]

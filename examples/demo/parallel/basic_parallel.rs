@@ -1,7 +1,7 @@
 use echarts::{
     component::parallel_axis,
     datatype::value,
-    element::line_style,
+    element::LineStyle,
     series::{parallel, Series},
     Chart,
 };
@@ -20,7 +20,7 @@ pub fn chart() -> Chart {
         )
         .series(Series::Parallel(
             parallel::Parallel::new()
-                .line_style(line_style::LineStyle::new().width(4))
+                .line_style(LineStyle::new().width(4))
                 .data(vec![
                     vec![value(12.99), value(100), value(82), value("Good")],
                     vec![value(9.99), value(80), value(77), value("OK")],

@@ -1,7 +1,7 @@
 use echarts::{
     component::{axis, grid, title, tooltip, visual_map},
     datatype::value,
-    element::tooltip_trigger,
+    element::TooltipTrigger,
     series::{line, Series},
     Chart,
 };
@@ -80,7 +80,7 @@ pub fn chart() -> Chart {
                 .left("center")
                 .top("55%"),
         )
-        .tooltip(tooltip::Tooltip::new().trigger(tooltip_trigger::TooltipTrigger::Axis))
+        .tooltip(tooltip::Tooltip::new().trigger(TooltipTrigger::Axis))
         .visual_map(
             visual_map::VisualMap::new()
                 .show(false)

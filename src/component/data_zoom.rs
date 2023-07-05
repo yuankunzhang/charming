@@ -1,6 +1,6 @@
 use serde::Serialize;
 
-use crate::element::{background::DataBackground, color::Color, orient::Orient};
+use crate::element::{Color, DataBackground, Orient};
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]

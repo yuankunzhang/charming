@@ -2,7 +2,7 @@ use serde::Serialize;
 
 use crate::{
     datatype::{DataFrame, DataPoint},
-    element::{color::ColorBy, label::Label, orient::Orient, sort::Sort},
+    element::{ColorBy, Label, Orient, Sort},
 };
 
 #[derive(Serialize)]

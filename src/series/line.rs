@@ -1,13 +1,9 @@
 use serde::Serialize;
 
-use crate::datatype::{DataFrame, DataPoint};
-use crate::element::area_style::AreaStyle;
-use crate::element::emphasis::Emphasis;
-use crate::element::line_style::LineStyle;
-use crate::element::mark_area::MarkArea;
-use crate::element::mark_line::MarkLine;
-use crate::element::mark_point::MarkPoint;
-use crate::element::symbol::Symbol;
+use crate::{
+    datatype::{DataFrame, DataPoint},
+    element::{AreaStyle, Emphasis, LineStyle, MarkArea, MarkLine, MarkPoint, Symbol},
+};
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]

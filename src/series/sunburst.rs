@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::element::{emphasis::Emphasis, item_style::ItemStyle, label::Label, sort::Sort};
+use crate::element::{Emphasis, ItemStyle, Label, Sort};
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]

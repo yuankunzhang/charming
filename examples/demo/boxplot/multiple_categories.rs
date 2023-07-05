@@ -1,6 +1,6 @@
 use echarts::{
     component::{axis, data_zoom, grid, legend, title, tooltip},
-    element::{axis_pointer, axis_type, split_area, split_line, tooltip_trigger},
+    element::{AxisPointer, AxisPointerType, AxisType, SplitArea, SplitLine, TooltipTrigger},
     series::{boxplot, Series},
     Chart,
 };
@@ -15,10 +15,8 @@ pub fn chart() -> Chart {
         .legend(legend::Legend::new().top("10%"))
         .tooltip(
             tooltip::Tooltip::new()
-                .trigger(tooltip_trigger::TooltipTrigger::Axis)
-                .axis_pointer(
-                    axis_pointer::AxisPointer::new().type_(axis_pointer::AxisPointerType::Shadow),
-                ),
+                .trigger(TooltipTrigger::Axis)
+                .axis_pointer(AxisPointer::new().type_(AxisPointerType::Shadow)),
         )
         .grid(
             grid::Grid::new()
@@ -29,19 +27,19 @@ pub fn chart() -> Chart {
         )
         .x_axis(
             axis::Axis::new()
-                .type_(axis_type::AxisType::Category)
+                .type_(AxisType::Category)
                 .boundary_gap(true)
                 .name_gap(30)
-                .split_area(split_area::SplitArea::new().show(true))
-                .split_line(split_line::SplitLine::new().show(false)),
+                .split_area(SplitArea::new().show(true))
+                .split_line(SplitLine::new().show(false)),
         )
         .y_axis(
             axis::Axis::new()
-                .type_(axis_type::AxisType::Value)
+                .type_(AxisType::Value)
                 .name("Value")
                 .min(-400)
                 .max(600)
-                .split_area(split_area::SplitArea::new().show(false)),
+                .split_area(SplitArea::new().show(false)),
         )
         .data_zoom(data_zoom::DataZoom::Inside(
             data_zoom::InsideDataZoom::new().start(0).end(20),

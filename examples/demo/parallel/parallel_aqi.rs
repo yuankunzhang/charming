@@ -1,7 +1,7 @@
 use echarts::{
     component::{legend, parallel_axis, parallel_coordinate, tooltip, visual_map},
     datatype::Value,
-    element::{axis_label, axis_tick, axis_type, line_style, split_line, text_style},
+    element::{AxisLabel, AxisTick, AxisType, LineStyle, SplitLine, TextStyle},
     series::{parallel, Series},
     Chart,
 };
@@ -16,7 +16,7 @@ pub fn chart() -> Chart {
                 .bottom("30")
                 .data(vec!["Beijing", "Shanghai", "Guangzhou"])
                 .item_gap(20)
-                .text_style(text_style::TextStyle::new().color("#fff").font_size(14)),
+                .text_style(TextStyle::new().color("#fff").font_size(14)),
         )
         .tooltip(
             tooltip::Tooltip::new()
@@ -68,35 +68,32 @@ pub fn chart() -> Chart {
                 .bottom("100")
                 .parallel_axis_default(
                     parallel_coordinate::ParallelAxisDefault::new()
-                        .type_(axis_type::AxisType::Value)
+                        .type_(AxisType::Value)
                         .name("AQI指数")
                         .name_location("end")
                         .name_gap(20)
-                        .name_text_style(text_style::TextStyle::new().color("#fff").font_size(12))
-                        .axis_tick(
-                            axis_tick::AxisTick::new()
-                                .line_style(line_style::LineStyle::new().color("#777")),
-                        )
-                        .axis_label(axis_label::AxisLabel::new().color("#fff"))
-                        .split_line(split_line::SplitLine::new().show(false)),
+                        .name_text_style(TextStyle::new().color("#fff").font_size(12))
+                        .axis_tick(AxisTick::new().line_style(LineStyle::new().color("#777")))
+                        .axis_label(AxisLabel::new().color("#fff"))
+                        .split_line(SplitLine::new().show(false)),
                 ),
         )
         .series(Series::Parallel(
             parallel::Parallel::new()
                 .name("Beijing")
-                .line_style(line_style::LineStyle::new().width(1).opacity(0.5))
+                .line_style(LineStyle::new().width(1).opacity(0.5))
                 .data(data.data_bj),
         ))
         .series(Series::Parallel(
             parallel::Parallel::new()
                 .name("Shanghai")
-                .line_style(line_style::LineStyle::new().width(1).opacity(0.5))
+                .line_style(LineStyle::new().width(1).opacity(0.5))
                 .data(data.data_sh),
         ))
         .series(Series::Parallel(
             parallel::Parallel::new()
                 .name("Guangzhou")
-                .line_style(line_style::LineStyle::new().width(1).opacity(0.5))
+                .line_style(LineStyle::new().width(1).opacity(0.5))
                 .data(data.data_gz),
         ))
 }

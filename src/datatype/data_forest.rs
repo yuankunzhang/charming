@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::element::{item_style::ItemStyle, label::Label};
+use crate::element::{ItemStyle, Label};
 
 use super::DataPoint;
 

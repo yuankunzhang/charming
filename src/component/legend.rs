@@ -1,9 +1,6 @@
 use serde::Serialize;
 
-use crate::element::{
-    item_style::ItemStyle, label::Align, line_style::LineStyle, orient::Orient, padding::Padding,
-    text_style::TextStyle,
-};
+use crate::element::{Align, ItemStyle, LineStyle, Orient, Padding, TextStyle};
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]

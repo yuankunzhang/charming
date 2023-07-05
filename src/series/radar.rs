@@ -3,7 +3,7 @@ use serde::Serialize;
 use crate::{
     component::tooltip::Tooltip,
     datatype::{DataFrame, DataPoint},
-    element::{area_style::AreaStyle, color::ColorBy, symbol::Symbol},
+    element::{AreaStyle, ColorBy, Symbol},
 };
 
 #[derive(Serialize)]

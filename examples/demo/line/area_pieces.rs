@@ -1,7 +1,9 @@
 use echarts::{
     component::{axis, visual_map},
     datatype::value,
-    element::{area_style, axis_type, label, line_style, mark_line, symbol},
+    element::{
+        AreaStyle, AxisType, Label, LineStyle, MarkLine, MarkLineData, MarkLineVariant, Symbol,
+    },
     series::{line, Series},
     Chart,
 };
@@ -10,12 +12,12 @@ pub fn chart() -> Chart {
     Chart::new()
         .x_axis(
             axis::Axis::new()
-                .type_(axis_type::AxisType::Category)
+                .type_(AxisType::Category)
                 .boundary_gap(false),
         )
         .y_axis(
             axis::Axis::new()
-                .type_(axis_type::AxisType::Value)
+                .type_(AxisType::Value)
                 .boundary_gap(("0", "20%")),
         )
         .visual_map(
@@ -38,26 +40,18 @@ pub fn chart() -> Chart {
         .series(Series::Line(
             line::Line::new()
                 .smooth(0.6)
-                .symbol(symbol::Symbol::None)
-                .line_style(line_style::LineStyle::new().width(5).color("#5470C6"))
-                .area_style(area_style::AreaStyle::new())
+                .symbol(Symbol::None)
+                .line_style(LineStyle::new().width(5).color("#5470C6"))
+                .area_style(AreaStyle::new())
                 .mark_line(
-                    mark_line::MarkLine::new()
-                        .symbol(vec![symbol::Symbol::None, symbol::Symbol::None])
-                        .label(label::Label::new().show(false))
+                    MarkLine::new()
+                        .symbol(vec![Symbol::None, Symbol::None])
+                        .label(Label::new().show(false))
                         .data(vec![
-                            mark_line::MarkLineVariant::Simple(
-                                mark_line::MarkLineData::new().x_axis(1),
-                            ),
-                            mark_line::MarkLineVariant::Simple(
-                                mark_line::MarkLineData::new().x_axis(3),
-                            ),
-                            mark_line::MarkLineVariant::Simple(
-                                mark_line::MarkLineData::new().x_axis(5),
-                            ),
-                            mark_line::MarkLineVariant::Simple(
-                                mark_line::MarkLineData::new().x_axis(7),
-                            ),
+                            MarkLineVariant::Simple(MarkLineData::new().x_axis(1)),
+                            MarkLineVariant::Simple(MarkLineData::new().x_axis(3)),
+                            MarkLineVariant::Simple(MarkLineData::new().x_axis(6)),
+                            MarkLineVariant::Simple(MarkLineData::new().x_axis(7)),
                         ]),
                 )
                 .data(vec![

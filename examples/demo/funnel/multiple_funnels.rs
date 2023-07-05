@@ -1,6 +1,6 @@
 use echarts::{
     component::{legend, title, toolbox, tooltip},
-    element::{label, orient::Orient, sort, tooltip_trigger},
+    element::{Label, Orient, Position, Sort, TooltipTrigger},
     series::{funnel, Series},
     Chart,
 };
@@ -15,7 +15,7 @@ pub fn chart() -> Chart {
         )
         .tooltip(
             tooltip::Tooltip::new()
-                .trigger(tooltip_trigger::TooltipTrigger::Item)
+                .trigger(TooltipTrigger::Item)
                 .formatter("{a} <br/>{b} : {c}%"),
         )
         .toolbox(
@@ -57,7 +57,7 @@ pub fn chart() -> Chart {
                 .height("45%")
                 .left("5%")
                 .top("5%")
-                .sort(sort::Sort::Ascending)
+                .sort(Sort::Ascending)
                 .data(vec![
                     (60, "Visit"),
                     (30, "Inquiry"),
@@ -73,7 +73,7 @@ pub fn chart() -> Chart {
                 .height("45%")
                 .left("55%")
                 .top("5%")
-                .label(label::Label::new().position(label::Position::Left))
+                .label(Label::new().position(Position::Left))
                 .data(vec![
                     (60, "Visit"),
                     (30, "Inquiry"),
@@ -89,8 +89,8 @@ pub fn chart() -> Chart {
                 .height("45%")
                 .left("55%")
                 .top("50%")
-                .sort(sort::Sort::Ascending)
-                .label(label::Label::new().position(label::Position::Left))
+                .sort(Sort::Ascending)
+                .label(Label::new().position(Position::Left))
                 .data(vec![
                     (60, "Visit"),
                     (30, "Inquiry"),

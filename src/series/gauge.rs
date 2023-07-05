@@ -2,15 +2,7 @@ use serde::Serialize;
 
 use crate::{
     datatype::{DataFrame, DataPoint},
-    element::{
-        anchor::Anchor,
-        axis_label::AxisLabel,
-        axis_line::AxisLine,
-        axis_tick::AxisTick,
-        color::{Color, ColorBy},
-        pointer::Pointer,
-        split_line::SplitLine,
-    },
+    element::{Anchor, AxisLabel, AxisLine, AxisTick, Color, ColorBy, Pointer, SplitLine},
 };
 
 #[derive(Serialize)]

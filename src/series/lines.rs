@@ -1,13 +1,6 @@
 use serde::Serialize;
 
-use crate::element::{
-    color::ColorBy,
-    coordinate::CoordinateSystem,
-    emphasis::Emphasis,
-    label::{Label, LabelLayout},
-    line_style::LineStyle,
-    symbol::Symbol,
-};
+use crate::element::{ColorBy, CoordinateSystem, Emphasis, Label, LabelLayout, LineStyle, Symbol};
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]

@@ -1,6 +1,8 @@
 use echarts::{
     component::{axis, dataset, grid, title, tooltip},
-    element::{axis_pointer, axis_type, split_area, split_line, text_style, tooltip_trigger},
+    element::{
+        AxisPointer, AxisPointerType, AxisType, SplitArea, SplitLine, TextStyle, TooltipTrigger,
+    },
     series::{boxplot, scatter, Series},
     Chart,
 };
@@ -50,7 +52,7 @@ pub fn chart() -> Chart {
                 .border_color("#999")
                 .border_width(1)
                 .text_style(
-                    text_style::TextStyle::new()
+                    TextStyle::new()
                         .font_weight("normal")
                         .font_size(14)
                         .line_height(20),
@@ -61,25 +63,23 @@ pub fn chart() -> Chart {
         .dataset(ds)
         .tooltip(
             tooltip::Tooltip::new()
-                .trigger(tooltip_trigger::TooltipTrigger::Item)
-                .axis_pointer(
-                    axis_pointer::AxisPointer::new().type_(axis_pointer::AxisPointerType::Shadow),
-                ),
+                .trigger(TooltipTrigger::Item)
+                .axis_pointer(AxisPointer::new().type_(AxisPointerType::Shadow)),
         )
         .grid(grid::Grid::new().left("10%").right("10%").bottom("15%"))
         .x_axis(
             axis::Axis::new()
-                .type_(axis_type::AxisType::Category)
+                .type_(AxisType::Category)
                 .boundary_gap(true)
                 .name_gap(30)
-                .split_area(split_area::SplitArea::new().show(false))
-                .split_line(split_line::SplitLine::new().show(false)),
+                .split_area(SplitArea::new().show(false))
+                .split_line(SplitLine::new().show(false)),
         )
         .y_axis(
             axis::Axis::new()
-                .type_(axis_type::AxisType::Value)
+                .type_(AxisType::Value)
                 .name("km/s minus 299,000")
-                .split_area(split_area::SplitArea::new().show(true)),
+                .split_area(SplitArea::new().show(true)),
         )
         .series(Series::Boxplot(
             boxplot::Boxplot::new().name("boxplot").dataset_index(1),

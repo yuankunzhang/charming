@@ -3,12 +3,7 @@ use serde::Serialize;
 use crate::{
     datatype::{DataFrame, DataPoint},
     element::{
-        color::ColorBy,
-        coordinate::CoordinateSystem,
-        cursor::Cursor,
-        emphasis::Emphasis,
-        item_style::ItemStyle,
-        label::{Label, LabelLayout, LabelLine},
+        ColorBy, CoordinateSystem, Cursor, Emphasis, ItemStyle, Label, LabelLayout, LabelLine,
     },
 };
 

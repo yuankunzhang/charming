@@ -1,8 +1,7 @@
 use serde::Serialize;
 
 use crate::element::{
-    axis_label::AxisLabel, axis_line::AxisLine, axis_pointer::AxisPointer, axis_tick::AxisTick,
-    axis_type::AxisType, boundary_gap::BoundaryGap, split_area::SplitArea, split_line::SplitLine,
+    AxisLabel, AxisLine, AxisPointer, AxisTick, AxisType, BoundaryGap, SplitArea, SplitLine,
 };
 
 /// Axis in cartesian coordinate.

@@ -1,6 +1,6 @@
 use echarts::{
     component::{legend, radar_coordinate, title, tooltip},
-    element::{area_style, tooltip_trigger},
+    element::{AreaStyle, TooltipTrigger},
     series::{radar, Series},
     Chart,
 };
@@ -8,7 +8,7 @@ use echarts::{
 pub fn chart() -> Chart {
     Chart::new()
         .title(title::Title::new().text("Multiple Radar"))
-        .tooltip(tooltip::Tooltip::new().trigger(tooltip_trigger::TooltipTrigger::Axis))
+        .tooltip(tooltip::Tooltip::new().trigger(TooltipTrigger::Axis))
         .legend(legend::Legend::new().left("center").data(vec![
             "A Software",
             "A Phone",
@@ -57,14 +57,14 @@ pub fn chart() -> Chart {
         .series(Series::Radar(
             radar::Radar::new()
                 .name("Radar")
-                .tooltip(tooltip::Tooltip::new().trigger(tooltip_trigger::TooltipTrigger::Item))
-                .area_style(area_style::AreaStyle::new())
+                .tooltip(tooltip::Tooltip::new().trigger(TooltipTrigger::Item))
+                .area_style(AreaStyle::new())
                 .data(vec![(vec![60, 73, 85, 40], "A Software")]),
         ))
         .series(Series::Radar(
             radar::Radar::new()
                 .radar_index(1)
-                .area_style(area_style::AreaStyle::new())
+                .area_style(AreaStyle::new())
                 .data(vec![
                     (vec![85, 90, 90, 95, 95], "A Phone"),
                     (vec![95, 80, 95, 90, 93], "Another Phone"),
@@ -73,7 +73,7 @@ pub fn chart() -> Chart {
         .series(Series::Radar(
             radar::Radar::new()
                 .radar_index(2)
-                .area_style(area_style::AreaStyle::new())
+                .area_style(AreaStyle::new())
                 .data(vec![
                     (
                         vec![

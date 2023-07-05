@@ -1,9 +1,6 @@
 use serde::Serialize;
 
-use crate::element::{
-    axis_label::AxisLabel, axis_line::AxisLine, axis_tick::AxisTick, axis_type::AxisType,
-    boundary_gap::BoundaryGap, split_line::SplitLine, text_style::TextStyle,
-};
+use crate::element::{AxisLabel, AxisLine, AxisTick, AxisType, BoundaryGap, SplitLine, TextStyle};
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]

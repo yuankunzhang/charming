@@ -1,8 +1,6 @@
 use serde::Serialize;
 
-use crate::element::{
-    color::Color, padding::Padding, text_style::TextStyle, tooltip_trigger::TooltipTrigger,
-};
+use crate::element::{Color, Padding, TextStyle, TooltipTrigger};
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]

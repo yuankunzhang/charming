@@ -1,6 +1,6 @@
 use echarts::{
     component::{legend, title, tooltip},
-    element::{label, line_style},
+    element::{Label, LineStyle, Position},
     series::{graph, Series},
     Chart,
 };
@@ -29,12 +29,8 @@ pub fn chart() -> Chart {
                 .layout(graph::Layout::Circular)
                 .circular(graph::Circular::new().rotate_label(true))
                 .roam(true)
-                .label(
-                    label::Label::new()
-                        .position(label::Position::Right)
-                        .formatter("{b}"),
-                )
-                .line_style(line_style::LineStyle::new().color("source").curveness(0.3))
+                .label(Label::new().position(Position::Right).formatter("{b}"))
+                .line_style(LineStyle::new().color("source").curveness(0.3))
                 .data(data),
         ))
 }
