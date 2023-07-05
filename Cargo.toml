@@ -12,142 +12,152 @@ serde = "1.0.164"
 serde_json = "1.0.99"
 serde_v8 = "0.105.0"
 
-[[example]]
-name = "bar_with_background"
-path = "examples/bar/bar_with_background.rs"
+[dev-dependencies]
+askama = "0.12.0"
+axum = "0.6.18"
+lazy_static = "1.4.0"
+tokio = "1.29.1"
 
 [[example]]
-name = "waterfall"
-path = "examples/bar/waterfall.rs"
+name = "demo"
+path = "examples/demo/main.rs"
 
-[[example]]
-name = "tangential_polar_par"
-path = "examples/bar/tangential_polar_bar.rs"
+# [[example]]
+# name = "bar_with_background"
+# path = "examples/bar/bar_with_background.rs"
 
-[[example]]
-name = "stacked_column"
-path = "examples/bar/stacked_column.rs"
+# [[example]]
+# name = "waterfall"
+# path = "examples/bar/waterfall.rs"
 
-[[example]]
-name = "boxplot_light_velocity"
-path = "examples/boxplot/boxplot_light_velocity.rs"
+# [[example]]
+# name = "tangential_polar_par"
+# path = "examples/bar/tangential_polar_bar.rs"
 
-[[example]]
-name = "multiple_categories"
-path = "examples/boxplot/multiple_categories.rs"
+# [[example]]
+# name = "stacked_column"
+# path = "examples/bar/stacked_column.rs"
 
-[[example]]
-name = "basic_candlestick"
-path = "examples/candlestick/basic_candlestick.rs"
+# [[example]]
+# name = "boxplot_light_velocity"
+# path = "examples/boxplot/boxplot_light_velocity.rs"
 
-[[example]]
-name = "multiple_funnels"
-path = "examples/funnel/multiple_funnels.rs"
+# [[example]]
+# name = "multiple_categories"
+# path = "examples/boxplot/multiple_categories.rs"
 
-[[example]]
-name = "gauge_barometer"
-path = "examples/gauge/gauge_barometer.rs"
+# [[example]]
+# name = "basic_candlestick"
+# path = "examples/candlestick/basic_candlestick.rs"
 
-[[example]]
-name = "hide_overlapped_label"
-path = "examples/graph/hide_overlapped_label.rs"
+# [[example]]
+# name = "multiple_funnels"
+# path = "examples/funnel/multiple_funnels.rs"
 
-[[example]]
-name = "les_miserables"
-path = "examples/graph/les_miserables.rs"
+# [[example]]
+# name = "gauge_barometer"
+# path = "examples/gauge/gauge_barometer.rs"
 
-[[example]]
-name = "heatmap_on_cartesian"
-path = "examples/heatmap/heatmap_on_cartesian.rs"
+# [[example]]
+# name = "hide_overlapped_label"
+# path = "examples/graph/hide_overlapped_label.rs"
 
-[[example]]
-name = "basic_line"
-path = "examples/line/basic_line.rs"
+# [[example]]
+# name = "les_miserables"
+# path = "examples/graph/les_miserables.rs"
 
-[[example]]
-name = "smoothed_line"
-path = "examples/line/smoothed_line.rs"
+# [[example]]
+# name = "heatmap_on_cartesian"
+# path = "examples/heatmap/heatmap_on_cartesian.rs"
 
-[[example]]
-name = "basic_area"
-path = "examples/line/basic_area.rs"
+# [[example]]
+# name = "basic_line"
+# path = "examples/line/basic_line.rs"
 
-[[example]]
-name = "stacked_line"
-path = "examples/line/stacked_line.rs"
+# [[example]]
+# name = "smoothed_line"
+# path = "examples/line/smoothed_line.rs"
 
-[[example]]
-name = "stacked_area"
-path = "examples/line/stacked_area.rs"
+# [[example]]
+# name = "basic_area"
+# path = "examples/line/basic_area.rs"
 
-[[example]]
-name = "gradient_stacked_area"
-path = "examples/line/gradient_stacked_area.rs"
+# [[example]]
+# name = "stacked_line"
+# path = "examples/line/stacked_line.rs"
 
-[[example]]
-name = "temperature_change_in_the_coming_week"
-path = "examples/line/temperature_change_in_the_coming_week.rs"
+# [[example]]
+# name = "stacked_area"
+# path = "examples/line/stacked_area.rs"
 
-[[example]]
-name = "area_pieces"
-path = "examples/line/area_pieces.rs"
+# [[example]]
+# name = "gradient_stacked_area"
+# path = "examples/line/gradient_stacked_area.rs"
 
-[[example]]
-name = "data_transform_filter"
-path = "examples/line/data_transform_filter.rs"
+# [[example]]
+# name = "temperature_change_in_the_coming_week"
+# path = "examples/line/temperature_change_in_the_coming_week.rs"
 
-[[example]]
-name = "line_gradient"
-path = "examples/line/line_gradient.rs"
+# [[example]]
+# name = "area_pieces"
+# path = "examples/line/area_pieces.rs"
 
-[[example]]
-name = "distribution_of_electricity"
-path = "examples/line/distribution_of_electricity.rs"
+# [[example]]
+# name = "data_transform_filter"
+# path = "examples/line/data_transform_filter.rs"
 
-[[example]]
-name = "basic_parallel"
-path = "examples/parallel/basic_parallel.rs"
+# [[example]]
+# name = "line_gradient"
+# path = "examples/line/line_gradient.rs"
 
-[[example]]
-name = "parallel_aqi"
-path = "examples/parallel/parallel_aqi.rs"
+# [[example]]
+# name = "distribution_of_electricity"
+# path = "examples/line/distribution_of_electricity.rs"
 
-[[example]]
-name = "water_content"
-path = "examples/pictorial_bar/water_content.rs"
+# [[example]]
+# name = "basic_parallel"
+# path = "examples/parallel/basic_parallel.rs"
 
-[[example]]
-name = "nightingale"
-path = "examples/pie/nightingale.rs"
+# [[example]]
+# name = "parallel_aqi"
+# path = "examples/parallel/parallel_aqi.rs"
 
-[[example]]
-name = "multiple_radar"
-path = "examples/radar/multiple_radar.rs"
+# [[example]]
+# name = "water_content"
+# path = "examples/pictorial_bar/water_content.rs"
 
-[[example]]
-name = "node_align_left_sankey"
-path = "examples/sankey/node_align_left_sankey.rs"
+# [[example]]
+# name = "nightingale"
+# path = "examples/pie/nightingale.rs"
 
-[[example]]
-name = "basic_scatter"
-path = "examples/scatter/basic_scatter.rs"
+# [[example]]
+# name = "multiple_radar"
+# path = "examples/radar/multiple_radar.rs"
 
-[[example]]
-name = "effect_scatter"
-path = "examples/scatter/effect_scatter.rs"
+# [[example]]
+# name = "node_align_left_sankey"
+# path = "examples/sankey/node_align_left_sankey.rs"
 
-[[example]]
-name = "drink_flavors"
-path = "examples/sunburst/drink_flavors.rs"
+# [[example]]
+# name = "basic_scatter"
+# path = "examples/scatter/basic_scatter.rs"
 
-[[example]]
-name = "theme_river_lastfm"
-path = "examples/theme_river/theme_river_lastfm.rs"
+# [[example]]
+# name = "effect_scatter"
+# path = "examples/scatter/effect_scatter.rs"
 
-[[example]]
-name = "from_left_to_right_tree"
-path = "examples/tree/from_left_to_right_tree.rs"
+# [[example]]
+# name = "drink_flavors"
+# path = "examples/sunburst/drink_flavors.rs"
 
-[[example]]
-name = "disk_usage"
-path = "examples/treemap/disk_usage.rs"
+# [[example]]
+# name = "theme_river_lastfm"
+# path = "examples/theme_river/theme_river_lastfm.rs"
+
+# [[example]]
+# name = "from_left_to_right_tree"
+# path = "examples/tree/from_left_to_right_tree.rs"
+
+# [[example]]
+# name = "disk_usage"
+# path = "examples/treemap/disk_usage.rs"

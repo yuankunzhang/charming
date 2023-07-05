@@ -1,0 +1,10 @@
+<div>
+    {% for (type, charts) in collections %}
+    <h2>{{ type|capitalize }} Charts</h2>
+    <ul>
+        {% for chart in charts %}
+        <li><a href="/{{ type }}/{{ chart }}">{{ chart }}</a></li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
+</div>
