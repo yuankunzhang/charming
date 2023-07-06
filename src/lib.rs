@@ -5,6 +5,8 @@ pub mod renderer;
 pub mod series;
 pub mod style;
 
+pub mod dataset;
+
 use component::{
     AngleAxis, Axis, DataZoom, Dataset, Grid, Legend, ParallelAxis, ParallelCoordinate, Polar,
     RadarCoordinate, RadiusAxis, SingleAxis, Title, Toolbox, Tooltip, VisualMap,
