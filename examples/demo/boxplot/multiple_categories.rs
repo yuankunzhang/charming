@@ -1,7 +1,7 @@
 use echarts::{
     component::{Axis, DataZoom, Grid, InsideDataZoom, Legend, SliderDataZoom, Title, Tooltip},
     element::{AxisPointer, AxisPointerType, AxisType, SplitArea, SplitLine, TooltipTrigger},
-    series::{boxplot, Series},
+    series::Boxplot,
     Chart,
 };
 
@@ -45,13 +45,7 @@ pub fn chart() -> Chart {
                 .top("90%")
                 .x_axis_index(0),
         ))
-        .series(Series::Boxplot(
-            boxplot::Boxplot::new().name("category0").dataset_index(3),
-        ))
-        .series(Series::Boxplot(
-            boxplot::Boxplot::new().name("category1").dataset_index(4),
-        ))
-        .series(Series::Boxplot(
-            boxplot::Boxplot::new().name("category2").dataset_index(5),
-        ))
+        .series(Boxplot::new().name("category0").dataset_index(3))
+        .series(Boxplot::new().name("category1").dataset_index(4))
+        .series(Boxplot::new().name("category2").dataset_index(5))
 }

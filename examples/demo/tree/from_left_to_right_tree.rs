@@ -1,12 +1,12 @@
 use echarts::{
     component::{Tooltip, TooltipTriggerOn},
     element::{Align, Emphasis, EmphasisFocus, Label, Position, TooltipTrigger, VerticalAlign},
-    series::{tree, Series},
+    series::{Tree, TreeNode},
     Chart,
 };
 
 pub fn chart() -> Chart {
-    let mut data: tree::Node = serde_json::from_str(SOURCE).unwrap();
+    let mut data: TreeNode = serde_json::from_str(SOURCE).unwrap();
     for (i, d) in data.children.as_mut().unwrap().iter_mut().enumerate() {
         if i % 2 == 0 {
             d.collapsed = Some(true);
@@ -18,8 +18,8 @@ pub fn chart() -> Chart {
                 .trigger(TooltipTrigger::Item)
                 .trigger_on(TooltipTriggerOn::Mousemove),
         )
-        .series(Series::Tree(
-            tree::Tree::new()
+        .series(
+            Tree::new()
                 .name("flare")
                 .top("1%")
                 .left("7%")
@@ -38,7 +38,7 @@ pub fn chart() -> Chart {
                 .animation_duration(550.0)
                 .animation_duration_update(750.0)
                 .data(vec![data]),
-        ))
+        )
 }
 
 static SOURCE: &str = r#"

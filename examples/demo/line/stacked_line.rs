@@ -1,7 +1,7 @@
 use echarts::{
     component::{Axis, Grid, Legend, Title, Toolbox, ToolboxFeature, ToolboxSaveAsImage, Tooltip},
     element::{AxisType, TooltipTrigger},
-    series::{line, Series},
+    series::Line,
     Chart,
 };
 
@@ -33,34 +33,34 @@ pub fn chart() -> Chart {
                 .data(vec!["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]),
         )
         .y_axis(Axis::new().type_(AxisType::Value))
-        .series(Series::Line(
-            line::Line::new()
+        .series(
+            Line::new()
                 .name("Email")
                 .stack("Total")
                 .data(vec![120, 132, 101, 134, 90, 230, 210]),
-        ))
-        .series(Series::Line(
-            line::Line::new()
+        )
+        .series(
+            Line::new()
                 .name("Union Ads")
                 .stack("Total")
                 .data(vec![220, 182, 191, 234, 290, 330, 310]),
-        ))
-        .series(Series::Line(
-            line::Line::new()
+        )
+        .series(
+            Line::new()
                 .name("Video Ads")
                 .stack("Total")
                 .data(vec![150, 232, 201, 154, 190, 330, 410]),
-        ))
-        .series(Series::Line(
-            line::Line::new()
+        )
+        .series(
+            Line::new()
                 .name("Direct")
                 .stack("Total")
                 .data(vec![320, 332, 301, 334, 390, 330, 320]),
-        ))
-        .series(Series::Line(
-            line::Line::new()
+        )
+        .series(
+            Line::new()
                 .name("Search Engine")
                 .stack("Total")
                 .data(vec![820, 932, 901, 934, 1290, 1330, 1320]),
-        ))
+        )
 }

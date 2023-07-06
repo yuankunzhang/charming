@@ -4,7 +4,7 @@ use echarts::{
     element::{
         AreaStyle, AxisType, Label, LineStyle, MarkLine, MarkLineData, MarkLineVariant, Symbol,
     },
-    series::{line, Series},
+    series::Line,
     Chart,
 };
 
@@ -33,8 +33,8 @@ pub fn chart() -> Chart {
                         .color("rgba(0, 0, 180, 0.4)"),
                 ]),
         )
-        .series(Series::Line(
-            line::Line::new()
+        .series(
+            Line::new()
                 .smooth(0.6)
                 .symbol(Symbol::None)
                 .line_style(LineStyle::new().width(5).color("#5470C6"))
@@ -61,5 +61,5 @@ pub fn chart() -> Chart {
                     vec![value("2019-10-17"), value(300)],
                     vec![value("2019-10-18"), value(100)],
                 ]),
-        ))
+        )
 }

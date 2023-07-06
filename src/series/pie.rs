@@ -7,7 +7,7 @@ use crate::{
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
-pub enum RoseType {
+pub enum PieRoseType {
     Radius,
     Area,
 }
@@ -52,7 +52,7 @@ pub struct Pie {
     start_angle: Option<f64>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    rose_type: Option<RoseType>,
+    rose_type: Option<PieRoseType>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     item_style: Option<ItemStyle>,
@@ -145,7 +145,7 @@ impl Pie {
         self
     }
 
-    pub fn rose_type(mut self, rose_type: RoseType) -> Self {
+    pub fn rose_type(mut self, rose_type: PieRoseType) -> Self {
         self.rose_type = Some(rose_type);
         self
     }

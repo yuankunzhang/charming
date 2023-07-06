@@ -1,12 +1,12 @@
 use echarts::{
     component::{Title, Tooltip, TooltipTriggerOn},
     element::{Emphasis, EmphasisFocus, LineStyle, TooltipTrigger},
-    series::{sankey, Series},
+    series::{Sankey, SankeyNodeAlign},
     Chart,
 };
 
 pub fn chart() -> Chart {
-    let data: sankey::Data = serde_json::from_str(SOURCE).unwrap();
+    let data = serde_json::from_str(SOURCE).unwrap();
     Chart::new()
         .title(Title::new().text("Node Align Left Sankey"))
         .tooltip(
@@ -14,13 +14,13 @@ pub fn chart() -> Chart {
                 .trigger(TooltipTrigger::Item)
                 .trigger_on(TooltipTriggerOn::Mousemove),
         )
-        .series(Series::Sankey(
-            sankey::Sankey::new()
+        .series(
+            Sankey::new()
                 .emphasis(Emphasis::new().focus(EmphasisFocus::Adjacency))
-                .node_align(sankey::NodeAlign::Left)
+                .node_align(SankeyNodeAlign::Left)
                 .line_style(LineStyle::new().color("source").curveness(0.5))
                 .data(data),
-        ))
+        )
 }
 
 static SOURCE: &str = r#"

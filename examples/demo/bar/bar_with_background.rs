@@ -1,7 +1,7 @@
 use echarts::{
     component::Axis,
     element::{AxisType, BackgroundStyle},
-    series::{bar, Series},
+    series::Bar,
     Chart,
 };
 
@@ -13,10 +13,10 @@ pub fn chart() -> Chart {
                 .data(vec!["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]),
         )
         .y_axis(Axis::new().type_(AxisType::Value))
-        .series(Series::Bar(
-            bar::Bar::new()
+        .series(
+            Bar::new()
                 .show_background(true)
                 .background_style(BackgroundStyle::new().color("rgba(180, 180, 180, 0.2)"))
                 .data(vec![120, 200, 150, 80, 70, 110, 130]),
-        ))
+        )
 }

@@ -72,14 +72,14 @@ pub struct Chart {
     #[serde(skip_serializing_if = "Vec::is_empty")]
     color: Vec<Color>,
 
-    #[serde(skip_serializing_if = "Vec::is_empty")]
-    series: Vec<Series>,
-
     #[serde(skip_serializing_if = "Option::is_none")]
     background_color: Option<Color>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     mark_line: Option<MarkLine>,
+
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    series: Vec<Series>,
 }
 
 impl Chart {
@@ -103,9 +103,9 @@ impl Chart {
             dataset: None,
             radar: vec![],
             color: vec![],
-            series: vec![],
             background_color: None,
             mark_line: None,
+            series: vec![],
         }
     }
 
@@ -199,11 +199,6 @@ impl Chart {
         self
     }
 
-    pub fn series(mut self, series: Series) -> Self {
-        self.series.push(series);
-        self
-    }
-
     pub fn background_color<C: Into<Color>>(mut self, color: C) -> Self {
         self.background_color = Some(color.into());
         self
@@ -211,6 +206,11 @@ impl Chart {
 
     pub fn mark_line(mut self, mark_line: MarkLine) -> Self {
         self.mark_line = Some(mark_line);
+        self
+    }
+
+    pub fn series<S: Into<Series>>(mut self, series: S) -> Self {
+        self.series.push(series.into());
         self
     }
 }

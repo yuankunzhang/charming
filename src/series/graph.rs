@@ -4,12 +4,12 @@ use crate::element::{CoordinateSystem, Label, LabelLayout, LineStyle, ScaleLimit
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct Circular {
+pub struct GraphLayoutCircular {
     #[serde(skip_serializing_if = "Option::is_none")]
     rotate_label: Option<bool>,
 }
 
-impl Circular {
+impl GraphLayoutCircular {
     pub fn new() -> Self {
         Self { rotate_label: None }
     }
@@ -22,7 +22,7 @@ impl Circular {
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct Force {
+pub struct GraphLayoutForce {
     #[serde(skip_serializing_if = "Option::is_none")]
     init_layout: Option<String>,
 
@@ -39,7 +39,7 @@ pub struct Force {
     friction: Option<f64>,
 }
 
-impl Force {
+impl GraphLayoutForce {
     pub fn new() -> Self {
         Self {
             init_layout: None,
@@ -78,13 +78,13 @@ impl Force {
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
-pub enum Layout {
+pub enum GraphLayout {
     None,
     Circular,
     Force,
 }
 
-impl From<&str> for Layout {
+impl From<&str> for GraphLayout {
     fn from(s: &str) -> Self {
         match s {
             "none" => Self::None,
@@ -97,7 +97,7 @@ impl From<&str> for Layout {
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct NodeLabel {
+pub struct GraphNodeLabel {
     #[serde(skip_serializing_if = "Option::is_none")]
     show: Option<bool>,
 
@@ -114,7 +114,7 @@ pub struct NodeLabel {
     font_size: Option<u64>,
 }
 
-impl NodeLabel {
+impl GraphNodeLabel {
     pub fn new() -> Self {
         Self {
             show: None,
@@ -153,7 +153,7 @@ impl NodeLabel {
 
 #[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct Node {
+pub struct GraphNode {
     pub id: String,
     pub name: String,
     pub x: f64,
@@ -163,12 +163,12 @@ pub struct Node {
     pub symbol_size: f64,
     #[serde(skip_deserializing)]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub label: Option<NodeLabel>,
+    pub label: Option<GraphNodeLabel>,
 }
 
 #[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct Link {
+pub struct GraphLink {
     pub source: String,
     pub target: String,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -177,16 +177,16 @@ pub struct Link {
 
 #[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct Category {
+pub struct GraphCategory {
     pub name: String,
 }
 
 #[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct Data {
-    pub nodes: Vec<Node>,
-    pub links: Vec<Link>,
-    pub categories: Vec<Category>,
+pub struct GraphData {
+    pub nodes: Vec<GraphNode>,
+    pub links: Vec<GraphLink>,
+    pub categories: Vec<GraphCategory>,
 }
 
 #[derive(Serialize)]
@@ -223,13 +223,13 @@ pub struct Graph {
     calendar_index: Option<u64>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    layout: Option<Layout>,
+    layout: Option<GraphLayout>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    circular: Option<Circular>,
+    circular: Option<GraphLayoutCircular>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    force: Option<Force>,
+    force: Option<GraphLayoutForce>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     roam: Option<bool>,
@@ -247,13 +247,13 @@ pub struct Graph {
     line_style: Option<LineStyle>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
-    categories: Vec<Category>,
+    categories: Vec<GraphCategory>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
-    links: Vec<Link>,
+    links: Vec<GraphLink>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
-    data: Vec<Node>,
+    data: Vec<GraphNode>,
 }
 
 impl Graph {
@@ -328,17 +328,17 @@ impl Graph {
         self
     }
 
-    pub fn layout(mut self, layout: Layout) -> Self {
+    pub fn layout(mut self, layout: GraphLayout) -> Self {
         self.layout = Some(layout);
         self
     }
 
-    pub fn circular(mut self, circular: Circular) -> Self {
+    pub fn circular(mut self, circular: GraphLayoutCircular) -> Self {
         self.circular = Some(circular);
         self
     }
 
-    pub fn force(mut self, force: Force) -> Self {
+    pub fn force(mut self, force: GraphLayoutForce) -> Self {
         self.force = Some(force);
         self
     }
@@ -368,7 +368,7 @@ impl Graph {
         self
     }
 
-    pub fn data(mut self, data: Data) -> Self {
+    pub fn data(mut self, data: GraphData) -> Self {
         self.data = data.nodes;
         self.links = data.links;
         self.categories = data.categories;

@@ -4,7 +4,7 @@ use crate::element::{Emphasis, LineStyle};
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
-pub enum NodeAlign {
+pub enum SankeyNodeAlign {
     Left,
     Right,
     Justify,
@@ -12,7 +12,7 @@ pub enum NodeAlign {
 
 #[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct Node {
+pub struct SankeyNode {
     pub name: String,
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -24,7 +24,7 @@ pub struct Node {
 
 #[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct Link {
+pub struct SankeyLink {
     pub source: String,
     pub target: String,
     pub value: f64,
@@ -32,9 +32,9 @@ pub struct Link {
 
 #[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct Data {
-    pub nodes: Vec<Node>,
-    pub links: Vec<Link>,
+pub struct SankeyData {
+    pub nodes: Vec<SankeyNode>,
+    pub links: Vec<SankeyLink>,
 }
 
 #[derive(Serialize)]
@@ -77,16 +77,16 @@ pub struct Sankey {
     emphasis: Option<Emphasis>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    node_align: Option<NodeAlign>,
+    node_align: Option<SankeyNodeAlign>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     line_style: Option<LineStyle>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
-    links: Vec<Link>,
+    links: Vec<SankeyLink>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
-    data: Vec<Node>,
+    data: Vec<SankeyNode>,
 }
 
 impl Sankey {
@@ -166,7 +166,7 @@ impl Sankey {
         self
     }
 
-    pub fn node_align(mut self, node_align: NodeAlign) -> Self {
+    pub fn node_align(mut self, node_align: SankeyNodeAlign) -> Self {
         self.node_align = Some(node_align);
         self
     }
@@ -176,7 +176,7 @@ impl Sankey {
         self
     }
 
-    pub fn data(mut self, data: Data) -> Self {
+    pub fn data(mut self, data: SankeyData) -> Self {
         self.links = data.links;
         self.data = data.nodes;
         self

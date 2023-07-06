@@ -2,7 +2,7 @@ use echarts::{
     component::{Axis, Grid, Title, Tooltip, VisualMap, VisualMapType},
     datatype::value,
     element::TooltipTrigger,
-    series::{line, Series},
+    series::Line,
     Chart,
 };
 
@@ -109,16 +109,12 @@ pub fn chart() -> Chart {
         .y_axis(Axis::new().grid_index(2))
         .grid(Grid::new().bottom("60%"))
         .grid(Grid::new().top("60%"))
-        .series(Series::Line(
-            line::Line::new()
-                .show_symbol(false)
-                .data(value_list.clone()),
-        ))
-        .series(Series::Line(
-            line::Line::new()
+        .series(Line::new().show_symbol(false).data(value_list.clone()))
+        .series(
+            Line::new()
                 .show_symbol(false)
                 .x_axis_index(1)
                 .y_axis_index(1)
                 .data(value_list),
-        ))
+        )
 }

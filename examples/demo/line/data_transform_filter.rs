@@ -2,7 +2,7 @@ use echarts::{
     component::{Axis, Dataset, DatasetSource, DatasetTransform, Title, Tooltip},
     datatype::Value,
     element::{AxisType, TooltipTrigger},
-    series::{line, Series},
+    series::{Line, LineEncode},
     Chart,
 };
 
@@ -53,29 +53,29 @@ pub fn chart() -> Chart {
                 .name_location("middle"),
         )
         .y_axis(Axis::new().name("Income"))
-        .series(Series::Line(
-            line::Line::new()
+        .series(
+            Line::new()
                 .dataset_id("dataset_since_1950_of_germany")
                 .show_symbol(false)
                 .encode(
-                    line::Encode::new()
+                    LineEncode::new()
                         .x("Year")
                         .y("Income")
                         .item_name("Year")
                         .tooltip(vec!["Income"]),
                 ),
-        ))
-        .series(Series::Line(
-            line::Line::new()
+        )
+        .series(
+            Line::new()
                 .dataset_id("dataset_since_1950_of_france")
                 .show_symbol(false)
                 .encode(
-                    line::Encode::new()
+                    LineEncode::new()
                         .x("Year")
                         .y("Income")
                         .item_name("Year")
                         .tooltip(vec!["Income"]),
                 ),
-        ))
+        )
         .dataset(dataset)
 }

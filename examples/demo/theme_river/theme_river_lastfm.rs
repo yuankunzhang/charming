@@ -2,7 +2,7 @@ use echarts::{
     component::SingleAxis,
     datatype::{value, DataPoint},
     element::Label,
-    series::{theme_river, Series},
+    series::ThemeRiver,
     Chart,
 };
 
@@ -112,9 +112,5 @@ pub fn chart() -> Chart {
 
     Chart::new()
         .single_axis(SingleAxis::new().max("dataMax"))
-        .series(Series::ThemeRiver(
-            theme_river::ThemeRiver::new()
-                .label(Label::new().show(false))
-                .data(data),
-        ))
+        .series(ThemeRiver::new().label(Label::new().show(false)).data(data))
 }

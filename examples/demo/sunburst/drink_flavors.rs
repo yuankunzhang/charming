@@ -1,7 +1,7 @@
 use echarts::{
     component::Title,
     element::{Align, Emphasis, EmphasisFocus, ItemStyle, Label, Position, Sort, TextStyle},
-    series::{sunburst, Series},
+    series::{Sunburst, SunburstLevel, SunburstNode},
     Chart,
 };
 use serde::{Deserialize, Serialize};
@@ -18,23 +18,23 @@ pub fn chart() -> Chart {
                 .subtext_style(TextStyle::new().align("center"))
                 .sublink("https://worldcoffeeresearch.org/work/sensory-lexicon/"),
         )
-        .series(Series::Sunburst(
-            sunburst::Sunburst::new()
+        .series(
+            Sunburst::new()
                 .radius(("0%", "95%"))
                 .emphasis(Emphasis::new().focus(EmphasisFocus::Ancestor))
                 .sort(Sort::None)
                 .levels(vec![
-                    sunburst::Level::new(),
-                    sunburst::Level::new()
+                    SunburstLevel::new(),
+                    SunburstLevel::new()
                         .r0("15%")
                         .r("35%")
                         .item_style(ItemStyle::new().border_width(2))
                         .label(Label::new().rotate("tangential")),
-                    sunburst::Level::new()
+                    SunburstLevel::new()
                         .r0("35%")
                         .r("70%")
                         .label(Label::new().align(Align::Right)),
-                    sunburst::Level::new()
+                    SunburstLevel::new()
                         .r0("70%")
                         .r("72%")
                         .item_style(ItemStyle::new().border_width(3))
@@ -46,13 +46,13 @@ pub fn chart() -> Chart {
                         ),
                 ])
                 .data(data),
-        ))
+        )
 }
 
-fn convert(data: Vec<Node>) -> Vec<sunburst::Node> {
+fn convert(data: Vec<Node>) -> Vec<SunburstNode> {
     data.into_iter()
         .map(|node| {
-            let mut n = sunburst::Node::new(node.name);
+            let mut n = SunburstNode::new(node.name);
             if let Some(value) = node.value {
                 n = n.value(value);
             }

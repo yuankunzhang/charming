@@ -1,19 +1,19 @@
 use echarts::{
     component::{Legend, Tooltip},
     element::{Label, LabelLayout, LineStyle, Position, ScaleLimit},
-    series::{graph, Series},
+    series::{Graph, GraphData, GraphLayout},
     Chart,
 };
 
 pub fn chart() -> Chart {
-    let data: graph::Data = serde_json::from_str(include_str!("les-miserables.json")).unwrap();
+    let data: GraphData = serde_json::from_str(include_str!("les-miserables.json")).unwrap();
     Chart::new()
         .tooltip(Tooltip::new())
         .legend(Legend::new().data(data.categories.iter().map(|c| c.name.clone()).collect()))
-        .series(Series::Graph(
-            graph::Graph::new()
+        .series(
+            Graph::new()
                 .name("Les Miserables")
-                .layout(graph::Layout::None)
+                .layout(GraphLayout::None)
                 .roam(true)
                 .label(
                     Label::new()
@@ -25,5 +25,5 @@ pub fn chart() -> Chart {
                 .scale_limit(ScaleLimit::new().min(0.4).max(2.0))
                 .line_style(LineStyle::new().color("source").curveness(0.3))
                 .data(data),
-        ))
+        )
 }

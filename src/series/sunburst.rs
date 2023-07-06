@@ -4,7 +4,7 @@ use crate::element::{Emphasis, ItemStyle, Label, Sort};
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct Level {
+pub struct SunburstLevel {
     #[serde(skip_serializing_if = "Option::is_none")]
     r0: Option<String>,
 
@@ -18,7 +18,7 @@ pub struct Level {
     label: Option<Label>,
 }
 
-impl Level {
+impl SunburstLevel {
     pub fn new() -> Self {
         Self {
             r0: None,
@@ -51,7 +51,7 @@ impl Level {
 
 #[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct Node {
+pub struct SunburstNode {
     name: String,
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -62,10 +62,10 @@ pub struct Node {
     item_style: Option<ItemStyle>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
-    children: Vec<Node>,
+    children: Vec<SunburstNode>,
 }
 
-impl Node {
+impl SunburstNode {
     pub fn new<S: Into<String>>(name: S) -> Self {
         Self {
             name: name.into(),
@@ -85,33 +85,31 @@ impl Node {
         self
     }
 
-    pub fn children(mut self, children: Vec<Node>) -> Self {
+    pub fn children(mut self, children: Vec<SunburstNode>) -> Self {
         self.children = children;
         self
     }
 }
 
-impl From<&str> for Node {
+impl From<&str> for SunburstNode {
     fn from(name: &str) -> Self {
         Self::new(name)
     }
 }
 
-impl From<(&str, f64)> for Node {
+impl From<(&str, f64)> for SunburstNode {
     fn from((name, value): (&str, f64)) -> Self {
         Self::new(name).value(value)
     }
 }
 
-impl From<(&str, f64, &str)> for Node {
+impl From<(&str, f64, &str)> for SunburstNode {
     fn from((name, value, color): (&str, f64, &str)) -> Self {
         Self::new(name)
             .value(value)
             .item_style(ItemStyle::new().color(color))
     }
 }
-
-pub type Data = Vec<Node>;
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -144,10 +142,10 @@ pub struct Sunburst {
     sort: Option<Sort>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
-    levels: Vec<Level>,
+    levels: Vec<SunburstLevel>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
-    data: Data,
+    data: Vec<SunburstNode>,
 }
 
 impl Sunburst {
@@ -207,12 +205,12 @@ impl Sunburst {
         self
     }
 
-    pub fn levels(mut self, levels: Vec<Level>) -> Self {
+    pub fn levels(mut self, levels: Vec<SunburstLevel>) -> Self {
         self.levels = levels;
         self
     }
 
-    pub fn data(mut self, data: Data) -> Self {
+    pub fn data(mut self, data: Vec<SunburstNode>) -> Self {
         self.data = data;
         self
     }

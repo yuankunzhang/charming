@@ -7,7 +7,7 @@ use crate::{
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct Encode {
+pub struct LineEncode {
     #[serde(skip_serializing_if = "Option::is_none")]
     x: Option<String>,
 
@@ -21,7 +21,7 @@ pub struct Encode {
     tooltip: Vec<String>,
 }
 
-impl Encode {
+impl LineEncode {
     pub fn new() -> Self {
         Self {
             x: None,
@@ -98,7 +98,7 @@ pub struct Line {
     dataset_id: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    encode: Option<Encode>,
+    encode: Option<LineEncode>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     x_axis_index: Option<f64>,
@@ -201,7 +201,7 @@ impl Line {
         self
     }
 
-    pub fn encode<E: Into<Encode>>(mut self, encode: E) -> Self {
+    pub fn encode<E: Into<LineEncode>>(mut self, encode: E) -> Self {
         self.encode = Some(encode.into());
         self
     }

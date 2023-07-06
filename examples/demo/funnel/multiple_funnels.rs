@@ -4,7 +4,7 @@ use echarts::{
         ToolboxSaveAsImage, Tooltip,
     },
     element::{Label, Orient, Position, Sort, TooltipTrigger},
-    series::{funnel, Series},
+    series::Funnel,
     Chart,
 };
 
@@ -33,8 +33,8 @@ pub fn chart() -> Chart {
                 .left("left")
                 .data(vec!["Show", "Click", "Visit", "Inquiry", "Order"]),
         )
-        .series(Series::Funnel(
-            funnel::Funnel::new()
+        .series(
+            Funnel::new()
                 .name("Funnel")
                 .width("40%")
                 .height("45%")
@@ -47,9 +47,9 @@ pub fn chart() -> Chart {
                     (80, "Click"),
                     (100, "Show"),
                 ]),
-        ))
-        .series(Series::Funnel(
-            funnel::Funnel::new()
+        )
+        .series(
+            Funnel::new()
                 .name("Pyramid")
                 .width("40%")
                 .height("45%")
@@ -63,9 +63,9 @@ pub fn chart() -> Chart {
                     (80, "Click"),
                     (100, "Show"),
                 ]),
-        ))
-        .series(Series::Funnel(
-            funnel::Funnel::new()
+        )
+        .series(
+            Funnel::new()
                 .name("Funnel")
                 .width("40%")
                 .height("45%")
@@ -79,9 +79,9 @@ pub fn chart() -> Chart {
                     (80, "Click"),
                     (100, "Show"),
                 ]),
-        ))
-        .series(Series::Funnel(
-            funnel::Funnel::new()
+        )
+        .series(
+            Funnel::new()
                 .name("Pyramid")
                 .width("40%")
                 .height("45%")
@@ -96,5 +96,5 @@ pub fn chart() -> Chart {
                     (80, "Click"),
                     (100, "Show"),
                 ]),
-        ))
+        )
 }

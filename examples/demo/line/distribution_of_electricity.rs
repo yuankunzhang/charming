@@ -7,7 +7,7 @@ use echarts::{
         AxisLabel, AxisPointer, AxisPointerType, AxisType, ItemStyle, MarkArea, MarkAreaData,
         TooltipTrigger,
     },
-    series::{line, Series},
+    series::Line,
     Chart,
 };
 
@@ -51,8 +51,8 @@ pub fn chart() -> Chart {
             VisualMapPiece::new().gt(14).lte(17).color("red"),
             VisualMapPiece::new().gt(17).color("green"),
         ]))
-        .series(Series::Line(
-            line::Line::new()
+        .series(
+            Line::new()
                 .name("Electricity")
                 .smooth(0.5)
                 .data(vec![
@@ -73,5 +73,5 @@ pub fn chart() -> Chart {
                             ),
                         ]),
                 ),
-        ))
+        )
 }

@@ -3,7 +3,7 @@ use echarts::{
         Legend, Toolbox, ToolboxDataView, ToolboxFeature, ToolboxRestore, ToolboxSaveAsImage,
     },
     element::ItemStyle,
-    series::{pie, Series},
+    series::{Pie, PieRoseType},
     Chart,
 };
 
@@ -18,10 +18,10 @@ pub fn chart() -> Chart {
                     .save_as_image(ToolboxSaveAsImage::new().show(true)),
             ),
         )
-        .series(Series::Pie(
-            pie::Pie::new()
+        .series(
+            Pie::new()
                 .name("Nightingale Chart")
-                .rose_type(pie::RoseType::Radius)
+                .rose_type(PieRoseType::Radius)
                 .radius(("50", "250"))
                 .center(("50%", "50%"))
                 .item_style(ItemStyle::new().border_radius(8))
@@ -35,5 +35,5 @@ pub fn chart() -> Chart {
                     (22.0, "rose 7"),
                     (18.0, "rose 8"),
                 ]),
-        ))
+        )
 }

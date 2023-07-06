@@ -23,6 +23,29 @@ pub mod theme_river;
 pub mod tree;
 pub mod treemap;
 
+pub use bar::*;
+pub use boxplot::*;
+pub use candlestick::*;
+pub use custom::*;
+pub use effect_scatter::*;
+pub use funnel::*;
+pub use gauge::*;
+pub use graph::*;
+pub use heatmap::*;
+pub use line::*;
+pub use lines::*;
+pub use map::*;
+pub use parallel::*;
+pub use pictorial_bar::*;
+pub use pie::*;
+pub use radar::*;
+pub use sankey::*;
+pub use scatter::*;
+pub use sunburst::*;
+pub use theme_river::*;
+pub use tree::*;
+pub use treemap::*;
+
 pub enum Series {
     Line(line::Line),
     Bar(bar::Bar),
@@ -63,6 +86,42 @@ macro_rules! serialize {
 }
 
 serialize!(
+    Line,
+    Bar,
+    Pie,
+    Scatter,
+    EffectScatter,
+    Radar,
+    Tree,
+    Treemap,
+    Sunburst,
+    Boxplot,
+    Candlestick,
+    Heatmap,
+    Map,
+    Parallel,
+    Graph,
+    Sankey,
+    Funnel,
+    Gauge,
+    PictorialBar,
+    ThemeRiver,
+    Custom
+);
+
+macro_rules! impl_series {
+    ($($variant:ident),*) => {
+        $(
+            impl From<$variant> for Series {
+                fn from(series: $variant) -> Self {
+                    Self::$variant(series)
+                }
+            }
+        )*
+    }
+}
+
+impl_series!(
     Line,
     Bar,
     Pie,

@@ -1,9 +1,4 @@
-use echarts::{
-    component::Axis,
-    element::AxisType,
-    series::{line, Series},
-    Chart,
-};
+use echarts::{component::Axis, element::AxisType, series::Line, Chart};
 
 pub fn chart() -> Chart {
     Chart::new()
@@ -13,7 +8,5 @@ pub fn chart() -> Chart {
                 .data(vec!["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]),
         )
         .y_axis(Axis::new().type_(AxisType::Value))
-        .series(Series::Line(
-            line::Line::new().data(vec![150, 230, 224, 218, 135, 147, 260]),
-        ))
+        .series(Line::new().data(vec![150, 230, 224, 218, 135, 147, 260]))
 }

@@ -3,7 +3,7 @@ use echarts::{
     element::{
         AxisPointer, AxisPointerType, AxisType, SplitArea, SplitLine, TextStyle, TooltipTrigger,
     },
-    series::{boxplot, scatter, Series},
+    series::{Boxplot, Scatter},
     Chart,
 };
 
@@ -81,10 +81,6 @@ pub fn chart() -> Chart {
                 .name("km/s minus 299,000")
                 .split_area(SplitArea::new().show(true)),
         )
-        .series(Series::Boxplot(
-            boxplot::Boxplot::new().name("boxplot").dataset_index(1),
-        ))
-        .series(Series::Scatter(
-            scatter::Scatter::new().name("outlier").dataset_index(2),
-        ))
+        .series(Boxplot::new().name("boxplot").dataset_index(1))
+        .series(Scatter::new().name("outlier").dataset_index(2))
 }

@@ -1,6 +1,6 @@
 use echarts::{
     component::Axis,
-    series::{effect_scatter, scatter, Series},
+    series::{EffectScatter, Scatter},
     Chart,
 };
 
@@ -271,10 +271,10 @@ pub fn chart() -> Chart {
     Chart::new()
         .x_axis(Axis::new().scale(true))
         .y_axis(Axis::new().scale(true))
-        .series(Series::EffectScatter(
-            effect_scatter::EffectScatter::new()
+        .series(
+            EffectScatter::new()
                 .symbol_size(20)
                 .data(vec![vec![172.7, 105.2], vec![153.4, 42.0]]),
-        ))
-        .series(Series::Scatter(scatter::Scatter::new().data(data)))
+        )
+        .series(Scatter::new().data(data))
 }

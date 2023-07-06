@@ -5,7 +5,7 @@ use echarts::{
     },
     datatype::Value,
     element::{AxisLabel, AxisTick, AxisType, LineStyle, SplitLine, TextStyle},
-    series::{parallel, Series},
+    series::Parallel,
     Chart,
 };
 
@@ -81,24 +81,24 @@ pub fn chart() -> Chart {
                         .split_line(SplitLine::new().show(false)),
                 ),
         )
-        .series(Series::Parallel(
-            parallel::Parallel::new()
+        .series(
+            Parallel::new()
                 .name("Beijing")
                 .line_style(LineStyle::new().width(1).opacity(0.5))
                 .data(data.data_bj),
-        ))
-        .series(Series::Parallel(
-            parallel::Parallel::new()
+        )
+        .series(
+            Parallel::new()
                 .name("Shanghai")
                 .line_style(LineStyle::new().width(1).opacity(0.5))
                 .data(data.data_sh),
-        ))
-        .series(Series::Parallel(
-            parallel::Parallel::new()
+        )
+        .series(
+            Parallel::new()
                 .name("Guangzhou")
                 .line_style(LineStyle::new().width(1).opacity(0.5))
                 .data(data.data_gz),
-        ))
+        )
 }
 
 #[derive(serde::Deserialize)]

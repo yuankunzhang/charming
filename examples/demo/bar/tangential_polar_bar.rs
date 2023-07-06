@@ -1,7 +1,7 @@
 use echarts::{
     component::{AngleAxis, Polar, RadiusAxis, Title, Tooltip},
     element::{AxisType, CoordinateSystem, Label, Position},
-    series::{bar, Series},
+    series::Bar,
     Chart,
 };
 
@@ -16,8 +16,8 @@ pub fn chart() -> Chart {
                 .data(vec!["a", "b", "c", "d"]),
         )
         .tooltip(Tooltip::new())
-        .series(Series::Bar(
-            bar::Bar::new()
+        .series(
+            Bar::new()
                 .coordinate_system(CoordinateSystem::Polar)
                 .label(
                     Label::new()
@@ -26,5 +26,5 @@ pub fn chart() -> Chart {
                         .formatter("{b}: {c}"),
                 )
                 .data(vec![2.0, 1.2, 2.4, 3.6]),
-        ))
+        )
 }

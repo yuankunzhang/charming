@@ -1,7 +1,7 @@
 use echarts::{
     component::{Axis, Grid, Legend, SelectedMode, Tooltip},
     element::{AxisLabel, AxisLine, AxisTick, MarkLine, SplitLine},
-    series::{pictorial_bar, Series},
+    series::PictorialBar,
     Chart,
 };
 
@@ -28,7 +28,5 @@ pub fn chart() -> Chart {
         )
         .grid(Grid::new().top("center").height("230"))
         .mark_line(MarkLine::new().z(-100))
-        .series(Series::PictorialBar(
-            pictorial_bar::PictorialBar::new().name("typeA"),
-        ))
+        .series(PictorialBar::new().name("typeA"))
 }

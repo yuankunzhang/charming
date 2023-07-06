@@ -4,7 +4,7 @@ use echarts::{
         AreaStyle, AxisPointer, AxisPointerLabel, AxisPointerType, AxisType, Color, ColorStop,
         LineStyle, TooltipTrigger,
     },
-    series::{line, Series},
+    series::Line,
     Chart,
 };
 
@@ -43,8 +43,8 @@ pub fn chart() -> Chart {
                 .data(vec!["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]),
         )
         .y_axis(Axis::new().type_(AxisType::Value))
-        .series(Series::Line(
-            line::Line::new()
+        .series(
+            Line::new()
                 .name("Line 1")
                 .show_symbol(false)
                 .stack("Total")
@@ -65,9 +65,9 @@ pub fn chart() -> Chart {
                 )
                 .smooth(0.5)
                 .data(vec![140, 232, 101, 264, 90, 340, 250]),
-        ))
-        .series(Series::Line(
-            line::Line::new()
+        )
+        .series(
+            Line::new()
                 .name("Line 2")
                 .show_symbol(false)
                 .stack("Total")
@@ -88,9 +88,9 @@ pub fn chart() -> Chart {
                 )
                 .smooth(0.5)
                 .data(vec![120, 282, 111, 234, 220, 340, 310]),
-        ))
-        .series(Series::Line(
-            line::Line::new()
+        )
+        .series(
+            Line::new()
                 .name("Line 3")
                 .show_symbol(false)
                 .stack("Total")
@@ -111,9 +111,9 @@ pub fn chart() -> Chart {
                 )
                 .smooth(0.5)
                 .data(vec![320, 132, 201, 334, 190, 130, 220]),
-        ))
-        .series(Series::Line(
-            line::Line::new()
+        )
+        .series(
+            Line::new()
                 .name("Line 4")
                 .show_symbol(false)
                 .stack("Total")
@@ -134,9 +134,9 @@ pub fn chart() -> Chart {
                 )
                 .smooth(0.5)
                 .data(vec![220, 402, 231, 134, 190, 230, 120]),
-        ))
-        .series(Series::Line(
-            line::Line::new()
+        )
+        .series(
+            Line::new()
                 .name("Line 5")
                 .show_symbol(false)
                 .stack("Total")
@@ -157,5 +157,5 @@ pub fn chart() -> Chart {
                 )
                 .smooth(0.5)
                 .data(vec![220, 302, 181, 234, 210, 290, 150]),
-        ))
+        )
 }

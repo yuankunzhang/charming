@@ -4,7 +4,7 @@ use echarts::{
         AxisPointer, AxisPointerType, AxisType, Emphasis, ItemStyle, Label, Position, SplitLine,
         TooltipTrigger,
     },
-    series::{bar, Series},
+    series::{bar, Bar, Series},
     Chart,
 };
 
@@ -60,11 +60,11 @@ pub fn chart() -> Chart {
                 )
                 .data(vec![0, 1700, 1400, 1200, 300, 0]),
         ))
-        .series(Series::Bar(
-            bar::Bar::new()
+        .series(
+            Bar::new()
                 .name("Life Cost")
                 .stack("Total")
                 .label(Label::new().show(true).position(Position::Inside))
                 .data(vec![2900, 1200, 300, 200, 900, 300]),
-        ))
+        )
 }

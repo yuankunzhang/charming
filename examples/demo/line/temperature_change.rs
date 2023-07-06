@@ -7,7 +7,7 @@ use echarts::{
         AxisLabel, AxisType, Label, MarkLine, MarkLineData, MarkLineDataType, MarkLineVariant,
         MarkPoint, MarkPointData, Position, Symbol, TooltipTrigger,
     },
-    series::{line, Series},
+    series::Line,
     Chart,
 };
 
@@ -40,8 +40,8 @@ pub fn chart() -> Chart {
                 .type_(AxisType::Value)
                 .axis_label(AxisLabel::new().formatter("{value} °C")),
         )
-        .series(Series::Line(
-            line::Line::new()
+        .series(
+            Line::new()
                 .name("Highest")
                 .data(vec![10, 11, 13, 11, 12, 12, 9])
                 .mark_point(MarkPoint::new().data(vec![("max", "Max"), ("min", "Min")]))
@@ -50,9 +50,9 @@ pub fn chart() -> Chart {
                             .type_(MarkLineDataType::Average)
                             .name("Avg"),
                     )])),
-        ))
-        .series(Series::Line(
-            line::Line::new()
+        )
+        .series(
+            Line::new()
                 .name("Lowest")
                 .data(vec![1, -2, 2, 5, 3, 2, 0])
                 .mark_point(MarkPoint::new().data(vec![MarkPointData::new()
@@ -82,5 +82,5 @@ pub fn chart() -> Chart {
                                 )
                         ),
                     ])),
-        ))
+        )
 }

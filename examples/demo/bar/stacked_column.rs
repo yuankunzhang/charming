@@ -4,7 +4,7 @@ use echarts::{
         AxisPointer, AxisPointerType, AxisType, Emphasis, EmphasisFocus, LineStyle, LineStyleType,
         MarkLine, MarkLineData, MarkLineVariant, TooltipTrigger,
     },
-    series::{bar, Series},
+    series::{bar, Bar, Series},
     Chart,
 };
 
@@ -92,11 +92,11 @@ pub fn chart() -> Chart {
                 .emphasis(Emphasis::new().focus(EmphasisFocus::Series))
                 .data(vec![60, 72, 71, 74, 190, 130, 110]),
         ))
-        .series(Series::Bar(
-            bar::Bar::new()
+        .series(
+            Bar::new()
                 .name("Others")
                 .stack("Search Engine")
                 .emphasis(Emphasis::new().focus(EmphasisFocus::Series))
                 .data(vec![62, 82, 91, 84, 109, 110, 120]),
-        ))
+        )
 }

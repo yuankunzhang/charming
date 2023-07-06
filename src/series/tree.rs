@@ -4,19 +4,19 @@ use crate::element::{Emphasis, Label, Symbol};
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
-pub enum Layout {
+pub enum TreeLayout {
     Orthogonal,
     Radial,
 }
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct Leaves {
+pub struct TreeLeaves {
     #[serde(skip_serializing_if = "Option::is_none")]
     label: Option<Label>,
 }
 
-impl Leaves {
+impl TreeLeaves {
     pub fn new() -> Self {
         Self { label: None }
     }
@@ -29,7 +29,7 @@ impl Leaves {
 
 #[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct Node {
+pub struct TreeNode {
     pub name: String,
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -39,10 +39,8 @@ pub struct Node {
     pub collapsed: Option<bool>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub children: Option<Vec<Node>>,
+    pub children: Option<Vec<TreeNode>>,
 }
-
-pub type Data = Vec<Node>;
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -84,7 +82,7 @@ pub struct Tree {
     center: Option<(String, String)>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    layout: Option<Layout>,
+    layout: Option<TreeLayout>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     symbol: Option<Symbol>,
@@ -108,10 +106,10 @@ pub struct Tree {
     animation_duration_update: Option<f64>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    leaves: Option<Leaves>,
+    leaves: Option<TreeLeaves>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
-    data: Data,
+    data: Vec<TreeNode>,
 }
 
 impl Tree {
@@ -197,7 +195,7 @@ impl Tree {
         self
     }
 
-    pub fn layout(mut self, layout: Layout) -> Self {
+    pub fn layout(mut self, layout: TreeLayout) -> Self {
         self.layout = Some(layout);
         self
     }
@@ -237,12 +235,12 @@ impl Tree {
         self
     }
 
-    pub fn leaves(mut self, leaves: Leaves) -> Self {
+    pub fn leaves(mut self, leaves: TreeLeaves) -> Self {
         self.leaves = Some(leaves);
         self
     }
 
-    pub fn data(mut self, data: Data) -> Self {
+    pub fn data(mut self, data: Vec<TreeNode>) -> Self {
         self.data = data;
         self
     }

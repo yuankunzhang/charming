@@ -2,7 +2,7 @@ use echarts::{
     component::{Axis, Grid, Tooltip, VisualMap},
     datatype::{value, DataFrame, DataPoint},
     element::{AxisType, Emphasis, ItemStyle, Label, Orient, SplitArea},
-    series::{heatmap, Series},
+    series::Heatmap,
     Chart,
 };
 
@@ -223,8 +223,8 @@ pub fn chart() -> Chart {
                 .left("center")
                 .bottom("15%"),
         )
-        .series(Series::Heatmap(
-            heatmap::Heatmap::new()
+        .series(
+            Heatmap::new()
                 .name("Punch Card")
                 .label(Label::new().show(true))
                 .emphasis(
@@ -235,5 +235,5 @@ pub fn chart() -> Chart {
                     ),
                 )
                 .data(data),
-        ))
+        )
 }

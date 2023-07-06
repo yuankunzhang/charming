@@ -1,7 +1,7 @@
 use echarts::{
     component::{Legend, RadarCoordinate, Title, Tooltip},
     element::{AreaStyle, TooltipTrigger},
-    series::{radar, Series},
+    series::Radar,
     Chart,
 };
 
@@ -54,24 +54,24 @@ pub fn chart() -> Chart {
                 .center(("75%", "40%"))
                 .radius(80.0),
         ])
-        .series(Series::Radar(
-            radar::Radar::new()
+        .series(
+            Radar::new()
                 .name("Radar")
                 .tooltip(Tooltip::new().trigger(TooltipTrigger::Item))
                 .area_style(AreaStyle::new())
                 .data(vec![(vec![60, 73, 85, 40], "A Software")]),
-        ))
-        .series(Series::Radar(
-            radar::Radar::new()
+        )
+        .series(
+            Radar::new()
                 .radar_index(1)
                 .area_style(AreaStyle::new())
                 .data(vec![
                     (vec![85, 90, 90, 95, 95], "A Phone"),
                     (vec![95, 80, 95, 90, 93], "Another Phone"),
                 ]),
-        ))
-        .series(Series::Radar(
-            radar::Radar::new()
+        )
+        .series(
+            Radar::new()
                 .radar_index(2)
                 .area_style(AreaStyle::new())
                 .data(vec![
@@ -88,5 +88,5 @@ pub fn chart() -> Chart {
                         "Evaporation",
                     ),
                 ]),
-        ))
+        )
 }
