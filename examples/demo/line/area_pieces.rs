@@ -1,9 +1,9 @@
 use echarts::{
     component::{Axis, VisualMap, VisualMapPiece, VisualMapType},
-    datatype::value,
     element::{
         AreaStyle, AxisType, Label, LineStyle, MarkLine, MarkLineData, MarkLineVariant, Symbol,
     },
+    row,
     series::Line,
     Chart,
 };
@@ -51,15 +51,15 @@ pub fn chart() -> Chart {
                         ]),
                 )
                 .data(vec![
-                    vec![value("2019-10-10"), value(200)],
-                    vec![value("2019-10-11"), value(560)],
-                    vec![value("2019-10-12"), value(750)],
-                    vec![value("2019-10-13"), value(580)],
-                    vec![value("2019-10-14"), value(250)],
-                    vec![value("2019-10-15"), value(300)],
-                    vec![value("2019-10-16"), value(450)],
-                    vec![value("2019-10-17"), value(300)],
-                    vec![value("2019-10-18"), value(100)],
+                    row!["2019-10-10", 200],
+                    row!["2019-10-11", 560],
+                    row!["2019-10-12", 750],
+                    row!["2019-10-13", 580],
+                    row!["2019-10-14", 250],
+                    row!["2019-10-15", 300],
+                    row!["2019-10-16", 450],
+                    row!["2019-10-17", 300],
+                    row!["2019-10-18", 100],
                 ]),
         )
 }
