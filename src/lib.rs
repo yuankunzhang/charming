@@ -5,6 +5,7 @@ pub mod renderer;
 pub mod series;
 pub mod style;
 
+use component::single_axis::SingleAxis;
 pub use renderer::*;
 
 use component::angle_axis::AngleAxis;
@@ -16,7 +17,6 @@ use component::polar::Polar;
 use component::radius_axis::RadiusAxis;
 use component::visual_map::VisualMap;
 use element::mark_line::MarkLine;
-use element::single_axis::SingleAxis;
 use serde::Serialize;
 
 use component::axis::Axis;

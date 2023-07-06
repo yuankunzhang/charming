@@ -1,6 +1,7 @@
 use echarts::{
+    component::single_axis::SingleAxis,
     datatype::{value, DataPoint},
-    element::{Label, SingleAxis},
+    element::Label,
     series::{theme_river, Series},
     Chart,
 };
