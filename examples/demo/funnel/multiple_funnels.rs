@@ -1,7 +1,7 @@
 use echarts::{
     component::{
-        Legend, Title, Toolbox, ToolboxDataView, ToolboxFeature, ToolboxRestore,
-        ToolboxSaveAsImage, Tooltip,
+        Legend, Title, Toolbox, ToolboxFeature, ToolboxFeatureDataView, ToolboxFeatureRestore,
+        ToolboxFeatureSaveAsImage, Tooltip,
     },
     element::{Label, Orient, Position, Sort, TooltipTrigger},
     series::Funnel,
@@ -22,9 +22,9 @@ pub fn chart() -> Chart {
                 .top("center")
                 .feature(
                     ToolboxFeature::new()
-                        .save_as_image(ToolboxSaveAsImage::new())
-                        .restore(ToolboxRestore::new())
-                        .data_view(ToolboxDataView::new().read_only(true)),
+                        .save_as_image(ToolboxFeatureSaveAsImage::new())
+                        .restore(ToolboxFeatureRestore::new())
+                        .data_view(ToolboxFeatureDataView::new().read_only(true)),
                 ),
         )
         .legend(

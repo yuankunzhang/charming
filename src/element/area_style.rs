@@ -32,13 +32,13 @@ impl AreaStyle {
         }
     }
 
-    pub fn color(mut self, color: Color) -> Self {
-        self.color = Some(color);
+    pub fn color<C: Into<Color>>(mut self, color: C) -> Self {
+        self.color = Some(color.into());
         self
     }
 
-    pub fn origin(mut self, origin: OriginPosition) -> Self {
-        self.origin = Some(origin);
+    pub fn origin<O: Into<OriginPosition>>(mut self, origin: O) -> Self {
+        self.origin = Some(origin.into());
         self
     }
 

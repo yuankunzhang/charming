@@ -1,6 +1,6 @@
 use echarts::{
     component::{
-        Axis, Title, Toolbox, ToolboxFeature, ToolboxSaveAsImage, Tooltip, VisualMap,
+        Axis, Title, Toolbox, ToolboxFeature, ToolboxFeatureSaveAsImage, Tooltip, VisualMap,
         VisualMapPiece,
     },
     element::{
@@ -23,11 +23,9 @@ pub fn chart() -> Chart {
                 .trigger(TooltipTrigger::Axis)
                 .axis_pointer(AxisPointer::new().type_(AxisPointerType::Cross)),
         )
-        .toolbox(
-            Toolbox::new()
-                .show(true)
-                .feature(ToolboxFeature::new().save_as_image(ToolboxSaveAsImage::new().show(true))),
-        )
+        .toolbox(Toolbox::new().show(true).feature(
+            ToolboxFeature::new().save_as_image(ToolboxFeatureSaveAsImage::new().show(true)),
+        ))
         .x_axis(
             Axis::new()
                 .type_(AxisType::Category)

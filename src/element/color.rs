@@ -25,10 +25,10 @@ pub struct ColorStop {
 }
 
 impl ColorStop {
-    pub fn new(offset: f64, color: &str) -> Self {
+    pub fn new<F: Into<f64>, S: Into<String>>(offset: F, color: S) -> Self {
         Self {
-            offset,
-            color: color.to_string(),
+            offset: offset.into(),
+            color: color.into(),
         }
     }
 }

@@ -1,5 +1,5 @@
 use echarts::{
-    component::{Axis, DataZoom, Grid, InsideDataZoom, Legend, SliderDataZoom, Title, Tooltip},
+    component::{Axis, DataZoom, DataZoomType, Grid, Legend, Title, Tooltip},
     element::{AxisPointer, AxisPointerType, AxisType, SplitArea, SplitLine, TooltipTrigger},
     series::Boxplot,
     Chart,
@@ -37,14 +37,15 @@ pub fn chart() -> Chart {
                 .max(600)
                 .split_area(SplitArea::new().show(false)),
         )
-        .data_zoom(DataZoom::Inside(InsideDataZoom::new().start(0).end(20)))
-        .data_zoom(DataZoom::Slider(
-            SliderDataZoom::new()
+        .data_zoom(DataZoom::new().type_(DataZoomType::Inside).start(0).end(20))
+        .data_zoom(
+            DataZoom::new()
+                .type_(DataZoomType::Slider)
                 .start(0)
                 .end(20)
                 .top("90%")
                 .x_axis_index(0),
-        ))
+        )
         .series(Boxplot::new().name("category0").dataset_index(3))
         .series(Boxplot::new().name("category1").dataset_index(4))
         .series(Boxplot::new().name("category2").dataset_index(5))

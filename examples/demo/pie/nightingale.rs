@@ -1,6 +1,7 @@
 use echarts::{
     component::{
-        Legend, Toolbox, ToolboxDataView, ToolboxFeature, ToolboxRestore, ToolboxSaveAsImage,
+        Legend, Toolbox, ToolboxFeature, ToolboxFeatureDataView, ToolboxFeatureRestore,
+        ToolboxFeatureSaveAsImage,
     },
     element::ItemStyle,
     series::{Pie, PieRoseType},
@@ -13,9 +14,9 @@ pub fn chart() -> Chart {
         .toolbox(
             Toolbox::new().show(true).feature(
                 ToolboxFeature::new()
-                    .data_view(ToolboxDataView::new().show(true))
-                    .restore(ToolboxRestore::new().show(true))
-                    .save_as_image(ToolboxSaveAsImage::new().show(true)),
+                    .data_view(ToolboxFeatureDataView::new().show(true))
+                    .restore(ToolboxFeatureRestore::new().show(true))
+                    .save_as_image(ToolboxFeatureSaveAsImage::new().show(true)),
             ),
         )
         .series(

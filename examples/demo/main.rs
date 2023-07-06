@@ -97,6 +97,7 @@ lazy_static! {
         insert!(m, line, data_transform_filter);
         insert!(m, line, distribution_of_electricity);
         insert!(m, line, gradient_stacked_area);
+        insert!(m, line, large_scale_area);
         insert!(m, line, line_gradient);
         insert!(m, line, smoothed_line);
         insert!(m, line, stacked_area);

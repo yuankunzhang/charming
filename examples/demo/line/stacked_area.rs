@@ -1,5 +1,7 @@
 use echarts::{
-    component::{Axis, Grid, Legend, Title, Toolbox, ToolboxFeature, ToolboxSaveAsImage, Tooltip},
+    component::{
+        Axis, Grid, Legend, Title, Toolbox, ToolboxFeature, ToolboxFeatureSaveAsImage, Tooltip,
+    },
     element::{AreaStyle, AxisType, Emphasis, EmphasisFocus, TooltipTrigger},
     series::Line,
     Chart,
@@ -24,7 +26,8 @@ pub fn chart() -> Chart {
                 .contain_label(true),
         )
         .toolbox(
-            Toolbox::new().feature(ToolboxFeature::new().save_as_image(ToolboxSaveAsImage::new())),
+            Toolbox::new()
+                .feature(ToolboxFeature::new().save_as_image(ToolboxFeatureSaveAsImage::new())),
         )
         .x_axis(
             Axis::new()

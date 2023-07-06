@@ -1,5 +1,7 @@
 use echarts::{
-    component::{Axis, Grid, Legend, Title, Toolbox, ToolboxFeature, ToolboxSaveAsImage, Tooltip},
+    component::{
+        Axis, Grid, Legend, Title, Toolbox, ToolboxFeature, ToolboxFeatureSaveAsImage, Tooltip,
+    },
     element::{
         AreaStyle, AxisPointer, AxisPointerLabel, AxisPointerType, AxisType, Color, ColorStop,
         LineStyle, TooltipTrigger,
@@ -27,7 +29,8 @@ pub fn chart() -> Chart {
         )
         .legend(Legend::new().data(vec!["Line 1", "Line 2", "Line 3", "Line 4", "Line 5"]))
         .toolbox(
-            Toolbox::new().feature(ToolboxFeature::new().save_as_image(ToolboxSaveAsImage::new())),
+            Toolbox::new()
+                .feature(ToolboxFeature::new().save_as_image(ToolboxFeatureSaveAsImage::new())),
         )
         .grid(
             Grid::new()

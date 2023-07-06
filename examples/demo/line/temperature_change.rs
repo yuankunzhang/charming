@@ -1,7 +1,8 @@
 use echarts::{
     component::{
-        Axis, Legend, Title, Toolbox, ToolboxDataView, ToolboxDataZoom, ToolboxFeature,
-        ToolboxMagicType, ToolboxMagicTypeType, ToolboxRestore, ToolboxSaveAsImage, Tooltip,
+        Axis, Legend, Title, Toolbox, ToolboxFeature, ToolboxFeatureDataView,
+        ToolboxFeatureDataZoom, ToolboxFeatureMagicType, ToolboxFeatureMagicTypeType,
+        ToolboxFeatureRestore, ToolboxFeatureSaveAsImage, Tooltip,
     },
     element::{
         AxisLabel, AxisType, Label, MarkLine, MarkLineData, MarkLineDataType, MarkLineVariant,
@@ -19,14 +20,14 @@ pub fn chart() -> Chart {
         .toolbox(
             Toolbox::new().show(true).feature(
                 ToolboxFeature::new()
-                    .save_as_image(ToolboxSaveAsImage::new())
-                    .restore(ToolboxRestore::new())
-                    .magic_type(
-                        ToolboxMagicType::new()
-                            .type_(vec![ToolboxMagicTypeType::Line, ToolboxMagicTypeType::Bar]),
-                    )
-                    .data_zoom(ToolboxDataZoom::new().y_axis_index("none"))
-                    .data_view(ToolboxDataView::new().read_only(false)),
+                    .save_as_image(ToolboxFeatureSaveAsImage::new())
+                    .restore(ToolboxFeatureRestore::new())
+                    .magic_type(ToolboxFeatureMagicType::new().type_(vec![
+                        ToolboxFeatureMagicTypeType::Line,
+                        ToolboxFeatureMagicTypeType::Bar,
+                    ]))
+                    .data_zoom(ToolboxFeatureDataZoom::new().y_axis_index("none"))
+                    .data_view(ToolboxFeatureDataView::new().read_only(false)),
             ),
         )
         .x_axis(
