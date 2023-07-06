@@ -1,5 +1,5 @@
 use echarts::{
-    component::{axis, grid, title, tooltip, visual_map},
+    component::{Axis, Grid, Title, Tooltip, VisualMap, VisualMapType},
     datatype::value,
     element::TooltipTrigger,
     series::{line, Series},
@@ -70,45 +70,45 @@ pub fn chart() -> Chart {
 
     Chart::new()
         .title(
-            title::Title::new()
+            Title::new()
                 .text("Gradient along the y axis")
                 .left("center"),
         )
         .title(
-            title::Title::new()
+            Title::new()
                 .text("Gradient along the x axis")
                 .left("center")
                 .top("55%"),
         )
-        .tooltip(tooltip::Tooltip::new().trigger(TooltipTrigger::Axis))
+        .tooltip(Tooltip::new().trigger(TooltipTrigger::Axis))
         .visual_map(
-            visual_map::VisualMap::new()
+            VisualMap::new()
                 .show(false)
-                .type_(visual_map::VisualMapType::Continuous)
+                .type_(VisualMapType::Continuous)
                 .series_index(0)
                 .min(0)
                 .max(400),
         )
         .visual_map(
-            visual_map::VisualMap::new()
+            VisualMap::new()
                 .show(false)
-                .type_(visual_map::VisualMapType::Continuous)
+                .type_(VisualMapType::Continuous)
                 .series_index(1)
                 .dimension(0)
                 .min(0)
                 .max(10)
                 .max((data_list.len() - 1) as f64),
         )
-        .x_axis(axis::Axis::new().data(data_list.iter().map(|v| v.as_str().unwrap()).collect()))
+        .x_axis(Axis::new().data(data_list.iter().map(|v| v.as_str().unwrap()).collect()))
         .x_axis(
-            axis::Axis::new()
+            Axis::new()
                 .data(data_list.iter().map(|v| v.as_str().unwrap()).collect())
                 .grid_index(1),
         )
-        .y_axis(axis::Axis::new())
-        .y_axis(axis::Axis::new().grid_index(1))
-        .grid(grid::Grid::new().bottom("60%"))
-        .grid(grid::Grid::new().top("60%"))
+        .y_axis(Axis::new())
+        .y_axis(Axis::new().grid_index(2))
+        .grid(Grid::new().bottom("60%"))
+        .grid(Grid::new().top("60%"))
         .series(Series::Line(
             line::Line::new()
                 .show_symbol(false)

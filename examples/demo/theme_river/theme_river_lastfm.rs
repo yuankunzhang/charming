@@ -1,5 +1,5 @@
 use echarts::{
-    component::single_axis::SingleAxis,
+    component::SingleAxis,
     datatype::{value, DataPoint},
     element::Label,
     series::{theme_river, Series},

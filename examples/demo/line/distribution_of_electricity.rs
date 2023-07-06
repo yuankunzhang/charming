@@ -1,5 +1,8 @@
 use echarts::{
-    component::{axis, title, toolbox, tooltip, visual_map},
+    component::{
+        Axis, Title, Toolbox, ToolboxFeature, ToolboxSaveAsImage, Tooltip, VisualMap,
+        VisualMapPiece,
+    },
     element::{
         AxisLabel, AxisPointer, AxisPointerType, AxisType, ItemStyle, MarkArea, MarkAreaData,
         TooltipTrigger,
@@ -11,22 +14,22 @@ use echarts::{
 pub fn chart() -> Chart {
     Chart::new()
         .title(
-            title::Title::new()
+            Title::new()
                 .text("Distribution of Electricity")
                 .subtext("Fake Data"),
         )
         .tooltip(
-            tooltip::Tooltip::new()
+            Tooltip::new()
                 .trigger(TooltipTrigger::Axis)
                 .axis_pointer(AxisPointer::new().type_(AxisPointerType::Cross)),
         )
         .toolbox(
-            toolbox::Toolbox::new().show(true).feature(
-                toolbox::Feature::new().save_as_image(toolbox::SaveAsImage::new().show(true)),
-            ),
+            Toolbox::new()
+                .show(true)
+                .feature(ToolboxFeature::new().save_as_image(ToolboxSaveAsImage::new().show(true))),
         )
         .x_axis(
-            axis::Axis::new()
+            Axis::new()
                 .type_(AxisType::Category)
                 .boundary_gap(false)
                 .data(vec![
@@ -36,23 +39,18 @@ pub fn chart() -> Chart {
                 ]),
         )
         .y_axis(
-            axis::Axis::new()
+            Axis::new()
                 .type_(AxisType::Value)
                 .axis_label(AxisLabel::new().formatter("{value} W"))
                 .axis_pointer(AxisPointer::new().snap(true)),
         )
-        .visual_map(
-            visual_map::VisualMap::new()
-                .show(false)
-                .dimension(0)
-                .pieces(vec![
-                    visual_map::Piece::new().lte(6).color("green"),
-                    visual_map::Piece::new().gt(6).lte(8).color("red"),
-                    visual_map::Piece::new().gt(8).lte(14).color("green"),
-                    visual_map::Piece::new().gt(14).lte(17).color("red"),
-                    visual_map::Piece::new().gt(17).color("green"),
-                ]),
-        )
+        .visual_map(VisualMap::new().show(false).dimension(0).pieces(vec![
+            VisualMapPiece::new().lte(6).color("green"),
+            VisualMapPiece::new().gt(6).lte(8).color("red"),
+            VisualMapPiece::new().gt(8).lte(14).color("green"),
+            VisualMapPiece::new().gt(14).lte(17).color("red"),
+            VisualMapPiece::new().gt(17).color("green"),
+        ]))
         .series(Series::Line(
             line::Line::new()
                 .name("Electricity")

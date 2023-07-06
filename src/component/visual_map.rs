@@ -11,7 +11,7 @@ pub enum VisualMapType {
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct Piece {
+pub struct VisualMapPiece {
     #[serde(skip_serializing_if = "Option::is_none")]
     min: Option<f64>,
 
@@ -37,7 +37,7 @@ pub struct Piece {
     color: Option<Color>,
 }
 
-impl Piece {
+impl VisualMapPiece {
     pub fn new() -> Self {
         Self {
             min: None,
@@ -92,25 +92,25 @@ impl Piece {
     }
 }
 
-impl From<(f64, f64)> for Piece {
+impl From<(f64, f64)> for VisualMapPiece {
     fn from((min, max): (f64, f64)) -> Self {
         Self::new().min(min).max(max)
     }
 }
 
-impl From<(i64, i64)> for Piece {
+impl From<(i64, i64)> for VisualMapPiece {
     fn from((min, max): (i64, i64)) -> Self {
         Self::new().min(min as f64).max(max as f64)
     }
 }
 
-impl From<(f64, f64, &str)> for Piece {
+impl From<(f64, f64, &str)> for VisualMapPiece {
     fn from((min, max, label): (f64, f64, &str)) -> Self {
         Self::new().min(min).max(max).label(label)
     }
 }
 
-impl From<(i64, i64, &str)> for Piece {
+impl From<(i64, i64, &str)> for VisualMapPiece {
     fn from((min, max, label): (i64, i64, &str)) -> Self {
         Self::new().min(min as f64).max(max as f64).label(label)
     }
@@ -118,12 +118,12 @@ impl From<(i64, i64, &str)> for Piece {
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct InRange {
+pub struct VisualMapInRange {
     #[serde(skip_serializing_if = "Vec::is_empty")]
     color: Vec<Color>,
 }
 
-impl InRange {
+impl VisualMapInRange {
     pub fn new() -> Self {
         Self { color: vec![] }
     }
@@ -193,10 +193,10 @@ pub struct VisualMap {
     item_height: Option<f64>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    in_range: Option<InRange>,
+    in_range: Option<VisualMapInRange>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    pieces: Option<Vec<Piece>>,
+    pieces: Option<Vec<VisualMapPiece>>,
 }
 
 impl VisualMap {
@@ -315,12 +315,12 @@ impl VisualMap {
         self
     }
 
-    pub fn in_range<I: Into<InRange>>(mut self, in_range: I) -> Self {
+    pub fn in_range<I: Into<VisualMapInRange>>(mut self, in_range: I) -> Self {
         self.in_range = Some(in_range.into());
         self
     }
 
-    pub fn pieces(mut self, pieces: Vec<Piece>) -> Self {
+    pub fn pieces(mut self, pieces: Vec<VisualMapPiece>) -> Self {
         self.pieces = Some(pieces);
         self
     }

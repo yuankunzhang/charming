@@ -1,5 +1,5 @@
 use echarts::{
-    component::{axis, dataset, grid, title, tooltip},
+    component::{Axis, Dataset, DatasetTransform, Grid, Title, Tooltip},
     element::{
         AxisPointer, AxisPointerType, AxisType, SplitArea, SplitLine, TextStyle, TooltipTrigger,
     },
@@ -31,23 +31,23 @@ pub fn chart() -> Chart {
         ],
     ];
 
-    let ds = dataset::Dataset::new()
+    let ds = Dataset::new()
         .source(data)
         .transform(r#"{ "type": "boxplot", "config": { "itemNameFormatter": "expr {value}" } }"#)
         .transform(
-            dataset::Transform::new()
+            DatasetTransform::new()
                 .from_dataset_index(1)
                 .from_transform_result(1),
         );
 
     Chart::new()
         .title(
-            title::Title::new()
+            Title::new()
                 .text("Michelson-Morley Experiment")
                 .left("center"),
         )
         .title(
-            title::Title::new()
+            Title::new()
                 .text("upper: Q3 + 1.5 * IQR \nlower: Q1 - 1.5 * IQR")
                 .border_color("#999")
                 .border_width(1)
@@ -62,13 +62,13 @@ pub fn chart() -> Chart {
         )
         .dataset(ds)
         .tooltip(
-            tooltip::Tooltip::new()
+            Tooltip::new()
                 .trigger(TooltipTrigger::Item)
                 .axis_pointer(AxisPointer::new().type_(AxisPointerType::Shadow)),
         )
-        .grid(grid::Grid::new().left("10%").right("10%").bottom("15%"))
+        .grid(Grid::new().left("10%").right("10%").bottom("15%"))
         .x_axis(
-            axis::Axis::new()
+            Axis::new()
                 .type_(AxisType::Category)
                 .boundary_gap(true)
                 .name_gap(30)
@@ -76,7 +76,7 @@ pub fn chart() -> Chart {
                 .split_line(SplitLine::new().show(false)),
         )
         .y_axis(
-            axis::Axis::new()
+            Axis::new()
                 .type_(AxisType::Value)
                 .name("km/s minus 299,000")
                 .split_area(SplitArea::new().show(true)),

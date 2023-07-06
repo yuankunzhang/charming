@@ -1,5 +1,8 @@
 use echarts::{
-    component::{legend, title, toolbox, tooltip},
+    component::{
+        Legend, Title, Toolbox, ToolboxDataView, ToolboxFeature, ToolboxRestore,
+        ToolboxSaveAsImage, Tooltip,
+    },
     element::{Label, Orient, Position, Sort, TooltipTrigger},
     series::{funnel, Series},
     Chart,
@@ -7,30 +10,25 @@ use echarts::{
 
 pub fn chart() -> Chart {
     Chart::new()
-        .title(
-            title::Title::new()
-                .text("Funnel")
-                .left("left")
-                .top("bottom"),
-        )
+        .title(Title::new().text("Funnel").left("left").top("bottom"))
         .tooltip(
-            tooltip::Tooltip::new()
+            Tooltip::new()
                 .trigger(TooltipTrigger::Item)
                 .formatter("{a} <br/>{b} : {c}%"),
         )
         .toolbox(
-            toolbox::Toolbox::new()
+            Toolbox::new()
                 .orient(Orient::Vertical)
                 .top("center")
                 .feature(
-                    toolbox::Feature::new()
-                        .save_as_image(toolbox::SaveAsImage::new())
-                        .restore(toolbox::Restore::new())
-                        .data_view(toolbox::DataView::new().read_only(true)),
+                    ToolboxFeature::new()
+                        .save_as_image(ToolboxSaveAsImage::new())
+                        .restore(ToolboxRestore::new())
+                        .data_view(ToolboxDataView::new().read_only(true)),
                 ),
         )
         .legend(
-            legend::Legend::new()
+            Legend::new()
                 .orient(Orient::Vertical)
                 .left("left")
                 .data(vec!["Show", "Click", "Visit", "Inquiry", "Order"]),

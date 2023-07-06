@@ -1,5 +1,5 @@
 use echarts::{
-    component::{axis, grid, legend, title, toolbox, tooltip},
+    component::{Axis, Grid, Legend, Title, Toolbox, ToolboxFeature, ToolboxSaveAsImage, Tooltip},
     element::{AxisType, TooltipTrigger},
     series::{line, Series},
     Chart,
@@ -7,9 +7,9 @@ use echarts::{
 
 pub fn chart() -> Chart {
     Chart::new()
-        .title(title::Title::new().text("Stacked Line"))
-        .tooltip(tooltip::Tooltip::new().trigger(TooltipTrigger::Axis))
-        .legend(legend::Legend::new().data(vec![
+        .title(Title::new().text("Stacked Line"))
+        .tooltip(Tooltip::new().trigger(TooltipTrigger::Axis))
+        .legend(Legend::new().data(vec![
             "Email",
             "Union Ads",
             "Video Ads",
@@ -17,23 +17,22 @@ pub fn chart() -> Chart {
             "Search Engine",
         ]))
         .grid(
-            grid::Grid::new()
+            Grid::new()
                 .left("3%")
                 .right("4%")
                 .bottom("3%")
                 .contain_label(true),
         )
         .toolbox(
-            toolbox::Toolbox::new()
-                .feature(toolbox::Feature::new().save_as_image(toolbox::SaveAsImage::new())),
+            Toolbox::new().feature(ToolboxFeature::new().save_as_image(ToolboxSaveAsImage::new())),
         )
         .x_axis(
-            axis::Axis::new()
+            Axis::new()
                 .type_(AxisType::Category)
                 .boundary_gap(false)
                 .data(vec!["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]),
         )
-        .y_axis(axis::Axis::new().type_(AxisType::Value))
+        .y_axis(Axis::new().type_(AxisType::Value))
         .series(Series::Line(
             line::Line::new()
                 .name("Email")

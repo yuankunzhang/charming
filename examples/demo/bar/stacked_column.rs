@@ -1,5 +1,5 @@
 use echarts::{
-    component::{axis, grid, legend, tooltip},
+    component::{Axis, Grid, Legend, Tooltip},
     element::{
         AxisPointer, AxisPointerType, AxisType, Emphasis, EmphasisFocus, LineStyle, LineStyleType,
         MarkLine, MarkLineData, MarkLineVariant, TooltipTrigger,
@@ -11,24 +11,24 @@ use echarts::{
 pub fn chart() -> Chart {
     Chart::new()
         .tooltip(
-            tooltip::Tooltip::new()
+            Tooltip::new()
                 .trigger(TooltipTrigger::Axis)
                 .axis_pointer(AxisPointer::new().type_(AxisPointerType::Shadow)),
         )
-        .legend(legend::Legend::new())
+        .legend(Legend::new())
         .grid(
-            grid::Grid::new()
+            Grid::new()
                 .left("3%")
                 .right("4%")
                 .bottom("3%")
                 .contain_label(true),
         )
         .x_axis(
-            axis::Axis::new()
+            Axis::new()
                 .type_(AxisType::Category)
                 .data(vec!["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]),
         )
-        .y_axis(axis::Axis::new().type_(AxisType::Value))
+        .y_axis(Axis::new().type_(AxisType::Value))
         .series(Series::Bar(
             bar::Bar::new()
                 .name("Direct")

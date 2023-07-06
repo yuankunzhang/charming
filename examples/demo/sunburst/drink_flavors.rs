@@ -1,5 +1,5 @@
 use echarts::{
-    component::title,
+    component::Title,
     element::{Align, Emphasis, EmphasisFocus, ItemStyle, Label, Position, Sort, TextStyle},
     series::{sunburst, Series},
     Chart,
@@ -11,7 +11,7 @@ pub fn chart() -> Chart {
     let data = convert(data);
     Chart::new()
         .title(
-            title::Title::new()
+            Title::new()
                 .text("WORLD COFFEE RESEARCH SENSORY LEXICON")
                 .subtext("Source: https://worldcoffeeresearch.org/work/sensory-lexicon/")
                 .text_style(TextStyle::new().font_size(14).align("center"))

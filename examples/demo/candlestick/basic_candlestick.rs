@@ -1,18 +1,13 @@
 use echarts::{
-    component::axis,
+    component::Axis,
     series::{candlestick, Series},
     Chart,
 };
 
 pub fn chart() -> Chart {
     Chart::new()
-        .x_axis(axis::Axis::new().data(vec![
-            "2017-10-24",
-            "2017-10-25",
-            "2017-10-26",
-            "2017-10-27",
-        ]))
-        .y_axis(axis::Axis::new())
+        .x_axis(Axis::new().data(vec!["2017-10-24", "2017-10-25", "2017-10-26", "2017-10-27"]))
+        .y_axis(Axis::new())
         .series(Series::Candlestick(candlestick::Candlestick::new().data(
             vec![
                 vec![20, 34, 10, 38],

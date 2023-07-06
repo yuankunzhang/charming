@@ -1,5 +1,5 @@
 use echarts::{
-    component::{title, tooltip},
+    component::{Title, Tooltip, TooltipTriggerOn},
     element::{Emphasis, EmphasisFocus, LineStyle, TooltipTrigger},
     series::{sankey, Series},
     Chart,
@@ -8,11 +8,11 @@ use echarts::{
 pub fn chart() -> Chart {
     let data: sankey::Data = serde_json::from_str(SOURCE).unwrap();
     Chart::new()
-        .title(title::Title::new().text("Node Align Left Sankey"))
+        .title(Title::new().text("Node Align Left Sankey"))
         .tooltip(
-            tooltip::Tooltip::new()
+            Tooltip::new()
                 .trigger(TooltipTrigger::Item)
-                .trigger_on(tooltip::TriggerOn::Mousemove),
+                .trigger_on(TooltipTriggerOn::Mousemove),
         )
         .series(Series::Sankey(
             sankey::Sankey::new()

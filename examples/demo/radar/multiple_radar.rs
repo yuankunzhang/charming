@@ -1,5 +1,5 @@
 use echarts::{
-    component::{legend, radar_coordinate, title, tooltip},
+    component::{Legend, RadarCoordinate, Title, Tooltip},
     element::{AreaStyle, TooltipTrigger},
     series::{radar, Series},
     Chart,
@@ -7,9 +7,9 @@ use echarts::{
 
 pub fn chart() -> Chart {
     Chart::new()
-        .title(title::Title::new().text("Multiple Radar"))
-        .tooltip(tooltip::Tooltip::new().trigger(TooltipTrigger::Axis))
-        .legend(legend::Legend::new().left("center").data(vec![
+        .title(Title::new().text("Multiple Radar"))
+        .tooltip(Tooltip::new().trigger(TooltipTrigger::Axis))
+        .legend(Legend::new().left("center").data(vec![
             "A Software",
             "A Phone",
             "Another Phone",
@@ -17,7 +17,7 @@ pub fn chart() -> Chart {
             "Evaporation",
         ]))
         .radar(vec![
-            radar_coordinate::RadarCoordinate::new()
+            RadarCoordinate::new()
                 .indicator(vec![
                     ("Brand", 0, 100),
                     ("Content", 0, 100),
@@ -26,7 +26,7 @@ pub fn chart() -> Chart {
                 ])
                 .center(("25%", "40%"))
                 .radius(80.0),
-            radar_coordinate::RadarCoordinate::new()
+            RadarCoordinate::new()
                 .indicator(vec![
                     ("Look", 0, 100),
                     ("Photo", 0, 100),
@@ -36,7 +36,7 @@ pub fn chart() -> Chart {
                 ])
                 .center(("50%", "60%"))
                 .radius(80.0),
-            radar_coordinate::RadarCoordinate::new()
+            RadarCoordinate::new()
                 .indicator(vec![
                     ("1月", 0, 100),
                     ("2月", 0, 100),
@@ -57,7 +57,7 @@ pub fn chart() -> Chart {
         .series(Series::Radar(
             radar::Radar::new()
                 .name("Radar")
-                .tooltip(tooltip::Tooltip::new().trigger(TooltipTrigger::Item))
+                .tooltip(Tooltip::new().trigger(TooltipTrigger::Item))
                 .area_style(AreaStyle::new())
                 .data(vec![(vec![60, 73, 85, 40], "A Software")]),
         ))

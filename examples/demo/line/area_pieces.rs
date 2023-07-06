@@ -1,5 +1,5 @@
 use echarts::{
-    component::{axis, visual_map},
+    component::{Axis, VisualMap, VisualMapPiece, VisualMapType},
     datatype::value,
     element::{
         AreaStyle, AxisType, Label, LineStyle, MarkLine, MarkLineData, MarkLineVariant, Symbol,
@@ -10,28 +10,24 @@ use echarts::{
 
 pub fn chart() -> Chart {
     Chart::new()
-        .x_axis(
-            axis::Axis::new()
-                .type_(AxisType::Category)
-                .boundary_gap(false),
-        )
+        .x_axis(Axis::new().type_(AxisType::Category).boundary_gap(false))
         .y_axis(
-            axis::Axis::new()
+            Axis::new()
                 .type_(AxisType::Value)
                 .boundary_gap(("0", "20%")),
         )
         .visual_map(
-            visual_map::VisualMap::new()
-                .type_(visual_map::VisualMapType::Piecewise)
+            VisualMap::new()
+                .type_(VisualMapType::Piecewise)
                 .show(false)
                 .dimension(0)
                 .series_index(0)
                 .pieces(vec![
-                    visual_map::Piece::new()
+                    VisualMapPiece::new()
                         .min(1)
                         .max(3)
                         .color("rgba(0, 0, 180, 0.4)"),
-                    visual_map::Piece::new()
+                    VisualMapPiece::new()
                         .min(5)
                         .max(7)
                         .color("rgba(0, 0, 180, 0.4)"),

@@ -5,7 +5,7 @@ use crate::datatype::Value;
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct Source {
+pub struct DatasetSource {
     #[serde(skip_serializing_if = "Option::is_none")]
     id: Option<String>,
 
@@ -13,7 +13,7 @@ pub struct Source {
     source: Vec<Vec<Value>>,
 }
 
-impl Source {
+impl DatasetSource {
     pub fn new() -> Self {
         Self {
             id: None,
@@ -36,7 +36,7 @@ impl Source {
     }
 }
 
-impl<V> From<Vec<Vec<V>>> for Source
+impl<V> From<Vec<Vec<V>>> for DatasetSource
 where
     V: Into<Value>,
 {
@@ -47,7 +47,7 @@ where
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct Transform {
+pub struct DatasetTransform {
     #[serde(skip_serializing_if = "Option::is_none")]
     id: Option<String>,
 
@@ -64,7 +64,7 @@ pub struct Transform {
     from_transform_result: Option<f64>,
 }
 
-impl Transform {
+impl DatasetTransform {
     pub fn new() -> Self {
         Self {
             id: None,
@@ -101,15 +101,15 @@ impl Transform {
     }
 }
 
-impl From<&str> for Transform {
+impl From<&str> for DatasetTransform {
     fn from(transform: &str) -> Self {
         Self::new().transform(transform)
     }
 }
 
 pub struct Dataset {
-    sources: Vec<Source>,
-    transforms: Vec<Transform>,
+    sources: Vec<DatasetSource>,
+    transforms: Vec<DatasetTransform>,
 }
 
 impl Dataset {
@@ -120,12 +120,12 @@ impl Dataset {
         }
     }
 
-    pub fn source<S: Into<Source>>(mut self, source: S) -> Self {
+    pub fn source<S: Into<DatasetSource>>(mut self, source: S) -> Self {
         self.sources.push(source.into());
         self
     }
 
-    pub fn transform<T: Into<Transform>>(mut self, transform: T) -> Self {
+    pub fn transform<T: Into<DatasetTransform>>(mut self, transform: T) -> Self {
         self.transforms.push(transform.into());
         self
     }

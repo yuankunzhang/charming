@@ -1,5 +1,5 @@
 use echarts::{
-    component::{axis, grid, legend, title, toolbox, tooltip},
+    component::{Axis, Grid, Legend, Title, Toolbox, ToolboxFeature, ToolboxSaveAsImage, Tooltip},
     element::{
         AreaStyle, AxisPointer, AxisPointerLabel, AxisPointerType, AxisType, Color, ColorStop,
         LineStyle, TooltipTrigger,
@@ -17,35 +17,32 @@ pub fn chart() -> Chart {
             "#ff0087".into(),
             "#ffbf00".into(),
         ])
-        .title(title::Title::new().text("Gradient Stacked Area Chart"))
+        .title(Title::new().text("Gradient Stacked Area Chart"))
         .tooltip(
-            tooltip::Tooltip::new()
-                .trigger(TooltipTrigger::Axis)
-                .axis_pointer(
-                    AxisPointer::new()
-                        .type_(AxisPointerType::Cross)
-                        .label(AxisPointerLabel::new().background_color("#6a7985".into())),
-                ),
+            Tooltip::new().trigger(TooltipTrigger::Axis).axis_pointer(
+                AxisPointer::new()
+                    .type_(AxisPointerType::Cross)
+                    .label(AxisPointerLabel::new().background_color("#6a7985".into())),
+            ),
         )
-        .legend(legend::Legend::new().data(vec!["Line 1", "Line 2", "Line 3", "Line 4", "Line 5"]))
+        .legend(Legend::new().data(vec!["Line 1", "Line 2", "Line 3", "Line 4", "Line 5"]))
         .toolbox(
-            toolbox::Toolbox::new()
-                .feature(toolbox::Feature::new().save_as_image(toolbox::SaveAsImage::new())),
+            Toolbox::new().feature(ToolboxFeature::new().save_as_image(ToolboxSaveAsImage::new())),
         )
         .grid(
-            grid::Grid::new()
+            Grid::new()
                 .left("3%")
                 .right("4%")
                 .bottom("3%")
                 .contain_label(true),
         )
         .x_axis(
-            axis::Axis::new()
+            Axis::new()
                 .type_(AxisType::Category)
                 .boundary_gap(false)
                 .data(vec!["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]),
         )
-        .y_axis(axis::Axis::new().type_(AxisType::Value))
+        .y_axis(Axis::new().type_(AxisType::Value))
         .series(Series::Line(
             line::Line::new()
                 .name("Line 1")

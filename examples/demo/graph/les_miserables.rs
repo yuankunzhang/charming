@@ -1,5 +1,5 @@
 use echarts::{
-    component::{legend, title, tooltip},
+    component::{Legend, Title, Tooltip},
     element::{Label, LineStyle, Position},
     series::{graph, Series},
     Chart,
@@ -15,14 +15,14 @@ pub fn chart() -> Chart {
     let legend: Vec<String> = data.categories.iter().map(|c| c.name.clone()).collect();
     Chart::new()
         .title(
-            title::Title::new()
+            Title::new()
                 .text("Les Miserables")
                 .subtext("Circular layout")
                 .top("bottom")
                 .left("right"),
         )
-        .legend(legend::Legend::new().data(legend))
-        .tooltip(tooltip::Tooltip::new())
+        .legend(Legend::new().data(legend))
+        .tooltip(Tooltip::new())
         .series(Series::Graph(
             graph::Graph::new()
                 .name("Les Miserables")

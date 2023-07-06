@@ -4,7 +4,7 @@ use crate::element::{AxisPointer, Color, Padding, TooltipTrigger};
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
-pub enum TriggerOn {
+pub enum TooltipTriggerOn {
     Mousemove,
     Click,
     #[serde(rename = "mousemove|click")]
@@ -19,7 +19,7 @@ pub struct Tooltip {
     trigger: Option<TooltipTrigger>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    trigger_on: Option<TriggerOn>,
+    trigger_on: Option<TooltipTriggerOn>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     axis_pointer: Option<AxisPointer>,
@@ -63,7 +63,7 @@ impl Tooltip {
         self
     }
 
-    pub fn trigger_on<T: Into<TriggerOn>>(mut self, trigger_on: T) -> Self {
+    pub fn trigger_on<T: Into<TooltipTriggerOn>>(mut self, trigger_on: T) -> Self {
         self.trigger_on = Some(trigger_on.into());
         self
     }

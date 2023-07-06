@@ -1,5 +1,5 @@
 use echarts::{
-    component::parallel_axis,
+    component::{ParallelAxis, ParallelAxisType},
     datatype::value,
     element::LineStyle,
     series::{parallel, Series},
@@ -8,14 +8,14 @@ use echarts::{
 
 pub fn chart() -> Chart {
     Chart::new()
-        .parallel_axis(parallel_axis::ParallelAxis::new().dim(0).name("Price"))
-        .parallel_axis(parallel_axis::ParallelAxis::new().dim(1).name("Net Weight"))
-        .parallel_axis(parallel_axis::ParallelAxis::new().dim(2).name("Amount"))
+        .parallel_axis(ParallelAxis::new().dim(0).name("Price"))
+        .parallel_axis(ParallelAxis::new().dim(1).name("Net Weight"))
+        .parallel_axis(ParallelAxis::new().dim(2).name("Amount"))
         .parallel_axis(
-            parallel_axis::ParallelAxis::new()
+            ParallelAxis::new()
                 .dim(3)
                 .name("Score")
-                .type_(parallel_axis::ParallelAxisType::Category)
+                .type_(ParallelAxisType::Category)
                 .data(vec!["Excellent", "Good", "OK", "Bad"]),
         )
         .series(Series::Parallel(

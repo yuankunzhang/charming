@@ -1,5 +1,5 @@
 use echarts::{
-    component::{angle_axis, polar, radius_axis, title, tooltip},
+    component::{AngleAxis, Polar, RadiusAxis, Title, Tooltip},
     element::{AxisType, CoordinateSystem, Label, Position},
     series::{bar, Series},
     Chart,
@@ -7,15 +7,15 @@ use echarts::{
 
 pub fn chart() -> Chart {
     Chart::new()
-        .title(title::Title::new().text("Tangential Polar Bar Label Position (middle)"))
-        .polar(polar::Polar::new().radius(("30", "80%")))
-        .angle_axis(angle_axis::AngleAxis::new().start_angle(75).max(4))
+        .title(Title::new().text("Tangential Polar Bar Label Position (middle)"))
+        .polar(Polar::new().radius(("30", "80%")))
+        .angle_axis(AngleAxis::new().start_angle(75).max(4))
         .radius_axis(
-            radius_axis::RadiusAxis::new()
+            RadiusAxis::new()
                 .type_(AxisType::Category)
                 .data(vec!["a", "b", "c", "d"]),
         )
-        .tooltip(tooltip::Tooltip::new())
+        .tooltip(Tooltip::new())
         .series(Series::Bar(
             bar::Bar::new()
                 .coordinate_system(CoordinateSystem::Polar)

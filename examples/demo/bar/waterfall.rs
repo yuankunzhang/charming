@@ -1,5 +1,5 @@
 use echarts::{
-    component::{axis, grid, title, tooltip},
+    component::{Axis, Grid, Title, Tooltip},
     element::{
         AxisPointer, AxisPointerType, AxisType, Emphasis, ItemStyle, Label, Position, SplitLine,
         TooltipTrigger,
@@ -11,25 +11,25 @@ use echarts::{
 pub fn chart() -> Chart {
     Chart::new()
         .title(
-            title::Title::new()
+            Title::new()
                 .text("Waterfall Chart")
                 .subtext("Living Expenses in Shenzhen"),
         )
         .tooltip(
-            tooltip::Tooltip::new()
+            Tooltip::new()
                 .trigger(TooltipTrigger::Axis)
                 .formatter(r#"{b0}<br />{a1}: {c1}"#)
                 .axis_pointer(AxisPointer::new().type_(AxisPointerType::Shadow)),
         )
         .grid(
-            grid::Grid::new()
+            Grid::new()
                 .left("3%")
                 .right("4%")
                 .bottom("3%")
                 .contain_label(true),
         )
         .x_axis(
-            axis::Axis::new()
+            Axis::new()
                 .type_(AxisType::Category)
                 .split_line(SplitLine::new().show(false))
                 .data(vec![
@@ -41,7 +41,7 @@ pub fn chart() -> Chart {
                     "Other",
                 ]),
         )
-        .y_axis(axis::Axis::new().type_(AxisType::Value))
+        .y_axis(Axis::new().type_(AxisType::Value))
         .series(Series::Bar(
             bar::Bar::new()
                 .name("Placeholder")

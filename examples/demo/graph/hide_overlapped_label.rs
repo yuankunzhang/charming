@@ -1,5 +1,5 @@
 use echarts::{
-    component::{legend, tooltip},
+    component::{Legend, Tooltip},
     element::{Label, LabelLayout, LineStyle, Position, ScaleLimit},
     series::{graph, Series},
     Chart,
@@ -8,10 +8,8 @@ use echarts::{
 pub fn chart() -> Chart {
     let data: graph::Data = serde_json::from_str(include_str!("les-miserables.json")).unwrap();
     Chart::new()
-        .tooltip(tooltip::Tooltip::new())
-        .legend(
-            legend::Legend::new().data(data.categories.iter().map(|c| c.name.clone()).collect()),
-        )
+        .tooltip(Tooltip::new())
+        .legend(Legend::new().data(data.categories.iter().map(|c| c.name.clone()).collect()))
         .series(Series::Graph(
             graph::Graph::new()
                 .name("Les Miserables")

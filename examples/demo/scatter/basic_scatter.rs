@@ -1,13 +1,13 @@
 use echarts::{
-    component::axis,
+    component::Axis,
     series::{scatter, Series},
     Chart,
 };
 
 pub fn chart() -> Chart {
     Chart::new()
-        .x_axis(axis::Axis::new())
-        .y_axis(axis::Axis::new())
+        .x_axis(Axis::new())
+        .y_axis(Axis::new())
         .series(Series::Scatter(
             scatter::Scatter::new().symbol_size(20).data(vec![
                 vec![10.0, 8.04],

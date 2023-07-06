@@ -1,5 +1,5 @@
 use echarts::{
-    component::{axis, dataset, title, tooltip},
+    component::{Axis, Dataset, DatasetSource, DatasetTransform, Title, Tooltip},
     datatype::Value,
     element::{AxisType, TooltipTrigger},
     series::{line, Series},
@@ -9,10 +9,10 @@ use echarts::{
 pub fn chart() -> Chart {
     let data: Vec<Vec<Value>> =
         serde_json::from_str(include_str!("life-expectancy-table.json")).unwrap();
-    let dataset = dataset::Dataset::new()
-        .source(dataset::Source::from(data).id("dataset_raw"))
+    let dataset = Dataset::new()
+        .source(DatasetSource::from(data).id("dataset_raw"))
         .transform(
-            dataset::Transform::new()
+            DatasetTransform::new()
                 .id("dataset_since_1950_of_germany")
                 .from_dataset_id("dataset_raw")
                 .transform(
@@ -28,7 +28,7 @@ pub fn chart() -> Chart {
                 ),
         )
         .transform(
-            dataset::Transform::new()
+            DatasetTransform::new()
                 .id("dataset_since_1950_of_france")
                 .from_dataset_id("dataset_raw")
                 .transform(
@@ -45,14 +45,14 @@ pub fn chart() -> Chart {
         );
 
     Chart::new()
-        .title(title::Title::new().text("Income of Germany and France since 1950"))
-        .tooltip(tooltip::Tooltip::new().trigger(TooltipTrigger::Axis))
+        .title(Title::new().text("Income of Germany and France since 1950"))
+        .tooltip(Tooltip::new().trigger(TooltipTrigger::Axis))
         .x_axis(
-            axis::Axis::new()
+            Axis::new()
                 .type_(AxisType::Category)
                 .name_location("middle"),
         )
-        .y_axis(axis::Axis::new().name("Income"))
+        .y_axis(Axis::new().name("Income"))
         .series(Series::Line(
             line::Line::new()
                 .dataset_id("dataset_since_1950_of_germany")

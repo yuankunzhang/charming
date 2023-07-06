@@ -1,5 +1,8 @@
 use echarts::{
-    component::{axis, legend, title, toolbox, tooltip},
+    component::{
+        Axis, Legend, Title, Toolbox, ToolboxDataView, ToolboxDataZoom, ToolboxFeature,
+        ToolboxMagicType, ToolboxMagicTypeType, ToolboxRestore, ToolboxSaveAsImage, Tooltip,
+    },
     element::{
         AxisLabel, AxisType, Label, MarkLine, MarkLineData, MarkLineDataType, MarkLineVariant,
         MarkPoint, MarkPointData, Position, Symbol, TooltipTrigger,
@@ -10,30 +13,30 @@ use echarts::{
 
 pub fn chart() -> Chart {
     Chart::new()
-        .title(title::Title::new().text("Temperature change in the coming week"))
-        .tooltip(tooltip::Tooltip::new().trigger(TooltipTrigger::Axis))
-        .legend(legend::Legend::new())
+        .title(Title::new().text("Temperature change in the coming week"))
+        .tooltip(Tooltip::new().trigger(TooltipTrigger::Axis))
+        .legend(Legend::new())
         .toolbox(
-            toolbox::Toolbox::new().show(true).feature(
-                toolbox::Feature::new()
-                    .save_as_image(toolbox::SaveAsImage::new())
-                    .restore(toolbox::Restore::new())
-                    .magic_type(toolbox::MagicType::new().type_(vec![
-                        toolbox::MagicTypeType::Line,
-                        toolbox::MagicTypeType::Bar,
-                    ]))
-                    .data_zoom(toolbox::DataZoom::new().y_axis_index("none"))
-                    .data_view(toolbox::DataView::new().read_only(false)),
+            Toolbox::new().show(true).feature(
+                ToolboxFeature::new()
+                    .save_as_image(ToolboxSaveAsImage::new())
+                    .restore(ToolboxRestore::new())
+                    .magic_type(
+                        ToolboxMagicType::new()
+                            .type_(vec![ToolboxMagicTypeType::Line, ToolboxMagicTypeType::Bar]),
+                    )
+                    .data_zoom(ToolboxDataZoom::new().y_axis_index("none"))
+                    .data_view(ToolboxDataView::new().read_only(false)),
             ),
         )
         .x_axis(
-            axis::Axis::new()
+            Axis::new()
                 .type_(AxisType::Category)
                 .boundary_gap(false)
                 .data(vec!["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]),
         )
         .y_axis(
-            axis::Axis::new()
+            Axis::new()
                 .type_(AxisType::Value)
                 .axis_label(AxisLabel::new().formatter("{value} °C")),
         )

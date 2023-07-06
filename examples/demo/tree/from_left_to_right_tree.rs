@@ -1,5 +1,5 @@
 use echarts::{
-    component::tooltip,
+    component::{Tooltip, TooltipTriggerOn},
     element::{Align, Emphasis, EmphasisFocus, Label, Position, TooltipTrigger, VerticalAlign},
     series::{tree, Series},
     Chart,
@@ -14,9 +14,9 @@ pub fn chart() -> Chart {
     }
     Chart::new()
         .tooltip(
-            tooltip::Tooltip::new()
+            Tooltip::new()
                 .trigger(TooltipTrigger::Item)
-                .trigger_on(tooltip::TriggerOn::Mousemove),
+                .trigger_on(TooltipTriggerOn::Mousemove),
         )
         .series(Series::Tree(
             tree::Tree::new()

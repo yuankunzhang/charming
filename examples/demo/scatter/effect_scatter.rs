@@ -1,5 +1,5 @@
 use echarts::{
-    component::axis,
+    component::Axis,
     series::{effect_scatter, scatter, Series},
     Chart,
 };
@@ -269,8 +269,8 @@ pub fn chart() -> Chart {
     ];
 
     Chart::new()
-        .x_axis(axis::Axis::new().scale(true))
-        .y_axis(axis::Axis::new().scale(true))
+        .x_axis(Axis::new().scale(true))
+        .y_axis(Axis::new().scale(true))
         .series(Series::EffectScatter(
             effect_scatter::EffectScatter::new()
                 .symbol_size(20)

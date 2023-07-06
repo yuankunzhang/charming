@@ -1,5 +1,7 @@
 use echarts::{
-    component::{legend, toolbox},
+    component::{
+        Legend, Toolbox, ToolboxDataView, ToolboxFeature, ToolboxRestore, ToolboxSaveAsImage,
+    },
     element::ItemStyle,
     series::{pie, Series},
     Chart,
@@ -7,13 +9,13 @@ use echarts::{
 
 pub fn chart() -> Chart {
     Chart::new()
-        .legend(legend::Legend::new().top("bottom"))
+        .legend(Legend::new().top("bottom"))
         .toolbox(
-            toolbox::Toolbox::new().show(true).feature(
-                toolbox::Feature::new()
-                    .data_view(toolbox::DataView::new().show(true))
-                    .restore(toolbox::Restore::new().show(true))
-                    .save_as_image(toolbox::SaveAsImage::new().show(true)),
+            Toolbox::new().show(true).feature(
+                ToolboxFeature::new()
+                    .data_view(ToolboxDataView::new().show(true))
+                    .restore(ToolboxRestore::new().show(true))
+                    .save_as_image(ToolboxSaveAsImage::new().show(true)),
             ),
         )
         .series(Series::Pie(

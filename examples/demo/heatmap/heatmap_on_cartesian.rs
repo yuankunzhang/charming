@@ -1,5 +1,5 @@
 use echarts::{
-    component::{axis, grid, tooltip, visual_map},
+    component::{Axis, Grid, Tooltip, VisualMap},
     datatype::{value, DataFrame, DataPoint},
     element::{AxisType, Emphasis, ItemStyle, Label, Orient, SplitArea},
     series::{heatmap, Series},
@@ -189,10 +189,10 @@ pub fn chart() -> Chart {
         .collect();
 
     Chart::new()
-        .tooltip(tooltip::Tooltip::new().position("top"))
-        .grid(grid::Grid::new().height("50%").top("10%"))
+        .tooltip(Tooltip::new().position("top"))
+        .grid(Grid::new().height("50%").top("10%"))
         .x_axis(
-            axis::Axis::new()
+            Axis::new()
                 .type_(AxisType::Category)
                 .data(vec![
                     "12a", "1a", "2a", "3a", "4a", "5a", "6a", "7a", "8a", "9a", "10a", "11a",
@@ -201,7 +201,7 @@ pub fn chart() -> Chart {
                 .split_area(SplitArea::new().show(true)),
         )
         .y_axis(
-            axis::Axis::new()
+            Axis::new()
                 .type_(AxisType::Category)
                 .data(vec![
                     "Saturday",
@@ -215,7 +215,7 @@ pub fn chart() -> Chart {
                 .split_area(SplitArea::new().show(true)),
         )
         .visual_map(
-            visual_map::VisualMap::new()
+            VisualMap::new()
                 .min(0)
                 .max(10)
                 .calculable(true)

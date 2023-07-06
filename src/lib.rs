@@ -5,28 +5,13 @@ pub mod renderer;
 pub mod series;
 pub mod style;
 
-use component::single_axis::SingleAxis;
+use component::{
+    AngleAxis, Axis, DataZoom, Dataset, Grid, Legend, ParallelAxis, ParallelCoordinate, Polar,
+    RadarCoordinate, RadiusAxis, SingleAxis, Title, Toolbox, Tooltip, VisualMap,
+};
+use element::{Color, MarkLine};
 pub use renderer::*;
-
-use component::angle_axis::AngleAxis;
-use component::data_zoom::DataZoom;
-use component::dataset::Dataset;
-use component::parallel_axis::ParallelAxis;
-use component::parallel_coordinate::ParallelCoordinate;
-use component::polar::Polar;
-use component::radius_axis::RadiusAxis;
-use component::visual_map::VisualMap;
-use element::mark_line::MarkLine;
 use serde::Serialize;
-
-use component::axis::Axis;
-use component::grid::Grid;
-use component::legend::Legend;
-use component::radar_coordinate::RadarCoordinate;
-use component::title::Title;
-use component::toolbox::Toolbox;
-use component::tooltip::Tooltip;
-use element::color::Color;
 use series::Series;
 
 #[derive(Serialize)]
