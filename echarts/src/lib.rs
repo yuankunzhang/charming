@@ -3,7 +3,6 @@ pub mod datatype;
 pub mod element;
 pub mod renderer;
 pub mod series;
-pub mod style;
 
 use component::{
     AngleAxis, Axis, DataZoom, Grid, Legend, ParallelAxis, ParallelCoordinate, Polar,

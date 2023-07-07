@@ -17,10 +17,10 @@ pub struct Bar {
     id: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    name: Option<String>,
+    color_by: Option<ColorBy>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    color_by: Option<ColorBy>,
+    name: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     legend_hover_link: Option<bool>,
