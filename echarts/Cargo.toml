@@ -1,0 +1,11 @@
+[package]
+name = "echarts"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+deno_core = "0.194.0"
+handlebars = "4.3.7"
+serde = "1.0.164"
+serde_json = "1.0.99"
+serde_v8 = "0.105.0"
