@@ -4,13 +4,14 @@ pub mod element;
 pub mod renderer;
 pub mod series;
 
+pub use renderer::*;
+
 use component::{
     AngleAxis, Axis, DataZoom, GeoMap, Grid, Legend, ParallelAxis, ParallelCoordinate, Polar,
     RadarCoordinate, RadiusAxis, SingleAxis, Title, Toolbox, Tooltip, VisualMap,
 };
 use datatype::Dataset;
 use element::{Color, MarkLine};
-pub use renderer::*;
 use serde::Serialize;
 use series::Series;
 
@@ -223,8 +224,13 @@ impl Chart {
     }
 }
 
+fn process_raw_strings(s: String) -> String {
+    let s = str::replace(&s, &format!("\"{}", element::RAW_MARK), "");
+    str::replace(&s, &format!("{}\"", element::RAW_MARK), "")
+}
+
 impl ToString for Chart {
     fn to_string(&self) -> String {
-        serde_json::to_string_pretty(self).unwrap()
+        process_raw_strings(serde_json::to_string_pretty(self).unwrap())
     }
 }

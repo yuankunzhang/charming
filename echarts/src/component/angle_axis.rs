@@ -1,14 +1,17 @@
 use serde::Serialize;
 
 use crate::element::{
-    AxisLabel, AxisLine, AxisPointer, AxisTick, AxisType, MinorSplitLine, MinorTick, SplitArea,
-    SplitLine,
+    AxisLabel, AxisLine, AxisPointer, AxisTick, AxisType, BoundaryGap, MinorSplitLine, MinorTick,
+    SplitArea, SplitLine,
 };
 
 /// The angle axis in Polar Coordinate.
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct AngleAxis {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    boundary_gap: Option<BoundaryGap>,
+
     /// Component ID.
     #[serde(skip_serializing_if = "Option::is_none")]
     id: Option<String>,
@@ -99,6 +102,7 @@ pub struct AngleAxis {
 impl AngleAxis {
     pub fn new() -> Self {
         Self {
+            boundary_gap: None,
             id: None,
             polar_index: None,
             start_angle: None,
@@ -126,6 +130,11 @@ impl AngleAxis {
             split_area: None,
             data: vec![],
         }
+    }
+
+    pub fn boundary_gap<B: Into<BoundaryGap>>(mut self, boundary_gap: B) -> Self {
+        self.boundary_gap = Some(boundary_gap.into());
+        self
     }
 
     pub fn id<S: Into<String>>(mut self, id: S) -> Self {
@@ -253,8 +262,8 @@ impl AngleAxis {
         self
     }
 
-    pub fn data(mut self, data: Vec<String>) -> Self {
-        self.data = data;
+    pub fn data<S: Into<String>>(mut self, data: Vec<S>) -> Self {
+        self.data = data.into_iter().map(|s| s.into()).collect();
         self
     }
 }

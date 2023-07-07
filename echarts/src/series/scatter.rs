@@ -2,7 +2,7 @@ use serde::Serialize;
 
 use crate::{
     datatype::{DataFrame, DataPoint},
-    element::{ColorBy, CoordinateSystem, DimensionEncode, Symbol},
+    element::{ColorBy, CoordinateSystem, DimensionEncode, Symbol, SymbolSize},
 };
 
 #[derive(Serialize)]
@@ -36,7 +36,7 @@ pub struct Scatter {
     symbol: Option<Symbol>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    symbol_size: Option<f64>,
+    symbol_size: Option<SymbolSize>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     encode: Option<DimensionEncode>,
@@ -103,7 +103,7 @@ impl Scatter {
         self
     }
 
-    pub fn symbol_size<F: Into<f64>>(mut self, symbol_size: F) -> Self {
+    pub fn symbol_size<S: Into<SymbolSize>>(mut self, symbol_size: S) -> Self {
         self.symbol_size = Some(symbol_size.into());
         self
     }

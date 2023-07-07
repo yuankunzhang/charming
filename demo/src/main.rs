@@ -147,6 +147,7 @@ lazy_static! {
         let mut m = BTreeMap::new();
         insert!(m, scatter, basic_scatter);
         insert!(m, scatter, effect_scatter);
+        insert!(m, scatter, punch_card_of_github);
         m
     };
     static ref SUNBURST_CHARTS: BTreeMap<&'static str, fn() -> Chart> = {
