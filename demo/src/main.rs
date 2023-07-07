@@ -17,6 +17,7 @@ mod candlestick;
 mod dataset;
 mod funnel;
 mod gauge;
+mod geo;
 mod graph;
 mod heatmap;
 mod line;
@@ -82,6 +83,11 @@ lazy_static! {
     static ref GAUGE_CHARTS: BTreeMap<&'static str, fn() -> Chart> = {
         let mut m = BTreeMap::new();
         insert!(m, gauge, gauge_barometer);
+        m
+    };
+    static ref GEO_CHARTS: BTreeMap<&'static str, fn() -> Chart> = {
+        let mut m = BTreeMap::new();
+        insert!(m, geo, organ_data);
         m
     };
     static ref GRAPH_CHARTS: BTreeMap<&'static str, fn() -> Chart> = {
@@ -171,6 +177,7 @@ lazy_static! {
         m.insert("dataset", DATASET_CHARTS.clone());
         m.insert("funnel", FUNNEL_CHARTS.clone());
         m.insert("gauge", GAUGE_CHARTS.clone());
+        m.insert("geo", GEO_CHARTS.clone());
         m.insert("graph", GRAPH_CHARTS.clone());
         m.insert("heatmap", HEATMAP_CHARTS.clone());
         m.insert("line", LINE_CHARTS.clone());

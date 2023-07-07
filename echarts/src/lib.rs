@@ -5,7 +5,7 @@ pub mod renderer;
 pub mod series;
 
 use component::{
-    AngleAxis, Axis, DataZoom, Grid, Legend, ParallelAxis, ParallelCoordinate, Polar,
+    AngleAxis, Axis, DataZoom, GeoMap, Grid, Legend, ParallelAxis, ParallelCoordinate, Polar,
     RadarCoordinate, RadiusAxis, SingleAxis, Title, Toolbox, Tooltip, VisualMap,
 };
 use datatype::Dataset;
@@ -18,8 +18,7 @@ use series::Series;
 #[serde(rename_all = "camelCase")]
 pub struct Chart {
     #[serde(skip_serializing_if = "Vec::is_empty")]
-    #[serde(rename = "title")]
-    titles: Vec<Title>,
+    title: Vec<Title>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     tooltip: Option<Tooltip>,
@@ -80,12 +79,15 @@ pub struct Chart {
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
     series: Vec<Series>,
+
+    #[serde(skip_serializing)]
+    geo_maps: Vec<GeoMap>,
 }
 
 impl Chart {
     pub fn new() -> Self {
         Self {
-            titles: vec![],
+            title: vec![],
             toolbox: None,
             legend: None,
             tooltip: None,
@@ -106,11 +108,12 @@ impl Chart {
             background_color: None,
             mark_line: None,
             series: vec![],
+            geo_maps: vec![],
         }
     }
 
     pub fn title(mut self, title: Title) -> Self {
-        self.titles.push(title);
+        self.title.push(title);
         self
     }
 
@@ -211,6 +214,11 @@ impl Chart {
 
     pub fn series<S: Into<Series>>(mut self, series: S) -> Self {
         self.series.push(series.into());
+        self
+    }
+
+    pub fn geo_map<M: Into<GeoMap>>(mut self, map: M) -> Self {
+        self.geo_maps.push(map.into());
         self
     }
 }
