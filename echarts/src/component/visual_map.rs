@@ -141,6 +141,9 @@ pub struct VisualMap {
     #[serde(rename = "type")]
     type_: Option<VisualMapType>,
 
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    color: Vec<Color>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     show: Option<bool>,
 
@@ -203,6 +206,7 @@ impl VisualMap {
     pub fn new() -> Self {
         Self {
             type_: None,
+            color: vec![],
             show: None,
             dimension: None,
             series_index: None,
@@ -227,6 +231,11 @@ impl VisualMap {
 
     pub fn type_<S: Into<VisualMapType>>(mut self, type_: S) -> Self {
         self.type_ = Some(type_.into());
+        self
+    }
+
+    pub fn color<C: Into<Color>>(mut self, color: Vec<C>) -> Self {
+        self.color = color.into_iter().map(|c| c.into()).collect();
         self
     }
 

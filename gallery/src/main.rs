@@ -136,6 +136,7 @@ lazy_static! {
     static ref RADAR_CHARTS: BTreeMap<&'static str, fn() -> Chart> = {
         let mut m = BTreeMap::new();
         insert!(m, radar, multiple_radar);
+        insert!(m, radar, proportion_of_browsers);
         m
     };
     static ref SANKEY_CHARTS: BTreeMap<&'static str, fn() -> Chart> = {
