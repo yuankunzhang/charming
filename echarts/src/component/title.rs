@@ -1,11 +1,17 @@
 use serde::Serialize;
 
-use crate::element::{Color, LinkTarget, Padding, TextAlign, TextStyle, TextVerticalAlign};
+use crate::element::{
+    Color, LinkTarget, Padding, PositionProperty, TextAlign, TextStyle, TextVerticalAlign,
+};
 
 /// Title component, including main title and subtitle.
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Title {
+    /// Component ID.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    id: Option<String>,
+
     /// Whether to show the title component.
     #[serde(skip_serializing_if = "Option::is_none")]
     show: Option<bool>,
@@ -72,15 +78,15 @@ pub struct Title {
 
     /// Distance between title component and the top side of the container.
     #[serde(skip_serializing_if = "Option::is_none")]
-    top: Option<String>,
+    top: Option<PositionProperty>,
 
     /// Distance between title component and the right side of the container.
     #[serde(skip_serializing_if = "Option::is_none")]
-    right: Option<String>,
+    right: Option<PositionProperty>,
 
     /// Distance between title component and the bottom side of the container.
     #[serde(skip_serializing_if = "Option::is_none")]
-    bottom: Option<String>,
+    bottom: Option<PositionProperty>,
 
     /// Background color of title, default to be transparent.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -118,6 +124,7 @@ pub struct Title {
 impl Title {
     pub fn new() -> Self {
         Self {
+            id: None,
             show: None,
             text: None,
             link: None,
@@ -231,17 +238,17 @@ impl Title {
         self
     }
 
-    pub fn top<S: Into<String>>(mut self, top: S) -> Self {
+    pub fn top<P: Into<PositionProperty>>(mut self, top: P) -> Self {
         self.top = Some(top.into());
         self
     }
 
-    pub fn right<S: Into<String>>(mut self, right: S) -> Self {
+    pub fn right<P: Into<PositionProperty>>(mut self, right: P) -> Self {
         self.right = Some(right.into());
         self
     }
 
-    pub fn bottom<S: Into<String>>(mut self, bottom: S) -> Self {
+    pub fn bottom<P: Into<PositionProperty>>(mut self, bottom: P) -> Self {
         self.bottom = Some(bottom.into());
         self
     }

@@ -12,6 +12,7 @@ use echarts::{Chart, HtmlRenderer};
 use lazy_static::lazy_static;
 
 mod bar;
+mod bar3d;
 mod boxplot;
 mod candlestick;
 mod dataset;

@@ -7,8 +7,9 @@ pub mod series;
 pub use renderer::*;
 
 use component::{
-    AngleAxis, Axis, DataZoom, GeoMap, Grid, Legend, ParallelAxis, ParallelCoordinate, Polar,
-    RadarCoordinate, RadiusAxis, SingleAxis, Title, Toolbox, Tooltip, VisualMap,
+    AngleAxis, Axis, Axis3D, DataZoom, GeoMap, Grid, Grid3D, Legend, ParallelAxis,
+    ParallelCoordinate, Polar, RadarCoordinate, RadiusAxis, SingleAxis, Title, Toolbox, Tooltip,
+    VisualMap,
 };
 use datatype::Dataset;
 use element::{Color, MarkLine};
@@ -34,10 +35,22 @@ pub struct Chart {
     grid: Vec<Grid>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
+    grid3d: Vec<Grid3D>,
+
+    #[serde(skip_serializing_if = "Vec::is_empty")]
     x_axis: Vec<Axis>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
+    x_axis3d: Vec<Axis3D>,
+
+    #[serde(skip_serializing_if = "Vec::is_empty")]
     y_axis: Vec<Axis>,
+
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    y_axis3d: Vec<Axis3D>,
+
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    z_axis3d: Vec<Axis3D>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
     polar: Vec<Polar>,
@@ -93,8 +106,12 @@ impl Chart {
             legend: None,
             tooltip: None,
             grid: vec![],
+            grid3d: vec![],
             x_axis: vec![],
+            x_axis3d: vec![],
             y_axis: vec![],
+            y_axis3d: vec![],
+            z_axis3d: vec![],
             polar: vec![],
             angle_axis: vec![],
             radius_axis: vec![],
@@ -138,13 +155,33 @@ impl Chart {
         self
     }
 
+    pub fn grid3d(mut self, grid: Grid3D) -> Self {
+        self.grid3d.push(grid);
+        self
+    }
+
     pub fn x_axis(mut self, x_axis: Axis) -> Self {
         self.x_axis.push(x_axis);
         self
     }
 
+    pub fn x_axis3d(mut self, x_axis: Axis3D) -> Self {
+        self.x_axis3d.push(x_axis);
+        self
+    }
+
     pub fn y_axis(mut self, y_axis: Axis) -> Self {
         self.y_axis.push(y_axis);
+        self
+    }
+
+    pub fn y_axis3d(mut self, y_axis: Axis3D) -> Self {
+        self.y_axis3d.push(y_axis);
+        self
+    }
+
+    pub fn z_axis3d(mut self, z_axis: Axis3D) -> Self {
+        self.z_axis3d.push(z_axis);
         self
     }
 
