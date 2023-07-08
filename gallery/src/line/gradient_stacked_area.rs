@@ -3,8 +3,8 @@ use echarts::{
         Axis, Grid, Legend, Title, Toolbox, ToolboxFeature, ToolboxFeatureSaveAsImage, Tooltip,
     },
     element::{
-        AreaStyle, AxisPointer, AxisPointerLabel, AxisPointerType, AxisType, Color, ColorStop,
-        LineStyle, TooltipTrigger,
+        AreaStyle, AxisPointer, AxisPointerType, AxisType, Color, ColorStop, Label, LineStyle,
+        TooltipTrigger,
     },
     series::Line,
     Chart,
@@ -24,7 +24,7 @@ pub fn chart() -> Chart {
             Tooltip::new().trigger(TooltipTrigger::Axis).axis_pointer(
                 AxisPointer::new()
                     .type_(AxisPointerType::Cross)
-                    .label(AxisPointerLabel::new().background_color("#6a7985".into())),
+                    .label(Label::new().background_color("#6a7985")),
             ),
         )
         .legend(Legend::new().data(vec!["Line 1", "Line 2", "Line 3", "Line 4", "Line 5"]))

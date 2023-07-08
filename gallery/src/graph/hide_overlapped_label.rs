@@ -1,6 +1,6 @@
 use echarts::{
     component::{Legend, Tooltip},
-    element::{Label, LabelLayout, LineStyle, Position, ScaleLimit},
+    element::{Label, LabelLayout, LabelPosition, LineStyle, ScaleLimit},
     series::{Graph, GraphData, GraphLayout},
     Chart,
 };
@@ -18,7 +18,7 @@ pub fn chart() -> Chart {
                 .label(
                     Label::new()
                         .show(true)
-                        .position(Position::Right)
+                        .position(LabelPosition::Right)
                         .formatter("{b}"),
                 )
                 .label_layout(LabelLayout::new().hide_overlap(true))

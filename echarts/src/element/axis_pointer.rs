@@ -1,6 +1,6 @@
 use serde::Serialize;
 
-use super::color::Color;
+use super::Label;
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
@@ -22,26 +22,6 @@ pub enum AxisPointerAxis {
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct AxisPointerLabel {
-    #[serde(skip_serializing_if = "Option::is_none")]
-    background_color: Option<Color>,
-}
-
-impl AxisPointerLabel {
-    pub fn new() -> Self {
-        Self {
-            background_color: None,
-        }
-    }
-
-    pub fn background_color(mut self, background_color: Color) -> Self {
-        self.background_color = Some(background_color);
-        self
-    }
-}
-
-#[derive(Serialize)]
-#[serde(rename_all = "camelCase")]
 pub struct AxisPointer {
     #[serde(rename = "type")]
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -51,7 +31,7 @@ pub struct AxisPointer {
     axis: Option<AxisPointerAxis>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    label: Option<AxisPointerLabel>,
+    label: Option<Label>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     snap: Option<bool>,
@@ -77,7 +57,7 @@ impl AxisPointer {
         self
     }
 
-    pub fn label<A: Into<AxisPointerLabel>>(mut self, label: A) -> Self {
+    pub fn label<A: Into<Label>>(mut self, label: A) -> Self {
         self.label = Some(label.into());
         self
     }

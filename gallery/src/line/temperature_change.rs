@@ -5,8 +5,8 @@ use echarts::{
         ToolboxFeatureRestore, ToolboxFeatureSaveAsImage, Tooltip,
     },
     element::{
-        AxisLabel, AxisType, Label, MarkLine, MarkLineData, MarkLineDataType, MarkLineVariant,
-        MarkPoint, MarkPointData, Position, Symbol, TooltipTrigger,
+        AxisLabel, AxisType, Label, LabelPosition, MarkLine, MarkLineData, MarkLineDataType,
+        MarkLineVariant, MarkPoint, MarkPointData, Symbol, TooltipTrigger,
     },
     series::Line,
     Chart,
@@ -78,7 +78,7 @@ pub fn chart() -> Chart {
                                 .symbol(Symbol::Circle)
                                 .label(
                                     Label::new()
-                                        .position(Position::Start)
+                                        .position(LabelPosition::Start)
                                         .formatter("Max"),
                                 )
                         ),

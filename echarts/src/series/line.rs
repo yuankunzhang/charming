@@ -3,7 +3,8 @@ use serde::Serialize;
 use crate::{
     datatype::{DataFrame, DataPoint},
     element::{
-        AreaStyle, DimensionEncode, Emphasis, LineStyle, MarkArea, MarkLine, MarkPoint, Symbol,
+        AreaStyle, DimensionEncode, Emphasis, ItemStyle, LineStyle, MarkArea, MarkLine, MarkPoint,
+        Symbol,
     },
 };
 
@@ -33,6 +34,9 @@ pub struct Line {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     area_style: Option<AreaStyle>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    item_style: Option<ItemStyle>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     emphasis: Option<Emphasis>,
@@ -76,6 +80,7 @@ impl Line {
             stack: None,
             line_style: None,
             area_style: None,
+            item_style: None,
             emphasis: None,
             smooth: None,
             mark_point: None,
@@ -100,8 +105,8 @@ impl Line {
         self
     }
 
-    pub fn symbol(mut self, symbol: Symbol) -> Self {
-        self.symbol = Some(symbol);
+    pub fn symbol<S: Into<Symbol>>(mut self, symbol: S) -> Self {
+        self.symbol = Some(symbol.into());
         self
     }
 
@@ -110,44 +115,49 @@ impl Line {
         self
     }
 
-    pub fn stack(mut self, stack: &str) -> Self {
-        self.stack = Some(stack.to_string());
+    pub fn stack<S: Into<String>>(mut self, stack: S) -> Self {
+        self.stack = Some(stack.into());
         self
     }
 
-    pub fn line_style(mut self, line_style: LineStyle) -> Self {
-        self.line_style = Some(line_style);
+    pub fn line_style<L: Into<LineStyle>>(mut self, line_style: L) -> Self {
+        self.line_style = Some(line_style.into());
         self
     }
 
-    pub fn area_style(mut self, area_style: AreaStyle) -> Self {
-        self.area_style = Some(area_style);
+    pub fn area_style<A: Into<AreaStyle>>(mut self, area_style: A) -> Self {
+        self.area_style = Some(area_style.into());
         self
     }
 
-    pub fn emphasis(mut self, emphasis: Emphasis) -> Self {
-        self.emphasis = Some(emphasis);
+    pub fn item_style<I: Into<ItemStyle>>(mut self, item_style: I) -> Self {
+        self.item_style = Some(item_style.into());
+        self
+    }
+
+    pub fn emphasis<E: Into<Emphasis>>(mut self, emphasis: E) -> Self {
+        self.emphasis = Some(emphasis.into());
         self
     }
 
     /// Smoothness.
-    pub fn smooth(mut self, smooth: f64) -> Self {
-        self.smooth = Some(smooth);
+    pub fn smooth<F: Into<f64>>(mut self, smooth: F) -> Self {
+        self.smooth = Some(smooth.into());
         self
     }
 
-    pub fn mark_point(mut self, mark_point: MarkPoint) -> Self {
-        self.mark_point = Some(mark_point);
+    pub fn mark_point<M: Into<MarkPoint>>(mut self, mark_point: M) -> Self {
+        self.mark_point = Some(mark_point.into());
         self
     }
 
-    pub fn mark_line(mut self, mark_line: MarkLine) -> Self {
-        self.mark_line = Some(mark_line);
+    pub fn mark_line<M: Into<MarkLine>>(mut self, mark_line: M) -> Self {
+        self.mark_line = Some(mark_line.into());
         self
     }
 
-    pub fn mark_area(mut self, mark_area: MarkArea) -> Self {
-        self.mark_area = Some(mark_area);
+    pub fn mark_area<M: Into<MarkArea>>(mut self, mark_area: M) -> Self {
+        self.mark_area = Some(mark_area.into());
         self
     }
 

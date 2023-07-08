@@ -1,6 +1,8 @@
 use echarts::{
     component::Title,
-    element::{Align, Emphasis, EmphasisFocus, ItemStyle, Label, Position, Sort, TextStyle},
+    element::{
+        Emphasis, EmphasisFocus, ItemStyle, Label, LabelAlign, LabelPosition, Sort, TextStyle,
+    },
     series::{Sunburst, SunburstLevel, SunburstNode},
     Chart,
 };
@@ -33,14 +35,14 @@ pub fn chart() -> Chart {
                     SunburstLevel::new()
                         .r0("35%")
                         .r("70%")
-                        .label(Label::new().align(Align::Right)),
+                        .label(Label::new().align(LabelAlign::Right)),
                     SunburstLevel::new()
                         .r0("70%")
                         .r("72%")
                         .item_style(ItemStyle::new().border_width(3))
                         .label(
                             Label::new()
-                                .position(Position::Outside)
+                                .position(LabelPosition::Outside)
                                 .padding((3, 3, 3, 3))
                                 .silent(false),
                         ),

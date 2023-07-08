@@ -1,6 +1,6 @@
 use echarts::{
     component::{AngleAxis, Polar, RadiusAxis, Title, Tooltip},
-    element::{AxisType, CoordinateSystem, Label, Position},
+    element::{AxisType, CoordinateSystem, Label, LabelPosition},
     series::Bar,
     Chart,
 };
@@ -22,7 +22,7 @@ pub fn chart() -> Chart {
                 .label(
                     Label::new()
                         .show(true)
-                        .position(Position::Middle)
+                        .position(LabelPosition::Middle)
                         .formatter("{b}: {c}"),
                 )
                 .data(vec![2.0, 1.2, 2.4, 3.6]),

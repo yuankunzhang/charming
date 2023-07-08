@@ -74,7 +74,7 @@ pub struct Title {
 
     /// Distance between title component and the left side of the container.
     #[serde(skip_serializing_if = "Option::is_none")]
-    left: Option<String>,
+    left: Option<PositionProperty>,
 
     /// Distance between title component and the top side of the container.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -233,7 +233,7 @@ impl Title {
         self
     }
 
-    pub fn left<S: Into<String>>(mut self, left: S) -> Self {
+    pub fn left<P: Into<PositionProperty>>(mut self, left: P) -> Self {
         self.left = Some(left.into());
         self
     }

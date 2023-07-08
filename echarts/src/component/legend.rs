@@ -1,6 +1,8 @@
 use serde::Serialize;
 
-use crate::element::{Align, ItemStyle, LineStyle, Orient, Padding, PositionProperty, TextStyle};
+use crate::element::{
+    ItemStyle, LabelAlign, LineStyle, Orient, Padding, PositionProperty, TextStyle,
+};
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
@@ -76,7 +78,7 @@ pub struct Legend {
 
     /// The align of legend.
     #[serde(skip_serializing_if = "Option::is_none")]
-    align: Option<Align>,
+    align: Option<LabelAlign>,
 
     /// Legend padding.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -205,7 +207,7 @@ impl Legend {
         self
     }
 
-    pub fn align<A: Into<Align>>(mut self, align: A) -> Self {
+    pub fn align<A: Into<LabelAlign>>(mut self, align: A) -> Self {
         self.align = Some(align.into());
         self
     }

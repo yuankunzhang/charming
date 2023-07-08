@@ -1,6 +1,6 @@
 use serde::Serialize;
 
-use super::color::Color;
+use super::{color::Color, Formatter};
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -18,7 +18,7 @@ pub struct AxisLabel {
     color: Option<Color>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    formatter: Option<String>,
+    formatter: Option<Formatter>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     rotate: Option<f64>,
@@ -60,7 +60,7 @@ impl AxisLabel {
         self
     }
 
-    pub fn formatter<S: Into<String>>(mut self, formatter: S) -> Self {
+    pub fn formatter<F: Into<Formatter>>(mut self, formatter: F) -> Self {
         self.formatter = Some(formatter.into());
         self
     }

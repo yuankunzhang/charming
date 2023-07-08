@@ -60,6 +60,11 @@ lazy_static! {
         insert!(m, bar, waterfall);
         m
     };
+    static ref BAR3D_CHARTS: BTreeMap<&'static str, fn() -> Chart> = {
+        let mut m = BTreeMap::new();
+        insert!(m, bar3d, bar3d_with_dataset);
+        m
+    };
     static ref BOXPLOT_CHARTS: BTreeMap<&'static str, fn() -> Chart> = {
         let mut m = BTreeMap::new();
         insert!(m, boxplot, boxplot_light_velocity);
@@ -107,6 +112,7 @@ lazy_static! {
         insert!(m, line, area_pieces);
         insert!(m, line, basic_area);
         insert!(m, line, basic_line);
+        insert!(m, line, confidence_band);
         insert!(m, line, data_transform_filter);
         insert!(m, line, distribution_of_electricity);
         insert!(m, line, gradient_stacked_area);
@@ -175,6 +181,7 @@ lazy_static! {
     static ref CHARTS: BTreeMap<&'static str, BTreeMap<&'static str, fn() -> Chart>> = {
         let mut m = BTreeMap::new();
         m.insert("bar", BAR_CHARTS.clone());
+        m.insert("bar3d", BAR3D_CHARTS.clone());
         m.insert("boxplot", BOXPLOT_CHARTS.clone());
         m.insert("candlestick", CANDLESTICK_CHARTS.clone());
         m.insert("dataset", DATASET_CHARTS.clone());

@@ -1,10 +1,10 @@
 use serde::Serialize;
 
-use super::{color::Color, line_style::LineStyle};
+use super::{color::Color, line_style::LineStyle, Formatter};
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
-pub enum Position {
+pub enum LabelPosition {
     Top,
     Left,
     Right,
@@ -25,7 +25,7 @@ pub enum Position {
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
-pub enum Align {
+pub enum LabelAlign {
     Left,
     Center,
     Right,
@@ -33,7 +33,7 @@ pub enum Align {
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
-pub enum VerticalAlign {
+pub enum LabelVerticalAlign {
     Top,
     Middle,
     Bottom,
@@ -46,7 +46,7 @@ pub struct Label {
     show: Option<bool>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    position: Option<Position>,
+    position: Option<LabelPosition>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     distance: Option<f64>,
@@ -58,7 +58,7 @@ pub struct Label {
     offset: Option<(f64, f64)>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    formatter: Option<String>,
+    formatter: Option<Formatter>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     color: Option<Color>,
@@ -70,13 +70,31 @@ pub struct Label {
     padding: Option<(f64, f64, f64, f64)>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    align: Option<Align>,
+    align: Option<LabelAlign>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    vertical_align: Option<VerticalAlign>,
+    vertical_align: Option<LabelVerticalAlign>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     silent: Option<bool>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    background_color: Option<Color>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    border_color: Option<Color>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    border_width: Option<f64>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    shadow_blur: Option<f64>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    shadow_offset_x: Option<f64>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    shadow_offset_y: Option<f64>,
 }
 
 impl Label {
@@ -94,6 +112,12 @@ impl Label {
             align: None,
             vertical_align: None,
             silent: None,
+            background_color: None,
+            border_color: None,
+            border_width: None,
+            shadow_blur: None,
+            shadow_offset_x: None,
+            shadow_offset_y: None,
         }
     }
 
@@ -102,13 +126,13 @@ impl Label {
         self
     }
 
-    pub fn position(mut self, position: Position) -> Self {
-        self.position = Some(position);
+    pub fn position<P: Into<LabelPosition>>(mut self, position: P) -> Self {
+        self.position = Some(position.into());
         self
     }
 
-    pub fn distance(mut self, distance: f64) -> Self {
-        self.distance = Some(distance);
+    pub fn distance<F: Into<f64>>(mut self, distance: F) -> Self {
+        self.distance = Some(distance.into());
         self
     }
 
@@ -117,23 +141,23 @@ impl Label {
         self
     }
 
-    pub fn offset(mut self, offset: (f64, f64)) -> Self {
-        self.offset = Some(offset);
+    pub fn offset<F: Into<f64>>(mut self, offset: (F, F)) -> Self {
+        self.offset = Some((offset.0.into(), offset.1.into()));
         self
     }
 
-    pub fn formatter<S: Into<String>>(mut self, formatter: S) -> Self {
+    pub fn formatter<F: Into<Formatter>>(mut self, formatter: F) -> Self {
         self.formatter = Some(formatter.into());
         self
     }
 
-    pub fn color(mut self, color: Color) -> Self {
-        self.color = Some(color);
+    pub fn color<C: Into<Color>>(mut self, color: C) -> Self {
+        self.color = Some(color.into());
         self
     }
 
-    pub fn font_size(mut self, font_size: f64) -> Self {
-        self.font_size = Some(font_size);
+    pub fn font_size<F: Into<f64>>(mut self, font_size: F) -> Self {
+        self.font_size = Some(font_size.into());
         self
     }
 
@@ -147,18 +171,48 @@ impl Label {
         self
     }
 
-    pub fn align(mut self, align: Align) -> Self {
-        self.align = Some(align);
+    pub fn align<A: Into<LabelAlign>>(mut self, align: A) -> Self {
+        self.align = Some(align.into());
         self
     }
 
-    pub fn vertical_align(mut self, vertical_align: VerticalAlign) -> Self {
-        self.vertical_align = Some(vertical_align);
+    pub fn vertical_align<V: Into<LabelVerticalAlign>>(mut self, vertical_align: V) -> Self {
+        self.vertical_align = Some(vertical_align.into());
         self
     }
 
     pub fn silent(mut self, silent: bool) -> Self {
         self.silent = Some(silent);
+        self
+    }
+
+    pub fn background_color<C: Into<Color>>(mut self, background_color: C) -> Self {
+        self.background_color = Some(background_color.into());
+        self
+    }
+
+    pub fn border_color<C: Into<Color>>(mut self, border_color: C) -> Self {
+        self.border_color = Some(border_color.into());
+        self
+    }
+
+    pub fn border_width<F: Into<f64>>(mut self, border_width: F) -> Self {
+        self.border_width = Some(border_width.into());
+        self
+    }
+
+    pub fn shadow_blur<F: Into<f64>>(mut self, shadow_blur: F) -> Self {
+        self.shadow_blur = Some(shadow_blur.into());
+        self
+    }
+
+    pub fn shadow_offset_x<F: Into<f64>>(mut self, shadow_offset_x: F) -> Self {
+        self.shadow_offset_x = Some(shadow_offset_x.into());
+        self
+    }
+
+    pub fn shadow_offset_y<F: Into<f64>>(mut self, shadow_offset_y: F) -> Self {
+        self.shadow_offset_y = Some(shadow_offset_y.into());
         self
     }
 }

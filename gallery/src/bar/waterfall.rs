@@ -1,8 +1,8 @@
 use echarts::{
     component::{Axis, Grid, Title, Tooltip},
     element::{
-        AxisPointer, AxisPointerType, AxisType, Emphasis, ItemStyle, Label, Position, SplitLine,
-        TooltipTrigger,
+        AxisPointer, AxisPointerType, AxisType, Emphasis, ItemStyle, Label, LabelPosition,
+        SplitLine, TooltipTrigger,
     },
     series::{bar, Bar, Series},
     Chart,
@@ -64,7 +64,7 @@ pub fn chart() -> Chart {
             Bar::new()
                 .name("Life Cost")
                 .stack("Total")
-                .label(Label::new().show(true).position(Position::Inside))
+                .label(Label::new().show(true).position(LabelPosition::Inside))
                 .data(vec![2900, 1200, 300, 200, 900, 300]),
         )
 }

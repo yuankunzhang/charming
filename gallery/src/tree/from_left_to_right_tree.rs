@@ -1,6 +1,9 @@
 use echarts::{
     component::{Tooltip, TooltipTriggerOn},
-    element::{Align, Emphasis, EmphasisFocus, Label, Position, TooltipTrigger, VerticalAlign},
+    element::{
+        Emphasis, EmphasisFocus, Label, LabelAlign, LabelPosition, LabelVerticalAlign,
+        TooltipTrigger,
+    },
     series::{Tree, TreeNode},
     Chart,
 };
@@ -28,9 +31,9 @@ pub fn chart() -> Chart {
                 .symbol_size(7.0)
                 .label(
                     Label::new()
-                        .position(Position::Left)
-                        .vertical_align(VerticalAlign::Middle)
-                        .align(Align::Right)
+                        .position(LabelPosition::Left)
+                        .vertical_align(LabelVerticalAlign::Middle)
+                        .align(LabelAlign::Right)
                         .font_size(9.0),
                 )
                 .emphasis(Emphasis::new().focus(EmphasisFocus::Descendant))

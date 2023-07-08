@@ -4,7 +4,7 @@ use echarts::{
         ToolboxFeatureSaveAsImage, Tooltip,
     },
     df,
-    element::{Label, Orient, Position, Sort, TooltipTrigger},
+    element::{Label, LabelPosition, Orient, Sort, TooltipTrigger},
     series::Funnel,
     Chart,
 };
@@ -72,7 +72,7 @@ pub fn chart() -> Chart {
                 .height("45%")
                 .left("55%")
                 .top("5%")
-                .label(Label::new().position(Position::Left))
+                .label(Label::new().position(LabelPosition::Left))
                 .data(df![
                     (60, "Visit"),
                     (30, "Inquiry"),
@@ -89,7 +89,7 @@ pub fn chart() -> Chart {
                 .left("55%")
                 .top("50%")
                 .sort(Sort::Ascending)
-                .label(Label::new().position(Position::Left))
+                .label(Label::new().position(LabelPosition::Left))
                 .data(df![
                     (60, "Visit"),
                     (30, "Inquiry"),

@@ -1,6 +1,7 @@
 pub mod area_pieces;
 pub mod basic_area;
 pub mod basic_line;
+pub mod confidence_band;
 pub mod data_transform_filter;
 pub mod distribution_of_electricity;
 pub mod gradient_stacked_area;

@@ -47,6 +47,7 @@ pub struct Axis {
     name_gap: Option<f64>,
 
     /// Rotation of axis name
+    #[serde(skip_serializing_if = "Option::is_none")]
     name_rotation: Option<f64>,
 
     /// Set this to `true` to invert the axis.
