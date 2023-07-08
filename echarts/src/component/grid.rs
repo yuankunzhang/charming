@@ -1,6 +1,6 @@
 use serde::Serialize;
 
-use crate::element::{Color, Padding, TextStyle, TooltipTrigger};
+use crate::element::{Color, Padding, PositionProperty, TextStyle, TooltipTrigger};
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -127,6 +127,10 @@ impl GridTooltip {
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Grid {
+    /// Component ID.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    id: Option<String>,
+
     /// Whether to show the grid in rectangular coordinate.
     #[serde(skip_serializing_if = "Option::is_none")]
     show: Option<bool>,
@@ -141,19 +145,19 @@ pub struct Grid {
 
     /// Distance between grid component and the left side of the container.
     #[serde(skip_serializing_if = "Option::is_none")]
-    left: Option<String>,
+    left: Option<PositionProperty>,
 
     /// Distance between grid component and the top side of the container.
     #[serde(skip_serializing_if = "Option::is_none")]
-    top: Option<String>,
+    top: Option<PositionProperty>,
 
     /// Distance between grid component and the right side of the container.
     #[serde(skip_serializing_if = "Option::is_none")]
-    right: Option<String>,
+    right: Option<PositionProperty>,
 
     /// Distance between grid component and the bottom side of the container.
     #[serde(skip_serializing_if = "Option::is_none")]
-    bottom: Option<String>,
+    bottom: Option<PositionProperty>,
 
     /// Width of grid component.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -203,6 +207,7 @@ pub struct Grid {
 impl Grid {
     pub fn new() -> Self {
         Self {
+            id: None,
             show: None,
             zlevel: None,
             z: None,
@@ -239,22 +244,22 @@ impl Grid {
         self
     }
 
-    pub fn left<S: Into<String>>(mut self, left: S) -> Self {
+    pub fn left<P: Into<PositionProperty>>(mut self, left: P) -> Self {
         self.left = Some(left.into());
         self
     }
 
-    pub fn right<S: Into<String>>(mut self, right: S) -> Self {
+    pub fn right<P: Into<PositionProperty>>(mut self, right: P) -> Self {
         self.right = Some(right.into());
         self
     }
 
-    pub fn top<S: Into<String>>(mut self, top: S) -> Self {
+    pub fn top<P: Into<PositionProperty>>(mut self, top: P) -> Self {
         self.top = Some(top.into());
         self
     }
 
-    pub fn bottom<S: Into<String>>(mut self, bottom: S) -> Self {
+    pub fn bottom<P: Into<PositionProperty>>(mut self, bottom: P) -> Self {
         self.bottom = Some(bottom.into());
         self
     }
