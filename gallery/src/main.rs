@@ -140,6 +140,7 @@ lazy_static! {
     static ref PIE_CHARTS: BTreeMap<&'static str, fn() -> Chart> = {
         let mut m = BTreeMap::new();
         insert!(m, pie, nightingale);
+        insert!(m, pie, referer_of_a_website);
         m
     };
     static ref RADAR_CHARTS: BTreeMap<&'static str, fn() -> Chart> = {

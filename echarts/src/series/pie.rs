@@ -1,8 +1,8 @@
 use serde::Serialize;
 
 use crate::{
-    datatype::{DataFrame, DataPoint},
-    element::{ColorBy, CoordinateSystem, ItemStyle},
+    datatype::{CompositeValue, DataFrame, DataPoint},
+    element::{ColorBy, CoordinateSystem, Emphasis, ItemStyle},
 };
 
 #[derive(Serialize)]
@@ -34,10 +34,10 @@ pub struct Pie {
     coordiate_system: Option<CoordinateSystem>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    geo_index: Option<u64>,
+    geo_index: Option<f64>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    calendar_index: Option<u64>,
+    calendar_index: Option<f64>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     selected_mode: Option<bool>,
@@ -58,10 +58,13 @@ pub struct Pie {
     item_style: Option<ItemStyle>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    center: Option<(String, String)>,
+    emphasis: Option<Emphasis>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    radius: Option<(String, String)>,
+    center: Option<CompositeValue>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    radius: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: DataFrame,
@@ -84,6 +87,7 @@ impl Pie {
             start_angle: None,
             rose_type: None,
             item_style: None,
+            emphasis: None,
             center: None,
             radius: None,
             data: vec![],
@@ -100,8 +104,8 @@ impl Pie {
         self
     }
 
-    pub fn color_by(mut self, color_by: ColorBy) -> Self {
-        self.color_by = Some(color_by);
+    pub fn color_by<C: Into<ColorBy>>(mut self, color_by: C) -> Self {
+        self.color_by = Some(color_by.into());
         self
     }
 
@@ -110,18 +114,18 @@ impl Pie {
         self
     }
 
-    pub fn coordiate_system(mut self, coordiate_system: CoordinateSystem) -> Self {
-        self.coordiate_system = Some(coordiate_system);
+    pub fn coordiate_system<C: Into<CoordinateSystem>>(mut self, coordiate_system: C) -> Self {
+        self.coordiate_system = Some(coordiate_system.into());
         self
     }
 
-    pub fn geo_index(mut self, geo_index: u64) -> Self {
-        self.geo_index = Some(geo_index);
+    pub fn geo_index<F: Into<f64>>(mut self, geo_index: F) -> Self {
+        self.geo_index = Some(geo_index.into());
         self
     }
 
-    pub fn calendar_index(mut self, calendar_index: u64) -> Self {
-        self.calendar_index = Some(calendar_index);
+    pub fn calendar_index<F: Into<f64>>(mut self, calendar_index: F) -> Self {
+        self.calendar_index = Some(calendar_index.into());
         self
     }
 
@@ -130,8 +134,8 @@ impl Pie {
         self
     }
 
-    pub fn selected_offset(mut self, selected_offset: f64) -> Self {
-        self.selected_offset = Some(selected_offset);
+    pub fn selected_offset<F: Into<f64>>(mut self, selected_offset: F) -> Self {
+        self.selected_offset = Some(selected_offset.into());
         self
     }
 
@@ -145,23 +149,28 @@ impl Pie {
         self
     }
 
-    pub fn rose_type(mut self, rose_type: PieRoseType) -> Self {
-        self.rose_type = Some(rose_type);
+    pub fn rose_type<P: Into<PieRoseType>>(mut self, rose_type: P) -> Self {
+        self.rose_type = Some(rose_type.into());
         self
     }
 
-    pub fn item_style(mut self, item_style: ItemStyle) -> Self {
-        self.item_style = Some(item_style);
+    pub fn item_style<I: Into<ItemStyle>>(mut self, item_style: I) -> Self {
+        self.item_style = Some(item_style.into());
         self
     }
 
-    pub fn center<S: Into<String>>(mut self, center: (S, S)) -> Self {
-        self.center = Some((center.0.into(), center.1.into()));
+    pub fn emphasis<E: Into<Emphasis>>(mut self, emphasis: E) -> Self {
+        self.emphasis = Some(emphasis.into());
         self
     }
 
-    pub fn radius<S: Into<String>>(mut self, radius: (S, S)) -> Self {
-        self.radius = Some((radius.0.into(), radius.1.into()));
+    pub fn center<C: Into<CompositeValue>>(mut self, center: C) -> Self {
+        self.center = Some(center.into());
+        self
+    }
+
+    pub fn radius<C: Into<CompositeValue>>(mut self, radius: C) -> Self {
+        self.radius = Some(radius.into());
         self
     }
 

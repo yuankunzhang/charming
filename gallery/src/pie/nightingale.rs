@@ -24,8 +24,8 @@ pub fn chart() -> Chart {
             Pie::new()
                 .name("Nightingale Chart")
                 .rose_type(PieRoseType::Radius)
-                .radius(("50", "250"))
-                .center(("50%", "50%"))
+                .radius(vec!["50", "250"])
+                .center(vec!["50%", "50%"])
                 .item_style(ItemStyle::new().border_radius(8))
                 .data(df![
                     (40.0, "rose 1"),
