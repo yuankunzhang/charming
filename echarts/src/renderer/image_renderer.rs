@@ -92,7 +92,7 @@ impl ImageRenderer {
         }
     }
 
-    pub fn render_format(&mut self, chart: &Chart, fmt: ImageFormat) -> Vec<u8> {
+    pub fn render_format(&mut self, image_format: ImageFormat, chart: &Chart) -> Vec<u8> {
         let svg = self.render(chart);
 
         let loader = gdk_pixbuf::PixbufLoader::with_mime_type("image/svg+xml").unwrap();
@@ -100,7 +100,9 @@ impl ImageRenderer {
         loader.close().unwrap();
 
         let pixbuf = loader.pixbuf().unwrap();
-        pixbuf.save_to_bufferv(&fmt.to_string(), &[]).unwrap()
+        pixbuf
+            .save_to_bufferv(&image_format.to_string(), &[])
+            .unwrap()
     }
 
     pub fn save(&mut self, chart: &Chart, path: &str) {
@@ -108,8 +110,8 @@ impl ImageRenderer {
         std::fs::write(path, svg).unwrap();
     }
 
-    pub fn save_format(&mut self, chart: &Chart, fmt: ImageFormat, path: &str) {
-        let bytes = self.render_format(chart, fmt);
+    pub fn save_format(&mut self, image_format: ImageFormat, chart: &Chart, path: &str) {
+        let bytes = self.render_format(image_format, chart);
         std::fs::write(path, bytes).unwrap();
     }
 }

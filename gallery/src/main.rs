@@ -8,7 +8,7 @@ use axum::{
     routing::get,
     Router,
 };
-use echarts::{Chart, HtmlRenderer};
+use echarts::{Chart, HtmlRenderer, ImageRenderer};
 use lazy_static::lazy_static;
 
 mod bar;
@@ -226,6 +226,8 @@ async fn render(
         },
         None => return (StatusCode::NOT_FOUND, "Chart Type Not Found").into_response(),
     };
+    let mut r = ImageRenderer::new(1000, 800);
+    r.save(&chart, "/tmp/chart.svg");
     Html(renderer.render(chart)).into_response()
 }
 
