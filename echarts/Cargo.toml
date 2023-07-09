@@ -5,6 +5,7 @@ edition = "2021"
 
 [dependencies]
 deno_core = "0.194.0"
+gdk-pixbuf = "0.17.10"
 handlebars = "4.3.7"
 serde = "1.0.164"
 serde_json = "1.0.99"
