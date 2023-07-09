@@ -1,9 +1,11 @@
 use serde::Serialize;
 
 use crate::element::{
-    AxisLabel, AxisLine, AxisPointer, AxisTick, AxisType, BoundaryGap, ElementLocation, SplitArea,
-    SplitLine, TextStyle,
+    AxisLabel, AxisLine, AxisTick, AxisType, BoundaryGap, ElementLocation, SplitArea, SplitLine,
+    TextStyle,
 };
+
+use super::AxisPointer;
 
 /// Axis in cartesian coordinate.
 #[derive(Serialize)]

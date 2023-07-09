@@ -7,7 +7,7 @@ pub mod series;
 pub use renderer::*;
 
 use component::{
-    AngleAxis, Axis, Axis3D, DataZoom, GeoMap, Grid, Grid3D, Legend, ParallelAxis,
+    AngleAxis, Axis, Axis3D, AxisPointer, DataZoom, GeoMap, Grid, Grid3D, Legend, ParallelAxis,
     ParallelCoordinate, Polar, RadarCoordinate, RadiusAxis, SingleAxis, Title, Toolbox, Tooltip,
     VisualMap,
 };
@@ -68,6 +68,9 @@ pub struct Chart {
     parallel_axis: Vec<ParallelAxis>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
+    axis_pointer: Vec<AxisPointer>,
+
+    #[serde(skip_serializing_if = "Vec::is_empty")]
     visual_map: Vec<VisualMap>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
@@ -117,6 +120,7 @@ impl Chart {
             radius_axis: vec![],
             single_axis: None,
             parallel_axis: vec![],
+            axis_pointer: vec![],
             visual_map: vec![],
             data_zoom: vec![],
             parallel: None,
@@ -207,6 +211,11 @@ impl Chart {
 
     pub fn parallel_axis(mut self, parallel_axis: ParallelAxis) -> Self {
         self.parallel_axis.push(parallel_axis);
+        self
+    }
+
+    pub fn axis_pointer(mut self, axis_pointer: AxisPointer) -> Self {
+        self.axis_pointer.push(axis_pointer);
         self
     }
 

@@ -7,6 +7,7 @@ pub mod distribution_of_electricity;
 pub mod gradient_stacked_area;
 pub mod large_scale_area;
 pub mod line_gradient;
+pub mod rainfall_vs_evaporation;
 pub mod smoothed_line;
 pub mod stacked_area;
 pub mod stacked_line;

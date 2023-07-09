@@ -1,6 +1,8 @@
 use echarts::{
-    component::{Axis, DataZoom, DataZoomType, Grid, Legend, Title, Tooltip},
-    element::{AxisPointer, AxisPointerType, AxisType, SplitArea, SplitLine, TooltipTrigger},
+    component::{
+        Axis, AxisPointer, AxisPointerType, DataZoom, DataZoomType, Grid, Legend, Title, Tooltip,
+    },
+    element::{AxisType, SplitArea, SplitLine, TooltipTrigger},
     series::Boxplot,
     Chart,
 };

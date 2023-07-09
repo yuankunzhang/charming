@@ -1,9 +1,7 @@
 use echarts::{
-    component::{Axis, Grid, Title, Tooltip},
+    component::{Axis, AxisPointer, AxisPointerType, Grid, Title, Tooltip},
     datatype::{Dataset, Transform},
-    element::{
-        AxisPointer, AxisPointerType, AxisType, SplitArea, SplitLine, TextStyle, TooltipTrigger,
-    },
+    element::{AxisType, SplitArea, SplitLine, TextStyle, TooltipTrigger},
     series::{Boxplot, Scatter},
     Chart,
 };

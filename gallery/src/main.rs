@@ -118,6 +118,7 @@ lazy_static! {
         insert!(m, line, gradient_stacked_area);
         insert!(m, line, large_scale_area);
         insert!(m, line, line_gradient);
+        insert!(m, line, rainfall_vs_evaporation);
         insert!(m, line, smoothed_line);
         insert!(m, line, stacked_area);
         insert!(m, line, stacked_line);

@@ -13,6 +13,12 @@ impl From<f64> for PositionProperty {
     }
 }
 
+impl From<i64> for PositionProperty {
+    fn from(i: i64) -> Self {
+        PositionProperty::Absolute(i as f64)
+    }
+}
+
 impl From<&str> for PositionProperty {
     fn from(s: &str) -> Self {
         PositionProperty::Relative(s.to_string())

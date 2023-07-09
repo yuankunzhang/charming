@@ -1,8 +1,8 @@
 use echarts::{
-    component::{Axis, Grid, Legend, Tooltip},
+    component::{Axis, AxisPointer, AxisPointerType, Grid, Legend, Tooltip},
     element::{
-        AxisPointer, AxisPointerType, AxisType, Emphasis, EmphasisFocus, LineStyle, LineStyleType,
-        MarkLine, MarkLineData, MarkLineVariant, TooltipTrigger,
+        AxisType, Emphasis, EmphasisFocus, LineStyle, LineStyleType, MarkLine, MarkLineData,
+        MarkLineVariant, TooltipTrigger,
     },
     series::{bar, Bar, Series},
     Chart,

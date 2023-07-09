@@ -1,9 +1,6 @@
 use echarts::{
-    component::{Axis, Grid, Title, Tooltip},
-    element::{
-        AxisPointer, AxisPointerType, AxisType, Emphasis, ItemStyle, Label, LabelPosition,
-        SplitLine, TooltipTrigger,
-    },
+    component::{Axis, AxisPointer, AxisPointerType, Grid, Title, Tooltip},
+    element::{AxisType, Emphasis, ItemStyle, Label, LabelPosition, SplitLine, TooltipTrigger},
     series::{bar, Bar, Series},
     Chart,
 };

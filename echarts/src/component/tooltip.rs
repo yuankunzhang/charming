@@ -1,6 +1,8 @@
 use serde::Serialize;
 
-use crate::element::{AxisPointer, Color, Formatter, Padding, TooltipTrigger};
+use crate::element::{Color, Formatter, Padding, TooltipTrigger};
+
+use super::AxisPointer;
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
