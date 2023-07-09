@@ -8,7 +8,7 @@ use axum::{
     routing::get,
     Router,
 };
-use echarts::{Chart, HtmlRenderer, ImageRenderer};
+use echarts::{Chart, HtmlRenderer};
 use lazy_static::lazy_static;
 
 mod bar;
@@ -156,6 +156,7 @@ lazy_static! {
     };
     static ref SCATTER_CHARTS: BTreeMap<&'static str, fn() -> Chart> = {
         let mut m = BTreeMap::new();
+        insert!(m, scatter, anscombe_quartet);
         insert!(m, scatter, basic_scatter);
         insert!(m, scatter, effect_scatter);
         insert!(m, scatter, punch_card_of_github);
@@ -228,8 +229,6 @@ async fn render(
         },
         None => return (StatusCode::NOT_FOUND, "Chart Type Not Found").into_response(),
     };
-    let mut r = ImageRenderer::new(1000, 800);
-    r.save(&chart, "/tmp/chart.svg");
     Html(renderer.render(chart)).into_response()
 }
 

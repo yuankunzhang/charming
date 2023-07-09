@@ -39,13 +39,19 @@ pub struct MarkLineData {
     symbol: Option<Symbol>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    x: Option<String>,
+    x: Option<CompositeValue>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    y: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     x_axis: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     y_axis: Option<CompositeValue>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    coord: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     label: Option<Label>,
@@ -58,8 +64,10 @@ impl MarkLineData {
             name: None,
             symbol: None,
             x: None,
+            y: None,
             x_axis: None,
             y_axis: None,
+            coord: None,
             label: None,
         }
     }
@@ -79,8 +87,13 @@ impl MarkLineData {
         self
     }
 
-    pub fn x<S: Into<String>>(mut self, x: S) -> Self {
+    pub fn x<C: Into<CompositeValue>>(mut self, x: C) -> Self {
         self.x = Some(x.into());
+        self
+    }
+
+    pub fn y<C: Into<CompositeValue>>(mut self, y: C) -> Self {
+        self.y = Some(y.into());
         self
     }
 
@@ -91,6 +104,11 @@ impl MarkLineData {
 
     pub fn y_axis<V: Into<CompositeValue>>(mut self, y_axis: V) -> Self {
         self.y_axis = Some(y_axis.into());
+        self
+    }
+
+    pub fn coord<V: Into<CompositeValue>>(mut self, coord: V) -> Self {
+        self.coord = Some(coord.into());
         self
     }
 
@@ -184,8 +202,8 @@ impl MarkLine {
         self
     }
 
-    pub fn data(mut self, data: Vec<MarkLineVariant>) -> Self {
-        self.data = data;
+    pub fn data<M: Into<MarkLineVariant>>(mut self, data: Vec<M>) -> Self {
+        self.data = data.into_iter().map(|m| m.into()).collect();
         self
     }
 }
