@@ -58,6 +58,7 @@ lazy_static! {
         insert!(m, bar, stacked_column);
         insert!(m, bar, tangential_polar_bar);
         insert!(m, bar, waterfall);
+        insert!(m, bar, world_population);
         m
     };
     static ref BAR3D_CHARTS: BTreeMap<&'static str, fn() -> Chart> = {
