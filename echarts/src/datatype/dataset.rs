@@ -27,7 +27,7 @@ impl DataSourceContainer {
     }
 }
 
-impl<'a, D> From<D> for DataSourceContainer
+impl<D> From<D> for DataSourceContainer
 where
     D: Into<DataSource>,
 {
@@ -36,7 +36,7 @@ where
     }
 }
 
-impl<'a, D, F> From<(D, F)> for DataSourceContainer
+impl<D, F> From<(D, F)> for DataSourceContainer
 where
     D: Into<DataSource>,
     F: Into<String>,
