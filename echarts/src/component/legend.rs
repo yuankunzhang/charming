@@ -1,7 +1,11 @@
 use serde::Serialize;
 
-use crate::element::{
-    ItemStyle, LabelAlign, LineStyle, Orient, Padding, PositionProperty, TextStyle,
+use crate::{
+    datatype::CompositeValue,
+    element::{
+        Color, Icon, ItemStyle, LabelAlign, LineStyle, Orient, PaddingProperty, PositionProperty,
+        TextStyle,
+    },
 };
 
 #[derive(Serialize)]
@@ -16,12 +20,54 @@ pub enum LegendType {
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
-pub enum SelectedMode {
+pub enum LegendSelectedMode {
     /// Multiple selection.
     Multiple,
 
     /// Single selection.
     Single,
+}
+
+#[derive(Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct LegendItem {
+    pub name: String,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Icon>,
+}
+
+impl From<&str> for LegendItem {
+    fn from(name: &str) -> Self {
+        Self {
+            name: name.to_string(),
+            icon: None,
+        }
+    }
+}
+
+impl From<String> for LegendItem {
+    fn from(name: String) -> Self {
+        Self { name, icon: None }
+    }
+}
+
+impl From<(&str, &str)> for LegendItem {
+    fn from((name, icon): (&str, &str)) -> Self {
+        Self {
+            name: name.to_string(),
+            icon: Some(icon.into()),
+        }
+    }
+}
+
+impl From<(String, String)> for LegendItem {
+    fn from((name, icon): (String, String)) -> Self {
+        Self {
+            name,
+            icon: Some(icon.into()),
+        }
+    }
 }
 
 #[derive(Serialize)]
@@ -66,11 +112,11 @@ pub struct Legend {
 
     /// Width of legend component.
     #[serde(skip_serializing_if = "Option::is_none")]
-    width: Option<f64>,
+    width: Option<CompositeValue>,
 
     /// Height of legend component.
     #[serde(skip_serializing_if = "Option::is_none")]
-    height: Option<f64>,
+    height: Option<CompositeValue>,
 
     /// The layout orientation of legend.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -82,7 +128,7 @@ pub struct Legend {
 
     /// Legend padding.
     #[serde(skip_serializing_if = "Option::is_none")]
-    padding: Option<Padding>,
+    padding: Option<PaddingProperty>,
 
     /// The gap between each legend.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -116,10 +162,16 @@ pub struct Legend {
     formatter: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    selected_mode: Option<SelectedMode>,
+    selected_mode: Option<LegendSelectedMode>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    data: Option<Vec<String>>,
+    border_color: Option<Color>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    inactive_color: Option<Color>,
+
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    data: Vec<LegendItem>,
 }
 
 impl Legend {
@@ -148,7 +200,9 @@ impl Legend {
             symbol_rotate: None,
             formatter: None,
             selected_mode: None,
-            data: None,
+            border_color: None,
+            inactive_color: None,
+            data: vec![],
         }
     }
 
@@ -192,12 +246,12 @@ impl Legend {
         self
     }
 
-    pub fn width<F: Into<f64>>(mut self, width: F) -> Self {
+    pub fn width<C: Into<CompositeValue>>(mut self, width: C) -> Self {
         self.width = Some(width.into());
         self
     }
 
-    pub fn height<F: Into<f64>>(mut self, height: F) -> Self {
+    pub fn height<C: Into<CompositeValue>>(mut self, height: C) -> Self {
         self.height = Some(height.into());
         self
     }
@@ -212,7 +266,7 @@ impl Legend {
         self
     }
 
-    pub fn padding<P: Into<Padding>>(mut self, padding: P) -> Self {
+    pub fn padding<P: Into<PaddingProperty>>(mut self, padding: P) -> Self {
         self.padding = Some(padding.into());
         self
     }
@@ -257,14 +311,23 @@ impl Legend {
         self
     }
 
-    pub fn selected_mode<S: Into<SelectedMode>>(mut self, selected_mode: S) -> Self {
+    pub fn selected_mode<S: Into<LegendSelectedMode>>(mut self, selected_mode: S) -> Self {
         self.selected_mode = Some(selected_mode.into());
         self
     }
 
-    pub fn data<S: Into<String>>(mut self, data: Vec<S>) -> Self {
-        let data = data.into_iter().map(|s| s.into()).collect();
-        self.data = Some(data);
+    pub fn border_color<C: Into<Color>>(mut self, border_color: C) -> Self {
+        self.border_color = Some(border_color.into());
+        self
+    }
+
+    pub fn inactive_color<C: Into<Color>>(mut self, inactive_color: C) -> Self {
+        self.inactive_color = Some(inactive_color.into());
+        self
+    }
+
+    pub fn data<L: Into<LegendItem>>(mut self, data: Vec<L>) -> Self {
+        self.data = data.into_iter().map(|s| s.into()).collect();
         self
     }
 }

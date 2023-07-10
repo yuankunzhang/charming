@@ -1,6 +1,6 @@
 use serde::Serialize;
 
-use super::{color::Color, line_style::LineStyle, Formatter};
+use super::{color::Color, line_style::LineStyle, ContentFormatter};
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -58,7 +58,7 @@ pub struct Label {
     offset: Option<(f64, f64)>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    formatter: Option<Formatter>,
+    formatter: Option<ContentFormatter>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     color: Option<Color>,
@@ -146,7 +146,7 @@ impl Label {
         self
     }
 
-    pub fn formatter<F: Into<Formatter>>(mut self, formatter: F) -> Self {
+    pub fn formatter<F: Into<ContentFormatter>>(mut self, formatter: F) -> Self {
         self.formatter = Some(formatter.into());
         self
     }

@@ -1,9 +1,12 @@
 use echarts::{
     component::{
-        Axis, AxisPointer, AxisPointerType, Title, Toolbox, ToolboxFeature,
-        ToolboxFeatureSaveAsImage, Tooltip, VisualMap, VisualMapPiece,
+        Axis, Title, Toolbox, ToolboxFeature, ToolboxFeatureSaveAsImage, Tooltip, VisualMap,
+        VisualMapPiece,
     },
-    element::{AxisLabel, AxisType, ItemStyle, MarkArea, MarkAreaData, TooltipTrigger},
+    element::{
+        AxisLabel, AxisPointer, AxisPointerType, AxisType, ItemStyle, MarkArea, MarkAreaData,
+        TooltipTrigger,
+    },
     series::Line,
     Chart,
 };

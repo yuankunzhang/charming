@@ -1,6 +1,9 @@
 use serde::Serialize;
 
-use crate::element::{Color, DataBackground, Orient};
+use crate::{
+    datatype::CompositeValue,
+    element::{Color, DataBackground, Orient, TextStyle},
+};
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -74,16 +77,16 @@ pub struct DataZoom {
     throttle: Option<f64>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    left: Option<String>,
+    left: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    top: Option<String>,
+    top: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    right: Option<String>,
+    right: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    bottom: Option<String>,
+    bottom: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     x_axis_index: Option<f64>,
@@ -102,6 +105,15 @@ pub struct DataZoom {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     filter_mode: Option<DataZoomFilterMode>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    text_style: Option<TextStyle>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    handle_icon: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    brush_select: Option<bool>,
 }
 
 impl DataZoom {
@@ -134,6 +146,9 @@ impl DataZoom {
             radius_axis_index: None,
             angle_axis_index: None,
             filter_mode: None,
+            text_style: None,
+            handle_icon: None,
+            brush_select: None,
         }
     }
 
@@ -225,22 +240,22 @@ impl DataZoom {
         self
     }
 
-    pub fn left<S: Into<String>>(mut self, left: S) -> Self {
+    pub fn left<C: Into<CompositeValue>>(mut self, left: C) -> Self {
         self.left = Some(left.into());
         self
     }
 
-    pub fn top<S: Into<String>>(mut self, top: S) -> Self {
+    pub fn top<C: Into<CompositeValue>>(mut self, top: C) -> Self {
         self.top = Some(top.into());
         self
     }
 
-    pub fn right<S: Into<String>>(mut self, right: S) -> Self {
+    pub fn right<C: Into<CompositeValue>>(mut self, right: C) -> Self {
         self.right = Some(right.into());
         self
     }
 
-    pub fn bottom<S: Into<String>>(mut self, bottom: S) -> Self {
+    pub fn bottom<C: Into<CompositeValue>>(mut self, bottom: C) -> Self {
         self.bottom = Some(bottom.into());
         self
     }
@@ -272,6 +287,21 @@ impl DataZoom {
 
     pub fn filter_mode<F: Into<DataZoomFilterMode>>(mut self, filter_mode: F) -> Self {
         self.filter_mode = Some(filter_mode.into());
+        self
+    }
+
+    pub fn text_style<T: Into<TextStyle>>(mut self, text_style: T) -> Self {
+        self.text_style = Some(text_style.into());
+        self
+    }
+
+    pub fn handle_icon<S: Into<String>>(mut self, handle_icon: S) -> Self {
+        self.handle_icon = Some(handle_icon.into());
+        self
+    }
+
+    pub fn brush_select(mut self, brush_select: bool) -> Self {
+        self.brush_select = Some(brush_select);
         self
     }
 }

@@ -1,6 +1,9 @@
 use serde::Serialize;
 
-use crate::element::{Color, Orient};
+use crate::{
+    datatype::CompositeValue,
+    element::{Color, Orient, TextStyle},
+};
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
@@ -118,12 +121,12 @@ impl From<(i64, i64, &str)> for VisualMapPiece {
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct VisualMapInRange {
+pub struct VisualMapChannel {
     #[serde(skip_serializing_if = "Vec::is_empty")]
     color: Vec<Color>,
 }
 
-impl VisualMapInRange {
+impl VisualMapChannel {
     pub fn new() -> Self {
         Self { color: vec![] }
     }
@@ -159,6 +162,9 @@ pub struct VisualMap {
     #[serde(skip_serializing_if = "Option::is_none")]
     max: Option<f64>,
 
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    categories: Vec<String>,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     calculable: Option<bool>,
 
@@ -166,16 +172,19 @@ pub struct VisualMap {
     orient: Option<Orient>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    left: Option<String>,
+    left: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    top: Option<String>,
+    top: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    right: Option<String>,
+    right: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    bottom: Option<String>,
+    bottom: Option<CompositeValue>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    text_style: Option<TextStyle>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     range: Option<(f64, f64)>,
@@ -196,7 +205,10 @@ pub struct VisualMap {
     item_height: Option<f64>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    in_range: Option<VisualMapInRange>,
+    in_range: Option<VisualMapChannel>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    out_range: Option<VisualMapChannel>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     pieces: Option<Vec<VisualMapPiece>>,
@@ -212,12 +224,14 @@ impl VisualMap {
             series_index: None,
             min: None,
             max: None,
+            categories: vec![],
             calculable: None,
             orient: None,
             left: None,
             top: None,
             right: None,
             bottom: None,
+            text_style: None,
             range: None,
             realtime: None,
             inverse: None,
@@ -225,6 +239,7 @@ impl VisualMap {
             item_width: None,
             item_height: None,
             in_range: None,
+            out_range: None,
             pieces: None,
         }
     }
@@ -264,6 +279,11 @@ impl VisualMap {
         self
     }
 
+    pub fn categories<S: Into<String>>(mut self, categories: Vec<S>) -> Self {
+        self.categories = categories.into_iter().map(|c| c.into()).collect();
+        self
+    }
+
     pub fn calculable(mut self, calculable: bool) -> Self {
         self.calculable = Some(calculable);
         self
@@ -274,23 +294,28 @@ impl VisualMap {
         self
     }
 
-    pub fn left<S: Into<String>>(mut self, left: S) -> Self {
+    pub fn left<C: Into<CompositeValue>>(mut self, left: C) -> Self {
         self.left = Some(left.into());
         self
     }
 
-    pub fn top<S: Into<String>>(mut self, top: S) -> Self {
+    pub fn top<C: Into<CompositeValue>>(mut self, top: C) -> Self {
         self.top = Some(top.into());
         self
     }
 
-    pub fn right<S: Into<String>>(mut self, right: S) -> Self {
+    pub fn right<C: Into<CompositeValue>>(mut self, right: C) -> Self {
         self.right = Some(right.into());
         self
     }
 
-    pub fn bottom<S: Into<String>>(mut self, bottom: S) -> Self {
+    pub fn bottom<C: Into<CompositeValue>>(mut self, bottom: C) -> Self {
         self.bottom = Some(bottom.into());
+        self
+    }
+
+    pub fn text_style<T: Into<TextStyle>>(mut self, text_style: T) -> Self {
+        self.text_style = Some(text_style.into());
         self
     }
 
@@ -324,8 +349,13 @@ impl VisualMap {
         self
     }
 
-    pub fn in_range<I: Into<VisualMapInRange>>(mut self, in_range: I) -> Self {
+    pub fn in_range<V: Into<VisualMapChannel>>(mut self, in_range: V) -> Self {
         self.in_range = Some(in_range.into());
+        self
+    }
+
+    pub fn out_range<V: Into<VisualMapChannel>>(mut self, out_range: V) -> Self {
+        self.out_range = Some(out_range.into());
         self
     }
 

@@ -75,6 +75,7 @@ lazy_static! {
     static ref CANDLESTICK_CHARTS: BTreeMap<&'static str, fn() -> Chart> = {
         let mut m = BTreeMap::new();
         insert!(m, candlestick, basic_candlestick);
+        insert!(m, candlestick, shanghai_index);
         m
     };
     static ref DATASET_CHARTS: BTreeMap<&'static str, fn() -> Chart> = {
@@ -90,6 +91,8 @@ lazy_static! {
     static ref GAUGE_CHARTS: BTreeMap<&'static str, fn() -> Chart> = {
         let mut m = BTreeMap::new();
         insert!(m, gauge, gauge_barometer);
+        insert!(m, gauge, gauge_basic);
+        insert!(m, gauge, gauge_simple);
         m
     };
     static ref GEO_CHARTS: BTreeMap<&'static str, fn() -> Chart> = {
@@ -130,6 +133,7 @@ lazy_static! {
         let mut m = BTreeMap::new();
         insert!(m, parallel, basic_parallel);
         insert!(m, parallel, parallel_aqi);
+        insert!(m, parallel, parallel_nutrients);
         m
     };
     static ref PICTORIAL_BAR_CHARTS: BTreeMap<&'static str, fn() -> Chart> = {
@@ -151,7 +155,9 @@ lazy_static! {
     };
     static ref SANKEY_CHARTS: BTreeMap<&'static str, fn() -> Chart> = {
         let mut m = BTreeMap::new();
+        insert!(m, sankey, basic_sankey);
         insert!(m, sankey, node_align_left_sankey);
+        insert!(m, sankey, sankey_orient_vertical);
         m
     };
     static ref SCATTER_CHARTS: BTreeMap<&'static str, fn() -> Chart> = {
@@ -175,6 +181,7 @@ lazy_static! {
     static ref TREE_CHARTS: BTreeMap<&'static str, fn() -> Chart> = {
         let mut m = BTreeMap::new();
         insert!(m, tree, from_left_to_right_tree);
+        insert!(m, tree, multiple_trees);
         m
     };
     static ref TREEMAP_CHARTS: BTreeMap<&'static str, fn() -> Chart> = {
@@ -229,7 +236,7 @@ async fn render(
         },
         None => return (StatusCode::NOT_FOUND, "Chart Type Not Found").into_response(),
     };
-    Html(renderer.render(chart)).into_response()
+    Html(renderer.render(&chart)).into_response()
 }
 
 #[derive(Template)]

@@ -17,7 +17,7 @@ impl HtmlRenderer {
         }
     }
 
-    pub fn render(self, chart: Chart) -> String {
+    pub fn render(&self, chart: &Chart) -> String {
         let template = include_str!("../asset/charts.html.hbs");
         let data = Handlebars::new()
             .render_template(

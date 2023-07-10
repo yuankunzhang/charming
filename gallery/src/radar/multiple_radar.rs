@@ -24,7 +24,7 @@ pub fn chart() -> Chart {
                     ("Usability", 0, 100),
                     ("Function", 0, 100),
                 ])
-                .center(("25%", "40%"))
+                .center(vec!["25%", "40%"])
                 .radius(80.0),
             RadarCoordinate::new()
                 .indicator(vec![
@@ -34,7 +34,7 @@ pub fn chart() -> Chart {
                     ("Performance", 0, 100),
                     ("Screen", 0, 100),
                 ])
-                .center(("50%", "60%"))
+                .center(vec!["50%", "60%"])
                 .radius(80.0),
             RadarCoordinate::new()
                 .indicator(vec![
@@ -51,7 +51,7 @@ pub fn chart() -> Chart {
                     ("11月", 0, 100),
                     ("12月", 0, 100),
                 ])
-                .center(("75%", "40%"))
+                .center(vec!["75%", "40%"])
                 .radius(80.0),
         ])
         .series(

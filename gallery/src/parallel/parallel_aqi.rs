@@ -1,10 +1,10 @@
 use echarts::{
     component::{
-        Legend, ParallelAxis, ParallelAxisDefault, ParallelAxisType, ParallelCoordinate, Tooltip,
-        VisualMap, VisualMapInRange,
+        Legend, ParallelAxis, ParallelAxisDefault, ParallelCoordinate, Tooltip, VisualMap,
+        VisualMapChannel,
     },
     datatype::CompositeValue,
-    element::{AxisLabel, AxisTick, AxisType, LineStyle, SplitLine, TextStyle},
+    element::{AxisLabel, AxisTick, AxisType, LineStyle, NameLocation, SplitLine, TextStyle},
     series::Parallel,
     Chart,
 };
@@ -35,7 +35,7 @@ pub fn chart() -> Chart {
                 .name("日期")
                 .inverse(true)
                 .max(31)
-                .name_location("start"),
+                .name_location(NameLocation::Start),
         )
         .parallel_axis(ParallelAxis::new().dim(1).name("AQI"))
         .parallel_axis(ParallelAxis::new().dim(2).name("PM2.5"))
@@ -47,7 +47,7 @@ pub fn chart() -> Chart {
             ParallelAxis::new()
                 .dim(7)
                 .name("等级")
-                .type_(ParallelAxisType::Category)
+                .type_(AxisType::Category)
                 .data(vec![
                     "优",
                     "良",
@@ -63,7 +63,7 @@ pub fn chart() -> Chart {
                 .min(0)
                 .max(150)
                 .dimension(2)
-                .in_range(VisualMapInRange::new().color(vec!["#50a3ba", "#eac736", "#d94e5d"])),
+                .in_range(VisualMapChannel::new().color(vec!["#50a3ba", "#eac736", "#d94e5d"])),
         )
         .parallel(
             ParallelCoordinate::new()
@@ -74,7 +74,7 @@ pub fn chart() -> Chart {
                     ParallelAxisDefault::new()
                         .type_(AxisType::Value)
                         .name("AQI指数")
-                        .name_location("end")
+                        .name_location(NameLocation::End)
                         .name_gap(20)
                         .name_text_style(TextStyle::new().color("#fff").font_size(12))
                         .axis_tick(AxisTick::new().line_style(LineStyle::new().color("#777")))

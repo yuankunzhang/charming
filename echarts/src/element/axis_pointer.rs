@@ -86,6 +86,12 @@ pub struct AxisPointer {
     type_: Option<AxisPointerType>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    snap: Option<bool>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    animation: Option<bool>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     axis: Option<AxisPointerAxis>,
 
     /// Label of axis pointer.
@@ -95,9 +101,6 @@ pub struct AxisPointer {
     /// Line style of axis pointer.
     #[serde(skip_serializing_if = "Option::is_none")]
     line_style: Option<LineStyle>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
-    snap: Option<bool>,
 
     /// Axis pointer can be linked to each other.
     #[serde(skip_serializing_if = "Vec::is_empty")]
@@ -110,8 +113,9 @@ impl AxisPointer {
             id: None,
             show: None,
             type_: None,
-            axis: None,
             snap: None,
+            animation: None,
+            axis: None,
             label: None,
             line_style: None,
             link: vec![],
@@ -133,13 +137,18 @@ impl AxisPointer {
         self
     }
 
-    pub fn axis<A: Into<AxisPointerAxis>>(mut self, axis: A) -> Self {
-        self.axis = Some(axis.into());
+    pub fn snap(mut self, snap: bool) -> Self {
+        self.snap = Some(snap);
         self
     }
 
-    pub fn snap(mut self, snap: bool) -> Self {
-        self.snap = Some(snap);
+    pub fn animation(mut self, animation: bool) -> Self {
+        self.animation = Some(animation);
+        self
+    }
+
+    pub fn axis<A: Into<AxisPointerAxis>>(mut self, axis: A) -> Self {
+        self.axis = Some(axis.into());
         self
     }
 

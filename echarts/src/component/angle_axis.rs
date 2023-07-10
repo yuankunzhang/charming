@@ -1,11 +1,9 @@
 use serde::Serialize;
 
 use crate::element::{
-    AxisLabel, AxisLine, AxisTick, AxisType, BoundaryGap, MinorSplitLine, MinorTick, SplitArea,
-    SplitLine,
+    AxisLabel, AxisLine, AxisPointer, AxisTick, AxisType, BoundaryGap, MinorSplitLine, MinorTick,
+    SplitArea, SplitLine,
 };
-
-use super::AxisPointer;
 
 /// The angle axis in Polar Coordinate.
 #[derive(Serialize)]

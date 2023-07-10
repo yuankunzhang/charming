@@ -7,12 +7,12 @@ pub mod series;
 pub use renderer::*;
 
 use component::{
-    AngleAxis, Axis, Axis3D, AxisPointer, DataZoom, GeoMap, Grid, Grid3D, Legend, ParallelAxis,
+    AngleAxis, Axis, Axis3D, DataZoom, GeoMap, Grid, Grid3D, Legend, ParallelAxis,
     ParallelCoordinate, Polar, RadarCoordinate, RadiusAxis, SingleAxis, Title, Toolbox, Tooltip,
     VisualMap,
 };
 use datatype::Dataset;
-use element::{Color, MarkLine};
+use element::{AxisPointer, Color, MarkLine};
 use serde::Serialize;
 use series::Series;
 

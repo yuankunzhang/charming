@@ -28,7 +28,7 @@ impl Serialize for DataPoint {
     }
 }
 
-impl<'a, V> From<V> for DataPoint
+impl<V> From<V> for DataPoint
 where
     V: Into<CompositeValue>,
 {
@@ -37,7 +37,7 @@ where
     }
 }
 
-impl<'a, V> From<(V, &str)> for DataPoint
+impl<V> From<(V, &str)> for DataPoint
 where
     V: Into<CompositeValue>,
 {

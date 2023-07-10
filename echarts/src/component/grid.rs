@@ -1,6 +1,9 @@
 use serde::Serialize;
 
-use crate::element::{Color, Padding, PositionProperty, TextStyle, TooltipTrigger};
+use crate::{
+    datatype::CompositeValue,
+    element::{Color, PaddingProperty, PositionProperty, TextStyle, TooltipTrigger},
+};
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -40,7 +43,7 @@ pub struct GridTooltip {
 
     /// The floating layer of tooltip space around content.
     #[serde(skip_serializing_if = "Option::is_none")]
-    padding: Option<Padding>,
+    padding: Option<PaddingProperty>,
 
     /// Text style of tooltip's floating layer.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -108,7 +111,7 @@ impl GridTooltip {
         self
     }
 
-    pub fn padding<P: Into<Padding>>(mut self, padding: P) -> Self {
+    pub fn padding<P: Into<PaddingProperty>>(mut self, padding: P) -> Self {
         self.padding = Some(padding.into());
         self
     }
@@ -161,11 +164,11 @@ pub struct Grid {
 
     /// Width of grid component.
     #[serde(skip_serializing_if = "Option::is_none")]
-    width: Option<String>,
+    width: Option<CompositeValue>,
 
     /// Height of grid component.
     #[serde(skip_serializing_if = "Option::is_none")]
-    height: Option<String>,
+    height: Option<CompositeValue>,
 
     /// Whether the grid region contains axis tick label of axis.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -264,12 +267,12 @@ impl Grid {
         self
     }
 
-    pub fn width<S: Into<String>>(mut self, width: S) -> Self {
+    pub fn width<C: Into<CompositeValue>>(mut self, width: C) -> Self {
         self.width = Some(width.into());
         self
     }
 
-    pub fn height<S: Into<String>>(mut self, height: S) -> Self {
+    pub fn height<C: Into<CompositeValue>>(mut self, height: C) -> Self {
         self.height = Some(height.into());
         self
     }

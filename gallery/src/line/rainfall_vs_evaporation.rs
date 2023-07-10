@@ -2,10 +2,10 @@ use std::vec;
 
 use echarts::{
     component::{
-        AxisPointer, Legend, Title, Toolbox, ToolboxFeature, ToolboxFeatureDataZoom,
-        ToolboxFeatureRestore, ToolboxFeatureSaveAsImage, Tooltip,
+        Legend, Title, Toolbox, ToolboxFeature, ToolboxFeatureDataZoom, ToolboxFeatureRestore,
+        ToolboxFeatureSaveAsImage, Tooltip,
     },
-    element::TooltipTrigger,
+    element::{AxisPointer, TooltipTrigger},
     Chart,
 };
 

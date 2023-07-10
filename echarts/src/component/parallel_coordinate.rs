@@ -1,6 +1,12 @@
 use serde::Serialize;
 
-use crate::element::{AxisLabel, AxisLine, AxisTick, AxisType, BoundaryGap, SplitLine, TextStyle};
+use crate::{
+    datatype::CompositeValue,
+    element::{
+        AxisLabel, AxisLine, AxisTick, AxisType, BoundaryGap, NameLocation, ParallelLayout,
+        SplitLine, TextStyle,
+    },
+};
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -13,7 +19,7 @@ pub struct ParallelAxisDefault {
     name: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    name_location: Option<String>,
+    name_location: Option<NameLocation>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     name_text_style: Option<TextStyle>,
@@ -115,7 +121,7 @@ impl ParallelAxisDefault {
         self
     }
 
-    pub fn name_location<S: Into<String>>(mut self, name_location: S) -> Self {
+    pub fn name_location<S: Into<NameLocation>>(mut self, name_location: S) -> Self {
         self.name_location = Some(name_location.into());
         self
     }
@@ -234,22 +240,25 @@ pub struct ParallelCoordinate {
     z: Option<f64>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    left: Option<String>,
+    left: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    top: Option<String>,
+    top: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    right: Option<String>,
+    right: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    bottom: Option<String>,
+    bottom: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    width: Option<String>,
+    width: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    height: Option<String>,
+    height: Option<CompositeValue>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    layout: Option<ParallelLayout>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     parallel_axis_default: Option<ParallelAxisDefault>,
@@ -267,6 +276,7 @@ impl ParallelCoordinate {
             bottom: None,
             width: None,
             height: None,
+            layout: None,
             parallel_axis_default: None,
         }
     }
@@ -286,33 +296,38 @@ impl ParallelCoordinate {
         self
     }
 
-    pub fn left<S: Into<String>>(mut self, left: S) -> Self {
+    pub fn left<C: Into<CompositeValue>>(mut self, left: C) -> Self {
         self.left = Some(left.into());
         self
     }
 
-    pub fn top<S: Into<String>>(mut self, top: S) -> Self {
+    pub fn top<C: Into<CompositeValue>>(mut self, top: C) -> Self {
         self.top = Some(top.into());
         self
     }
 
-    pub fn right<S: Into<String>>(mut self, right: S) -> Self {
+    pub fn right<C: Into<CompositeValue>>(mut self, right: C) -> Self {
         self.right = Some(right.into());
         self
     }
 
-    pub fn bottom<S: Into<String>>(mut self, bottom: S) -> Self {
+    pub fn bottom<C: Into<CompositeValue>>(mut self, bottom: C) -> Self {
         self.bottom = Some(bottom.into());
         self
     }
 
-    pub fn width<S: Into<String>>(mut self, width: S) -> Self {
+    pub fn width<C: Into<CompositeValue>>(mut self, width: C) -> Self {
         self.width = Some(width.into());
         self
     }
 
-    pub fn height<S: Into<String>>(mut self, height: S) -> Self {
+    pub fn height<C: Into<CompositeValue>>(mut self, height: C) -> Self {
         self.height = Some(height.into());
+        self
+    }
+
+    pub fn layout<L: Into<ParallelLayout>>(mut self, layout: L) -> Self {
+        self.layout = Some(layout.into());
         self
     }
 

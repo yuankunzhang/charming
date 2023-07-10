@@ -1,6 +1,6 @@
 use serde::Serialize;
 
-pub static RAW_MARK: &str = "###";
+pub static RAW_MARK: &str = "#*#*#*#";
 
 pub struct RawString(String);
 

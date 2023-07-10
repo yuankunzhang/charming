@@ -1,6 +1,9 @@
 use serde::Serialize;
 
-use crate::element::{Blur, Emphasis, ItemStyle, Label, Select};
+use crate::{
+    datatype::CompositeValue,
+    element::{Blur, Emphasis, ItemStyle, Label, Select},
+};
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -62,16 +65,16 @@ pub struct Geo {
     z: Option<f64>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    left: Option<String>,
+    left: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    top: Option<String>,
+    top: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    right: Option<String>,
+    right: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    bottom: Option<String>,
+    bottom: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     layout_center: Option<(String, String)>,
@@ -207,22 +210,22 @@ impl Geo {
         self
     }
 
-    pub fn left<S: Into<String>>(mut self, left: S) -> Self {
+    pub fn left<C: Into<CompositeValue>>(mut self, left: C) -> Self {
         self.left = Some(left.into());
         self
     }
 
-    pub fn top<S: Into<String>>(mut self, top: S) -> Self {
+    pub fn top<C: Into<CompositeValue>>(mut self, top: C) -> Self {
         self.top = Some(top.into());
         self
     }
 
-    pub fn right<S: Into<String>>(mut self, right: S) -> Self {
+    pub fn right<C: Into<CompositeValue>>(mut self, right: C) -> Self {
         self.right = Some(right.into());
         self
     }
 
-    pub fn bottom<S: Into<String>>(mut self, bottom: S) -> Self {
+    pub fn bottom<C: Into<CompositeValue>>(mut self, bottom: C) -> Self {
         self.bottom = Some(bottom.into());
         self
     }

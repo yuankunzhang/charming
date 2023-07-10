@@ -8,7 +8,7 @@ use echarts::{
 pub fn chart() -> Chart {
     Chart::new()
         .title(Title::new().text("Tangential Polar Bar Label Position (middle)"))
-        .polar(Polar::new().radius(("30", "80%")))
+        .polar(Polar::new().radius(vec!["30", "80%"]))
         .angle_axis(AngleAxis::new().start_angle(75).max(4))
         .radius_axis(
             RadiusAxis::new()

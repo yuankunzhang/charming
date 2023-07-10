@@ -1,11 +1,9 @@
 use serde::Serialize;
 
 use crate::element::{
-    AxisLabel, AxisLine, AxisTick, AxisType, BoundaryGap, ElementLocation, SplitArea, SplitLine,
-    TextStyle,
+    AxisLabel, AxisLine, AxisPointer, AxisTick, AxisType, BoundaryGap, NameLocation, SplitArea,
+    SplitLine, TextStyle,
 };
-
-use super::AxisPointer;
 
 /// Axis in cartesian coordinate.
 #[derive(Serialize)]
@@ -38,7 +36,7 @@ pub struct Axis {
 
     /// Location of axis name.
     #[serde(skip_serializing_if = "Option::is_none")]
-    name_location: Option<ElementLocation>,
+    name_location: Option<NameLocation>,
 
     /// Text style of axis name.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -182,7 +180,7 @@ impl Axis {
         self
     }
 
-    pub fn name_location<E: Into<ElementLocation>>(mut self, name_location: E) -> Self {
+    pub fn name_location<E: Into<NameLocation>>(mut self, name_location: E) -> Self {
         self.name_location = Some(name_location.into());
         self
     }

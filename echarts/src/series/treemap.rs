@@ -1,6 +1,9 @@
 use serde::Serialize;
 
-use crate::element::{Emphasis, ItemStyle, Label};
+use crate::{
+    datatype::CompositeValue,
+    element::{Emphasis, ItemStyle, Label},
+};
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -21,22 +24,22 @@ pub struct Treemap {
     z: Option<f64>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    left: Option<String>,
+    left: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    top: Option<String>,
+    top: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    right: Option<String>,
+    right: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    bottom: Option<String>,
+    bottom: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    width: Option<String>,
+    width: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    height: Option<String>,
+    height: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     label: Option<Label>,
@@ -88,32 +91,32 @@ impl Treemap {
         self
     }
 
-    pub fn left<S: Into<String>>(mut self, left: S) -> Self {
+    pub fn left<C: Into<CompositeValue>>(mut self, left: C) -> Self {
         self.left = Some(left.into());
         self
     }
 
-    pub fn top<S: Into<String>>(mut self, top: S) -> Self {
+    pub fn top<C: Into<CompositeValue>>(mut self, top: C) -> Self {
         self.top = Some(top.into());
         self
     }
 
-    pub fn right<S: Into<String>>(mut self, right: S) -> Self {
+    pub fn right<C: Into<CompositeValue>>(mut self, right: C) -> Self {
         self.right = Some(right.into());
         self
     }
 
-    pub fn bottom<S: Into<String>>(mut self, bottom: S) -> Self {
+    pub fn bottom<C: Into<CompositeValue>>(mut self, bottom: C) -> Self {
         self.bottom = Some(bottom.into());
         self
     }
 
-    pub fn width<S: Into<String>>(mut self, width: S) -> Self {
+    pub fn width<C: Into<CompositeValue>>(mut self, width: C) -> Self {
         self.width = Some(width.into());
         self
     }
 
-    pub fn height<S: Into<String>>(mut self, height: S) -> Self {
+    pub fn height<C: Into<CompositeValue>>(mut self, height: C) -> Self {
         self.height = Some(height.into());
         self
     }

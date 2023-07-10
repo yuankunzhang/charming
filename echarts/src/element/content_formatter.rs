@@ -4,19 +4,19 @@ use super::RawString;
 
 #[derive(Serialize)]
 #[serde(untagged)]
-pub enum Formatter {
+pub enum ContentFormatter {
     String(String),
     Function(RawString),
 }
 
-impl From<&str> for Formatter {
+impl From<&str> for ContentFormatter {
     fn from(s: &str) -> Self {
-        Formatter::String(s.to_string())
+        ContentFormatter::String(s.to_string())
     }
 }
 
-impl From<RawString> for Formatter {
+impl From<RawString> for ContentFormatter {
     fn from(s: RawString) -> Self {
-        Formatter::Function(s)
+        ContentFormatter::Function(s)
     }
 }

@@ -1,5 +1,5 @@
 use echarts::{
-    component::{Axis, Grid, Legend, SelectedMode, Tooltip},
+    component::{Axis, Grid, Legend, LegendSelectedMode, Tooltip},
     element::{AxisLabel, AxisLine, AxisTick, MarkLine, SplitLine},
     series::PictorialBar,
     Chart,
@@ -10,7 +10,7 @@ pub fn chart() -> Chart {
         .tooltip(Tooltip::new())
         .legend(
             Legend::new()
-                .selected_mode(SelectedMode::Single)
+                .selected_mode(LegendSelectedMode::Single)
                 .data(vec!["typeA", "typeB"]),
         )
         .x_axis(

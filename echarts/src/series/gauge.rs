@@ -2,7 +2,10 @@ use serde::Serialize;
 
 use crate::{
     datatype::{DataFrame, DataPoint},
-    element::{Anchor, AxisLabel, AxisLine, AxisTick, Color, ColorBy, Pointer, SplitLine},
+    element::{
+        Anchor, AxisLabel, AxisLine, AxisTick, Color, ColorBy, ContentFormatter, ItemStyle,
+        Pointer, SplitLine,
+    },
 };
 
 #[derive(Serialize)]
@@ -31,6 +34,9 @@ pub struct GaugeDetail {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     value_animation: Option<bool>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    formatter: Option<ContentFormatter>,
 }
 
 impl GaugeDetail {
@@ -44,6 +50,7 @@ impl GaugeDetail {
             font_size: None,
             precision: None,
             value_animation: None,
+            formatter: None,
         }
     }
 
@@ -86,6 +93,11 @@ impl GaugeDetail {
         self.value_animation = Some(value_animation);
         self
     }
+
+    pub fn formatter<F: Into<ContentFormatter>>(mut self, formatter: F) -> Self {
+        self.formatter = Some(formatter.into());
+        self
+    }
 }
 
 #[derive(Serialize)]
@@ -113,6 +125,71 @@ impl GaugeTitle {
 
     pub fn offset_center<S: Into<String>>(mut self, offset_center: (S, S)) -> Self {
         self.offset_center = Some((offset_center.0.into(), offset_center.1.into()));
+        self
+    }
+}
+
+#[derive(Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct GaugeProgress {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    show: Option<bool>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    overlap: Option<bool>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    width: Option<f64>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    round_cap: Option<bool>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    clip: Option<bool>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    item_style: Option<ItemStyle>,
+}
+
+impl GaugeProgress {
+    pub fn new() -> Self {
+        Self {
+            show: None,
+            overlap: None,
+            width: None,
+            round_cap: None,
+            clip: None,
+            item_style: None,
+        }
+    }
+
+    pub fn show(mut self, show: bool) -> Self {
+        self.show = Some(show);
+        self
+    }
+
+    pub fn overlap(mut self, overlap: bool) -> Self {
+        self.overlap = Some(overlap);
+        self
+    }
+
+    pub fn width<F: Into<f64>>(mut self, width: F) -> Self {
+        self.width = Some(width.into());
+        self
+    }
+
+    pub fn round_cap(mut self, round_cap: bool) -> Self {
+        self.round_cap = Some(round_cap);
+        self
+    }
+
+    pub fn clip(mut self, clip: bool) -> Self {
+        self.clip = Some(clip);
+        self
+    }
+
+    pub fn item_style(mut self, item_style: ItemStyle) -> Self {
+        self.item_style = Some(item_style);
         self
     }
 }
@@ -166,6 +243,9 @@ pub struct Gauge {
     radius: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    progress: Option<GaugeProgress>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     axis_line: Option<AxisLine>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -211,6 +291,7 @@ impl Gauge {
             max: None,
             split_number: None,
             radius: None,
+            progress: None,
             axis_line: None,
             axis_tick: None,
             axis_label: None,
@@ -290,6 +371,11 @@ impl Gauge {
 
     pub fn radius<S: Into<String>>(mut self, radius: S) -> Self {
         self.radius = Some(radius.into());
+        self
+    }
+
+    pub fn progress<P: Into<GaugeProgress>>(mut self, progress: P) -> Self {
+        self.progress = Some(progress.into());
         self
     }
 

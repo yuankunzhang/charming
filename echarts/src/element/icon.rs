@@ -28,9 +28,13 @@ impl Serialize for Icon {
     }
 }
 
-impl From<&str> for Icon {
-    fn from(s: &str) -> Self {
-        match s {
+impl<S> From<S> for Icon
+where
+    S: Into<String>,
+{
+    fn from(s: S) -> Self {
+        let s = s.into();
+        match s.as_str() {
             "circle" => Icon::Circle,
             "rect" => Icon::Rect,
             "roundRect" => Icon::RoundRect,
@@ -39,7 +43,7 @@ impl From<&str> for Icon {
             "pin" => Icon::Pin,
             "arrow" => Icon::Arrow,
             "none" => Icon::None,
-            _ => Icon::Custom(s.to_string()),
+            _ => Icon::Custom(s),
         }
     }
 }

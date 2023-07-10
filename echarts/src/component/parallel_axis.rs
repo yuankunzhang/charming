@@ -1,13 +1,6 @@
 use serde::Serialize;
 
-#[derive(Serialize)]
-#[serde(rename_all = "snake_case")]
-pub enum ParallelAxisType {
-    Value,
-    Category,
-    Time,
-    Log,
-}
+use crate::element::{AxisType, NameLocation};
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -23,13 +16,13 @@ pub struct ParallelAxis {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(rename = "type")]
-    type_: Option<ParallelAxisType>,
+    type_: Option<AxisType>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     name: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    name_location: Option<String>,
+    name_location: Option<NameLocation>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     name_gap: Option<f64>,
@@ -79,7 +72,7 @@ impl ParallelAxis {
         self
     }
 
-    pub fn type_<S: Into<ParallelAxisType>>(mut self, type_: S) -> Self {
+    pub fn type_<S: Into<AxisType>>(mut self, type_: S) -> Self {
         self.type_ = Some(type_.into());
         self
     }
@@ -89,7 +82,7 @@ impl ParallelAxis {
         self
     }
 
-    pub fn name_location<S: Into<String>>(mut self, name_location: S) -> Self {
+    pub fn name_location<E: Into<NameLocation>>(mut self, name_location: E) -> Self {
         self.name_location = Some(name_location.into());
         self
     }

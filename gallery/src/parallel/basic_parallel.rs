@@ -1,7 +1,7 @@
 use echarts::{
-    component::{ParallelAxis, ParallelAxisType},
+    component::ParallelAxis,
     df,
-    element::LineStyle,
+    element::{AxisType, LineStyle},
     series::Parallel,
     Chart,
 };
@@ -15,7 +15,7 @@ pub fn chart() -> Chart {
             ParallelAxis::new()
                 .dim(3)
                 .name("Score")
-                .type_(ParallelAxisType::Category)
+                .type_(AxisType::Category)
                 .data(vec!["Excellent", "Good", "OK", "Bad"]),
         )
         .series(

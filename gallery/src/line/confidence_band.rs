@@ -1,8 +1,8 @@
 use echarts::{
-    component::{Axis, AxisPointer, AxisPointerType, Grid, Title, Tooltip},
+    component::{Axis, Grid, Title, Tooltip},
     element::{
-        AreaStyle, AxisLabel, AxisType, Formatter, ItemStyle, Label, LineStyle, Symbol,
-        TooltipTrigger,
+        AreaStyle, AxisLabel, AxisPointer, AxisPointerType, AxisType, ContentFormatter, ItemStyle,
+        Label, LineStyle, Symbol, TooltipTrigger,
     },
     series::Line,
     Chart,
@@ -41,7 +41,7 @@ pub fn chart() -> Chart {
                     ),
                 )
                 .formatter(
-                    Formatter::Function(
+                    ContentFormatter::Function(
                         format!("function (params) {{ return (params[2].name + '<br />' + ((params[2].value - {}) * 100).toFixed(1) + '%'); }}", base
                     ).into())
                 ),
@@ -53,7 +53,7 @@ pub fn chart() -> Chart {
                 .data(data.iter().map(|x| x.date.clone()).collect())
                 .axis_label(
                     AxisLabel::new().formatter(
-                        Formatter::Function(
+                        ContentFormatter::Function(
                             "function (value, idx) { var date = new Date(value); return idx === 0 ? value : [date.getMonth() + 1, date.getDate()].join('-'); }".into())
                         )
                     )
@@ -62,12 +62,12 @@ pub fn chart() -> Chart {
         .y_axis(
             Axis::new()
                 .axis_label(AxisLabel::new().formatter(
-                    Formatter::Function(format!("function (val) {{ return (val - {}) * 100 + '%'; }}", base).into()))
+                    ContentFormatter::Function(format!("function (val) {{ return (val - {}) * 100 + '%'; }}", base).into()))
                 )
                 .axis_pointer(
                     AxisPointer::new().label(
                         Label::new().formatter(
-                            Formatter::Function(format!("function (params) {{ return ((params.value - {}) * 100).toFixed(1) + '%'; }}", base).into())
+                            ContentFormatter::Function(format!("function (params) {{ return ((params.value - {}) * 100).toFixed(1) + '%'; }}", base).into())
                         )
                     )
                 ).split_number(3)

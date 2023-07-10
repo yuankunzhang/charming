@@ -1,6 +1,6 @@
 use echarts::{
-    component::{Axis, AxisPointer, AxisPointerType, Grid, Legend, Title, Tooltip},
-    element::{AxisType, TooltipTrigger},
+    component::{Axis, Grid, Legend, Title, Tooltip},
+    element::{AxisPointer, AxisPointerType, AxisType, TooltipTrigger},
     series::Bar,
     Chart,
 };
