@@ -1,10 +1,4 @@
-use echarts::{
-    component::SingleAxis,
-    datatype::{CompositeValue, DataPoint},
-    element::Label,
-    series::ThemeRiver,
-    Chart,
-};
+use echarts::{component::SingleAxis, element::Label, series::ThemeRiver, Chart};
 
 pub fn chart() -> Chart {
     let raw_data = vec![
@@ -104,26 +98,13 @@ pub fn chart() -> Chart {
         .map(|(name, data)| {
             data.iter()
                 .enumerate()
-                .map(|(idx, v)| {
-                    DataPoint::Value(CompositeValue::Array(
-                        vec![
-                            CompositeValue::from(idx as i32),
-                            CompositeValue::from(*v),
-                            CompositeValue::from(*name),
-                        ]
-                        .into(),
-                    ))
-                })
+                .map(|(idx, v)| (idx as f64, *v, *name))
                 .collect::<Vec<_>>()
         })
         .flatten()
-        .collect::<Vec<_>>();
+        .collect();
 
     Chart::new()
         .single_axis(SingleAxis::new().max("dataMax"))
-        .series(
-            ThemeRiver::new()
-                .label(Label::new().show(false))
-                .data(data.into()),
-        )
+        .series(ThemeRiver::new().label(Label::new().show(false)).data(data))
 }

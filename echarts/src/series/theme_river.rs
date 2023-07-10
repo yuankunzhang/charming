@@ -1,9 +1,51 @@
-use serde::Serialize;
+use serde::{ser::SerializeSeq, Serialize};
 
 use crate::{
-    datatype::{CompositeValue, DataFrame, DataPoint},
+    datatype::CompositeValue,
     element::{BoundaryGap, ColorBy, CoordinateSystem, Label},
 };
+
+pub struct ThemeRiverData {
+    date: CompositeValue,
+    value: CompositeValue,
+    name: CompositeValue,
+}
+
+impl ThemeRiverData {
+    pub fn new<D, V, N>(date: D, value: V, name: N) -> Self
+    where
+        D: Into<CompositeValue>,
+        V: Into<CompositeValue>,
+        N: Into<CompositeValue>,
+    {
+        Self {
+            date: date.into(),
+            value: value.into(),
+            name: name.into(),
+        }
+    }
+}
+
+impl Serialize for ThemeRiverData {
+    fn serialize<S: serde::Serializer>(&self, serializer: S) -> Result<S::Ok, S::Error> {
+        let mut s = serializer.serialize_seq(None)?;
+        s.serialize_element(&self.date)?;
+        s.serialize_element(&self.value)?;
+        s.serialize_element(&self.name)?;
+        s.end()
+    }
+}
+
+impl<D, V, N> From<(D, V, N)> for ThemeRiverData
+where
+    D: Into<CompositeValue>,
+    V: Into<CompositeValue>,
+    N: Into<CompositeValue>,
+{
+    fn from(v: (D, V, N)) -> Self {
+        Self::new(v.0, v.1, v.2)
+    }
+}
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -48,7 +90,7 @@ pub struct ThemeRiver {
     label: Option<Label>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
-    data: DataFrame,
+    data: Vec<ThemeRiverData>,
 }
 
 impl ThemeRiver {
@@ -116,22 +158,22 @@ impl ThemeRiver {
         self
     }
 
-    pub fn coordinate_system(mut self, coordinate_system: CoordinateSystem) -> Self {
-        self.coordinate_system = Some(coordinate_system);
+    pub fn coordinate_system<C: Into<CoordinateSystem>>(mut self, coordinate_system: C) -> Self {
+        self.coordinate_system = Some(coordinate_system.into());
         self
     }
 
-    pub fn boundary_gap(mut self, boundary_gap: BoundaryGap) -> Self {
-        self.boundary_gap = Some(boundary_gap);
+    pub fn boundary_gap<B: Into<BoundaryGap>>(mut self, boundary_gap: B) -> Self {
+        self.boundary_gap = Some(boundary_gap.into());
         self
     }
 
-    pub fn label(mut self, label: Label) -> Self {
-        self.label = Some(label);
+    pub fn label<L: Into<Label>>(mut self, label: L) -> Self {
+        self.label = Some(label.into());
         self
     }
 
-    pub fn data<D: Into<DataPoint>>(mut self, data: Vec<D>) -> Self {
+    pub fn data<T: Into<ThemeRiverData>>(mut self, data: Vec<T>) -> Self {
         self.data = data.into_iter().map(|d| d.into()).collect();
         self
     }

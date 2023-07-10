@@ -55,6 +55,8 @@ lazy_static! {
     static ref BAR_CHARTS: BTreeMap<&'static str, fn() -> Chart> = {
         let mut m = BTreeMap::new();
         insert!(m, bar, bar_with_background);
+        insert!(m, bar, basic_bar);
+        insert!(m, bar, set_style_of_single_bar);
         insert!(m, bar, stacked_column);
         insert!(m, bar, tangential_polar_bar);
         insert!(m, bar, waterfall);

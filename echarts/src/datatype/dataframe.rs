@@ -7,7 +7,7 @@ macro_rules! df {
     ($([$($x:expr),*]),* $(,)?) => {
         vec![
             $(
-                $crate::datatype::DataPoint::Value($crate::datatype::CompositeValue::from(vec![
+                $crate::datatype::DataPoint::from($crate::datatype::CompositeValue::from(vec![
                     $(
                         $crate::datatype::CompositeValue::from($x)
                     ),*

@@ -1,30 +1,38 @@
-use serde::{ser::SerializeStruct, Serialize};
+use serde::Serialize;
+
+use crate::element::ItemStyle;
 
 use super::CompositeValue;
 
-#[derive(Debug, PartialEq)]
-pub enum DataPoint {
-    Value(CompositeValue),
-    Item {
-        value: CompositeValue,
-        name: Option<String>,
-    },
+#[derive(Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct DataPoint {
+    value: CompositeValue,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    name: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    item_style: Option<ItemStyle>,
 }
 
-impl Serialize for DataPoint {
-    fn serialize<S: serde::Serializer>(&self, serializer: S) -> Result<S::Ok, S::Error> {
-        match self {
-            DataPoint::Value(v) => v.serialize(serializer),
-            DataPoint::Item { value, name } => {
-                let mut s = serializer
-                    .serialize_struct("DataPoint", if let Some(_) = name { 2 } else { 1 })?;
-                s.serialize_field("value", value)?;
-                if let Some(name) = name {
-                    s.serialize_field("name", name)?;
-                }
-                s.end()
-            }
+impl DataPoint {
+    pub fn new<C: Into<CompositeValue>>(value: C) -> Self {
+        Self {
+            value: value.into(),
+            name: None,
+            item_style: None,
         }
+    }
+
+    pub fn name<S: Into<String>>(mut self, name: S) -> Self {
+        self.name = Some(name.into());
+        self
+    }
+
+    pub fn item_style<I: Into<ItemStyle>>(mut self, item_style: I) -> Self {
+        self.item_style = Some(item_style.into());
+        self
     }
 }
 
@@ -33,7 +41,7 @@ where
     V: Into<CompositeValue>,
 {
     fn from(v: V) -> Self {
-        DataPoint::Value(v.into())
+        DataPoint::new(v)
     }
 }
 
@@ -42,22 +50,16 @@ where
     V: Into<CompositeValue>,
 {
     fn from(v: (V, &str)) -> Self {
-        DataPoint::Item {
-            value: v.0.into(),
-            name: Some(v.1.to_string()),
-        }
+        DataPoint::new(v.0).name(v.1)
     }
 }
 
 #[macro_export]
 macro_rules! dp {
     ($v:expr) => {
-        DataPoint::Value($v.into())
+        DataPoint::new($v)
     };
     ($v:expr, $name:expr) => {
-        DataPoint::Item {
-            value: $v.into(),
-            name: Some($name.to_string()),
-        }
+        DataPoint::new($v).name($name)
     };
 }
