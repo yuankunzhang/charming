@@ -47,4 +47,29 @@ It is powerful, the code file [gallery/src/dataset/encode_and_matrix.rs](./galle
 
 ![](img/encode-and-matrix.svg)
 
-Please see more examples in the [gallery](./gallery/) module.
+## Gallery
+
+### Bar Charts
+
+<div align="center">
+<a href="./gallery/src/bar/bar_with_background.rs"><img src="./img/bar/bar_with_background.svg" width="40%" alt="bar with background" /></a>
+<a href="./gallery/src/bar/basic_bar.rs"><img src="./img/bar/basic_bar.svg" width="40%" alt="basic bar" /></a>
+<a href="./gallery/src/bar/set_style_of_single_bar.rs"><img src="./img/bar/set_style_of_single_bar.svg" width="40%" alt="set style of single bar" /></a>
+<a href="./gallery/src/bar/stacked_column.rs"><img src="./img/bar/stacked_column.svg" width="40%" alt="stacked column" /></a>
+<a href="./gallery/src/bar/tangential_polar_bar.rs"><img src="./img/bar/tangential_polar_bar.svg" width="40%" alt="tangential polar bar" /></a>
+<a href="./gallery/src/bar/waterfall.rs"><img src="./img/bar/waterfall.svg" width="40%" alt="waterfall" /></a>
+<a href="./gallery/src/bar/world_population.rs"><img src="./img/bar/world_population.svg" width="40%" alt="world population" /></a>
+</div>
+
+### Boxplot Charts
+
+<div align="center">
+<a href="./gallery/src/boxplot/boxplot_light_velocity.rs"><img src="./img/boxplot/boxplot_light_velocity.svg" width="40%" alt="boxplot light velocity" /></a>
+</div>
+
+### Candlestick Charts
+
+<div align="center">
+<a href="./gallery/src/candlestick/basic_candlestick.rs"><img src="./img/candlestick/basic_candlestick.svg" width="40%" alt="basic candlestick" /></a>
+<a href="./gallery/src/candlestick/shanghai_index.rs"><img src="./img/candlestick/shanghai_index.svg" width="40%" alt="shanghai_index" /></a>
+</div>

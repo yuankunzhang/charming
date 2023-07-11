@@ -1,0 +1,40 @@
+<svg width="600" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 600 450">
+<rect width="600" height="450" x="0" y="0" id="0" fill="none"></rect>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" x="348.6579804792739" y="37.40594465765517" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="425.79655399546533" y="79.2887728102499" fill="#6E7079">0.3</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="475.51312018147394" y="151.62682548548355" fill="#6E7079">0.6</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="486.97011632923534" y="244.65135109431884" fill="#6E7079">0.9</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="457.67006677373973" y="333.39213858282505" fill="#6E7079">1.2</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="394" y="393.81277591147443" fill="#6E7079">1.5</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" x="309.8391597736735" y="418.74235253385984" fill="#6E7079">1.8</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="223.53351110174958" y="402.746546036809" fill="#6E7079">2.1</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="153.89655924608948" y="349.31223351736946" fill="#6E7079">2.4</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="116.10825106204453" y="264.08739787373867" fill="#6E7079">2.7</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="118.40594465765514" y="176.34201952072618" fill="#6E7079">3</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="160.2887728102499" y="93.20344600453465" fill="#6E7079">3.3</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="232.62682548548347" y="43.48687981852609" fill="#6E7079">3.6</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" x="319.65135109431895" y="32.02988367076463" fill="#6E7079">3.9</text>
+<path d="M347.9 46.3L346.6 51.1M423.8 87.5L420.4 91.2M472.7 158.7L468 160.5M484 244.3L479 243.8M455.2 325.8L451 323M392.5 385.2L390 380.9M309.7 409.7L309.4 404.8M224.8 394L226.8 389.4M156.2 341.4L160.1 338.3M119 263.5L123.9 262.4M121.3 177.1L126.1 178.4M162.5 101.2L166.2 104.6M233.7 52.3L235.5 57M319.3 41L318.8 46" fill="#000" stroke="#6E7079"></path>
+<path d="M346.6 51.1L307.8 196M420.4 91.2L320.1 202.7M468 160.5L328 214.2M479 243.8L329.8 228.1M451 323L325.2 241.3M390 380.9L315 251M309.4 404.8L301.6 255M226.8 389.4L287.8 252.4M160.1 338.3L276.7 243.9M123.9 262.4L270.7 231.2M126.1 178.4L271 217.2M166.2 104.6L277.7 204.9M235.5 57L289.2 197M318.8 46L303.1 195.2" fill="#000" stroke="#E0E6F1"></path>
+<path d="M307.8 196L346.6 51.1" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<path d="M480 225A180 180 0 1 1 479.1 207A180 180 0 0 1 480 225M330 225A30 30 0 1 0 329.9 228A30 30 0 0 0 330 225" fill="none" stroke="#6E7079"></path>
+<path d="M307.8 196L302.9 194.7" fill="none" stroke="#6E7079"></path>
+<path d="M317.5 159.8L312.6 158.5" fill="none" stroke="#6E7079"></path>
+<path d="M327.2 123.6L322.3 122.3" fill="none" stroke="#6E7079"></path>
+<path d="M336.9 87.4L332.1 86.1" fill="none" stroke="#6E7079"></path>
+<path d="M346.6 51.1L341.8 49.8" fill="none" stroke="#6E7079"></path>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(304.89 175.8406)" fill="#6E7079">a</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(314.5957 139.6183)" fill="#6E7079">b</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(324.3015 103.3961)" fill="#6E7079">c</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(334.0072 67.1739)" fill="#6E7079">d</text>
+<path d="M316.5 163.4A63.8 63.8 0 1 1 283.5 286.6L291.3 257.6A33.8 33.8 0 0 0 308.7 192.4Z" fill="#5470c6"></path>
+<path d="M326.2 127.2A101.3 101.3 0 0 1 384.9 280.1L359.8 263.8A71.3 71.3 0 0 0 318.4 156.2Z" fill="#5470c6"></path>
+<path d="M335.9 91A138.8 138.8 0 1 1 192.2 312.3L215.5 293.4A108.8 108.8 0 1 0 328.1 120Z" fill="#5470c6"></path>
+<path d="M345.6 54.8A176.3 176.3 0 1 1 236.8 60.5L247.6 88.5A146.3 146.3 0 1 0 337.9 83.7Z" fill="#5470c6"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.259,-0.966,0.966,0.259,347.0889,237.6174)" fill="#eee" stroke="#5470c6" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">a: 2</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.358,0.934,-0.934,0.358,380.5213,194.0908)" fill="#eee" stroke="#5470c6" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">b: 1.2</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.545,-0.839,0.839,0.545,403.7855,292.3991)" fill="#eee" stroke="#5470c6" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">c: 2.4</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.999,-0.052,0.052,0.999,308.4392,386.029)" fill="#eee" stroke="#5470c6" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">d: 3.6</text>
+<path d="M-5 -5l363.3 0l0 28l-363.3 0Z" transform="translate(5 5)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#ccc" stroke-width="0"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:18px;font-family:sans-serif;font-weight:bold;" xml:space="preserve" y="9" transform="translate(5 5)" fill="#464646">Tangential Polar Bar Label Position (middle)</text>
+</svg>

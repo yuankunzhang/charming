@@ -1,0 +1,46 @@
+<svg width="600" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 600 450">
+<rect width="600" height="450" x="0" y="0" id="0" fill="none"></rect>
+<path d="M56.2 416.5L576 416.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M56.2 357.5L576 357.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M56.2 297.5L576 297.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M56.2 238.5L576 238.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M56.2 179.5L576 179.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M56.2 119.5L576 119.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M56.2 60.5L576 60.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M56.2 416.5L576 416.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<path d="M56.5 416.5L56.5 421.5" fill="none" stroke="#6E7079"></path>
+<path d="M229.5 416.5L229.5 421.5" fill="none" stroke="#6E7079"></path>
+<path d="M402.5 416.5L402.5 421.5" fill="none" stroke="#6E7079"></path>
+<path d="M576.5 416.5L576.5 421.5" fill="none" stroke="#6E7079"></path>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(48.24 416.5)" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(48.24 357.0833)" fill="#6E7079">500</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(48.24 297.6667)" fill="#6E7079">1,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(48.24 238.25)" fill="#6E7079">1,500</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(48.24 178.8333)" fill="#6E7079">2,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(48.24 119.4167)" fill="#6E7079">2,500</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(48.24 60)" fill="#6E7079">3,000</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(99.5533 424.5)" fill="#6E7079">Total</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(272.8067 424.5)" fill="#6E7079">Utilities</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(446.06 424.5)" fill="#6E7079">Meals</text>
+<path d="M69.7 416.5l59.8 0l0 0l-59.8 0Z" fill="none" stroke="none"></path>
+<path d="M156.3 416.5l59.8 0l0 -202l-59.8 0Z" fill="none" stroke="none"></path>
+<path d="M242.9 416.5l59.8 0l0 -166.4l-59.8 0Z" fill="none" stroke="none"></path>
+<path d="M329.5 416.5l59.8 0l0 -142.6l-59.8 0Z" fill="none" stroke="none"></path>
+<path d="M416.2 416.5l59.8 0l0 -35.6l-59.8 0Z" fill="none" stroke="none"></path>
+<path d="M502.8 416.5l59.8 0l0 0l-59.8 0Z" fill="none" stroke="none"></path>
+<path d="M69.7 416.5l59.8 0l0 -344.6l-59.8 0Z" fill="#5470c6"></path>
+<path d="M156.3 214.5l59.8 0l0 -142.6l-59.8 0Z" fill="#5470c6"></path>
+<path d="M242.9 250.1l59.8 0l0 -35.6l-59.8 0Z" fill="#5470c6"></path>
+<path d="M329.5 273.9l59.8 0l0 -23.8l-59.8 0Z" fill="#5470c6"></path>
+<path d="M416.2 380.9l59.8 0l0 -107l-59.8 0Z" fill="#5470c6"></path>
+<path d="M502.8 416.5l59.8 0l0 -35.6l-59.8 0Z" fill="#5470c6"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" transform="translate(99.5533 244.1917)" fill="#eee" stroke="#5470c6" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">2900</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" transform="translate(186.18 143.1833)" fill="#eee" stroke="#5470c6" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">1200</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" transform="translate(272.8067 232.3083)" fill="#eee" stroke="#5470c6" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">300</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" transform="translate(359.4333 262.0167)" fill="#eee" stroke="#5470c6" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">200</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" transform="translate(446.06 327.375)" fill="#eee" stroke="#5470c6" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">900</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" transform="translate(532.6867 398.675)" fill="#eee" stroke="#5470c6" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">300</text>
+<path d="M-5 -5l168.2 0l0 50l-168.2 0Z" transform="translate(5 5)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#ccc" stroke-width="0"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:18px;font-family:sans-serif;font-weight:bold;" xml:space="preserve" y="9" transform="translate(5 5)" fill="#464646">Waterfall Chart</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" y="34" transform="translate(5 5)" fill="#6E7079">Living Expenses in Shenzhen</text>
+</svg>

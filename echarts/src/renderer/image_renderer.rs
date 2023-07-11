@@ -5,7 +5,7 @@ use handlebars::Handlebars;
 use crate::Chart;
 
 static CODE_TEMPLATE: &str = r#"
-const chart = echarts.init(null, null, {
+chart = echarts.init(null, null, {
     renderer: 'svg',
     ssr: true,
     width: {{ width }},
@@ -105,12 +105,17 @@ impl ImageRenderer {
             .unwrap()
     }
 
-    pub fn save(&mut self, chart: &Chart, path: &str) {
+    pub fn save<P: AsRef<std::path::Path>>(&mut self, chart: &Chart, path: P) {
         let svg = self.render(chart);
         std::fs::write(path, svg).unwrap();
     }
 
-    pub fn save_format(&mut self, image_format: ImageFormat, chart: &Chart, path: &str) {
+    pub fn save_format<P: AsRef<std::path::Path>>(
+        &mut self,
+        image_format: ImageFormat,
+        chart: &Chart,
+        path: P,
+    ) {
         let bytes = self.render_format(image_format, chart);
         std::fs::write(path, bytes).unwrap();
     }

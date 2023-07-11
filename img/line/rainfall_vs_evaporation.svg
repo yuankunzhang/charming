@@ -1,0 +1,11 @@
+<svg width="600" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 600 450">
+<rect width="600" height="450" x="0" y="0" id="0" fill="none"></rect>
+<path d="M-5 -5l10 0l0 10l-10 0Z" transform="translate(15 5)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#ccc" stroke-width="0"></path>
+<path d="M-14 -15l108.8 0l0 30l-108.8 0Z" transform="translate(505.2009 15)" fill="none" stroke="#ccc" stroke-width="0"></path>
+<path d="M-97.3 -5l194.7 0l0 28l-194.7 0Z" transform="translate(300 5)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#ccc" stroke-width="0"></path>
+<path d="M-6.5 -1.6L-0.1 4.3L6.5 -1.4M-6.5 3.8L-6.5 7.5L6.2 7.5L6.2 3.8M-0.1 4.2L-0.1 -7.5" transform="translate(505.2009 15)" fill="none" stroke="#666"></path>
+<path d="M-7 0.9M4.5 -3L7.2 -3L7.2 -5.7M7 -2.6C5.9 -5.6 2.8 -7.9 -0.9 -7.5C-4.6 -7 -7.6 -3.7 -7.5 0.2M-4.5 3L-7.2 3L-7.2 5.7M-7 2.6C-5.9 5.6 -2.8 7.9 0.9 7.5C4.6 7 7.6 3.7 7.5 -0.2" transform="translate(532.1373 15)" fill="none" stroke="#666"></path>
+<path d="M-7.5 -4L-0.5 -4M-4 -0.5L-4 -7.5M0.8 -4L7.5 -4L7.5 7.5L-4 7.5L-4 0.8" transform="translate(560.0952 15)" fill="none" stroke="#666"></path>
+<path d="M-2.8 -7.5L-6 -4.3L-2.7 -1M-5.8 -4.3L6 -4.3L6 7.5L-5.8 7.5L-5.8 0.6" transform="translate(586.5476 15)" fill="none" stroke="#666"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:18px;font-family:sans-serif;font-weight:bold;" xml:space="preserve" y="9" transform="translate(300 5)" fill="#464646">Rainfall vs Evaporation</text>
+</svg>

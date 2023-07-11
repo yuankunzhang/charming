@@ -1,0 +1,48 @@
+<svg width="600" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 600 450">
+<rect width="600" height="450" x="0" y="0" id="0" fill="none"></rect>
+<polyline points="427.9 10.2 435.6 7.1 450.6 7.1" fill="none" stroke="#5470c6"></polyline>
+<polyline points="540 228.2 560 228.6 575 228.6" fill="none" stroke="#91cc75"></polyline>
+<polyline points="421.6 396.2 453.5 441.1 468.5 441.1" fill="none" stroke="#fac858"></polyline>
+<polyline points="257.4 420.4 243.5 442 228.5 442" fill="none" stroke="#ee6666"></polyline>
+<polyline points="140.8 328.7 76.8 338.4 61.8 338.4" fill="none" stroke="#73c0de"></polyline>
+<polyline points="122 198.5 47.6 171.3 32.6 171.3" fill="none" stroke="#3ba272"></polyline>
+<polyline points="187.6 111.1 162.3 34.9 147.3 34.9" fill="none" stroke="#fc8452"></polyline>
+<polyline points="266.5 89.1 236.6 7 221.6 7" fill="none" stroke="#9a60b4"></polyline>
+<path d="M300 -16.9A8 8 0 0 1 308.3 -24.9A250 250 0 0 1 515.7 98.7A8 8 0 0 1 512.6 109.7L350.5 197.6A8 8 0 0 1 340.3 195.3A50 50 0 0 0 306.9 175.5A8 8 0 0 1 300 167.6Z" fill="#5470c6"></path>
+<path d="M503.8 114.5A8 8 0 0 1 514.8 118A240 240 0 0 1 511.9 337.8A8 8 0 0 1 500.8 340.9L349.7 253.7A8 8 0 0 1 346.3 243.8A50 50 0 0 0 346.8 207.5A8 8 0 0 1 350.5 197.6Z" fill="#91cc75"></path>
+<path d="M474.8 325.9A8 8 0 0 1 477.6 337.1A210 210 0 0 1 347.4 429.6A8 8 0 0 1 337.7 423.3L310.7 281.4A8 8 0 0 1 316 272.4A50 50 0 0 0 339.4 255.7A8 8 0 0 1 349.7 253.7Z" fill="#fac858"></path>
+<path d="M335.8 413.5A8 8 0 0 1 329.2 422.9A200 200 0 0 1 191.1 392.7A8 8 0 0 1 188.9 381.4L266.7 271.8A8 8 0 0 1 276.9 269.4A50 50 0 0 0 302.5 274.9A8 8 0 0 1 310.7 281.4Z" fill="#ee6666"></path>
+<path d="M194.7 373.2A8 8 0 0 1 183.3 374.9A190 190 0 0 1 115.7 271.2A8 8 0 0 1 121.9 261.4L243.7 236.5A8 8 0 0 1 252.9 241.7A50 50 0 0 0 265.7 261.4A8 8 0 0 1 266.7 271.8Z" fill="#73c0de"></path>
+<path d="M131.7 259.4A8 8 0 0 1 122.2 252.8A180 180 0 0 1 137.9 146.7A8 8 0 0 1 149 143.1L249.5 197.6A8 8 0 0 1 253.2 207.5A50 50 0 0 0 250.1 228.1A8 8 0 0 1 243.7 236.5Z" fill="#3ba272"></path>
+<path d="M166.6 152.7A8 8 0 0 1 163.5 141.5A160 160 0 0 1 218.3 87.4A8 8 0 0 1 229.5 90.6L273.3 174.1A8 8 0 0 1 270.9 184.4A50 50 0 0 0 259.7 195.3A8 8 0 0 1 249.5 197.6Z" fill="#fc8452"></path>
+<path d="M238.8 108.3A8 8 0 0 1 242.6 97.3A140 140 0 0 1 291.5 85.3A8 8 0 0 1 300 93.2L300 167.6A8 8 0 0 1 293.1 175.5A50 50 0 0 0 283.1 177.9A8 8 0 0 1 273.3 174.1Z" fill="#9a60b4"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(455.5691 7.05)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">rose 1</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(579.9769 228.5577)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">r</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(473.4515 441.0501)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">rose 3</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(223.5122 441.95)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">rose 4</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(56.8278 338.4274)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">rose 5</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(27.611 171.3204)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">r...</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(142.341 34.8811)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">rose 7</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(216.5813 7.05)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">rose 8</text>
+<path d="M-5 -5l587.8 0l0 24l-587.8 0Z" transform="translate(11.08 431)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#ccc" stroke-width="0"></path>
+<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(11.08 431)" fill="#5470c6"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" x="30" y="7" transform="translate(11.08 431)" fill="#333">rose 1</text>
+<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(84.56 431)" fill="#91cc75"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" x="30" y="7" transform="translate(84.56 431)" fill="#333">rose 2</text>
+<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(158.04 431)" fill="#fac858"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" x="30" y="7" transform="translate(158.04 431)" fill="#333">rose 3</text>
+<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(231.52 431)" fill="#ee6666"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" x="30" y="7" transform="translate(231.52 431)" fill="#333">rose 4</text>
+<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(305 431)" fill="#73c0de"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" x="30" y="7" transform="translate(305 431)" fill="#333">rose 5</text>
+<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(378.48 431)" fill="#3ba272"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" x="30" y="7" transform="translate(378.48 431)" fill="#333">rose 6</text>
+<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(451.96 431)" fill="#fc8452"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" x="30" y="7" transform="translate(451.96 431)" fill="#333">rose 7</text>
+<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(525.44 431)" fill="#9a60b4"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" x="30" y="7" transform="translate(525.44 431)" fill="#333">rose 8</text>
+<path d="M-14 -15l79.5 0l0 30l-79.5 0Z" transform="translate(534.5253 15)" fill="none" stroke="#ccc" stroke-width="0"></path>
+<path d="M-6.5 -1.6L-0.1 4.3L6.5 -1.4M-6.5 3.8L-6.5 7.5L6.2 7.5L6.2 3.8M-0.1 4.2L-0.1 -7.5" transform="translate(534.5253 15)" fill="none" stroke="#666"></path>
+<path d="M-7 0.9M4.5 -3L7.2 -3L7.2 -5.7M7 -2.6C5.9 -5.6 2.8 -7.9 -0.9 -7.5C-4.6 -7 -7.6 -3.7 -7.5 0.2M-4.5 3L-7.2 3L-7.2 5.7M-7 2.6C-5.9 5.6 -2.8 7.9 0.9 7.5C4.6 7 7.6 3.7 7.5 -0.2" transform="translate(561.4617 15)" fill="none" stroke="#666"></path>
+<path d="M-3.7 -3.4L0.5 -3.4M-3.7 -3.4L0.5 -3.4M3.8 -0.1L-3.7 -0.1M-5.3 -7.5L-5.3 7.5L5.3 7.5L5.3 -4.1L1.9 -7.5L-5.3 -7.5ZM1.9 -7.4L1.9 -4L5.3 -4M3.8 3.1L-3.7 3.1" transform="translate(587.2098 15)" fill="none" stroke="#666"></path>
+</svg>

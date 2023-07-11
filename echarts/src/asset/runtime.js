@@ -4,7 +4,7 @@
     function argsToMessage(...args) {
         return args.map((arg) => JSON.stringify(arg)).join(" ");
     }
-    
+
     globalThis.console = {
         log: (...args) => {
             core.print(`[out]: ${argsToMessage(...args)}\n`, false);
@@ -13,8 +13,10 @@
             core.print(`[err]: ${argsToMessage(...args)}\n`, true);
         },
     }
-    
+
     globalThis.global = {};
-    
-    globalThis.setTimeout = () => {};
+
+    globalThis.setTimeout = () => { };
+
+    globalThis.clearTimeout = () => { };
 })(globalThis);

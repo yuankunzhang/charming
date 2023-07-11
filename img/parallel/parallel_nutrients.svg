@@ -1,0 +1,46 @@
+<svg width="600" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 600 450">
+<rect width="600" height="450" x="0" y="0" id="0" fill="#333"></rect>
+<path d="M-5 -5l118.2 0l0 120l-118.2 0Z" transform="translate(5 25)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#ccc" stroke-width="0"></path>
+<path d="M3.5 0L16.5 0A3.5 3.5 0 0 1 20 3.5L20 10.5A3.5 3.5 0 0 1 16.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(5 25)" fill="#d94e5d"></path>
+<text dominant-baseline="central" text-anchor="start" style="font: normal normal 12px sans-serif" xml:space="preserve" x="30" y="7" transform="translate(5 25)" fill="#fff">Demon Hunter</text>
+<path d="M3.5 0L16.5 0A3.5 3.5 0 0 1 20 3.5L20 10.5A3.5 3.5 0 0 1 16.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(5 49)" fill="#eac736"></path>
+<text dominant-baseline="central" text-anchor="start" style="font: normal normal 12px sans-serif" x="30" y="7" transform="translate(5 49)" fill="#fff">Blademaster</text>
+<path d="M3.5 0L16.5 0A3.5 3.5 0 0 1 20 3.5L20 10.5A3.5 3.5 0 0 1 16.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(5 73)" fill="#50a3ba"></path>
+<text dominant-baseline="central" text-anchor="start" style="font: normal normal 12px sans-serif" xml:space="preserve" x="30" y="7" transform="translate(5 73)" fill="#fff">Death Knight</text>
+<path d="M3.5 0L16.5 0A3.5 3.5 0 0 1 20 3.5L20 10.5A3.5 3.5 0 0 1 16.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(5 97)" fill="#000"></path>
+<text dominant-baseline="central" text-anchor="start" style="font: normal normal 12px sans-serif" x="30" y="7" transform="translate(5 97)" fill="#fff">Warden</text>
+<path d="M3.5 0L16.5 0A3.5 3.5 0 0 1 20 3.5L20 10.5A3.5 3.5 0 0 1 16.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(5 121)" fill="#000"></path>
+<text dominant-baseline="central" text-anchor="start" style="font: normal normal 12px sans-serif" x="30" y="7" transform="translate(5 121)" fill="#fff">Paladin</text>
+<path d="M-5 -5l69.2 0l0 28l-69.2 0Z" transform="translate(5 5)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#ccc" stroke-width="0"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:18px;font-family:sans-serif;font-weight:bold;" y="9" transform="translate(5 5)" fill="#fff">Groups</text>
+<path d="M280 20.5L680 20.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:sans-serif;" transform="translate(700 20)" fill="#fff">id</text>
+<path d="M280 46.5L680 46.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:sans-serif;" transform="translate(700 46.4286)" fill="#fff">protein</text>
+<path d="M280 73.5L680 73.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:sans-serif;" transform="translate(700 72.8571)" fill="#fff">sodium</text>
+<path d="M280 99.5L680 99.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:sans-serif;" transform="translate(700 99.2857)" fill="#fff">calcium</text>
+<path d="M280 125.5L680 125.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:sans-serif;" transform="translate(700 125.7143)" fill="#fff">fiber</text>
+<path d="M280 152.5L680 152.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:sans-serif;" transform="translate(700 152.1429)" fill="#fff">vitaminc</text>
+<path d="M280 178.5L680 178.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:sans-serif;" transform="translate(700 178.5714)" fill="#fff">potassium</text>
+<path d="M280 205.5L680 205.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:sans-serif;" transform="translate(700 205)" fill="#fff">carbohydrate</text>
+<path d="M280 231.5L680 231.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:sans-serif;" transform="translate(700 231.4286)" fill="#fff">sugars</text>
+<path d="M280 258.5L680 258.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:sans-serif;" transform="translate(700 257.8571)" fill="#fff">fat</text>
+<path d="M280 284.5L680 284.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:sans-serif;" transform="translate(700 284.2857)" fill="#fff">water</text>
+<path d="M280 310.5L680 310.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:sans-serif;" transform="translate(700 310.7143)" fill="#fff">calories</text>
+<path d="M280 337.5L680 337.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:sans-serif;" transform="translate(700 337.1429)" fill="#fff">saturated</text>
+<path d="M280 363.5L680 363.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:sans-serif;" transform="translate(700 363.5714)" fill="#fff">monounsat</text>
+<path d="M280 390.5L680 390.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:sans-serif;" transform="translate(700 390)" fill="#fff">polyunsat</text>
+</svg>

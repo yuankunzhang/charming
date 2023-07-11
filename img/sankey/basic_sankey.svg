@@ -1,0 +1,21 @@
+<svg width="600" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 600 450">
+<rect width="600" height="450" x="0" y="0" id="0" fill="none"></rect>
+<path d="M20 0C225 0 225 76.6 430 76.6L430 181.1C225 181.1 225 104.5 20 104.5Z" transform="translate(30 22.5)" fill="#314656" fill-opacity="0.2"></path>
+<path d="M20 167.2C225 167.2 225 210 430 210L430 272.7C225 272.7 225 229.8 20 229.8Z" transform="translate(30 22.5)" fill="#314656" fill-opacity="0.2"></path>
+<path d="M20 237.8C117.5 237.8 117.5 209.1 215 209.1L215 376.2C117.5 376.2 117.5 405 20 405Z" transform="translate(30 22.5)" fill="#314656" fill-opacity="0.2"></path>
+<path d="M20 104.5C117.5 104.5 117.5 146.4 215 146.4L215 209.1C117.5 209.1 117.5 167.2 20 167.2Z" transform="translate(30 22.5)" fill="#314656" fill-opacity="0.2"></path>
+<path d="M235 146.4C332.5 146.4 332.5 181.1 430 181.1L430 202C332.5 202 332.5 167.3 235 167.3Z" transform="translate(30 22.5)" fill="#314656" fill-opacity="0.2"></path>
+<path d="M235 167.3C332.5 167.3 332.5 280.7 430 280.7L430 322.5C332.5 322.5 332.5 209.1 235 209.1Z" transform="translate(30 22.5)" fill="#314656" fill-opacity="0.2"></path>
+<path d="M0 0l20 0l0 229.8l-20 0Z" transform="translate(30 22.5)" fill="rgb(234,124,204)"></path>
+<path d="M0 237.8l20 0l0 167.2l-20 0Z" transform="translate(30 22.5)" fill="rgb(123,152,103)"></path>
+<path d="M430 76.6l20 0l0 125.4l-20 0Z" transform="translate(30 22.5)" fill="rgb(170,152,169)"></path>
+<path d="M430 210l20 0l0 62.7l-20 0Z" transform="translate(30 22.5)" fill="rgb(138,194,126)"></path>
+<path d="M215 146.4l20 0l0 229.8l-20 0Z" transform="translate(30 22.5)" fill="rgb(234,124,204)"></path>
+<path d="M430 280.7l20 0l0 41.8l-20 0Z" transform="translate(30 22.5)" fill="rgb(84,112,198)"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(55 137.4211)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">a</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(55 343.9211)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">b</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(485 161.8254)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">a1</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(485 263.8517)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">a2</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(270 283.8158)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">b1</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(485 324.0885)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">c</text>
+</svg>

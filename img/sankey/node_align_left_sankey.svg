@@ -1,0 +1,169 @@
+<svg width="600" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 600 450">
+<rect width="600" height="450" x="0" y="0" id="0" fill="none"></rect>
+<path d="M20 107C40.7 107 40.7 114.3 61.4 114.3L61.4 125.4C40.7 125.4 40.7 118.1 20 118.1Z" transform="translate(30 22.5)" fill="rgb(126,176,142)" fill-opacity="0.2"></path>
+<path d="M81.4 132.7C102.1 132.7 102.1 321.8 122.9 321.8L122.9 322.8C102.1 322.8 102.1 133.7 81.4 133.7Z" transform="translate(30 22.5)" fill="rgb(247,179,91)" fill-opacity="0.2"></path>
+<path d="M81.4 98.1C225 98.1 225 133 368.6 133L368.6 135.4C225 135.4 225 100.5 81.4 100.5Z" transform="translate(30 22.5)" fill="rgb(247,179,91)" fill-opacity="0.2"></path>
+<path d="M81.4 100.5C102.1 100.5 102.1 114.1 122.9 114.1L122.9 139.1C102.1 139.1 102.1 125.5 81.4 125.5Z" transform="translate(30 22.5)" fill="rgb(247,179,91)" fill-opacity="0.2"></path>
+<path d="M81.4 125.5C102.1 125.5 102.1 162 122.9 162L122.9 169.2C102.1 169.2 102.1 132.7 81.4 132.7Z" transform="translate(30 22.5)" fill="rgb(247,179,91)" fill-opacity="0.2"></path>
+<path d="M20 401.9C71.4 401.9 71.4 376.4 122.9 376.4L122.9 379.5C71.4 379.5 71.4 405 20 405Z" transform="translate(30 22.5)" fill="rgb(95,128,184)" fill-opacity="0.2"></path>
+<path d="M20 168.2C71.4 168.2 71.4 150.9 122.9 150.9L122.9 154C71.4 154 71.4 171.3 20 171.3Z" transform="translate(30 22.5)" fill="rgb(95,128,184)" fill-opacity="0.2"></path>
+<path d="M20 179.3C40.7 179.3 40.7 164.8 61.4 164.8L61.4 165.9C40.7 165.9 40.7 180.3 20 180.3Z" transform="translate(30 22.5)" fill="rgb(87,116,195)" fill-opacity="0.2"></path>
+<path d="M20 154.5C40.7 154.5 40.7 159.1 61.4 159.1L61.4 164.8C40.7 164.8 40.7 160.2 20 160.2Z" transform="translate(30 22.5)" fill="rgb(105,144,170)" fill-opacity="0.2"></path>
+<path d="M81.4 159.1C102.1 159.1 102.1 144.1 122.9 144.1L122.9 150.9C102.1 150.9 102.1 165.9 81.4 165.9Z" transform="translate(30 22.5)" fill="rgb(109,150,165)" fill-opacity="0.2"></path>
+<path d="M265.7 221.9C286.4 221.9 286.4 256.7 307.1 256.7L307.1 257.7C286.4 257.7 286.4 222.9 265.7 222.9Z" transform="translate(30 22.5)" fill="rgb(110,152,163)" fill-opacity="0.2"></path>
+<path d="M265.7 227C286.4 227 286.4 340.6 307.1 340.6L307.1 342.6C286.4 342.6 286.4 229 265.7 229Z" transform="translate(30 22.5)" fill="rgb(110,152,163)" fill-opacity="0.2"></path>
+<path d="M265.7 222.9C286.4 222.9 286.4 297 307.1 297L307.1 301.1C286.4 301.1 286.4 227 265.7 227Z" transform="translate(30 22.5)" fill="rgb(110,152,163)" fill-opacity="0.2"></path>
+<path d="M265.7 137.1C286.4 137.1 286.4 168.1 307.1 168.1L307.1 177.4C286.4 177.4 286.4 146.4 265.7 146.4Z" transform="translate(30 22.5)" fill="rgb(111,154,105)" fill-opacity="0.2"></path>
+<path d="M265.7 195.7C286.4 195.7 286.4 286.8 307.1 286.8L307.1 297C286.4 297 286.4 205.8 265.7 205.8Z" transform="translate(30 22.5)" fill="rgb(111,154,105)" fill-opacity="0.2"></path>
+<path d="M265.7 193.3C286.4 193.3 286.4 276.4 307.1 276.4L307.1 278.8C286.4 278.8 286.4 195.7 265.7 195.7Z" transform="translate(30 22.5)" fill="rgb(111,154,105)" fill-opacity="0.2"></path>
+<path d="M265.7 162.8C286.4 162.8 286.4 221.9 307.1 221.9L307.1 252.4C286.4 252.4 286.4 193.3 265.7 193.3Z" transform="translate(30 22.5)" fill="rgb(111,154,105)" fill-opacity="0.2"></path>
+<path d="M265.7 205.8C347.9 205.8 347.9 293.7 430 293.7L430 297.1C347.9 297.1 347.9 209.2 265.7 209.2Z" transform="translate(30 22.5)" fill="rgb(111,154,105)" fill-opacity="0.2"></path>
+<path d="M265.7 209.2C286.4 209.2 286.4 328.1 307.1 328.1L307.1 329.1C286.4 329.1 286.4 210.2 265.7 210.2Z" transform="translate(30 22.5)" fill="rgb(111,154,105)" fill-opacity="0.2"></path>
+<path d="M265.7 209.6C286.4 209.6 286.4 337 307.1 337L307.1 340.6C286.4 340.6 286.4 213.2 265.7 213.2Z" transform="translate(30 22.5)" fill="rgb(111,154,105)" fill-opacity="0.2"></path>
+<path d="M265.7 132.1C317.1 132.1 317.1 135.4 368.6 135.4L368.6 140.4C317.1 140.4 317.1 137.1 265.7 137.1Z" transform="translate(30 22.5)" fill="rgb(111,154,105)" fill-opacity="0.2"></path>
+<path d="M265.7 213.2C286.4 213.2 286.4 356.9 307.1 356.9L307.1 357.9C286.4 357.9 286.4 214.2 265.7 214.2Z" transform="translate(30 22.5)" fill="rgb(111,154,105)" fill-opacity="0.2"></path>
+<path d="M265.7 146.4C286.4 146.4 286.4 185.4 307.1 185.4L307.1 193.4C286.4 193.4 286.4 154.5 265.7 154.5Z" transform="translate(30 22.5)" fill="rgb(111,154,105)" fill-opacity="0.2"></path>
+<path d="M265.7 154.5C286.4 154.5 286.4 201.4 307.1 201.4L307.1 209.7C286.4 209.7 286.4 162.8 265.7 162.8Z" transform="translate(30 22.5)" fill="rgb(111,154,105)" fill-opacity="0.2"></path>
+<path d="M20 203.7C40.7 203.7 40.7 194.8 61.4 194.8L61.4 198.5C40.7 198.5 40.7 207.3 20 207.3Z" transform="translate(30 22.5)" fill="rgb(97,131,181)" fill-opacity="0.2"></path>
+<path d="M20 188.3C40.7 188.3 40.7 187.5 61.4 187.5L61.4 194.8C40.7 194.8 40.7 195.7 20 195.7Z" transform="translate(30 22.5)" fill="rgb(111,153,162)" fill-opacity="0.2"></path>
+<path d="M142.9 180.1C225 180.1 225 340.6 307.1 340.6L307.1 341.6C225 341.6 225 181.1 142.9 181.1Z" transform="translate(30 22.5)" fill="rgb(161,203,113)" fill-opacity="0.2"></path>
+<path d="M142.9 175.5C255.7 175.5 255.7 140.4 368.6 140.4L368.6 141.4C255.7 141.4 255.7 176.5 142.9 176.5Z" transform="translate(30 22.5)" fill="rgb(161,203,113)" fill-opacity="0.2"></path>
+<path d="M142.9 162C163.6 162 163.6 144.2 184.3 144.2L184.3 157.7C163.6 157.7 163.6 175.5 142.9 175.5Z" transform="translate(30 22.5)" fill="rgb(161,203,113)" fill-opacity="0.2"></path>
+<path d="M142.9 180C225 180 225 328.4 307.1 328.4L307.1 329.4C225 329.4 225 181 142.9 181Z" transform="translate(30 22.5)" fill="rgb(161,203,113)" fill-opacity="0.2"></path>
+<path d="M142.9 175.6C225 175.6 225 252.4 307.1 252.4L307.1 256.7C225 256.7 225 180 142.9 180Z" transform="translate(30 22.5)" fill="rgb(161,203,113)" fill-opacity="0.2"></path>
+<path d="M20 258.8C132.9 258.8 132.9 206.4 245.7 206.4L245.7 207.4C132.9 207.4 132.9 259.8 20 259.8Z" transform="translate(30 22.5)" fill="rgb(85,113,197)" fill-opacity="0.2"></path>
+<path d="M327.1 277C347.9 277 347.9 222.2 368.6 222.2L368.6 224.1C347.9 224.1 347.9 278.8 327.1 278.8Z" transform="translate(30 22.5)" fill="rgb(92,124,187)" fill-opacity="0.2"></path>
+<path d="M327.1 276.4C347.9 276.4 347.9 140.5 368.6 140.5L368.6 141.5C347.9 141.5 347.9 277.4 327.1 277.4Z" transform="translate(30 22.5)" fill="rgb(92,124,187)" fill-opacity="0.2"></path>
+<path d="M388.6 222.2C409.3 222.2 409.3 297.1 430 297.1L430 298.9C409.3 298.9 409.3 224.1 388.6 224.1Z" transform="translate(30 22.5)" fill="rgb(90,121,190)" fill-opacity="0.2"></path>
+<path d="M20 267.4C132.9 267.4 132.9 207 245.7 207L245.7 208C132.9 208 132.9 268.4 20 268.4Z" transform="translate(30 22.5)" fill="rgb(85,113,197)" fill-opacity="0.2"></path>
+<path d="M142.9 321.8C225 321.8 225 257.6 307.1 257.6L307.1 268.4C225 268.4 225 332.6 142.9 332.6Z" transform="translate(30 22.5)" fill="rgb(151,166,187)" fill-opacity="0.2"></path>
+<path d="M142.9 363.8C163.6 363.8 163.6 367.9 184.3 367.9L184.3 379.4C163.6 379.4 163.6 375.3 142.9 375.3Z" transform="translate(30 22.5)" fill="rgb(151,166,187)" fill-opacity="0.2"></path>
+<path d="M142.9 332.6C286.4 332.6 286.4 298.9 430 298.9L430 311C286.4 311 286.4 344.7 142.9 344.7Z" transform="translate(30 22.5)" fill="rgb(151,166,187)" fill-opacity="0.2"></path>
+<path d="M142.9 378.2C163.6 378.2 163.6 398.3 184.3 398.3L184.3 399.6C163.6 399.6 163.6 379.5 142.9 379.5Z" transform="translate(30 22.5)" fill="rgb(151,166,187)" fill-opacity="0.2"></path>
+<path d="M142.9 345C163.6 345 163.6 341.5 184.3 341.5L184.3 359.9C163.6 359.9 163.6 363.4 142.9 363.4Z" transform="translate(30 22.5)" fill="rgb(151,166,187)" fill-opacity="0.2"></path>
+<path d="M142.9 344.7C225 344.7 225 328.6 307.1 328.6L307.1 329.6C225 329.6 225 345.7 142.9 345.7Z" transform="translate(30 22.5)" fill="rgb(151,166,187)" fill-opacity="0.2"></path>
+<path d="M142.9 375.3C163.6 375.3 163.6 387.4 184.3 387.4L184.3 390.3C163.6 390.3 163.6 378.2 142.9 378.2Z" transform="translate(30 22.5)" fill="rgb(151,166,187)" fill-opacity="0.2"></path>
+<path d="M142.9 363.4C225 363.4 225 357.6 307.1 357.6L307.1 358.6C225 358.6 225 364.4 142.9 364.4Z" transform="translate(30 22.5)" fill="rgb(151,166,187)" fill-opacity="0.2"></path>
+<path d="M20 146.1C40.7 146.1 40.7 132.4 61.4 132.4L61.4 133.4C40.7 133.4 40.7 147.1 20 147.1Z" transform="translate(30 22.5)" fill="rgb(84,112,198)" fill-opacity="0.2"></path>
+<path d="M81.4 187.5C102.1 187.5 102.1 169.2 122.9 169.2L122.9 180.2C102.1 180.2 102.1 198.5 81.4 198.5Z" transform="translate(30 22.5)" fill="rgb(126,175,143)" fill-opacity="0.2"></path>
+<path d="M20 0C102.1 0 102.1 33.7 184.3 33.7L184.3 108.5C102.1 108.5 102.1 74.8 20 74.8Z" transform="translate(30 22.5)" fill="rgb(69,167,134)" fill-opacity="0.2"></path>
+<path d="M20 331.4C40.7 331.4 40.7 327.2 61.4 327.2L61.4 372.1C40.7 372.1 40.7 376.3 20 376.3Z" transform="translate(30 22.5)" fill="rgb(239,114,100)" fill-opacity="0.2"></path>
+<path d="M20 384.3C40.7 384.3 40.7 372.1 61.4 372.1L61.4 381.7C40.7 381.7 40.7 393.9 20 393.9Z" transform="translate(30 22.5)" fill="rgb(120,167,150)" fill-opacity="0.2"></path>
+<path d="M81.4 327.2C102.1 327.2 102.1 321.9 122.9 321.9L122.9 376.4C102.1 376.4 102.1 381.7 81.4 381.7Z" transform="translate(30 22.5)" fill="rgb(176,147,162)" fill-opacity="0.2"></path>
+<path d="M20 133.1C71.4 133.1 71.4 139.1 122.9 139.1L122.9 144.1C71.4 144.1 71.4 138.1 20 138.1Z" transform="translate(30 22.5)" fill="rgb(130,181,137)" fill-opacity="0.2"></path>
+<path d="M20 126.1C40.7 126.1 40.7 125.4 61.4 125.4L61.4 132.4C40.7 132.4 40.7 133.1 20 133.1Z" transform="translate(30 22.5)" fill="rgb(130,181,137)" fill-opacity="0.2"></path>
+<path d="M20 299.9C163.6 299.9 163.6 302.8 307.1 302.8L307.1 320C163.6 320 163.6 317.1 20 317.1Z" transform="translate(30 22.5)" fill="rgb(197,202,103)" fill-opacity="0.2"></path>
+<path d="M20 317.1C163.6 317.1 163.6 342.6 307.1 342.6L307.1 348.9C163.6 348.9 163.6 323.4 20 323.4Z" transform="translate(30 22.5)" fill="rgb(197,202,103)" fill-opacity="0.2"></path>
+<path d="M81.4 270.1C163.6 270.1 163.6 207.6 245.7 207.6L245.7 212.9C163.6 212.9 163.6 275.5 81.4 275.5Z" transform="translate(30 22.5)" fill="rgb(104,141,172)" fill-opacity="0.2"></path>
+<path d="M81.4 290.6C194.3 290.6 194.3 301.1 307.1 301.1L307.1 302.8C194.3 302.8 194.3 292.3 81.4 292.3Z" transform="translate(30 22.5)" fill="rgb(89,120,191)" fill-opacity="0.2"></path>
+<path d="M20 290.2C40.7 290.2 40.7 290.6 61.4 290.6L61.4 292.3C40.7 292.3 40.7 291.9 20 291.9Z" transform="translate(30 22.5)" fill="rgb(110,152,163)" fill-opacity="0.2"></path>
+<path d="M20 284.8C40.7 284.8 40.7 270.1 61.4 270.1L61.4 275.5C40.7 275.5 40.7 290.2 20 290.2Z" transform="translate(30 22.5)" fill="rgb(110,152,163)" fill-opacity="0.2"></path>
+<path d="M142.9 153.9C225 153.9 225 328 307.1 328L307.1 329C225 329 225 154.9 142.9 154.9Z" transform="translate(30 22.5)" fill="rgb(243,146,96)" fill-opacity="0.2"></path>
+<path d="M142.9 114.1C163.6 114.1 163.6 108.5 184.3 108.5L184.3 144.2C163.6 144.2 163.6 149.8 142.9 149.8Z" transform="translate(30 22.5)" fill="rgb(243,146,96)" fill-opacity="0.2"></path>
+<path d="M142.9 149.8C225 149.8 225 217.7 307.1 217.7L307.1 221.9C225 221.9 225 153.9 142.9 153.9Z" transform="translate(30 22.5)" fill="rgb(243,146,96)" fill-opacity="0.2"></path>
+<path d="M204.3 103.8C225 103.8 225 132.1 245.7 132.1L245.7 178.9C225 178.9 225 150.6 204.3 150.6Z" transform="translate(30 22.5)" fill="rgb(234,124,204)" fill-opacity="0.2"></path>
+<path d="M204.3 33.7C286.4 33.7 286.4 62.9 368.6 62.9L368.6 133C286.4 133 286.4 103.8 204.3 103.8Z" transform="translate(30 22.5)" fill="rgb(234,124,204)" fill-opacity="0.2"></path>
+<path d="M204.3 150.6C225 150.6 225 221.9 245.7 221.9L245.7 229C225 229 225 157.7 204.3 157.7Z" transform="translate(30 22.5)" fill="rgb(234,124,204)" fill-opacity="0.2"></path>
+<path d="M20 276C132.9 276 132.9 212.9 245.7 212.9L245.7 213.9C132.9 213.9 132.9 277 20 277Z" transform="translate(30 22.5)" fill="rgb(86,115,196)" fill-opacity="0.2"></path>
+<path d="M20 82.8C40.7 82.8 40.7 98.1 61.4 98.1L61.4 114.3C40.7 114.3 40.7 99 20 99Z" transform="translate(30 22.5)" fill="rgb(148,204,116)" fill-opacity="0.2"></path>
+<path d="M20 249.1C132.9 249.1 132.9 204.7 245.7 204.7L245.7 206.4C132.9 206.4 132.9 250.8 20 250.8Z" transform="translate(30 22.5)" fill="rgb(89,120,191)" fill-opacity="0.2"></path>
+<path d="M20 215.3C132.9 215.3 132.9 178.9 245.7 178.9L245.7 204.7C132.9 204.7 132.9 241.1 20 241.1Z" transform="translate(30 22.5)" fill="rgb(213,201,98)" fill-opacity="0.2"></path>
+<path d="M0 107l20 0l0 11.1l-20 0Z" transform="translate(30 22.5)" fill="rgb(126,176,142)"></path>
+<path d="M61.4 98.1l20 0l0 34.6l-20 0Z" transform="translate(30 22.5)" fill="rgb(247,179,91)"></path>
+<path d="M122.9 321.8l20 0l0 57.7l-20 0Z" transform="translate(30 22.5)" fill="rgb(151,166,187)"></path>
+<path d="M368.6 62.9l20 0l0 78.2l-20 0Z" transform="translate(30 22.5)" fill="rgb(66,161,113)"></path>
+<path d="M122.9 114.1l20 0l0 39.9l-20 0Z" transform="translate(30 22.5)" fill="rgb(243,146,96)"></path>
+<path d="M122.9 162l20 0l0 18.2l-20 0Z" transform="translate(30 22.5)" fill="rgb(161,203,113)"></path>
+<path d="M0 401.9l20 0l0 3.1l-20 0Z" transform="translate(30 22.5)" fill="rgb(95,128,184)"></path>
+<path d="M0 168.2l20 0l0 3.1l-20 0Z" transform="translate(30 22.5)" fill="rgb(95,128,184)"></path>
+<path d="M0 179.3l20 0l0 1l-20 0Z" transform="translate(30 22.5)" fill="rgb(87,116,195)"></path>
+<path d="M61.4 159.1l20 0l0 6.7l-20 0Z" transform="translate(30 22.5)" fill="rgb(109,150,165)"></path>
+<path d="M0 154.5l20 0l0 5.7l-20 0Z" transform="translate(30 22.5)" fill="rgb(105,144,170)"></path>
+<path d="M245.7 221.9l20 0l0 7.1l-20 0Z" transform="translate(30 22.5)" fill="rgb(110,152,163)"></path>
+<path d="M307.1 217.7l20 0l0 50.7l-20 0Z" transform="translate(30 22.5)" fill="rgb(207,125,133)"></path>
+<path d="M307.1 337l20 0l0 11.9l-20 0Z" transform="translate(30 22.5)" fill="rgb(130,181,137)"></path>
+<path d="M307.1 286.8l20 0l0 33.1l-20 0Z" transform="translate(30 22.5)" fill="rgb(249,188,90)"></path>
+<path d="M245.7 132.1l20 0l0 81.8l-20 0Z" transform="translate(30 22.5)" fill="rgb(111,154,105)"></path>
+<path d="M307.1 168.1l20 0l0 9.3l-20 0Z" transform="translate(30 22.5)" fill="rgb(119,165,151)"></path>
+<path d="M307.1 276.4l20 0l0 2.4l-20 0Z" transform="translate(30 22.5)" fill="rgb(92,124,187)"></path>
+<path d="M430 293.7l20 0l0 17.3l-20 0Z" transform="translate(30 22.5)" fill="rgb(155,204,114)"></path>
+<path d="M307.1 328l20 0l0 1l-20 0Z" transform="translate(30 22.5)" fill="rgb(86,116,195)"></path>
+<path d="M307.1 356.9l20 0l0 1.1l-20 0Z" transform="translate(30 22.5)" fill="rgb(87,116,194)"></path>
+<path d="M307.1 185.4l20 0l0 8l-20 0Z" transform="translate(30 22.5)" fill="rgb(114,157,158)"></path>
+<path d="M307.1 201.4l20 0l0 8.3l-20 0Z" transform="translate(30 22.5)" fill="rgb(115,159,156)"></path>
+<path d="M0 203.7l20 0l0 3.6l-20 0Z" transform="translate(30 22.5)" fill="rgb(97,131,181)"></path>
+<path d="M61.4 187.5l20 0l0 11l-20 0Z" transform="translate(30 22.5)" fill="rgb(126,175,143)"></path>
+<path d="M0 188.3l20 0l0 7.3l-20 0Z" transform="translate(30 22.5)" fill="rgb(111,153,162)"></path>
+<path d="M184.3 33.7l20 0l0 124l-20 0Z" transform="translate(30 22.5)" fill="rgb(234,124,204)"></path>
+<path d="M0 258.8l20 0l0 0.6l-20 0Z" transform="translate(30 22.5)" fill="rgb(85,113,197)"></path>
+<path d="M368.6 222.2l20 0l0 1.9l-20 0Z" transform="translate(30 22.5)" fill="rgb(90,121,190)"></path>
+<path d="M0 267.4l20 0l0 0.6l-20 0Z" transform="translate(30 22.5)" fill="rgb(85,113,197)"></path>
+<path d="M184.3 367.9l20 0l0 11.5l-20 0Z" transform="translate(30 22.5)" fill="rgb(128,178,140)"></path>
+<path d="M184.3 398.3l20 0l0 1.3l-20 0Z" transform="translate(30 22.5)" fill="rgb(88,117,193)"></path>
+<path d="M184.3 341.5l20 0l0 18.4l-20 0Z" transform="translate(30 22.5)" fill="rgb(162,203,112)"></path>
+<path d="M184.3 387.4l20 0l0 3l-20 0Z" transform="translate(30 22.5)" fill="rgb(94,127,185)"></path>
+<path d="M0 146.1l20 0l0 0.4l-20 0Z" transform="translate(30 22.5)" fill="rgb(84,112,198)"></path>
+<path d="M0 0l20 0l0 74.8l-20 0Z" transform="translate(30 22.5)" fill="rgb(69,167,134)"></path>
+<path d="M0 331.4l20 0l0 44.9l-20 0Z" transform="translate(30 22.5)" fill="rgb(239,114,100)"></path>
+<path d="M61.4 327.2l20 0l0 54.5l-20 0Z" transform="translate(30 22.5)" fill="rgb(176,147,162)"></path>
+<path d="M0 384.3l20 0l0 9.6l-20 0Z" transform="translate(30 22.5)" fill="rgb(120,167,150)"></path>
+<path d="M0 126.1l20 0l0 12l-20 0Z" transform="translate(30 22.5)" fill="rgb(130,181,137)"></path>
+<path d="M0 299.9l20 0l0 23.5l-20 0Z" transform="translate(30 22.5)" fill="rgb(197,202,103)"></path>
+<path d="M61.4 270.1l20 0l0 5.3l-20 0Z" transform="translate(30 22.5)" fill="rgb(104,141,172)"></path>
+<path d="M61.4 290.6l20 0l0 1.7l-20 0Z" transform="translate(30 22.5)" fill="rgb(89,120,191)"></path>
+<path d="M0 284.8l20 0l0 7.1l-20 0Z" transform="translate(30 22.5)" fill="rgb(110,152,163)"></path>
+<path d="M0 276l20 0l0 0.8l-20 0Z" transform="translate(30 22.5)" fill="rgb(86,115,196)"></path>
+<path d="M0 82.8l20 0l0 16.2l-20 0Z" transform="translate(30 22.5)" fill="rgb(148,204,116)"></path>
+<path d="M0 249.1l20 0l0 1.7l-20 0Z" transform="translate(30 22.5)" fill="rgb(89,120,191)"></path>
+<path d="M0 215.3l20 0l0 25.8l-20 0Z" transform="translate(30 22.5)" fill="rgb(213,201,98)"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(55 135.0751)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Agricultural &#39;waste&#39;</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(116.4286 137.9237)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Bio-conversion</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(177.8571 373.1635)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Liquid</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(423.5714 124.477)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Losses</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(177.8571 156.5462)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Solid</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(177.8571 193.5618)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Gas</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(55 425.9414)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Biofuel imports</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(55 192.2443)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Biomass imports</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(55 202.3197)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Coal imports</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(116.4286 185.007)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Coal</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(55 179.8373)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Coal reserves</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(300.7143 247.9361)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">District heating</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(362.1429 265.5745)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Industry</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(362.1429 365.4324)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Heating and cooling - commercial</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(362.1429 325.9011)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Heating and cooling - homes</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(300.7143 195.4967)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Electricity grid</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(362.1429 195.2449)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Over generation / exports</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(362.1429 300.1181)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">H2 conversion</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(485 324.8801)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Road transport</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(362.1429 350.9668)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Agriculture</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(362.1429 379.9536)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Rail transport</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(362.1429 211.9045)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Lighting &amp; appliances - commercial</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(362.1429 228.076)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Lighting &amp; appliances - homes</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(55 227.9737)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Gas imports</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(116.4286 215.4993)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Ngas</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(55 214.4985)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Gas reserves</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(239.2857 118.1974)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Thermal generation</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(55 281.5642)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Geothermal</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(423.5714 245.6584)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">H2</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(55 290.188)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Hydro</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(239.2857 396.1492)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">International shipping</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(239.2857 421.4822)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Domestic aviation</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(239.2857 373.2331)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">International aviation</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(239.2857 411.3591)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">National navigation</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(55 168.794)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Marine algae</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(55 59.9053)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Nuclear</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(55 376.334)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Oil imports</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(116.4286 376.9757)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Oil</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(55 411.5867)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Oil reserves</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(55 154.6143)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Other waste</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(55 334.1347)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Pumped heat</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(116.4286 295.2869)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Solar PV</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(116.4286 313.9496)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Solar Thermal</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(55 310.8666)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Solar</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(55 298.9204)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Tidal</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(55 113.4156)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">UK land based bioenergy</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(55 272.4053)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Wave</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(55 250.6728)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Wind</text>
+<path d="M-5 -5l199 0l0 28l-199 0Z" transform="translate(5 5)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#ccc" stroke-width="0"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:18px;font-family:sans-serif;font-weight:bold;" xml:space="preserve" y="9" transform="translate(5 5)" fill="#464646">Node Align Left Sankey</text>
+</svg>

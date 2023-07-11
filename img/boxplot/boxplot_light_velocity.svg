@@ -1,0 +1,53 @@
+<svg width="600" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 600 450">
+<rect width="600" height="450" x="0" y="0" id="0" fill="none"></rect>
+<path d="M60 382.5l480 0l0 -53.7l-480 0Z" fill="rgb(250,250,250)" fill-opacity="0.2"></path>
+<path d="M60 328.8l480 0l0 -53.7l-480 0Z" fill="rgb(210,219,238)" fill-opacity="0.2"></path>
+<path d="M60 275l480 0l0 -53.7l-480 0Z" fill="rgb(250,250,250)" fill-opacity="0.2"></path>
+<path d="M60 221.3l480 0l0 -53.7l-480 0Z" fill="rgb(210,219,238)" fill-opacity="0.2"></path>
+<path d="M60 167.5l480 0l0 -53.7l-480 0Z" fill="rgb(250,250,250)" fill-opacity="0.2"></path>
+<path d="M60 113.8l480 0l0 -53.7l-480 0Z" fill="rgb(210,219,238)" fill-opacity="0.2"></path>
+<path d="M60 382.5L540 382.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 329.5L540 329.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 275.5L540 275.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 221.5L540 221.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 167.5L540 167.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 114.5L540 114.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 60.5L540 60.5" fill="none" stroke="#E0E6F1"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" y="-6" transform="translate(60 45)" fill="#6E7079">km/s minus 299,000</text>
+<path d="M60 382.5L540 382.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<path d="M60.5 382.5L60.5 387.5" fill="none" stroke="#6E7079"></path>
+<path d="M156.5 382.5L156.5 387.5" fill="none" stroke="#6E7079"></path>
+<path d="M252.5 382.5L252.5 387.5" fill="none" stroke="#6E7079"></path>
+<path d="M348.5 382.5L348.5 387.5" fill="none" stroke="#6E7079"></path>
+<path d="M444.5 382.5L444.5 387.5" fill="none" stroke="#6E7079"></path>
+<path d="M540.5 382.5L540.5 387.5" fill="none" stroke="#6E7079"></path>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 382.5)" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 328.75)" fill="#6E7079">200</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 275)" fill="#6E7079">400</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 221.25)" fill="#6E7079">600</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 167.5)" fill="#6E7079">800</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 113.75)" fill="#6E7079">1,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 60)" fill="#6E7079">1,200</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" y="6" transform="translate(108 390.5)" fill="#6E7079">expr 0</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" y="6" transform="translate(204 390.5)" fill="#6E7079">expr 1</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" y="6" transform="translate(300 390.5)" fill="#6E7079">expr 2</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" y="6" transform="translate(396 390.5)" fill="#6E7079">expr 3</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" y="6" transform="translate(492 390.5)" fill="#6E7079">expr 4</text>
+<path d="M83 154.1L133 154.1L133 119.1L83 119.1ZM108 206.5L108 154.1M108 94.9L108 119.1M83 206.5L133 206.5M83 94.9L133 94.9M83 129.9L133 129.9" fill="#fff" stroke="#5470c6"></path>
+<path d="M179 167.5L229 167.5L229 144.7L179 144.7ZM204 178.3L204 167.5M204 124.5L204 144.7M179 178.3L229 178.3M179 124.5L229 124.5M179 155.4L229 155.4" fill="#fff" stroke="#5470c6"></path>
+<path d="M275 156.8L325 156.8L325 146L275 146ZM300 172.9L300 156.8M300 129.9L300 146M275 172.9L325 172.9M275 129.9L325 129.9M275 152.7L325 152.7" fill="#fff" stroke="#5470c6"></path>
+<path d="M371 176.2L421 176.2L421 150L371 150ZM396 189L396 176.2M396 135.2L396 150M371 189L421 189M371 135.2L421 135.2M371 163.5L421 163.5" fill="#fff" stroke="#5470c6"></path>
+<path d="M467 165.5L517 165.5L517 148.7L467 148.7ZM492 183.6L492 165.5M492 127.2L492 148.7M467 183.6L517 183.6M467 127.2L517 127.2M467 164.8L517 164.8" fill="#fff" stroke="#5470c6"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,108,207.8125)" fill="#91cc75" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,300,215.875)" fill="#91cc75" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,300,189)" fill="#91cc75" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,300,189)" fill="#91cc75" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,300,127.1875)" fill="#91cc75" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,300,121.8125)" fill="#91cc75" fill-opacity="0.8"></path>
+<path d="M-123.7 -5l247.4 0l0 28l-247.4 0Z" transform="translate(300 5)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#ccc" stroke-width="0"></path>
+<path d="M-4.5 -4.5l150 0l0 49l-150 0Z" transform="translate(65 410)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#999"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:18px;font-family:sans-serif;font-weight:bold;" xml:space="preserve" y="9" transform="translate(300 5)" fill="#464646">Michelson-Morley Experiment</text>
+<path d="M0 0l140.3 0l0 40l-140.3 0Z" transform="translate(65 410)" fill="none"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:sans-serif;" xml:space="preserve" y="10" transform="translate(65 410)" fill="#464646">upper: Q3 + 1.5 * IQR </text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:sans-serif;" xml:space="preserve" y="30" transform="translate(65 410)" fill="#464646">lower: Q1 - 1.5 * IQR</text>
+</svg>

@@ -1,0 +1,21 @@
+<svg width="600" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 600 450">
+<rect width="600" height="450" x="0" y="0" id="0" fill="none"></rect>
+<path d="M0 20C0 191.3 44.7 191.3 44.7 362.5L245.6 362.5C245.6 191.3 200.9 191.3 200.9 20Z" transform="translate(30 22.5)" fill="rgb(234,124,204)" fill-opacity="0.2"></path>
+<path d="M329.5 20C329.5 100.6 329.5 100.6 329.5 181.3L450 181.3C450 100.6 450 100.6 450 20Z" transform="translate(30 22.5)" fill="rgb(84,112,198)" fill-opacity="0.2"></path>
+<path d="M200.9 20C200.9 100.6 128.1 100.6 128.1 181.3L248.6 181.3C248.6 100.6 321.5 100.6 321.5 20Z" transform="translate(30 22.5)" fill="rgb(234,124,204)" fill-opacity="0.2"></path>
+<path d="M128.1 201.3C128.1 281.9 245.6 281.9 245.6 362.5L285.8 362.5C285.8 281.9 168.3 281.9 168.3 201.3Z" transform="translate(30 22.5)" fill="rgb(84,112,198)" fill-opacity="0.2"></path>
+<path d="M168.3 201.3C168.3 281.9 293.8 281.9 293.8 362.5L374.2 362.5C374.2 281.9 248.6 281.9 248.6 201.3Z" transform="translate(30 22.5)" fill="rgb(84,112,198)" fill-opacity="0.2"></path>
+<path d="M329.5 201.3C329.5 281.9 374.2 281.9 374.2 362.5L414.4 362.5C414.4 281.9 369.6 281.9 369.6 201.3Z" transform="translate(30 22.5)" fill="rgb(84,112,198)" fill-opacity="0.2"></path>
+<path d="M0 0l321.5 0l0 20l-321.5 0Z" transform="translate(30 22.5)" fill="rgb(234,124,204)"></path>
+<path d="M329.5 181.3l120.5 0l0 20l-120.5 0Z" transform="translate(30 22.5)" fill="rgb(84,112,198)"></path>
+<path d="M44.7 362.5l241.1 0l0 20l-241.1 0Z" transform="translate(30 22.5)" fill="rgb(70,168,136)"></path>
+<path d="M128.1 181.3l120.5 0l0 20l-120.5 0Z" transform="translate(30 22.5)" fill="rgb(84,112,198)"></path>
+<path d="M293.8 362.5l120.5 0l0 20l-120.5 0Z" transform="translate(30 22.5)" fill="rgb(84,112,198)"></path>
+<path d="M329.5 0l120.5 0l0 20l-120.5 0Z" transform="translate(30 22.5)" fill="rgb(84,112,198)"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="-6" transform="translate(190.7273 17.5)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">a</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="-6" transform="translate(419.7273 198.75)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">b</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="-6" transform="translate(195.2857 380)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">a1</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="-6" transform="translate(218.3542 198.75)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">b1</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="-6" transform="translate(384.1039 380)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">c</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="-6" transform="translate(419.7273 17.5)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">e</text>
+</svg>

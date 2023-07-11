@@ -1,0 +1,29 @@
+<svg width="600" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 600 450">
+<rect width="600" height="450" x="0" y="0" id="0" fill="none"></rect>
+<path d="M60 380.5L540 380.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 316.5L540 316.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 252.5L540 252.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 188.5L540 188.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 124.5L540 124.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 60.5L540 60.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 380.5L540 380.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<path d="M60.5 380L60.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M180.5 380L180.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M300.5 380L300.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M420.5 380L420.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M540.5 380L540.5 385" fill="none" stroke="#6E7079"></path>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 380)" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 316)" fill="#6E7079">10</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 252)" fill="#6E7079">20</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 188)" fill="#6E7079">30</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 124)" fill="#6E7079">40</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 60)" fill="#6E7079">50</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(120 388)" fill="#6E7079">2017-10-24</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(240 388)" fill="#6E7079">2017-10-25</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(360 388)" fill="#6E7079">2017-10-26</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(480 388)" fill="#6E7079">2017-10-27</text>
+<path d="M90.5 162.4L149.5 162.4L149.5 252L90.5 252ZM119.5 136.8L119.5 162.4M119.5 316L119.5 252" fill="#eb5454" stroke="#eb5454"></path>
+<path d="M210.5 124L269.5 124L269.5 156L210.5 156ZM239.5 60L239.5 124M239.5 188L239.5 156" fill="#47b262" stroke="#47b262"></path>
+<path d="M330.5 136.8L389.5 136.8L389.5 181.6L330.5 181.6ZM359.5 98.4L359.5 136.8M359.5 168.8L359.5 181.6" fill="#eb5454" stroke="#eb5454"></path>
+<path d="M450.5 136.8L509.5 136.8L509.5 284L450.5 284ZM479.5 111.2L479.5 136.8M479.5 348L479.5 284" fill="#47b262" stroke="#47b262"></path>
+</svg>

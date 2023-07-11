@@ -1,0 +1,34 @@
+<svg width="600" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 600 450">
+<rect width="600" height="450" x="0" y="0" id="0" fill="none"></rect>
+<path d="M60 382.5L540 382.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 324.5L540 324.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 265.5L540 265.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 207.5L540 207.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 148.5L540 148.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 90.5L540 90.5" fill="none" stroke="#E0E6F1"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="-6" transform="translate(60 75)" fill="#6E7079">Value</text>
+<path d="M60 265.5L540 265.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 382.5)" fill="#6E7079">-400</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 324)" fill="#6E7079">-200</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 265.5)" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 207)" fill="#6E7079">200</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 148.5)" fill="#6E7079">400</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 90)" fill="#6E7079">600</text>
+<path d="M0 0l480 0l0 30l-480 0Z" transform="matrix(1,0,0,-1,62.8,441.5)" fill="rgb(47,69,84)" fill-opacity="0"></path>
+<path d="M-5 -5l281.8 0l0 26l-281.8 0Z" transform="translate(164.12 50)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#ccc" stroke-width="0"></path>
+<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(165.12 51)" fill="#5470c6" stroke="#5470c6" stroke-width="2" stroke-linecap="butt" stroke-miterlimit="10"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="30" y="7" transform="translate(165.12 51)" fill="#333">category0</text>
+<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(259.04 51)" fill="#91cc75" stroke="#91cc75" stroke-width="2" stroke-linecap="butt" stroke-miterlimit="10"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="30" y="7" transform="translate(259.04 51)" fill="#333">category1</text>
+<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(352.96 51)" fill="#fac858" stroke="#fac858" stroke-width="2" stroke-linecap="butt" stroke-miterlimit="10"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="30" y="7" transform="translate(352.96 51)" fill="#333">category2</text>
+<path d="M0 0l480 0l0 30l-480 0Z" transform="matrix(1,0,0,-1,62.8,441.5)" fill="none"></path>
+<path d="M0 0l96 0l0 30l-96 0Z" transform="matrix(1,0,0,-1,62.8,441.5)" fill="rgb(135,175,255)" fill-opacity="0.2"></path>
+<path d="M3.5 0.5L476.5 0.5A3 3 0 0 1 479.5 3.5L479.5 26.5A3 3 0 0 1 476.5 29.5L3.5 29.5A3 3 0 0 1 0.5 26.5L0.5 3.5A3 3 0 0 1 3.5 0.5" transform="matrix(1,0,0,-1,62.8,441.5)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#d2dbee"></path>
+<path d="M0 29.5L96 29.5L96 34.5A2 2 0 0 1 94 36.5L2 36.5A2 2 0 0 1 0 34.5L0 29.5" transform="matrix(1,0,0,-1,62.8,441.5)" fill="#D2DBEE" fill-opacity="0.7"></path>
+<path d="M-2.2 -1.7C-1.9 -1.7 -1.7 -1.5 -1.7 -1.1L-1.7 1.1C-1.7 1.5 -1.9 1.7 -2.2 1.7C-2.6 1.7 -2.8 1.5 -2.8 1.1L-2.8 -1.1C-2.8 -1.5 -2.6 -1.7 -2.2 -1.7ZM0 -1.7C0.4 -1.7 0.6 -1.5 0.6 -1.1L0.6 1.1C0.6 1.5 0.4 1.7 0 1.7C-0.4 1.7 -0.6 1.5 -0.6 1.1L-0.6 -1.1C-0.6 -1.5 -0.4 -1.7 0 -1.7ZM2.2 -1.7C2.6 -1.7 2.8 -1.5 2.8 -1.1L2.8 1.1C2.8 1.5 2.6 1.7 2.2 1.7C1.9 1.7 1.7 1.5 1.7 1.1L1.7 -1.1C1.7 -1.5 1.9 -1.7 2.2 -1.7Z" transform="matrix(1,0,0,-1,110.8,408.5)" fill="#fff"></path>
+<path d="M0 1.63L0 2M0 0L0 0.38M-0.1 0.38L0.1 0.38A0.1 0.1 0 0 1 0.2 0.47L0.2 1.52A0.1 0.1 0 0 1 0.1 1.62L-0.1 1.63A0.1 0.1 0 0 1 -0.2 1.52L-0.2 0.47A0.1 0.1 0 0 1 -0.1 0.37Z" transform="matrix(15,0,0,-15,63.8,441.5)" fill="#fff" stroke="#ACB8D1" stroke-width="0.06666666666666667"></path>
+<path d="M0 1.63L0 2M0 0L0 0.38M-0.1 0.38L0.1 0.38A0.1 0.1 0 0 1 0.2 0.47L0.2 1.52A0.1 0.1 0 0 1 0.1 1.62L-0.1 1.63A0.1 0.1 0 0 1 -0.2 1.52L-0.2 0.47A0.1 0.1 0 0 1 -0.1 0.37Z" transform="matrix(15,0,0,-15,157.8,441.5)" fill="#fff" stroke="#ACB8D1" stroke-width="0.06666666666666667"></path>
+<path d="M-82.2 -5l164.4 0l0 28l-164.4 0Z" transform="translate(300 5)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#ccc" stroke-width="0"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:18px;font-family:sans-serif;font-weight:bold;" xml:space="preserve" y="9" transform="translate(300 5)" fill="#464646">Multiple Categories</text>
+</svg>

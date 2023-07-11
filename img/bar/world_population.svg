@@ -1,0 +1,52 @@
+<svg width="600" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 600 450">
+<rect width="600" height="450" x="0" y="0" id="0" fill="none"></rect>
+<path d="M78.5 60L78.5 416.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M149.5 60L149.5 416.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M220.5 60L220.5 416.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M291.5 60L291.5 416.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M362.5 60L362.5 416.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M434.5 60L434.5 416.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M505.5 60L505.5 416.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M576.5 60L576.5 416.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M78.5 416.5L78.5 60" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<path d="M78.3 416.5L73.3 416.5" fill="none" stroke="#6E7079"></path>
+<path d="M78.3 357.5L73.3 357.5" fill="none" stroke="#6E7079"></path>
+<path d="M78.3 297.5L73.3 297.5" fill="none" stroke="#6E7079"></path>
+<path d="M78.3 238.5L73.3 238.5" fill="none" stroke="#6E7079"></path>
+<path d="M78.3 179.5L73.3 179.5" fill="none" stroke="#6E7079"></path>
+<path d="M78.3 119.5L73.3 119.5" fill="none" stroke="#6E7079"></path>
+<path d="M78.3 60.5L73.3 60.5" fill="none" stroke="#6E7079"></path>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(70.32 386.7917)" fill="#6E7079">Brazil</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(70.32 327.375)" fill="#6E7079">Indonesia</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(70.32 267.9583)" fill="#6E7079">USA</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(70.32 208.5417)" fill="#6E7079">India</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(70.32 149.125)" fill="#6E7079">China</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(70.32 89.7083)" fill="#6E7079">World</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(78.32 424.5)" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(149.4171 424.5)" fill="#6E7079">100,000</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(220.5143 424.5)" fill="#6E7079">200,000</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(291.6114 424.5)" fill="#6E7079">300,000</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(362.7086 424.5)" fill="#6E7079">400,000</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(433.8057 424.5)" fill="#6E7079">500,000</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(504.9029 424.5)" fill="#6E7079">600,000</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(576 424.5)" fill="#6E7079">700,000</text>
+<path d="M78.3 365.1l12.9 0l0 19.7l-12.9 0Z" fill="#5470c6"></path>
+<path d="M78.3 305.7l16.7 0l0 19.7l-16.7 0Z" fill="#5470c6"></path>
+<path d="M78.3 246.3l20.6 0l0 19.7l-20.6 0Z" fill="#5470c6"></path>
+<path d="M78.3 186.9l74.6 0l0 19.7l-74.6 0Z" fill="#5470c6"></path>
+<path d="M78.3 127.4l93.7 0l0 19.7l-93.7 0Z" fill="#5470c6"></path>
+<path d="M78.3 68l448.1 0l0 19.7l-448.1 0Z" fill="#5470c6"></path>
+<path d="M78.3 388.8l13.7 0l0 19.7l-13.7 0Z" fill="#91cc75"></path>
+<path d="M78.3 329.3l16.7 0l0 19.7l-16.7 0Z" fill="#91cc75"></path>
+<path d="M78.3 269.9l22 0l0 19.7l-22 0Z" fill="#91cc75"></path>
+<path d="M78.3 210.5l86.4 0l0 19.7l-86.4 0Z" fill="#91cc75"></path>
+<path d="M78.3 151.1l95.4 0l0 19.7l-95.4 0Z" fill="#91cc75"></path>
+<path d="M78.3 91.7l484.7 0l0 19.7l-484.7 0Z" fill="#91cc75"></path>
+<path d="M-5 -5l133.8 0l0 24l-133.8 0Z" transform="translate(238.12 5)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#ccc" stroke-width="0"></path>
+<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(238.12 5)" fill="#5470c6"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="30" y="7" transform="translate(238.12 5)" fill="#333">2011</text>
+<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(305 5)" fill="#91cc75"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="30" y="7" transform="translate(305 5)" fill="#333">2012</text>
+<path d="M-5 -5l147.5 0l0 28l-147.5 0Z" transform="translate(5 5)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#ccc" stroke-width="0"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:18px;font-family:sans-serif;font-weight:bold;" xml:space="preserve" y="9" transform="translate(5 5)" fill="#464646">World Population</text>
+</svg>

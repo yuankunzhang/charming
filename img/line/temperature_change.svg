@@ -1,0 +1,94 @@
+<svg width="600" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 600 450">
+<rect width="600" height="450" x="0" y="0" id="0" fill="none"></rect>
+<path d="M60 380.5L540 380.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 326.5L540 326.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 273.5L540 273.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 220.5L540 220.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 166.5L540 166.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 113.5L540 113.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 60.5L540 60.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 326.5L540 326.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<path d="M60.5 326.7L60.5 331.7" fill="none" stroke="#6E7079"></path>
+<path d="M140.5 326.7L140.5 331.7" fill="none" stroke="#6E7079"></path>
+<path d="M220.5 326.7L220.5 331.7" fill="none" stroke="#6E7079"></path>
+<path d="M300.5 326.7L300.5 331.7" fill="none" stroke="#6E7079"></path>
+<path d="M380.5 326.7L380.5 331.7" fill="none" stroke="#6E7079"></path>
+<path d="M460.5 326.7L460.5 331.7" fill="none" stroke="#6E7079"></path>
+<path d="M540.5 326.7L540.5 331.7" fill="none" stroke="#6E7079"></path>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(52 380)" fill="#6E7079">-3 °C</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(52 326.6667)" fill="#6E7079">0 °C</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(52 273.3333)" fill="#6E7079">3 °C</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(52 220)" fill="#6E7079">6 °C</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(52 166.6667)" fill="#6E7079">9 °C</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(52 113.3333)" fill="#6E7079">12 °C</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(52 60)" fill="#6E7079">15 °C</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(60 388)" fill="#6E7079">Mon</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(140 388)" fill="#6E7079">Tue</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(220 388)" fill="#6E7079">Wed</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(300 388)" fill="#6E7079">Thu</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(380 388)" fill="#6E7079">Fri</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(460 388)" fill="#6E7079">Sat</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(540 388)" fill="#6E7079">Sun</text>
+<g clip-path="url(#zr34-c0)">
+<path d="M60 148.9L140 131.1L220 95.6L300 131.1L380 113.3L460 113.3L540 166.7" fill="none" stroke="#5470c6" stroke-width="2" stroke-linejoin="bevel"></path>
+</g>
+<g clip-path="url(#zr34-c1)">
+<path d="M60 308.9L140 362.2L220 291.1L300 237.8L380 273.3L460 291.1L540 326.7" fill="none" stroke="#91cc75" stroke-width="2" stroke-linejoin="bevel"></path>
+</g>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,60,148.8889)" fill="#fff" stroke="#5470c6"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,140,131.1111)" fill="#fff" stroke="#5470c6"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,220,95.5556)" fill="#fff" stroke="#5470c6"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,300,131.1111)" fill="#fff" stroke="#5470c6"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,380,113.3333)" fill="#fff" stroke="#5470c6"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,460,113.3333)" fill="#fff" stroke="#5470c6"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,540,166.6667)" fill="#fff" stroke="#5470c6"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,60,308.8889)" fill="#fff" stroke="#91cc75"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,140,362.2222)" fill="#fff" stroke="#91cc75"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,220,291.1111)" fill="#fff" stroke="#91cc75"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,300,237.7778)" fill="#fff" stroke="#91cc75"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,380,273.3333)" fill="#fff" stroke="#91cc75"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,460,291.1111)" fill="#fff" stroke="#91cc75"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,540,326.6667)" fill="#fff" stroke="#91cc75"></path>
+<path d="M-5 -5l161 0l0 23.2l-161 0Z" transform="translate(224.52 5)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#ccc" stroke-width="0"></path>
+<path d="M0 7L25 7" transform="translate(225.52 4.6)" fill="#000" stroke="#5470c6" stroke-width="2" stroke-linecap="butt" stroke-miterlimit="10"></path>
+<path d="M18.1 7A5.6 5.6 0 1 1 18.1 6.4A5.6 5.6 0 0 1 18.1 7" transform="translate(225.52 4.6)" fill="#fff" stroke="#5470c6" stroke-width="2" stroke-linecap="butt" stroke-miterlimit="10"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="30" y="7" transform="translate(225.52 4.6)" fill="#333">Highest</text>
+<path d="M0 7L25 7" transform="translate(307.32 4.6)" fill="#000" stroke="#91cc75" stroke-width="2" stroke-linecap="butt" stroke-miterlimit="10"></path>
+<path d="M18.1 7A5.6 5.6 0 1 1 18.1 6.4A5.6 5.6 0 0 1 18.1 7" transform="translate(307.32 4.6)" fill="#fff" stroke="#91cc75" stroke-width="2" stroke-linecap="butt" stroke-miterlimit="10"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="30" y="7" transform="translate(307.32 4.6)" fill="#333">Lowest</text>
+<path d="M60 128.5L540 128.5" fill="none" stroke="#5470c6" stroke-dasharray="4,2"></path>
+<path d="M4 0A4 4 0 1 1 4 -0.4A4 4 0 0 1 4 0" transform="matrix(0,-1,1,0,60,128.6222)" fill="#5470c6"></path>
+<path d="M0 0L5.3 16L0 12L-5.3 16L0 0Z" transform="matrix(0,1,-1,0,540,128.6222)" fill="#5470c6"></path>
+<path d="M60 299.5L540 299.5" fill="none" stroke="#91cc75" stroke-dasharray="4,2"></path>
+<path d="M4 0A4 4 0 1 1 4 -0.4A4 4 0 0 1 4 0" transform="matrix(0,-1,1,0,60,298.7556)" fill="#91cc75"></path>
+<path d="M0 0L5.3 16L0 12L-5.3 16L0 0Z" transform="matrix(0,1,-1,0,540,298.7556)" fill="#91cc75"></path>
+<path d="M540 238.5L300 238.5" fill="none" stroke="#91cc75" stroke-dasharray="4,2"></path>
+<path d="M4 0A4 4 0 1 1 4 -0.0004" transform="matrix(0,-1,1,0,300,237.7778)" fill="#91cc75"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(545 128.6222)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">11.14</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(545 298.7556)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">1.57</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(545 237.7778)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Max</text>
+<path d="M-0.54 -0.89A0.6 0.6 0 1 1 0.54 -0.89C0.39 -0.56 0 -0.42 0 0C0 -0.42 -0.39 -0.56 -0.54 -0.89Z" transform="matrix(25,0,0,25,220,95.5556)" fill="#5470c6"></path>
+<path d="M-0.54 -0.89A0.6 0.6 0 1 1 0.54 -0.89C0.39 -0.56 0 -0.42 0 0C0 -0.42 -0.39 -0.56 -0.54 -0.89Z" transform="matrix(25,0,0,25,540,166.6667)" fill="#5470c6"></path>
+<path d="M-0.54 -0.89A0.6 0.6 0 1 1 0.54 -0.89C0.39 -0.56 0 -0.42 0 0C0 -0.42 -0.39 -0.56 -0.54 -0.89Z" transform="matrix(25,0,0,25,140,353.3333)" fill="#91cc75"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" transform="translate(220 69.4127)" fill="#eee" stroke="#5470c6" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">13</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" transform="translate(540 140.5238)" fill="#eee" stroke="#5470c6" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">9</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" transform="translate(140 327.1905)" fill="#333">-2</text>
+<path d="M-14 -15l187.7 0l0 30l-187.7 0Z" transform="translate(426.2366 15)" fill="none" stroke="#ccc" stroke-width="0"></path>
+<path d="M-5 -5l337.4 0l0 28l-337.4 0Z" transform="translate(5 5)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#ccc" stroke-width="0"></path>
+<path d="M-6.5 -1.6L-0.1 4.3L6.5 -1.4M-6.5 3.8L-6.5 7.5L6.2 7.5L6.2 3.8M-0.1 4.2L-0.1 -7.5" transform="translate(426.2366 15)" fill="none" stroke="#666"></path>
+<path d="M-7 0.9M4.5 -3L7.2 -3L7.2 -5.7M7 -2.6C5.9 -5.6 2.8 -7.9 -0.9 -7.5C-4.6 -7 -7.6 -3.7 -7.5 0.2M-4.5 3L-7.2 3L-7.2 5.7M-7 2.6C-5.9 5.6 -2.8 7.9 0.9 7.5C4.6 7 7.6 3.7 7.5 -0.2" transform="translate(453.173 15)" fill="none" stroke="#666"></path>
+<path d="M-3.7 -3.4L0.5 -3.4M-3.7 -3.4L0.5 -3.4M3.8 -0.1L-3.7 -0.1M-5.3 -7.5L-5.3 7.5L5.3 7.5L5.3 -4.1L1.9 -7.5L-5.3 -7.5ZM1.9 -7.4L1.9 -4L5.3 -4M3.8 3.1L-3.7 3.1" transform="translate(478.9211 15)" fill="none" stroke="#666"></path>
+<path d="M-7.5 -1L-5.4 -1L-2.7 -7.5L-0.6 3.6L2.3 -2.1L3.2 1.6L7.5 1.6M-7.5 7.5L7.5 7.5" transform="translate(504.7113 15)" fill="none" stroke="#666"></path>
+<path d="M-6.2 -1.9L-3.5 -1.9L-3.5 4.8L-6.2 4.8L-6.2 -1.9ZM-1.4 -4.6L1.3 -4.6L1.3 4.8L-1.4 4.8L-1.4 -4.6ZM3.5 -7.5L6.2 -7.5L6.2 4.8L3.5 4.8L3.5 -7.5ZM-7.2 7.5L7.2 7.5" transform="translate(532.4033 15)" fill="none" stroke="#666"></path>
+<path d="M-7.5 -4L-0.5 -4M-4 -0.5L-4 -7.5M0.8 -4L7.5 -4L7.5 7.5L-4 7.5L-4 0.8" transform="translate(560.0952 15)" fill="none" stroke="#666"></path>
+<path d="M-2.8 -7.5L-6 -4.3L-2.7 -1M-5.8 -4.3L6 -4.3L6 7.5L-5.8 7.5L-5.8 0.6" transform="translate(586.5476 15)" fill="none" stroke="#666"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:18px;font-family:sans-serif;font-weight:bold;" xml:space="preserve" y="9" transform="translate(5 5)" fill="#464646">Temperature change in the coming week</text>
+<defs >
+<clipPath id="zr34-c0">
+<path d="M59 59l482 0l0 322l-482 0Z" fill="#000"></path>
+</clipPath>
+<clipPath id="zr34-c1">
+<path d="M59 59l482 0l0 322l-482 0Z" fill="#000"></path>
+</clipPath>
+</defs>
+</svg>

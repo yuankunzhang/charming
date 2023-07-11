@@ -1,0 +1,36 @@
+<svg width="600" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 600 450">
+<rect width="600" height="450" x="0" y="0" id="0" fill="none"></rect>
+<path d="M60 380.5L540 380.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 300.5L540 300.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 220.5L540 220.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 140.5L540 140.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 60.5L540 60.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 380.5L540 380.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<path d="M60.5 380L60.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M128.5 380L128.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M197.5 380L197.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M265.5 380L265.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M334.5 380L334.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M403.5 380L403.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M471.5 380L471.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M540.5 380L540.5 385" fill="none" stroke="#6E7079"></path>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 380)" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 300)" fill="#6E7079">50</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 220)" fill="#6E7079">100</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 140)" fill="#6E7079">150</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 60)" fill="#6E7079">200</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(94.2857 388)" fill="#6E7079">Mon</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(162.8571 388)" fill="#6E7079">Tue</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(231.4286 388)" fill="#6E7079">Wed</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(300 388)" fill="#6E7079">Thu</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(368.5714 388)" fill="#6E7079">Fri</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(437.1429 388)" fill="#6E7079">Sat</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(505.7143 388)" fill="#6E7079">Sun</text>
+<path d="M70.6 380l47.3 0l0 -192l-47.3 0Z" fill="#5470c6"></path>
+<path d="M139.2 380l47.3 0l0 -320l-47.3 0Z" fill="#a90000"></path>
+<path d="M207.8 380l47.3 0l0 -240l-47.3 0Z" fill="#5470c6"></path>
+<path d="M276.3 380l47.3 0l0 -128l-47.3 0Z" fill="#5470c6"></path>
+<path d="M344.9 380l47.3 0l0 -112l-47.3 0Z" fill="#5470c6"></path>
+<path d="M413.5 380l47.3 0l0 -176l-47.3 0Z" fill="#5470c6"></path>
+<path d="M482.1 380l47.3 0l0 -208l-47.3 0Z" fill="#5470c6"></path>
+</svg>

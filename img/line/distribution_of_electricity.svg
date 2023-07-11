@@ -1,0 +1,81 @@
+<svg width="600" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 600 450">
+<rect width="600" height="450" x="0" y="0" id="0" fill="none"></rect>
+<path d="M60 380.5L540 380.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 300.5L540 300.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 220.5L540 220.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 140.5L540 140.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 60.5L540 60.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 380.5L540 380.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<path d="M60.5 380L60.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M110.5 380L110.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M161.5 380L161.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M211.5 380L211.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M262.5 380L262.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M312.5 380L312.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M363.5 380L363.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M413.5 380L413.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M464.5 380L464.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M514.5 380L514.5 385" fill="none" stroke="#6E7079"></path>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(52 380)" fill="#6E7079">0 W</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(52 300)" fill="#6E7079">200 W</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(52 220)" fill="#6E7079">400 W</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(52 140)" fill="#6E7079">600 W</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(52 60)" fill="#6E7079">800 W</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(60 388)" fill="#6E7079">00:00</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(110.5263 388)" fill="#6E7079">02:30</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(161.0526 388)" fill="#6E7079">05:00</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(211.5789 388)" fill="#6E7079">07:30</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(262.1053 388)" fill="#6E7079">10:00</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(312.6316 388)" fill="#6E7079">12:30</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(363.1579 388)" fill="#6E7079">15:00</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(413.6842 388)" fill="#6E7079">17:30</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(464.2105 388)" fill="#6E7079">20:00</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(514.7368 388)" fill="#6E7079">22:30</text>
+<polygon points="211.6 380 262.1 380 262.1 60 211.6 60" fill="rgb(255,173,177)" fill-opacity="0.4" stroke="#5470c6" stroke-width="0"></polygon>
+<polygon points="413.7 380 489.5 380 489.5 60 413.7 60" fill="rgb(255,173,177)" fill-opacity="0.4" stroke="#5470c6" stroke-width="0"></polygon>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" y="-6" transform="translate(236.8421 55)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Morning Peak</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" y="-6" transform="translate(451.5789 55)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Evening Peak</text>
+<g clip-path="url(#zr26-c0)">
+<path d="M60 260C60 260 73 263.1 85.3 268C98.2 273.1 97.3 280 110.5 280C122.6 280 123.2 278 135.8 276C148.4 274 149 275.8 161.1 272C174.2 267.8 180.9 271.9 186.3 260C206.2 215.9 192.3 160 211.6 160C217.6 160 226.6 167.8 236.8 180C251.9 197.8 245.7 212.6 262.1 220C271 224 274.7 222 287.4 224C300 226 300 228 312.6 228C325.3 228 325.3 226 337.9 224C350.5 222 354.3 224 363.2 220C379.6 212.6 375.8 200 388.4 180C401.1 160 403.1 161 413.7 140C428.3 111 422 106.8 438.9 80C447.3 66.8 454 60 464.2 60C479.2 60 476.8 80 489.5 100C502.1 120 505.6 118.4 514.7 140C530.9 178.4 540 220 540 220" fill="none" stroke="url(#zr26-g0)" stroke-width="2" stroke-linejoin="bevel"></path>
+</g>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,60,260)" fill="#fff" stroke="green"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,85.2632,268)" fill="#fff" stroke="green"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,110.5263,280)" fill="#fff" stroke="green"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,135.7895,276)" fill="#fff" stroke="green"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,161.0526,272)" fill="#fff" stroke="green"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,186.3158,260)" fill="#fff" stroke="green"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,211.5789,160)" fill="#fff" stroke="green"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,236.8421,180)" fill="#fff" stroke="red"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,262.1053,220)" fill="#fff" stroke="red"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,287.3684,224)" fill="#fff" stroke="green"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,312.6316,228)" fill="#fff" stroke="green"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,337.8947,224)" fill="#fff" stroke="green"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,363.1579,220)" fill="#fff" stroke="green"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,388.4211,180)" fill="#fff" stroke="green"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,413.6842,140)" fill="#fff" stroke="green"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,438.9474,80)" fill="#fff" stroke="red"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,464.2105,60)" fill="#fff" stroke="red"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,489.4737,100)" fill="#fff" stroke="red"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,514.7368,140)" fill="#fff" stroke="green"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,540,220)" fill="#fff" stroke="green"></path>
+<path d="M-14 -15l28 0l0 30l-28 0Z" transform="translate(586.0216 15)" fill="none" stroke="#ccc" stroke-width="0"></path>
+<path d="M-5 -5l202.4 0l0 50l-202.4 0Z" transform="translate(5 5)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#ccc" stroke-width="0"></path>
+<path d="M-6.5 -1.6L-0.1 4.3L6.5 -1.4M-6.5 3.8L-6.5 7.5L6.2 7.5L6.2 3.8M-0.1 4.2L-0.1 -7.5" transform="translate(586.0216 15)" fill="none" stroke="#666"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:18px;font-family:sans-serif;font-weight:bold;" xml:space="preserve" y="9" transform="translate(5 5)" fill="#464646">Distribution of Electricity</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" y="34" transform="translate(5 5)" fill="#6E7079">Fake Data</text>
+<defs >
+<clipPath id="zr26-c0">
+<path d="M59 59l482 0l0 322l-482 0Z" fill="#000"></path>
+</clipPath>
+<linearGradient gradientUnits="userSpaceOnUse" x1="201.57894736842104" y1="0" x2="499.4736842105263" y2="0" id="zr26-g0">
+<stop offset="3.36%" stop-color="green"></stop>
+<stop offset="3.36%" stop-color="red"></stop>
+<stop offset="20.32%" stop-color="red"></stop>
+<stop offset="20.32%" stop-color="green"></stop>
+<stop offset="71.2%" stop-color="green"></stop>
+<stop offset="71.2%" stop-color="red"></stop>
+<stop offset="96.64%" stop-color="red"></stop>
+<stop offset="96.64%" stop-color="green"></stop>
+</linearGradient>
+</defs>
+</svg>

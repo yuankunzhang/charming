@@ -13,3 +13,11 @@ tokio = "1.29.1"
 echarts = { path = "../echarts" }
 serde_json = "1.0.99"
 serde = "1.0.164"
+
+[[bin]]
+name = "gallery"
+path = "src/gallery.rs"
+
+[[bin]]
+name = "generate_images"
+path = "src/images.rs"

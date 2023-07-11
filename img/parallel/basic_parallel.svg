@@ -1,0 +1,66 @@
+<svg width="600" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 600 450">
+<rect width="600" height="450" x="0" y="0" id="0" fill="none"></rect>
+<g clip-path="url(#zr35-c0)">
+<polyline points="80 175.7 226.7 115 373.3 119.4 520 266.3" fill="none" stroke="#5470c6" stroke-width="4" stroke-opacity="0.45"></polyline>
+<polyline points="80 225.2 226.7 170 373.3 135.9 520 183.8" fill="none" stroke="#5470c6" stroke-width="4" stroke-opacity="0.45"></polyline>
+<polyline points="80 60 226.7 60 373.3 192 520 348.8" fill="none" stroke="#5470c6" stroke-width="4" stroke-opacity="0.45"></polyline>
+</g>
+<path d="M80.5 390L80.5 60" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="-6" transform="translate(80 45)" fill="#6E7079">Price</text>
+<path d="M226.5 390L226.5 60" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" y="-6" transform="translate(226.6667 45)" fill="#6E7079">Net Weight</text>
+<path d="M373.5 390L373.5 60" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="-6" transform="translate(373.3333 45)" fill="#6E7079">Amount</text>
+<path d="M520.5 390L520.5 60" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="-6" transform="translate(520 45)" fill="#6E7079">Score</text>
+<path d="M80 390.5L85 390.5" fill="none" stroke="#6E7079"></path>
+<path d="M80 307.5L85 307.5" fill="none" stroke="#6E7079"></path>
+<path d="M80 225.5L85 225.5" fill="none" stroke="#6E7079"></path>
+<path d="M80 142.5L85 142.5" fill="none" stroke="#6E7079"></path>
+<path d="M80 60.5L85 60.5" fill="none" stroke="#6E7079"></path>
+<path d="M226.7 390.5L231.7 390.5" fill="none" stroke="#6E7079"></path>
+<path d="M226.7 335.5L231.7 335.5" fill="none" stroke="#6E7079"></path>
+<path d="M226.7 280.5L231.7 280.5" fill="none" stroke="#6E7079"></path>
+<path d="M226.7 225.5L231.7 225.5" fill="none" stroke="#6E7079"></path>
+<path d="M226.7 170.5L231.7 170.5" fill="none" stroke="#6E7079"></path>
+<path d="M226.7 115.5L231.7 115.5" fill="none" stroke="#6E7079"></path>
+<path d="M226.7 60.5L231.7 60.5" fill="none" stroke="#6E7079"></path>
+<path d="M373.3 390.5L378.3 390.5" fill="none" stroke="#6E7079"></path>
+<path d="M373.3 324.5L378.3 324.5" fill="none" stroke="#6E7079"></path>
+<path d="M373.3 258.5L378.3 258.5" fill="none" stroke="#6E7079"></path>
+<path d="M373.3 192.5L378.3 192.5" fill="none" stroke="#6E7079"></path>
+<path d="M373.3 126.5L378.3 126.5" fill="none" stroke="#6E7079"></path>
+<path d="M373.3 60.5L378.3 60.5" fill="none" stroke="#6E7079"></path>
+<path d="M520 390.5L525 390.5" fill="none" stroke="#6E7079"></path>
+<path d="M520 307.5L525 307.5" fill="none" stroke="#6E7079"></path>
+<path d="M520 225.5L525 225.5" fill="none" stroke="#6E7079"></path>
+<path d="M520 142.5L525 142.5" fill="none" stroke="#6E7079"></path>
+<path d="M520 60.5L525 60.5" fill="none" stroke="#6E7079"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(88 390)" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(88 307.5)" fill="#6E7079">5</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(88 225)" fill="#6E7079">10</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(88 142.5)" fill="#6E7079">15</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(88 60)" fill="#6E7079">20</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(234.6667 390)" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(234.6667 335)" fill="#6E7079">20</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(234.6667 280)" fill="#6E7079">40</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(234.6667 225)" fill="#6E7079">60</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(234.6667 170)" fill="#6E7079">80</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(234.6667 115)" fill="#6E7079">100</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(234.6667 60)" fill="#6E7079">120</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(381.3333 390)" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(381.3333 324)" fill="#6E7079">20</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(381.3333 258)" fill="#6E7079">40</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(381.3333 192)" fill="#6E7079">60</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(381.3333 126)" fill="#6E7079">80</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(381.3333 60)" fill="#6E7079">100</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(528 348.75)" fill="#6E7079">Excellent</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(528 266.25)" fill="#6E7079">Good</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(528 183.75)" fill="#6E7079">OK</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(528 101.25)" fill="#6E7079">Bad</text>
+<defs >
+<clipPath id="zr35-c0">
+<path d="M80 60l440 0l0 330l-440 0Z" fill="#000"></path>
+</clipPath>
+</defs>
+</svg>

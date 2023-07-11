@@ -1,0 +1,63 @@
+<svg width="600" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 600 450">
+<rect width="600" height="450" x="0" y="0" id="0" fill="none"></rect>
+<path d="M60 380.5L540 380.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 316.5L540 316.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 252.5L540 252.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 188.5L540 188.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 124.5L540 124.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 60.5L540 60.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60.5 60L60.5 380" fill="none" stroke="#E0E6F1"></path>
+<path d="M156.5 60L156.5 380" fill="none" stroke="#E0E6F1"></path>
+<path d="M252.5 60L252.5 380" fill="none" stroke="#E0E6F1"></path>
+<path d="M348.5 60L348.5 380" fill="none" stroke="#E0E6F1"></path>
+<path d="M444.5 60L444.5 380" fill="none" stroke="#E0E6F1"></path>
+<path d="M540.5 60L540.5 380" fill="none" stroke="#E0E6F1"></path>
+<path d="M60.5 380L60.5 60" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<path d="M60 380.5L540 380.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<path d="M60 380.5L55 380.5" fill="none" stroke="#6E7079"></path>
+<path d="M60 316.5L55 316.5" fill="none" stroke="#6E7079"></path>
+<path d="M60 252.5L55 252.5" fill="none" stroke="#6E7079"></path>
+<path d="M60 188.5L55 188.5" fill="none" stroke="#6E7079"></path>
+<path d="M60 124.5L55 124.5" fill="none" stroke="#6E7079"></path>
+<path d="M60 60.5L55 60.5" fill="none" stroke="#6E7079"></path>
+<path d="M60.5 380L60.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M156.5 380L156.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M252.5 380L252.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M348.5 380L348.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M444.5 380L444.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M540.5 380L540.5 385" fill="none" stroke="#6E7079"></path>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 380)" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 316)" fill="#6E7079">2</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 252)" fill="#6E7079">4</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 188)" fill="#6E7079">6</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 124)" fill="#6E7079">8</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 60)" fill="#6E7079">10</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(60 388)" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(156 388)" fill="#6E7079">3</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(252 388)" fill="#6E7079">6</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(348 388)" fill="#6E7079">9</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(444 388)" fill="#6E7079">12</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(540 388)" fill="#6E7079">15</text>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(10,0,0,10,380,122.72)" fill="#5470c6" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(10,0,0,10,318.24,157.6)" fill="#5470c6" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(10,0,0,10,476,137.44)" fill="#5470c6" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(10,0,0,10,349.6,98.08)" fill="#5470c6" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(10,0,0,10,412,113.44)" fill="#5470c6" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(10,0,0,10,508,134.88)" fill="#5470c6" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(10,0,0,10,488.8,162.08)" fill="#5470c6" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(10,0,0,10,380,177.44)" fill="#5470c6" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(10,0,0,10,508,93.28)" fill="#5470c6" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(10,0,0,10,460,161.76)" fill="#5470c6" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(10,0,0,10,352.8,149.6)" fill="#5470c6" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(10,0,0,10,428,149.6)" fill="#5470c6" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(10,0,0,10,156.96,244.64)" fill="#5470c6" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(10,0,0,10,450.4,129.44)" fill="#5470c6" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(10,0,0,10,124.64,236.96)" fill="#5470c6" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(10,0,0,10,93.6,273.44)" fill="#5470c6" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(10,0,0,10,189.6,221.28)" fill="#5470c6" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(10,0,0,10,252.96,148.32)" fill="#5470c6" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(10,0,0,10,444,179.68)" fill="#5470c6" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(10,0,0,10,444,97.12)" fill="#5470c6" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(10,0,0,10,286.56,193.76)" fill="#5470c6" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(10,0,0,10,220.64,198.24)" fill="#5470c6" fill-opacity="0.8"></path>
+</svg>

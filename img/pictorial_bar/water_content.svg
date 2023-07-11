@@ -1,0 +1,6 @@
+<svg width="600" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 600 450">
+<rect width="600" height="450" x="0" y="0" id="0" fill="none"></rect>
+<path d="M-5 -5l65.3 0l0 24l-65.3 0Z" transform="translate(272.33 5)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#ccc" stroke-width="0"></path>
+<path d="M19.5 7A7 7 0 1 1 19.5 6.3A7 7 0 0 1 19.5 7" transform="translate(266.83 5)" fill="#5470c6"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="30" y="7" transform="translate(266.83 5)" fill="#333">typeA</text>
+</svg>

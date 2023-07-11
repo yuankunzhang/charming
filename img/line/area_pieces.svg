@@ -1,0 +1,49 @@
+<svg width="600" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 600 450">
+<rect width="600" height="450" x="0" y="0" id="0" fill="none"></rect>
+<path d="M60 380.5L540 380.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 316.5L540 316.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 252.5L540 252.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 188.5L540 188.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 124.5L540 124.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 60.5L540 60.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 380.5L540 380.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<path d="M60.5 380L60.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M180.5 380L180.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M300.5 380L300.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M420.5 380L420.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M540.5 380L540.5 385" fill="none" stroke="#6E7079"></path>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 380)" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 316)" fill="#6E7079">200</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 252)" fill="#6E7079">400</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 188)" fill="#6E7079">600</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 124)" fill="#6E7079">800</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 60)" fill="#6E7079">1,000</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(60 388)" fill="#6E7079">2019-10-10</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(180 388)" fill="#6E7079">2019-10-12</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(300 388)" fill="#6E7079">2019-10-14</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(420 388)" fill="#6E7079">2019-10-16</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(540 388)" fill="#6E7079">2019-10-18</text>
+<g clip-path="url(#zr21-c0)">
+<path d="M60 316C60 316 76.6 264.5 120 200.8C148.6 158.9 143 140 180 140C215 140 211.2 156 240 194.4C283.2 252 252.4 300 300 300C324.4 300 327.8 300 360 284C399.8 264.2 384 236 420 236C456 236 446.4 252.6 480 284C518.4 319.8 540 348 540 348L540 380L480 380L420 380L360 380L300 380L240 380L180 380L120 380L60 380Z" fill="url(#zr21-g0)" fill-opacity="0.7"></path>
+<path d="M60 316C60 316 76.6 264.5 120 200.8C148.6 158.9 143 140 180 140C215 140 211.2 156 240 194.4C283.2 252 252.4 300 300 300C324.4 300 327.8 300 360 284C399.8 264.2 384 236 420 236C456 236 446.4 252.6 480 284C518.4 319.8 540 348 540 348" fill="none" stroke="#5470C6" stroke-width="5" stroke-linejoin="bevel"></path>
+</g>
+<path d="M120.5 380L120.5 60" fill="none" stroke="#5470c6" stroke-dasharray="4,2"></path>
+<path d="M240.5 380L240.5 60" fill="none" stroke="#5470c6" stroke-dasharray="4,2"></path>
+<path d="M420.5 380L420.5 60" fill="none" stroke="#5470c6" stroke-dasharray="4,2"></path>
+<path d="M480.5 380L480.5 60" fill="none" stroke="#5470c6" stroke-dasharray="4,2"></path>
+<defs >
+<clipPath id="zr21-c0">
+<path d="M57 57.5l485 0l0 325l-485 0Z" fill="#000"></path>
+</clipPath>
+<linearGradient gradientUnits="userSpaceOnUse" x1="110" y1="0" x2="490" y2="0" id="zr21-g0">
+<stop offset="2.63%" stop-color="rgb(0,0,0)" stop-opacity="0"></stop>
+<stop offset="2.63%" stop-color="rgb(0,0,180)" stop-opacity="0.4"></stop>
+<stop offset="34.21%" stop-color="rgb(0,0,180)" stop-opacity="0.4"></stop>
+<stop offset="34.21%" stop-color="rgb(0,0,0)" stop-opacity="0"></stop>
+<stop offset="65.79%" stop-color="rgb(0,0,0)" stop-opacity="0"></stop>
+<stop offset="65.79%" stop-color="rgb(0,0,180)" stop-opacity="0.4"></stop>
+<stop offset="97.37%" stop-color="rgb(0,0,180)" stop-opacity="0.4"></stop>
+<stop offset="97.37%" stop-color="rgb(0,0,0)" stop-opacity="0"></stop>
+</linearGradient>
+</defs>
+</svg>

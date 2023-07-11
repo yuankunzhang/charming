@@ -1,0 +1,62 @@
+<svg width="600" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 600 450">
+<rect width="600" height="450" x="0" y="0" id="0" fill="none"></rect>
+<path d="M60 380.5L540 380.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 316.5L540 316.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 252.5L540 252.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 188.5L540 188.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 124.5L540 124.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M60 60.5L540 60.5" fill="none" stroke="#E0E6F1"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="-6" transform="translate(60 45)" fill="#6E7079">Income</text>
+<path d="M60 380.5L540 380.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<path d="M60.5 380L60.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M96.5 380L96.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M132.5 380L132.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M169.5 380L169.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M205.5 380L205.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M242.5 380L242.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M278.5 380L278.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M314.5 380L314.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M351.5 380L351.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M387.5 380L387.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M423.5 380L423.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M460.5 380L460.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M496.5 380L496.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M532.5 380L532.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M540.5 380L540.5 385" fill="none" stroke="#6E7079"></path>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 380)" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 316)" fill="#6E7079">10,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 252)" fill="#6E7079">20,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 188)" fill="#6E7079">30,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 124)" fill="#6E7079">40,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 60)" fill="#6E7079">50,000</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(63.6364 388)" fill="#6E7079">1950</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(100 388)" fill="#6E7079">1955</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(136.3636 388)" fill="#6E7079">1960</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(172.7273 388)" fill="#6E7079">1965</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(209.0909 388)" fill="#6E7079">1970</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(245.4545 388)" fill="#6E7079">1975</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(281.8182 388)" fill="#6E7079">1980</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(318.1818 388)" fill="#6E7079">1985</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(354.5455 388)" fill="#6E7079">1990</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(390.9091 388)" fill="#6E7079">1995</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(427.2727 388)" fill="#6E7079">2000</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(463.6364 388)" fill="#6E7079">2005</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(500 388)" fill="#6E7079">2010</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(536.3636 388)" fill="#6E7079">2015</text>
+<g clip-path="url(#zr25-c0)">
+<path d="M63.6 333.6L70.9 329.5L78.2 325.2L85.5 320.8L92.7 316.5L100 309.6L107.3 304.8L114.5 300.7L121.8 297.5L129.1 291.9L136.4 285.2L143.6 282L150.9 278.4L158.2 276.2L165.5 270.6L172.7 265.8L180 263.1L187.3 262.8L194.5 256.8L201.8 249.4L209.1 244.2L216.4 241.2L223.6 236L230.9 229.8L238.2 228.6L245.5 228.8L252.7 220.6L260 215.7L267.3 210.8L274.5 203.9L281.8 202.3L289.1 201.8L296.4 203.1L303.6 199.3L310.9 193.5L318.2 189L325.5 184.7L332.7 181.7L340 175.8L347.3 170.7L354.5 178.6L361.8 169.8L369.1 167.4L376.4 170.8L383.6 166.4L390.9 163.4L398.2 162.3L405.5 158.7L412.7 154.4L420 150L427.3 143.5L434.5 139.9L441.8 140.3L449.1 142.1L456.4 139.3L463.6 137.4L470.9 128.1L478.2 119.6L485.5 116.3L492.7 130.6L500 120L507.3 110.7L514.5 105.1L521.8 105.5L529.1 102L536.4 98.1" fill="none" stroke="#5470c6" stroke-width="2" stroke-linejoin="bevel"></path>
+</g>
+<g clip-path="url(#zr25-c1)">
+<path d="M63.6 329.4L70.9 326.9L78.2 325.9L85.5 324.8L92.7 322.4L100 319.5L107.3 316.6L114.5 313.2L121.8 311.6L129.1 310.2L136.4 305.5L143.6 302.1L150.9 298.3L158.2 295.3L165.5 290.6L172.7 287.1L180 283L187.3 279.1L194.5 275.5L201.8 269L209.1 263.6L216.4 259.1L223.6 254.8L230.9 248.9L238.2 245.6L245.5 246.6L252.7 241.4L260 237.5L267.3 233.3L274.5 228.7L281.8 226.6L289.1 225.2L296.4 221.6L303.6 218.8L310.9 216.8L318.2 214.1L325.5 210.7L332.7 207.4L340 200.2L347.3 194.8L354.5 191.4L361.8 189.9L369.1 187.8L376.4 189.8L383.6 186.1L390.9 182.7L398.2 180.7L405.5 176.8L412.7 170.3L420 164.3L427.3 157.4L434.5 154.7L441.8 153.9L449.1 153.6L456.4 149L463.6 147.1L470.9 143.2L478.2 139.1L485.5 140L492.7 148.2L500 144.8L507.3 141.1L514.5 141.7L521.8 141.2L529.1 141.8L536.4 139.4" fill="none" stroke="#91cc75" stroke-width="2" stroke-linejoin="bevel"></path>
+</g>
+<path d="M-5 -5l357.6 0l0 28l-357.6 0Z" transform="translate(5 5)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#ccc" stroke-width="0"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:18px;font-family:sans-serif;font-weight:bold;" xml:space="preserve" y="9" transform="translate(5 5)" fill="#464646">Income of Germany and France since 1950</text>
+<defs >
+<clipPath id="zr25-c0">
+<path d="M59 59l482 0l0 322l-482 0Z" fill="#000"></path>
+</clipPath>
+<clipPath id="zr25-c1">
+<path d="M59 59l482 0l0 322l-482 0Z" fill="#000"></path>
+</clipPath>
+</defs>
+</svg>

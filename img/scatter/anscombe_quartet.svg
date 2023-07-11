@@ -1,0 +1,197 @@
+<svg width="600" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 600 450">
+<rect width="600" height="450" x="0" y="0" id="0" fill="none"></rect>
+<path d="M42 202.5L270 202.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M42 168.5L270 168.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M42 134.5L270 134.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M42 100.5L270 100.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M42 65.5L270 65.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M42 31.5L270 31.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M330 202.5L558 202.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M330 168.5L558 168.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M330 134.5L558 134.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M330 100.5L558 100.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M330 65.5L558 65.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M330 31.5L558 31.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M42 418.5L270 418.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M42 384.5L270 384.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M42 350.5L270 350.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M42 316.5L270 316.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M42 281.5L270 281.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M42 247.5L270 247.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M330 418.5L558 418.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M330 384.5L558 384.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M330 350.5L558 350.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M330 316.5L558 316.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M330 281.5L558 281.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M330 247.5L558 247.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M42.5 31.5L42.5 202.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M99.5 31.5L99.5 202.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M156.5 31.5L156.5 202.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M213.5 31.5L213.5 202.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M270.5 31.5L270.5 202.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M330.5 31.5L330.5 202.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M387.5 31.5L387.5 202.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M444.5 31.5L444.5 202.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M501.5 31.5L501.5 202.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M558.5 31.5L558.5 202.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M42.5 247.5L42.5 418.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M99.5 247.5L99.5 418.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M156.5 247.5L156.5 418.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M213.5 247.5L213.5 418.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M270.5 247.5L270.5 418.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M330.5 247.5L330.5 418.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M387.5 247.5L387.5 418.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M444.5 247.5L444.5 418.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M501.5 247.5L501.5 418.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M558.5 247.5L558.5 418.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M42.5 202.5L42.5 31.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<path d="M330.5 202.5L330.5 31.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<path d="M42.5 418.5L42.5 247.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<path d="M330.5 418.5L330.5 247.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<path d="M42 202.5L270 202.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<path d="M330 202.5L558 202.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<path d="M42 418.5L270 418.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<path d="M330 418.5L558 418.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<path d="M42 202.5L37 202.5" fill="none" stroke="#6E7079"></path>
+<path d="M42 168.5L37 168.5" fill="none" stroke="#6E7079"></path>
+<path d="M42 134.5L37 134.5" fill="none" stroke="#6E7079"></path>
+<path d="M42 100.5L37 100.5" fill="none" stroke="#6E7079"></path>
+<path d="M42 65.5L37 65.5" fill="none" stroke="#6E7079"></path>
+<path d="M42 31.5L37 31.5" fill="none" stroke="#6E7079"></path>
+<path d="M330 202.5L325 202.5" fill="none" stroke="#6E7079"></path>
+<path d="M330 168.5L325 168.5" fill="none" stroke="#6E7079"></path>
+<path d="M330 134.5L325 134.5" fill="none" stroke="#6E7079"></path>
+<path d="M330 100.5L325 100.5" fill="none" stroke="#6E7079"></path>
+<path d="M330 65.5L325 65.5" fill="none" stroke="#6E7079"></path>
+<path d="M330 31.5L325 31.5" fill="none" stroke="#6E7079"></path>
+<path d="M42 418.5L37 418.5" fill="none" stroke="#6E7079"></path>
+<path d="M42 384.5L37 384.5" fill="none" stroke="#6E7079"></path>
+<path d="M42 350.5L37 350.5" fill="none" stroke="#6E7079"></path>
+<path d="M42 316.5L37 316.5" fill="none" stroke="#6E7079"></path>
+<path d="M42 281.5L37 281.5" fill="none" stroke="#6E7079"></path>
+<path d="M42 247.5L37 247.5" fill="none" stroke="#6E7079"></path>
+<path d="M330 418.5L325 418.5" fill="none" stroke="#6E7079"></path>
+<path d="M330 384.5L325 384.5" fill="none" stroke="#6E7079"></path>
+<path d="M330 350.5L325 350.5" fill="none" stroke="#6E7079"></path>
+<path d="M330 316.5L325 316.5" fill="none" stroke="#6E7079"></path>
+<path d="M330 281.5L325 281.5" fill="none" stroke="#6E7079"></path>
+<path d="M330 247.5L325 247.5" fill="none" stroke="#6E7079"></path>
+<path d="M42.5 202.5L42.5 207.5" fill="none" stroke="#6E7079"></path>
+<path d="M99.5 202.5L99.5 207.5" fill="none" stroke="#6E7079"></path>
+<path d="M156.5 202.5L156.5 207.5" fill="none" stroke="#6E7079"></path>
+<path d="M213.5 202.5L213.5 207.5" fill="none" stroke="#6E7079"></path>
+<path d="M270.5 202.5L270.5 207.5" fill="none" stroke="#6E7079"></path>
+<path d="M330.5 202.5L330.5 207.5" fill="none" stroke="#6E7079"></path>
+<path d="M387.5 202.5L387.5 207.5" fill="none" stroke="#6E7079"></path>
+<path d="M444.5 202.5L444.5 207.5" fill="none" stroke="#6E7079"></path>
+<path d="M501.5 202.5L501.5 207.5" fill="none" stroke="#6E7079"></path>
+<path d="M558.5 202.5L558.5 207.5" fill="none" stroke="#6E7079"></path>
+<path d="M42.5 418.5L42.5 423.5" fill="none" stroke="#6E7079"></path>
+<path d="M99.5 418.5L99.5 423.5" fill="none" stroke="#6E7079"></path>
+<path d="M156.5 418.5L156.5 423.5" fill="none" stroke="#6E7079"></path>
+<path d="M213.5 418.5L213.5 423.5" fill="none" stroke="#6E7079"></path>
+<path d="M270.5 418.5L270.5 423.5" fill="none" stroke="#6E7079"></path>
+<path d="M330.5 418.5L330.5 423.5" fill="none" stroke="#6E7079"></path>
+<path d="M387.5 418.5L387.5 423.5" fill="none" stroke="#6E7079"></path>
+<path d="M444.5 418.5L444.5 423.5" fill="none" stroke="#6E7079"></path>
+<path d="M501.5 418.5L501.5 423.5" fill="none" stroke="#6E7079"></path>
+<path d="M558.5 418.5L558.5 423.5" fill="none" stroke="#6E7079"></path>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(34 202.5)" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(34 168.3)" fill="#6E7079">3</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(34 134.1)" fill="#6E7079">6</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(34 99.9)" fill="#6E7079">9</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(34 65.7)" fill="#6E7079">12</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(34 31.5)" fill="#6E7079">15</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(322 202.5)" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(322 168.3)" fill="#6E7079">3</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(322 134.1)" fill="#6E7079">6</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(322 99.9)" fill="#6E7079">9</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(322 65.7)" fill="#6E7079">12</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(322 31.5)" fill="#6E7079">15</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(34 418.5)" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(34 384.3)" fill="#6E7079">3</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(34 350.1)" fill="#6E7079">6</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(34 315.9)" fill="#6E7079">9</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(34 281.7)" fill="#6E7079">12</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(34 247.5)" fill="#6E7079">15</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(322 418.5)" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(322 384.3)" fill="#6E7079">3</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(322 350.1)" fill="#6E7079">6</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(322 315.9)" fill="#6E7079">9</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(322 281.7)" fill="#6E7079">12</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(322 247.5)" fill="#6E7079">15</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(42 210.5)" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(99 210.5)" fill="#6E7079">5</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(156 210.5)" fill="#6E7079">10</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(213 210.5)" fill="#6E7079">15</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(270 210.5)" fill="#6E7079">20</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(330 210.5)" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(387 210.5)" fill="#6E7079">5</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(444 210.5)" fill="#6E7079">10</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(501 210.5)" fill="#6E7079">15</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(558 210.5)" fill="#6E7079">20</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(42 426.5)" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(99 426.5)" fill="#6E7079">5</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(156 426.5)" fill="#6E7079">10</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(213 426.5)" fill="#6E7079">15</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(270 426.5)" fill="#6E7079">20</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(330 426.5)" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(387 426.5)" fill="#6E7079">5</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(444 426.5)" fill="#6E7079">10</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(501 426.5)" fill="#6E7079">15</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(558 426.5)" fill="#6E7079">20</text>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,156,110.844)" fill="#5470c6" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,133.2,123.27)" fill="#5470c6" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,190.2,116.088)" fill="#5470c6" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,144.6,102.066)" fill="#5470c6" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,167.4,107.538)" fill="#5470c6" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,201.6,88.956)" fill="#5470c6" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,110.4,119.964)" fill="#5470c6" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,87.6,153.936)" fill="#5470c6" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,178.8,78.924)" fill="#5470c6" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,121.8,147.552)" fill="#5470c6" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,99,137.748)" fill="#5470c6" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,444,98.304)" fill="#91cc75" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,421.2,109.704)" fill="#91cc75" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,478.2,102.864)" fill="#91cc75" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,432.6,102.522)" fill="#91cc75" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,455.4,96.936)" fill="#91cc75" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,489.6,110.16)" fill="#91cc75" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,398.4,132.618)" fill="#91cc75" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,375.6,167.16)" fill="#91cc75" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,466.8,98.418)" fill="#91cc75" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,409.8,119.736)" fill="#91cc75" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,387,148.464)" fill="#91cc75" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,156,333.456)" fill="#fac858" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,133.2,341.322)" fill="#fac858" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,190.2,273.264)" fill="#fac858" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,144.6,337.446)" fill="#fac858" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,167.4,329.466)" fill="#fac858" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,201.6,317.724)" fill="#fac858" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,110.4,349.188)" fill="#fac858" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,87.6,357.054)" fill="#fac858" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,178.8,325.59)" fill="#fac858" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,121.8,345.312)" fill="#fac858" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,99,353.178)" fill="#fac858" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,421.2,343.488)" fill="#ee6666" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,421.2,352.836)" fill="#ee6666" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,421.2,330.606)" fill="#ee6666" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,421.2,317.724)" fill="#ee6666" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,421.2,321.942)" fill="#ee6666" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,421.2,338.244)" fill="#ee6666" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,421.2,358.65)" fill="#ee6666" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,546.6,276)" fill="#ee6666" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,421.2,355.116)" fill="#ee6666" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,421.2,328.326)" fill="#ee6666" fill-opacity="0.8"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,421.2,339.954)" fill="#ee6666" fill-opacity="0.8"></path>
+<path d="M42 168.3L270 54.3" fill="none" stroke="#5470c6"></path>
+<path d="M330 168.3L558 54.3" fill="none" stroke="#91cc75"></path>
+<path d="M42 384.3L270 270.3" fill="none" stroke="#fac858"></path>
+<path d="M330 384.3L558 270.3" fill="none" stroke="#ee6666"></path>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(274.4721 52.0639)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">y = 0.5 * x + 3</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(562.4721 52.0639)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">y = 0.5 * x + 3</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(274.4721 268.0639)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">y = 0.5 * x + 3</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(562.4721 268.0639)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">y = 0.5 * x + 3</text>
+<path d="M-84.6 -5l169.1 0l0 28l-169.1 0Z" transform="translate(300 5)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#ccc" stroke-width="0"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:18px;font-family:sans-serif;font-weight:bold;" xml:space="preserve" y="9" transform="translate(300 5)" fill="#464646">Anscombe&#39;s quartet</text>
+</svg>

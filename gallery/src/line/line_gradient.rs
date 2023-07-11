@@ -105,7 +105,7 @@ pub fn chart() -> Chart {
                 .grid_index(1),
         )
         .y_axis(Axis::new())
-        .y_axis(Axis::new().grid_index(2))
+        .y_axis(Axis::new().grid_index(1))
         .grid(Grid::new().bottom("60%"))
         .grid(Grid::new().top("60%"))
         .series(Line::new().show_symbol(false).data(value_list.clone()))
