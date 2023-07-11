@@ -49,27 +49,124 @@ It is powerful, the code file [gallery/src/dataset/encode_and_matrix.rs](./galle
 
 ## Gallery
 
+Click on any single chart to view its source code file.
+
 ### Bar Charts
 
 <div align="center">
-<a href="./gallery/src/bar/bar_with_background.rs"><img src="./img/bar/bar_with_background.svg" width="40%" alt="bar with background" /></a>
-<a href="./gallery/src/bar/basic_bar.rs"><img src="./img/bar/basic_bar.svg" width="40%" alt="basic bar" /></a>
-<a href="./gallery/src/bar/set_style_of_single_bar.rs"><img src="./img/bar/set_style_of_single_bar.svg" width="40%" alt="set style of single bar" /></a>
-<a href="./gallery/src/bar/stacked_column.rs"><img src="./img/bar/stacked_column.svg" width="40%" alt="stacked column" /></a>
-<a href="./gallery/src/bar/tangential_polar_bar.rs"><img src="./img/bar/tangential_polar_bar.svg" width="40%" alt="tangential polar bar" /></a>
-<a href="./gallery/src/bar/waterfall.rs"><img src="./img/bar/waterfall.svg" width="40%" alt="waterfall" /></a>
-<a href="./gallery/src/bar/world_population.rs"><img src="./img/bar/world_population.svg" width="40%" alt="world population" /></a>
+<a href="./gallery/src/bar/bar_with_background.rs"><img src="./img/bar/bar_with_background.svg" width="40%" alt="Bar with Background" /></a>
+<a href="./gallery/src/bar/basic_bar.rs"><img src="./img/bar/basic_bar.svg" width="40%" alt="Basic Bar" /></a>
+<a href="./gallery/src/bar/set_style_of_single_bar.rs"><img src="./img/bar/set_style_of_single_bar.svg" width="40%" alt="Set Style of Single Bar" /></a>
+<a href="./gallery/src/bar/stacked_column.rs"><img src="./img/bar/stacked_column.svg" width="40%" alt="Stacked Column" /></a>
+<a href="./gallery/src/bar/tangential_polar_bar.rs"><img src="./img/bar/tangential_polar_bar.svg" width="40%" alt="Tangential Polar Bar" /></a>
+<a href="./gallery/src/bar/waterfall.rs"><img src="./img/bar/waterfall.svg" width="40%" alt="Waterfall" /></a>
+<a href="./gallery/src/bar/world_population.rs"><img src="./img/bar/world_population.svg" width="40%" alt="World Population" /></a>
 </div>
 
 ### Boxplot Charts
 
 <div align="center">
-<a href="./gallery/src/boxplot/boxplot_light_velocity.rs"><img src="./img/boxplot/boxplot_light_velocity.svg" width="40%" alt="boxplot light velocity" /></a>
+<a href="./gallery/src/boxplot/boxplot_light_velocity.rs"><img src="./img/boxplot/boxplot_light_velocity.svg" width="40%" alt="Boxplot Light Velocity" /></a>
 </div>
 
 ### Candlestick Charts
 
 <div align="center">
-<a href="./gallery/src/candlestick/basic_candlestick.rs"><img src="./img/candlestick/basic_candlestick.svg" width="40%" alt="basic candlestick" /></a>
-<a href="./gallery/src/candlestick/shanghai_index.rs"><img src="./img/candlestick/shanghai_index.svg" width="40%" alt="shanghai_index" /></a>
+<a href="./gallery/src/candlestick/basic_candlestick.rs"><img src="./img/candlestick/basic_candlestick.svg" width="40%" alt="Basic Candlestick" /></a>
+<a href="./gallery/src/candlestick/shanghai_index.rs"><img src="./img/candlestick/shanghai_index.svg" width="40%" alt="Shanghai Index" /></a>
+</div>
+
+### Funnel Charts
+
+<div align="center">
+<a href="./gallery/src/funnel/multiple_funnels.rs"><img src="./img/funnel/multiple_funnels.svg" width="40%" alt="Multiple Funnels" /></a>
+</div>
+
+### Gauge Charts
+
+<div align="center">
+<a href="./gallery/src/gauge/gauge_barometer.rs"><img src="./img/gauge/gauge_barometer.svg" width="40%" alt="Gauge Barometer" /></a>
+<a href="./gallery/src/gauge/gauge_basic.rs"><img src="./img/gauge/gauge_basic.svg" width="40%" alt="Gauge Basic" /></a>
+<a href="./gallery/src/gauge/gauge_simple.rs"><img src="./img/gauge/gauge_simple.svg" width="40%" alt="Gauge Simple" /></a>
+</div>
+
+### Graph Charts
+
+<div align="center">
+<a href="./gallery/src/graph/hide_overlapped_label.rs"><img src="./img/graph/hide_overlapped_label.svg" width="40%" alt="Hide Overlapped Label" /></a>
+<a href="./gallery/src/graph/les_miserables.rs"><img src="./img/graph/les_miserables.svg" width="40%" alt="Les Miserables" /></a>
+</div>
+
+### Line Charts
+
+<div align="center">
+<a href="./gallery/src/line/area_pieces.rs"><img src="./img/line/area_pieces.svg" width="40%" alt="Area Pieces" /></a>
+<a href="./gallery/src/line/basic_area.rs"><img src="./img/line/basic_area.svg" width="40%" alt="Basic Area" /></a>
+<a href="./gallery/src/line/basic_line.rs"><img src="./img/line/basic_line.svg" width="40%" alt="Basic Line" /></a>
+<a href="./gallery/src/line/confidence_band.rs"><img src="./img/line/confidence_band.svg" width="40%" alt="Confidence Band" /></a>
+<a href="./gallery/src/line/data_transform_filter.rs"><img src="./img/line/data_transform_filter.svg" width="40%" alt="Data Transform Filter" /></a>
+<a href="./gallery/src/line/distribution_of_electricity.rs"><img src="./img/line/distribution_of_electricity.svg" width="40%" alt="Distribution of Electricity" /></a>
+<a href="./gallery/src/line/gradient_stacked_area.rs"><img src="./img/line/gradient_stacked_area.svg" width="40%" alt="Gradient Stacked Area" /></a>
+<a href="./gallery/src/line/large_scale_area.rs"><img src="./img/line/large_scale_area.svg" width="40%" alt="Large Scale Area" /></a>
+<a href="./gallery/src/line/line_gradient.rs"><img src="./img/line/line_gradient.svg" width="40%" alt="Line Gradient" /></a>
+<a href="./gallery/src/line/smoothed_line.rs"><img src="./img/line/smoothed_line.svg" width="40%" alt="Smoothed Line" /></a>
+<a href="./gallery/src/line/stacked_area.rs"><img src="./img/line/stacked_area.svg" width="40%" alt="Stacked Area" /></a>
+<a href="./gallery/src/line/stacked_line.rs"><img src="./img/line/stacked_line.svg" width="40%" alt="Stacked Line" /></a>
+<a href="./gallery/src/line/temperature_change.rs"><img src="./img/line/temperature_change.svg" width="40%" alt="Temperature Change" /></a>
+</div>
+
+### Parallel Charts
+
+<div align="center">
+<a href="./gallery/src/parallel/basic_parallel.rs"><img src="./img/parallel/basic_parallel.svg" width="40%" alt="Basic Parallel" /></a>
+<a href="./gallery/src/parallel/parallel_aqi.rs"><img src="./img/parallel/parallel_aqi.svg" width="40%" alt="Parallel AQI" /></a>
+</div>
+
+### Pie Charts
+
+<div align="center">
+<a href="./gallery/src/pie/nightingale.rs"><img src="./img/pie/nightingale.svg" width="40%" alt="Nightingale" /></a>
+<a href="./gallery/src/pie/referer_of_a_website.rs"><img src="./img/pie/referer_of_a_website.svg" width="40%" alt="Referer of a Website" /></a>
+</div>
+
+### Radar Charts
+
+<div align="center">
+<a href="./gallery/src/radar/multiple_radar.rs"><img src="./img/radar/multiple_radar.svg" width="40%" alt="Multiple Radar" /></a>
+</div>
+
+### Sankey Charts
+
+<div align="center">
+<a href="./gallery/src/sankey/basic_sankey.rs"><img src="./img/sankey/basic_sankey.svg" width="40%" alt="Basic Sankey" /></a>
+<a href="./gallery/src/sankey/node_align_left_sankey.rs"><img src="./img/sankey/node_align_left_sankey.svg" width="40%" alt="Node Align Left Sankey" /></a>
+<a href="./gallery/src/sankey/sankey_orient_vertical.rs"><img src="./img/sankey/sankey_orient_vertical.svg" width="40%" alt="Sankey Orient Vertical" /></a>
+</div>
+
+### Scatter Charts
+
+<div align="center">
+<a href="./gallery/src/scatter/anscombe_quartet.rs"><img src="./img/scatter/anscombe_quartet.svg" width="40%" alt="Anscombe Quartet" /></a>
+<a href="./gallery/src/scatter/basic_scatter.rs"><img src="./img/scatter/basic_scatter.svg" width="40%" alt="Basic Scatter" /></a>
+<a href="./gallery/src/scatter/effect_scatter.rs"><img src="./img/scatter/effect_scatter.svg" width="40%" alt="Effect Scatter" /></a>
+<a href="./gallery/src/scatter/punch_cart_of_github.rs"><img src="./img/scatter/punch_card_of_github.svg" width="40%" alt="Punch Card of Github" /></a>
+</div>
+
+### Sunburst Charts
+
+<div align="center">
+<a href="./gallery/src/sunburst/drink_flavors.rs"><img src="./img/sunburst/drink_flavors.svg" width="40%" alt="Drink Flavors" /></a>
+</div>
+
+### Theme River Charts
+
+<div align="center">
+<a href="./gallery/src/theme_river/theme_river_lastfm.rs"><img src="./img/theme_river/theme_river_lastfm.svg" width="40%" alt="Theme River LastFM" /></a>
+</div>
+
+### Tree Charts
+
+<div align="center">
+<a href="./gallery/src/tree/from_left_to_right_tree.rs"><img src="./img/tree/from_left_to_right_tree.svg" width="40%" alt="From Left to Right Tree" /></a>
+<a href="./gallery/src/tree/multiple_trees.rs"><img src="./img/tree/multiple_trees.svg" width="40%" alt="Multiple Trees" /></a>
 </div>
