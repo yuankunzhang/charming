@@ -6,8 +6,8 @@ use axum::{
     routing::get,
     Router,
 };
-use echarts::HtmlRenderer;
-use echarts_gallery::CHARTS;
+use charming::HtmlRenderer;
+use charming_gallery::CHARTS;
 
 #[tokio::main]
 async fn main() {

@@ -1,4 +1,4 @@
-use echarts::{
+use charming::{
     component::{
         ParallelAxis, ParallelAxisDefault, ParallelCoordinate, Title, Tooltip, VisualMap,
         VisualMapChannel, VisualMapType,

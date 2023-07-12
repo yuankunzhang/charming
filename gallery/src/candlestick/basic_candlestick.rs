@@ -1,4 +1,4 @@
-use echarts::{component::Axis, df, series::Candlestick, Chart};
+use charming::{component::Axis, df, series::Candlestick, Chart};
 
 pub fn chart() -> Chart {
     Chart::new()

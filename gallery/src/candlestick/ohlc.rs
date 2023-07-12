@@ -1,4 +1,4 @@
-use echarts::{
+use charming::{
     component::{
         Axis, DataZoom, DataZoomType, Grid, Legend, Toolbox, ToolboxFeature, ToolboxFeatureBrush,
         ToolboxFeatureBrushType, ToolboxFeatureDataZoom, Tooltip,

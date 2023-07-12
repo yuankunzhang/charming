@@ -1,4 +1,4 @@
-use echarts::{
+use charming::{
     component::{Axis, Title, Tooltip},
     datatype::{CompositeValue, Dataset, Source, Transform},
     element::{AxisType, DimensionEncode, NameLocation, TooltipTrigger},

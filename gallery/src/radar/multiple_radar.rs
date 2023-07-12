@@ -1,4 +1,4 @@
-use echarts::{
+use charming::{
     component::{Legend, RadarCoordinate, Title, Tooltip},
     element::{AreaStyle, TooltipTrigger},
     series::Radar,

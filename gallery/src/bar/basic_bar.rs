@@ -1,4 +1,4 @@
-use echarts::{component::Axis, element::AxisType, series::Bar, Chart};
+use charming::{component::Axis, element::AxisType, series::Bar, Chart};
 
 pub fn chart() -> Chart {
     Chart::new()

@@ -1,4 +1,4 @@
-use echarts::{
+use charming::{
     component::Axis,
     element::{AreaStyle, AxisType},
     series::Line,

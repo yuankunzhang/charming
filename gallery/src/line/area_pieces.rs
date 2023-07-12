@@ -1,4 +1,4 @@
-use echarts::{
+use charming::{
     component::{Axis, VisualMap, VisualMapPiece, VisualMapType},
     df,
     element::{

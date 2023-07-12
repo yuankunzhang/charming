@@ -222,6 +222,33 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 
 [[package]]
+name = "charming"
+version = "0.1.0"
+dependencies = [
+ "deno_core",
+ "gdk-pixbuf",
+ "handlebars",
+ "serde",
+ "serde_json",
+ "serde_v8",
+]
+
+[[package]]
+name = "charming-gallery"
+version = "0.1.0"
+dependencies = [
+ "askama",
+ "axum",
+ "charming",
+ "chrono",
+ "lazy_static",
+ "rand",
+ "serde",
+ "serde_json",
+ "tokio",
+]
+
+[[package]]
 name = "chrono"
 version = "0.4.26"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -365,33 +392,6 @@ checksum = "9ed9a281f7bc9b7576e61468ba615a66a5c8cfdff42420a70aa82701a3b1e292"
 dependencies = [
  "block-buffer",
  "crypto-common",
-]
-
-[[package]]
-name = "echarts"
-version = "0.1.0"
-dependencies = [
- "deno_core",
- "gdk-pixbuf",
- "handlebars",
- "serde",
- "serde_json",
- "serde_v8",
-]
-
-[[package]]
-name = "echarts-gallery"
-version = "0.1.0"
-dependencies = [
- "askama",
- "axum",
- "chrono",
- "echarts",
- "lazy_static",
- "rand",
- "serde",
- "serde_json",
- "tokio",
 ]
 
 [[package]]

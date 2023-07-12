@@ -1,4 +1,4 @@
-use echarts::{
+use charming::{
     component::{Axis, Grid, Title, Tooltip, VisualMap, VisualMapType},
     element::TooltipTrigger,
     series::Line,

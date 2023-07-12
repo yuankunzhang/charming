@@ -1,4 +1,4 @@
-use echarts::{
+use charming::{
     component::{Legend, Tooltip, TooltipTriggerOn},
     element::{
         Emphasis, EmphasisFocus, Label, LabelAlign, LabelPosition, LabelVerticalAlign, Orient,

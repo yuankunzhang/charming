@@ -1,4 +1,4 @@
-use echarts::{
+use charming::{
     component::{Legend, LegendType, RadarCoordinate, Title, Tooltip, VisualMap},
     datatype::{DataPoint, DataPointItem},
     element::{AreaStyle, Emphasis, LineStyle, Symbol, TooltipTrigger},

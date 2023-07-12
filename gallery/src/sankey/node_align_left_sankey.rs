@@ -1,4 +1,4 @@
-use echarts::{
+use charming::{
     component::{Title, Tooltip, TooltipTriggerOn},
     element::{Emphasis, EmphasisFocus, LineStyle, TooltipTrigger},
     series::{Sankey, SankeyLink, SankeyNode, SankeyNodeAlign},

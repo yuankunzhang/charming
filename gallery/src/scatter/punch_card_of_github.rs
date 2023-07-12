@@ -1,4 +1,4 @@
-use echarts::{
+use charming::{
     component::{AngleAxis, Legend, Polar, RadiusAxis, Title, Tooltip},
     df,
     element::{AxisLabel, AxisLine, AxisType, CoordinateSystem, SplitLine},

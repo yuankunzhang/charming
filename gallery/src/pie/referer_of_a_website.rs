@@ -1,4 +1,4 @@
-use echarts::{
+use charming::{
     component::{Legend, Title, Tooltip},
     df,
     element::{Emphasis, ItemStyle, Orient, TooltipTrigger},

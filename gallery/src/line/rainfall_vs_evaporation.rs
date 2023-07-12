@@ -1,6 +1,6 @@
 use std::vec;
 
-use echarts::{
+use charming::{
     component::{
         Axis, DataZoom, DataZoomType, Grid, Legend, Title, Toolbox, ToolboxFeature,
         ToolboxFeatureDataZoom, ToolboxFeatureRestore, ToolboxFeatureSaveAsImage, Tooltip,

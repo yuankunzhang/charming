@@ -1,4 +1,4 @@
-use echarts::{component::Axis, series::Scatter, Chart};
+use charming::{component::Axis, series::Scatter, Chart};
 
 pub fn chart() -> Chart {
     Chart::new().x_axis(Axis::new()).y_axis(Axis::new()).series(

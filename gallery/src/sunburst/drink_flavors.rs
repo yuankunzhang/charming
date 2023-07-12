@@ -1,4 +1,4 @@
-use echarts::{
+use charming::{
     component::Title,
     element::{
         Emphasis, EmphasisFocus, ItemStyle, Label, LabelAlign, LabelPosition, Sort, TextStyle,

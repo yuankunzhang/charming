@@ -1,4 +1,4 @@
-use echarts::{
+use charming::{
     element::{Emphasis, EmphasisFocus},
     series::Sankey,
     Chart,

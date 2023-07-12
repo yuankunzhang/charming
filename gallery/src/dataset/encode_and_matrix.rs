@@ -1,4 +1,4 @@
-use echarts::{
+use charming::{
     component::{Axis, Grid, Legend, Toolbox, ToolboxFeature, ToolboxFeatureDataZoom, Tooltip},
     datatype::{CompositeValue, Dataset},
     dim,

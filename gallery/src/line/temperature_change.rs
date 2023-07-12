@@ -1,4 +1,4 @@
-use echarts::{
+use charming::{
     component::{
         Axis, Legend, Title, Toolbox, ToolboxFeature, ToolboxFeatureDataView,
         ToolboxFeatureDataZoom, ToolboxFeatureMagicType, ToolboxFeatureMagicTypeType,

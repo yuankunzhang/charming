@@ -1,4 +1,4 @@
-use echarts::{
+use charming::{
     df,
     element::{Anchor, AxisLabel, AxisLine, AxisTick, ItemStyle, LineStyle, Pointer, SplitLine},
     series::{Gauge, GaugeDetail, GaugeTitle},

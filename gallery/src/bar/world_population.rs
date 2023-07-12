@@ -1,4 +1,4 @@
-use echarts::{
+use charming::{
     component::{Axis, Grid, Legend, Title, Tooltip},
     element::{AxisPointer, AxisPointerType, AxisType, TooltipTrigger},
     series::Bar,

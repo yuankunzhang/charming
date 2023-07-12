@@ -1,4 +1,4 @@
-use echarts::{
+use charming::{
     component::{Title, Tooltip},
     Chart,
 };

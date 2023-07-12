@@ -1,4 +1,4 @@
-use echarts::{
+use charming::{
     component::Tooltip,
     series::{Gauge, GaugeDetail},
     Chart,

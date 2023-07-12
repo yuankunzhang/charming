@@ -1,4 +1,4 @@
-use echarts::{
+use charming::{
     component::{Axis3D, Grid3D, Tooltip, VisualMap},
     element::AxisType,
     Chart,

@@ -1,4 +1,4 @@
-use echarts::{
+use charming::{
     component::{AngleAxis, Polar, RadiusAxis, Title, Tooltip},
     element::{AxisType, CoordinateSystem, Label, LabelPosition},
     series::Bar,

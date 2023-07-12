@@ -1,4 +1,4 @@
-use echarts::{
+use charming::{
     component::{
         Legend, Toolbox, ToolboxFeature, ToolboxFeatureDataView, ToolboxFeatureRestore,
         ToolboxFeatureSaveAsImage,

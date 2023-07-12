@@ -1,4 +1,4 @@
-use echarts::{component::SingleAxis, element::Label, series::ThemeRiver, Chart};
+use charming::{component::SingleAxis, element::Label, series::ThemeRiver, Chart};
 
 pub fn chart() -> Chart {
     let raw_data = vec![

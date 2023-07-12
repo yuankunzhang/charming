@@ -1,4 +1,4 @@
-use echarts::{
+use charming::{
     component::{Axis, Grid, Legend, LegendSelectedMode, Tooltip},
     element::{AxisLabel, AxisLine, AxisTick, MarkLine, SplitLine},
     series::PictorialBar,

@@ -1,4 +1,4 @@
-use echarts::{
+use charming::{
     component::{Axis, DataZoom, DataZoomType, Grid, Legend, Title, Tooltip},
     datatype::{Dataset, Transform},
     element::{AxisPointer, AxisPointerType, AxisType, SplitArea, SplitLine, TooltipTrigger},

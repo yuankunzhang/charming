@@ -1,4 +1,4 @@
-use echarts::{
+use charming::{
     component::Axis,
     datatype::DataPointItem,
     df,

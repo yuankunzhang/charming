@@ -1,4 +1,4 @@
-use echarts::Chart;
+use charming::Chart;
 use lazy_static::lazy_static;
 use std::collections::BTreeMap;
 

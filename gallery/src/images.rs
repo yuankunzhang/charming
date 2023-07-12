@@ -1,7 +1,7 @@
 use std::{env, path::Path};
 
-use echarts::ImageRenderer;
-use echarts_gallery::CHARTS;
+use charming::ImageRenderer;
+use charming_gallery::CHARTS;
 
 fn main() {
     let args: Vec<String> = env::args().collect();

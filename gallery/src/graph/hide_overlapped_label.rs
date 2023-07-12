@@ -1,4 +1,4 @@
-use echarts::{
+use charming::{
     component::{Legend, Tooltip},
     element::{Label, LabelLayout, LabelPosition, LineStyle, ScaleLimit},
     series::{Graph, GraphData, GraphLayout},

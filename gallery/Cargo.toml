@@ -1,5 +1,5 @@
 [package]
-name = "echarts-gallery"
+name = "charming-gallery"
 version = "0.1.0"
 edition = "2021"
 
@@ -10,7 +10,7 @@ chrono = "0.4.26"
 lazy_static = "1.4.0"
 rand = "0.8.5"
 tokio = "1.29.1"
-echarts = { path = "../echarts" }
+charming = { path = "../charming" }
 serde_json = "1.0.99"
 serde = "1.0.164"
 

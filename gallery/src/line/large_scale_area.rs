@@ -1,5 +1,5 @@
 use chrono::{Days, NaiveDate};
-use echarts::{
+use charming::{
     component::{
         Axis, DataZoom, DataZoomType, Title, Toolbox, ToolboxFeature, ToolboxFeatureDataZoom,
         ToolboxFeatureRestore, ToolboxFeatureSaveAsImage, Tooltip,
