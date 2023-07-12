@@ -20,14 +20,6 @@ where
     }
 }
 
-// pub(crate) fn process_raw_strings(s: &str) -> String {
-//     unescape_string(
-//         s.replace(&format!("\"{}", RAW_MARK), "")
-//             .replace(&format!("{}\"", RAW_MARK), "")
-//             .as_str(),
-//     )
-// }
-
 pub(crate) fn process_raw_strings(s: &str) -> String {
     let left_mark = format!("\"{}", RAW_MARK);
     let right_mark = format!("{}\"", RAW_MARK);

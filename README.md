@@ -67,6 +67,7 @@ Click on any single chart to view its source code file.
 
 <div align="center">
 <a href="./gallery/src/boxplot/boxplot_light_velocity.rs"><img src="./img/boxplot/boxplot_light_velocity.svg" width="40%" alt="Boxplot Light Velocity" /></a>
+<a href="./gallery/src/boxplot/multiple_categories.rs"><img src="./img/boxplot/multiple_categories.svg" width="40%" alt="Multiple Categories" /></a>
 </div>
 
 ### Candlestick Charts
@@ -133,7 +134,9 @@ Click on any single chart to view its source code file.
 ### Radar Charts
 
 <div align="center">
+<a href="./gallery/src/radar/basic_radar.rs"><img src="./img/radar/basic_radar.svg" width="40%" alt="Basic Radar" /></a>
 <a href="./gallery/src/radar/multiple_radar.rs"><img src="./img/radar/multiple_radar.svg" width="40%" alt="Multiple Radar" /></a>
+<a href="./gallery/src/radar/proportion_of_browsers.rs"><img src="./img/radar/proportion_of_browsers.svg" width="40%" alt="Proportion of Browsers" /></a>
 </div>
 
 ### Sankey Charts
