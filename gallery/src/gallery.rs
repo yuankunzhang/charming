@@ -41,7 +41,7 @@ async fn render(
         },
         None => return (StatusCode::NOT_FOUND, "Chart Type Not Found").into_response(),
     };
-    Html(renderer.render(&chart)).into_response()
+    Html(renderer.render(&chart).unwrap()).into_response()
 }
 
 #[derive(Template)]

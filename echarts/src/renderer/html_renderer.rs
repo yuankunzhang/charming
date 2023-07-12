@@ -1,6 +1,6 @@
 use handlebars::Handlebars;
 
-use crate::Chart;
+use crate::{Chart, EchartsError};
 
 pub struct HtmlRenderer {
     title: String,
@@ -17,7 +17,7 @@ impl HtmlRenderer {
         }
     }
 
-    pub fn render(&self, chart: &Chart) -> String {
+    pub fn render(&self, chart: &Chart) -> Result<String, EchartsError> {
         let template = include_str!("../asset/charts.html.hbs");
         let data = Handlebars::new()
             .render_template(
@@ -30,7 +30,7 @@ impl HtmlRenderer {
                     "chart_option": chart.to_string(),
                 }),
             )
-            .expect("Failed to render template");
-        data
+            .map_err(|error| EchartsError::HtmlRenderingError(error.to_string()))?;
+        Ok(data)
     }
 }

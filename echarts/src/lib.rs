@@ -275,3 +275,10 @@ impl ToString for Chart {
         process_raw_strings(serde_json::to_string_pretty(self).unwrap().as_str())
     }
 }
+
+#[derive(Debug)]
+pub enum EchartsError {
+    JsRuntimeError(String),
+    ImageRenderingError(String),
+    HtmlRenderingError(String),
+}

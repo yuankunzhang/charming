@@ -2,7 +2,7 @@ use deno_core::{v8, JsRuntime, RuntimeOptions};
 use gdk_pixbuf::traits::PixbufLoaderExt;
 use handlebars::Handlebars;
 
-use crate::Chart;
+use crate::{Chart, EchartsError};
 
 static CODE_TEMPLATE: &str = r#"
 var chart = echarts.init(null, null, {
@@ -64,7 +64,7 @@ impl ImageRenderer {
         }
     }
 
-    pub fn render(&mut self, chart: &Chart) -> String {
+    pub fn render(&mut self, chart: &Chart) -> Result<String, EchartsError> {
         let code = Handlebars::new()
             .render_template(
                 CODE_TEMPLATE,
@@ -84,30 +84,47 @@ impl ImageRenderer {
                 let value = serde_v8::from_v8::<serde_json::Value>(scope, local);
 
                 match value {
-                    Ok(value) => value.as_str().unwrap().to_string(),
-                    Err(error) => panic!("{}", error.to_string()),
+                    Ok(value) => Ok(value.as_str().unwrap().to_string()),
+                    Err(error) => Err(EchartsError::JsRuntimeError(error.to_string())),
                 }
             }
-            Err(error) => panic!("{}", error.to_string()),
+            Err(error) => Err(EchartsError::JsRuntimeError(error.to_string())),
         }
     }
 
-    pub fn render_format(&mut self, image_format: ImageFormat, chart: &Chart) -> Vec<u8> {
-        let svg = self.render(chart);
+    pub fn render_format(
+        &mut self,
+        image_format: ImageFormat,
+        chart: &Chart,
+    ) -> Result<Vec<u8>, EchartsError> {
+        let svg = self.render(chart)?;
 
-        let loader = gdk_pixbuf::PixbufLoader::with_mime_type("image/svg+xml").unwrap();
-        loader.write(svg.as_bytes()).unwrap();
-        loader.close().unwrap();
+        let loader = gdk_pixbuf::PixbufLoader::with_mime_type("image/svg+xml")
+            .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))?;
+        loader
+            .write(svg.as_bytes())
+            .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))?;
+        loader
+            .close()
+            .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))?;
 
-        let pixbuf = loader.pixbuf().unwrap();
+        let pixbuf = loader.pixbuf().ok_or_else(|| {
+            EchartsError::ImageRenderingError("Failed to load pixbuf".to_string())
+        })?;
+
         pixbuf
             .save_to_bufferv(&image_format.to_string(), &[])
-            .unwrap()
+            .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))
     }
 
-    pub fn save<P: AsRef<std::path::Path>>(&mut self, chart: &Chart, path: P) {
-        let svg = self.render(chart);
-        std::fs::write(path, svg).unwrap();
+    pub fn save<P: AsRef<std::path::Path>>(
+        &mut self,
+        chart: &Chart,
+        path: P,
+    ) -> Result<(), EchartsError> {
+        let svg = self.render(chart)?;
+        std::fs::write(path, svg)
+            .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))
     }
 
     pub fn save_format<P: AsRef<std::path::Path>>(
@@ -115,8 +132,9 @@ impl ImageRenderer {
         image_format: ImageFormat,
         chart: &Chart,
         path: P,
-    ) {
-        let bytes = self.render_format(image_format, chart);
-        std::fs::write(path, bytes).unwrap();
+    ) -> Result<(), EchartsError> {
+        let bytes = self.render_format(image_format, chart)?;
+        std::fs::write(path, bytes)
+            .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))
     }
 }
