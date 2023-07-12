@@ -12,7 +12,7 @@ use component::{
     VisualMap,
 };
 use datatype::Dataset;
-use element::{AxisPointer, Color, MarkLine};
+use element::{process_raw_strings, AxisPointer, Color, MarkLine};
 use serde::Serialize;
 use series::Series;
 
@@ -239,8 +239,8 @@ impl Chart {
         self
     }
 
-    pub fn radar(mut self, radars: Vec<RadarCoordinate>) -> Self {
-        self.radar = radars;
+    pub fn radar(mut self, radar: RadarCoordinate) -> Self {
+        self.radar.push(radar);
         self
     }
 
@@ -270,13 +270,8 @@ impl Chart {
     }
 }
 
-fn process_raw_strings(s: String) -> String {
-    let s = str::replace(&s, &format!("\"{}", element::RAW_MARK), "");
-    str::replace(&s, &format!("{}\"", element::RAW_MARK), "")
-}
-
 impl ToString for Chart {
     fn to_string(&self) -> String {
-        process_raw_strings(serde_json::to_string_pretty(self).unwrap())
+        process_raw_strings(serde_json::to_string_pretty(self).unwrap().as_str())
     }
 }

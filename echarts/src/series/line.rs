@@ -24,6 +24,9 @@ pub struct Line {
     symbol: Option<Symbol>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    symbol_size: Option<f64>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     show_symbol: Option<bool>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -76,6 +79,7 @@ impl Line {
             id: None,
             name: None,
             symbol: None,
+            symbol_size: None,
             show_symbol: None,
             stack: None,
             line_style: None,
@@ -107,6 +111,11 @@ impl Line {
 
     pub fn symbol<S: Into<Symbol>>(mut self, symbol: S) -> Self {
         self.symbol = Some(symbol.into());
+        self
+    }
+
+    pub fn symbol_size<F: Into<f64>>(mut self, symbol_size: F) -> Self {
+        self.symbol_size = Some(symbol_size.into());
         self
     }
 

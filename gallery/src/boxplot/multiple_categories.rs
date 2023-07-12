@@ -1,13 +1,39 @@
 use echarts::{
     component::{Axis, DataZoom, DataZoomType, Grid, Legend, Title, Tooltip},
+    datatype::{Dataset, Transform},
     element::{AxisPointer, AxisPointerType, AxisType, SplitArea, SplitLine, TooltipTrigger},
     series::Boxplot,
     Chart,
 };
+use rand::Rng;
 
 pub fn chart() -> Chart {
+    let data0 = make_data();
+    let data1 = make_data();
+    let data2 = make_data();
     Chart::new()
         .title(Title::new().text("Multiple Categories").left("center"))
+        .dataset(
+            Dataset::new()
+                .source(data0)
+                .source(data1)
+                .source(data2)
+                .transform(
+                    Transform::new()
+                        .from_dataset_index(0)
+                        .transform(r#"{"type": "boxplot"}"#),
+                )
+                .transform(
+                    Transform::new()
+                        .from_dataset_index(1)
+                        .transform(r#"{"type": "boxplot"}"#),
+                )
+                .transform(
+                    Transform::new()
+                        .from_dataset_index(2)
+                        .transform(r#"{"type": "boxplot"}"#),
+                ),
+        )
         .legend(Legend::new().top("10%"))
         .tooltip(
             Tooltip::new()
@@ -49,4 +75,17 @@ pub fn chart() -> Chart {
         .series(Boxplot::new().name("category0").dataset_index(3))
         .series(Boxplot::new().name("category1").dataset_index(4))
         .series(Boxplot::new().name("category2").dataset_index(5))
+}
+
+fn make_data() -> Vec<Vec<f64>> {
+    let mut rng = rand::thread_rng();
+    let mut data = vec![];
+    for _ in 0..18 {
+        let mut data0 = vec![];
+        for _ in 0..100 {
+            data0.push(rng.gen::<f64>() * 200.0);
+        }
+        data.push(data0);
+    }
+    data
 }

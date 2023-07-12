@@ -1,21 +1,23 @@
 use serde::{ser::SerializeSeq, Serialize};
 
+use crate::element::RawString;
+
 use super::{DataSource, Dimension};
 
 #[derive(Debug, Serialize)]
-pub struct DataSourceContainer {
+pub struct Source {
     #[serde(skip_serializing_if = "Option::is_none")]
     id: Option<String>,
     source: DataSource,
 }
 
-impl DataSourceContainer {
+impl Source {
     pub fn new(source: DataSource) -> Self {
-        DataSourceContainer { id: None, source }
+        Source { id: None, source }
     }
 
     pub fn new_with_id(source: DataSource, id: String) -> Self {
-        DataSourceContainer {
+        Source {
             id: Some(id),
             source,
         }
@@ -27,7 +29,7 @@ impl DataSourceContainer {
     }
 }
 
-impl<D> From<D> for DataSourceContainer
+impl<D> From<D> for Source
 where
     D: Into<DataSource>,
 {
@@ -36,7 +38,7 @@ where
     }
 }
 
-impl<D, F> From<(D, F)> for DataSourceContainer
+impl<D, F> From<(D, F)> for Source
 where
     D: Into<DataSource>,
     F: Into<String>,
@@ -53,7 +55,7 @@ pub struct Transform {
     id: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    transform: Option<serde_json::Value>,
+    transform: Option<RawString>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     from_dataset_id: Option<String>,
@@ -81,8 +83,8 @@ impl Transform {
         self
     }
 
-    pub fn transform(mut self, transform: &str) -> Self {
-        self.transform = Some(serde_json::from_str(transform).unwrap());
+    pub fn transform<R: Into<RawString>>(mut self, transform: R) -> Self {
+        self.transform = Some(transform.into());
         self
     }
 
@@ -109,7 +111,7 @@ impl From<&str> for Transform {
 }
 
 pub struct Dataset {
-    sources: Vec<DataSourceContainer>,
+    sources: Vec<Source>,
     transforms: Vec<Transform>,
     dimensions: Vec<Dimension>,
 }
@@ -136,7 +138,7 @@ impl Dataset {
         }
     }
 
-    pub fn source<S: Into<DataSourceContainer>>(mut self, source: S) -> Self {
+    pub fn source<S: Into<Source>>(mut self, source: S) -> Self {
         self.sources.push(source.into());
         self
     }

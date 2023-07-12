@@ -1,6 +1,9 @@
 use serde::Serialize;
 
-use crate::element::{Label, LineStyle};
+use crate::{
+    datatype::CompositeValue,
+    element::{Label, LineStyle},
+};
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
@@ -23,14 +26,14 @@ pub enum AxisPointerAxis {
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct AxisPointerLink {
-    #[serde(skip_serializing_if = "Vec::is_empty")]
-    x_axis_index: Vec<f64>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    x_axis_index: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     x_axis_name: Option<String>,
 
-    #[serde(skip_serializing_if = "Vec::is_empty")]
-    y_axis_index: Vec<f64>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    y_axis_index: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     y_axis_name: Option<String>,
@@ -39,15 +42,15 @@ pub struct AxisPointerLink {
 impl AxisPointerLink {
     pub fn new() -> Self {
         Self {
-            x_axis_index: vec![],
+            x_axis_index: None,
             x_axis_name: None,
-            y_axis_index: vec![],
+            y_axis_index: None,
             y_axis_name: None,
         }
     }
 
-    pub fn x_axis_index<F: Into<f64>>(mut self, x_axis_index: Vec<F>) -> Self {
-        self.x_axis_index = x_axis_index.into_iter().map(|f| f.into()).collect();
+    pub fn x_axis_index<C: Into<CompositeValue>>(mut self, x_axis_index: C) -> Self {
+        self.x_axis_index = Some(x_axis_index.into());
         self
     }
 
@@ -56,8 +59,8 @@ impl AxisPointerLink {
         self
     }
 
-    pub fn y_axis_index<F: Into<f64>>(mut self, y_axis_index: Vec<F>) -> Self {
-        self.y_axis_index = y_axis_index.into_iter().map(|f| f.into()).collect();
+    pub fn y_axis_index<C: Into<CompositeValue>>(mut self, y_axis_index: C) -> Self {
+        self.y_axis_index = Some(y_axis_index.into());
         self
     }
 
@@ -92,6 +95,9 @@ pub struct AxisPointer {
     animation: Option<bool>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    z: Option<f64>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     axis: Option<AxisPointerAxis>,
 
     /// Label of axis pointer.
@@ -115,6 +121,7 @@ impl AxisPointer {
             type_: None,
             snap: None,
             animation: None,
+            z: None,
             axis: None,
             label: None,
             line_style: None,
@@ -144,6 +151,11 @@ impl AxisPointer {
 
     pub fn animation(mut self, animation: bool) -> Self {
         self.animation = Some(animation);
+        self
+    }
+
+    pub fn z<F: Into<f64>>(mut self, z: F) -> Self {
+        self.z = Some(z.into());
         self
     }
 

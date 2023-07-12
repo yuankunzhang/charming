@@ -109,6 +109,7 @@ Click on any single chart to view its source code file.
 <a href="./gallery/src/line/gradient_stacked_area.rs"><img src="./img/line/gradient_stacked_area.svg" width="40%" alt="Gradient Stacked Area" /></a>
 <a href="./gallery/src/line/large_scale_area.rs"><img src="./img/line/large_scale_area.svg" width="40%" alt="Large Scale Area" /></a>
 <a href="./gallery/src/line/line_gradient.rs"><img src="./img/line/line_gradient.svg" width="40%" alt="Line Gradient" /></a>
+<a href="./gallery/src/line/rainfall_vs_evaporation.rs"><img src="./img/line/rainfall_vs_evaporation.svg" width="40%" alt="Rainfall Vs. Evaporation" /></a>
 <a href="./gallery/src/line/smoothed_line.rs"><img src="./img/line/smoothed_line.svg" width="40%" alt="Smoothed Line" /></a>
 <a href="./gallery/src/line/stacked_area.rs"><img src="./img/line/stacked_area.svg" width="40%" alt="Stacked Area" /></a>
 <a href="./gallery/src/line/stacked_line.rs"><img src="./img/line/stacked_line.svg" width="40%" alt="Stacked Line" /></a>

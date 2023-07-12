@@ -50,12 +50,14 @@ lazy_static! {
     static ref BOXPLOT_CHARTS: BTreeMap<&'static str, fn() -> Chart> = {
         let mut m = BTreeMap::new();
         insert!(m, boxplot, boxplot_light_velocity);
+        insert!(m, boxplot, data_transform_simple_aggregate);
         insert!(m, boxplot, multiple_categories);
         m
     };
     static ref CANDLESTICK_CHARTS: BTreeMap<&'static str, fn() -> Chart> = {
         let mut m = BTreeMap::new();
         insert!(m, candlestick, basic_candlestick);
+        insert!(m, candlestick, ohlc);
         insert!(m, candlestick, shanghai_index);
         m
     };
@@ -130,6 +132,7 @@ lazy_static! {
     };
     static ref RADAR_CHARTS: BTreeMap<&'static str, fn() -> Chart> = {
         let mut m = BTreeMap::new();
+        insert!(m, radar, basic_radar);
         insert!(m, radar, multiple_radar);
         insert!(m, radar, proportion_of_browsers);
         m

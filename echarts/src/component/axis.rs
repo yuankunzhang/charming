@@ -1,8 +1,11 @@
 use serde::Serialize;
 
-use crate::element::{
-    AxisLabel, AxisLine, AxisPointer, AxisTick, AxisType, BoundaryGap, NameLocation, SplitArea,
-    SplitLine, TextStyle,
+use crate::{
+    datatype::CompositeValue,
+    element::{
+        AxisLabel, AxisLine, AxisPointer, AxisTick, AxisType, BoundaryGap, NameLocation, SplitArea,
+        SplitLine, TextStyle,
+    },
 };
 
 /// Axis in cartesian coordinate.
@@ -58,13 +61,16 @@ pub struct Axis {
     #[serde(skip_serializing_if = "Option::is_none")]
     boundary_gap: Option<BoundaryGap>,
 
+    #[serde(skip_serializing_if = "Option::is_none")]
+    position: Option<CompositeValue>,
+
     /// The mimimum value of axis.
     #[serde(skip_serializing_if = "Option::is_none")]
-    min: Option<f64>,
+    min: Option<CompositeValue>,
 
     /// The maximum value of axis.
     #[serde(skip_serializing_if = "Option::is_none")]
-    max: Option<f64>,
+    max: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     scale: Option<bool>,
@@ -132,6 +138,7 @@ impl Axis {
             name_rotation: None,
             inverse: None,
             boundary_gap: None,
+            position: None,
             min: None,
             max: None,
             scale: None,
@@ -210,12 +217,17 @@ impl Axis {
         self
     }
 
-    pub fn min<F: Into<f64>>(mut self, min: F) -> Self {
+    pub fn position<C: Into<CompositeValue>>(mut self, position: C) -> Self {
+        self.position = Some(position.into());
+        self
+    }
+
+    pub fn min<C: Into<CompositeValue>>(mut self, min: C) -> Self {
         self.min = Some(min.into());
         self
     }
 
-    pub fn max<F: Into<f64>>(mut self, max: F) -> Self {
+    pub fn max<C: Into<CompositeValue>>(mut self, max: C) -> Self {
         self.max = Some(max.into());
         self
     }

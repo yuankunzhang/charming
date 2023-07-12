@@ -3,7 +3,7 @@ use serde::Serialize;
 use crate::{
     component::tooltip::Tooltip,
     datatype::{DataFrame, DataPoint},
-    element::{AreaStyle, ColorBy, Symbol},
+    element::{AreaStyle, ColorBy, Emphasis, LineStyle, Symbol},
 };
 
 #[derive(Serialize)]
@@ -44,6 +44,12 @@ pub struct Radar {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     tooltip: Option<Tooltip>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    line_style: Option<LineStyle>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    emphasis: Option<Emphasis>,
 }
 
 impl Radar {
@@ -61,16 +67,18 @@ impl Radar {
             symbol_rotate: None,
             symbol_size: None,
             tooltip: None,
+            line_style: None,
+            emphasis: None,
         }
     }
 
-    pub fn area_style(mut self, area_style: AreaStyle) -> Self {
-        self.area_style = Some(area_style);
+    pub fn area_style<A: Into<AreaStyle>>(mut self, area_style: A) -> Self {
+        self.area_style = Some(area_style.into());
         self
     }
 
-    pub fn color_by(mut self, color_by: ColorBy) -> Self {
-        self.color_by = Some(color_by);
+    pub fn color_by<C: Into<ColorBy>>(mut self, color_by: C) -> Self {
+        self.color_by = Some(color_by.into());
         self
     }
 
@@ -94,8 +102,8 @@ impl Radar {
         self
     }
 
-    pub fn symbol(mut self, symbol: Symbol) -> Self {
-        self.symbol = Some(symbol);
+    pub fn symbol<S: Into<Symbol>>(mut self, symbol: S) -> Self {
+        self.symbol = Some(symbol.into());
         self
     }
 
@@ -104,18 +112,28 @@ impl Radar {
         self
     }
 
-    pub fn symbol_rotate(mut self, symbol_rotate: f64) -> Self {
-        self.symbol_rotate = Some(symbol_rotate);
+    pub fn symbol_rotate<F: Into<f64>>(mut self, symbol_rotate: F) -> Self {
+        self.symbol_rotate = Some(symbol_rotate.into());
         self
     }
 
-    pub fn symbol_size(mut self, symbol_size: f64) -> Self {
-        self.symbol_size = Some(symbol_size);
+    pub fn symbol_size<F: Into<f64>>(mut self, symbol_size: F) -> Self {
+        self.symbol_size = Some(symbol_size.into());
         self
     }
 
-    pub fn tooltip(mut self, tooltip: Tooltip) -> Self {
-        self.tooltip = Some(tooltip);
+    pub fn tooltip<T: Into<Tooltip>>(mut self, tooltip: T) -> Self {
+        self.tooltip = Some(tooltip.into());
+        self
+    }
+
+    pub fn line_style<L: Into<LineStyle>>(mut self, line_style: L) -> Self {
+        self.line_style = Some(line_style.into());
+        self
+    }
+
+    pub fn emphasis<E: Into<Emphasis>>(mut self, emphasis: E) -> Self {
+        self.emphasis = Some(emphasis.into());
         self
     }
 }

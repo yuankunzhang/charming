@@ -178,9 +178,38 @@ impl ToolboxFeatureMagicType {
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
+pub enum ToolboxFeatureBrushType {
+    Rect,
+    Polygon,
+    LineX,
+    LineY,
+    Keep,
+    Clear,
+}
+
+#[derive(Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct ToolboxFeatureBrush {
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    type_: Vec<ToolboxFeatureBrushType>,
+}
+
+impl ToolboxFeatureBrush {
+    pub fn new() -> Self {
+        Self { type_: vec![] }
+    }
+
+    pub fn type_(mut self, type_: Vec<ToolboxFeatureBrushType>) -> Self {
+        self.type_ = type_;
+        self
+    }
+}
+
+#[derive(Serialize)]
+#[serde(rename_all = "camelCase")]
 pub struct ToolboxFeatureDataZoom {
     #[serde(skip_serializing_if = "Option::is_none")]
-    y_axis_index: Option<String>,
+    y_axis_index: Option<bool>,
 }
 
 impl ToolboxFeatureDataZoom {
@@ -188,8 +217,8 @@ impl ToolboxFeatureDataZoom {
         Self { y_axis_index: None }
     }
 
-    pub fn y_axis_index<S: Into<String>>(mut self, y_axis_index: S) -> Self {
-        self.y_axis_index = Some(y_axis_index.into());
+    pub fn y_axis_index(mut self, y_axis_index: bool) -> Self {
+        self.y_axis_index = Some(y_axis_index);
         self
     }
 }
@@ -211,6 +240,9 @@ pub struct ToolboxFeature {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     data_zoom: Option<ToolboxFeatureDataZoom>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    brush: Option<ToolboxFeatureBrush>,
 }
 
 impl ToolboxFeature {
@@ -221,6 +253,7 @@ impl ToolboxFeature {
             data_view: None,
             magic_type: None,
             data_zoom: None,
+            brush: None,
         }
     }
 
@@ -246,6 +279,11 @@ impl ToolboxFeature {
 
     pub fn data_zoom(mut self, data_zoom: ToolboxFeatureDataZoom) -> Self {
         self.data_zoom = Some(data_zoom);
+        self
+    }
+
+    pub fn brush(mut self, brush: ToolboxFeatureBrush) -> Self {
+        self.brush = Some(brush);
         self
     }
 }

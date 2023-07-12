@@ -16,7 +16,7 @@ pub fn chart() -> Chart {
             "Precipitation",
             "Evaporation",
         ]))
-        .radar(vec![
+        .radar(
             RadarCoordinate::new()
                 .indicator(vec![
                     ("Brand", 0, 100),
@@ -26,6 +26,8 @@ pub fn chart() -> Chart {
                 ])
                 .center(vec!["25%", "40%"])
                 .radius(80.0),
+        )
+        .radar(
             RadarCoordinate::new()
                 .indicator(vec![
                     ("Look", 0, 100),
@@ -36,6 +38,8 @@ pub fn chart() -> Chart {
                 ])
                 .center(vec!["50%", "60%"])
                 .radius(80.0),
+        )
+        .radar(
             RadarCoordinate::new()
                 .indicator(vec![
                     ("1月", 0, 100),
@@ -53,7 +57,7 @@ pub fn chart() -> Chart {
                 ])
                 .center(vec!["75%", "40%"])
                 .radius(80.0),
-        ])
+        )
         .series(
             Radar::new()
                 .name("Radar")

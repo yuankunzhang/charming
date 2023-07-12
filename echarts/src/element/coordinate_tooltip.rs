@@ -1,8 +1,8 @@
 use serde::Serialize;
 
-use super::{
-    Color, ContentFormatter, PaddingProperty, PositionProperty, TextStyle, TooltipTrigger,
-};
+use crate::datatype::CompositeValue;
+
+use super::{Color, Formatter, PaddingProperty, TextStyle, TooltipTrigger};
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -14,13 +14,13 @@ pub struct CoordinateTooltip {
     trigger: Option<TooltipTrigger>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    position: Option<PositionProperty>,
+    position: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    formatter: Option<ContentFormatter>,
+    formatter: Option<Formatter>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    value_formatter: Option<ContentFormatter>,
+    value_formatter: Option<Formatter>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     background_color: Option<Color>,

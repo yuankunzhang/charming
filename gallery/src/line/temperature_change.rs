@@ -26,7 +26,7 @@ pub fn chart() -> Chart {
                         ToolboxFeatureMagicTypeType::Line,
                         ToolboxFeatureMagicTypeType::Bar,
                     ]))
-                    .data_zoom(ToolboxFeatureDataZoom::new().y_axis_index("none"))
+                    .data_zoom(ToolboxFeatureDataZoom::new().y_axis_index(false))
                     .data_view(ToolboxFeatureDataView::new().read_only(false)),
             ),
         )

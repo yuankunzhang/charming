@@ -1,6 +1,6 @@
 use echarts::{
     component::Axis,
-    datatype::DataPoint,
+    datatype::DataPointItem,
     df,
     element::{AxisType, ItemStyle},
     series::Bar,
@@ -17,7 +17,7 @@ pub fn chart() -> Chart {
         .y_axis(Axis::new().type_(AxisType::Value))
         .series(Bar::new().data(df![
             120,
-            DataPoint::new(200).item_style(ItemStyle::new().color("#a90000")),
+            DataPointItem::new(200).item_style(ItemStyle::new().color("#a90000")),
             150,
             80,
             70,

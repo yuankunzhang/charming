@@ -1,6 +1,6 @@
 use serde::Serialize;
 
-use crate::element::{AxisPointer, Color, ContentFormatter, PaddingProperty, TooltipTrigger};
+use crate::element::{AxisPointer, Color, Formatter, PaddingProperty, TooltipTrigger};
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
@@ -25,7 +25,7 @@ pub struct Tooltip {
     axis_pointer: Option<AxisPointer>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    formatter: Option<ContentFormatter>,
+    formatter: Option<Formatter>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     position: Option<String>,
@@ -73,7 +73,7 @@ impl Tooltip {
         self
     }
 
-    pub fn formatter<F: Into<ContentFormatter>>(mut self, formatter: F) -> Self {
+    pub fn formatter<F: Into<Formatter>>(mut self, formatter: F) -> Self {
         self.formatter = Some(formatter.into());
         self
     }

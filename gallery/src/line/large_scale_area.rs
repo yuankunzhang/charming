@@ -28,7 +28,7 @@ pub fn chart() -> Chart {
         .toolbox(
             Toolbox::new().feature(
                 ToolboxFeature::new()
-                    .data_zoom(ToolboxFeatureDataZoom::new().y_axis_index("none"))
+                    .data_zoom(ToolboxFeatureDataZoom::new().y_axis_index(false))
                     .restore(ToolboxFeatureRestore::new())
                     .save_as_image(ToolboxFeatureSaveAsImage::new()),
             ),

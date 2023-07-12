@@ -3,7 +3,7 @@ use serde::Serialize;
 use crate::{
     datatype::CompositeValue,
     element::{
-        AxisLabel, AxisLine, AxisTick, Color, ContentFormatter, PaddingProperty, Shape, SplitArea,
+        AxisLabel, AxisLine, AxisTick, Color, Formatter, PaddingProperty, Shape, SplitArea,
         SplitLine,
     },
 };
@@ -18,7 +18,7 @@ pub struct RadarAxisName {
 
     /// Formatter of the indicator's name.
     #[serde(skip_serializing_if = "Option::is_none")]
-    formatter: Option<ContentFormatter>,
+    formatter: Option<Formatter>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     color: Option<Color>,
@@ -146,7 +146,7 @@ impl RadarAxisName {
         self
     }
 
-    pub fn formatter<C: Into<ContentFormatter>>(mut self, formatter: C) -> Self {
+    pub fn formatter<C: Into<Formatter>>(mut self, formatter: C) -> Self {
         self.formatter = Some(formatter.into());
         self
     }

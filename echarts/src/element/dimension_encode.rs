@@ -1,19 +1,21 @@
 use serde::Serialize;
 
+use crate::datatype::CompositeValue;
+
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct DimensionEncode {
     #[serde(skip_serializing_if = "Option::is_none")]
-    x: Option<String>,
+    x: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    y: Option<String>,
+    y: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     item_name: Option<String>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
-    tooltip: Vec<String>,
+    tooltip: Vec<CompositeValue>,
 }
 
 impl DimensionEncode {
@@ -26,12 +28,12 @@ impl DimensionEncode {
         }
     }
 
-    pub fn x<S: Into<String>>(mut self, x: S) -> Self {
+    pub fn x<C: Into<CompositeValue>>(mut self, x: C) -> Self {
         self.x = Some(x.into());
         self
     }
 
-    pub fn y<S: Into<String>>(mut self, y: S) -> Self {
+    pub fn y<C: Into<CompositeValue>>(mut self, y: C) -> Self {
         self.y = Some(y.into());
         self
     }
@@ -41,7 +43,7 @@ impl DimensionEncode {
         self
     }
 
-    pub fn tooltip<S: Into<String>>(mut self, tooltip: Vec<S>) -> Self {
+    pub fn tooltip<S: Into<CompositeValue>>(mut self, tooltip: Vec<S>) -> Self {
         self.tooltip = tooltip.into_iter().map(|s| s.into()).collect();
         self
     }

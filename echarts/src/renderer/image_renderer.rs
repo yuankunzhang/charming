@@ -5,7 +5,7 @@ use handlebars::Handlebars;
 use crate::Chart;
 
 static CODE_TEMPLATE: &str = r#"
-chart = echarts.init(null, null, {
+var chart = echarts.init(null, null, {
     renderer: 'svg',
     ssr: true,
     width: {{ width }},

@@ -35,6 +35,9 @@ pub struct DataZoom {
     show: Option<bool>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    realtime: Option<bool>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     background_color: Option<Color>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -89,10 +92,10 @@ pub struct DataZoom {
     bottom: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    x_axis_index: Option<f64>,
+    x_axis_index: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    y_axis_index: Option<f64>,
+    y_axis_index: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     disabled: Option<bool>,
@@ -122,6 +125,7 @@ impl DataZoom {
             type_: None,
             id: None,
             show: None,
+            realtime: None,
             background_color: None,
             data_background: None,
             selected_data_background: None,
@@ -164,6 +168,11 @@ impl DataZoom {
 
     pub fn show(mut self, show: bool) -> Self {
         self.show = Some(show);
+        self
+    }
+
+    pub fn realtime(mut self, realtime: bool) -> Self {
+        self.realtime = Some(realtime);
         self
     }
 
@@ -260,12 +269,12 @@ impl DataZoom {
         self
     }
 
-    pub fn x_axis_index<F: Into<f64>>(mut self, x_axis_index: F) -> Self {
+    pub fn x_axis_index<C: Into<CompositeValue>>(mut self, x_axis_index: C) -> Self {
         self.x_axis_index = Some(x_axis_index.into());
         self
     }
 
-    pub fn y_axis_index<F: Into<f64>>(mut self, y_axis_index: F) -> Self {
+    pub fn y_axis_index<C: Into<CompositeValue>>(mut self, y_axis_index: C) -> Self {
         self.y_axis_index = Some(y_axis_index.into());
         self
     }

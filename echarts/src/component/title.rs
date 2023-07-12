@@ -1,7 +1,8 @@
 use serde::Serialize;
 
-use crate::element::{
-    Color, LinkTarget, PaddingProperty, PositionProperty, TextAlign, TextStyle, TextVerticalAlign,
+use crate::{
+    datatype::CompositeValue,
+    element::{Color, LinkTarget, PaddingProperty, TextAlign, TextStyle, TextVerticalAlign},
 };
 
 /// Title component, including main title and subtitle.
@@ -74,19 +75,19 @@ pub struct Title {
 
     /// Distance between title component and the left side of the container.
     #[serde(skip_serializing_if = "Option::is_none")]
-    left: Option<PositionProperty>,
+    left: Option<CompositeValue>,
 
     /// Distance between title component and the top side of the container.
     #[serde(skip_serializing_if = "Option::is_none")]
-    top: Option<PositionProperty>,
+    top: Option<CompositeValue>,
 
     /// Distance between title component and the right side of the container.
     #[serde(skip_serializing_if = "Option::is_none")]
-    right: Option<PositionProperty>,
+    right: Option<CompositeValue>,
 
     /// Distance between title component and the bottom side of the container.
     #[serde(skip_serializing_if = "Option::is_none")]
-    bottom: Option<PositionProperty>,
+    bottom: Option<CompositeValue>,
 
     /// Background color of title, default to be transparent.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -233,22 +234,22 @@ impl Title {
         self
     }
 
-    pub fn left<P: Into<PositionProperty>>(mut self, left: P) -> Self {
+    pub fn left<C: Into<CompositeValue>>(mut self, left: C) -> Self {
         self.left = Some(left.into());
         self
     }
 
-    pub fn top<P: Into<PositionProperty>>(mut self, top: P) -> Self {
+    pub fn top<C: Into<CompositeValue>>(mut self, top: C) -> Self {
         self.top = Some(top.into());
         self
     }
 
-    pub fn right<P: Into<PositionProperty>>(mut self, right: P) -> Self {
+    pub fn right<C: Into<CompositeValue>>(mut self, right: C) -> Self {
         self.right = Some(right.into());
         self
     }
 
-    pub fn bottom<P: Into<PositionProperty>>(mut self, bottom: P) -> Self {
+    pub fn bottom<C: Into<CompositeValue>>(mut self, bottom: C) -> Self {
         self.bottom = Some(bottom.into());
         self
     }

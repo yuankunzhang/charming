@@ -3,8 +3,8 @@ use serde::Serialize;
 use crate::{
     datatype::{DataFrame, DataPoint},
     element::{
-        Anchor, AxisLabel, AxisLine, AxisTick, Color, ColorBy, ContentFormatter, ItemStyle,
-        Pointer, SplitLine,
+        Anchor, AxisLabel, AxisLine, AxisTick, Color, ColorBy, Formatter, ItemStyle, Pointer,
+        SplitLine,
     },
 };
 
@@ -36,7 +36,7 @@ pub struct GaugeDetail {
     value_animation: Option<bool>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    formatter: Option<ContentFormatter>,
+    formatter: Option<Formatter>,
 }
 
 impl GaugeDetail {
@@ -94,7 +94,7 @@ impl GaugeDetail {
         self
     }
 
-    pub fn formatter<F: Into<ContentFormatter>>(mut self, formatter: F) -> Self {
+    pub fn formatter<F: Into<Formatter>>(mut self, formatter: F) -> Self {
         self.formatter = Some(formatter.into());
         self
     }

@@ -117,6 +117,9 @@ pub struct AxisLine {
     show: Option<bool>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    on_zero: Option<bool>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     round_cap: Option<bool>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -127,6 +130,7 @@ impl AxisLine {
     pub fn new() -> Self {
         Self {
             show: None,
+            on_zero: None,
             round_cap: None,
             line_style: None,
         }
@@ -134,6 +138,11 @@ impl AxisLine {
 
     pub fn show(mut self, show: bool) -> Self {
         self.show = Some(show);
+        self
+    }
+
+    pub fn on_zero(mut self, on_zero: bool) -> Self {
+        self.on_zero = Some(on_zero);
         self
     }
 

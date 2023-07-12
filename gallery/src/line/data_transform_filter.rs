@@ -1,6 +1,6 @@
 use echarts::{
     component::{Axis, Title, Tooltip},
-    datatype::{CompositeValue, DataSourceContainer, Dataset, Transform},
+    datatype::{CompositeValue, Dataset, Source, Transform},
     element::{AxisType, DimensionEncode, NameLocation, TooltipTrigger},
     series::Line,
     Chart,
@@ -10,7 +10,7 @@ pub fn chart() -> Chart {
     let data: Vec<Vec<CompositeValue>> =
         serde_json::from_str(include_str!("../../asset/life-expectancy-table.json")).unwrap();
     let dataset = Dataset::new()
-        .source(DataSourceContainer::new(data.into()).id("dataset_raw"))
+        .source(Source::new(data.into()).id("dataset_raw"))
         .transform(
             Transform::new()
                 .id("dataset_since_1950_of_germany")
