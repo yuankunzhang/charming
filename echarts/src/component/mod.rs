@@ -1,5 +1,4 @@
 pub mod angle_axis;
-pub mod aria;
 pub mod axis;
 pub mod axis3d;
 pub mod brush;
@@ -24,7 +23,6 @@ pub mod tooltip;
 pub mod visual_map;
 
 pub use angle_axis::*;
-pub use aria::*;
 pub use axis::*;
 pub use axis3d::*;
 pub use brush::*;

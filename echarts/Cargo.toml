@@ -9,7 +9,7 @@ documentation = "https://github.com/yuankunzhang/echarts-rs"
 keywords = ["rust", "echarts", "visualization", "chart"]
 categories = ["data-visualization", "graphics"]
 license = "MIT/Apache-2.0"
-readme = "README.md"
+readme = "../README.md"
 
 [dependencies]
 deno_core = "0.195.0"

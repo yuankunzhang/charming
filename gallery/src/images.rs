@@ -19,7 +19,7 @@ fn main() {
         for (name, chart) in value.iter() {
             println!("Rendering {}/{}", key, name);
             let path = dir.join(format!("{}.svg", name));
-            renderer.save(&chart(), &path);
+            renderer.save(&chart(), &path).unwrap();
         }
     }
 }
