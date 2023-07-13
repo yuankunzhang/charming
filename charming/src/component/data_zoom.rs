@@ -7,7 +7,7 @@ use crate::{
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
-pub enum DataZoomFilterMode {
+pub enum FilterMode {
     Filter,
     WeakFilter,
     Empty,
@@ -19,8 +19,12 @@ pub enum DataZoomFilterMode {
 pub enum DataZoomType {
     Inside,
     Slider,
+    Select,
 }
 
+/// DataZoom component is used for zooming a specific area, which enables user
+/// to investigate data in detail, or get an overview of the data, or get rid
+/// of outlier points.
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct DataZoom {
@@ -28,23 +32,37 @@ pub struct DataZoom {
     #[serde(rename = "type")]
     type_: Option<DataZoomType>,
 
+    /// Component ID.
     #[serde(skip_serializing_if = "Option::is_none")]
     id: Option<String>,
 
+    /// Whether to show the component.
     #[serde(skip_serializing_if = "Option::is_none")]
     show: Option<bool>,
 
+    /// Whether to enable real-time view update.
     #[serde(skip_serializing_if = "Option::is_none")]
     realtime: Option<bool>,
 
+    /// Background color of the component.
     #[serde(skip_serializing_if = "Option::is_none")]
     background_color: Option<Color>,
 
+    /// Style of the data shadow.
     #[serde(skip_serializing_if = "Option::is_none")]
     data_background: Option<DataBackground>,
 
+    /// Style of the selected data shadow.
     #[serde(skip_serializing_if = "Option::is_none")]
     selected_data_background: Option<DataBackground>,
+
+    /// Color to fill selected area.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    filler_color: Option<Color>,
+
+    /// Color of border.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    border_color: Option<Color>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     start: Option<f64>,
@@ -107,7 +125,7 @@ pub struct DataZoom {
     angle_axis_index: Option<f64>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    filter_mode: Option<DataZoomFilterMode>,
+    filter_mode: Option<FilterMode>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     text_style: Option<TextStyle>,
@@ -129,6 +147,8 @@ impl DataZoom {
             background_color: None,
             data_background: None,
             selected_data_background: None,
+            filler_color: None,
+            border_color: None,
             start: None,
             end: None,
             start_value: None,
@@ -191,6 +211,16 @@ impl DataZoom {
         selected_data_background: D,
     ) -> Self {
         self.selected_data_background = Some(selected_data_background.into());
+        self
+    }
+
+    pub fn filler_color<C: Into<Color>>(mut self, filler_color: C) -> Self {
+        self.filler_color = Some(filler_color.into());
+        self
+    }
+
+    pub fn border_color<C: Into<Color>>(mut self, border_color: C) -> Self {
+        self.border_color = Some(border_color.into());
         self
     }
 
@@ -294,7 +324,7 @@ impl DataZoom {
         self
     }
 
-    pub fn filter_mode<F: Into<DataZoomFilterMode>>(mut self, filter_mode: F) -> Self {
+    pub fn filter_mode<F: Into<FilterMode>>(mut self, filter_mode: F) -> Self {
         self.filter_mode = Some(filter_mode.into());
         self
     }
