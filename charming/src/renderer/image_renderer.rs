@@ -2,10 +2,11 @@ use deno_core::{v8, JsRuntime, RuntimeOptions};
 use gdk_pixbuf::traits::PixbufLoaderExt;
 use handlebars::Handlebars;
 
-use crate::{Chart, EchartsError};
+use crate::{theme::Theme, Chart, EchartsError};
 
 static CODE_TEMPLATE: &str = r#"
-var chart = echarts.init(null, null, {
+{{#if theme_source}}{{{ theme_source }}}{{/if}}
+var chart = echarts.init(null, {{#if theme}}'{{ theme }}'{{else}}null{{/if}}, {
     renderer: 'svg',
     ssr: true,
     width: {{ width }},
@@ -35,6 +36,7 @@ impl ToString for ImageFormat {
 
 pub struct ImageRenderer {
     js_runtime: JsRuntime,
+    theme: Theme,
     width: u32,
     height: u32,
 }
@@ -59,16 +61,25 @@ impl ImageRenderer {
 
         Self {
             js_runtime: runtime,
+            theme: Theme::Default,
             width,
             height,
         }
     }
 
+    pub fn theme(mut self, theme: Theme) -> Self {
+        self.theme = theme;
+        self
+    }
+
     pub fn render(&mut self, chart: &Chart) -> Result<String, EchartsError> {
+        let (theme, theme_source) = self.theme.to_str();
         let code = Handlebars::new()
             .render_template(
                 CODE_TEMPLATE,
                 &serde_json::json!({
+                    "theme": theme,
+                    "theme_source": theme_source,
                     "width": self.width,
                     "height": self.height,
                     "chart_option": chart.to_string(),

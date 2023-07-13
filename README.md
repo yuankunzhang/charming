@@ -1,10 +1,43 @@
-# Charming
+# Charming - A Rust Visualization Library
 
-I need a chart! 📊
+Charming is a powerful and versatile chart rendering library for Rust that leverages the power of [Apache ECharts](https://echarts.apache.org/en/index.html) to deliver high-quality data visualizations. Built with the Rust programming language, this library aims to provide the Rust ecosystem with an intuitive and effective way to generate and visualize charts, using a declarative and user-friendly API.
 
-Charming is a powerful and versatile chart rendering library for Rust that leverages the power of [Apache ECharts](https://echarts.apache.org/en/index.html) to deliver high-quality data visualizations. Built with the Rust programming language, this library aims to provide Rust users with an intuitive and effective way to generate and manipulate charts, using a declarative and user-friendly API. It supports to render charts into a wide range of formats, including HTML, SVG, PNG, and JPEG.
+Highlights:
 
-It is easy to use, this code draws a rose pie chart:
+- Easy-to-use, declaritive API.
+- Rich and customizable chart themes and styles.
+- Rendering to multiple formats, including HTML, SVG, PNG, and JPEG.
+- Abundant chart types.
+
+## Themes
+
+<div align="center">
+<img src="./img/theme/default.png" width="30%" alt="Default" />
+<img src="./img/theme/dark.png" width="30%" alt="Dark" />
+<img src="./img/theme/vintage.png" width="30%" alt="Vintage" />
+<img src="./img/theme/westeros.png" width="30%" alt="Westeros" />
+<img src="./img/theme/essos.png" width="30%" alt="Essos" />
+<img src="./img/theme/wonderland.png" width="30%" alt="Wonderland" />
+<img src="./img/theme/walden.png" width="30%" alt="Walden" />
+<img src="./img/theme/chalk.png" width="30%" alt="Chalk" />
+<img src="./img/theme/infographic.png" width="30%" alt="Infographic" />
+<img src="./img/theme/macarons.png" width="30%" alt="Macarons" />
+<img src="./img/theme/roma.png" width="30%" alt="Roma" />
+<img src="./img/theme/shine.png" width="30%" alt="Shine" />
+<img src="./img/theme/purple-passion.png" width="30%" alt="Purple Passion" />
+<img src="./img/theme/halloween.png" width="30%" alt="Halloween" />
+</div>
+
+## Basic Usage
+
+Add charming to your `Cargo.toml`:
+
+```toml
+[dependencies]
+charming = "0.1.0"
+```
+
+Below is an example of drawing a simple pie chart.
 
 ```rs
 use echarts::{
@@ -41,15 +74,19 @@ fn main() {
 }
 ```
 
+This code creates the following SVG file:
+
 ![](img/nightingale.svg)
 
-It is powerful, the code file [gallery/src/dataset/encode_and_matrix.rs](./gallery/src/dataset/encode_and_matrix.rs) draws a complex chart with four sub-charts:
+As another example, the code file [gallery/src/dataset/encode_and_matrix.rs](./gallery/src/dataset/encode_and_matrix.rs) draws a complex chart with four sub-charts:
 
 ![](img/encode-and-matrix.svg)
 
 ## Gallery
 
-Click on any single chart to view its source code file.
+Here are some selected chart examples. Click on any single chart to view its source code file.
+
+You can also clone the repo and run `cargo run --bin gallery` to view the interactive charts on the rendered HTML page.
 
 ### Bar Charts
 
@@ -110,6 +147,7 @@ Click on any single chart to view its source code file.
 <a href="./gallery/src/line/gradient_stacked_area.rs"><img src="./img/line/gradient_stacked_area.svg" width="40%" alt="Gradient Stacked Area" /></a>
 <a href="./gallery/src/line/large_scale_area.rs"><img src="./img/line/large_scale_area.svg" width="40%" alt="Large Scale Area" /></a>
 <a href="./gallery/src/line/line_gradient.rs"><img src="./img/line/line_gradient.svg" width="40%" alt="Line Gradient" /></a>
+<a href="./gallery/src/line/rainfall.rs"><img src="./img/line/rainfall.svg" width="40%" alt="Rainfall" /></a>
 <a href="./gallery/src/line/rainfall_vs_evaporation.rs"><img src="./img/line/rainfall_vs_evaporation.svg" width="40%" alt="Rainfall Vs. Evaporation" /></a>
 <a href="./gallery/src/line/smoothed_line.rs"><img src="./img/line/smoothed_line.svg" width="40%" alt="Smoothed Line" /></a>
 <a href="./gallery/src/line/stacked_area.rs"><img src="./img/line/stacked_area.svg" width="40%" alt="Stacked Area" /></a>

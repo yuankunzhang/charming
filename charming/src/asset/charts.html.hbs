@@ -12,7 +12,8 @@
       </div>
       
       <script type="text/javascript">
-          var chart = echarts.init(document.getElementById('{{ chart_id }}'));
+          {{#if theme_source}}{{{ theme_source }}}{{/if}}
+          var chart = echarts.init(document.getElementById('{{ chart_id }}'){{#if theme}}, '{{ theme }}'{{/if}});
           var option = {{{ chart_option }}};
           chart.setOption(option);
       </script>
