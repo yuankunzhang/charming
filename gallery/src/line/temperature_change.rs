@@ -2,11 +2,11 @@ use charming::{
     component::{
         Axis, Legend, Title, Toolbox, ToolboxFeature, ToolboxFeatureDataView,
         ToolboxFeatureDataZoom, ToolboxFeatureMagicType, ToolboxFeatureMagicTypeType,
-        ToolboxFeatureRestore, ToolboxFeatureSaveAsImage, Tooltip,
+        ToolboxFeatureRestore, ToolboxFeatureSaveAsImage,
     },
     element::{
         AxisLabel, AxisType, Label, LabelPosition, MarkLine, MarkLineData, MarkLineDataType,
-        MarkLineVariant, MarkPoint, MarkPointData, Symbol, TooltipTrigger,
+        MarkLineVariant, MarkPoint, MarkPointData, Symbol, Tooltip, Trigger,
     },
     series::Line,
     Chart,
@@ -15,7 +15,7 @@ use charming::{
 pub fn chart() -> Chart {
     Chart::new()
         .title(Title::new().text("Temperature change in the coming week"))
-        .tooltip(Tooltip::new().trigger(TooltipTrigger::Axis))
+        .tooltip(Tooltip::new().trigger(Trigger::Axis))
         .legend(Legend::new())
         .toolbox(
             Toolbox::new().show(true).feature(

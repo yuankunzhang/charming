@@ -1,8 +1,6 @@
 use charming::{
-    component::{
-        Axis, Grid, Legend, Title, Toolbox, ToolboxFeature, ToolboxFeatureSaveAsImage, Tooltip,
-    },
-    element::{AxisType, TooltipTrigger},
+    component::{Axis, Grid, Legend, Title, Toolbox, ToolboxFeature, ToolboxFeatureSaveAsImage},
+    element::{AxisType, Tooltip, Trigger},
     series::Line,
     Chart,
 };
@@ -10,7 +8,7 @@ use charming::{
 pub fn chart() -> Chart {
     Chart::new()
         .title(Title::new().text("Stacked Line"))
-        .tooltip(Tooltip::new().trigger(TooltipTrigger::Axis))
+        .tooltip(Tooltip::new().trigger(Trigger::Axis))
         .legend(Legend::new().data(vec![
             "Email",
             "Union Ads",

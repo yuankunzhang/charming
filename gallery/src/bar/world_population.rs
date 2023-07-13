@@ -1,6 +1,6 @@
 use charming::{
-    component::{Axis, Grid, Legend, Title, Tooltip},
-    element::{AxisPointer, AxisPointerType, AxisType, TooltipTrigger},
+    component::{Axis, Grid, Legend, Title},
+    element::{AxisPointer, AxisPointerType, AxisType, Tooltip, Trigger},
     series::Bar,
     Chart,
 };
@@ -10,7 +10,7 @@ pub fn chart() -> Chart {
         .title(Title::new().text("World Population"))
         .tooltip(
             Tooltip::new()
-                .trigger(TooltipTrigger::Axis)
+                .trigger(Trigger::Axis)
                 .axis_pointer(AxisPointer::new().type_(AxisPointerType::Shadow)),
         )
         .legend(Legend::new())

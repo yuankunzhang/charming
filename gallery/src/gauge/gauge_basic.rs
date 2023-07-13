@@ -1,5 +1,5 @@
 use charming::{
-    component::Tooltip,
+    element::Tooltip,
     series::{Gauge, GaugeDetail},
     Chart,
 };

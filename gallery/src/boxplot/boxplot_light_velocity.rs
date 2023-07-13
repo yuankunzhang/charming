@@ -1,8 +1,8 @@
 use charming::{
-    component::{Axis, Grid, Title, Tooltip},
+    component::{Axis, Grid, Title},
     datatype::{Dataset, Transform},
     element::{
-        AxisPointer, AxisPointerType, AxisType, SplitArea, SplitLine, TextStyle, TooltipTrigger,
+        AxisPointer, AxisPointerType, AxisType, SplitArea, SplitLine, TextStyle, Tooltip, Trigger,
     },
     series::{Boxplot, Scatter},
     Chart,
@@ -64,7 +64,7 @@ pub fn chart() -> Chart {
         .dataset(ds)
         .tooltip(
             Tooltip::new()
-                .trigger(TooltipTrigger::Item)
+                .trigger(Trigger::Item)
                 .axis_pointer(AxisPointer::new().type_(AxisPointerType::Shadow)),
         )
         .grid(Grid::new().left("10%").right("10%").bottom("15%"))

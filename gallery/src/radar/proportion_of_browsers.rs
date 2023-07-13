@@ -1,7 +1,7 @@
 use charming::{
-    component::{Legend, LegendType, RadarCoordinate, Title, Tooltip, VisualMap},
+    component::{Legend, LegendType, RadarCoordinate, Title, VisualMap},
     datatype::{DataPoint, DataPointItem},
-    element::{AreaStyle, Emphasis, LineStyle, Symbol, TooltipTrigger},
+    element::{AreaStyle, Emphasis, LineStyle, Symbol, Tooltip, Trigger},
     series::Radar,
     Chart,
 };
@@ -35,7 +35,7 @@ pub fn chart() -> Chart {
                 .top("10")
                 .left("10"),
         )
-        .tooltip(Tooltip::new().trigger(TooltipTrigger::Item))
+        .tooltip(Tooltip::new().trigger(Trigger::Item))
         .legend(
             Legend::new().type_(LegendType::Scroll).bottom("10").data(
                 (1..=28)

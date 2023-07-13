@@ -1,10 +1,11 @@
 use charming::{
     component::{
-        Legend, ParallelAxis, ParallelAxisDefault, ParallelCoordinate, Tooltip, VisualMap,
-        VisualMapChannel,
+        Legend, ParallelAxis, ParallelAxisDefault, ParallelCoordinate, VisualMap, VisualMapChannel,
     },
     datatype::CompositeValue,
-    element::{AxisLabel, AxisTick, AxisType, LineStyle, NameLocation, SplitLine, TextStyle},
+    element::{
+        AxisLabel, AxisTick, AxisType, LineStyle, NameLocation, SplitLine, TextStyle, Tooltip,
+    },
     series::Parallel,
     Chart,
 };

@@ -1,6 +1,6 @@
 use charming::{
-    component::{Legend, Title, Tooltip},
-    element::{Label, LabelPosition, LineStyle},
+    component::{Legend, Title},
+    element::{Label, LabelPosition, LineStyle, Tooltip},
     series::{Graph, GraphData, GraphLayout, GraphLayoutCircular, GraphNodeLabel},
     Chart,
 };

@@ -1,7 +1,7 @@
 use charming::{
-    component::{AngleAxis, Legend, Polar, RadiusAxis, Title, Tooltip},
+    component::{AngleAxis, Legend, Polar, RadiusAxis, Title},
     df,
-    element::{AxisLabel, AxisLine, AxisType, CoordinateSystem, SplitLine},
+    element::{AxisLabel, AxisLine, AxisType, CoordinateSystem, SplitLine, Tooltip},
     series::Scatter,
     Chart,
 };

@@ -1,6 +1,6 @@
 use charming::{
-    component::{AngleAxis, Polar, RadiusAxis, Title, Tooltip},
-    element::{AxisType, CoordinateSystem, Label, LabelPosition},
+    component::{AngleAxis, Polar, RadiusAxis, Title},
+    element::{AxisType, CoordinateSystem, Label, LabelPosition, Tooltip},
     series::Bar,
     Chart,
 };

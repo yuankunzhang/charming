@@ -19,7 +19,6 @@ pub mod single_axis;
 pub mod timeline;
 pub mod title;
 pub mod toolbox;
-pub mod tooltip;
 pub mod visual_map;
 
 pub use angle_axis::*;
@@ -43,5 +42,4 @@ pub use single_axis::*;
 pub use timeline::*;
 pub use title::*;
 pub use toolbox::*;
-pub use tooltip::*;
 pub use visual_map::*;

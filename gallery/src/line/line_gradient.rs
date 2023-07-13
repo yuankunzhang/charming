@@ -1,6 +1,6 @@
 use charming::{
-    component::{Axis, Grid, Title, Tooltip, VisualMap, VisualMapType},
-    element::TooltipTrigger,
+    component::{Axis, Grid, Title, VisualMap, VisualMapType},
+    element::{Tooltip, Trigger},
     series::Line,
     Chart,
 };
@@ -79,7 +79,7 @@ pub fn chart() -> Chart {
                 .left("center")
                 .top("55%"),
         )
-        .tooltip(Tooltip::new().trigger(TooltipTrigger::Axis))
+        .tooltip(Tooltip::new().trigger(Trigger::Axis))
         .visual_map(
             VisualMap::new()
                 .show(false)

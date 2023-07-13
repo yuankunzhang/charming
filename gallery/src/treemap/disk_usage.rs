@@ -1,7 +1,4 @@
-use charming::{
-    component::{Title, Tooltip},
-    Chart,
-};
+use charming::{component::Title, element::Tooltip, Chart};
 
 pub fn chart() -> Chart {
     Chart::new()

@@ -1,6 +1,6 @@
 use charming::{
-    component::{Axis3D, Grid3D, Tooltip, VisualMap},
-    element::AxisType,
+    component::{Axis3D, Grid3D, VisualMap},
+    element::{AxisType, Tooltip},
     Chart,
 };
 

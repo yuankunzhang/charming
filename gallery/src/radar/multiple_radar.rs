@@ -1,6 +1,6 @@
 use charming::{
-    component::{Legend, RadarCoordinate, Title, Tooltip},
-    element::{AreaStyle, TooltipTrigger},
+    component::{Legend, RadarCoordinate, Title},
+    element::{AreaStyle, Tooltip, Trigger},
     series::Radar,
     Chart,
 };
@@ -8,7 +8,7 @@ use charming::{
 pub fn chart() -> Chart {
     Chart::new()
         .title(Title::new().text("Multiple Radar"))
-        .tooltip(Tooltip::new().trigger(TooltipTrigger::Axis))
+        .tooltip(Tooltip::new().trigger(Trigger::Axis))
         .legend(Legend::new().left("center").data(vec![
             "A Software",
             "A Phone",
@@ -61,7 +61,7 @@ pub fn chart() -> Chart {
         .series(
             Radar::new()
                 .name("Radar")
-                .tooltip(Tooltip::new().trigger(TooltipTrigger::Item))
+                .tooltip(Tooltip::new().trigger(Trigger::Item))
                 .area_style(AreaStyle::new())
                 .data(vec![(vec![60, 73, 85, 40], "A Software")]),
         )

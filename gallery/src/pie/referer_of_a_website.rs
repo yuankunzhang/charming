@@ -1,7 +1,7 @@
 use charming::{
-    component::{Legend, Title, Tooltip},
+    component::{Legend, Title},
     df,
-    element::{Emphasis, ItemStyle, Orient, TooltipTrigger},
+    element::{Emphasis, ItemStyle, Orient, Tooltip, Trigger},
     series::Pie,
     Chart,
 };
@@ -14,7 +14,7 @@ pub fn chart() -> Chart {
                 .subtext("Fake Data")
                 .left("center"),
         )
-        .tooltip(Tooltip::new().trigger(TooltipTrigger::Item))
+        .tooltip(Tooltip::new().trigger(Trigger::Item))
         .legend(Legend::new().orient(Orient::Vertical).left("left"))
         .series(
             Pie::new()

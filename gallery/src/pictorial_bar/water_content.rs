@@ -1,6 +1,6 @@
 use charming::{
-    component::{Axis, Grid, Legend, LegendSelectedMode, Tooltip},
-    element::{AxisLabel, AxisLine, AxisTick, MarkLine, SplitLine},
+    component::{Axis, Grid, Legend, LegendSelectedMode},
+    element::{AxisLabel, AxisLine, AxisTick, MarkLine, SplitLine, Tooltip},
     series::PictorialBar,
     Chart,
 };

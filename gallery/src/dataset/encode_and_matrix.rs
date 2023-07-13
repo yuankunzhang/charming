@@ -1,8 +1,8 @@
 use charming::{
-    component::{Axis, Grid, Legend, Toolbox, ToolboxFeature, ToolboxFeatureDataZoom, Tooltip},
+    component::{Axis, Grid, Legend, Toolbox, ToolboxFeature, ToolboxFeatureDataZoom},
     datatype::{CompositeValue, Dataset},
     dim,
-    element::{AxisLabel, AxisType, DimensionEncode},
+    element::{AxisLabel, AxisType, DimensionEncode, Tooltip},
     series::Scatter,
     Chart,
 };

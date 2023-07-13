@@ -1,7 +1,7 @@
 use charming::{
-    component::{Axis, DataZoom, DataZoomType, Grid, Legend, Title, Tooltip},
+    component::{Axis, DataZoom, DataZoomType, Grid, Legend, Title},
     datatype::{Dataset, Transform},
-    element::{AxisPointer, AxisPointerType, AxisType, SplitArea, SplitLine, TooltipTrigger},
+    element::{AxisPointer, AxisPointerType, AxisType, SplitArea, SplitLine, Tooltip, Trigger},
     series::Boxplot,
     Chart,
 };
@@ -37,7 +37,7 @@ pub fn chart() -> Chart {
         .legend(Legend::new().top("10%"))
         .tooltip(
             Tooltip::new()
-                .trigger(TooltipTrigger::Axis)
+                .trigger(Trigger::Axis)
                 .axis_pointer(AxisPointer::new().type_(AxisPointerType::Shadow)),
         )
         .grid(

@@ -1,8 +1,7 @@
 use charming::{
-    component::{Tooltip, TooltipTriggerOn},
     element::{
-        Emphasis, EmphasisFocus, Label, LabelAlign, LabelPosition, LabelVerticalAlign,
-        TooltipTrigger,
+        Emphasis, EmphasisFocus, Label, LabelAlign, LabelPosition, LabelVerticalAlign, Tooltip,
+        Trigger, TriggerOn,
     },
     series::{Tree, TreeNode},
     Chart,
@@ -18,8 +17,8 @@ pub fn chart() -> Chart {
     Chart::new()
         .tooltip(
             Tooltip::new()
-                .trigger(TooltipTrigger::Item)
-                .trigger_on(TooltipTriggerOn::Mousemove),
+                .trigger(Trigger::Item)
+                .trigger_on(TriggerOn::Mousemove),
         )
         .series(
             Tree::new()

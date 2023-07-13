@@ -1,4 +1,4 @@
-use charming::{component::Tooltip, Chart};
+use charming::{element::Tooltip, Chart};
 
 pub fn chart() -> Chart {
     let svg = include_str!("../../asset/veins-medical-diagram.svg");

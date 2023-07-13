@@ -43,7 +43,7 @@ pub mod symbol;
 pub mod symbol_size;
 pub mod text_align;
 pub mod text_style;
-pub mod tooltip_trigger;
+pub mod tooltip;
 
 pub(crate) use raw_string::*;
 
@@ -90,4 +90,4 @@ pub use symbol::*;
 pub use symbol_size::*;
 pub use text_align::*;
 pub use text_style::*;
-pub use tooltip_trigger::*;
+pub use tooltip::*;

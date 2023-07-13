@@ -3,9 +3,9 @@ use std::vec;
 use charming::{
     component::{
         Axis, DataZoom, DataZoomType, Grid, Legend, Title, Toolbox, ToolboxFeature,
-        ToolboxFeatureDataZoom, ToolboxFeatureRestore, ToolboxFeatureSaveAsImage, Tooltip,
+        ToolboxFeatureDataZoom, ToolboxFeatureRestore, ToolboxFeatureSaveAsImage,
     },
-    element::{AxisLine, AxisPointer, AxisPointerLink, AxisType, TooltipTrigger},
+    element::{AxisLine, AxisPointer, AxisPointerLink, AxisType, Tooltip, Trigger},
     series::Line,
     Chart,
 };
@@ -23,7 +23,7 @@ pub fn chart() -> Chart {
         .title(Title::new().text("Rainfall vs Evaporation").left("center"))
         .tooltip(
             Tooltip::new()
-                .trigger(TooltipTrigger::Axis)
+                .trigger(Trigger::Axis)
                 .axis_pointer(AxisPointer::new()),
         )
         .legend(

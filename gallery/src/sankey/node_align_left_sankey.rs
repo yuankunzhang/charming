@@ -1,6 +1,6 @@
 use charming::{
-    component::{Title, Tooltip, TooltipTriggerOn},
-    element::{Emphasis, EmphasisFocus, LineStyle, TooltipTrigger},
+    component::Title,
+    element::{Emphasis, EmphasisFocus, LineStyle, Tooltip, Trigger, TriggerOn},
     series::{Sankey, SankeyLink, SankeyNode, SankeyNodeAlign},
     Chart,
 };
@@ -12,8 +12,8 @@ pub fn chart() -> Chart {
         .title(Title::new().text("Node Align Left Sankey"))
         .tooltip(
             Tooltip::new()
-                .trigger(TooltipTrigger::Item)
-                .trigger_on(TooltipTriggerOn::Mousemove),
+                .trigger(Trigger::Item)
+                .trigger_on(TriggerOn::Mousemove),
         )
         .series(
             Sankey::new()

@@ -1,9 +1,8 @@
 use serde::Serialize;
 
 use crate::{
-    component::tooltip::Tooltip,
     datatype::{DataFrame, DataPoint},
-    element::{AreaStyle, ColorBy, Emphasis, LineStyle, Symbol},
+    element::{AreaStyle, ColorBy, Emphasis, LineStyle, Symbol, Tooltip},
 };
 
 #[derive(Serialize)]

@@ -1,9 +1,9 @@
 use charming::{
-    component::{Axis, DataZoom, Grid, Legend, Tooltip},
+    component::{Axis, DataZoom, Grid, Legend},
     datatype::CompositeValue,
     element::{
         AreaStyle, AxisPointer, AxisPointerType, AxisType, DataBackground, LineStyle, SplitLine,
-        TextStyle, TooltipTrigger,
+        TextStyle, Tooltip, Trigger,
     },
     series::{Candlestick, Line},
     Chart,
@@ -33,7 +33,7 @@ pub fn chart() -> Chart {
                 .data(vec!["日K", "MA5", "MA10", "MA20", "MA30"]),
         )
         .tooltip(
-            Tooltip::new().trigger(TooltipTrigger::Axis).axis_pointer(
+            Tooltip::new().trigger(Trigger::Axis).axis_pointer(
                 AxisPointer::new()
                     .animation(false)
                     .type_(AxisPointerType::Cross)

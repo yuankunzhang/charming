@@ -1,11 +1,10 @@
 use charming::{
     component::{
-        Axis, Title, Toolbox, ToolboxFeature, ToolboxFeatureSaveAsImage, Tooltip, VisualMap,
-        VisualMapPiece,
+        Axis, Title, Toolbox, ToolboxFeature, ToolboxFeatureSaveAsImage, VisualMap, VisualMapPiece,
     },
     element::{
         AxisLabel, AxisPointer, AxisPointerType, AxisType, ItemStyle, MarkArea, MarkAreaData,
-        TooltipTrigger,
+        Tooltip, Trigger,
     },
     series::Line,
     Chart,
@@ -20,7 +19,7 @@ pub fn chart() -> Chart {
         )
         .tooltip(
             Tooltip::new()
-                .trigger(TooltipTrigger::Axis)
+                .trigger(Trigger::Axis)
                 .axis_pointer(AxisPointer::new().type_(AxisPointerType::Cross)),
         )
         .toolbox(Toolbox::new().show(true).feature(

@@ -1,8 +1,8 @@
 use charming::{
-    component::{Axis, Grid, Title, Tooltip},
+    component::{Axis, Grid, Title},
     element::{
         AxisPointer, AxisPointerType, AxisType, Emphasis, ItemStyle, Label, LabelPosition,
-        SplitLine, TooltipTrigger,
+        SplitLine, Tooltip, Trigger,
     },
     series::{bar, Bar, Series},
     Chart,
@@ -17,7 +17,7 @@ pub fn chart() -> Chart {
         )
         .tooltip(
             Tooltip::new()
-                .trigger(TooltipTrigger::Axis)
+                .trigger(Trigger::Axis)
                 .formatter(r#"{b0}<br />{a1}: {c1}"#)
                 .axis_pointer(AxisPointer::new().type_(AxisPointerType::Shadow)),
         )

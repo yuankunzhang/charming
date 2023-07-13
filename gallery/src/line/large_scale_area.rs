@@ -1,13 +1,13 @@
-use chrono::{Days, NaiveDate};
 use charming::{
     component::{
         Axis, DataZoom, DataZoomType, Title, Toolbox, ToolboxFeature, ToolboxFeatureDataZoom,
-        ToolboxFeatureRestore, ToolboxFeatureSaveAsImage, Tooltip,
+        ToolboxFeatureRestore, ToolboxFeatureSaveAsImage,
     },
-    element::{AreaStyle, AxisType, Color, ColorStop, LineStyle, Symbol, TooltipTrigger},
+    element::{AreaStyle, AxisType, Color, ColorStop, LineStyle, Symbol, Tooltip, Trigger},
     series::Line,
     Chart,
 };
+use chrono::{Days, NaiveDate};
 use rand::Rng;
 
 pub fn chart() -> Chart {
@@ -23,7 +23,7 @@ pub fn chart() -> Chart {
     }
 
     Chart::new()
-        .tooltip(Tooltip::new().trigger(TooltipTrigger::Axis))
+        .tooltip(Tooltip::new().trigger(Trigger::Axis))
         .title(Title::new().left("center").text("Large Area Chart"))
         .toolbox(
             Toolbox::new().feature(

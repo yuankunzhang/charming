@@ -1,10 +1,8 @@
 use charming::{
-    component::{
-        Axis, Grid, Legend, Title, Toolbox, ToolboxFeature, ToolboxFeatureSaveAsImage, Tooltip,
-    },
+    component::{Axis, Grid, Legend, Title, Toolbox, ToolboxFeature, ToolboxFeatureSaveAsImage},
     element::{
         AreaStyle, AxisPointer, AxisPointerType, AxisType, Color, ColorStop, Label, LineStyle,
-        TooltipTrigger,
+        Tooltip, Trigger,
     },
     series::Line,
     Chart,
@@ -21,7 +19,7 @@ pub fn chart() -> Chart {
         ])
         .title(Title::new().text("Gradient Stacked Area Chart"))
         .tooltip(
-            Tooltip::new().trigger(TooltipTrigger::Axis).axis_pointer(
+            Tooltip::new().trigger(Trigger::Axis).axis_pointer(
                 AxisPointer::new()
                     .type_(AxisPointerType::Cross)
                     .label(Label::new().background_color("#6a7985")),

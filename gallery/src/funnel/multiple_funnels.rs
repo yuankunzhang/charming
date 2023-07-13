@@ -1,10 +1,10 @@
 use charming::{
     component::{
         Legend, Title, Toolbox, ToolboxFeature, ToolboxFeatureDataView, ToolboxFeatureRestore,
-        ToolboxFeatureSaveAsImage, Tooltip,
+        ToolboxFeatureSaveAsImage,
     },
     df,
-    element::{Label, LabelPosition, Orient, Sort, TooltipTrigger},
+    element::{Label, LabelPosition, Orient, Sort, Tooltip, Trigger},
     series::Funnel,
     Chart,
 };
@@ -14,7 +14,7 @@ pub fn chart() -> Chart {
         .title(Title::new().text("Funnel").left("left").top("bottom"))
         .tooltip(
             Tooltip::new()
-                .trigger(TooltipTrigger::Item)
+                .trigger(Trigger::Item)
                 .formatter("{a} <br/>{b} : {c}%"),
         )
         .toolbox(

@@ -1,9 +1,9 @@
 use charming::{
-    component::{Axis, Grid, Title, Tooltip},
+    component::{Axis, Grid, Title},
     df,
     element::{
         Label, LabelAlign, LineStyle, LineStyleType, MarkLine, MarkLineData, MarkLineVariant,
-        Symbol,
+        Symbol, Tooltip,
     },
     series::Scatter,
     Chart,

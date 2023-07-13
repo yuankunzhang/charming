@@ -1,11 +1,11 @@
 use charming::{
     component::{
         Axis, DataZoom, DataZoomType, Grid, Legend, Toolbox, ToolboxFeature, ToolboxFeatureBrush,
-        ToolboxFeatureBrushType, ToolboxFeatureDataZoom, Tooltip,
+        ToolboxFeatureBrushType, ToolboxFeatureDataZoom,
     },
     element::{
         AxisLine, AxisPointer, AxisPointerLink, AxisPointerType, AxisType, DimensionEncode,
-        SplitArea, SplitLine, TooltipTrigger,
+        SplitArea, SplitLine, Tooltip, Trigger,
     },
     series::Custom,
     Chart,
@@ -33,7 +33,7 @@ pub fn chart() -> Chart {
         )
         .tooltip(
             Tooltip::new()
-                .trigger(TooltipTrigger::Axis)
+                .trigger(Trigger::Axis)
                 .axis_pointer(AxisPointer::new().type_(AxisPointerType::Cross)),
         )
         .axis_pointer(AxisPointer::new().link(vec![AxisPointerLink::new().x_axis_index("all")]))

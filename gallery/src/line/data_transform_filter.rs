@@ -1,7 +1,7 @@
 use charming::{
-    component::{Axis, Title, Tooltip},
+    component::{Axis, Title},
     datatype::{CompositeValue, Dataset, Source, Transform},
-    element::{AxisType, DimensionEncode, NameLocation, TooltipTrigger},
+    element::{AxisType, DimensionEncode, NameLocation, Tooltip, Trigger},
     series::Line,
     Chart,
 };
@@ -46,7 +46,7 @@ pub fn chart() -> Chart {
 
     Chart::new()
         .title(Title::new().text("Income of Germany and France since 1950"))
-        .tooltip(Tooltip::new().trigger(TooltipTrigger::Axis))
+        .tooltip(Tooltip::new().trigger(Trigger::Axis))
         .x_axis(
             Axis::new()
                 .type_(AxisType::Category)

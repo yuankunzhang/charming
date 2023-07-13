@@ -8,11 +8,10 @@ pub use renderer::*;
 
 use component::{
     AngleAxis, Axis, Axis3D, DataZoom, GeoMap, Grid, Grid3D, Legend, ParallelAxis,
-    ParallelCoordinate, Polar, RadarCoordinate, RadiusAxis, SingleAxis, Title, Toolbox, Tooltip,
-    VisualMap,
+    ParallelCoordinate, Polar, RadarCoordinate, RadiusAxis, SingleAxis, Title, Toolbox, VisualMap,
 };
 use datatype::Dataset;
-use element::{process_raw_strings, AxisPointer, Color, MarkLine};
+use element::{process_raw_strings, AxisPointer, Color, MarkLine, Tooltip};
 use serde::Serialize;
 use series::Series;
 

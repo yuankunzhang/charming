@@ -1,9 +1,9 @@
 use charming::{
     component::{
-        ParallelAxis, ParallelAxisDefault, ParallelCoordinate, Title, Tooltip, VisualMap,
-        VisualMapChannel, VisualMapType,
+        ParallelAxis, ParallelAxisDefault, ParallelCoordinate, Title, VisualMap, VisualMapChannel,
+        VisualMapType,
     },
-    element::{AxisType, NameLocation, ParallelLayout, TextStyle},
+    element::{AxisType, NameLocation, ParallelLayout, TextStyle, Tooltip},
     Chart,
 };
 
