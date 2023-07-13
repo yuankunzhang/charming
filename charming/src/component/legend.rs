@@ -2,7 +2,7 @@ use serde::Serialize;
 
 use crate::{
     datatype::CompositeValue,
-    element::{Color, Icon, ItemStyle, LabelAlign, LineStyle, Orient, PaddingProperty, TextStyle},
+    element::{Color, Icon, ItemStyle, LabelAlign, LineStyle, Orient, Padding, TextStyle},
 };
 
 #[derive(Serialize)]
@@ -125,7 +125,7 @@ pub struct Legend {
 
     /// Legend padding.
     #[serde(skip_serializing_if = "Option::is_none")]
-    padding: Option<PaddingProperty>,
+    padding: Option<Padding>,
 
     /// The gap between each legend.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -263,7 +263,7 @@ impl Legend {
         self
     }
 
-    pub fn padding<P: Into<PaddingProperty>>(mut self, padding: P) -> Self {
+    pub fn padding<P: Into<Padding>>(mut self, padding: P) -> Self {
         self.padding = Some(padding.into());
         self
     }

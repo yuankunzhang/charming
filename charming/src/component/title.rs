@@ -2,7 +2,7 @@ use serde::Serialize;
 
 use crate::{
     datatype::CompositeValue,
-    element::{Color, LinkTarget, PaddingProperty, TextAlign, TextStyle, TextVerticalAlign},
+    element::{Color, LinkTarget, Padding, TextAlign, TextStyle, TextVerticalAlign},
 };
 
 /// Title component, including main title and subtitle.
@@ -59,7 +59,7 @@ pub struct Title {
 
     /// Title padding, the unit is px.
     #[serde(skip_serializing_if = "Option::is_none")]
-    padding: Option<PaddingProperty>,
+    padding: Option<Padding>,
 
     /// The gap between the main title and the sub title, the unit is px.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -214,7 +214,7 @@ impl Title {
         self
     }
 
-    pub fn padding<P: Into<PaddingProperty>>(mut self, padding: P) -> Self {
+    pub fn padding<P: Into<Padding>>(mut self, padding: P) -> Self {
         self.padding = Some(padding.into());
         self
     }

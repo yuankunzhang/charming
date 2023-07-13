@@ -2,7 +2,7 @@ use serde::Serialize;
 
 use crate::datatype::CompositeValue;
 
-use super::{Color, Formatter, PaddingProperty, TextStyle, TooltipTrigger};
+use super::{Color, Formatter, Padding, TextStyle, TooltipTrigger};
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -29,7 +29,7 @@ pub struct CoordinateTooltip {
     border_color: Option<Color>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    padding: Option<PaddingProperty>,
+    padding: Option<Padding>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     text_style: Option<TextStyle>,

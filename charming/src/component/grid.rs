@@ -2,7 +2,7 @@ use serde::Serialize;
 
 use crate::{
     datatype::CompositeValue,
-    element::{Color, PaddingProperty, TextStyle, TooltipTrigger},
+    element::{Color, Padding, TextStyle, TooltipTrigger},
 };
 
 #[derive(Serialize)]
@@ -43,7 +43,7 @@ pub struct GridTooltip {
 
     /// The floating layer of tooltip space around content.
     #[serde(skip_serializing_if = "Option::is_none")]
-    padding: Option<PaddingProperty>,
+    padding: Option<Padding>,
 
     /// Text style of tooltip's floating layer.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -111,7 +111,7 @@ impl GridTooltip {
         self
     }
 
-    pub fn padding<P: Into<PaddingProperty>>(mut self, padding: P) -> Self {
+    pub fn padding<P: Into<Padding>>(mut self, padding: P) -> Self {
         self.padding = Some(padding.into());
         self
     }

@@ -3,8 +3,7 @@ use serde::Serialize;
 use crate::{
     datatype::CompositeValue,
     element::{
-        AxisLabel, AxisLine, AxisTick, Color, Formatter, PaddingProperty, Shape, SplitArea,
-        SplitLine,
+        AxisLabel, AxisLine, AxisTick, Color, Formatter, Padding, Shape, SplitArea, SplitLine,
     },
 };
 
@@ -57,7 +56,7 @@ pub struct RadarAxisName {
     border_radius: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    padding: Option<PaddingProperty>,
+    padding: Option<Padding>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     shadow_color: Option<Color>,
@@ -211,7 +210,7 @@ impl RadarAxisName {
         self
     }
 
-    pub fn padding<C: Into<PaddingProperty>>(mut self, padding: C) -> Self {
+    pub fn padding<C: Into<Padding>>(mut self, padding: C) -> Self {
         self.padding = Some(padding.into());
         self
     }
