@@ -1,7 +1,7 @@
 use charming::{
     component::{
-        Axis, DataZoom, DataZoomType, Grid, Legend, Toolbox, ToolboxFeature, ToolboxFeatureBrush,
-        ToolboxFeatureBrushType, ToolboxFeatureDataZoom,
+        Axis, Brush, BrushType, DataZoom, DataZoomType, Feature, Grid, Legend, Toolbox,
+        ToolboxDataZoom,
     },
     element::{
         AxisLine, AxisPointer, AxisPointerLink, AxisPointerType, AxisType, DimensionEncode,
@@ -39,12 +39,9 @@ pub fn chart() -> Chart {
         .axis_pointer(AxisPointer::new().link(vec![AxisPointerLink::new().x_axis_index("all")]))
         .toolbox(
             Toolbox::new().feature(
-                ToolboxFeature::new()
-                    .data_zoom(ToolboxFeatureDataZoom::new().y_axis_index(false))
-                    .brush(ToolboxFeatureBrush::new().type_(vec![
-                        ToolboxFeatureBrushType::LineX,
-                        ToolboxFeatureBrushType::Clear,
-                    ])),
+                Feature::new()
+                    .data_zoom(ToolboxDataZoom::new().y_axis_index("none"))
+                    .brush(Brush::new().type_(vec![BrushType::LineX, BrushType::Clear])),
             ),
         )
         .grid(Grid::new().left("10%").right("8%").bottom(150))

@@ -1,8 +1,5 @@
 use charming::{
-    component::{
-        Legend, Title, Toolbox, ToolboxFeature, ToolboxFeatureDataView, ToolboxFeatureRestore,
-        ToolboxFeatureSaveAsImage,
-    },
+    component::{DataView, Feature, Legend, Restore, SaveAsImage, Title, Toolbox},
     df,
     element::{Label, LabelPosition, Orient, Sort, Tooltip, Trigger},
     series::Funnel,
@@ -22,10 +19,10 @@ pub fn chart() -> Chart {
                 .orient(Orient::Vertical)
                 .top("center")
                 .feature(
-                    ToolboxFeature::new()
-                        .save_as_image(ToolboxFeatureSaveAsImage::new())
-                        .restore(ToolboxFeatureRestore::new())
-                        .data_view(ToolboxFeatureDataView::new().read_only(true)),
+                    Feature::new()
+                        .save_as_image(SaveAsImage::new())
+                        .restore(Restore::new())
+                        .data_view(DataView::new().read_only(true)),
                 ),
         )
         .legend(

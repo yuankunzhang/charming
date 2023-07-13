@@ -1,5 +1,5 @@
 use charming::{
-    component::{Axis, Grid, Legend, Toolbox, ToolboxFeature, ToolboxFeatureDataZoom},
+    component::{Axis, Feature, Grid, Legend, Toolbox, ToolboxDataZoom},
     datatype::{CompositeValue, Dataset},
     dim,
     element::{AxisLabel, AxisType, DimensionEncode, Tooltip},
@@ -17,7 +17,7 @@ pub fn chart() -> Chart {
         .toolbox(
             Toolbox::new()
                 .left("center")
-                .feature(ToolboxFeature::new().data_zoom(ToolboxFeatureDataZoom::new())),
+                .feature(Feature::new().data_zoom(ToolboxDataZoom::new())),
         )
         .grid(Grid::new().right("57%").bottom("57%"))
         .grid(Grid::new().left("57%").bottom("57%"))

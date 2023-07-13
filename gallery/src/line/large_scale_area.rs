@@ -1,7 +1,7 @@
 use charming::{
     component::{
-        Axis, DataZoom, DataZoomType, Title, Toolbox, ToolboxFeature, ToolboxFeatureDataZoom,
-        ToolboxFeatureRestore, ToolboxFeatureSaveAsImage,
+        Axis, DataZoom, DataZoomType, Feature, Restore, SaveAsImage, Title, Toolbox,
+        ToolboxDataZoom,
     },
     element::{AreaStyle, AxisType, Color, ColorStop, LineStyle, Symbol, Tooltip, Trigger},
     series::Line,
@@ -27,10 +27,10 @@ pub fn chart() -> Chart {
         .title(Title::new().left("center").text("Large Area Chart"))
         .toolbox(
             Toolbox::new().feature(
-                ToolboxFeature::new()
-                    .data_zoom(ToolboxFeatureDataZoom::new().y_axis_index(false))
-                    .restore(ToolboxFeatureRestore::new())
-                    .save_as_image(ToolboxFeatureSaveAsImage::new()),
+                Feature::new()
+                    .data_zoom(ToolboxDataZoom::new().y_axis_index("none"))
+                    .restore(Restore::new())
+                    .save_as_image(SaveAsImage::new()),
             ),
         )
         .x_axis(

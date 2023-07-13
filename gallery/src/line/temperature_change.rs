@@ -1,8 +1,7 @@
 use charming::{
     component::{
-        Axis, Legend, Title, Toolbox, ToolboxFeature, ToolboxFeatureDataView,
-        ToolboxFeatureDataZoom, ToolboxFeatureMagicType, ToolboxFeatureMagicTypeType,
-        ToolboxFeatureRestore, ToolboxFeatureSaveAsImage,
+        Axis, DataView, Feature, Legend, MagicType, MagicTypeType, Restore, SaveAsImage, Title,
+        Toolbox, ToolboxDataZoom,
     },
     element::{
         AxisLabel, AxisType, Label, LabelPosition, MarkLine, MarkLineData, MarkLineDataType,
@@ -19,15 +18,14 @@ pub fn chart() -> Chart {
         .legend(Legend::new())
         .toolbox(
             Toolbox::new().show(true).feature(
-                ToolboxFeature::new()
-                    .save_as_image(ToolboxFeatureSaveAsImage::new())
-                    .restore(ToolboxFeatureRestore::new())
-                    .magic_type(ToolboxFeatureMagicType::new().type_(vec![
-                        ToolboxFeatureMagicTypeType::Line,
-                        ToolboxFeatureMagicTypeType::Bar,
-                    ]))
-                    .data_zoom(ToolboxFeatureDataZoom::new().y_axis_index(false))
-                    .data_view(ToolboxFeatureDataView::new().read_only(false)),
+                Feature::new()
+                    .save_as_image(SaveAsImage::new())
+                    .restore(Restore::new())
+                    .magic_type(
+                        MagicType::new().type_(vec![MagicTypeType::Line, MagicTypeType::Bar]),
+                    )
+                    .data_zoom(ToolboxDataZoom::new().y_axis_index("none"))
+                    .data_view(DataView::new().read_only(false)),
             ),
         )
         .x_axis(

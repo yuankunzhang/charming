@@ -1,5 +1,5 @@
 use charming::{
-    component::{Axis, Grid, Legend, Title, Toolbox, ToolboxFeature, ToolboxFeatureSaveAsImage},
+    component::{Axis, Feature, Grid, Legend, SaveAsImage, Title, Toolbox},
     element::{AxisType, Tooltip, Trigger},
     series::Line,
     Chart,
@@ -23,10 +23,7 @@ pub fn chart() -> Chart {
                 .bottom("3%")
                 .contain_label(true),
         )
-        .toolbox(
-            Toolbox::new()
-                .feature(ToolboxFeature::new().save_as_image(ToolboxFeatureSaveAsImage::new())),
-        )
+        .toolbox(Toolbox::new().feature(Feature::new().save_as_image(SaveAsImage::new())))
         .x_axis(
             Axis::new()
                 .type_(AxisType::Category)

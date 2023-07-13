@@ -4,7 +4,7 @@ use crate::{datatype::CompositeValue, element::Orient};
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
-pub enum ToolboxFeatureSaveAsImageType {
+pub enum SaveAsImageType {
     Png,
     Jpg,
     Svg,
@@ -12,13 +12,13 @@ pub enum ToolboxFeatureSaveAsImageType {
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct ToolboxFeatureSaveAsImage {
+pub struct SaveAsImage {
     #[serde(skip_serializing_if = "Option::is_none")]
     show: Option<bool>,
 
     #[serde(rename = "type")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    type_: Option<ToolboxFeatureSaveAsImageType>,
+    type_: Option<SaveAsImageType>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     name: Option<String>,
@@ -27,7 +27,7 @@ pub struct ToolboxFeatureSaveAsImage {
     background_color: Option<String>,
 }
 
-impl ToolboxFeatureSaveAsImage {
+impl SaveAsImage {
     pub fn new() -> Self {
         Self {
             show: None,
@@ -42,7 +42,7 @@ impl ToolboxFeatureSaveAsImage {
         self
     }
 
-    pub fn type_(mut self, type_: ToolboxFeatureSaveAsImageType) -> Self {
+    pub fn type_(mut self, type_: SaveAsImageType) -> Self {
         self.type_ = Some(type_);
         self
     }
@@ -60,7 +60,7 @@ impl ToolboxFeatureSaveAsImage {
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct ToolboxFeatureRestore {
+pub struct Restore {
     #[serde(skip_serializing_if = "Option::is_none")]
     show: Option<bool>,
 
@@ -68,7 +68,7 @@ pub struct ToolboxFeatureRestore {
     title: Option<String>,
 }
 
-impl ToolboxFeatureRestore {
+impl Restore {
     pub fn new() -> Self {
         Self {
             show: None,
@@ -89,7 +89,7 @@ impl ToolboxFeatureRestore {
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct ToolboxFeatureDataView {
+pub struct DataView {
     #[serde(skip_serializing_if = "Option::is_none")]
     show: Option<bool>,
 
@@ -100,7 +100,7 @@ pub struct ToolboxFeatureDataView {
     read_only: Option<bool>,
 }
 
-impl ToolboxFeatureDataView {
+impl DataView {
     pub fn new() -> Self {
         Self {
             show: None,
@@ -127,7 +127,7 @@ impl ToolboxFeatureDataView {
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
-pub enum ToolboxFeatureMagicTypeType {
+pub enum MagicTypeType {
     /// For line charts.
     Line,
     /// For bar charts.
@@ -136,7 +136,7 @@ pub enum ToolboxFeatureMagicTypeType {
     Stack,
 }
 
-impl From<&str> for ToolboxFeatureMagicTypeType {
+impl From<&str> for MagicTypeType {
     fn from(s: &str) -> Self {
         match s {
             "line" => Self::Line,
@@ -149,15 +149,15 @@ impl From<&str> for ToolboxFeatureMagicTypeType {
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct ToolboxFeatureMagicType {
+pub struct MagicType {
     #[serde(skip_serializing_if = "Option::is_none")]
-    type_: Option<Vec<ToolboxFeatureMagicTypeType>>,
+    type_: Option<Vec<MagicTypeType>>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     title: Option<String>,
 }
 
-impl ToolboxFeatureMagicType {
+impl MagicType {
     pub fn new() -> Self {
         Self {
             type_: None,
@@ -165,7 +165,7 @@ impl ToolboxFeatureMagicType {
         }
     }
 
-    pub fn type_(mut self, type_: Vec<ToolboxFeatureMagicTypeType>) -> Self {
+    pub fn type_(mut self, type_: Vec<MagicTypeType>) -> Self {
         self.type_ = Some(type_);
         self
     }
@@ -178,7 +178,7 @@ impl ToolboxFeatureMagicType {
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
-pub enum ToolboxFeatureBrushType {
+pub enum BrushType {
     Rect,
     Polygon,
     LineX,
@@ -189,17 +189,17 @@ pub enum ToolboxFeatureBrushType {
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct ToolboxFeatureBrush {
+pub struct Brush {
     #[serde(skip_serializing_if = "Vec::is_empty")]
-    type_: Vec<ToolboxFeatureBrushType>,
+    type_: Vec<BrushType>,
 }
 
-impl ToolboxFeatureBrush {
+impl Brush {
     pub fn new() -> Self {
         Self { type_: vec![] }
     }
 
-    pub fn type_(mut self, type_: Vec<ToolboxFeatureBrushType>) -> Self {
+    pub fn type_(mut self, type_: Vec<BrushType>) -> Self {
         self.type_ = type_;
         self
     }
@@ -207,45 +207,45 @@ impl ToolboxFeatureBrush {
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct ToolboxFeatureDataZoom {
+pub struct ToolboxDataZoom {
     #[serde(skip_serializing_if = "Option::is_none")]
-    y_axis_index: Option<bool>,
+    y_axis_index: Option<CompositeValue>,
 }
 
-impl ToolboxFeatureDataZoom {
+impl ToolboxDataZoom {
     pub fn new() -> Self {
         Self { y_axis_index: None }
     }
 
-    pub fn y_axis_index(mut self, y_axis_index: bool) -> Self {
-        self.y_axis_index = Some(y_axis_index);
+    pub fn y_axis_index<C: Into<CompositeValue>>(mut self, y_axis_index: C) -> Self {
+        self.y_axis_index = Some(y_axis_index.into());
         self
     }
 }
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct ToolboxFeature {
+pub struct Feature {
     #[serde(skip_serializing_if = "Option::is_none")]
-    save_as_image: Option<ToolboxFeatureSaveAsImage>,
+    save_as_image: Option<SaveAsImage>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    restore: Option<ToolboxFeatureRestore>,
+    restore: Option<Restore>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    data_view: Option<ToolboxFeatureDataView>,
+    data_view: Option<DataView>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    magic_type: Option<ToolboxFeatureMagicType>,
+    magic_type: Option<MagicType>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    data_zoom: Option<ToolboxFeatureDataZoom>,
+    data_zoom: Option<ToolboxDataZoom>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    brush: Option<ToolboxFeatureBrush>,
+    brush: Option<Brush>,
 }
 
-impl ToolboxFeature {
+impl Feature {
     pub fn new() -> Self {
         Self {
             save_as_image: None,
@@ -257,32 +257,32 @@ impl ToolboxFeature {
         }
     }
 
-    pub fn save_as_image(mut self, save_as_image: ToolboxFeatureSaveAsImage) -> Self {
+    pub fn save_as_image(mut self, save_as_image: SaveAsImage) -> Self {
         self.save_as_image = Some(save_as_image);
         self
     }
 
-    pub fn restore(mut self, restore: ToolboxFeatureRestore) -> Self {
+    pub fn restore(mut self, restore: Restore) -> Self {
         self.restore = Some(restore);
         self
     }
 
-    pub fn data_view(mut self, data_view: ToolboxFeatureDataView) -> Self {
+    pub fn data_view(mut self, data_view: DataView) -> Self {
         self.data_view = Some(data_view);
         self
     }
 
-    pub fn magic_type(mut self, magic_type: ToolboxFeatureMagicType) -> Self {
+    pub fn magic_type(mut self, magic_type: MagicType) -> Self {
         self.magic_type = Some(magic_type);
         self
     }
 
-    pub fn data_zoom(mut self, data_zoom: ToolboxFeatureDataZoom) -> Self {
+    pub fn data_zoom(mut self, data_zoom: ToolboxDataZoom) -> Self {
         self.data_zoom = Some(data_zoom);
         self
     }
 
-    pub fn brush(mut self, brush: ToolboxFeatureBrush) -> Self {
+    pub fn brush(mut self, brush: Brush) -> Self {
         self.brush = Some(brush);
         self
     }
@@ -295,7 +295,7 @@ pub struct Toolbox {
     show: Option<bool>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    feature: Option<ToolboxFeature>,
+    feature: Option<Feature>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     orient: Option<Orient>,
@@ -331,7 +331,7 @@ impl Toolbox {
         self
     }
 
-    pub fn feature<T: Into<ToolboxFeature>>(mut self, feature: T) -> Self {
+    pub fn feature<T: Into<Feature>>(mut self, feature: T) -> Self {
         self.feature = Some(feature.into());
         self
     }

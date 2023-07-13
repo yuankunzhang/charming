@@ -1,7 +1,5 @@
 use charming::{
-    component::{
-        Axis, Title, Toolbox, ToolboxFeature, ToolboxFeatureSaveAsImage, VisualMap, VisualMapPiece,
-    },
+    component::{Axis, Feature, SaveAsImage, Title, Toolbox, VisualMap, VisualMapPiece},
     element::{
         AxisLabel, AxisPointer, AxisPointerType, AxisType, ItemStyle, MarkArea, MarkAreaData,
         Tooltip, Trigger,
@@ -22,9 +20,11 @@ pub fn chart() -> Chart {
                 .trigger(Trigger::Axis)
                 .axis_pointer(AxisPointer::new().type_(AxisPointerType::Cross)),
         )
-        .toolbox(Toolbox::new().show(true).feature(
-            ToolboxFeature::new().save_as_image(ToolboxFeatureSaveAsImage::new().show(true)),
-        ))
+        .toolbox(
+            Toolbox::new()
+                .show(true)
+                .feature(Feature::new().save_as_image(SaveAsImage::new().show(true))),
+        )
         .x_axis(
             Axis::new()
                 .type_(AxisType::Category)

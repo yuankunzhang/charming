@@ -1,8 +1,5 @@
 use charming::{
-    component::{
-        Legend, Toolbox, ToolboxFeature, ToolboxFeatureDataView, ToolboxFeatureRestore,
-        ToolboxFeatureSaveAsImage,
-    },
+    component::{DataView, Feature, Legend, Restore, SaveAsImage, Toolbox},
     df,
     element::ItemStyle,
     series::{Pie, PieRoseType},
@@ -14,10 +11,10 @@ pub fn chart() -> Chart {
         .legend(Legend::new().top("bottom"))
         .toolbox(
             Toolbox::new().show(true).feature(
-                ToolboxFeature::new()
-                    .data_view(ToolboxFeatureDataView::new().show(true))
-                    .restore(ToolboxFeatureRestore::new().show(true))
-                    .save_as_image(ToolboxFeatureSaveAsImage::new().show(true)),
+                Feature::new()
+                    .data_view(DataView::new().show(true))
+                    .restore(Restore::new().show(true))
+                    .save_as_image(SaveAsImage::new().show(true)),
             ),
         )
         .series(

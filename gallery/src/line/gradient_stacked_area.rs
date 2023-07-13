@@ -1,5 +1,5 @@
 use charming::{
-    component::{Axis, Grid, Legend, Title, Toolbox, ToolboxFeature, ToolboxFeatureSaveAsImage},
+    component::{Axis, Feature, Grid, Legend, SaveAsImage, Title, Toolbox},
     element::{
         AreaStyle, AxisPointer, AxisPointerType, AxisType, Color, ColorStop, Label, LineStyle,
         Tooltip, Trigger,
@@ -26,10 +26,7 @@ pub fn chart() -> Chart {
             ),
         )
         .legend(Legend::new().data(vec!["Line 1", "Line 2", "Line 3", "Line 4", "Line 5"]))
-        .toolbox(
-            Toolbox::new()
-                .feature(ToolboxFeature::new().save_as_image(ToolboxFeatureSaveAsImage::new())),
-        )
+        .toolbox(Toolbox::new().feature(Feature::new().save_as_image(SaveAsImage::new())))
         .grid(
             Grid::new()
                 .left("3%")
