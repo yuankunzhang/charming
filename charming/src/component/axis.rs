@@ -57,6 +57,9 @@ pub struct Axis {
     #[serde(skip_serializing_if = "Option::is_none")]
     inverse: Option<bool>,
 
+    #[serde(skip_serializing_if = "Option::is_none")]
+    align_ticks: Option<bool>,
+
     /// The boundary gap on both sides of a coordinate axis.
     #[serde(skip_serializing_if = "Option::is_none")]
     boundary_gap: Option<BoundaryGap>,
@@ -146,6 +149,7 @@ impl Axis {
             min_interval: None,
             max_interval: None,
             interval: None,
+            align_ticks: None,
             log_base: None,
             axis_label: None,
             axis_tick: None,
@@ -209,6 +213,11 @@ impl Axis {
 
     pub fn inverse(mut self, inverse: bool) -> Self {
         self.inverse = Some(inverse);
+        self
+    }
+
+    pub fn align_ticks(mut self, align_ticks: bool) -> Self {
+        self.align_ticks = Some(align_ticks);
         self
     }
 
