@@ -21,6 +21,7 @@ pub enum LabelPosition {
     Start,
     Outside,
     Middle,
+    Center,
 }
 
 #[derive(Serialize)]
@@ -67,6 +68,9 @@ pub struct Label {
     font_size: Option<f64>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    font_weight: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     padding: Option<(f64, f64, f64, f64)>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -108,6 +112,7 @@ impl Label {
             formatter: None,
             color: None,
             font_size: None,
+            font_weight: None,
             padding: None,
             align: None,
             vertical_align: None,
@@ -158,6 +163,11 @@ impl Label {
 
     pub fn font_size<F: Into<f64>>(mut self, font_size: F) -> Self {
         self.font_size = Some(font_size.into());
+        self
+    }
+
+    pub fn font_weight<S: Into<String>>(mut self, font_weight: S) -> Self {
+        self.font_weight = Some(font_weight.into());
         self
     }
 

@@ -2,7 +2,7 @@ use serde::Serialize;
 
 use crate::{
     datatype::{CompositeValue, DataFrame, DataPoint},
-    element::{ColorBy, CoordinateSystem, Emphasis, ItemStyle},
+    element::{ColorBy, CoordinateSystem, Emphasis, ItemStyle, Label, LabelLine},
 };
 
 #[derive(Serialize)]
@@ -49,10 +49,19 @@ pub struct Pie {
     clockwise: Option<bool>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    avoid_label_overlap: Option<bool>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     start_angle: Option<f64>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     rose_type: Option<PieRoseType>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    label: Option<Label>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    label_line: Option<LabelLine>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     item_style: Option<ItemStyle>,
@@ -84,8 +93,11 @@ impl Pie {
             selected_mode: None,
             selected_offset: None,
             clockwise: None,
+            avoid_label_overlap: None,
             start_angle: None,
             rose_type: None,
+            label: None,
+            label_line: None,
             item_style: None,
             emphasis: None,
             center: None,
@@ -144,6 +156,11 @@ impl Pie {
         self
     }
 
+    pub fn avoid_label_overlap(mut self, avoid_label_overlap: bool) -> Self {
+        self.avoid_label_overlap = Some(avoid_label_overlap);
+        self
+    }
+
     pub fn start_angle<F: Into<f64>>(mut self, start_angle: F) -> Self {
         self.start_angle = Some(start_angle.into());
         self
@@ -151,6 +168,16 @@ impl Pie {
 
     pub fn rose_type<P: Into<PieRoseType>>(mut self, rose_type: P) -> Self {
         self.rose_type = Some(rose_type.into());
+        self
+    }
+
+    pub fn label<L: Into<Label>>(mut self, label: L) -> Self {
+        self.label = Some(label.into());
+        self
+    }
+
+    pub fn label_line<L: Into<LabelLine>>(mut self, label_line: L) -> Self {
+        self.label_line = Some(label_line.into());
         self
     }
 

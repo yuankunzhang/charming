@@ -1,6 +1,6 @@
 use serde::Serialize;
 
-use super::{item_style::ItemStyle, AreaStyle};
+use super::{item_style::ItemStyle, AreaStyle, Label};
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
@@ -26,6 +26,9 @@ pub struct Emphasis {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     area_style: Option<AreaStyle>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    label: Option<Label>,
 }
 
 impl Emphasis {
@@ -34,6 +37,7 @@ impl Emphasis {
             focus: None,
             item_style: None,
             area_style: None,
+            label: None,
         }
     }
 
@@ -49,6 +53,11 @@ impl Emphasis {
 
     pub fn area_style<A: Into<AreaStyle>>(mut self, area_style: A) -> Self {
         self.area_style = Some(area_style.into());
+        self
+    }
+
+    pub fn label<L: Into<Label>>(mut self, label: L) -> Self {
+        self.label = Some(label.into());
         self
     }
 }
