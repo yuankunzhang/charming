@@ -1,0 +1,31 @@
+<svg width="600" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 600 450">
+<rect width="600" height="450" x="0" y="0" id="0" fill="none"></rect>
+<path d="M330 225A30 30 0 1 1 329.9 222A30 30 0 0 1 330 225M367.5 225A67.5 67.5 0 1 1 367.2 218.3A67.5 67.5 0 0 1 367.5 225M405 225A105 105 0 1 1 404.5 214.5A105 105 0 0 1 405 225M442.5 225A142.5 142.5 0 1 1 441.8 210.8A142.5 142.5 0 0 1 442.5 225M480 225A180 180 0 1 1 479.1 207A180 180 0 0 1 480 225" fill="none" stroke="#E0E6F1"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="462.8127759114745" y="125" fill="#6E7079">a</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="394" y="393.81277591147443" fill="#6E7079">b</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="137.1872240885255" y="325" fill="#6E7079">c</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="205.99999999999991" y="56.187224088525596" fill="#6E7079">d</text>
+<path d="M347.9 46.3L346.6 51.1M478.7 272.9L473.9 271.6M252.1 403.7L253.4 398.9M121.3 177.1L126.1 178.4" fill="#000" stroke="#6E7079"></path>
+<path d="M307.8 196L346.6 51.1" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<path d="M480 225A180 180 0 1 1 479.1 207A180 180 0 0 1 480 225M330 225A30 30 0 1 0 329.9 228A30 30 0 0 0 330 225" fill="none" stroke="#6E7079"></path>
+<path d="M307.8 196L302.9 194.7" fill="none" stroke="#6E7079"></path>
+<path d="M317.5 159.8L312.6 158.5" fill="none" stroke="#6E7079"></path>
+<path d="M327.2 123.6L322.3 122.3" fill="none" stroke="#6E7079"></path>
+<path d="M336.9 87.4L332.1 86.1" fill="none" stroke="#6E7079"></path>
+<path d="M346.6 51.1L341.8 49.8" fill="none" stroke="#6E7079"></path>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(300.0372 193.9517)" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(309.7429 157.7295)" fill="#6E7079">1</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(319.4486 121.5072)" fill="#6E7079">2</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(329.1543 85.285)" fill="#6E7079">3</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(338.86 49.0628)" fill="#6E7079">4</text>
+<path d="M342.7 129.1A105 105 0 0 1 404.4 236L329.8 228.1A30 30 0 0 0 312.2 197.6Z" fill="#5470c6"></path>
+<path d="M368.5 255.5A75 75 0 0 1 292.2 299.6L296.9 254.8A30 30 0 0 0 327.4 237.2Z" fill="#5470c6"></path>
+<path d="M251.2 334.6A120 120 0 0 1 180.7 212.5L270.2 221.9A30 30 0 0 0 287.8 252.4Z" fill="#5470c6"></path>
+<path d="M149.3 157.9A165 165 0 0 1 317.2 60.9L303.1 195.2A30 30 0 0 0 272.6 212.8Z" fill="#5470c6"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.5,0.866,-0.866,0.5,358.4567,191.25)" fill="#eee" stroke="#5470c6" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">a: 2</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.866,-0.5,0.5,0.866,326.25,270.4663)" fill="#eee" stroke="#5470c6" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">b: 1.2</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.5,0.866,-0.866,0.5,235.0481,262.5)" fill="#eee" stroke="#5470c6" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">c: 2.4</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.866,-0.5,0.5,0.866,251.25,140.5625)" fill="#eee" stroke="#5470c6" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">d: 3.6</text>
+<path d="M-5 -5l330 0l0 28l-330 0Z" transform="translate(5 5)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#ccc" stroke-width="0"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:18px;font-family:sans-serif;font-weight:bold;" xml:space="preserve" y="9" transform="translate(5 5)" fill="#464646">Radial Polar Bar Label Position (middle)</text>
+</svg>

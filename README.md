@@ -11,22 +11,32 @@ Highlights:
 
 ## Themes
 
-<div align="center">
-<img src="./img/theme/default.png" width="30%" alt="Default" />
-<img src="./img/theme/dark.png" width="30%" alt="Dark" />
-<img src="./img/theme/vintage.png" width="30%" alt="Vintage" />
-<img src="./img/theme/westeros.png" width="30%" alt="Westeros" />
-<img src="./img/theme/essos.png" width="30%" alt="Essos" />
-<img src="./img/theme/wonderland.png" width="30%" alt="Wonderland" />
-<img src="./img/theme/walden.png" width="30%" alt="Walden" />
-<img src="./img/theme/chalk.png" width="30%" alt="Chalk" />
-<img src="./img/theme/infographic.png" width="30%" alt="Infographic" />
-<img src="./img/theme/macarons.png" width="30%" alt="Macarons" />
-<img src="./img/theme/roma.png" width="30%" alt="Roma" />
-<img src="./img/theme/shine.png" width="30%" alt="Shine" />
-<img src="./img/theme/purple-passion.png" width="30%" alt="Purple Passion" />
-<img src="./img/theme/halloween.png" width="30%" alt="Halloween" />
-</div>
+<table>
+    <tr>
+        <td><img src="./img/theme/default.png" alt="Default" /><p align="center">Default</p></td>
+        <td><img src="./img/theme/dark.png" alt="Dark" /><p align="center">Dark</p></td>
+        <td><img src="./img/theme/vintage.png" alt="Vintage" /><p align="center">Vintage</p></td>
+    </tr>
+    <tr>
+        <td><img src="./img/theme/westeros.png" alt="Westeros" /><p align="center">Vintage</p></td>
+        <td><img src="./img/theme/essos.png" alt="Essos" /><p align="center">Essos</p></td>
+        <td><img src="./img/theme/wonderland.png" alt="Wonderland" /><p align="center">Essos</p></td>
+    </tr>
+    <tr>
+        <td><img src="./img/theme/walden.png" alt="Walden" /><p align="center">Walden</p></td>
+        <td><img src="./img/theme/chalk.png" alt="Chalk" /><p align="center">Chalk</p></td>
+        <td><img src="./img/theme/infographic.png" alt="Infographic" /><p align="center">Infographic</p></td>
+    </tr>
+    <tr>
+        <td><img src="./img/theme/macarons.png" alt="Macarons" /><p align="center">Macarons</p></td>
+        <td><img src="./img/theme/roma.png" alt="Roma" /><p align="center">Roma</p></td>
+        <td><img src="./img/theme/shine.png" alt="Shine" /><p align="center">Shine</p></td>
+    </tr>
+    <tr>
+        <td><img src="./img/theme/purple-passion.png" alt="Purple Passion" /><p align="center">Purple Passion</p></td>
+        <td><img src="./img/theme/halloween.png" alt="Halloween" /><p align="center">Halloween</p></td>
+    </tr>
+</table>
 
 ## Basic Usage
 
@@ -93,6 +103,7 @@ You can also clone the repo and run `cargo run --bin gallery` to view the intera
 <div align="center">
 <a href="./gallery/src/bar/bar_with_background.rs"><img src="./img/bar/bar_with_background.svg" width="40%" alt="Bar with Background" /></a>
 <a href="./gallery/src/bar/basic_bar.rs"><img src="./img/bar/basic_bar.svg" width="40%" alt="Basic Bar" /></a>
+<a href="./gallery/src/bar/radial_polar_bar_label_position.rs"><img src="./img/bar/radial_polar_bar_label_position.svg" width="40%" alt="Radial Polar Bar Label Position" /></a>
 <a href="./gallery/src/bar/set_style_of_single_bar.rs"><img src="./img/bar/set_style_of_single_bar.svg" width="40%" alt="Set Style of Single Bar" /></a>
 <a href="./gallery/src/bar/stacked_column.rs"><img src="./img/bar/stacked_column.svg" width="40%" alt="Stacked Column" /></a>
 <a href="./gallery/src/bar/tangential_polar_bar.rs"><img src="./img/bar/tangential_polar_bar.svg" width="40%" alt="Tangential Polar Bar" /></a>
@@ -165,6 +176,7 @@ You can also clone the repo and run `cargo run --bin gallery` to view the intera
 ### Pie Charts
 
 <div align="center">
+<a href="./gallery/src/pie/doughnut_chart_with_rounded_corner.rs"><img src="./img/pie/doughnut_chart_with_rounded_corner.svg" width="40%" alt="Nightingale" /></a>
 <a href="./gallery/src/pie/nightingale.rs"><img src="./img/pie/nightingale.svg" width="40%" alt="Nightingale" /></a>
 <a href="./gallery/src/pie/referer_of_a_website.rs"><img src="./img/pie/referer_of_a_website.svg" width="40%" alt="Referer of a Website" /></a>
 </div>
