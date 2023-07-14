@@ -35,6 +35,7 @@ lazy_static! {
         let mut m = BTreeMap::new();
         insert!(m, bar, bar_with_background);
         insert!(m, bar, basic_bar);
+        insert!(m, bar, radial_polar_bar_label_position);
         insert!(m, bar, set_style_of_single_bar);
         insert!(m, bar, stacked_column);
         insert!(m, bar, tangential_polar_bar);
