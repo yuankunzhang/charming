@@ -51,6 +51,7 @@ lazy_static! {
     static ref BOXPLOT_CHARTS: BTreeMap<&'static str, fn() -> Chart> = {
         let mut m = BTreeMap::new();
         insert!(m, boxplot, boxplot_light_velocity);
+        insert!(m, boxplot, boxplot_light_velocity2);
         insert!(m, boxplot, data_transform_simple_aggregate);
         insert!(m, boxplot, multiple_categories);
         m
@@ -151,6 +152,7 @@ lazy_static! {
         let mut m = BTreeMap::new();
         insert!(m, scatter, anscombe_quartet);
         insert!(m, scatter, basic_scatter);
+        insert!(m, scatter, clustering_process);
         insert!(m, scatter, effect_scatter);
         insert!(m, scatter, punch_card_of_github);
         m
