@@ -4,27 +4,41 @@ use crate::element::RawString;
 
 use super::{DataSource, Dimension};
 
-#[derive(Debug, Serialize)]
+#[derive(Serialize)]
 pub struct Source {
+    source: DataSource,
+
     #[serde(skip_serializing_if = "Option::is_none")]
     id: Option<String>,
-    source: DataSource,
+
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    dimensions: Vec<Dimension>,
 }
 
 impl Source {
     pub fn new(source: DataSource) -> Self {
-        Source { id: None, source }
+        Source {
+            id: None,
+            source,
+            dimensions: vec![],
+        }
     }
 
     pub fn new_with_id(source: DataSource, id: String) -> Self {
         Source {
             id: Some(id),
             source,
+            dimensions: vec![],
         }
     }
 
     pub fn id<S: Into<String>>(mut self, id: S) -> Self {
         self.id = Some(id.into());
+        self
+    }
+
+    pub fn dimensions<D: Into<Dimension>>(mut self, dimensions: Vec<D>) -> Self {
+        self.dimensions = dimensions.into_iter().map(|d| d.into()).collect();
         self
     }
 }
@@ -113,7 +127,6 @@ impl From<&str> for Transform {
 pub struct Dataset {
     sources: Vec<Source>,
     transforms: Vec<Transform>,
-    dimensions: Vec<Dimension>,
 }
 
 impl Serialize for Dataset {
@@ -134,7 +147,6 @@ impl Dataset {
         Self {
             sources: vec![],
             transforms: vec![],
-            dimensions: vec![],
         }
     }
 
@@ -145,11 +157,6 @@ impl Dataset {
 
     pub fn transform<T: Into<Transform>>(mut self, transform: T) -> Self {
         self.transforms.push(transform.into());
-        self
-    }
-
-    pub fn dimensions<D: Into<Dimension>>(mut self, dimensions: Vec<D>) -> Self {
-        self.dimensions = dimensions.into_iter().map(|d| d.into()).collect();
         self
     }
 }

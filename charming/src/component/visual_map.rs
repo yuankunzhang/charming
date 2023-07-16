@@ -151,7 +151,7 @@ pub struct VisualMap {
     show: Option<bool>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    dimension: Option<f64>,
+    dimension: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     series_index: Option<f64>,
@@ -259,7 +259,7 @@ impl VisualMap {
         self
     }
 
-    pub fn dimension<F: Into<f64>>(mut self, dimension: F) -> Self {
+    pub fn dimension<C: Into<CompositeValue>>(mut self, dimension: C) -> Self {
         self.dimension = Some(dimension.into());
         self
     }

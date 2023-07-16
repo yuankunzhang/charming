@@ -15,8 +15,6 @@
     }
 
     globalThis.global = {};
-
     globalThis.setTimeout = () => { };
-
     globalThis.clearTimeout = () => { };
 })(globalThis);

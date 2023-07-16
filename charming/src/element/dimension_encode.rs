@@ -12,6 +12,9 @@ pub struct DimensionEncode {
     y: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    z: Option<CompositeValue>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     item_name: Option<String>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
@@ -23,6 +26,7 @@ impl DimensionEncode {
         Self {
             x: None,
             y: None,
+            z: None,
             item_name: None,
             tooltip: vec![],
         }
@@ -35,6 +39,11 @@ impl DimensionEncode {
 
     pub fn y<C: Into<CompositeValue>>(mut self, y: C) -> Self {
         self.y = Some(y.into());
+        self
+    }
+
+    pub fn z<C: Into<CompositeValue>>(mut self, z: C) -> Self {
+        self.z = Some(z.into());
         self
     }
 

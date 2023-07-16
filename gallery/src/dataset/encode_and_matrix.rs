@@ -1,7 +1,6 @@
 use charming::{
     component::{Axis, Feature, Grid, Legend, Toolbox, ToolboxDataZoom},
     datatype::{CompositeValue, Dataset},
-    dim,
     element::{AxisLabel, AxisType, DimensionEncode, Tooltip},
     series::Scatter,
     Chart,
@@ -76,13 +75,7 @@ pub fn chart() -> Chart {
                 .grid_index(3)
                 .name("Population"),
         )
-        .dataset(Dataset::new().source(data).dimensions(dim![
-            "Income",
-            "Life Expectancy",
-            "Population",
-            "Country",
-            ("Year", "ordinal")
-        ]))
+        .dataset(Dataset::new().source(data))
         .series(
             Scatter::new()
                 .symbol_size(2.5)

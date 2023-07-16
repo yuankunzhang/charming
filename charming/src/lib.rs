@@ -35,21 +35,25 @@ pub struct Chart {
     grid: Vec<Grid>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
+    #[serde(rename = "grid3D")]
     grid3d: Vec<Grid3D>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
     x_axis: Vec<Axis>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
+    #[serde(rename = "xAxis3D")]
     x_axis3d: Vec<Axis3D>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
     y_axis: Vec<Axis>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
+    #[serde(rename = "yAxis3D")]
     y_axis3d: Vec<Axis3D>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
+    #[serde(rename = "zAxis3D")]
     z_axis3d: Vec<Axis3D>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]

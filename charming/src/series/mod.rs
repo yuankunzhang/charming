@@ -1,6 +1,7 @@
 use serde::Serialize;
 
 pub mod bar;
+pub mod bar3d;
 pub mod boxplot;
 pub mod candlestick;
 pub mod custom;
@@ -24,6 +25,7 @@ pub mod tree;
 pub mod treemap;
 
 pub use bar::*;
+pub use bar3d::*;
 pub use boxplot::*;
 pub use candlestick::*;
 pub use custom::*;
@@ -48,6 +50,7 @@ pub use treemap::*;
 
 pub enum Series {
     Bar(bar::Bar),
+    Bar3d(bar3d::Bar3d),
     Boxplot(boxplot::Boxplot),
     Candlestick(candlestick::Candlestick),
     Custom(custom::Custom),
@@ -87,6 +90,7 @@ macro_rules! serialize {
 
 serialize!(
     Bar,
+    Bar3d,
     Boxplot,
     Candlestick,
     Custom,
@@ -123,6 +127,7 @@ macro_rules! impl_series {
 
 impl_series!(
     Bar,
+    Bar3d,
     Boxplot,
     Custom,
     Candlestick,
