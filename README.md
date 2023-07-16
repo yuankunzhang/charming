@@ -83,11 +83,12 @@ $ cargo add charming
 Below is an example of drawing a simple pie chart.
 
 ```rs
+use charming::image_renderer::ImageRenderer;
 use charming::{
     component::Legend,
     element::ItemStyle,
     series::{Pie, PieRoseType},
-    Chart, ImageRenderer
+    Chart,
 };
 
 fn main() {
@@ -110,7 +111,7 @@ fn main() {
                     (22.0, "rose 7"),
                     (18.0, "rose 8"),
                 ]),
-        )
+        );
     let mut renderer = ImageRenderer::new(1000, 800);
     renderer.save(&chart, "/tmp/nightingale.svg");
 }
