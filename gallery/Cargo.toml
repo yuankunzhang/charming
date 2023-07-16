@@ -10,7 +10,7 @@ chrono = "0.4.26"
 lazy_static = "1.4.0"
 rand = "0.8.5"
 tokio = "1.29.1"
-charming = { path = "../charming" }
+charming = { path = "../charming", features = ["ssr"] }
 serde_json = "1.0.99"
 serde = "1.0.164"
 

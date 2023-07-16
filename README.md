@@ -38,13 +38,46 @@ Highlights:
     </tr>
 </table>
 
+## Renderers
+
+Charming provides two types of renderers:
+
+- `HtmlRenderer` - It generates HTML fragments and offloads the actual rendering to user's browser for an interactive, seamless experience.
+- `ImageRenderer` - It has the ability to generates static images. This renderer is disabled by default, to enable it, add the `ssr` feature in your `Cargo.toml`.
+
+```rs
+// Use HtmlRenderer.
+use echarts::HtmlRenderer;
+
+// Chart dimension 1000x800.
+let renderer = HtmlRenderer::new("my charts", 1000, 800);
+// Render the chart as HTML string.
+let html_str = renderer.render(&chart).unwrap();
+// Save the chart as HTML file.
+renderer.save(&chart, "/tmp/chart.html").unwrap();
+
+
+// Use ImageRenderer. The `ssr` feature needs to be enabled.
+use echarts::{ImageRenderer, ImageFormat};
+
+// Chart dimension 1000x800.
+let mut renderer = ImageRenderer::new(1000, 800);
+// Render the chart as SVG string.
+renderer.render(&chart).unwrap();
+// Render the chart as PNG bytes.
+renderer.render_format(ImageFormat::PNG, &chart).unwrap();
+// Save the chart as SVG file.
+renderer.save(&chart, "/tmp/chart.svg").unwrap();
+// Save the chart as PNG file.
+renderer.save_format(ImageFormat::PNG, &chart, "/tmp/chart.png");
+```
+
 ## Basic Usage
 
-Add charming to your `Cargo.toml`:
+Add charming as a dependency:
 
-```toml
-[dependencies]
-charming = "0.1.1"
+```sh
+$ cargo add charming
 ```
 
 Below is an example of drawing a simple pie chart.

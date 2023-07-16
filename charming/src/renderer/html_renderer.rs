@@ -43,4 +43,14 @@ impl HtmlRenderer {
             .map_err(|error| EchartsError::HtmlRenderingError(error.to_string()))?;
         Ok(data)
     }
+
+    pub fn save<P: AsRef<std::path::Path>>(
+        &mut self,
+        chart: &Chart,
+        path: P,
+    ) -> Result<(), EchartsError> {
+        let svg = self.render(chart)?;
+        std::fs::write(path, svg)
+            .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))
+    }
 }
