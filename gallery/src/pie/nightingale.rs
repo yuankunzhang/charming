@@ -1,6 +1,5 @@
 use charming::{
     component::{DataView, Feature, Legend, Restore, SaveAsImage, Toolbox},
-    df,
     element::ItemStyle,
     series::{Pie, PieRoseType},
     Chart,
@@ -24,7 +23,7 @@ pub fn chart() -> Chart {
                 .radius(vec!["50", "250"])
                 .center(vec!["50%", "50%"])
                 .item_style(ItemStyle::new().border_radius(8))
-                .data(df![
+                .data(vec![
                     (40.0, "rose 1"),
                     (38.0, "rose 2"),
                     (32.0, "rose 3"),

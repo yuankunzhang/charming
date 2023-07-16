@@ -47,7 +47,7 @@ Charming provides two types of renderers:
 
 ```rs
 // Use HtmlRenderer.
-use echarts::HtmlRenderer;
+use charming::HtmlRenderer;
 
 // Chart dimension 1000x800.
 let renderer = HtmlRenderer::new("my charts", 1000, 800);
@@ -58,7 +58,7 @@ renderer.save(&chart, "/tmp/chart.html").unwrap();
 
 
 // Use ImageRenderer. The `ssr` feature needs to be enabled.
-use echarts::{ImageRenderer, ImageFormat};
+use charming::{ImageRenderer, ImageFormat};
 
 // Chart dimension 1000x800.
 let mut renderer = ImageRenderer::new(1000, 800);
@@ -83,9 +83,8 @@ $ cargo add charming
 Below is an example of drawing a simple pie chart.
 
 ```rs
-use echarts::{
+use charming::{
     component::Legend,
-    df,
     element::ItemStyle,
     series::{Pie, PieRoseType},
     Chart, ImageRenderer
@@ -101,7 +100,7 @@ fn main() {
                 .radius(("50", "250"))
                 .center(("50%", "50%"))
                 .item_style(ItemStyle::new().border_radius(8))
-                .data(df![
+                .data(vec![
                     (40.0, "rose 1"),
                     (38.0, "rose 2"),
                     (32.0, "rose 3"),

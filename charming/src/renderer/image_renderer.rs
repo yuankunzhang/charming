@@ -110,6 +110,10 @@ impl ImageRenderer {
     ) -> Result<Vec<u8>, EchartsError> {
         let svg = self.render(chart)?;
 
+        if let ImageFormat::SVG = image_format {
+            return Ok(svg.as_bytes().to_vec());
+        }
+
         let loader = gdk_pixbuf::PixbufLoader::with_mime_type("image/svg+xml")
             .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))?;
         loader
