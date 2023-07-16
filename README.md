@@ -44,7 +44,7 @@ Add charming to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-charming = "0.1.0"
+charming = "0.1.1"
 ```
 
 Below is an example of drawing a simple pie chart.
