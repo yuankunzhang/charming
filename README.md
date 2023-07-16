@@ -98,8 +98,8 @@ fn main() {
             Pie::new()
                 .name("Nightingale Chart")
                 .rose_type(PieRoseType::Radius)
-                .radius(("50", "250"))
-                .center(("50%", "50%"))
+                .radius(vec!["50", "250"])
+                .center(vec!["50%", "50%"])
                 .item_style(ItemStyle::new().border_radius(8))
                 .data(vec![
                     (40.0, "rose 1"),
@@ -112,6 +112,7 @@ fn main() {
                     (18.0, "rose 8"),
                 ]),
         );
+
     let mut renderer = ImageRenderer::new(1000, 800);
     renderer.save(&chart, "/tmp/nightingale.svg");
 }
