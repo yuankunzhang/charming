@@ -231,6 +231,7 @@ dependencies = [
  "serde",
  "serde_json",
  "serde_v8",
+ "wasm-bindgen",
 ]
 
 [[package]]

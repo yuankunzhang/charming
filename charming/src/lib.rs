@@ -4,6 +4,7 @@ pub mod element;
 pub mod renderer;
 pub mod series;
 pub mod theme;
+pub mod wasm;
 
 pub use renderer::*;
 

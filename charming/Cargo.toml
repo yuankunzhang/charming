@@ -12,12 +12,14 @@ license = "MIT/Apache-2.0"
 readme = "../README.md"
 
 [dependencies]
-deno_core = "0.195.0"
-gdk-pixbuf = "0.17.10"
+deno_core = { version = "0.195.0", optional = true }
+gdk-pixbuf = { version = "0.17.10", optional = true }
 handlebars = "4.3.7"
 serde = "1.0.164"
 serde_json = "1.0.99"
-serde_v8 = "0.106.0"
+serde_v8 = { version = "0.106.0", optional = true }
+wasm-bindgen = "0.2.87"
 
 [features]
-ssr = []
+ssr = ["deno_core", "gdk-pixbuf", "serde_v8"]
+wasm = []
