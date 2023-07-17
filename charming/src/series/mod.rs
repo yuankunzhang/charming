@@ -73,7 +73,7 @@ pub enum Series {
     Treemap(treemap::Treemap),
 }
 
-macro_rules! serialize {
+macro_rules! impl_series {
     ($($variant:ident),*) => {
         impl Serialize for Series {
             fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
@@ -85,36 +85,6 @@ macro_rules! serialize {
                 }
             }
         }
-    }
-}
-
-serialize!(
-    Bar,
-    Bar3d,
-    Boxplot,
-    Candlestick,
-    Custom,
-    EffectScatter,
-    Funnel,
-    Gauge,
-    Graph,
-    Heatmap,
-    Line,
-    Map,
-    Parallel,
-    PictorialBar,
-    Pie,
-    Radar,
-    Sankey,
-    Scatter,
-    Sunburst,
-    ThemeRiver,
-    Tree,
-    Treemap
-);
-
-macro_rules! impl_series {
-    ($($variant:ident),*) => {
         $(
             impl From<$variant> for Series {
                 fn from(series: $variant) -> Self {
