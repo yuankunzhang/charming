@@ -52,13 +52,13 @@ Add charming as a dependency:
 $ cargo add charming
 ```
 
-Refer to the documentation of the `Chart` struct for how to create a chart with various components.
+Refer to the documentation of the [`Chart`](https://docs.rs/charming/latest/charming/struct.Chart.html) struct for how to create a chart with various components.
 
 Once you create a chart, you can render it into various format. Charming provides three types of renderers:
 
 - **HTML renderer**: `HtmlRenderer` renders a chart into an HTML fragments and offloads the actual rendering to user's web browser for an interactive, seamless experience. This renderer is useful when you want to render a chart on the client side, e.g., in a web application.
 - **Image renderer**: `ImageRenderer` renders a chart into an image file. This renderer makes use of an embed [deno_core](https://github.com/denoland/deno_core) engine to execute the JavaScript code of Echarts and generate an image file. This renderer is disabled by default, and you need to enable the `ssr` (Server-Side Rendering) feature to use it.
-- **WASM renderer**: `WasmRenderer` renders a chart in a WebAssembly runtime. This renderer is disabled by default, and you need to enable the `wasm` feature to use it. Note that the `wasm` feature and `ssr` feature are mutually exclusive.
+- **WASM renderer**: `WasmRenderer` renders a chart in a WebAssembly runtime. This renderer is disabled by default, and you need to enable the `wasm` feature to use it. **Note that the `wasm` feature and `ssr` feature are mutually exclusive**.
 
 Here is an example of drawing a simple pie chart into an SVG file:
 
@@ -104,6 +104,13 @@ This code creates the following SVG file:
 As another example, the code file [gallery/src/dataset/encode_and_matrix.rs](./gallery/src/dataset/encode_and_matrix.rs) draws a complex chart with four sub-charts:
 
 ![](img/encode-and-matrix.svg)
+
+### Crate Feature Flags
+
+The following two feature flags are available, **note that they can't be used together**:
+
+- `ssr` - Enables the `ImageRenderer`, which provides the capability to generate image files.
+- `wasm` - Enables the `WasmRenderer`, which provides the capability to render charts in WebAssembly runtime.
 
 ### Renderers
 
