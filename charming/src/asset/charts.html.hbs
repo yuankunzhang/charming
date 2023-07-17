@@ -14,6 +14,9 @@
       
       <script type="text/javascript">
           {{#if theme_source}}{{{ theme_source }}}{{/if}}
+          {{#each gep_maps}}
+          echarts.registerMap('{{ this.name }}', {{{ this.opt }}});
+          {{/each}}
           var chart = echarts.init(document.getElementById('{{ chart_id }}'){{#if theme}}, '{{ theme }}'{{/if}});
           var option = {{{ chart_option }}};
           chart.setOption(option);

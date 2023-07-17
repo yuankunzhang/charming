@@ -1,7 +1,6 @@
 use serde::Serialize;
 
 #[derive(Serialize)]
-#[serde(untagged)]
 pub enum GeoMapOpt {
     #[serde(rename = "geoJSON")]
     GeoJson {
@@ -25,7 +24,7 @@ where
 #[serde(rename_all = "camelCase")]
 pub struct GeoMap {
     #[serde(skip_serializing_if = "Option::is_none")]
-    map_name: Option<String>,
+    name: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     opt: Option<GeoMapOpt>,
@@ -34,13 +33,13 @@ pub struct GeoMap {
 impl GeoMap {
     pub fn new() -> Self {
         GeoMap {
-            map_name: None,
+            name: None,
             opt: None,
         }
     }
 
-    pub fn map_name<S: Into<String>>(mut self, map_name: S) -> Self {
-        self.map_name = Some(map_name.into());
+    pub fn map_name<S: Into<String>>(mut self, name: S) -> Self {
+        self.name = Some(name.into());
         self
     }
 
@@ -57,9 +56,9 @@ impl From<&str> for GeoMap {
 }
 
 impl From<(&str, &str)> for GeoMap {
-    fn from((map_name, svg): (&str, &str)) -> Self {
+    fn from((name, svg): (&str, &str)) -> Self {
         GeoMap::new()
-            .map_name(map_name.to_string())
+            .map_name(name.to_string())
             .opt(GeoMapOpt::Svg(svg.to_string()))
     }
 }

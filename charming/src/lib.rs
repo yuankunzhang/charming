@@ -1,10 +1,95 @@
+/*!
+Charming is a powerful and versatile chart rendering library for Rust that
+leverages the power of [Apache Echarts](https://echarts.apache.org/en/index.html)
+to deliver high-quality data visualization. Built with the Rust programming
+language, this library aims to provide the Rust ecosystem with an intuitive
+and effective way to generate and visualize charts, using a declarative and
+user-friendly API.
+
+## Basic Usage
+
+Refer to the documentation of the [`Chart`] struct for how to create a chart
+with various components.
+
+Once you create a chart, you can render it into various format. Charming
+provides three types of renderers:
+
+- **HTML renderer**: [`HtmlRenderer`] renders a chart into an HTML fragments and
+  offloads the actual rendering to user's web browser for an interactive,
+  seamless experience. This renderer is useful when you want to render a chart
+  on the client side, e.g., in a web application.
+- **Image renderer**: [`ImageRenderer`] renders a chart into an image file. This
+  renderer makes use of an embed [deno_core](https://github.com/denoland/deno_core)
+  engine to execute the JavaScript code of Echarts and generate an image file.
+  This renderer is disabled by default, and you need to enable the `ssr`
+  (Server-Side Rendering) feature to use it.
+- **WASM renderer**: [`WasmRenderer`] renders a chart in a WebAssembly runtime.
+  This renderer is disabled by default, and you need to enable the `wasm`
+  feature to use it. Note that the `wasm` feature and `ssr` feature are
+  mutually exclusive.
+
+Here is an example of drawing a simple pie chart into an SVG file:
+
+```rust
+use charming::{
+    component::Legend,
+    element::ItemStyle,
+    series::{Pie, PieRoseType},
+    Chart, ImageRenderer
+};
+
+fn main() {
+    let chart = Chart::new()
+        .legend(Legend::new().top("bottom"))
+        .series(
+            Pie::new()
+                .name("Nightingale Chart")
+                .rose_type(PieRoseType::Radius)
+                .radius(vec!["50", "250"])
+                .center(vec!["50%", "50%"])
+                .item_style(ItemStyle::new().border_radius(8))
+                .data(vec![
+                    (40.0, "rose 1"),
+                    (38.0, "rose 2"),
+                    (32.0, "rose 3"),
+                    (30.0, "rose 4"),
+                    (28.0, "rose 5"),
+                    (26.0, "rose 6"),
+                    (22.0, "rose 7"),
+                    (18.0, "rose 8"),
+                ]),
+        );
+
+    let mut renderer = ImageRenderer::new(1000, 800);
+    renderer.save(&chart, "/tmp/nightingale.svg");
+}
+```
+
+## Themes
+
+Charming supports a number of themes out of the box. You can use the
+[`theme::Theme`] enum to specify a theme for your chart. For instance, the
+following code snippet shows how to use the `Westeros` theme:
+
+```rust
+use charming::{Chart, ImageRenderer};
+use charming::theme::Theme;
+use charming::component::Title;
+
+ImageRenderer::new(1000, 800).theme(Theme::Westeros).save(
+    &Chart::new().title(Title::new().text("Westeros")),
+    "/tmp/westeros.svg",
+);
+```
+
+Future versions of Charming will support custom themes.
+ */
 pub mod component;
 pub mod datatype;
 pub mod element;
 pub mod renderer;
 pub mod series;
 pub mod theme;
-pub mod wasm;
 
 pub use renderer::*;
 
@@ -17,6 +102,130 @@ use element::{process_raw_strings, AxisPointer, Color, MarkLine, Tooltip};
 use serde::Serialize;
 use series::Series;
 
+/**
+The chart representation.
+
+## Anatomy of a Chart
+
+A chart is a collection of different components, each of which is responsible
+for rendering a specific part of the chart. Below is a sample chart with a
+few components:
+
+```txt
+                   Sales Report
+  |                                                        # coffee
+30|                  x                                     x juice
+  |      @           x             @                       @ milk
+20|    # @           x@           x@          #
+  |    #x@          #x@          #x@          #x
+10|    #x@          #x@          #x@          #x@
+  |    #x@          #x@          #x@          #x@
+ 0+-----------------------------------------------------
+       Jan          Feb          Mar          Apr
+```
+
+The chart above has the following components: **an x axis**, **an y axis**,
+**a title** on the top center, and **a legend** on the top right.
+
+The creation of charts in Charming is done in a builder-like fashion. Once you
+get a hang of this pattern, you will find that it is very easy to compose a
+chart. For instance, the following code snippet shows how to create the chart
+above:
+
+```rust
+use charming::Chart;
+use charming::component::{Axis, Legend, Title};
+
+let chart = Chart::new()
+    .title(Title::new().text("Sales Report"))
+    .x_axis(Axis::new().data(vec!["Jan", "Feb", "Mar", "Apr"]))
+    .y_axis(Axis::new())
+    .legend(Legend::new().data(vec!["coffee", "juice", "milk"]));
+```
+
+## Components of a Chart
+
+The following sections describe the components of a chart in detail.
+
+### Title
+
+[`Title`] is the title of a chart, including main title and subtitle. A chart
+can have multiple titles, which is useful when you want to show multiple sub-
+charts in a single chart.
+
+```rust
+use charming::Chart;
+use charming::component::Title;
+
+let chart = Chart::new()
+    .title(Title::new().text("Sales Report"));
+```
+
+### Legend
+
+[`Legend`] is the legend of a chart, which is used to show the meaning of the
+symbols and colors in the chart. A chart can have multiple legends.
+
+```rust
+use charming::Chart;
+use charming::component::Legend;
+
+let chart = Chart::new()
+    .legend(Legend::new().data(vec!["coffee", "juice", "milk"]));
+```
+
+### Grid
+
+[`Grid`] is the background grid in a cartesian coordinate system. A chart can
+have multiple grids.
+
+```rust
+use charming::Chart;
+use charming::component::Grid;
+
+let chart = Chart::new()
+    .grid(Grid::new());
+```
+
+### X Axis and Y Axis
+
+[`Axis`] is the axis in a cartesian coordinate system.
+
+```rust
+use charming::Chart;
+use charming::component::Axis;
+
+let chart = Chart::new()
+    .x_axis(Axis::new().data(vec!["Jan", "Feb", "Mar", "Apr"]))
+    .y_axis(Axis::new());
+```
+
+### Polar Coordinate
+
+[`Polar`] is the polar coordinate system. Polar coordinate can be used in
+scatter and line charts. Every polar coordinate has an [`AngleAxis`] and a
+[`RadiusAxis`].
+
+### Radar Coordinate
+
+[`RadarCoordinate`] is the radar coordinate system. Radar coordinate can be in
+radar charts.
+
+### Data Zoom
+
+[`DataZoom`] is used for zooming a specific area, which enables user to view
+data in different scales. A chart can have multiple data zooms.
+
+### Visual Map
+
+[`VisualMap`] is a visual encoding component. It maps data to visual channels,
+such as color, symbol size or symbol shape. A chart can have multiple visual
+maps.
+
+### Tooltip
+
+[`Tooltip`] is a floating box that appears when user hovers over a data item.
+ */
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Chart {
@@ -283,7 +492,8 @@ impl ToString for Chart {
 
 #[derive(Debug)]
 pub enum EchartsError {
-    JsRuntimeError(String),
-    ImageRenderingError(String),
     HtmlRenderingError(String),
+    ImageRenderingError(String),
+    JsRuntimeError(String),
+    WasmError(String),
 }

@@ -2,7 +2,10 @@ use serde::Serialize;
 
 use crate::{
     datatype::{DataFrame, DataPoint},
-    element::{ColorBy, CoordinateSystem, DimensionEncode, MarkArea, MarkLine, Symbol, SymbolSize},
+    element::{
+        ColorBy, CoordinateSystem, DimensionEncode, Emphasis, ItemStyle, MarkArea, MarkLine,
+        Symbol, SymbolSize,
+    },
 };
 
 #[derive(Serialize)]
@@ -47,6 +50,12 @@ pub struct Scatter {
     #[serde(skip_serializing_if = "Option::is_none")]
     mark_area: Option<MarkArea>,
 
+    #[serde(skip_serializing_if = "Option::is_none")]
+    item_style: Option<ItemStyle>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    emphasis: Option<Emphasis>,
+
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: DataFrame,
 }
@@ -67,6 +76,8 @@ impl Scatter {
             encode: None,
             mark_line: None,
             mark_area: None,
+            item_style: None,
+            emphasis: None,
             data: vec![],
         }
     }
@@ -128,6 +139,16 @@ impl Scatter {
 
     pub fn mark_area<M: Into<MarkArea>>(mut self, mark_area: M) -> Self {
         self.mark_area = Some(mark_area.into());
+        self
+    }
+
+    pub fn item_style<I: Into<ItemStyle>>(mut self, item_style: I) -> Self {
+        self.item_style = Some(item_style.into());
+        self
+    }
+
+    pub fn emphasis<E: Into<Emphasis>>(mut self, emphasis: E) -> Self {
+        self.emphasis = Some(emphasis.into());
         self
     }
 

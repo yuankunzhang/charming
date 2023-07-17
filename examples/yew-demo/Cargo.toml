@@ -1,0 +1,9 @@
+[package]
+name = "yew-demo"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+charming = { path = "../../charming", features = ["wasm"] }
+yew = { version = "0.20.0", features = ["csr"] }
+yew-hooks = "0.2.0"

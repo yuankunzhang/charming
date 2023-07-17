@@ -7,6 +7,7 @@ Highlights:
 - Easy-to-use, declaritive API.
 - Rich and customizable chart themes and styles.
 - Rendering to multiple formats, including HTML, SVG, PNG, and JPEG.
+- Usable in WebAssembly environments.
 - Abundant chart types.
 
 ## Themes
@@ -38,39 +39,7 @@ Highlights:
     </tr>
 </table>
 
-## Renderers
-
-Charming provides two types of renderers:
-
-- `HtmlRenderer` - It generates HTML fragments and offloads the actual rendering to user's browser for an interactive, seamless experience.
-- `ImageRenderer` - It has the ability to generates static images. This renderer is disabled by default, to enable it, add the `ssr` feature in your `Cargo.toml`.
-
-```rs
-// Use HtmlRenderer.
-use charming::HtmlRenderer;
-
-// Chart dimension 1000x800.
-let renderer = HtmlRenderer::new("my charts", 1000, 800);
-// Render the chart as HTML string.
-let html_str = renderer.render(&chart).unwrap();
-// Save the chart as HTML file.
-renderer.save(&chart, "/tmp/chart.html").unwrap();
-
-
-// Use ImageRenderer. The `ssr` feature needs to be enabled.
-use charming::{ImageRenderer, ImageFormat};
-
-// Chart dimension 1000x800.
-let mut renderer = ImageRenderer::new(1000, 800);
-// Render the chart as SVG string.
-renderer.render(&chart).unwrap();
-// Render the chart as PNG bytes.
-renderer.render_format(ImageFormat::PNG, &chart).unwrap();
-// Save the chart as SVG file.
-renderer.save(&chart, "/tmp/chart.svg").unwrap();
-// Save the chart as PNG file.
-renderer.save_format(ImageFormat::PNG, &chart, "/tmp/chart.png");
-```
+Future versions of Charming will support custom themes.
 
 ## Basic Usage
 
@@ -80,15 +49,22 @@ Add charming as a dependency:
 $ cargo add charming
 ```
 
-Below is an example of drawing a simple pie chart.
+Refer to the documentation of the `Chart` struct for how to create a chart with various components.
 
-```rs
-use charming::image_renderer::ImageRenderer;
+Once you create a chart, you can render it into various format. Charming provides three types of renderers:
+
+- **HTML renderer**: `HtmlRenderer` renders a chart into an HTML fragments and offloads the actual rendering to user's web browser for an interactive, seamless experience. This renderer is useful when you want to render a chart on the client side, e.g., in a web application.
+- **Image renderer**: `ImageRenderer` renders a chart into an image file. This renderer makes use of an embed [deno_core](https://github.com/denoland/deno_core) engine to execute the JavaScript code of Echarts and generate an image file. This renderer is disabled by default, and you need to enable the `ssr` (Server-Side Rendering) feature to use it.
+- **WASM renderer**: `WasmRenderer` renders a chart in a WebAssembly runtime. This renderer is disabled by default, and you need to enable the `wasm` feature to use it. Note that the `wasm` feature and `ssr` feature are mutually exclusive.
+
+Here is an example of drawing a simple pie chart into an SVG file:
+
+```rust
 use charming::{
     component::Legend,
     element::ItemStyle,
     series::{Pie, PieRoseType},
-    Chart,
+    Chart, ImageRenderer
 };
 
 fn main() {
@@ -118,6 +94,44 @@ fn main() {
 }
 ```
 
+### Renderers
+
+```rs
+// Use HtmlRenderer.
+use charming::HtmlRenderer;
+
+// Chart dimension 1000x800.
+let renderer = HtmlRenderer::new("my charts", 1000, 800);
+// Render the chart as HTML string.
+let html_str = renderer.render(&chart).unwrap();
+// Save the chart as HTML file.
+renderer.save(&chart, "/tmp/chart.html").unwrap();
+
+
+// Use ImageRenderer. The `ssr` feature needs to be enabled.
+use charming::{ImageRenderer, ImageFormat};
+
+// Chart dimension 1000x800.
+let mut renderer = ImageRenderer::new(1000, 800);
+// Render the chart as SVG string.
+renderer.render(&chart).unwrap();
+// Render the chart as PNG bytes.
+renderer.render_format(ImageFormat::PNG, &chart).unwrap();
+// Save the chart as SVG file.
+renderer.save(&chart, "/tmp/chart.svg").unwrap();
+// Save the chart as PNG file.
+renderer.save_format(ImageFormat::PNG, &chart, "/tmp/chart.png");
+
+
+// Use WasmRenderer. The `wasm` feature needs to be enabled.
+use charming::WasmRenderer;
+
+// Chart dimension 1000x800.
+let renderer = WasmRenderer::new(1000, 800);
+// Render the chart in the WebAssembly runtime
+renderer.render(&chart).unwrap();
+```
+
 This code creates the following SVG file:
 
 ![](img/nightingale.svg)
@@ -125,6 +139,23 @@ This code creates the following SVG file:
 As another example, the code file [gallery/src/dataset/encode_and_matrix.rs](./gallery/src/dataset/encode_and_matrix.rs) draws a complex chart with four sub-charts:
 
 ![](img/encode-and-matrix.svg)
+
+### Themes
+
+Charming supports a number of themes out of the box. You can use the `Theme` enum to specify a theme for your chart. For instance, the following code snippet shows how to use the `Westeros` theme:
+
+```rust
+use charming::{Chart, ImageRenderer};
+use charming::theme::Theme;
+use charming::component::Title;
+
+ImageRenderer::new(1000, 800).theme(Theme::Westeros).save(
+    &Chart::new().title(Title::new().text("Westeros")),
+    "/tmp/westeros.svg",
+);
+```
+
+Future versions of Charming will support custom themes.
 
 ## Gallery
 
@@ -178,6 +209,12 @@ You can also clone the repo and run `cargo run --bin gallery` to view the intera
 <div align="center">
 <a href="./gallery/src/graph/hide_overlapped_label.rs"><img src="./img/graph/hide_overlapped_label.svg" width="40%" alt="Hide Overlapped Label" /></a>
 <a href="./gallery/src/graph/les_miserables.rs"><img src="./img/graph/les_miserables.svg" width="40%" alt="Les Miserables" /></a>
+</div>
+
+### Heatmap Charts
+
+<div align="center">
+<a href="./gallery/src/heatmap/heatmap_on_cartesian.rs"><img src="./img/heatmap/heatmap_on_cartesian.svg" width="40%" alt="Heatmap on Cartesian" /></a>
 </div>
 
 ### Line Charts
@@ -236,6 +273,7 @@ You can also clone the repo and run `cargo run --bin gallery` to view the intera
 <div align="center">
 <a href="./gallery/src/scatter/anscombe_quartet.rs"><img src="./img/scatter/anscombe_quartet.svg" width="40%" alt="Anscombe Quartet" /></a>
 <a href="./gallery/src/scatter/basic_scatter.rs"><img src="./img/scatter/basic_scatter.svg" width="40%" alt="Basic Scatter" /></a>
+<a href="./gallery/src/scatter/bubble_chart.rs"><img src="./img/scatter/bubble_chart.svg" width="40%" alt="Bubble Chart" /></a>
 <a href="./gallery/src/scatter/effect_scatter.rs"><img src="./img/scatter/effect_scatter.svg" width="40%" alt="Effect Scatter" /></a>
 <a href="./gallery/src/scatter/punch_cart_of_github.rs"><img src="./img/scatter/punch_card_of_github.svg" width="40%" alt="Punch Card of Github" /></a>
 </div>

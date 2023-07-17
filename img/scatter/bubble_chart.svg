@@ -1,0 +1,223 @@
+<svg width="600" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 600 450">
+<rect width="600" height="450" x="0" y="0" id="0" fill="url(#zr55-g0)"></rect>
+<path d="M48 380.5L540 380.5" fill="none" stroke="#E0E6F1" stroke-dasharray="4,2"></path>
+<path d="M48 324.5L540 324.5" fill="none" stroke="#E0E6F1" stroke-dasharray="4,2"></path>
+<path d="M48 268.5L540 268.5" fill="none" stroke="#E0E6F1" stroke-dasharray="4,2"></path>
+<path d="M48 212.5L540 212.5" fill="none" stroke="#E0E6F1" stroke-dasharray="4,2"></path>
+<path d="M48 156.5L540 156.5" fill="none" stroke="#E0E6F1" stroke-dasharray="4,2"></path>
+<path d="M48 101.5L540 101.5" fill="none" stroke="#E0E6F1" stroke-dasharray="4,2"></path>
+<path d="M48 45.5L540 45.5" fill="none" stroke="#E0E6F1" stroke-dasharray="4,2"></path>
+<path d="M48.5 45L48.5 380" fill="none" stroke="#E0E6F1" stroke-dasharray="4,2"></path>
+<path d="M118.5 45L118.5 380" fill="none" stroke="#E0E6F1" stroke-dasharray="4,2"></path>
+<path d="M188.5 45L188.5 380" fill="none" stroke="#E0E6F1" stroke-dasharray="4,2"></path>
+<path d="M259.5 45L259.5 380" fill="none" stroke="#E0E6F1" stroke-dasharray="4,2"></path>
+<path d="M329.5 45L329.5 380" fill="none" stroke="#E0E6F1" stroke-dasharray="4,2"></path>
+<path d="M399.5 45L399.5 380" fill="none" stroke="#E0E6F1" stroke-dasharray="4,2"></path>
+<path d="M469.5 45L469.5 380" fill="none" stroke="#E0E6F1" stroke-dasharray="4,2"></path>
+<path d="M540.5 45L540.5 380" fill="none" stroke="#E0E6F1" stroke-dasharray="4,2"></path>
+<path d="M48.5 380L48.5 45" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<path d="M48 380.5L540 380.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<path d="M48 380.5L43 380.5" fill="none" stroke="#6E7079"></path>
+<path d="M48 324.5L43 324.5" fill="none" stroke="#6E7079"></path>
+<path d="M48 268.5L43 268.5" fill="none" stroke="#6E7079"></path>
+<path d="M48 212.5L43 212.5" fill="none" stroke="#6E7079"></path>
+<path d="M48 156.5L43 156.5" fill="none" stroke="#6E7079"></path>
+<path d="M48 101.5L43 101.5" fill="none" stroke="#6E7079"></path>
+<path d="M48 45.5L43 45.5" fill="none" stroke="#6E7079"></path>
+<path d="M48.5 380L48.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M118.5 380L118.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M188.5 380L188.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M259.5 380L259.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M329.5 380L329.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M399.5 380L399.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M469.5 380L469.5 385" fill="none" stroke="#6E7079"></path>
+<path d="M540.5 380L540.5 385" fill="none" stroke="#6E7079"></path>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(40 380)" fill="#6E7079">55</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(40 324.1667)" fill="#6E7079">60</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(40 268.3333)" fill="#6E7079">65</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(40 212.5)" fill="#6E7079">70</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(40 156.6667)" fill="#6E7079">75</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(40 100.8333)" fill="#6E7079">80</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(40 45)" fill="#6E7079">85</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(48 388)" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(118.2857 388)" fill="#6E7079">10,000</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(188.5714 388)" fill="#6E7079">20,000</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(258.8571 388)" fill="#6E7079">30,000</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(329.1429 388)" fill="#6E7079">40,000</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(399.4286 388)" fill="#6E7079">50,000</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(469.7143 388)" fill="#6E7079">60,000</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(540 388)" fill="#6E7079">70,000</text>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(4.135,0,0,4.135,249.0453,134.3333)" fill="url(#zr55-g1)" fill-opacity="0.8" filter="url(#zr55-s0)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5.26,0,0,5.26,267.0314,129.8667)" fill="url(#zr55-g1)" fill-opacity="0.8" filter="url(#zr55-s1)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.01" transform="matrix(33.979,0,0,33.979,58.6553,234.8333)" fill="url(#zr55-g1)" fill-opacity="0.8" filter="url(#zr55-s2)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(3.253,0,0,3.253,144.0806,160.0167)" fill="url(#zr55-g1)" fill-opacity="0.8" filter="url(#zr55-s3)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2.233,0,0,2.233,249.0101,156.6667)" fill="url(#zr55-g1)" fill-opacity="0.8" filter="url(#zr55-s4)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(7.546,0,0,7.546,255.1742,133.2167)" fill="url(#zr55-g1)" fill-opacity="0.8" filter="url(#zr55-s5)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(8.886,0,0,8.886,269.2313,152.2)" fill="url(#zr55-g1)" fill-opacity="0.8" filter="url(#zr55-s6)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(0.505,0,0,0.505,249.481,122.05)" fill="url(#zr55-g1)" fill-opacity="0.8" filter="url(#zr55-s7)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.01" transform="matrix(29.506,0,0,29.506,60.4898,349.85)" fill="url(#zr55-g1)" fill-opacity="0.8" filter="url(#zr55-s8)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.01" transform="matrix(11.057,0,0,11.057,255.6943,110.8833)" fill="url(#zr55-g1)" fill-opacity="0.8" filter="url(#zr55-s9)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(4.494,0,0,4.494,62.5913,235.95)" fill="url(#zr55-g1)" fill-opacity="0.8" filter="url(#zr55-s10)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(6.555,0,0,6.555,132.9543,190.1667)" fill="url(#zr55-g1)" fill-opacity="0.8" filter="url(#zr55-s11)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(1.843,0,0,1.843,216.8333,152.2)" fill="url(#zr55-g1)" fill-opacity="0.8" filter="url(#zr55-s12)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2.059,0,0,2.059,352.309,136.5667)" fill="url(#zr55-g1)" fill-opacity="0.8" filter="url(#zr55-s13)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(6.18,0,0,6.18,118.9042,203.5667)" fill="url(#zr55-g1)" fill-opacity="0.8" filter="url(#zr55-s14)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.01" transform="matrix(12.148,0,0,12.148,183.9958,216.9667)" fill="url(#zr55-g1)" fill-opacity="0.8" filter="url(#zr55-s15)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(7.348,0,0,7.348,122.9949,242.65)" fill="url(#zr55-g1)" fill-opacity="0.8" filter="url(#zr55-s16)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(7.557,0,0,7.557,233.723,148.85)" fill="url(#zr55-g1)" fill-opacity="0.8" filter="url(#zr55-s17)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.01" transform="matrix(15.901,0,0,15.901,308.4929,152.2)" fill="url(#zr55-g1)" fill-opacity="0.8" filter="url(#zr55-s18)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(4.896,0,0,4.896,357.6507,80.7333)" fill="url(#zr55-g2)" fill-opacity="0.8" filter="url(#zr55-s19)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5.995,0,0,5.995,352.295,81.85)" fill="url(#zr55-g2)" fill-opacity="0.8" filter="url(#zr55-s20)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.01" transform="matrix(37.095,0,0,37.095,141.719,135.45)" fill="url(#zr55-g2)" fill-opacity="0.8" filter="url(#zr55-s21)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(3.375,0,0,3.375,197.6453,117.5833)" fill="url(#zr55-g2)" fill-opacity="0.8" filter="url(#zr55-s22)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2.346,0,0,2.346,321.5731,91.9)" fill="url(#zr55-g2)" fill-opacity="0.8" filter="url(#zr55-s23)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(8.025,0,0,8.025,312.2673,79.6167)" fill="url(#zr55-g2)" fill-opacity="0.8" filter="url(#zr55-s24)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(8.983,0,0,8.983,357.6297,88.55)" fill="url(#zr55-g2)" fill-opacity="0.8" filter="url(#zr55-s25)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(0.574,0,0,0.574,344.4792,69.5667)" fill="url(#zr55-g2)" fill-opacity="0.8" filter="url(#zr55-s26)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.01" transform="matrix(36.208,0,0,36.208,89.4897,248.2333)" fill="url(#zr55-g2)" fill-opacity="0.8" filter="url(#zr55-s27)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.01" transform="matrix(11.25,0,0,11.25,302.1672,61.75)" fill="url(#zr55-g2)" fill-opacity="0.8" filter="url(#zr55-s28)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5.016,0,0,5.016,57.7697,196.8667)" fill="url(#zr55-g2)" fill-opacity="0.8" filter="url(#zr55-s29)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(7.092,0,0,7.092,291.4978,93.0167)" fill="url(#zr55-g2)" fill-opacity="0.8" filter="url(#zr55-s30)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2.128,0,0,2.128,288.2787,94.1333)" fill="url(#zr55-g2)" fill-opacity="0.8" filter="url(#zr55-s31)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2.283,0,0,2.283,499.9653,82.9667)" fill="url(#zr55-g2)" fill-opacity="0.8" filter="url(#zr55-s32)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(6.214,0,0,6.214,222.2172,130.9833)" fill="url(#zr55-g2)" fill-opacity="0.8" filter="url(#zr55-s33)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.01" transform="matrix(11.977,0,0,11.977,209.9242,177.5483)" fill="url(#zr55-g2)" fill-opacity="0.8" filter="url(#zr55-s34)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(8.869,0,0,8.869,184.0731,139.9167)" fill="url(#zr55-g2)" fill-opacity="0.8" filter="url(#zr55-s35)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(8.045,0,0,8.045,316.6671,85.2)" fill="url(#zr55-g2)" fill-opacity="0.8" filter="url(#zr55-s36)"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.01" transform="matrix(17.938,0,0,17.938,423.0024,110.8833)" fill="url(#zr55-g2)" fill-opacity="0.8" filter="url(#zr55-s37)"></path>
+<path d="M-5 -5l122.8 0l0 24l-122.8 0Z" transform="translate(422.24 18.5)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#ccc" stroke-width="0"></path>
+<path d="M19.5 7A7 7 0 1 1 19.5 6.3A7 7 0 0 1 19.5 7" transform="translate(416.74 18.5)" fill="url(#zr55-g1)" fill-opacity="0.8"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="30" y="7" transform="translate(416.74 18.5)" fill="#333">1990</text>
+<path d="M19.5 7A7 7 0 1 1 19.5 6.3A7 7 0 0 1 19.5 7" transform="translate(478.12 18.5)" fill="url(#zr55-g2)" fill-opacity="0.8"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="30" y="7" transform="translate(478.12 18.5)" fill="#333">2015</text>
+<path d="M-5 -5l309.3 0l0 28l-309.3 0Z" transform="translate(35 18.5)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#ccc" stroke-width="0"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:18px;font-family:sans-serif;font-weight:bold;" xml:space="preserve" y="9" transform="translate(35 18.5)" fill="#464646">Life Expectancy and GDP by Country</text>
+<defs >
+<radialGradient gradientUnits="objectBoundingBox" cx="0.3" cy="0.3" r="0.8" id="zr55-g0">
+<stop offset="0%" stop-color="#f7f8fa"></stop>
+<stop offset="100%" stop-color="#cdd0d5"></stop>
+</radialGradient>
+<radialGradient gradientUnits="objectBoundingBox" cx="0.4" cy="0.3" r="1" id="zr55-g1">
+<stop offset="0%" stop-color="rgb(251, 118, 123)"></stop>
+<stop offset="100%" stop-color="rgb(204, 46, 72)"></stop>
+</radialGradient>
+<filter id="zr55-s0" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="1.2092377939511298" stdDeviation="1.2092377939511298 1.2092377939511298" flood-color="rgb(120,36,50)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<filter id="zr55-s1" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="0.9506589951631211" stdDeviation="0.9506589951631211 0.9506589951631211" flood-color="rgb(120,36,50)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<filter id="zr55-s2" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="0.1471475860872637" stdDeviation="0.1471475860872637 0.1471475860872637" flood-color="rgb(120,36,50)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<filter id="zr55-s3" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="1.5370374281698898" stdDeviation="1.5370374281698898 1.5370374281698898" flood-color="rgb(120,36,50)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<filter id="zr55-s4" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="2.239046771654178" stdDeviation="2.239046771654178 2.239046771654178" flood-color="rgb(120,36,50)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<filter id="zr55-s5" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="0.6625958205804595" stdDeviation="0.6625958205804595 0.6625958205804595" flood-color="rgb(120,36,50)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<filter id="zr55-s6" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="0.5626927026270546" stdDeviation="0.5626927026270546 0.5626927026270546" flood-color="rgb(120,36,50)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<filter id="zr55-s7" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="9.904777572739908" stdDeviation="9.904777572739908 9.904777572739908" flood-color="rgb(120,36,50)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<filter id="zr55-s8" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="0.16945727952822187" stdDeviation="0.16945727952822187 0.16945727952822187" flood-color="rgb(120,36,50)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<filter id="zr55-s9" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="0.4522169540821057" stdDeviation="0.4522169540821057 0.4522169540821057" flood-color="rgb(120,36,50)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<filter id="zr55-s10" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="1.112640903912222" stdDeviation="1.112640903912222 1.112640903912222" flood-color="rgb(120,36,50)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<filter id="zr55-s11" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="0.7627389722503017" stdDeviation="0.7627389722503017 0.7627389722503017" flood-color="rgb(120,36,50)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<filter id="zr55-s12" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="2.7126146228845216" stdDeviation="2.7126146228845216 2.7126146228845216" flood-color="rgb(120,36,50)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<filter id="zr55-s13" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="2.428107283239943" stdDeviation="2.428107283239943 2.428107283239943" flood-color="rgb(120,36,50)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<filter id="zr55-s14" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="0.8090312186721974" stdDeviation="0.8090312186721974 0.8090312186721974" flood-color="rgb(120,36,50)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<filter id="zr55-s15" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="0.41159784893832085" stdDeviation="0.41159784893832085 0.41159784893832085" flood-color="rgb(120,36,50)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<filter id="zr55-s16" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="0.680447809177045" stdDeviation="0.680447809177045 0.680447809177045" flood-color="rgb(120,36,50)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<filter id="zr55-s17" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="0.6616273954585071" stdDeviation="0.6616273954585071 0.6616273954585071" flood-color="rgb(120,36,50)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<filter id="zr55-s18" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="0.3144418958830977" stdDeviation="0.3144418958830977 0.3144418958830977" flood-color="rgb(120,36,50)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<radialGradient gradientUnits="objectBoundingBox" cx="0.4" cy="0.3" r="1" id="zr55-g2">
+<stop offset="0%" stop-color="rgb(129, 227, 238)"></stop>
+<stop offset="100%" stop-color="rgb(25, 183, 207)"></stop>
+</radialGradient>
+<filter id="zr55-s19" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="1.0212810914995913" stdDeviation="1.0212810914995913 1.0212810914995913" flood-color="rgb(25,100,150)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<filter id="zr55-s20" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="0.8340294940661024" stdDeviation="0.8340294940661024 0.8340294940661024" flood-color="rgb(25,100,150)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<filter id="zr55-s21" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="0.13478856937555886" stdDeviation="0.13478856937555886 0.13478856937555886" flood-color="rgb(25,100,150)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<filter id="zr55-s22" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="1.481550613993853" stdDeviation="1.481550613993853 1.481550613993853" flood-color="rgb(25,100,150)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<filter id="zr55-s23" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="2.1313374475439333" stdDeviation="2.1313374475439333 2.1313374475439333" flood-color="rgb(25,100,150)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<filter id="zr55-s24" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="0.6230785021257568" stdDeviation="0.6230785021257568 0.6230785021257568" flood-color="rgb(25,100,150)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<filter id="zr55-s25" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="0.5566267355107862" stdDeviation="0.5566267355107862 0.5566267355107862" flood-color="rgb(25,100,150)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<filter id="zr55-s26" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="8.711475649899146" stdDeviation="8.711475649899146 8.711475649899146" flood-color="rgb(25,100,150)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<filter id="zr55-s27" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="0.13808938315392702" stdDeviation="0.13808938315392702 0.13808938315392702" flood-color="rgb(25,100,150)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<filter id="zr55-s28" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="0.44442516493082773" stdDeviation="0.44442516493082773 0.44442516493082773" flood-color="rgb(25,100,150)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<filter id="zr55-s29" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="0.9969080594919937" stdDeviation="0.9969080594919937 0.9969080594919937" flood-color="rgb(25,100,150)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<filter id="zr55-s30" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="0.7050409426487732" stdDeviation="0.7050409426487732 0.7050409426487732" flood-color="rgb(25,100,150)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<filter id="zr55-s31" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="2.3495872215375355" stdDeviation="2.3495872215375355 2.3495872215375355" flood-color="rgb(25,100,150)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<filter id="zr55-s32" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="2.190336512849311" stdDeviation="2.190336512849311 2.190336512849311" flood-color="rgb(25,100,150)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<filter id="zr55-s33" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="0.8046555555079707" stdDeviation="0.8046555555079707 0.8046555555079707" flood-color="rgb(25,100,150)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<filter id="zr55-s34" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="0.4174546050051079" stdDeviation="0.4174546050051079 0.4174546050051079" flood-color="rgb(25,100,150)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<filter id="zr55-s35" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="0.5637375188515594" stdDeviation="0.5637375188515594 0.5637375188515594" flood-color="rgb(25,100,150)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<filter id="zr55-s36" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="0.6215338822125509" stdDeviation="0.6215338822125509 0.6215338822125509" flood-color="rgb(25,100,150)" flood-opacity="0.5"></feDropShadow>
+</filter>
+<filter id="zr55-s37" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="0.2787371009029184" stdDeviation="0.2787371009029184 0.2787371009029184" flood-color="rgb(25,100,150)" flood-opacity="0.5"></feDropShadow>
+</filter>
+</defs>
+</svg>

@@ -152,6 +152,7 @@ lazy_static! {
         let mut m = BTreeMap::new();
         insert!(m, scatter, anscombe_quartet);
         insert!(m, scatter, basic_scatter);
+        insert!(m, scatter, bubble_chart);
         insert!(m, scatter, clustering_process);
         insert!(m, scatter, effect_scatter);
         insert!(m, scatter, punch_card_of_github);

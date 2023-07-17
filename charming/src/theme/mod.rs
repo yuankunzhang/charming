@@ -38,3 +38,9 @@ impl Theme {
         }
     }
 }
+
+impl Default for Theme {
+    fn default() -> Self {
+        Theme::Default
+    }
+}
