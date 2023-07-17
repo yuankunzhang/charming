@@ -94,6 +94,14 @@ fn main() {
 }
 ```
 
+This code creates the following SVG file:
+
+![](img/nightingale.svg)
+
+As another example, the code file [gallery/src/dataset/encode_and_matrix.rs](./gallery/src/dataset/encode_and_matrix.rs) draws a complex chart with four sub-charts:
+
+![](img/encode-and-matrix.svg)
+
 ### Renderers
 
 ```rs
@@ -131,14 +139,6 @@ let renderer = WasmRenderer::new(1000, 800);
 // Render the chart in the WebAssembly runtime
 renderer.render(&chart).unwrap();
 ```
-
-This code creates the following SVG file:
-
-![](img/nightingale.svg)
-
-As another example, the code file [gallery/src/dataset/encode_and_matrix.rs](./gallery/src/dataset/encode_and_matrix.rs) draws a complex chart with four sub-charts:
-
-![](img/encode-and-matrix.svg)
 
 ### Themes
 
