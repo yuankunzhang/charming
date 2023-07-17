@@ -1,5 +1,5 @@
 use charming::{
-    component::{AngleAxis, Legend, Polar, RadiusAxis, Title},
+    component::{AngleAxis, Legend, PolarCoordinate, RadiusAxis, Title},
     df,
     element::{AxisLabel, AxisLine, AxisType, CoordinateSystem, SplitLine, Tooltip},
     series::Scatter,
@@ -180,7 +180,7 @@ pub fn chart() -> Chart {
     Chart::new()
         .title(Title::new().text("Punch Card of Github"))
         .legend(Legend::new().left("right").data(vec!["Punch Card"]))
-        .polar(Polar::new())
+        .polar(PolarCoordinate::new())
         .tooltip(Tooltip::new())
         .angle_axis(
             AngleAxis::new()

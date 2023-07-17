@@ -95,7 +95,8 @@ pub use renderer::*;
 
 use component::{
     AngleAxis, Axis, Axis3D, DataZoom, GeoMap, Grid, Grid3D, Legend, ParallelAxis,
-    ParallelCoordinate, Polar, RadarCoordinate, RadiusAxis, SingleAxis, Title, Toolbox, VisualMap,
+    ParallelCoordinate, PolarCoordinate, RadarCoordinate, RadiusAxis, SingleAxis, Title, Toolbox,
+    VisualMap,
 };
 use datatype::Dataset;
 use element::{process_raw_strings, AxisPointer, Color, MarkLine, Tooltip};
@@ -267,7 +268,7 @@ pub struct Chart {
     z_axis3d: Vec<Axis3D>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
-    polar: Vec<Polar>,
+    polar: Vec<PolarCoordinate>,
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
     angle_axis: Vec<AngleAxis>,
@@ -403,7 +404,7 @@ impl Chart {
         self
     }
 
-    pub fn polar(mut self, polar: Polar) -> Self {
+    pub fn polar(mut self, polar: PolarCoordinate) -> Self {
         self.polar.push(polar);
         self
     }

@@ -1,5 +1,5 @@
 use charming::{
-    component::{AngleAxis, Polar, RadiusAxis, Title},
+    component::{AngleAxis, PolarCoordinate, RadiusAxis, Title},
     element::{AxisType, CoordinateSystem, Label, LabelPosition, Tooltip},
     series::Bar,
     Chart,
@@ -8,7 +8,7 @@ use charming::{
 pub fn chart() -> Chart {
     Chart::new()
         .title(Title::new().text("Tangential Polar Bar Label Position (middle)"))
-        .polar(Polar::new().radius(vec!["30", "80%"]))
+        .polar(PolarCoordinate::new().radius(vec!["30", "80%"]))
         .angle_axis(AngleAxis::new().start_angle(75).max(4))
         .radius_axis(
             RadiusAxis::new()

@@ -5,7 +5,7 @@ use crate::datatype::CompositeValue;
 /// Polar coordinate can be used in scatter and line chart.
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct Polar {
+pub struct PolarCoordinate {
     #[serde(skip_serializing_if = "Option::is_none")]
     id: Option<String>,
 
@@ -24,7 +24,7 @@ pub struct Polar {
     radius: Option<CompositeValue>,
 }
 
-impl Polar {
+impl PolarCoordinate {
     pub fn new() -> Self {
         Self {
             id: None,
