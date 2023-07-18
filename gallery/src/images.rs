@@ -19,7 +19,7 @@ fn main() {
         for (name, chart) in value.iter() {
             println!("Rendering {}/{}", key, name);
             let path = dir.join(format!("{}.png", name));
-            renderer.save_format(charming::ImageFormat::Other(image::ImageFormat::Png), &chart(), &path).unwrap();
+            renderer.save(&chart(), &path).unwrap();
         }
     }
 }
