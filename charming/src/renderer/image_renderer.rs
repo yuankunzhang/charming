@@ -2,6 +2,8 @@ use std::io::Cursor;
 
 use deno_core::{v8, JsRuntime, RuntimeOptions};
 use handlebars::Handlebars;
+use image::RgbaImage;
+use resvg::{tiny_skia::Pixmap, usvg};
 
 use crate::{theme::Theme, Chart, EchartsError};
 
@@ -113,22 +115,19 @@ impl ImageRenderer {
         }
     }
 
-    pub fn render_svg_to_buf(&mut self, svg: &str) -> Result<image::RgbaImage, EchartsError> {
-        let mut pixels = resvg::tiny_skia::Pixmap::new(self.width, self.height)
-            .expect("width smaller than i32::MAX/4");
+    fn render_svg_to_buf(&mut self, svg: &str) -> Result<image::RgbaImage, EchartsError> {
+        let mut pixels =
+            Pixmap::new(self.width, self.height).expect("width smaller than i32::MAX/4");
 
-        let tree: resvg::usvg::Tree =
-            resvg::usvg::TreeParsing::from_data(svg.as_bytes(), &resvg::usvg::Options::default())
+        let tree: usvg::Tree =
+            usvg::TreeParsing::from_data(svg.as_bytes(), &usvg::Options::default())
                 .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))?;
 
-        resvg::Tree::from_usvg(&tree).render(
-            resvg::tiny_skia::Transform::identity(),
-            &mut pixels.as_mut(),
-        );
+        resvg::Tree::from_usvg(&tree).render(usvg::Transform::identity(), &mut pixels.as_mut());
 
-        let img = image::RgbaImage::from_vec(self.width, self.height, pixels.take()).ok_or(
+        let img = RgbaImage::from_vec(self.width, self.height, pixels.take()).ok_or(
             EchartsError::ImageRenderingError(
-                "Could not create ImageBUffer from bytes".to_string(),
+                "Could not create ImageBuffer from bytes".to_string(),
             ),
         )?;
 
