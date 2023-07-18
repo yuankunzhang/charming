@@ -2,7 +2,7 @@ use serde::Serialize;
 
 use crate::{
     datatype::{CompositeValue, DataFrame, DataPoint},
-    element::{ColorBy, Label, Orient, Sort},
+    element::{ColorBy, Emphasis, ItemStyle, Label, LabelLine, Orient, Sort},
 };
 
 #[derive(Serialize)]
@@ -76,6 +76,15 @@ pub struct Funnel {
     #[serde(skip_serializing_if = "Option::is_none")]
     label: Option<Label>,
 
+    #[serde(skip_serializing_if = "Option::is_none")]
+    label_line: Option<LabelLine>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    item_style: Option<ItemStyle>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    emphasis: Option<Emphasis>,
+
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: DataFrame,
 }
@@ -103,6 +112,9 @@ impl Funnel {
             legend_hover_link: None,
             funnel_align: None,
             label: None,
+            label_line: None,
+            item_style: None,
+            emphasis: None,
             data: vec![],
         }
     }
@@ -172,13 +184,13 @@ impl Funnel {
         self
     }
 
-    pub fn orient(mut self, orient: Orient) -> Self {
-        self.orient = Some(orient);
+    pub fn orient<O: Into<Orient>>(mut self, orient: O) -> Self {
+        self.orient = Some(orient.into());
         self
     }
 
-    pub fn sort(mut self, sort: Sort) -> Self {
-        self.sort = Some(sort);
+    pub fn sort<S: Into<Sort>>(mut self, sort: S) -> Self {
+        self.sort = Some(sort.into());
         self
     }
 
@@ -192,13 +204,28 @@ impl Funnel {
         self
     }
 
-    pub fn funnel_align(mut self, funnel_align: Align) -> Self {
-        self.funnel_align = Some(funnel_align);
+    pub fn funnel_align<A: Into<Align>>(mut self, funnel_align: A) -> Self {
+        self.funnel_align = Some(funnel_align.into());
         self
     }
 
-    pub fn label(mut self, label: Label) -> Self {
-        self.label = Some(label);
+    pub fn label<L: Into<Label>>(mut self, label: L) -> Self {
+        self.label = Some(label.into());
+        self
+    }
+
+    pub fn label_line<L: Into<LabelLine>>(mut self, label_line: L) -> Self {
+        self.label_line = Some(label_line.into());
+        self
+    }
+
+    pub fn item_style<I: Into<ItemStyle>>(mut self, item_style: I) -> Self {
+        self.item_style = Some(item_style.into());
+        self
+    }
+
+    pub fn emphasis<E: Into<Emphasis>>(mut self, emphasis: E) -> Self {
+        self.emphasis = Some(emphasis.into());
         self
     }
 

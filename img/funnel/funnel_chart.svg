@@ -1,0 +1,35 @@
+<svg width="600" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 600 450">
+<rect width="600" height="450" x="0" y="0" id="0" fill="none"></rect>
+<polyline points="300 225 300 225" fill="none" stroke="#5470c6"></polyline>
+<polyline points="300 291.4 300 291.4" fill="none" stroke="#91cc75"></polyline>
+<polyline points="300 357.8 300 357.8" fill="none" stroke="#fac858"></polyline>
+<polyline points="300 158.6 300 158.6" fill="none" stroke="#ee6666"></polyline>
+<polyline points="300 92.2 300 92.2" fill="none" stroke="#73c0de"></polyline>
+<polygon points="156 192.8 444 192.8 372 257.2 228 257.2" fill="#5470c6" stroke="#fff" stroke-linejoin="round"></polygon>
+<polygon points="228 259.2 372 259.2 324 323.6 276 323.6" fill="#91cc75" stroke="#fff" stroke-linejoin="round"></polygon>
+<polygon points="276 325.6 324 325.6 300 390 300 390" fill="#fac858" stroke="#fff" stroke-linejoin="round"></polygon>
+<polygon points="108 126.4 492 126.4 444 190.8 156 190.8" fill="#ee6666" stroke="#fff" stroke-linejoin="round"></polygon>
+<polygon points="60 60 540 60 492 124.4 108 124.4" fill="#73c0de" stroke="#fff" stroke-linejoin="round"></polygon>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" x="300" y="225.00000000000003" fill="#eee" stroke="#5470c6" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Visit</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" x="300" y="291.40000000000003" fill="#333" stroke="#91cc75" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Inquiry</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" x="300" y="357.8" fill="#333" stroke="#fac858" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Order</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" x="300" y="158.60000000000002" fill="#333" stroke="#ee6666" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Click</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" x="300" y="92.2" fill="#333" stroke="#73c0de" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Show</text>
+<path d="M-5 -5l350.6 0l0 26l-350.6 0Z" transform="translate(129.72 5)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#ccc" stroke-width="0"></path>
+<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(130.72 6)" fill="#73c0de" stroke="#fff" stroke-width="2" stroke-linecap="butt" stroke-miterlimit="10"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="30" y="7" transform="translate(130.72 6)" fill="#333">Show</text>
+<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(201.84 6)" fill="#ee6666" stroke="#fff" stroke-width="2" stroke-linecap="butt" stroke-miterlimit="10"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="30" y="7" transform="translate(201.84 6)" fill="#333">Click</text>
+<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(268.76 6)" fill="#5470c6" stroke="#fff" stroke-width="2" stroke-linecap="butt" stroke-miterlimit="10"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="30" y="7" transform="translate(268.76 6)" fill="#333">Visit</text>
+<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(332.44 6)" fill="#91cc75" stroke="#fff" stroke-width="2" stroke-linecap="butt" stroke-miterlimit="10"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="30" y="7" transform="translate(332.44 6)" fill="#333">Inquiry</text>
+<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(409.56 6)" fill="#fac858" stroke="#fff" stroke-width="2" stroke-linecap="butt" stroke-miterlimit="10"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="30" y="7" transform="translate(409.56 6)" fill="#333">Order</text>
+<path d="M-14 -15l79.5 0l0 30l-79.5 0Z" transform="translate(534.5253 15)" fill="none" stroke="#ccc" stroke-width="0"></path>
+<path d="M-5 -5l65.3 0l0 28l-65.3 0Z" transform="translate(5 5)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#ccc" stroke-width="0"></path>
+<path d="M-6.5 -1.6L-0.1 4.3L6.5 -1.4M-6.5 3.8L-6.5 7.5L6.2 7.5L6.2 3.8M-0.1 4.2L-0.1 -7.5" transform="translate(534.5253 15)" fill="none" stroke="#666"></path>
+<path d="M-7 0.9M4.5 -3L7.2 -3L7.2 -5.7M7 -2.6C5.9 -5.6 2.8 -7.9 -0.9 -7.5C-4.6 -7 -7.6 -3.7 -7.5 0.2M-4.5 3L-7.2 3L-7.2 5.7M-7 2.6C-5.9 5.6 -2.8 7.9 0.9 7.5C4.6 7 7.6 3.7 7.5 -0.2" transform="translate(561.4617 15)" fill="none" stroke="#666"></path>
+<path d="M-3.7 -3.4L0.5 -3.4M-3.7 -3.4L0.5 -3.4M3.8 -0.1L-3.7 -0.1M-5.3 -7.5L-5.3 7.5L5.3 7.5L5.3 -4.1L1.9 -7.5L-5.3 -7.5ZM1.9 -7.4L1.9 -4L5.3 -4M3.8 3.1L-3.7 3.1" transform="translate(587.2098 15)" fill="none" stroke="#666"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:18px;font-family:sans-serif;font-weight:bold;" y="9" transform="translate(5 5)" fill="#464646">Funnel</text>
+</svg>
