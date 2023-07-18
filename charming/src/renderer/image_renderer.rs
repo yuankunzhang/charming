@@ -3,7 +3,7 @@ use std::io::Cursor;
 use deno_core::{v8, JsRuntime, RuntimeOptions};
 use handlebars::Handlebars;
 use image::RgbaImage;
-use resvg::{tiny_skia::Pixmap, usvg};
+use resvg::{tiny_skia::Pixmap, usvg::{self, TreeTextToPath}};
 
 use crate::{theme::Theme, Chart, EchartsError};
 
@@ -126,10 +126,14 @@ impl ImageRenderer {
                 "Rendered image cannot be greater than i32::MAX/4".to_string(),
             ))?;
 
-        let tree: usvg::Tree =
+        let mut tree: usvg::Tree =
             usvg::TreeParsing::from_data(svg.as_bytes(), &usvg::Options::default())
                 .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))?;
 
+        let mut fonts = usvg::fontdb::Database::default();
+        fonts.load_system_fonts();
+
+        tree.convert_text(&fonts);
         resvg::Tree::from_usvg(&tree).render(usvg::Transform::identity(), &mut pixels.as_mut());
 
         let img = RgbaImage::from_vec(self.width, self.height, pixels.take()).ok_or(
