@@ -13,7 +13,8 @@ readme = "../README.md"
 
 [dependencies]
 deno_core = { version = "0.195.0", optional = true }
-gdk-pixbuf = { version = "0.17.10", optional = true }
+image = { version = "0.24.6", optional = true }
+resvg = { version = "0.35.0", optional = true }
 handlebars = "4.3.7"
 serde = { version = "1.0.164", features = ["derive"] }
 serde-wasm-bindgen = {version = "0.5.0", optional = true }
@@ -31,5 +32,5 @@ features = [
 ]
 
 [features]
-ssr = ["deno_core", "gdk-pixbuf", "serde_v8"]
+ssr = ["deno_core", "image", "resvg", "serde_v8"]
 wasm = ["serde-wasm-bindgen", "wasm-bindgen", "web-sys"]

@@ -1,5 +1,7 @@
+use std::io::Cursor;
+
 use deno_core::{v8, JsRuntime, RuntimeOptions};
-use gdk_pixbuf::traits::PixbufLoaderExt;
+use image::ImageOutputFormat;
 use handlebars::Handlebars;
 
 use crate::{theme::Theme, Chart, EchartsError};
@@ -17,21 +19,10 @@ chart.setOption({ animation: false });
 chart.setOption({{{ chart_option }}});
 chart.renderToSVGString();
 "#;
-
+#[derive(PartialEq)]
 pub enum ImageFormat {
     SVG,
-    PNG,
-    JPEG,
-}
-
-impl ToString for ImageFormat {
-    fn to_string(&self) -> String {
-        match self {
-            ImageFormat::SVG => "svg".to_string(),
-            ImageFormat::PNG => "png".to_string(),
-            ImageFormat::JPEG => "jpeg".to_string(),
-        }
-    }
+    Other(image::ImageFormat),
 }
 
 pub struct ImageRenderer {
@@ -110,26 +101,34 @@ impl ImageRenderer {
     ) -> Result<Vec<u8>, EchartsError> {
         let svg = self.render(chart)?;
 
-        if let ImageFormat::SVG = image_format {
-            return Ok(svg.as_bytes().to_vec());
+        match image_format {
+            ImageFormat::SVG => Ok(svg.as_bytes().to_vec()),
+            ImageFormat::Other(format) => {
+                let img = self.render_svg_to_buf(&svg)?;
+        
+                let mut buf = Vec::new();
+                img.write_to(&mut Cursor::new(&mut buf), format)
+                    .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))?;
+                Ok(buf)
+            }
         }
+    }
 
-        let loader = gdk_pixbuf::PixbufLoader::with_mime_type("image/svg+xml")
-            .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))?;
-        loader
-            .write(svg.as_bytes())
-            .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))?;
-        loader
-            .close()
-            .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))?;
+    pub fn render_svg_to_buf(&mut self, svg: &str) -> Result<image::RgbaImage, EchartsError> {
+        let mut pixels = resvg::tiny_skia::Pixmap::new(self.width, self.height)
+                .expect("width smaller than i32::MAX/4");
+        
+        let tree: resvg::usvg::Tree = resvg::usvg::TreeParsing::from_data(
+            svg.as_bytes(), 
+            &resvg::usvg::Options::default()
+        ).map_err(|error| EchartsError::ImageRenderingError(error.to_string()))?;
 
-        let pixbuf = loader.pixbuf().ok_or_else(|| {
-            EchartsError::ImageRenderingError("Failed to load pixbuf".to_string())
-        })?;
+        resvg::Tree::from_usvg(&tree).render(resvg::tiny_skia::Transform::identity(), &mut pixels.as_mut());
 
-        pixbuf
-            .save_to_bufferv(&image_format.to_string(), &[])
-            .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))
+        let img = image::RgbaImage::from_vec(self.width, self.height, pixels.take())
+            .ok_or(EchartsError::ImageRenderingError("Could not create ImageBUffer from bytes".to_string()))?;
+
+        Ok(img)
     }
 
     pub fn save<P: AsRef<std::path::Path>>(
@@ -148,8 +147,17 @@ impl ImageRenderer {
         chart: &Chart,
         path: P,
     ) -> Result<(), EchartsError> {
-        let bytes = self.render_format(image_format, chart)?;
-        std::fs::write(path, bytes)
-            .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))
+        let svg = self.render(chart)?;
+        match image_format {
+            ImageFormat::SVG => {
+                std::fs::write(path, svg)
+                    .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))
+            },
+            ImageFormat::Other(format) => {
+                let img = self.render_svg_to_buf(&svg)?;
+                img.save_with_format(path, format)
+                    .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))
+            }
+        }
     }
 }
