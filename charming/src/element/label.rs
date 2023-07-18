@@ -237,7 +237,7 @@ pub struct LabelLine {
     show_above: Option<bool>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    length2: Option<f64>,
+    length: Option<f64>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     smooth: Option<bool>,
@@ -254,7 +254,7 @@ impl LabelLine {
         Self {
             show: None,
             show_above: None,
-            length2: None,
+            length: None,
             smooth: None,
             min_turn_angle: None,
             line_style: None,
@@ -271,8 +271,8 @@ impl LabelLine {
         self
     }
 
-    pub fn length2<F: Into<f64>>(mut self, length2: F) -> Self {
-        self.length2 = Some(length2.into());
+    pub fn length<F: Into<f64>>(mut self, length: F) -> Self {
+        self.length = Some(length.into());
         self
     }
 

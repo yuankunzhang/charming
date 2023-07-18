@@ -226,6 +226,16 @@ maps.
 ### Tooltip
 
 [`Tooltip`] is a floating box that appears when user hovers over a data item.
+
+### AxisPointer
+
+[`AxisPointer`] is a tool for displaying reference line and axis value under
+mouse pointer.
+
+### Toolbox
+
+[`Toolbox`] is a feature toolbox that includes data view, save as image, data
+zoom, restore, and reset.
  */
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]

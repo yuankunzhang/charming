@@ -70,6 +70,7 @@ lazy_static! {
     };
     static ref FUNNEL_CHARTS: BTreeMap<&'static str, fn() -> Chart> = {
         let mut m = BTreeMap::new();
+        insert!(m, funnel, funnel_chart);
         insert!(m, funnel, multiple_funnels);
         m
     };

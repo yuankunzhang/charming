@@ -203,6 +203,7 @@ You can also clone the repo and run `cargo run --bin gallery` to view the intera
 ### Funnel Charts
 
 <div align="center">
+<a href="./gallery/src/funnel/funnel_chart.rs"><img src="./img/funnel/funnel_chart.svg" width="40%" alt="Funnel Chart" /></a>
 <a href="./gallery/src/funnel/multiple_funnels.rs"><img src="./img/funnel/multiple_funnels.svg" width="40%" alt="Multiple Funnels" /></a>
 </div>
 
