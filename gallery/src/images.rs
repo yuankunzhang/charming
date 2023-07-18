@@ -18,7 +18,7 @@ fn main() {
         std::fs::create_dir_all(&dir).unwrap();
         for (name, chart) in value.iter() {
             println!("Rendering {}/{}", key, name);
-            let path = dir.join(format!("{}.png", name));
+            let path = dir.join(format!("{}.svg", name));
             renderer.save(&chart(), &path).unwrap();
         }
     }
