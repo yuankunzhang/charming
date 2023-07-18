@@ -13,6 +13,7 @@ pub enum Theme {
     Shine,
     PurplePassion,
     Halloween,
+    Custom(&'static str, &'static str),
 }
 
 impl Theme {
@@ -35,6 +36,7 @@ impl Theme {
                 include_str!("../asset/theme-purple-passion.js"),
             ),
             Theme::Halloween => ("halloween", include_str!("../asset/theme-halloween.js")),
+            Theme::Custom(name, content) => (name, content),
         }
     }
 }
