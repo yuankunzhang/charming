@@ -64,6 +64,7 @@ impl ImageRenderer {
         self
     }
 
+    /// Render chart to an SVG String
     pub fn render(&mut self, chart: &Chart) -> Result<String, EchartsError> {
         let (theme, theme_source) = self.theme.to_str();
         let code = Handlebars::new()
@@ -95,6 +96,7 @@ impl ImageRenderer {
         }
     }
 
+    /// Render a chart to a given image format in bytes
     pub fn render_format(
         &mut self,
         image_format: ImageFormat,
@@ -107,7 +109,9 @@ impl ImageRenderer {
             ImageFormat::Other(format) => {
                 let img = self.render_svg_to_buf(&svg)?;
 
-                let mut buf = Vec::new();
+                // give buf initial capacity of: width * height * num of channels for RGBA + room for headers/metadata
+                let estimated_capacity = self.width * self.height * 4 + 1024;
+                let mut buf = Vec::with_capacity(estimated_capacity as usize);
                 img.write_to(&mut Cursor::new(&mut buf), format)
                     .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))?;
                 Ok(buf)
@@ -115,9 +119,12 @@ impl ImageRenderer {
         }
     }
 
+    /// Given an svg str, render it into an [`image::ImageBuffer`]
     fn render_svg_to_buf(&mut self, svg: &str) -> Result<image::RgbaImage, EchartsError> {
         let mut pixels =
-            Pixmap::new(self.width, self.height).expect("width smaller than i32::MAX/4");
+            Pixmap::new(self.width, self.height).ok_or(EchartsError::ImageRenderingError(
+                "Rendered image cannot be greater than i32::MAX/4".to_string(),
+            ))?;
 
         let tree: usvg::Tree =
             usvg::TreeParsing::from_data(svg.as_bytes(), &usvg::Options::default())
@@ -134,6 +141,7 @@ impl ImageRenderer {
         Ok(img)
     }
 
+    /// Render and save chart as an SVG
     pub fn save<P: AsRef<std::path::Path>>(
         &mut self,
         chart: &Chart,
@@ -144,6 +152,7 @@ impl ImageRenderer {
             .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))
     }
 
+    /// Render and save chart as the given image format
     pub fn save_format<P: AsRef<std::path::Path>>(
         &mut self,
         image_format: ImageFormat,
