@@ -1,7 +1,6 @@
 use std::io::Cursor;
 
 use deno_core::{v8, JsRuntime, RuntimeOptions};
-use image::ImageOutputFormat;
 use handlebars::Handlebars;
 
 use crate::{theme::Theme, Chart, EchartsError};
@@ -105,7 +104,7 @@ impl ImageRenderer {
             ImageFormat::SVG => Ok(svg.as_bytes().to_vec()),
             ImageFormat::Other(format) => {
                 let img = self.render_svg_to_buf(&svg)?;
-        
+
                 let mut buf = Vec::new();
                 img.write_to(&mut Cursor::new(&mut buf), format)
                     .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))?;
@@ -116,17 +115,22 @@ impl ImageRenderer {
 
     pub fn render_svg_to_buf(&mut self, svg: &str) -> Result<image::RgbaImage, EchartsError> {
         let mut pixels = resvg::tiny_skia::Pixmap::new(self.width, self.height)
-                .expect("width smaller than i32::MAX/4");
-        
-        let tree: resvg::usvg::Tree = resvg::usvg::TreeParsing::from_data(
-            svg.as_bytes(), 
-            &resvg::usvg::Options::default()
-        ).map_err(|error| EchartsError::ImageRenderingError(error.to_string()))?;
+            .expect("width smaller than i32::MAX/4");
 
-        resvg::Tree::from_usvg(&tree).render(resvg::tiny_skia::Transform::identity(), &mut pixels.as_mut());
+        let tree: resvg::usvg::Tree =
+            resvg::usvg::TreeParsing::from_data(svg.as_bytes(), &resvg::usvg::Options::default())
+                .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))?;
 
-        let img = image::RgbaImage::from_vec(self.width, self.height, pixels.take())
-            .ok_or(EchartsError::ImageRenderingError("Could not create ImageBUffer from bytes".to_string()))?;
+        resvg::Tree::from_usvg(&tree).render(
+            resvg::tiny_skia::Transform::identity(),
+            &mut pixels.as_mut(),
+        );
+
+        let img = image::RgbaImage::from_vec(self.width, self.height, pixels.take()).ok_or(
+            EchartsError::ImageRenderingError(
+                "Could not create ImageBUffer from bytes".to_string(),
+            ),
+        )?;
 
         Ok(img)
     }
@@ -149,10 +153,8 @@ impl ImageRenderer {
     ) -> Result<(), EchartsError> {
         let svg = self.render(chart)?;
         match image_format {
-            ImageFormat::SVG => {
-                std::fs::write(path, svg)
-                    .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))
-            },
+            ImageFormat::SVG => std::fs::write(path, svg)
+                .map_err(|error| EchartsError::ImageRenderingError(error.to_string())),
             ImageFormat::Other(format) => {
                 let img = self.render_svg_to_buf(&svg)?;
                 img.save_with_format(path, format)
