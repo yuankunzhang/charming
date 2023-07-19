@@ -23,14 +23,12 @@ chart.setOption({ animation: false });
 chart.setOption({{{ chart_option }}});
 chart.renderToSVGString();
 "#;
-#[derive(PartialEq)]
-pub enum ImageFormat {
-    SVG,
-    Other(image::ImageFormat),
-}
+
+pub use image::ImageFormat;
 
 pub struct ImageRenderer {
     js_runtime: JsRuntime,
+    fontdb: usvg::fontdb::Database,
     theme: Theme,
     width: u32,
     height: u32,
@@ -54,8 +52,19 @@ impl ImageRenderer {
             )
             .unwrap();
 
+        let mut fontdb = usvg::fontdb::Database::default();
+        fontdb.load_system_fonts();
+
+        #[cfg(all(unix, not(any(target_os = "macos", target_os = "android"))))]
+        {
+            fontdb.set_sans_serif_family("DejaVu Sans");
+            fontdb.set_serif_family("DejaVu Serif");
+            fontdb.set_monospace_family("DejaVu Sans Mono");
+        }
+
         Self {
             js_runtime: runtime,
+            fontdb,
             theme: Theme::Default,
             width,
             height,
@@ -107,19 +116,14 @@ impl ImageRenderer {
     ) -> Result<Vec<u8>, EchartsError> {
         let svg = self.render(chart)?;
 
-        match image_format {
-            ImageFormat::SVG => Ok(svg.as_bytes().to_vec()),
-            ImageFormat::Other(format) => {
-                let img = self.render_svg_to_buf(&svg)?;
+        let img = self.render_svg_to_buf(&svg)?;
 
-                // give buf initial capacity of: width * height * num of channels for RGBA + room for headers/metadata
-                let estimated_capacity = self.width * self.height * 4 + 1024;
-                let mut buf = Vec::with_capacity(estimated_capacity as usize);
-                img.write_to(&mut Cursor::new(&mut buf), format)
-                    .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))?;
-                Ok(buf)
-            }
-        }
+        // give buf initial capacity of: width * height * num of channels for RGBA + room for headers/metadata
+        let estimated_capacity = self.width * self.height * 4 + 1024;
+        let mut buf = Vec::with_capacity(estimated_capacity as usize);
+        img.write_to(&mut Cursor::new(&mut buf), image_format)
+            .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))?;
+        Ok(buf)
     }
 
     /// Given an svg str, render it into an [`image::ImageBuffer`]
@@ -133,17 +137,7 @@ impl ImageRenderer {
             usvg::TreeParsing::from_data(svg.as_bytes(), &usvg::Options::default())
                 .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))?;
 
-        let mut fonts = usvg::fontdb::Database::default();
-        fonts.load_system_fonts();
-
-        #[cfg(all(unix, not(any(target_os = "macos", target_os = "android"))))]
-        {
-            fonts.set_sans_serif_family("DejaVu Sans");
-            fonts.set_serif_family("DejaVu Serif");
-            fonts.set_monospace_family("DejaVu Sans Mono");
-        }
-
-        tree.convert_text(&fonts);
+        tree.convert_text(&self.fontdb);
         resvg::Tree::from_usvg(&tree).render(usvg::Transform::identity(), &mut pixels.as_mut());
 
         let img = RgbaImage::from_vec(self.width, self.height, pixels.take()).ok_or(
@@ -174,14 +168,8 @@ impl ImageRenderer {
         path: P,
     ) -> Result<(), EchartsError> {
         let svg = self.render(chart)?;
-        match image_format {
-            ImageFormat::SVG => std::fs::write(path, svg)
-                .map_err(|error| EchartsError::ImageRenderingError(error.to_string())),
-            ImageFormat::Other(format) => {
-                let img = self.render_svg_to_buf(&svg)?;
-                img.save_with_format(path, format)
-                    .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))
-            }
-        }
+        let img = self.render_svg_to_buf(&svg)?;
+        img.save_with_format(path, image_format)
+            .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))
     }
 }

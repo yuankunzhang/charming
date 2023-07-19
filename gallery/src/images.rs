@@ -22,7 +22,7 @@ fn main() {
             // renderer.save(&chart(), &path).unwrap();
             let path = dir.join(format!("{}.png", name));
             renderer
-                .save_format(ImageFormat::Other(image::ImageFormat::Png), &chart(), &path)
+                .save_format(ImageFormat::Png, &chart(), &path)
                 .unwrap();
         }
     }

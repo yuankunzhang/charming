@@ -8,10 +8,9 @@ Charming is a powerful and versatile chart rendering library for Rust that lever
 Highlights:
 
 - Easy-to-use, declaritive API.
-- Rich and customizable chart themes and styles.
-- Rendering to multiple formats, including HTML, SVG, PNG, and JPEG.
+- Abundant chart types with rich and customizable chart themes and styles.
 - Usable in WebAssembly environments.
-- Abundant chart types.
+- Rendering to multiple formats, including HTML, SVG, PNG, JPEG, GIF, WEBP, PNM, TIFF, TGA, DDS, BMP, ICO, HDR, OPENEXR, FARBFELD, AVIF, and QOI.
 
 ## Themes
 
