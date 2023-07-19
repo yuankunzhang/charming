@@ -57,9 +57,7 @@ impl ImageRenderer {
 
         #[cfg(all(unix, not(any(target_os = "macos", target_os = "android"))))]
         {
-            fontdb.set_sans_serif_family("DejaVu Sans");
-            fontdb.set_serif_family("DejaVu Serif");
-            fontdb.set_monospace_family("DejaVu Sans Mono");
+            set_default_fonts(&mut fontdb);
         }
 
         Self {
@@ -172,4 +170,64 @@ impl ImageRenderer {
         img.save_with_format(path, image_format)
             .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))
     }
+}
+
+#[cfg(all(unix, not(any(target_os = "macos", target_os = "android"))))]
+fn set_default_fonts(fontdb: &mut usvg::fontdb::Database) {
+    let sans_serif_fonts = vec![
+        "DejaVu Sans",
+        "FreeSans",
+        "Liberation Sans",
+        "Arimo",
+        "Cantarell",
+        "Nimbus Sans",
+    ];
+
+    let serif_fonts = vec![
+        "DejaVu Serif",
+        "FreeSerif",
+        "Liberation Serif",
+        "Tinos",
+        "Nimbus Roman",
+    ];
+
+    let monospace_fonts = vec![
+        "DejaVu Sans Mono",
+        "FreeMono",
+        "Liberation Mono",
+        "Nimbus Mono",
+    ];
+
+    for font in sans_serif_fonts {
+        if font_exists(fontdb, font) {
+            fontdb.set_sans_serif_family(font);
+            break;
+        }
+    }
+
+    for font in serif_fonts {
+        if font_exists(fontdb, font) {
+            fontdb.set_serif_family(font);
+            break;
+        }
+    }
+
+    for font in monospace_fonts {
+        if font_exists(fontdb, font) {
+            fontdb.set_monospace_family(font);
+            break;
+        }
+    }
+}
+
+#[cfg(all(unix, not(any(target_os = "macos", target_os = "android"))))]
+fn font_exists(fontdb: &usvg::fontdb::Database, family: &str) -> bool {
+    fontdb
+        .query(&usvg::fontdb::Query {
+            families: &[usvg::fontdb::Family::Name(family)],
+            weight: usvg::fontdb::Weight(14),
+            stretch: usvg::fontdb::Stretch::Normal,
+            style: usvg::fontdb::Style::Normal,
+        })
+        .is_some()
 }
