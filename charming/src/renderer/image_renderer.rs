@@ -1,6 +1,9 @@
+use std::io::Cursor;
+
 use deno_core::{v8, JsRuntime, RuntimeOptions};
-use gdk_pixbuf::traits::PixbufLoaderExt;
 use handlebars::Handlebars;
+use image::RgbaImage;
+use resvg::{tiny_skia::Pixmap, usvg::{self, TreeTextToPath}};
 
 use crate::{theme::Theme, Chart, EchartsError};
 
@@ -17,21 +20,10 @@ chart.setOption({ animation: false });
 chart.setOption({{{ chart_option }}});
 chart.renderToSVGString();
 "#;
-
+#[derive(PartialEq)]
 pub enum ImageFormat {
     SVG,
-    PNG,
-    JPEG,
-}
-
-impl ToString for ImageFormat {
-    fn to_string(&self) -> String {
-        match self {
-            ImageFormat::SVG => "svg".to_string(),
-            ImageFormat::PNG => "png".to_string(),
-            ImageFormat::JPEG => "jpeg".to_string(),
-        }
-    }
+    Other(image::ImageFormat),
 }
 
 pub struct ImageRenderer {
@@ -72,6 +64,7 @@ impl ImageRenderer {
         self
     }
 
+    /// Render chart to an SVG String
     pub fn render(&mut self, chart: &Chart) -> Result<String, EchartsError> {
         let (theme, theme_source) = self.theme.to_str();
         let code = Handlebars::new()
@@ -103,6 +96,7 @@ impl ImageRenderer {
         }
     }
 
+    /// Render a chart to a given image format in bytes
     pub fn render_format(
         &mut self,
         image_format: ImageFormat,
@@ -110,28 +104,48 @@ impl ImageRenderer {
     ) -> Result<Vec<u8>, EchartsError> {
         let svg = self.render(chart)?;
 
-        if let ImageFormat::SVG = image_format {
-            return Ok(svg.as_bytes().to_vec());
+        match image_format {
+            ImageFormat::SVG => Ok(svg.as_bytes().to_vec()),
+            ImageFormat::Other(format) => {
+                let img = self.render_svg_to_buf(&svg)?;
+
+                // give buf initial capacity of: width * height * num of channels for RGBA + room for headers/metadata
+                let estimated_capacity = self.width * self.height * 4 + 1024;
+                let mut buf = Vec::with_capacity(estimated_capacity as usize);
+                img.write_to(&mut Cursor::new(&mut buf), format)
+                    .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))?;
+                Ok(buf)
+            }
         }
-
-        let loader = gdk_pixbuf::PixbufLoader::with_mime_type("image/svg+xml")
-            .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))?;
-        loader
-            .write(svg.as_bytes())
-            .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))?;
-        loader
-            .close()
-            .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))?;
-
-        let pixbuf = loader.pixbuf().ok_or_else(|| {
-            EchartsError::ImageRenderingError("Failed to load pixbuf".to_string())
-        })?;
-
-        pixbuf
-            .save_to_bufferv(&image_format.to_string(), &[])
-            .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))
     }
 
+    /// Given an svg str, render it into an [`image::ImageBuffer`]
+    fn render_svg_to_buf(&mut self, svg: &str) -> Result<image::RgbaImage, EchartsError> {
+        let mut pixels =
+            Pixmap::new(self.width, self.height).ok_or(EchartsError::ImageRenderingError(
+                "Rendered image cannot be greater than i32::MAX/4".to_string(),
+            ))?;
+
+        let mut tree: usvg::Tree =
+            usvg::TreeParsing::from_data(svg.as_bytes(), &usvg::Options::default())
+                .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))?;
+
+        let mut fonts = usvg::fontdb::Database::default();
+        fonts.load_system_fonts();
+
+        tree.convert_text(&fonts);
+        resvg::Tree::from_usvg(&tree).render(usvg::Transform::identity(), &mut pixels.as_mut());
+
+        let img = RgbaImage::from_vec(self.width, self.height, pixels.take()).ok_or(
+            EchartsError::ImageRenderingError(
+                "Could not create ImageBuffer from bytes".to_string(),
+            ),
+        )?;
+
+        Ok(img)
+    }
+
+    /// Render and save chart as an SVG
     pub fn save<P: AsRef<std::path::Path>>(
         &mut self,
         chart: &Chart,
@@ -142,14 +156,22 @@ impl ImageRenderer {
             .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))
     }
 
+    /// Render and save chart as the given image format
     pub fn save_format<P: AsRef<std::path::Path>>(
         &mut self,
         image_format: ImageFormat,
         chart: &Chart,
         path: P,
     ) -> Result<(), EchartsError> {
-        let bytes = self.render_format(image_format, chart)?;
-        std::fs::write(path, bytes)
-            .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))
+        let svg = self.render(chart)?;
+        match image_format {
+            ImageFormat::SVG => std::fs::write(path, svg)
+                .map_err(|error| EchartsError::ImageRenderingError(error.to_string())),
+            ImageFormat::Other(format) => {
+                let img = self.render_svg_to_buf(&svg)?;
+                img.save_with_format(path, format)
+                    .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))
+            }
+        }
     }
 }
