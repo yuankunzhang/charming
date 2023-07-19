@@ -3,7 +3,10 @@ use std::io::Cursor;
 use deno_core::{v8, JsRuntime, RuntimeOptions};
 use handlebars::Handlebars;
 use image::RgbaImage;
-use resvg::{tiny_skia::Pixmap, usvg::{self, TreeTextToPath}};
+use resvg::{
+    tiny_skia::Pixmap,
+    usvg::{self, TreeTextToPath},
+};
 
 use crate::{theme::Theme, Chart, EchartsError};
 
@@ -132,6 +135,13 @@ impl ImageRenderer {
 
         let mut fonts = usvg::fontdb::Database::default();
         fonts.load_system_fonts();
+
+        #[cfg(all(unix, not(any(target_os = "macos", target_os = "android"))))]
+        {
+            fonts.set_sans_serif_family("DejaVu Sans");
+            fonts.set_serif_family("DejaVu Serif");
+            fonts.set_monospace_family("DejaVu Sans Mono");
+        }
 
         tree.convert_text(&fonts);
         resvg::Tree::from_usvg(&tree).render(usvg::Transform::identity(), &mut pixels.as_mut());
