@@ -1,7 +1,7 @@
 [package]
 name = "charming"
 description = "A visualization library for Rust"
-version = "0.2.1"
+version = "0.2.2"
 edition = "2021"
 authors = ["Yuankun Zhang <i@yuankun.me>"]
 homepage = "https://github.com/yuankunzhang/echarts-rs"
