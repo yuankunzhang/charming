@@ -3,8 +3,8 @@ use serde::Serialize;
 use crate::{
     datatype::{DataFrame, DataPoint},
     element::{
-        AreaStyle, DimensionEncode, Emphasis, ItemStyle, LineStyle, MarkArea, MarkLine, MarkPoint,
-        Symbol,
+        AreaStyle, CoordinateSystem, DimensionEncode, Emphasis, ItemStyle, LineStyle, MarkArea,
+        MarkLine, MarkPoint, Symbol,
     },
 };
 
@@ -19,6 +19,9 @@ pub struct Line {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     name: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    coordinate_system: Option<CoordinateSystem>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     symbol: Option<Symbol>,
@@ -78,6 +81,7 @@ impl Line {
             type_: "line".to_string(),
             id: None,
             name: None,
+            coordinate_system: None,
             symbol: None,
             symbol_size: None,
             show_symbol: None,
@@ -106,6 +110,11 @@ impl Line {
     /// Series name used for displaying in `tooltip` and filtering with `legend`.
     pub fn name<S: Into<String>>(mut self, name: S) -> Self {
         self.name = Some(name.into());
+        self
+    }
+
+    pub fn coordinate_system<C: Into<CoordinateSystem>>(mut self, coordinate_system: C) -> Self {
+        self.coordinate_system = Some(coordinate_system.into());
         self
     }
 

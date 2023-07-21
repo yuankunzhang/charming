@@ -245,6 +245,7 @@ You can also clone the repo and run `cargo run --bin gallery` to view the intera
 <a href="./gallery/src/line/stacked_area.rs"><img src="./img/line/stacked_area.svg" width="40%" alt="Stacked Area" /></a>
 <a href="./gallery/src/line/stacked_line.rs"><img src="./img/line/stacked_line.svg" width="40%" alt="Stacked Line" /></a>
 <a href="./gallery/src/line/temperature_change.rs"><img src="./img/line/temperature_change.svg" width="40%" alt="Temperature Change" /></a>
+<a href="./gallery/src/line/two_value_axes_in_polar.rs"><img src="./img/line/two_value_axes_in_polar.svg" width="40%" alt="Two Value-Axes in Polar" /></a>
 </div>
 
 ### Parallel Charts

@@ -1,6 +1,6 @@
 use std::{env, path::Path};
 
-use charming::{ImageFormat, ImageRenderer};
+use charming::ImageRenderer;
 use charming_gallery::CHARTS;
 
 fn main() {
@@ -18,12 +18,12 @@ fn main() {
         std::fs::create_dir_all(&dir).unwrap();
         for (name, chart) in value.iter() {
             println!("Rendering {}/{}", key, name);
-            // let path = dir.join(format!("{}.svg", name));
-            // renderer.save(&chart(), &path).unwrap();
-            let path = dir.join(format!("{}.png", name));
-            renderer
-                .save_format(ImageFormat::Png, &chart(), &path)
-                .unwrap();
+            let path = dir.join(format!("{}.svg", name));
+            renderer.save(&chart(), &path).unwrap();
+            // let path = dir.join(format!("{}.png", name));
+            // renderer
+            //     .save_format(ImageFormat::Png, &chart(), &path)
+            //     .unwrap();
         }
     }
 }

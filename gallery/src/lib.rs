@@ -114,6 +114,7 @@ lazy_static! {
         insert!(m, line, stacked_area);
         insert!(m, line, stacked_line);
         insert!(m, line, temperature_change);
+        insert!(m, line, two_value_axes_in_polar);
         m
     };
     static ref PARALLEL_CHARTS: BTreeMap<&'static str, fn() -> Chart> = {
