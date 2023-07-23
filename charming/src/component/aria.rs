@@ -187,7 +187,7 @@ Chart::new()
     .aria(Aria::new().enabled(true).decal(Decal::new().show(true)))
     .series(Bar::new().data(vec![120, 200, 150, 80, 70, 110, 130]))
     .series(Bar::new().data(vec![20, 40, 90, 40, 30, 70, 120]))
-    .series(Bar::new().data(vec![140, 230, 120, 50, 30, 150, 120]))
+    .series(Bar::new().data(vec![140, 230, 120, 50, 30, 150, 120]));
 ```
  */
 #[derive(Serialize)]
