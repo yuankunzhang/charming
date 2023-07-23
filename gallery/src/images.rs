@@ -14,6 +14,11 @@ fn main() {
     let mut renderer = ImageRenderer::new(600, 450);
 
     for (key, value) in CHARTS.iter() {
+        // Not yet supported by SSR.
+        if let "aria" = *key {
+            continue;
+        }
+
         let dir = output_dir.join(key);
         std::fs::create_dir_all(&dir).unwrap();
         for (name, chart) in value.iter() {
