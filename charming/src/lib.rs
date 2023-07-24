@@ -95,8 +95,8 @@ pub use renderer::*;
 
 use component::{
     AngleAxis, Aria, Axis, Axis3D, DataZoom, GeoMap, Grid, Grid3D, Legend, ParallelAxis,
-    ParallelCoordinate, PolarCoordinate, RadarCoordinate, RadiusAxis, SingleAxis, Title, Toolbox,
-    VisualMap,
+    ParallelCoordinate, PolarCoordinate, RadarCoordinate, RadiusAxis, SaveAsImageType, SingleAxis,
+    Title, Toolbox, VisualMap,
 };
 use datatype::Dataset;
 use element::{process_raw_strings, AxisPointer, Color, MarkLine, Tooltip};
@@ -501,6 +501,12 @@ impl Chart {
     pub fn geo_map<M: Into<GeoMap>>(mut self, map: M) -> Self {
         self.geo_maps.push(map.into());
         self
+    }
+
+    pub fn save_as_image_type(&self) -> Option<&SaveAsImageType> {
+        self.toolbox
+            .as_ref()
+            .and_then(|toolbox| toolbox.save_as_image_type())
     }
 }
 

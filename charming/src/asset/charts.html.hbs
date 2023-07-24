@@ -17,7 +17,7 @@
           {{#each gep_maps}}
           echarts.registerMap('{{ this.name }}', {{{ this.opt }}});
           {{/each}}
-          var chart = echarts.init(document.getElementById('{{ chart_id }}'){{#if theme}}, '{{ theme }}'{{/if}});
+          var chart = echarts.init(document.getElementById('{{ chart_id }}'), {{#if theme}}'{{ theme }}'{{else}}null{{/if}}, { renderer: '{{ canvas_type }}' });
           var option = {{{ chart_option }}};
           chart.setOption(option);
       </script>

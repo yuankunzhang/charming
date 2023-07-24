@@ -1,5 +1,5 @@
 use charming::{
-    component::{Aria, Axis, Decal},
+    component::{Aria, Axis, Decal, Feature, SaveAsImage, SaveAsImageType, Toolbox},
     element::AxisType,
     series::Bar,
     Chart,
@@ -7,6 +7,11 @@ use charming::{
 
 pub fn chart() -> Chart {
     Chart::new()
+        .toolbox(
+            Toolbox::new().feature(
+                Feature::new().save_as_image(SaveAsImage::new().type_(SaveAsImageType::Svg)),
+            ),
+        )
         .x_axis(
             Axis::new()
                 .type_(AxisType::Category)
