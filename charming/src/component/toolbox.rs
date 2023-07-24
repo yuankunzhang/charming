@@ -360,4 +360,11 @@ impl Toolbox {
         self.bottom = Some(bottom.into());
         self
     }
+
+    pub fn save_as_image_type(&self) -> Option<&SaveAsImageType> {
+        self.feature
+            .as_ref()
+            .and_then(|f| f.save_as_image.as_ref())
+            .and_then(|s| s.type_.as_ref())
+    }
 }

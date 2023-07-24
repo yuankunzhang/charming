@@ -1,6 +1,6 @@
 use handlebars::Handlebars;
 
-use crate::{theme::Theme, Chart, EchartsError};
+use crate::{component::SaveAsImageType, theme::Theme, Chart, EchartsError};
 
 pub struct HtmlRenderer {
     title: String,
@@ -27,6 +27,10 @@ impl HtmlRenderer {
     pub fn render(&self, chart: &Chart) -> Result<String, EchartsError> {
         let template = include_str!("../asset/charts.html.hbs");
         let (theme, theme_source) = self.theme.to_str();
+        let canvas_type = match chart.save_as_image_type() {
+            Some(&SaveAsImageType::Svg) => "svg".to_string(),
+            _ => "canvas".to_string(),
+        };
         let data = Handlebars::new()
             .render_template(
                 template,
@@ -37,6 +41,7 @@ impl HtmlRenderer {
                     "width": self.width,
                     "height": self.height,
                     "chart_id": "chart",
+                    "canvas_type": canvas_type,
                     "chart_option": chart.to_string(),
                 }),
             )

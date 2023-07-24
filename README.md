@@ -9,7 +9,7 @@ Highlights:
 
 - Easy-to-use, declaritive API.
 - Abundant chart types with rich and customizable chart themes and styles.
-- Usable in WebAssembly environments.
+- Ready to use in WebAssembly environments.
 - Rendering to multiple formats, including HTML, SVG, PNG, JPEG, GIF, WEBP, PNM, TIFF, TGA, DDS, BMP, ICO, HDR, OPENEXR, FARBFELD, AVIF, and QOI.
 
 ## Themes

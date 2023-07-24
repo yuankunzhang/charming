@@ -2,6 +2,7 @@ use charming::Chart;
 use lazy_static::lazy_static;
 use std::collections::BTreeMap;
 
+mod aria;
 mod bar;
 mod bar3d;
 mod boxplot;
@@ -31,6 +32,11 @@ macro_rules! insert {
 }
 
 lazy_static! {
+    static ref ARIA_CHARTS: BTreeMap<&'static str, fn() -> Chart> = {
+        let mut m = BTreeMap::new();
+        insert!(m, aria, default_decal);
+        m
+    };
     static ref BAR_CHARTS: BTreeMap<&'static str, fn() -> Chart> = {
         let mut m = BTreeMap::new();
         insert!(m, bar, bar_with_background);
@@ -183,6 +189,7 @@ lazy_static! {
     };
     pub static ref CHARTS: BTreeMap<&'static str, BTreeMap<&'static str, fn() -> Chart>> = {
         let mut m = BTreeMap::new();
+        m.insert("aria", ARIA_CHARTS.clone());
         m.insert("bar", BAR_CHARTS.clone());
         m.insert("bar3d", BAR3D_CHARTS.clone());
         m.insert("boxplot", BOXPLOT_CHARTS.clone());

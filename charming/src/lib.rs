@@ -94,9 +94,9 @@ pub mod theme;
 pub use renderer::*;
 
 use component::{
-    AngleAxis, Axis, Axis3D, DataZoom, GeoMap, Grid, Grid3D, Legend, ParallelAxis,
-    ParallelCoordinate, PolarCoordinate, RadarCoordinate, RadiusAxis, SingleAxis, Title, Toolbox,
-    VisualMap,
+    AngleAxis, Aria, Axis, Axis3D, DataZoom, GeoMap, Grid, Grid3D, Legend, ParallelAxis,
+    ParallelCoordinate, PolarCoordinate, RadarCoordinate, RadiusAxis, SaveAsImageType, SingleAxis,
+    Title, Toolbox, VisualMap,
 };
 use datatype::Dataset;
 use element::{process_raw_strings, AxisPointer, Color, MarkLine, Tooltip};
@@ -319,6 +319,9 @@ pub struct Chart {
     #[serde(skip_serializing_if = "Option::is_none")]
     mark_line: Option<MarkLine>,
 
+    #[serde(skip_serializing_if = "Option::is_none")]
+    aria: Option<Aria>,
+
     #[serde(skip_serializing_if = "Vec::is_empty")]
     series: Vec<Series>,
 
@@ -354,6 +357,7 @@ impl Chart {
             color: vec![],
             background_color: None,
             mark_line: None,
+            aria: None,
             series: vec![],
             geo_maps: vec![],
         }
@@ -484,6 +488,11 @@ impl Chart {
         self
     }
 
+    pub fn aria(mut self, aria: Aria) -> Self {
+        self.aria = Some(aria);
+        self
+    }
+
     pub fn series<S: Into<Series>>(mut self, series: S) -> Self {
         self.series.push(series.into());
         self
@@ -492,6 +501,12 @@ impl Chart {
     pub fn geo_map<M: Into<GeoMap>>(mut self, map: M) -> Self {
         self.geo_maps.push(map.into());
         self
+    }
+
+    pub fn save_as_image_type(&self) -> Option<&SaveAsImageType> {
+        self.toolbox
+            .as_ref()
+            .and_then(|toolbox| toolbox.save_as_image_type())
     }
 }
 
