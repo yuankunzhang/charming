@@ -1,3 +1,4 @@
+#![cfg_attr(docsrs, feature(doc_cfg))]
 /*!
 Charming is a powerful and versatile chart rendering library for Rust that
 leverages the power of [Apache Echarts](https://echarts.apache.org/en/index.html)
