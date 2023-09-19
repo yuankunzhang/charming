@@ -3,8 +3,8 @@ use serde::Serialize;
 use crate::{
     datatype::{DataFrame, DataPoint},
     element::{
-        AreaStyle, CoordinateSystem, DimensionEncode, Emphasis, ItemStyle, LineStyle, MarkArea,
-        MarkLine, MarkPoint, Symbol,
+        AreaStyle, CoordinateSystem, DimensionEncode, Emphasis, ItemStyle, Label, LineStyle,
+        MarkArea, MarkLine, MarkPoint, Symbol,
     },
 };
 
@@ -34,6 +34,9 @@ pub struct Line {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     stack: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    label: Option<Label>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     line_style: Option<LineStyle>,
@@ -86,6 +89,7 @@ impl Line {
             symbol_size: None,
             show_symbol: None,
             stack: None,
+            label: None,
             line_style: None,
             area_style: None,
             item_style: None,
@@ -135,6 +139,11 @@ impl Line {
 
     pub fn stack<S: Into<String>>(mut self, stack: S) -> Self {
         self.stack = Some(stack.into());
+        self
+    }
+
+    pub fn label<L: Into<Label>>(mut self, label: L) -> Self {
+        self.label = Some(label.into());
         self
     }
 
