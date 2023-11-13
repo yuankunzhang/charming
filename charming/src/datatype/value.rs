@@ -4,7 +4,9 @@ use serde::{Deserialize, Serialize};
 #[serde(untagged)]
 pub enum NumericValue {
     Integer(i32),
-    Float(f64),
+    BigInteger(i64),
+    Float(f32),
+    BigFloat(f64),
 }
 
 impl From<i32> for NumericValue {
@@ -13,9 +15,21 @@ impl From<i32> for NumericValue {
     }
 }
 
+impl From<i64> for NumericValue {
+    fn from(n: i64) -> Self {
+        NumericValue::BigInteger(n)
+    }
+}
+
+impl From<f32> for NumericValue {
+    fn from(n: f32) -> Self {
+        NumericValue::Float(n)
+    }
+}
+
 impl From<f64> for NumericValue {
     fn from(n: f64) -> Self {
-        NumericValue::Float(n)
+        NumericValue::BigFloat(n)
     }
 }
 
