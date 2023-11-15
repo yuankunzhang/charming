@@ -3,33 +3,31 @@ use serde::{Deserialize, Serialize};
 #[derive(Debug, Clone, PartialEq, PartialOrd, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum NumericValue {
-    Integer(i32),
-    BigInteger(i64),
-    Float(f32),
-    BigFloat(f64),
+    Integer(i64),
+    Float(f64),
 }
 
 impl From<i32> for NumericValue {
     fn from(n: i32) -> Self {
-        NumericValue::Integer(n)
+        NumericValue::Integer(n as i64)
     }
 }
 
 impl From<i64> for NumericValue {
     fn from(n: i64) -> Self {
-        NumericValue::BigInteger(n)
+        NumericValue::Integer(n)
     }
 }
 
 impl From<f32> for NumericValue {
     fn from(n: f32) -> Self {
-        NumericValue::Float(n)
+        NumericValue::Float(n as f64)
     }
 }
 
 impl From<f64> for NumericValue {
     fn from(n: f64) -> Self {
-        NumericValue::BigFloat(n)
+        NumericValue::Float(n)
     }
 }
 
