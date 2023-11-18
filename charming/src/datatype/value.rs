@@ -3,13 +3,25 @@ use serde::{Deserialize, Serialize};
 #[derive(Debug, Clone, PartialEq, PartialOrd, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum NumericValue {
-    Integer(i32),
+    Integer(i64),
     Float(f64),
 }
 
 impl From<i32> for NumericValue {
     fn from(n: i32) -> Self {
+        NumericValue::Integer(n as i64)
+    }
+}
+
+impl From<i64> for NumericValue {
+    fn from(n: i64) -> Self {
         NumericValue::Integer(n)
+    }
+}
+
+impl From<f32> for NumericValue {
+    fn from(n: f32) -> Self {
+        NumericValue::Float(n as f64)
     }
 }
 

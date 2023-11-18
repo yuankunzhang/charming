@@ -5,14 +5,34 @@ use super::CompositeValue;
 #[derive(Debug, Clone, PartialEq, PartialOrd, Serialize)]
 #[serde(untagged)]
 pub enum DataSource {
-    Integers(Vec<Vec<i32>>),
+    Integers(Vec<Vec<i64>>),
     Floats(Vec<Vec<f64>>),
     Mixed(Vec<Vec<CompositeValue>>),
 }
 
 impl From<Vec<Vec<i32>>> for DataSource {
     fn from(v: Vec<Vec<i32>>) -> Self {
+        let t: Vec<Vec<i64>> = v
+            .iter()
+            .map(|x| x.iter().map(|y| *y as i64).collect())
+            .collect();
+        DataSource::Integers(t)
+    }
+}
+
+impl From<Vec<Vec<i64>>> for DataSource {
+    fn from(v: Vec<Vec<i64>>) -> Self {
         DataSource::Integers(v)
+    }
+}
+
+impl From<Vec<Vec<f32>>> for DataSource {
+    fn from(v: Vec<Vec<f32>>) -> Self {
+        let t: Vec<Vec<f64>> = v
+            .iter()
+            .map(|x| x.iter().map(|y| *y as f64).collect())
+            .collect();
+        DataSource::Floats(t)
     }
 }
 
@@ -45,6 +65,7 @@ macro_rules! ds {
 
 #[cfg(test)]
 mod test {
+
     use crate::datatype::NumericValue;
 
     use super::*;
@@ -53,6 +74,19 @@ mod test {
     fn numeric_value_from_i32() {
         let n: NumericValue = 42i32.into();
         assert_eq!(n, NumericValue::Integer(42));
+    }
+
+    #[test]
+    fn numeric_value_from_i64() {
+        let n: NumericValue = 42i64.into();
+        assert_eq!(n, NumericValue::Integer(42));
+    }
+
+    #[test]
+    #[should_panic]
+    fn numeric_value_from_f32() {
+        let n: NumericValue = 0.618f32.into();
+        assert_eq!(n, NumericValue::Float(0.618));
     }
 
     #[test]
@@ -75,22 +109,51 @@ mod test {
 
     #[test]
     fn data_frame_from_integers() {
-        let ds: DataSource = vec![vec![1, 2, 3], vec![4, 5, 6]].into();
-        assert_eq!(ds, DataSource::Integers(vec![vec![1, 2, 3], vec![4, 5, 6]]));
+        let ds: DataSource = vec![vec![1i32, 2i32, 3i32], vec![4i32, 5i32, 6i32]].into();
+        assert_eq!(
+            ds,
+            DataSource::Integers(vec![vec![1i64, 2i64, 3i64], vec![4i64, 5i64, 6i64]])
+        );
+    }
+
+    #[test]
+    fn data_frame_from_bigintegers() {
+        let ds: DataSource = vec![vec![1i64, 2i64, 3i64], vec![4i64, 5i64, 6i64]].into();
+        assert_eq!(
+            ds,
+            DataSource::Integers(vec![vec![1i64, 2i64, 3i64], vec![4i64, 5i64, 6i64]])
+        );
     }
 
     #[test]
     fn data_frame_from_floats() {
-        let ds: DataSource = vec![vec![1.0, 2.0, 3.0], vec![4.0, 5.0, 6.0]].into();
+        let ds: DataSource =
+            vec![vec![1.0f32, 2.0f32, 3.0f32], vec![4.0f32, 5.0f32, 6.0f32]].into();
         assert_eq!(
             ds,
-            DataSource::Floats(vec![vec![1.0, 2.0, 3.0], vec![4.0, 5.0, 6.0]])
+            DataSource::Floats(vec![
+                vec![1.0f64, 2.0f64, 3.0f64],
+                vec![4.0f64, 5.0f64, 6.0f64]
+            ])
+        );
+    }
+
+    #[test]
+    fn data_frame_from_bigfloats() {
+        let ds: DataSource =
+            vec![vec![1.0f64, 2.0f64, 3.0f64], vec![4.0f64, 5.0f64, 6.0f64]].into();
+        assert_eq!(
+            ds,
+            DataSource::Floats(vec![
+                vec![1.0f64, 2.0f64, 3.0f64],
+                vec![4.0f64, 5.0f64, 6.0f64]
+            ])
         );
     }
 
     #[test]
     fn data_frame_from_mixed() {
-        let ds = ds!([1, "Tuesday", 3.0], ["Monday", 2, "Wednesday"]);
+        let ds = ds!([1i32, "Tuesday", 3.0f32], ["Monday", 2i32, "Wednesday"]);
         assert_eq!(
             ds,
             DataSource::Mixed(vec![
