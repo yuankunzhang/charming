@@ -18,7 +18,7 @@ impl From<&str> for ColorBy {
     }
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, Clone, Debug)]
 pub struct ColorStop {
     offset: f64,
     color: String,
@@ -33,6 +33,7 @@ impl ColorStop {
     }
 }
 
+#[derive(Clone, Debug)]
 pub enum Color {
     Value(String),
     LinearGradient {
