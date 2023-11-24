@@ -13,8 +13,8 @@ use charming::{
 
 pub fn chart() -> Chart {
     let time_data = TIME.iter().map(|&x| x.to_string()).collect::<Vec<_>>();
-    let flow_data = FLOW_DATA.iter().map(|&x| x).collect::<Vec<_>>();
-    let rainfall_data = RAINFALL_DATA.iter().map(|&x| x).collect::<Vec<_>>();
+    let flow_data = FLOW_DATA.to_vec();
+    let rainfall_data = RAINFALL_DATA.to_vec();
 
     Chart::new()
         .title(

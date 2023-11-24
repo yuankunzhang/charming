@@ -124,8 +124,8 @@ mod test {
         let q = DataPoint::Value(42.into());
         assert_eq!(p, q);
 
-        let p: DataPoint = (-3.14).into();
-        let q = DataPoint::Value((-3.14).into());
+        let p: DataPoint = (-std::f32::consts::PI).into();
+        let q = DataPoint::Value((-std::f32::consts::PI).into());
         assert_eq!(p, q);
 
         let p: DataPoint = "foo".into();
@@ -134,14 +134,14 @@ mod test {
 
         let p: DataPoint = vec![
             CompositeValue::from(42),
-            CompositeValue::from(-3.14),
+            CompositeValue::from(-std::f32::consts::PI),
             CompositeValue::from("foo"),
         ]
         .into();
         let q = DataPoint::Value(
             vec![
                 CompositeValue::from(42),
-                CompositeValue::from(-3.14),
+                CompositeValue::from(-std::f32::consts::PI),
                 CompositeValue::from("foo"),
             ]
             .into(),
