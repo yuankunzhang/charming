@@ -25,6 +25,9 @@ pub struct TextStyle {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     align: Option<String>,
+    
+    #[serde(skip_serializing_if = "Option::is_none")]
+    padding: Option<[f64; 4]>,
 }
 
 impl TextStyle {
@@ -37,6 +40,7 @@ impl TextStyle {
             font_size: None,
             line_height: None,
             align: None,
+            padding: None,
         }
     }
 
@@ -72,6 +76,36 @@ impl TextStyle {
 
     pub fn align<S: Into<String>>(mut self, align: S) -> Self {
         self.align = Some(align.into());
+        self
+    }
+
+    pub fn padding<F: Into<f64> + Copy>(mut self, padding: [F; 4]) -> Self {
+        self.padding = Some([
+            padding[0].into(),
+            padding[1].into(),
+            padding[2].into(),
+            padding[3].into(),
+        ]);
+        self
+    }
+
+    pub fn padding_all<F: Into<f64> + Copy>(mut self, padding: F) -> Self {
+        self.padding = Some([
+            padding.into(),
+            padding.into(),
+            padding.into(),
+            padding.into(),
+        ]);
+        self
+    }
+
+    pub fn padding_pair<F: Into<f64> + Copy>(mut self, padding: [F; 2]) -> Self {
+        self.padding = Some([
+            padding[0].into(),
+            padding[1].into(),
+            padding[0].into(),
+            padding[1].into(),
+        ]);
         self
     }
 }
