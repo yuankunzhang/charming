@@ -56,6 +56,10 @@ impl WasmRenderer {
         echarts
             .resize(to_value(&chart_size).expect("could not convert resize options to `JsValue`"));
     }
+
+    pub fn update(echarts: &Echarts, chart: &Chart) {
+        echarts.set_option(to_value(chart).unwrap());
+    }
 }
 
 #[derive(Serialize)]
