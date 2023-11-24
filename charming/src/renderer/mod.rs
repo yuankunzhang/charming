@@ -1,3 +1,5 @@
+#[cfg(feature = "html")]
+#[cfg_attr(docsrs, doc(cfg(feature = "html")))]
 pub mod html_renderer;
 #[cfg(feature = "ssr")]
 #[cfg_attr(docsrs, doc(cfg(feature = "ssr")))]
