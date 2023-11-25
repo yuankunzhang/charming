@@ -100,6 +100,9 @@ pub struct Sankey {
     emphasis: Option<Emphasis>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    layout_iterations: Option<u64>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     orient: Option<Orient>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -133,6 +136,7 @@ impl Sankey {
             width: None,
             height: None,
             emphasis: None,
+            layout_iterations: None,
             orient: None,
             label: None,
             node_align: None,
@@ -194,6 +198,11 @@ impl Sankey {
 
     pub fn emphasis<E: Into<Emphasis>>(mut self, emphasis: E) -> Self {
         self.emphasis = Some(emphasis.into());
+        self
+    }
+
+    pub fn layout_iterations<F: Into<u64>>(mut self, layout_iterations: F) -> Self {
+        self.layout_iterations = Some(layout_iterations.into());
         self
     }
 
