@@ -98,10 +98,10 @@ pub fn chart() -> Chart {
                 .max(10)
                 .max((data_list.len() - 1) as f64),
         )
-        .x_axis(Axis::new().data(data_list.iter().map(|v| *v).collect()))
+        .x_axis(Axis::new().data(data_list.to_vec()))
         .x_axis(
             Axis::new()
-                .data(data_list.iter().map(|v| *v).collect())
+                .data(data_list.to_vec())
                 .grid_index(1),
         )
         .y_axis(Axis::new())

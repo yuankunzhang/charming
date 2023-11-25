@@ -12,14 +12,14 @@ license = "MIT/Apache-2.0"
 readme = "../README.md"
 
 [dependencies]
-deno_core = { version = "0.209", optional = true }
-handlebars = "4.3"
+deno_core = { version = "0.232", optional = true }
+handlebars = { version = "4.3", optional = true }
 image = { version = "0.24", optional = true }
-resvg = { version = "0.35", optional = true }
+resvg = { version = "0.36", optional = true }
 serde = { version = "1.0", features = ["derive"] }
-serde-wasm-bindgen = {version = "0.5", optional = true }
+serde-wasm-bindgen = {version = "0.6", optional = true }
 serde_json = "1.0"
-serde_v8 = { version = "0.120", optional = true }
+serde_v8 = { version = "0.141", optional = true }
 wasm-bindgen = { version = "0.2", optional = true }
 
 [dependencies.web-sys]
@@ -32,7 +32,9 @@ features = [
 ]
 
 [features]
-ssr = ["deno_core", "image", "resvg", "serde_v8"]
+default = ["html"]
+html = ["handlebars"]
+ssr = ["html", "deno_core", "image", "resvg", "serde_v8"]
 wasm = ["serde-wasm-bindgen", "wasm-bindgen", "web-sys"]
 
 [package.metadata.docs.rs]
