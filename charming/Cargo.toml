@@ -1,11 +1,11 @@
 [package]
 name = "charming"
 description = "A visualization library for Rust"
-version = "0.3.0"
+version = "0.3.1"
 edition = "2021"
 authors = ["Yuankun Zhang <i@yuankun.me>"]
-homepage = "https://github.com/yuankunzhang/echarts-rs"
-documentation = "https://github.com/yuankunzhang/echarts-rs"
+homepage = "https://github.com/yuankunzhang/charming"
+documentation = "https://github.com/yuankunzhang/charming"
 keywords = ["echarts", "visualization", "chart", "plot"]
 categories = ["visualization", "graphics"]
 license = "MIT/Apache-2.0"
