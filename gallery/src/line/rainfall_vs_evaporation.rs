@@ -16,8 +16,8 @@ pub fn chart() -> Chart {
         .map(|x| x.replace("2009/", ""))
         .collect::<Vec<_>>();
 
-    let evaporation_data = EVAPORATION_DATA.iter().map(|x| *x).collect::<Vec<_>>();
-    let rainfall_data = RAINFALL_DATA.iter().map(|x| *x).collect::<Vec<_>>();
+    let evaporation_data = EVAPORATION_DATA.to_vec();
+    let rainfall_data = RAINFALL_DATA.to_vec();
 
     Chart::new()
         .title(Title::new().text("Rainfall vs Evaporation").left("center"))
