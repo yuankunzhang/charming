@@ -2,7 +2,7 @@ use serde::{Deserialize, Serialize};
 
 use crate::{
     datatype::CompositeValue,
-    element::{Emphasis, Label, LineStyle, Orient},
+    element::{Emphasis, Label, LineStyle, Orient, ItemStyle},
 };
 
 #[derive(Serialize)]
@@ -13,7 +13,7 @@ pub enum SankeyNodeAlign {
     Justify,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct SankeyNode {
     pub name: String,
@@ -23,17 +23,46 @@ pub struct SankeyNode {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     pub depth: Option<f64>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub item_style: Option<ItemStyle>,
+}
+
+impl SankeyNode {
+    pub fn new<S>(name: S) -> Self where S: Into<String> {
+        Self {
+            name: name.into(),
+            value: None,
+            depth: None,
+            item_style: None,
+        }
+    }
+
+    pub fn value<V: Into<f64>>(mut self, value: V) -> Self {
+        self.value = Some(value.into());
+        self
+    }
+    pub fn depth<D: Into<f64>>(mut self, depth: D) -> Self {
+        self.depth = Some(depth.into());
+        self
+    }
+
+    pub fn item_style<S: Into<ItemStyle>>(mut self, item_style: S) -> Self {
+        self.item_style = Some(item_style.into());
+        self
+    }
 }
 
 impl<S> From<S> for SankeyNode
-where
-    S: Into<String>,
+    where
+        S: Into<String>,
 {
     fn from(name: S) -> Self {
         SankeyNode {
             name: name.into(),
             value: None,
             depth: None,
+            item_style: None,
         }
     }
 }

@@ -1,5 +1,5 @@
 use serde::ser::{SerializeStruct, Serializer};
-use serde::Serialize;
+use serde::{Serialize, Deserialize};
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]
@@ -18,7 +18,7 @@ impl From<&str> for ColorBy {
     }
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, Deserialize, Clone, Debug)]
 pub struct ColorStop {
     offset: f64,
     color: String,
@@ -33,6 +33,7 @@ impl ColorStop {
     }
 }
 
+#[derive(Clone, Deserialize, Debug)]
 pub enum Color {
     Value(String),
     LinearGradient {
