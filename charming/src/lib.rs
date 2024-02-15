@@ -524,3 +524,10 @@ pub enum EchartsError {
     JsRuntimeError(String),
     WasmError(String),
 }
+
+impl std::error::Error for EchartsError {}
+impl std::fmt::Display for EchartsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
+        write!(f, "{}", self)
+    }
+}
