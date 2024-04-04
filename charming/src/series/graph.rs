@@ -254,6 +254,9 @@ pub struct Graph {
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: Vec<GraphNode>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    edge_symbol: Option<(String, String)>,
 }
 
 impl Graph {
@@ -280,6 +283,7 @@ impl Graph {
             categories: vec![],
             links: vec![],
             data: vec![],
+            edge_symbol: None,
         }
     }
 
@@ -372,6 +376,11 @@ impl Graph {
         self.data = data.nodes;
         self.links = data.links;
         self.categories = data.categories;
+        self
+    }
+
+    pub fn edge_symbol(mut self, edge_symbol: Option<(String, String)>) -> Self {
+        self.edge_symbol = edge_symbol;
         self
     }
 }
