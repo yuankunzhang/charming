@@ -287,7 +287,7 @@ You can also clone the repo and run `cargo run --bin gallery` to view the intera
 <a href="./gallery/src/scatter/basic_scatter.rs"><img src="./img/scatter/basic_scatter.svg" width="40%" alt="Basic Scatter" /></a>
 <a href="./gallery/src/scatter/bubble_chart.rs"><img src="./img/scatter/bubble_chart.svg" width="40%" alt="Bubble Chart" /></a>
 <a href="./gallery/src/scatter/effect_scatter.rs"><img src="./img/scatter/effect_scatter.svg" width="40%" alt="Effect Scatter" /></a>
-<a href="./gallery/src/scatter/punch_cart_of_github.rs"><img src="./img/scatter/punch_card_of_github.svg" width="40%" alt="Punch Card of Github" /></a>
+<a href="./gallery/src/scatter/punch_card_of_github.rs"><img src="./img/scatter/punch_card_of_github.svg" width="40%" alt="Punch Card of Github" /></a>
 </div>
 
 ### Sunburst Charts
