@@ -2,7 +2,7 @@ use serde::Serialize;
 
 use super::{color::Color, Formatter};
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct AxisLabel {
     #[serde(skip_serializing_if = "Option::is_none")]

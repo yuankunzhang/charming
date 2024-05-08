@@ -2,7 +2,7 @@ use serde::Serialize;
 
 use super::{blur::Blur, emphasis::Emphasis, item_style::ItemStyle, label::Label};
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct MarkAreaData {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -40,7 +40,7 @@ impl MarkAreaData {
     }
 }
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct MarkArea {
     #[serde(skip_serializing_if = "Option::is_none")]

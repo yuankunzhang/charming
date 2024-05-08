@@ -5,7 +5,7 @@ use crate::{
     element::{Label, LineStyle},
 };
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "snake_case")]
 pub enum AxisPointerType {
     Line,
@@ -14,7 +14,7 @@ pub enum AxisPointerType {
     None,
 }
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "snake_case")]
 pub enum AxisPointerAxis {
     X,
@@ -23,7 +23,7 @@ pub enum AxisPointerAxis {
     Angle,
 }
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct AxisPointerLink {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -72,7 +72,7 @@ impl AxisPointerLink {
 
 /// Axis Pointer is a tool for displaying reference line and axis value under
 /// mouse pointer.
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct AxisPointer {
     /// Component ID.

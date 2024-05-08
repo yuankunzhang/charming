@@ -2,7 +2,7 @@ use serde::Serialize;
 
 use super::{icon::Icon, item_style::ItemStyle};
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Pointer {
     #[serde(skip_serializing_if = "Option::is_none")]

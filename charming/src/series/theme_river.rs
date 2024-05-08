@@ -5,6 +5,7 @@ use crate::{
     element::{BoundaryGap, ColorBy, CoordinateSystem, Label},
 };
 
+#[derive(Clone)]
 pub struct ThemeRiverData {
     date: CompositeValue,
     value: CompositeValue,
@@ -47,7 +48,7 @@ where
     }
 }
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct ThemeRiver {
     #[serde(rename = "type")]

@@ -5,14 +5,14 @@ use crate::{
     element::{Blur, Emphasis, ItemStyle, Label, Select, Symbol},
 };
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "snake_case")]
 pub enum TreeLayout {
     Orthogonal,
     Radial,
 }
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 pub enum TreeOrient {
     #[serde(rename = "LR")]
     LeftRight,
@@ -24,14 +24,14 @@ pub enum TreeOrient {
     BottomTop,
 }
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "snake_case")]
 pub enum TreeEdgeShape {
     Curve,
     Polyline,
 }
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct TreeLeaves {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -49,7 +49,7 @@ impl TreeLeaves {
     }
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct TreeNode {
     pub name: String,
@@ -65,7 +65,7 @@ pub struct TreeNode {
 }
 
 /// The tree diagram is mainly used to display the tree data structure.
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Tree {
     #[serde(rename = "type")]

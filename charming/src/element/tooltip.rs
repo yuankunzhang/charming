@@ -2,7 +2,7 @@ use serde::Serialize;
 
 use crate::element::{AxisPointer, Color, Formatter, Padding};
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "snake_case")]
 pub enum TriggerOn {
     Mousemove,
@@ -13,7 +13,7 @@ pub enum TriggerOn {
 }
 
 /// Types of triggering.
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "snake_case")]
 pub enum Trigger {
     Item,
@@ -21,7 +21,7 @@ pub enum Trigger {
     None,
 }
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Tooltip {
     #[serde(skip_serializing_if = "Option::is_none")]

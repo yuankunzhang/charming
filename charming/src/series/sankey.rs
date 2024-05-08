@@ -5,7 +5,7 @@ use crate::{
     element::{Emphasis, Label, LineStyle, Orient, ItemStyle},
 };
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "snake_case")]
 pub enum SankeyNodeAlign {
     Left,
@@ -13,7 +13,7 @@ pub enum SankeyNodeAlign {
     Justify,
 }
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Clone, Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct SankeyNode {
     pub name: String,
@@ -67,7 +67,7 @@ impl<S> From<S> for SankeyNode
     }
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct SankeyLink {
     pub source: String,
@@ -89,7 +89,7 @@ where
     }
 }
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Sankey {
     #[serde(rename = "type")]

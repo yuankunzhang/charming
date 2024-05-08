@@ -5,7 +5,7 @@ use crate::{
     element::{CoordinateSystem, DimensionEncode},
 };
 
-#[derive(Serialize)]
+#[derive(Serialize, Clone)]
 pub struct Bar3d {
     #[serde(rename = "type")]
     type_: String,

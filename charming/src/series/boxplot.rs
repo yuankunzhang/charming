@@ -2,7 +2,7 @@ use serde::Serialize;
 
 use crate::element::{ColorBy, CoordinateSystem};
 
-#[derive(Serialize)]
+#[derive(Serialize, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Boxplot {
     #[serde(rename = "type")]

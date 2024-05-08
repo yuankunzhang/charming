@@ -6,7 +6,7 @@ use crate::element::ItemStyle;
 
 use super::CompositeValue;
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct DataPointItem {
     value: CompositeValue,
@@ -72,7 +72,7 @@ where
     }
 }
 
-#[derive(Debug, PartialEq, Serialize)]
+#[derive(Clone, Debug, PartialEq, Serialize)]
 #[serde(untagged)]
 pub enum DataPoint {
     Value(CompositeValue),

@@ -6,7 +6,7 @@ use crate::{
 };
 
 /// Title component, including main title and subtitle.
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Title {
     /// Component ID.

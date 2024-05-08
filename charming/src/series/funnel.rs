@@ -5,7 +5,7 @@ use crate::{
     element::{ColorBy, Emphasis, ItemStyle, Label, LabelLine, Orient, Sort},
 };
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "snake_case")]
 pub enum Align {
     Left,
@@ -13,7 +13,7 @@ pub enum Align {
     Center,
 }
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Funnel {
     #[serde(rename = "type")]

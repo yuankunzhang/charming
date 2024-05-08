@@ -2,7 +2,7 @@ use serde::Serialize;
 
 use super::line_style::LineStyle;
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct AxisTick {
     #[serde(skip_serializing_if = "Option::is_none")]
