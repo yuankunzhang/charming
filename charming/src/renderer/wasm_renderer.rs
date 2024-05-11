@@ -60,6 +60,14 @@ impl WasmRenderer {
     pub fn update(echarts: &Echarts, chart: &Chart) {
         echarts.set_option(to_value(chart).unwrap());
     }
+
+    pub fn dispose(echarts: &Echarts) {
+        echarts.dispose();
+    }
+
+    pub fn is_disposed(echarts: &Echarts) -> bool {
+        echarts.is_disposed()
+    }
 }
 
 #[derive(Serialize)]
@@ -158,4 +166,10 @@ extern "C" {
 
     #[wasm_bindgen(method, js_name = "resize")]
     pub fn resize(this: &Echarts, opts: JsValue);
+
+    #[wasm_bindgen(method, js_name = "dispose")]
+    pub fn dispose(this: &Echarts);
+
+    #[wasm_bindgen(method, js_name = "isDisposed")]
+    pub fn is_disposed(this: &Echarts) -> bool;
 }
