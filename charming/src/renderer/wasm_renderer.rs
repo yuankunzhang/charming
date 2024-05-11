@@ -68,6 +68,29 @@ impl WasmRenderer {
     pub fn is_disposed(echarts: &Echarts) -> bool {
         echarts.is_disposed()
     }
+
+    pub fn instance_by_id(id: &str) -> Result<Echarts, EchartsError> {
+        let window = web_sys::window().ok_or(EchartsError::WasmError(
+            "no `window` object found".to_string(),
+        ))?;
+        let document = window.document().ok_or(EchartsError::WasmError(
+            "no `document` object found".to_string(),
+        ))?;
+        let element = document
+            .get_element_by_id(id)
+            .ok_or(EchartsError::WasmError(format!(
+                "no element with id `{}` found",
+                id
+            )))?;
+
+        if let Some(instance) = instance_by_element(&element) {
+            Ok(instance)
+        } else {
+            Err(EchartsError::WasmError(
+                "could not get instance by dom".to_string(),
+            ))
+        }
+    }
 }
 
 #[derive(Serialize)]
@@ -173,4 +196,7 @@ extern "C" {
 
     #[wasm_bindgen(method, js_name = "isDisposed")]
     pub fn is_disposed(this: &Echarts) -> bool;
+
+    #[wasm_bindgen(js_namespace = echarts, js_name = "getInstanceByDom")]
+    pub fn instance_by_element(element: &web_sys::Element) -> Option<Echarts>;
 }

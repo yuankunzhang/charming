@@ -22,11 +22,17 @@ fn App(cx: Scope) -> impl IntoView {
         let renderer = WasmRenderer::new(600, 400);
         renderer.render("chart",&chart).unwrap();
     });
-        
+
+    on_cleanup(cx, || {
+        if let Ok(instance) = WasmRenderer::instance_by_id("chart") {
+            WasmRenderer::dispose(&instance);
+        }
+    });
+
     view! { cx,
         <div>
             <button on:click=move |_| {action.dispatch(());}>"Show chart"</button>
-            <div  id="chart"></div>
+            <div id="chart"></div>
         </div>
     }
 }
