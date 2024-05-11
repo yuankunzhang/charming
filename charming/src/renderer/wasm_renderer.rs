@@ -155,6 +155,7 @@ impl Animation {
 
 #[wasm_bindgen]
 extern "C" {
+    #[derive(Clone)]
     #[wasm_bindgen(js_name = echarts)]
     pub type Echarts;
 
