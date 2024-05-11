@@ -7,8 +7,8 @@ use charming::{
 use leptos::*;
 
 #[component]
-fn App(cx: Scope) -> impl IntoView {
-    let action = create_action(cx, |_input: &()| async {
+fn App() -> impl IntoView {
+    let action = create_action(|_input: &()| async {
         let chart = Chart::new()
             .title(Title::new().text("Demo: Yew + Charming"))
             .x_axis(
@@ -23,13 +23,13 @@ fn App(cx: Scope) -> impl IntoView {
         renderer.render("chart",&chart).unwrap();
     });
 
-    on_cleanup(cx, || {
+    on_cleanup(|| {
         if let Ok(instance) = WasmRenderer::instance_by_id("chart") {
             WasmRenderer::dispose(&instance);
         }
     });
 
-    view! { cx,
+    view! {
         <div>
             <button on:click=move |_| {action.dispatch(());}>"Show chart"</button>
             <div id="chart"></div>
@@ -38,5 +38,5 @@ fn App(cx: Scope) -> impl IntoView {
 }
 
 fn main() {
-    mount_to_body(|cx| view! { cx, <App/> })
+    leptos::mount_to_body(|| view! { <App/> })
 }
