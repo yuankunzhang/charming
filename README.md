@@ -134,11 +134,11 @@ let mut renderer = ImageRenderer::new(1000, 800);
 // Render the chart as SVG string.
 renderer.render(&chart).unwrap();
 // Render the chart as PNG bytes.
-renderer.render_format(ImageFormat::PNG, &chart).unwrap();
+renderer.render_format(ImageFormat::Png, &chart).unwrap();
 // Save the chart as SVG file.
 renderer.save(&chart, "/tmp/chart.svg").unwrap();
 // Save the chart as PNG file.
-renderer.save_format(ImageFormat::PNG, &chart, "/tmp/chart.png");
+renderer.save_format(ImageFormat::Png, &chart, "/tmp/chart.png");
 
 
 // Use WasmRenderer. The `wasm` feature needs to be enabled.
