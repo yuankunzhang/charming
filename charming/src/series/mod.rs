@@ -48,6 +48,7 @@ pub use theme_river::*;
 pub use tree::*;
 pub use treemap::*;
 
+#[derive(Clone)]
 pub enum Series {
     Bar(bar::Bar),
     Bar3d(bar3d::Bar3d),

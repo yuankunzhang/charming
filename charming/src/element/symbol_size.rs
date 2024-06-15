@@ -2,7 +2,7 @@ use serde::Serialize;
 
 use super::RawString;
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(untagged)]
 pub enum SymbolSize {
     Number(f64),

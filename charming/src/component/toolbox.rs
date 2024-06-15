@@ -2,7 +2,7 @@ use serde::Serialize;
 
 use crate::{datatype::CompositeValue, element::Orient};
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "snake_case")]
 pub enum SaveAsImageType {
     Png,
@@ -10,7 +10,7 @@ pub enum SaveAsImageType {
     Svg,
 }
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct SaveAsImage {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -58,7 +58,7 @@ impl SaveAsImage {
     }
 }
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Restore {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -87,7 +87,7 @@ impl Restore {
     }
 }
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct DataView {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -125,7 +125,7 @@ impl DataView {
     }
 }
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "snake_case")]
 pub enum MagicTypeType {
     /// For line charts.
@@ -147,7 +147,7 @@ impl From<&str> for MagicTypeType {
     }
 }
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct MagicType {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -176,7 +176,7 @@ impl MagicType {
     }
 }
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub enum BrushType {
     Rect,
@@ -187,7 +187,7 @@ pub enum BrushType {
     Clear,
 }
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Brush {
     #[serde(skip_serializing_if = "Vec::is_empty")]
@@ -205,7 +205,7 @@ impl Brush {
     }
 }
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct ToolboxDataZoom {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -223,7 +223,7 @@ impl ToolboxDataZoom {
     }
 }
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Feature {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -288,7 +288,7 @@ impl Feature {
     }
 }
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Toolbox {
     #[serde(skip_serializing_if = "Option::is_none")]

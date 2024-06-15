@@ -5,7 +5,7 @@ use crate::{
     element::{Emphasis, ItemStyle, Label},
 };
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Treemap {
     #[serde(rename = "type")]

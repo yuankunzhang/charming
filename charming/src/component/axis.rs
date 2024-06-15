@@ -9,7 +9,7 @@ use crate::{
 };
 
 /// Axis in cartesian coordinate.
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Axis {
     /// Type of axis.

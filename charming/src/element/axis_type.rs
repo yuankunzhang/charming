@@ -1,7 +1,7 @@
 use serde::Serialize;
 
 /// Type of axis.
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "snake_case")]
 pub enum AxisType {
     /// Numerical axis, suitable for continuous data.

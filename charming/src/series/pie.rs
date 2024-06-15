@@ -5,14 +5,14 @@ use crate::{
     element::{ColorBy, CoordinateSystem, Emphasis, ItemStyle, Label, LabelLine},
 };
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "snake_case")]
 pub enum PieRoseType {
     Radius,
     Area,
 }
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Pie {
     #[serde(rename = "type")]
