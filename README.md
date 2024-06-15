@@ -22,9 +22,9 @@ Highlights:
         <td><img src="./img/theme/vintage.png" alt="Vintage" /><p align="center">Vintage</p></td>
     </tr>
     <tr>
-        <td><img src="./img/theme/westeros.png" alt="Westeros" /><p align="center">Vintage</p></td>
+        <td><img src="./img/theme/westeros.png" alt="Westeros" /><p align="center">Westeros</p></td>
         <td><img src="./img/theme/essos.png" alt="Essos" /><p align="center">Essos</p></td>
-        <td><img src="./img/theme/wonderland.png" alt="Wonderland" /><p align="center">Essos</p></td>
+        <td><img src="./img/theme/wonderland.png" alt="Wonderland" /><p align="center">Wonderland</p></td>
     </tr>
     <tr>
         <td><img src="./img/theme/walden.png" alt="Walden" /><p align="center">Walden</p></td>
