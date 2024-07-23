@@ -8,7 +8,7 @@ use crate::{
     },
 };
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct GaugeDetail {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -100,7 +100,7 @@ impl GaugeDetail {
     }
 }
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct GaugeTitle {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -129,7 +129,7 @@ impl GaugeTitle {
     }
 }
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct GaugeProgress {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -194,7 +194,7 @@ impl GaugeProgress {
     }
 }
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Gauge {
     #[serde(rename = "type")]

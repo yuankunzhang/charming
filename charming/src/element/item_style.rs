@@ -1,7 +1,7 @@
 use serde::{Serialize, Deserialize};
 use super::{border_type::BorderType, color::Color};
 
-#[derive(Serialize, Deserialize, Clone, Debug)]
+#[derive(Clone, Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ItemStyle {
     #[serde(skip_serializing_if = "Option::is_none")]

@@ -7,7 +7,7 @@ use crate::{
     },
 };
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Custom {
     type_: String,

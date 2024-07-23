@@ -8,13 +8,13 @@ use crate::{
     },
 };
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "snake_case")]
 pub enum EffectType {
     Ripple,
 }
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "snake_case")]
 pub enum ShowEffectOn {
     Render,
@@ -84,7 +84,7 @@ impl RippleEffect {
     }
 }
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct EffectScatter {
     #[serde(rename = "type")]

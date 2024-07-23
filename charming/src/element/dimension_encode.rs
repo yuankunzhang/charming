@@ -2,7 +2,7 @@ use serde::Serialize;
 
 use crate::datatype::CompositeValue;
 
-#[derive(Serialize)]
+#[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct DimensionEncode {
     #[serde(skip_serializing_if = "Option::is_none")]
