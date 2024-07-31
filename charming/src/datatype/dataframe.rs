@@ -69,3 +69,43 @@ macro_rules! df {
         ]
     };
 }
+
+#[macro_export]
+macro_rules! df_transposed {
+    ($([$($x:expr),*]),* $(,)?) => {
+
+        // Determine the length of the vectors (assuming they are all the same length)
+        let len = $crate::vec_len!($($col),*);
+
+        // Create a vector to store the resulting rows
+        let mut rows = Vec::with_capacity(len);
+
+        // Iterate over the length of the vectors
+        for i in 0..len {
+            vec![
+                $(
+                    $crate::datatype::DataPoint::from($crate::datatype::CompositeValue::from(vec![
+                        $(
+                            $crate::datatype::CompositeValue::from($x[i].clone())
+                        ),*
+                    ]))
+                ),*
+            ]
+        }
+    };
+    ($($x:expr),* $(,)?) => {
+        vec![
+            $(
+                $crate::datatype::DataPoint::from($x)
+            ),*
+        ]
+    };
+}
+
+#[macro_export]
+macro_rules! vec_len {
+    ($first:expr $(, $rest:expr)*) => {
+        $first.len()
+    };
+}
+
