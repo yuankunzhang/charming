@@ -109,39 +109,3 @@ macro_rules! vec_len {
     };
 }
 
-use proc_macro::TokenStream;
-use quote::quote;
-use syn::{parse_macro_input, Ident, LitStr};
-
-#[proc_macro]
-pub fn transpose(input: TokenStream) -> TokenStream {
-    let input = parse_macro_input!(input as syn::ExprTuple);
-
-    let vectors: Vec<_> = input.elems.iter().map(|expr| {
-        match expr {
-            syn::Expr::Lit(syn::ExprLit { lit: syn::Lit::Str(s), .. }) => {
-                let ident = Ident::new(&s.value(), s.span());
-                quote! { #ident }
-            }
-            _ => panic!("Expected vector identifiers"),
-        }
-    }).collect();
-
-    let len = vectors.len();
-    let first_vec = &vectors[0];
-
-    let expanded = quote! {
-        {
-            let mut result = Vec::with_capacity(#len);
-            for i in 0..#first_vec.len() {
-                result.push(vec![
-                    #((#vectors[j])[i]),*
-                ]);
-            }
-            result
-        }
-    };
-
-    expanded.into()
-}
-
