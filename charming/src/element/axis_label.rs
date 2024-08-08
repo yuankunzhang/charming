@@ -27,6 +27,12 @@ pub struct AxisLabel {
     interval: Option<f64>,
 }
 
+impl Default for AxisLabel {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl AxisLabel {
     pub fn new() -> Self {
         Self {

@@ -56,6 +56,12 @@ pub struct DecalItem {
     max_tile_height: Option<f64>,
 }
 
+impl Default for DecalItem {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl DecalItem {
     pub fn new() -> DecalItem {
         DecalItem {
@@ -141,6 +147,12 @@ pub struct Decal {
     decals: Vec<DecalItem>,
 }
 
+impl Default for Decal {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Decal {
     pub fn new() -> Decal {
         Decal {
@@ -208,6 +220,12 @@ pub struct Aria {
     /// than colors to help differentiate the data.
     #[serde(skip_serializing_if = "Option::is_none")]
     decal: Option<Decal>,
+}
+
+impl Default for Aria {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl Aria {

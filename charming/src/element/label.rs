@@ -101,6 +101,12 @@ pub struct Label {
     shadow_offset_y: Option<f64>,
 }
 
+impl Default for Label {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Label {
     pub fn new() -> Self {
         Self {
@@ -249,6 +255,12 @@ pub struct LabelLine {
     line_style: Option<LineStyle>,
 }
 
+impl Default for LabelLine {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl LabelLine {
     pub fn new() -> Self {
         Self {
@@ -303,6 +315,12 @@ pub struct LabelLayout {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     rotate: Option<f64>,
+}
+
+impl Default for LabelLayout {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl LabelLayout {

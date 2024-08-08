@@ -15,6 +15,12 @@ pub struct Select {
     item_style: Option<ItemStyle>,
 }
 
+impl Default for Select {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Select {
     pub fn new() -> Self {
         Self {

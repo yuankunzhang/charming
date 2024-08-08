@@ -57,6 +57,12 @@ pub struct MarkLineData {
     label: Option<Label>,
 }
 
+impl Default for MarkLineData {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl MarkLineData {
     pub fn new() -> Self {
         Self {
@@ -163,6 +169,12 @@ pub struct MarkLine {
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: Vec<MarkLineVariant>,
+}
+
+impl Default for MarkLine {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl MarkLine {

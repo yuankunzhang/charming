@@ -37,12 +37,10 @@ pub fn chart() -> Chart {
         )
         .tooltip(Tooltip::new().trigger(Trigger::Item))
         .legend(
-            Legend::new().type_(LegendType::Scroll).bottom("10").data(
-                (1..=28)
-                    .into_iter()
-                    .map(|i| (i + 2000).to_string())
-                    .collect::<Vec<_>>(),
-            ),
+            Legend::new()
+                .type_(LegendType::Scroll)
+                .bottom("10")
+                .data((1..=28).map(|i| (i + 2000).to_string()).collect::<Vec<_>>()),
         )
         .visual_map(
             VisualMap::new()

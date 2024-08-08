@@ -30,6 +30,12 @@ pub struct GeoMap {
     opt: Option<GeoMapOpt>,
 }
 
+impl Default for GeoMap {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl GeoMap {
     pub fn new() -> Self {
         GeoMap {

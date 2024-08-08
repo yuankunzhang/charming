@@ -34,6 +34,12 @@ pub struct Bar3d {
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: DataFrame,
 }
+impl Default for Bar3d {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Bar3d {
     pub fn new() -> Self {
         Self {

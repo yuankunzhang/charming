@@ -99,6 +99,12 @@ pub struct AngleAxis {
     data: Vec<String>,
 }
 
+impl Default for AngleAxis {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl AngleAxis {
     pub fn new() -> Self {
         Self {

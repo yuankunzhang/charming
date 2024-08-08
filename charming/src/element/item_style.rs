@@ -35,6 +35,12 @@ pub struct ItemStyle {
     shadow_offset_y: Option<f64>,
 }
 
+impl Default for ItemStyle {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl ItemStyle {
     pub fn new() -> Self {
         Self {

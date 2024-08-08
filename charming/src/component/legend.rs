@@ -171,6 +171,12 @@ pub struct Legend {
     data: Vec<LegendItem>,
 }
 
+impl Default for Legend {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Legend {
     pub fn new() -> Self {
         Self {

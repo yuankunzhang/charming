@@ -104,6 +104,12 @@ pub struct RadarAxisName {
     overflow: Option<String>,
 }
 
+impl Default for RadarAxisName {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl RadarAxisName {
     pub fn new() -> Self {
         Self {
@@ -307,6 +313,12 @@ pub struct RadarIndicator {
     color: Option<Color>,
 }
 
+impl Default for RadarIndicator {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl RadarIndicator {
     pub fn new() -> Self {
         Self {
@@ -415,6 +427,12 @@ pub struct RadarCoordinate {
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
     indicator: Vec<RadarIndicator>,
+}
+
+impl Default for RadarCoordinate {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl RadarCoordinate {

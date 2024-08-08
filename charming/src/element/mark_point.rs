@@ -39,6 +39,12 @@ pub struct MarkPointData {
     value: Option<f64>,
 }
 
+impl Default for MarkPointData {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl MarkPointData {
     pub fn new() -> Self {
         Self {
@@ -87,6 +93,12 @@ impl From<(&str, &str)> for MarkPointData {
 pub struct MarkPoint {
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: Vec<MarkPointData>,
+}
+
+impl Default for MarkPoint {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl MarkPoint {

@@ -95,13 +95,12 @@ pub fn chart() -> Chart {
 
     let iter = labels.iter().zip(raw_data.iter());
     let data = iter
-        .map(|(name, data)| {
+        .flat_map(|(name, data)| {
             data.iter()
                 .enumerate()
                 .map(|(idx, v)| (idx as f64, *v, *name))
                 .collect::<Vec<_>>()
         })
-        .flatten()
         .collect();
 
     Chart::new()

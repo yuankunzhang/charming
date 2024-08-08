@@ -9,6 +9,12 @@ pub struct Axis3D {
     type_: Option<AxisType>,
 }
 
+impl Default for Axis3D {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Axis3D {
     pub fn new() -> Self {
         Self { type_: None }

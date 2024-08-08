@@ -27,6 +27,12 @@ pub struct SaveAsImage {
     background_color: Option<String>,
 }
 
+impl Default for SaveAsImage {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl SaveAsImage {
     pub fn new() -> Self {
         Self {
@@ -68,6 +74,12 @@ pub struct Restore {
     title: Option<String>,
 }
 
+impl Default for Restore {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Restore {
     pub fn new() -> Self {
         Self {
@@ -98,6 +110,12 @@ pub struct DataView {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     read_only: Option<bool>,
+}
+
+impl Default for DataView {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl DataView {
@@ -157,6 +175,12 @@ pub struct MagicType {
     title: Option<String>,
 }
 
+impl Default for MagicType {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl MagicType {
     pub fn new() -> Self {
         Self {
@@ -194,6 +218,12 @@ pub struct Brush {
     type_: Vec<BrushType>,
 }
 
+impl Default for Brush {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Brush {
     pub fn new() -> Self {
         Self { type_: vec![] }
@@ -210,6 +240,12 @@ impl Brush {
 pub struct ToolboxDataZoom {
     #[serde(skip_serializing_if = "Option::is_none")]
     y_axis_index: Option<CompositeValue>,
+}
+
+impl Default for ToolboxDataZoom {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl ToolboxDataZoom {
@@ -243,6 +279,12 @@ pub struct Feature {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     brush: Option<Brush>,
+}
+
+impl Default for Feature {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl Feature {
@@ -311,6 +353,12 @@ pub struct Toolbox {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     bottom: Option<CompositeValue>,
+}
+
+impl Default for Toolbox {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl Toolbox {

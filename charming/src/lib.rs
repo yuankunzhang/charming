@@ -1,3 +1,4 @@
+#![allow(clippy::to_string_trait_impl)]
 #![cfg_attr(docsrs, feature(doc_cfg))]
 /*!
 Charming is a powerful and versatile chart rendering library for Rust that
@@ -39,31 +40,29 @@ use charming::{
     Chart, ImageRenderer
 };
 
-fn main() {
-    let chart = Chart::new()
-        .legend(Legend::new().top("bottom"))
-        .series(
-            Pie::new()
-                .name("Nightingale Chart")
-                .rose_type(PieRoseType::Radius)
-                .radius(vec!["50", "250"])
-                .center(vec!["50%", "50%"])
-                .item_style(ItemStyle::new().border_radius(8))
-                .data(vec![
-                    (40.0, "rose 1"),
-                    (38.0, "rose 2"),
-                    (32.0, "rose 3"),
-                    (30.0, "rose 4"),
-                    (28.0, "rose 5"),
-                    (26.0, "rose 6"),
-                    (22.0, "rose 7"),
-                    (18.0, "rose 8"),
-                ]),
-        );
+let chart = Chart::new()
+    .legend(Legend::new().top("bottom"))
+    .series(
+        Pie::new()
+            .name("Nightingale Chart")
+            .rose_type(PieRoseType::Radius)
+            .radius(vec!["50", "250"])
+            .center(vec!["50%", "50%"])
+            .item_style(ItemStyle::new().border_radius(8))
+            .data(vec![
+                (40.0, "rose 1"),
+                (38.0, "rose 2"),
+                (32.0, "rose 3"),
+                (30.0, "rose 4"),
+                (28.0, "rose 5"),
+                (26.0, "rose 6"),
+                (22.0, "rose 7"),
+                (18.0, "rose 8"),
+            ]),
+    );
 
-    let mut renderer = ImageRenderer::new(1000, 800);
-    renderer.save(&chart, "/tmp/nightingale.svg");
-}
+let mut renderer = ImageRenderer::new(1000, 800);
+renderer.save(&chart, "/tmp/nightingale.svg");
 ```
 
 ## Themes
@@ -330,6 +329,12 @@ pub struct Chart {
     geo_maps: Vec<GeoMap>,
 }
 
+impl Default for Chart {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Chart {
     pub fn new() -> Self {
         Self {
@@ -528,6 +533,11 @@ pub enum EchartsError {
 impl std::error::Error for EchartsError {}
 impl std::fmt::Display for EchartsError {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
-        write!(f, "{}", self)
+        match self {
+            Self::HtmlRenderingError(msg) => write!(f, "HTML rendering error: {}", msg),
+            Self::ImageRenderingError(msg) => write!(f, "Image rendering error: {}", msg),
+            Self::JsRuntimeError(msg) => write!(f, "JavaScript runtime error: {}", msg),
+            Self::WasmError(msg) => write!(f, "WebAssembly runtime error: {}", msg),
+        }
     }
 }

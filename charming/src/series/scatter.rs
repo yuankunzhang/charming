@@ -60,6 +60,12 @@ pub struct Scatter {
     data: DataFrame,
 }
 
+impl Default for Scatter {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Scatter {
     pub fn new() -> Self {
         Self {

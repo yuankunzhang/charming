@@ -137,6 +137,12 @@ pub struct DataZoom {
     brush_select: Option<bool>,
 }
 
+impl Default for DataZoom {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl DataZoom {
     pub fn new() -> Self {
         Self {

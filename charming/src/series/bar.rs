@@ -71,6 +71,12 @@ pub struct Bar {
     data: DataFrame,
 }
 
+impl Default for Bar {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Bar {
     pub fn new() -> Self {
         Self {

@@ -122,6 +122,12 @@ pub struct Title {
     shadow_offset_y: Option<f64>,
 }
 
+impl Default for Title {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Title {
     pub fn new() -> Self {
         Self {

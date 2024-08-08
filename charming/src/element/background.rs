@@ -24,6 +24,12 @@ pub struct BackgroundStyle {
     opacity: Option<f64>,
 }
 
+impl Default for BackgroundStyle {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl BackgroundStyle {
     pub fn new() -> Self {
         Self {
@@ -75,6 +81,12 @@ pub struct DataBackground {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     area_style: Option<AreaStyle>,
+}
+
+impl Default for DataBackground {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl DataBackground {

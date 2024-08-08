@@ -1,3 +1,5 @@
+#![allow(clippy::large_enum_variant)]
+
 use serde::Serialize;
 
 pub mod bar;

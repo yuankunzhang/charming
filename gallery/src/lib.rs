@@ -1,3 +1,5 @@
+#![allow(clippy::type_complexity)]
+
 use charming::Chart;
 use lazy_static::lazy_static;
 use std::collections::BTreeMap;

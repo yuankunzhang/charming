@@ -12,6 +12,12 @@ pub struct Blur {
     item_style: Option<ItemStyle>,
 }
 
+impl Default for Blur {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Blur {
     pub fn new() -> Self {
         Self {

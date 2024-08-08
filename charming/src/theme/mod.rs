@@ -1,4 +1,6 @@
+#[derive(Default)]
 pub enum Theme {
+    #[default]
     Default,
     Dark,
     Vintage,
@@ -38,11 +40,5 @@ impl Theme {
             Theme::Halloween => ("halloween", include_str!("../asset/theme-halloween.js")),
             Theme::Custom(name, content) => (name, content),
         }
-    }
-}
-
-impl Default for Theme {
-    fn default() -> Self {
-        Theme::Default
     }
 }

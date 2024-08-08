@@ -82,6 +82,12 @@ pub struct ParallelAxisDefault {
     data: Vec<String>,
 }
 
+impl Default for ParallelAxisDefault {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl ParallelAxisDefault {
     pub fn new() -> Self {
         Self {
@@ -262,6 +268,12 @@ pub struct ParallelCoordinate {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     parallel_axis_default: Option<ParallelAxisDefault>,
+}
+
+impl Default for ParallelCoordinate {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl ParallelCoordinate {

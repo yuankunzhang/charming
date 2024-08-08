@@ -24,6 +24,12 @@ pub struct PolarCoordinate {
     radius: Option<CompositeValue>,
 }
 
+impl Default for PolarCoordinate {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl PolarCoordinate {
     pub fn new() -> Self {
         Self {

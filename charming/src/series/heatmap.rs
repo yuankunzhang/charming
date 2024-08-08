@@ -63,6 +63,12 @@ pub struct Heatmap {
     data: Vec<DataFrame>,
 }
 
+impl Default for Heatmap {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Heatmap {
     pub fn new() -> Self {
         Self {

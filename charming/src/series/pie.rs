@@ -79,6 +79,12 @@ pub struct Pie {
     data: DataFrame,
 }
 
+impl Default for Pie {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Pie {
     pub fn new() -> Self {
         Pie {

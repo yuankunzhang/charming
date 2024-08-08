@@ -30,6 +30,12 @@ pub struct Pointer {
     item_style: Option<ItemStyle>,
 }
 
+impl Default for Pointer {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Pointer {
     pub fn new() -> Self {
         Self {

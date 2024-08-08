@@ -30,6 +30,12 @@ pub struct Candlestick {
     data: DataFrame,
 }
 
+impl Default for Candlestick {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Candlestick {
     pub fn new() -> Self {
         Self {

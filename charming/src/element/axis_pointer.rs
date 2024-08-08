@@ -39,6 +39,12 @@ pub struct AxisPointerLink {
     y_axis_name: Option<String>,
 }
 
+impl Default for AxisPointerLink {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl AxisPointerLink {
     pub fn new() -> Self {
         Self {
@@ -111,6 +117,12 @@ pub struct AxisPointer {
     /// Axis pointer can be linked to each other.
     #[serde(skip_serializing_if = "Vec::is_empty")]
     link: Vec<AxisPointerLink>,
+}
+
+impl Default for AxisPointer {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl AxisPointer {

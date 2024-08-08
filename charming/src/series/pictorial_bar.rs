@@ -62,6 +62,12 @@ pub struct PictorialBar {
     data: Vec<DataFrame>,
 }
 
+impl Default for PictorialBar {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl PictorialBar {
     pub fn new() -> Self {
         PictorialBar {

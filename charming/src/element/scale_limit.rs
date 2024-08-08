@@ -10,6 +10,12 @@ pub struct ScaleLimit {
     max: Option<f64>,
 }
 
+impl Default for ScaleLimit {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl ScaleLimit {
     pub fn new() -> Self {
         Self {

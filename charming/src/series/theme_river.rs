@@ -93,6 +93,12 @@ pub struct ThemeRiver {
     data: Vec<ThemeRiverData>,
 }
 
+impl Default for ThemeRiver {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl ThemeRiver {
     pub fn new() -> Self {
         Self {
