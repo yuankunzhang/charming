@@ -15,6 +15,12 @@ pub struct MarkAreaData {
     y_axis: Option<String>,
 }
 
+impl Default for MarkAreaData {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl MarkAreaData {
     pub fn new() -> Self {
         Self {
@@ -60,6 +66,12 @@ pub struct MarkArea {
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: Vec<(MarkAreaData, MarkAreaData)>,
+}
+
+impl Default for MarkArea {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl MarkArea {

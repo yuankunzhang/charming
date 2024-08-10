@@ -40,6 +40,12 @@ pub struct VisualMapPiece {
     color: Option<Color>,
 }
 
+impl Default for VisualMapPiece {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl VisualMapPiece {
     pub fn new() -> Self {
         Self {
@@ -124,6 +130,12 @@ impl From<(i64, i64, &str)> for VisualMapPiece {
 pub struct VisualMapChannel {
     #[serde(skip_serializing_if = "Vec::is_empty")]
     color: Vec<Color>,
+}
+
+impl Default for VisualMapChannel {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl VisualMapChannel {
@@ -212,6 +224,12 @@ pub struct VisualMap {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     pieces: Option<Vec<VisualMapPiece>>,
+}
+
+impl Default for VisualMap {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl VisualMap {

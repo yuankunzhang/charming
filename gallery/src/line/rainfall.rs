@@ -1,3 +1,5 @@
+#![allow(clippy::approx_constant)]
+
 use charming::{
     component::{
         Axis, DataZoom, DataZoomType, Feature, Grid, Legend, Restore, SaveAsImage, Title, Toolbox,

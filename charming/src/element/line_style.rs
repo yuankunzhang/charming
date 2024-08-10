@@ -30,6 +30,12 @@ pub struct LineStyle {
     curveness: Option<f64>,
 }
 
+impl Default for LineStyle {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl LineStyle {
     pub fn new() -> Self {
         Self {

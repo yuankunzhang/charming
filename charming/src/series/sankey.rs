@@ -150,6 +150,12 @@ pub struct Sankey {
     data: Vec<SankeyNode>,
 }
 
+impl Default for Sankey {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Sankey {
     pub fn new() -> Self {
         Sankey {

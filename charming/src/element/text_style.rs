@@ -30,6 +30,12 @@ pub struct TextStyle {
     padding: Option<[f64; 4]>,
 }
 
+impl Default for TextStyle {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl TextStyle {
     pub fn new() -> Self {
         Self {

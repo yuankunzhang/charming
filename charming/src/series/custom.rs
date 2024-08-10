@@ -67,6 +67,12 @@ pub struct Custom {
     data: DataFrame,
 }
 
+impl Default for Custom {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Custom {
     pub fn new() -> Self {
         Self {

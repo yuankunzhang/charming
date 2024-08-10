@@ -78,6 +78,12 @@ pub struct Line {
     data: DataFrame,
 }
 
+impl Default for Line {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Line {
     pub fn new() -> Self {
         Self {

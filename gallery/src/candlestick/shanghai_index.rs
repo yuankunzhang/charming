@@ -93,7 +93,7 @@ pub fn chart() -> Chart {
         )
 }
 
-fn calculate_ma(day_count: usize, data: &Vec<Vec<f64>>) -> Vec<CompositeValue> {
+fn calculate_ma(day_count: usize, data: &[Vec<f64>]) -> Vec<CompositeValue> {
     let mut result = vec![];
     for i in 0..data.len() {
         if i < day_count {

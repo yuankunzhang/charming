@@ -64,6 +64,12 @@ pub struct Parallel {
     data: DataFrame,
 }
 
+impl Default for Parallel {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Parallel {
     pub fn new() -> Self {
         Self {

@@ -81,6 +81,12 @@ pub struct Transform {
     from_transform_result: Option<i32>,
 }
 
+impl Default for Transform {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Transform {
     pub fn new() -> Self {
         Self {
@@ -139,6 +145,12 @@ impl Serialize for Dataset {
             s.serialize_element(&transform)?;
         }
         s.end()
+    }
+}
+
+impl Default for Dataset {
+    fn default() -> Self {
+        Self::new()
     }
 }
 

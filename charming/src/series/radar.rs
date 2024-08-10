@@ -51,6 +51,12 @@ pub struct Radar {
     emphasis: Option<Emphasis>,
 }
 
+impl Default for Radar {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Radar {
     pub fn new() -> Self {
         Self {

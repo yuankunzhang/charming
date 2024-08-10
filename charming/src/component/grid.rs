@@ -54,6 +54,12 @@ pub struct GridTooltip {
     extra_css_text: Option<String>,
 }
 
+impl Default for GridTooltip {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl GridTooltip {
     pub fn new() -> Self {
         Self {
@@ -205,6 +211,12 @@ pub struct Grid {
     /// Tooltip settings in the grid.
     #[serde(skip_serializing_if = "Option::is_none")]
     tooltip: Option<GridTooltip>,
+}
+
+impl Default for Grid {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl Grid {

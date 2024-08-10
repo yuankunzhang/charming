@@ -21,6 +21,12 @@ pub struct DimensionEncode {
     tooltip: Vec<CompositeValue>,
 }
 
+impl Default for DimensionEncode {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl DimensionEncode {
     pub fn new() -> Self {
         Self {

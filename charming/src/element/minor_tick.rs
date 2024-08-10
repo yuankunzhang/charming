@@ -18,6 +18,12 @@ pub struct MinorTick {
     line_style: Option<LineStyle>,
 }
 
+impl Default for MinorTick {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl MinorTick {
     pub fn new() -> MinorTick {
         MinorTick {

@@ -38,6 +38,12 @@ pub struct TreeLeaves {
     label: Option<Label>,
 }
 
+impl Default for TreeLeaves {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl TreeLeaves {
     pub fn new() -> Self {
         Self { label: None }
@@ -176,6 +182,12 @@ pub struct Tree {
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: Vec<TreeNode>,
+}
+
+impl Default for Tree {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl Tree {

@@ -86,6 +86,12 @@ pub struct Geo {
     silent: Option<bool>,
 }
 
+impl Default for Geo {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Geo {
     pub fn new() -> Self {
         Self {

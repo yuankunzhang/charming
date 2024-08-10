@@ -51,6 +51,12 @@ pub struct Treemap {
     emphasis: Option<Emphasis>,
 }
 
+impl Default for Treemap {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Treemap {
     pub fn new() -> Self {
         Treemap {

@@ -37,6 +37,12 @@ pub struct Dimension {
     display_name: Option<String>,
 }
 
+impl Default for Dimension {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Dimension {
     pub fn new() -> Self {
         Self {

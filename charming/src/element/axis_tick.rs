@@ -21,6 +21,12 @@ pub struct AxisTick {
     line_style: Option<LineStyle>,
 }
 
+impl Default for AxisTick {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl AxisTick {
     pub fn new() -> Self {
         Self {

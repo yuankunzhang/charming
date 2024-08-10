@@ -40,6 +40,12 @@ pub struct ParallelAxis {
     data: Vec<String>,
 }
 
+impl Default for ParallelAxis {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl ParallelAxis {
     pub fn new() -> Self {
         Self {

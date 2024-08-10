@@ -52,6 +52,12 @@ pub struct SingleAxis {
     max: Option<String>,
 }
 
+impl Default for SingleAxis {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl SingleAxis {
     pub fn new() -> Self {
         Self {

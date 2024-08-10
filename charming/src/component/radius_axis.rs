@@ -70,6 +70,12 @@ pub struct RadiusAxis {
     data: Vec<String>,
 }
 
+impl Default for RadiusAxis {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl RadiusAxis {
     pub fn new() -> Self {
         Self {

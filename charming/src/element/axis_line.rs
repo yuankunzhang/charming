@@ -49,6 +49,12 @@ pub struct AxisLineStyle {
     opacity: Option<f64>,
 }
 
+impl Default for AxisLineStyle {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl AxisLineStyle {
     pub fn new() -> Self {
         Self {
@@ -124,6 +130,12 @@ pub struct AxisLine {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     line_style: Option<AxisLineStyle>,
+}
+
+impl Default for AxisLine {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl AxisLine {

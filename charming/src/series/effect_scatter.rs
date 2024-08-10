@@ -47,6 +47,12 @@ pub struct RippleEffect {
     brush_type: Option<RippleEffectBrushType>,
 }
 
+impl Default for RippleEffect {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl RippleEffect {
     pub fn new() -> Self {
         Self {
@@ -158,6 +164,12 @@ pub struct EffectScatter {
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: DataFrame,
+}
+
+impl Default for EffectScatter {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl EffectScatter {

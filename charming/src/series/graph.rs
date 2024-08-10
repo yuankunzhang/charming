@@ -9,6 +9,12 @@ pub struct GraphLayoutCircular {
     rotate_label: Option<bool>,
 }
 
+impl Default for GraphLayoutCircular {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl GraphLayoutCircular {
     pub fn new() -> Self {
         Self { rotate_label: None }
@@ -37,6 +43,12 @@ pub struct GraphLayoutForce {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     friction: Option<f64>,
+}
+
+impl Default for GraphLayoutForce {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl GraphLayoutForce {
@@ -112,6 +124,12 @@ pub struct GraphNodeLabel {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     font_size: Option<u64>,
+}
+
+impl Default for GraphNodeLabel {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl GraphNodeLabel {
@@ -257,6 +275,12 @@ pub struct Graph {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     edge_symbol: Option<(String, String)>,
+}
+
+impl Default for Graph {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl Graph {

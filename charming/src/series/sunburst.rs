@@ -18,6 +18,12 @@ pub struct SunburstLevel {
     label: Option<Label>,
 }
 
+impl Default for SunburstLevel {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl SunburstLevel {
     pub fn new() -> Self {
         Self {
@@ -146,6 +152,12 @@ pub struct Sunburst {
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: Vec<SunburstNode>,
+}
+
+impl Default for Sunburst {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl Sunburst {

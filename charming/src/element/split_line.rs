@@ -18,6 +18,12 @@ pub struct SplitLine {
     length: Option<f64>,
 }
 
+impl Default for SplitLine {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl SplitLine {
     pub fn new() -> Self {
         Self {

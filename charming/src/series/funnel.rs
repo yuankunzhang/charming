@@ -89,6 +89,12 @@ pub struct Funnel {
     data: DataFrame,
 }
 
+impl Default for Funnel {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Funnel {
     pub fn new() -> Self {
         Self {

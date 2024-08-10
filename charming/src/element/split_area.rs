@@ -7,6 +7,12 @@ pub struct SplitArea {
     show: Option<bool>,
 }
 
+impl Default for SplitArea {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl SplitArea {
     pub fn new() -> Self {
         Self { show: None }

@@ -52,6 +52,12 @@ pub struct Tooltip {
     border_width: Option<f64>,
 }
 
+impl Default for Tooltip {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Tooltip {
     pub fn new() -> Self {
         Self {

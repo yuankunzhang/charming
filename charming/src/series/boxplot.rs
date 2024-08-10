@@ -30,6 +30,12 @@ pub struct Boxplot {
     dataset_index: Option<u64>,
 }
 
+impl Default for Boxplot {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Boxplot {
     pub fn new() -> Self {
         Boxplot {

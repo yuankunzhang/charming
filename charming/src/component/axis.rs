@@ -126,6 +126,12 @@ pub struct Axis {
     data: Vec<String>,
 }
 
+impl Default for Axis {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Axis {
     pub fn new() -> Self {
         Self {

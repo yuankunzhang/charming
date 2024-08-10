@@ -31,6 +31,12 @@ pub struct Emphasis {
     label: Option<Label>,
 }
 
+impl Default for Emphasis {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Emphasis {
     pub fn new() -> Self {
         Self {

@@ -39,6 +39,12 @@ pub struct GaugeDetail {
     formatter: Option<Formatter>,
 }
 
+impl Default for GaugeDetail {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl GaugeDetail {
     pub fn new() -> Self {
         Self {
@@ -110,6 +116,12 @@ pub struct GaugeTitle {
     offset_center: Option<(String, String)>,
 }
 
+impl Default for GaugeTitle {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl GaugeTitle {
     pub fn new() -> Self {
         Self {
@@ -149,6 +161,12 @@ pub struct GaugeProgress {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     item_style: Option<ItemStyle>,
+}
+
+impl Default for GaugeProgress {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl GaugeProgress {
@@ -271,6 +289,12 @@ pub struct Gauge {
 
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: DataFrame,
+}
+
+impl Default for Gauge {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl Gauge {

@@ -9,6 +9,12 @@ pub struct MinorSplitLine {
     line_style: Option<LineStyle>,
 }
 
+impl Default for MinorSplitLine {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl MinorSplitLine {
     pub fn new() -> MinorSplitLine {
         MinorSplitLine {

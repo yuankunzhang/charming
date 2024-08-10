@@ -23,6 +23,12 @@ pub struct AreaStyle {
     opacity: Option<f64>,
 }
 
+impl Default for AreaStyle {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl AreaStyle {
     pub fn new() -> Self {
         Self {

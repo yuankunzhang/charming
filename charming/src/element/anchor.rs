@@ -27,6 +27,12 @@ pub struct Anchor {
     item_style: Option<ItemStyle>,
 }
 
+impl Default for Anchor {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Anchor {
     pub fn new() -> Self {
         Self {
