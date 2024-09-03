@@ -1,8 +1,8 @@
 use charming::{
     component::{Axis, Feature, SaveAsImage, Title, Toolbox, VisualMap, VisualMapPiece},
     element::{
-        AxisLabel, AxisPointer, AxisPointerType, AxisType, ItemStyle, MarkArea, MarkAreaData,
-        Tooltip, Trigger,
+        AxisLabel, AxisPointer, AxisPointerType, AxisType, Formatter, ItemStyle, MarkArea,
+        MarkAreaData, Tooltip, Trigger,
     },
     series::Line,
     Chart,
@@ -18,7 +18,8 @@ pub fn chart() -> Chart {
         .tooltip(
             Tooltip::new()
                 .trigger(Trigger::Axis)
-                .axis_pointer(AxisPointer::new().type_(AxisPointerType::Cross)),
+                .axis_pointer(AxisPointer::new().type_(AxisPointerType::Cross))
+                .value_formatter(Formatter::Function("value => value + 'W'".into())),
         )
         .toolbox(
             Toolbox::new()
