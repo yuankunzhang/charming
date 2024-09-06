@@ -1,12 +1,12 @@
 use serde::Serialize;
 
-use super::RawString;
+use super::{FormatterFunction, RawString};
 
 #[derive(Serialize)]
 #[serde(untagged)]
 pub enum SymbolSize {
     Number(f64),
-    Function(RawString),
+    Function(FormatterFunction),
 }
 
 impl From<i64> for SymbolSize {
@@ -21,8 +21,17 @@ impl From<f64> for SymbolSize {
     }
 }
 
+#[cfg(not(target_arch = "wasm32"))]
 impl From<&str> for SymbolSize {
     fn from(s: &str) -> Self {
-        SymbolSize::Function(RawString::from(s))
+        SymbolSize::Function(FormatterFunction {
+            value: RawString::from(s),
+        })
+    }
+}
+
+impl From<FormatterFunction> for SymbolSize {
+    fn from(f: FormatterFunction) -> Self {
+        SymbolSize::Function(f)
     }
 }
