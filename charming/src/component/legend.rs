@@ -1,3 +1,5 @@
+use std::collections::HashMap;
+
 use serde::Serialize;
 
 use crate::{
@@ -159,6 +161,9 @@ pub struct Legend {
     formatter: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    selected: Option<HashMap<String, bool>>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     selected_mode: Option<LegendSelectedMode>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -202,6 +207,7 @@ impl Legend {
             text_style: None,
             symbol_rotate: None,
             formatter: None,
+            selected: None,
             selected_mode: None,
             border_color: None,
             inactive_color: None,
@@ -311,6 +317,14 @@ impl Legend {
 
     pub fn formatter<S: Into<String>>(mut self, formatter: S) -> Self {
         self.formatter = Some(formatter.into());
+        self
+    }
+
+    pub fn selected<S: Into<String>, I: IntoIterator<Item = (S, bool)>>(
+        mut self,
+        selected: I,
+    ) -> Self {
+        self.selected = Some(selected.into_iter().map(|(k, v)| (k.into(), v)).collect());
         self
     }
 
