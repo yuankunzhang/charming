@@ -52,9 +52,28 @@ pub fn chart() -> Chart {
             Line::new()
                 .name("Electricity")
                 .smooth(0.5)
+                .connect_nulls(true)
                 .data(vec![
-                    300, 280, 250, 260, 270, 300, 550, 500, 400, 390, 380, 390, 400, 500, 600, 750,
-                    800, 700, 600, 400,
+                    Some(300),
+                    Some(280),
+                    Some(250),
+                    None,
+                    Some(270),
+                    Some(300),
+                    Some(550),
+                    Some(500),
+                    Some(400),
+                    Some(390),
+                    Some(380),
+                    Some(390),
+                    Some(400),
+                    Some(500),
+                    Some(600),
+                    Some(750),
+                    Some(800),
+                    Some(700),
+                    Some(600),
+                    Some(400),
                 ])
                 .mark_area(
                     MarkArea::new()

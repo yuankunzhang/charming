@@ -35,6 +35,7 @@ impl From<f64> for NumericValue {
 #[serde(untagged)]
 pub enum CompositeValue {
     Number(NumericValue),
+    OptionalNumber(Option<NumericValue>),
     String(String),
     Array(Vec<CompositeValue>),
 }
@@ -45,6 +46,15 @@ where
 {
     fn from(n: N) -> Self {
         CompositeValue::Number(n.into())
+    }
+}
+
+impl<N> From<Option<N>> for CompositeValue
+where
+    N: Into<NumericValue>,
+{
+    fn from(n: Option<N>) -> Self {
+        CompositeValue::OptionalNumber(n.map(Into::into))
     }
 }
 
