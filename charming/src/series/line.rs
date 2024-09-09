@@ -54,6 +54,9 @@ pub struct Line {
     smooth: Option<f64>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    connect_nulls: Option<bool>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     mark_point: Option<MarkPoint>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -101,6 +104,7 @@ impl Line {
             item_style: None,
             emphasis: None,
             smooth: None,
+            connect_nulls: None,
             mark_point: None,
             mark_line: None,
             mark_area: None,
@@ -176,6 +180,11 @@ impl Line {
     /// Smoothness.
     pub fn smooth<F: Into<f64>>(mut self, smooth: F) -> Self {
         self.smooth = Some(smooth.into());
+        self
+    }
+
+    pub fn connect_nulls(mut self, connect_nulls: bool) -> Self {
+        self.connect_nulls = Some(connect_nulls);
         self
     }
 
