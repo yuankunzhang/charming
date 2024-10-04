@@ -19,7 +19,7 @@ var chart = echarts.init(null, {{#if theme}}'{{ theme }}'{{else}}null{{/if}}, {
     height: {{ height }}
 });
 
-chart.setOption({ animation: false });
+chart.setOption({ animation: false, progressive: 0 });
 chart.setOption({{{ chart_option }}});
 chart.renderToSVGString();
 "#;
