@@ -2,10 +2,10 @@ use serde::{Deserialize, Serialize};
 
 use crate::{
     datatype::CompositeValue,
-    element::{Emphasis, Label, LineStyle, Orient, ItemStyle},
+    element::{Emphasis, ItemStyle, Label, LineStyle, Orient},
 };
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "snake_case")]
 pub enum SankeyNodeAlign {
     Left,
@@ -13,7 +13,7 @@ pub enum SankeyNodeAlign {
     Justify,
 }
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct SankeyNode {
     pub name: String,
@@ -29,7 +29,10 @@ pub struct SankeyNode {
 }
 
 impl SankeyNode {
-    pub fn new<S>(name: S) -> Self where S: Into<String> {
+    pub fn new<S>(name: S) -> Self
+    where
+        S: Into<String>,
+    {
         Self {
             name: name.into(),
             value: None,
@@ -54,8 +57,8 @@ impl SankeyNode {
 }
 
 impl<S> From<S> for SankeyNode
-    where
-        S: Into<String>,
+where
+    S: Into<String>,
 {
     fn from(name: S) -> Self {
         SankeyNode {
@@ -67,7 +70,7 @@ impl<S> From<S> for SankeyNode
     }
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct SankeyLink {
     pub source: String,
@@ -89,7 +92,7 @@ where
     }
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Sankey {
     #[serde(rename = "type")]

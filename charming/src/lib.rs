@@ -237,7 +237,7 @@ mouse pointer.
 [`Toolbox`] is a feature toolbox that includes data view, save as image, data
 zoom, restore, and reset.
  */
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Chart {
     #[serde(skip_serializing_if = "Vec::is_empty")]

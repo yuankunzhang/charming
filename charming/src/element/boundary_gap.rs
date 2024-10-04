@@ -9,6 +9,7 @@ use serde::{ser::SerializeSeq, Serialize};
 /// For non-category axis, including time, numerical value, and log axes,
 /// `BoundaryGap` is an array of two values, representing the spanning range
 /// between minimum and maximum value.
+#[derive(Debug, PartialEq, PartialOrd, Clone)]
 pub enum BoundaryGap {
     CategoryAxis(bool),
     NonCategoryAxis(String, String),
