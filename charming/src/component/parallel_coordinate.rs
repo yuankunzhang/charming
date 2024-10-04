@@ -8,7 +8,7 @@ use crate::{
     },
 };
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct ParallelAxisDefault {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -233,7 +233,7 @@ impl ParallelAxisDefault {
     }
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct ParallelCoordinate {
     #[serde(skip_serializing_if = "Option::is_none")]

@@ -1,6 +1,6 @@
 use serde::Serialize;
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "snake_case")]
 pub enum MarkPointDataType {
     Min,
@@ -19,7 +19,7 @@ impl From<&str> for MarkPointDataType {
     }
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct MarkPointData {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -88,7 +88,7 @@ impl From<(&str, &str)> for MarkPointData {
     }
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct MarkPoint {
     #[serde(skip_serializing_if = "Vec::is_empty")]

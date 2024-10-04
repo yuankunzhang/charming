@@ -8,7 +8,7 @@ use crate::{
 };
 
 /// Name options for radar indicators.
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct RadarAxisName {
     /// Whether to display the indicator's name.
@@ -297,7 +297,7 @@ impl RadarAxisName {
     }
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct RadarIndicator {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -372,7 +372,7 @@ impl From<(&str, i64, i64)> for RadarIndicator {
     }
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct RadarCoordinate {
     #[serde(skip_serializing_if = "Option::is_none")]

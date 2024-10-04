@@ -2,7 +2,7 @@ use serde::{Deserialize, Serialize};
 
 use crate::element::{Emphasis, ItemStyle, Label, Sort};
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct SunburstLevel {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -55,7 +55,7 @@ impl SunburstLevel {
     }
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct SunburstNode {
     name: String,
@@ -117,7 +117,7 @@ impl From<(&str, f64, &str)> for SunburstNode {
     }
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Sunburst {
     #[serde(rename = "type")]

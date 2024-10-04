@@ -5,14 +5,14 @@ use crate::{
     element::{ColorBy, CoordinateSystem, Emphasis, LineStyle},
 };
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "snake_case")]
 pub enum ProgressiveChunkMode {
     Sequential,
     Mod,
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Parallel {
     #[serde(rename = "type")]

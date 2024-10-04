@@ -4,7 +4,7 @@ use crate::element::RawString;
 
 use super::{DataSource, Dimension};
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 pub struct Source {
     source: DataSource,
 
@@ -62,7 +62,7 @@ where
     }
 }
 
-#[derive(Debug, Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Transform {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -130,6 +130,7 @@ impl From<&str> for Transform {
     }
 }
 
+#[derive(Debug, PartialEq, PartialOrd, Clone)]
 pub struct Dataset {
     sources: Vec<Source>,
     transforms: Vec<Transform>,

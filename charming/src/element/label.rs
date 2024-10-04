@@ -2,7 +2,7 @@ use serde::Serialize;
 
 use super::{color::Color, line_style::LineStyle, Formatter};
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub enum LabelPosition {
     Top,
@@ -24,7 +24,7 @@ pub enum LabelPosition {
     Center,
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "snake_case")]
 pub enum LabelAlign {
     Left,
@@ -32,7 +32,7 @@ pub enum LabelAlign {
     Right,
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "snake_case")]
 pub enum LabelVerticalAlign {
     Top,
@@ -40,7 +40,7 @@ pub enum LabelVerticalAlign {
     Bottom,
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Label {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -233,7 +233,7 @@ impl Label {
     }
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct LabelLine {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -304,7 +304,7 @@ impl LabelLine {
     }
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct LabelLayout {
     #[serde(skip_serializing_if = "Option::is_none")]

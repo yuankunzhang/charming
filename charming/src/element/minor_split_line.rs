@@ -2,7 +2,7 @@ use serde::Serialize;
 
 use super::line_style::LineStyle;
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct MinorSplitLine {
     show: Option<bool>,

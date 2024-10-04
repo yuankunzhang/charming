@@ -1,5 +1,6 @@
 use serde::Serialize;
 
+#[derive(Debug, PartialEq, PartialOrd, Clone)]
 pub enum Symbol {
     Circle,
     Rect,

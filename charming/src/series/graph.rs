@@ -2,7 +2,7 @@ use serde::{Deserialize, Serialize};
 
 use crate::element::{CoordinateSystem, Label, LabelLayout, LineStyle, ScaleLimit};
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct GraphLayoutCircular {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -26,7 +26,7 @@ impl GraphLayoutCircular {
     }
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct GraphLayoutForce {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -88,7 +88,7 @@ impl GraphLayoutForce {
     }
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "snake_case")]
 pub enum GraphLayout {
     None,
@@ -107,7 +107,7 @@ impl From<&str> for GraphLayout {
     }
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct GraphNodeLabel {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -169,7 +169,7 @@ impl GraphNodeLabel {
     }
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct GraphNode {
     pub id: String,
@@ -184,7 +184,7 @@ pub struct GraphNode {
     pub label: Option<GraphNodeLabel>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct GraphLink {
     pub source: String,
@@ -193,13 +193,13 @@ pub struct GraphLink {
     pub value: Option<f64>,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct GraphCategory {
     pub name: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct GraphData {
     pub nodes: Vec<GraphNode>,
@@ -207,7 +207,7 @@ pub struct GraphData {
     pub categories: Vec<GraphCategory>,
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Graph {
     #[serde(rename = "type")]

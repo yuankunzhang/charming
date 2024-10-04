@@ -5,7 +5,7 @@ use crate::{
     element::{AreaStyle, ColorBy, Emphasis, LineStyle, Symbol, Tooltip},
 };
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Radar {
     #[serde(rename = "type")]
