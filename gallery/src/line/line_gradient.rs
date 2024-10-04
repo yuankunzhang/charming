@@ -99,11 +99,7 @@ pub fn chart() -> Chart {
                 .max((data_list.len() - 1) as f64),
         )
         .x_axis(Axis::new().data(data_list.to_vec()))
-        .x_axis(
-            Axis::new()
-                .data(data_list.to_vec())
-                .grid_index(1),
-        )
+        .x_axis(Axis::new().data(data_list.to_vec()).grid_index(1))
         .y_axis(Axis::new())
         .y_axis(Axis::new().grid_index(1))
         .grid(Grid::new().bottom("60%"))

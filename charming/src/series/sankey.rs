@@ -2,7 +2,7 @@ use serde::{Deserialize, Serialize};
 
 use crate::{
     datatype::CompositeValue,
-    element::{Emphasis, Label, LineStyle, Orient, ItemStyle},
+    element::{Emphasis, ItemStyle, Label, LineStyle, Orient},
 };
 
 #[derive(Serialize)]
@@ -29,7 +29,10 @@ pub struct SankeyNode {
 }
 
 impl SankeyNode {
-    pub fn new<S>(name: S) -> Self where S: Into<String> {
+    pub fn new<S>(name: S) -> Self
+    where
+        S: Into<String>,
+    {
         Self {
             name: name.into(),
             value: None,
@@ -54,8 +57,8 @@ impl SankeyNode {
 }
 
 impl<S> From<S> for SankeyNode
-    where
-        S: Into<String>,
+where
+    S: Into<String>,
 {
     fn from(name: S) -> Self {
         SankeyNode {
