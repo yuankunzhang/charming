@@ -1,5 +1,5 @@
 use serde::ser::{SerializeStruct, Serializer};
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Serialize};
 
 #[derive(Serialize)]
 #[serde(rename_all = "snake_case")]

@@ -25,7 +25,7 @@ pub struct TextStyle {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     align: Option<String>,
-    
+
     #[serde(skip_serializing_if = "Option::is_none")]
     padding: Option<[f64; 4]>,
 }
