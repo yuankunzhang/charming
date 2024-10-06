@@ -1,5 +1,5 @@
-use serde::{Serialize, Deserialize};
 use super::{border_type::BorderType, color::Color};
+use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, Clone, Debug)]
 #[serde(rename_all = "camelCase")]
