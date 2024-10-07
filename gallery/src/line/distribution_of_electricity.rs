@@ -51,7 +51,7 @@ pub fn chart() -> Chart {
         .series(
             Line::new()
                 .name("Electricity")
-                .smooth(0.5)
+                .smooth(true)
                 .connect_nulls(true)
                 .data(vec![
                     Some(300),

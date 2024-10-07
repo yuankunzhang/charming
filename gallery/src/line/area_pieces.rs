@@ -35,7 +35,7 @@ pub fn chart() -> Chart {
         )
         .series(
             Line::new()
-                .smooth(0.6)
+                .smooth(true)
                 .symbol(Symbol::None)
                 .line_style(LineStyle::new().width(5).color("#5470C6"))
                 .area_style(AreaStyle::new())
