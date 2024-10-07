@@ -2,7 +2,7 @@ use serde::Serialize;
 
 use crate::{
     datatype::{DataFrame, DataPoint},
-    element::{ColorBy, CoordinateSystem, Emphasis, LineStyle},
+    element::{smoothness::Smoothness, ColorBy, CoordinateSystem, Emphasis, LineStyle},
 };
 
 #[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
@@ -49,7 +49,7 @@ pub struct Parallel {
     realtime: Option<bool>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    smooth: Option<f64>,
+    smooth: Option<Smoothness>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     progressive: Option<f64>,
@@ -142,7 +142,7 @@ impl Parallel {
         self
     }
 
-    pub fn smooth<F: Into<f64>>(mut self, smooth: F) -> Self {
+    pub fn smooth<S: Into<Smoothness>>(mut self, smooth: S) -> Self {
         self.smooth = Some(smooth.into());
         self
     }
