@@ -36,6 +36,7 @@ pub mod pointer;
 pub mod scale_limit;
 pub mod select;
 pub mod shape;
+pub mod smoothness;
 pub mod sort;
 pub mod split_area;
 pub mod split_line;

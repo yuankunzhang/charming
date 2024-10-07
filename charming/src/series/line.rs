@@ -3,8 +3,8 @@ use serde::Serialize;
 use crate::{
     datatype::{DataFrame, DataPoint},
     element::{
-        AreaStyle, CoordinateSystem, DimensionEncode, Emphasis, ItemStyle, Label, LineStyle,
-        MarkArea, MarkLine, MarkPoint, Symbol,
+        smoothness::Smoothness, AreaStyle, CoordinateSystem, DimensionEncode, Emphasis, ItemStyle,
+        Label, LineStyle, MarkArea, MarkLine, MarkPoint, Symbol,
     },
 };
 
@@ -51,7 +51,7 @@ pub struct Line {
     emphasis: Option<Emphasis>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    smooth: Option<f64>,
+    smooth: Option<Smoothness>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     connect_nulls: Option<bool>,
@@ -178,7 +178,7 @@ impl Line {
     }
 
     /// Smoothness.
-    pub fn smooth<F: Into<f64>>(mut self, smooth: F) -> Self {
+    pub fn smooth<S: Into<Smoothness>>(mut self, smooth: S) -> Self {
         self.smooth = Some(smooth.into());
         self
     }
