@@ -50,6 +50,7 @@ pub use theme_river::*;
 pub use tree::*;
 pub use treemap::*;
 
+#[derive(Debug, PartialEq, PartialOrd, Clone)]
 pub enum Series {
     Bar(bar::Bar),
     Bar3d(bar3d::Bar3d),

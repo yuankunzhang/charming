@@ -10,7 +10,7 @@ pub fn chart() -> Chart {
         .y_axis(Axis::new().type_(AxisType::Value))
         .series(
             Line::new()
-                .smooth(0.5)
+                .smooth(true)
                 .data(vec![820, 932, 901, 934, 1290, 1330, 1320]),
         )
 }

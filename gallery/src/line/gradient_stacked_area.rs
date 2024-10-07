@@ -61,7 +61,7 @@ pub fn chart() -> Chart {
                         })
                         .opacity(0.8),
                 )
-                .smooth(0.5)
+                .smooth(true)
                 .data(vec![140, 232, 101, 264, 90, 340, 250]),
         )
         .series(
@@ -84,7 +84,7 @@ pub fn chart() -> Chart {
                         })
                         .opacity(0.8),
                 )
-                .smooth(0.5)
+                .smooth(true)
                 .data(vec![120, 282, 111, 234, 220, 340, 310]),
         )
         .series(
@@ -107,7 +107,7 @@ pub fn chart() -> Chart {
                         })
                         .opacity(0.8),
                 )
-                .smooth(0.5)
+                .smooth(true)
                 .data(vec![320, 132, 201, 334, 190, 130, 220]),
         )
         .series(
@@ -130,7 +130,7 @@ pub fn chart() -> Chart {
                         })
                         .opacity(0.8),
                 )
-                .smooth(0.5)
+                .smooth(true)
                 .data(vec![220, 402, 231, 134, 190, 230, 120]),
         )
         .series(
@@ -153,7 +153,7 @@ pub fn chart() -> Chart {
                         })
                         .opacity(0.8),
                 )
-                .smooth(0.5)
+                .smooth(true)
                 .data(vec![220, 302, 181, 234, 210, 290, 150]),
         )
 }

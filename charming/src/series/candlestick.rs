@@ -5,7 +5,7 @@ use crate::{
     element::{ColorBy, CoordinateSystem},
 };
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Candlestick {
     #[serde(rename = "type")]

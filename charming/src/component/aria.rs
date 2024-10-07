@@ -8,7 +8,7 @@ use crate::{
 /**
 A single decal pattern.
  */
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct DecalItem {
     /// The symbol type of the decal.
@@ -132,7 +132,7 @@ impl DecalItem {
 /**
 Decal patterns to be applied to series data.
  */
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Decal {
     /// Whether to show decal patterns. If `decals` is not set, this option is
@@ -202,7 +202,7 @@ Chart::new()
     .series(Bar::new().data(vec![140, 230, 120, 50, 30, 150, 120]));
 ```
  */
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Aria {
     /// Whether to enable WAI-ARIA.

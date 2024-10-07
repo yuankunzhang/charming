@@ -2,7 +2,7 @@ use serde::Serialize;
 
 use crate::{datatype::CompositeValue, element::Orient};
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "snake_case")]
 pub enum Type {
     Value,
@@ -11,7 +11,7 @@ pub enum Type {
     Log,
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct SingleAxis {
     #[serde(skip_serializing_if = "Option::is_none")]

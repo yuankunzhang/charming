@@ -1,3 +1,5 @@
+use std::collections::HashMap;
+
 use serde::Serialize;
 
 use crate::{
@@ -5,7 +7,7 @@ use crate::{
     element::{Color, Icon, ItemStyle, LabelAlign, LineStyle, Orient, Padding, TextStyle},
 };
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "snake_case")]
 pub enum LegendType {
     /// Simple legend.
@@ -15,7 +17,7 @@ pub enum LegendType {
     Scroll,
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "snake_case")]
 pub enum LegendSelectedMode {
     /// Multiple selection.
@@ -25,7 +27,7 @@ pub enum LegendSelectedMode {
     Single,
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct LegendItem {
     pub name: String,
@@ -67,7 +69,7 @@ impl From<(String, String)> for LegendItem {
     }
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Legend {
     /// Type of legend.
@@ -159,6 +161,9 @@ pub struct Legend {
     formatter: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    selected: Option<HashMap<String, bool>>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     selected_mode: Option<LegendSelectedMode>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -202,6 +207,7 @@ impl Legend {
             text_style: None,
             symbol_rotate: None,
             formatter: None,
+            selected: None,
             selected_mode: None,
             border_color: None,
             inactive_color: None,
@@ -311,6 +317,14 @@ impl Legend {
 
     pub fn formatter<S: Into<String>>(mut self, formatter: S) -> Self {
         self.formatter = Some(formatter.into());
+        self
+    }
+
+    pub fn selected<S: Into<String>, I: IntoIterator<Item = (S, bool)>>(
+        mut self,
+        selected: I,
+    ) -> Self {
+        self.selected = Some(selected.into_iter().map(|(k, v)| (k.into(), v)).collect());
         self
     }
 
