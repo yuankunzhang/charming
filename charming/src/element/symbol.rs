@@ -1,5 +1,5 @@
-use serde::Serialize;
 use super::RawString;
+use serde::Serialize;
 
 #[derive(Debug, PartialEq, PartialOrd, Clone)]
 pub enum Symbol {
