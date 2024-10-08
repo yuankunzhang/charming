@@ -46,7 +46,7 @@ impl ImageRenderer {
         runtime
             .execute_script(
                 "[echarts.js]",
-                include_str!("../asset/echarts-5.4.2.min.js").to_string(),
+                include_str!("../asset/echarts-5.5.1.min.js").to_string(),
             )
             .unwrap();
 
