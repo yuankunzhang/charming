@@ -3,6 +3,7 @@ pub mod basic_area;
 pub mod basic_line;
 pub mod confidence_band;
 pub mod data_transform_filter;
+pub mod different_symbols;
 pub mod distribution_of_electricity;
 pub mod gradient_stacked_area;
 pub mod large_scale_area;

@@ -1,5 +1,7 @@
+use super::RawString;
 use serde::Serialize;
 
+#[derive(Debug, PartialEq, PartialOrd, Clone)]
 pub enum Symbol {
     Circle,
     Rect,
@@ -10,6 +12,7 @@ pub enum Symbol {
     Arrow,
     None,
     Custom(String),
+    Callback(RawString),
 }
 
 impl Serialize for Symbol {
@@ -24,6 +27,7 @@ impl Serialize for Symbol {
             Symbol::Arrow => serializer.serialize_str("arrow"),
             Symbol::None => serializer.serialize_str("none"),
             Symbol::Custom(s) => serializer.serialize_str(s),
+            Symbol::Callback(s) => s.serialize(serializer),
         }
     }
 }

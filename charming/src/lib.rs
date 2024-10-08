@@ -1,4 +1,3 @@
-#![allow(clippy::to_string_trait_impl)]
 #![cfg_attr(docsrs, feature(doc_cfg))]
 /*!
 Charming is a powerful and versatile chart rendering library for Rust that
@@ -237,7 +236,7 @@ mouse pointer.
 [`Toolbox`] is a feature toolbox that includes data view, save as image, data
 zoom, restore, and reset.
  */
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Chart {
     #[serde(skip_serializing_if = "Vec::is_empty")]
@@ -516,9 +515,13 @@ impl Chart {
     }
 }
 
-impl ToString for Chart {
-    fn to_string(&self) -> String {
-        process_raw_strings(serde_json::to_string_pretty(self).unwrap().as_str())
+impl std::fmt::Display for Chart {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f,
+            "{}",
+            process_raw_strings(&serde_json::to_string_pretty(self).unwrap())
+        )
     }
 }
 

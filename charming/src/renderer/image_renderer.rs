@@ -19,7 +19,7 @@ var chart = echarts.init(null, {{#if theme}}'{{ theme }}'{{else}}null{{/if}}, {
     height: {{ height }}
 });
 
-chart.setOption({ animation: false });
+chart.setOption({ animation: false, progressive: 0 });
 chart.setOption({{{ chart_option }}});
 chart.renderToSVGString();
 "#;
@@ -40,15 +40,13 @@ impl ImageRenderer {
         runtime
             .execute_script(
                 "[runtime.js]",
-                include_str!("../asset/runtime.js").to_string().into(),
+                include_str!("../asset/runtime.js").to_string(),
             )
             .unwrap();
         runtime
             .execute_script(
                 "[echarts.js]",
-                include_str!("../asset/echarts-5.4.2.min.js")
-                    .to_string()
-                    .into(),
+                include_str!("../asset/echarts-5.4.2.min.js").to_string(),
             )
             .unwrap();
 
@@ -89,7 +87,7 @@ impl ImageRenderer {
                 }),
             )
             .expect("Failed to render template");
-        let result = self.js_runtime.execute_script("[anon]", code.into());
+        let result = self.js_runtime.execute_script("[anon]", code);
 
         match result {
             Ok(global) => {

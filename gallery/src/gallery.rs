@@ -11,6 +11,8 @@ use charming_gallery::CHARTS;
 
 #[tokio::main]
 async fn main() {
+    println!("Access the plots at: http://127.0.0.1:5555");
+
     let app = Router::new()
         .route("/", get(index))
         .route("/:type/:name", get(render));

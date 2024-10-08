@@ -3,12 +3,12 @@ use serde::Serialize;
 use crate::{
     datatype::{DataFrame, DataPoint},
     element::{
-        AreaStyle, CoordinateSystem, DimensionEncode, Emphasis, ItemStyle, Label, LineStyle,
-        MarkArea, MarkLine, MarkPoint, Symbol,
+        smoothness::Smoothness, AreaStyle, CoordinateSystem, DimensionEncode, Emphasis, ItemStyle,
+        Label, LineStyle, MarkArea, MarkLine, MarkPoint, Symbol,
     },
 };
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Line {
     #[serde(rename = "type")]
@@ -51,7 +51,10 @@ pub struct Line {
     emphasis: Option<Emphasis>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    smooth: Option<f64>,
+    smooth: Option<Smoothness>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    connect_nulls: Option<bool>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     mark_point: Option<MarkPoint>,
@@ -101,6 +104,7 @@ impl Line {
             item_style: None,
             emphasis: None,
             smooth: None,
+            connect_nulls: None,
             mark_point: None,
             mark_line: None,
             mark_area: None,
@@ -174,8 +178,13 @@ impl Line {
     }
 
     /// Smoothness.
-    pub fn smooth<F: Into<f64>>(mut self, smooth: F) -> Self {
+    pub fn smooth<S: Into<Smoothness>>(mut self, smooth: S) -> Self {
         self.smooth = Some(smooth.into());
+        self
+    }
+
+    pub fn connect_nulls(mut self, connect_nulls: bool) -> Self {
+        self.connect_nulls = Some(connect_nulls);
         self
     }
 

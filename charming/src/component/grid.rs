@@ -5,7 +5,7 @@ use crate::{
     element::{Color, Padding, TextStyle, Trigger},
 };
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct GridTooltip {
     /// Whether to show the tooltip component.
@@ -133,7 +133,7 @@ impl GridTooltip {
     }
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Grid {
     /// Component ID.
