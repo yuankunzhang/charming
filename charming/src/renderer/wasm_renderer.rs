@@ -6,12 +6,20 @@ use wasm_bindgen::JsValue;
 
 pub struct WasmRenderer {
     theme: Theme,
-    width: u32,
-    height: u32,
+    width: Option<u32>,
+    height: Option<u32>,
 }
 
 impl WasmRenderer {
     pub fn new(width: u32, height: u32) -> Self {
+        Self {
+            theme: Theme::Default,
+            width: Some(width),
+            height: Some(height),
+        }
+    }
+
+    pub fn new_opt(width: Option<u32>, height: Option<u32>) -> Self {
         Self {
             theme: Theme::Default,
             width,
@@ -64,8 +72,8 @@ impl WasmRenderer {
 
 #[derive(Serialize)]
 struct ChartSize {
-    width: u32,
-    height: u32,
+    width: Option<u32>,
+    height: Option<u32>,
 }
 
 #[derive(Serialize)]
