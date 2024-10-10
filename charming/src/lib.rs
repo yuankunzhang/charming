@@ -100,8 +100,8 @@ use component::{
 use datatype::Dataset;
 use element::{process_raw_strings, AxisPointer, Color, MarkLine, Tooltip};
 use serde::Serialize;
+use serde_with::{formats::PreferOne, serde_as, skip_serializing_none, OneOrMany};
 use series::Series;
-
 /**
 The chart representation.
 
@@ -236,6 +236,7 @@ mouse pointer.
 [`Toolbox`] is a feature toolbox that includes data view, save as image, data
 zoom, restore, and reset.
  */
+#[serde_as]
 #[derive(Serialize, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Chart {
@@ -258,6 +259,7 @@ pub struct Chart {
     #[serde(rename = "grid3D")]
     grid3d: Vec<Grid3D>,
 
+    #[serde_as(as = "OneOrMany<_, PreferOne>")]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     x_axis: Vec<Axis>,
 
@@ -265,6 +267,7 @@ pub struct Chart {
     #[serde(rename = "xAxis3D")]
     x_axis3d: Vec<Axis3D>,
 
+    #[serde_as(as = "OneOrMany<_, PreferOne>")]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     y_axis: Vec<Axis>,
 
