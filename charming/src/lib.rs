@@ -100,7 +100,7 @@ use component::{
 use datatype::Dataset;
 use element::{process_raw_strings, AxisPointer, Color, MarkLine, Tooltip};
 use serde::Serialize;
-use serde_with::{formats::PreferOne, serde_as, skip_serializing_none, OneOrMany};
+use serde_with::{formats::PreferOne, serde_as, OneOrMany};
 use series::Series;
 /**
 The chart representation.
