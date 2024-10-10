@@ -3,8 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>{{ title }}</title>
-    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/echarts-gl@2.0.9/dist/echarts-gl.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
     <style> .container { display: flex; justify-content: center; align-items: center; } .item { margin: auto; } </style>
   </head>
   <body>
@@ -13,11 +12,7 @@
       </div>
       
       <script type="text/javascript">
-          {{#if theme_source}}{{{ theme_source }}}{{/if}}
-          {{#each gep_maps}}
-          echarts.registerMap('{{ this.name }}', {{{ this.opt }}});
-          {{/each}}
-          var chart = echarts.init(document.getElementById('{{ chart_id }}'), {{#if theme}}'{{ theme }}'{{else}}null{{/if}}, { renderer: '{{ canvas_type }}' });
+          var chart = echarts.init(document.getElementById('{{ chart_id }}'));
           var option = {{{ chart_option }}};
           chart.setOption(option);
       </script>
