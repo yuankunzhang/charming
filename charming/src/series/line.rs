@@ -4,7 +4,7 @@ use crate::{
     datatype::{DataFrame, DataPoint},
     element::{
         smoothness::Smoothness, AreaStyle, CoordinateSystem, DimensionEncode, Emphasis, ItemStyle,
-        Label, LineStyle, MarkArea, MarkLine, MarkPoint, Symbol,
+        Label, LineStyle, MarkArea, MarkLine, MarkPoint, Symbol, SymbolSize,
     },
 };
 
@@ -27,7 +27,7 @@ pub struct Line {
     symbol: Option<Symbol>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    symbol_size: Option<f64>,
+    symbol_size: Option<SymbolSize>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     show_symbol: Option<bool>,
@@ -137,7 +137,7 @@ impl Line {
         self
     }
 
-    pub fn symbol_size<F: Into<f64>>(mut self, symbol_size: F) -> Self {
+    pub fn symbol_size<F: Into<SymbolSize>>(mut self, symbol_size: F) -> Self {
         self.symbol_size = Some(symbol_size.into());
         self
     }
