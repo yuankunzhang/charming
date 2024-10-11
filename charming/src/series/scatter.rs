@@ -3,7 +3,7 @@ use serde::Serialize;
 use crate::{
     datatype::{DataFrame, DataPoint},
     element::{
-        ColorBy, CoordinateSystem, DimensionEncode, Emphasis, ItemStyle, MarkArea, MarkLine,
+        ColorBy, CoordinateSystem, DimensionEncode, Emphasis, ItemStyle, Label, MarkArea, MarkLine,
         Symbol, SymbolSize,
     },
 };
@@ -22,6 +22,9 @@ pub struct Scatter {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     color_by: Option<ColorBy>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    label: Option<Label>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     dataset_index: Option<f64>,
@@ -73,6 +76,7 @@ impl Scatter {
             id: None,
             name: None,
             color_by: None,
+            label: None,
             dataset_index: None,
             coordinate_system: None,
             x_axis_index: None,
@@ -100,6 +104,11 @@ impl Scatter {
 
     pub fn color_by(mut self, color_by: ColorBy) -> Self {
         self.color_by = Some(color_by);
+        self
+    }
+
+    pub fn label<L: Into<Label>>(mut self, label: L) -> Self {
+        self.label = Some(label.into());
         self
     }
 
