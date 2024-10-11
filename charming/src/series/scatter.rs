@@ -22,10 +22,10 @@ pub struct Scatter {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     color_by: Option<ColorBy>,
-    
+
     #[serde(skip_serializing_if = "Option::is_none")]
     label: Option<Label>,
-    
+
     #[serde(skip_serializing_if = "Option::is_none")]
     dataset_index: Option<f64>,
 
@@ -111,7 +111,7 @@ impl Scatter {
         self.label = Some(label.into());
         self
     }
-    
+
     pub fn dataset_index<F: Into<f64>>(mut self, dataset_index: F) -> Self {
         self.dataset_index = Some(dataset_index.into());
         self
