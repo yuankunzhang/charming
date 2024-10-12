@@ -2,7 +2,7 @@ use serde::Serialize;
 
 use crate::{
     datatype::{CompositeValue, DataFrame, DataPoint},
-    element::{ColorBy, CoordinateSystem, Emphasis, ItemStyle, Label, LabelLine},
+    element::{ColorBy, CoordinateSystem, Emphasis, ItemStyle, Label, LabelLine, Tooltip},
 };
 
 #[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
@@ -75,6 +75,9 @@ pub struct Pie {
     #[serde(skip_serializing_if = "Option::is_none")]
     radius: Option<CompositeValue>,
 
+    #[serde(skip_serializing_if = "Option::is_none")]
+    tooltip: Option<Tooltip>,
+
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: DataFrame,
 }
@@ -108,6 +111,7 @@ impl Pie {
             emphasis: None,
             center: None,
             radius: None,
+            tooltip: None,
             data: vec![],
         }
     }
@@ -204,6 +208,11 @@ impl Pie {
 
     pub fn radius<C: Into<CompositeValue>>(mut self, radius: C) -> Self {
         self.radius = Some(radius.into());
+        self
+    }
+
+    pub fn tooltip(mut self, tooltip: Tooltip) -> Self {
+        self.tooltip = Some(tooltip);
         self
     }
 
