@@ -7,4 +7,4 @@ edition = "2021"
 
 [dependencies]
 charming = { path = "../../charming", features = ["wasm"] }
-leptos = { version = "0.4.10", features = ["csr"] }
+leptos = { version = "0.6", features = ["csr"] }
