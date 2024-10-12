@@ -168,6 +168,9 @@ pub struct MarkLine {
     #[serde(skip_serializing_if = "Vec::is_empty")]
     symbol: Vec<Symbol>,
 
+    #[serde(skip_serializing_if = "Option::is_none")]
+    precision: Option<f64>,
+
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: Vec<MarkLineVariant>,
 }
@@ -186,6 +189,7 @@ impl MarkLine {
             zlevel: None,
             z: None,
             symbol: vec![],
+            precision: None,
             data: vec![],
         }
     }
@@ -212,6 +216,11 @@ impl MarkLine {
 
     pub fn symbol<S: Into<Symbol>>(mut self, symbol: Vec<S>) -> Self {
         self.symbol = symbol.into_iter().map(|s| s.into()).collect();
+        self
+    }
+
+    pub fn precision<F: Into<f64>>(mut self, precision: F) -> Self {
+        self.precision = Some(precision.into());
         self
     }
 
