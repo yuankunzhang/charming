@@ -62,25 +62,36 @@ impl WasmRenderer {
     }
 }
 
-#[derive(Serialize)]
+#[derive(Clone, Debug, Serialize, Copy)]
 struct ChartSize {
     width: u32,
     height: u32,
 }
 
-#[derive(Serialize)]
+#[derive(Clone, Debug, Serialize, Copy)]
 pub struct ChartResize {
     /// New width in px
-    width: u32,
+    pub width: u32,
     /// New height in px
-    height: u32,
+    pub height: u32,
     /// If true, emits events on resize
-    silent: bool,
+    pub silent: bool,
     /// Resize animation options
-    animation: Option<Animation>,
+    pub animation: Option<Animation>,
 }
 
-#[derive(Serialize)]
+impl ChartResize {
+    pub fn new(width: u32, height: u32, silent: bool, animation: Option<Animation>) -> Self {
+        Self {
+            width,
+            height,
+            silent,
+            animation,
+        }
+    }
+}
+
+#[derive(Clone, Debug, Serialize, Copy)]
 pub struct Animation {
     /// duration of the animation
     pub duration: u32,
@@ -90,7 +101,7 @@ pub struct Animation {
 }
 
 /// available easing functions in echarts
-#[derive(Clone, Debug, Default, Serialize)]
+#[derive(Clone, Debug, Default, Serialize, Copy)]
 #[serde(rename_all = "camelCase")]
 pub enum Easing {
     #[default]
