@@ -4,7 +4,7 @@ use crate::{
     datatype::{DataFrame, DataPoint},
     element::{
         Anchor, AxisLabel, AxisLine, AxisTick, Color, ColorBy, Formatter, ItemStyle, Pointer,
-        SplitLine,
+        SplitLine, Tooltip,
     },
 };
 
@@ -287,6 +287,9 @@ pub struct Gauge {
     #[serde(skip_serializing_if = "Option::is_none")]
     title: Option<GaugeTitle>,
 
+    #[serde(skip_serializing_if = "Option::is_none")]
+    tooltip: Option<Tooltip>,
+
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: DataFrame,
 }
@@ -324,6 +327,7 @@ impl Gauge {
             anchor: None,
             detail: None,
             title: None,
+            tooltip: None,
             data: vec![],
         }
     }
@@ -440,6 +444,11 @@ impl Gauge {
 
     pub fn title<T: Into<GaugeTitle>>(mut self, title: T) -> Self {
         self.title = Some(title.into());
+        self
+    }
+
+    pub fn tooltip(mut self, tooltip: Tooltip) -> Self {
+        self.tooltip = Some(tooltip);
         self
     }
 

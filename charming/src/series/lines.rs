@@ -2,7 +2,9 @@
 
 use serde::Serialize;
 
-use crate::element::{ColorBy, CoordinateSystem, Emphasis, Label, LabelLayout, LineStyle, Symbol};
+use crate::element::{
+    ColorBy, CoordinateSystem, Emphasis, Label, LabelLayout, LineStyle, Symbol, Tooltip,
+};
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -57,4 +59,7 @@ pub struct Lines {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     emphasis: Option<Emphasis>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    tooltip: Option<Tooltip>,
 }

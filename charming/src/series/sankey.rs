@@ -2,7 +2,7 @@ use serde::{Deserialize, Serialize};
 
 use crate::{
     datatype::CompositeValue,
-    element::{Emphasis, ItemStyle, Label, LineStyle, Orient},
+    element::{Emphasis, ItemStyle, Label, LineStyle, Orient, Tooltip},
 };
 
 #[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
@@ -149,6 +149,9 @@ pub struct Sankey {
     #[serde(skip_serializing_if = "Vec::is_empty")]
     links: Vec<SankeyLink>,
 
+    #[serde(skip_serializing_if = "Option::is_none")]
+    tooltip: Option<Tooltip>,
+
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: Vec<SankeyNode>,
 }
@@ -180,6 +183,7 @@ impl Sankey {
             node_align: None,
             line_style: None,
             links: vec![],
+            tooltip: None,
             data: vec![],
         }
     }
@@ -261,6 +265,11 @@ impl Sankey {
 
     pub fn line_style<L: Into<LineStyle>>(mut self, line_style: L) -> Self {
         self.line_style = Some(line_style.into());
+        self
+    }
+
+    pub fn tooltip(mut self, tooltip: Tooltip) -> Self {
+        self.tooltip = Some(tooltip);
         self
     }
 

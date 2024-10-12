@@ -2,7 +2,7 @@ use serde::{Deserialize, Serialize};
 
 use crate::{
     datatype::CompositeValue,
-    element::{Blur, Emphasis, ItemStyle, Label, Select, Symbol},
+    element::{Blur, Emphasis, ItemStyle, Label, Select, Symbol, Tooltip},
 };
 
 #[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
@@ -180,6 +180,9 @@ pub struct Tree {
     #[serde(skip_serializing_if = "Option::is_none")]
     leaves: Option<TreeLeaves>,
 
+    #[serde(skip_serializing_if = "Option::is_none")]
+    tooltip: Option<Tooltip>,
+
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: Vec<TreeNode>,
 }
@@ -227,6 +230,7 @@ impl Tree {
             animation_duration: None,
             animation_duration_update: None,
             leaves: None,
+            tooltip: None,
             data: vec![],
         }
     }
@@ -393,6 +397,11 @@ impl Tree {
 
     pub fn leaves<T: Into<TreeLeaves>>(mut self, leaves: T) -> Self {
         self.leaves = Some(leaves.into());
+        self
+    }
+
+    pub fn tooltip(mut self, tooltip: Tooltip) -> Self {
+        self.tooltip = Some(tooltip);
         self
     }
 

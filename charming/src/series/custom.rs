@@ -4,6 +4,7 @@ use crate::{
     datatype::{CompositeValue, DataFrame, DataPoint, Dimension},
     element::{
         ColorBy, CoordinateSystem, DimensionEncode, ItemStyle, LabelLayout, LabelLine, RawString,
+        Tooltip,
     },
 };
 
@@ -63,6 +64,9 @@ pub struct Custom {
     #[serde(skip_serializing_if = "Option::is_none")]
     encode: Option<DimensionEncode>,
 
+    #[serde(skip_serializing_if = "Option::is_none")]
+    tooltip: Option<Tooltip>,
+
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: DataFrame,
 }
@@ -94,6 +98,7 @@ impl Custom {
             selected_mode: None,
             dimensions: vec![],
             encode: None,
+            tooltip: None,
             data: vec![],
         }
     }
@@ -180,6 +185,11 @@ impl Custom {
 
     pub fn encode<E: Into<DimensionEncode>>(mut self, encode: E) -> Self {
         self.encode = Some(encode.into());
+        self
+    }
+
+    pub fn tooltip(mut self, tooltip: Tooltip) -> Self {
+        self.tooltip = Some(tooltip);
         self
     }
 
