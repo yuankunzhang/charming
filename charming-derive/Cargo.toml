@@ -1,0 +1,16 @@
+[package]
+name = "charming-derive"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+proc-macro2 = "1.0.87"
+quote = "1.0.37"
+syn = { version = "2.0.79", features = ["extra-traits", "visit", "derive"] }
+
+[dev-dependencies]
+charming = { path = "../charming" }
+serde = { version = "1.0", features = ["derive"] }

@@ -17,11 +17,12 @@ handlebars = { version = "4.3", optional = true }
 image = { version = "0.24", optional = true }
 resvg = { version = "0.36", optional = true }
 serde = { version = "1.0", features = ["derive"] }
-serde-wasm-bindgen = {version = "0.6", optional = true }
+serde-wasm-bindgen = { version = "0.6", optional = true }
 serde_json = "1.0"
 serde_v8 = { version = "0.220", optional = true }
 serde_with = "3.11.0"
 wasm-bindgen = { version = "0.2", optional = true }
+charming-derive = { path = "../charming-derive" }
 
 [dev-dependencies]
 assert-json-diff = "2.0.2"
@@ -29,11 +30,7 @@ assert-json-diff = "2.0.2"
 [dependencies.web-sys]
 version = "0.3.64"
 optional = true
-features = [
-    "Window",
-    "Document",
-    "Element",
-]
+features = ["Window", "Document", "Element"]
 
 [features]
 default = ["html"]
