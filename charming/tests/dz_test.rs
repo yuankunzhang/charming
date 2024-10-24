@@ -2,7 +2,7 @@
 mod tests {
 
     use charming::{df, dz};
-    
+
     #[test]
     fn dz_test1() {
         // Set up test data
