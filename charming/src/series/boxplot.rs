@@ -1,6 +1,9 @@
 use serde::Serialize;
 
-use crate::element::{ColorBy, CoordinateSystem, ItemStyle, Tooltip};
+use crate::{
+    datatype::{DataFrame, DataPoint},
+    element::{ColorBy, CoordinateSystem, ItemStyle, Tooltip},
+};
 
 #[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
@@ -38,8 +41,8 @@ pub struct Boxplot {
     #[serde(skip_serializing_if = "Option::is_none")]
     z: Option<usize>,
 
-    #[serde(skip_serializing_if = "Option::is_none")]
-    data: Option<Vec<Vec<f64>>>,
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    data: DataFrame,
 }
 
 impl Default for Boxplot {
@@ -60,7 +63,7 @@ impl Boxplot {
             hover_animation: None,
             dataset_index: None,
             tooltip: None,
-            data: None,
+            data: vec![],
             item_style: None,
             z: None,
         }
@@ -106,13 +109,13 @@ impl Boxplot {
         self
     }
 
-    pub fn item_style(mut self, item_style: ItemStyle) -> Self {
-        self.item_style = Some(item_style);
+    pub fn item_style<S: Into<ItemStyle>>(mut self, item_style: S) -> Self {
+        self.item_style = Some(item_style.into());
         self
     }
 
-    pub fn data(mut self, data: Vec<Vec<f64>>) -> Self {
-        self.data = Some(data);
+    pub fn data<D: Into<DataPoint>>(mut self, data: Vec<D>) -> Self {
+        self.data = data.into_iter().map(|d| d.into()).collect();
         self
     }
 
