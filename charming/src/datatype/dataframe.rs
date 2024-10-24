@@ -70,7 +70,7 @@ macro_rules! df {
     };
 }
 
-/// Code below is modified from ChatGPT generated code.
+/// Code below is modified (using df! as reference) from ChatGPT generated code.
 /// The main objective of macro dz! is to transpose mixed data type vectors,
 /// aka columns or dimensions into ECharts dataframe format.
 
