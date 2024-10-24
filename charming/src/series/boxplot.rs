@@ -1,6 +1,6 @@
 use serde::Serialize;
 
-use crate::element::{ColorBy, CoordinateSystem};
+use crate::element::{ColorBy, CoordinateSystem, Tooltip};
 
 #[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
@@ -28,6 +28,9 @@ pub struct Boxplot {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     dataset_index: Option<u64>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    tooltip: Option<Tooltip>,
 }
 
 impl Default for Boxplot {
@@ -47,6 +50,7 @@ impl Boxplot {
             legend_hover_link: None,
             hover_animation: None,
             dataset_index: None,
+            tooltip: None,
         }
     }
 
@@ -82,6 +86,11 @@ impl Boxplot {
 
     pub fn dataset_index(mut self, dataset_index: u64) -> Self {
         self.dataset_index = Some(dataset_index);
+        self
+    }
+
+    pub fn tooltip(mut self, tooltip: Tooltip) -> Self {
+        self.tooltip = Some(tooltip);
         self
     }
 }

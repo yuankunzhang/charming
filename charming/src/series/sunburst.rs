@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::element::{Emphasis, ItemStyle, Label, Sort};
+use crate::element::{Emphasis, ItemStyle, Label, Sort, Tooltip};
 
 #[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
@@ -150,6 +150,9 @@ pub struct Sunburst {
     #[serde(skip_serializing_if = "Vec::is_empty")]
     levels: Vec<SunburstLevel>,
 
+    #[serde(skip_serializing_if = "Option::is_none")]
+    tooltip: Option<Tooltip>,
+
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: Vec<SunburstNode>,
 }
@@ -173,6 +176,7 @@ impl Sunburst {
             emphasis: None,
             sort: None,
             levels: vec![],
+            tooltip: None,
             data: vec![],
         }
     }
@@ -219,6 +223,11 @@ impl Sunburst {
 
     pub fn levels(mut self, levels: Vec<SunburstLevel>) -> Self {
         self.levels = levels;
+        self
+    }
+
+    pub fn tooltip(mut self, tooltip: Tooltip) -> Self {
+        self.tooltip = Some(tooltip);
         self
     }
 

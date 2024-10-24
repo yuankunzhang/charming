@@ -4,7 +4,7 @@ use crate::{
     datatype::{DataFrame, DataPoint},
     element::{
         Color, ColorBy, CoordinateSystem, Emphasis, ItemStyle, Label, LabelLayout, LabelLine,
-        Symbol,
+        Symbol, Tooltip,
     },
 };
 
@@ -162,6 +162,9 @@ pub struct EffectScatter {
     #[serde(skip_serializing_if = "Option::is_none")]
     emphasis: Option<Emphasis>,
 
+    #[serde(skip_serializing_if = "Option::is_none")]
+    tooltip: Option<Tooltip>,
+
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: DataFrame,
 }
@@ -198,6 +201,7 @@ impl EffectScatter {
             label_layout: None,
             item_style: None,
             emphasis: None,
+            tooltip: None,
             data: vec![],
         }
     }
@@ -309,6 +313,11 @@ impl EffectScatter {
 
     pub fn emphasis<E: Into<Emphasis>>(mut self, emphasis: E) -> Self {
         self.emphasis = Some(emphasis.into());
+        self
+    }
+
+    pub fn tooltip(mut self, tooltip: Tooltip) -> Self {
+        self.tooltip = Some(tooltip);
         self
     }
 

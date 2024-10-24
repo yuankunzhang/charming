@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::element::{CoordinateSystem, Label, LabelLayout, LineStyle, ScaleLimit};
+use crate::element::{CoordinateSystem, Label, LabelLayout, LineStyle, ScaleLimit, Tooltip};
 
 #[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
@@ -275,6 +275,9 @@ pub struct Graph {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     edge_symbol: Option<(String, String)>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    tooltip: Option<Tooltip>,
 }
 
 impl Default for Graph {
@@ -308,6 +311,7 @@ impl Graph {
             links: vec![],
             data: vec![],
             edge_symbol: None,
+            tooltip: None,
         }
     }
 
@@ -405,6 +409,11 @@ impl Graph {
 
     pub fn edge_symbol(mut self, edge_symbol: Option<(String, String)>) -> Self {
         self.edge_symbol = edge_symbol;
+        self
+    }
+
+    pub fn tooltip(mut self, tooltip: Tooltip) -> Self {
+        self.tooltip = Some(tooltip);
         self
     }
 }
