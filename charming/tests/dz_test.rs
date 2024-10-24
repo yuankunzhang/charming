@@ -24,4 +24,19 @@ mod tests {
         // Assert expected output
         assert_eq!(dz_out, df_out);
     }
+
+    #[test]
+    fn dz_test2() {
+        // expected output
+        let df_out = df![
+            [44056, 81.8, 23968973, "Australia", 2015],
+            [13334, 76.9, 1376048943, "China", 2015]
+        ];
+
+        // Call the macro
+        let dz_out = dz!([44056, 13334], [81.8, 76.9], [23968973, 1376048943], ["Australia", "China"], [2015, 2015]);;
+
+        // Assert expected output
+        assert_eq!(dz_out, df_out);
+    }
 }
