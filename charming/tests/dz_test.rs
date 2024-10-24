@@ -3,6 +3,11 @@ mod tests {
 
     use charming::{df, dz};
 
+    /// Testing using snippt of data from https://github.com/yuankunzhang/charming/blob/main/gallery/src/scatter/bubble_chart.rs.
+    /// dz_test1 is testing input as named_variable of various data type vectors.
+    /// dz_test2 is testing input as direct input of various data type vectors.
+    /// The result of dz! are checked againt df!'s result - which should be equal.
+ 
     #[test]
     fn dz_test1() {
         // Set up test data
