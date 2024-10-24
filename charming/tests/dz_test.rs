@@ -1,7 +1,8 @@
 #[cfg(test)]
 mod tests {
 
-    use charming::{dz, df};
+    use charming::{df, dz};
+    
     #[test]
     fn dz_test1() {
         // Set up test data
