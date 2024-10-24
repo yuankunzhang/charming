@@ -34,7 +34,13 @@ mod tests {
         ];
 
         // Call the macro
-        let dz_out = dz!([44056, 13334], [81.8, 76.9], [23968973, 1376048943], ["Australia", "China"], [2015, 2015]);;
+        let dz_out = dz!(
+            [44056, 13334], 
+            [81.8, 76.9], 
+            [23968973, 1376048943], 
+            ["Australia", "China"], 
+            [2015, 2015]
+        );
 
         // Assert expected output
         assert_eq!(dz_out, df_out);
