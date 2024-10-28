@@ -131,6 +131,7 @@ impl From<(&str, &str)> for MarkLineData {
 }
 
 #[derive(Debug, PartialEq, PartialOrd, Clone)]
+#[allow(clippy::large_enum_variant)]
 pub enum MarkLineVariant {
     Simple(MarkLineData),
     StartToEnd(MarkLineData, MarkLineData),
