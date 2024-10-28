@@ -74,6 +74,7 @@ where
 
 #[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(untagged)]
+#[allow(clippy::large_enum_variant)]
 pub enum DataPoint {
     Value(CompositeValue),
     Item(DataPointItem),
