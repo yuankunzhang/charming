@@ -2,8 +2,8 @@ use charming::{
     component::{Axis, Grid, Title},
     datatype::{DataFrame, DataPoint, DataPointItem},
     element::{
-        AxisPointer, AxisPointerType, AxisType, ItemStyle, SplitArea, SplitLine, TextStyle,
-        Tooltip, Trigger,
+        font_settings::FontWeight, AxisPointer, AxisPointerType, AxisType, ItemStyle, SplitArea,
+        SplitLine, TextStyle, Tooltip, Trigger,
     },
     series::{Boxplot, Scatter},
     Chart,
@@ -34,7 +34,7 @@ pub fn chart() -> Chart {
                 .border_width(1)
                 .text_style(
                     TextStyle::new()
-                        .font_weight("normal")
+                        .font_weight(FontWeight::Normal)
                         .font_size(14)
                         .line_height(20),
                 )
