@@ -1,6 +1,10 @@
 use serde::Serialize;
 
-use super::{color::Color, Formatter};
+use super::{
+    color::Color,
+    font_settings::{FontFamily, FontStyle, FontWeight},
+    Formatter,
+};
 
 #[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
@@ -10,6 +14,15 @@ pub struct AxisLabel {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     distance: Option<f64>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    font_style: Option<FontStyle>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    font_weight: Option<FontWeight>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    font_family: Option<FontFamily>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     font_size: Option<f64>,
@@ -38,6 +51,9 @@ impl AxisLabel {
         Self {
             show: None,
             distance: None,
+            font_style: None,
+            font_weight: None,
+            font_family: None,
             font_size: None,
             color: None,
             formatter: None,
@@ -53,6 +69,21 @@ impl AxisLabel {
 
     pub fn distance<F: Into<f64>>(mut self, distance: F) -> Self {
         self.distance = Some(distance.into());
+        self
+    }
+
+    pub fn font_style<F: Into<FontStyle>>(mut self, font_style: F) -> Self {
+        self.font_style = Some(font_style.into());
+        self
+    }
+
+    pub fn font_weight<F: Into<FontWeight>>(mut self, font_weight: F) -> Self {
+        self.font_weight = Some(font_weight.into());
+        self
+    }
+
+    pub fn font_family<F: Into<FontFamily>>(mut self, font_family: F) -> Self {
+        self.font_family = Some(font_family.into());
         self
     }
 

@@ -17,6 +17,7 @@ pub mod coordinate_tooltip;
 pub mod cursor;
 pub mod dimension_encode;
 pub mod emphasis;
+pub mod font_settings;
 pub mod formatter;
 pub mod icon;
 pub mod item_style;

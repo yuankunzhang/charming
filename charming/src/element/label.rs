@@ -1,6 +1,11 @@
 use serde::Serialize;
 
-use super::{color::Color, line_style::LineStyle, Formatter};
+use super::{
+    color::Color,
+    font_settings::{FontFamily, FontStyle, FontWeight},
+    line_style::LineStyle,
+    Formatter,
+};
 
 #[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
@@ -65,10 +70,16 @@ pub struct Label {
     color: Option<Color>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    font_size: Option<f64>,
+    font_style: Option<FontStyle>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    font_weight: Option<String>,
+    font_weight: Option<FontWeight>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    font_family: Option<FontFamily>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    font_size: Option<f64>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     padding: Option<(f64, f64, f64, f64)>,
@@ -117,8 +128,10 @@ impl Label {
             offset: None,
             formatter: None,
             color: None,
-            font_size: None,
+            font_style: None,
             font_weight: None,
+            font_family: None,
+            font_size: None,
             padding: None,
             align: None,
             vertical_align: None,
@@ -167,13 +180,23 @@ impl Label {
         self
     }
 
-    pub fn font_size<F: Into<f64>>(mut self, font_size: F) -> Self {
-        self.font_size = Some(font_size.into());
+    pub fn font_style<F: Into<FontStyle>>(mut self, font_style: F) -> Self {
+        self.font_style = Some(font_style.into());
         self
     }
 
-    pub fn font_weight<S: Into<String>>(mut self, font_weight: S) -> Self {
+    pub fn font_weight<F: Into<FontWeight>>(mut self, font_weight: F) -> Self {
         self.font_weight = Some(font_weight.into());
+        self
+    }
+
+    pub fn font_family<F: Into<FontFamily>>(mut self, font_family: F) -> Self {
+        self.font_family = Some(font_family.into());
+        self
+    }
+
+    pub fn font_size<F: Into<f64>>(mut self, font_size: F) -> Self {
+        self.font_size = Some(font_size.into());
         self
     }
 
