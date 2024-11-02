@@ -3,6 +3,7 @@ use serde::Serialize;
 use crate::{
     datatype::{DataFrame, DataPoint},
     element::{
+        font_settings::{FontFamily, FontStyle, FontWeight},
         Anchor, AxisLabel, AxisLine, AxisTick, Color, ColorBy, Formatter, ItemStyle, Pointer,
         SplitLine, Tooltip,
     },
@@ -18,13 +19,13 @@ pub struct GaugeDetail {
     color: Option<Color>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    font_style: Option<String>,
+    font_style: Option<FontStyle>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    font_weight: Option<String>,
+    font_weight: Option<FontWeight>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    font_family: Option<String>,
+    font_family: Option<FontFamily>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     font_size: Option<f64>,
@@ -70,17 +71,17 @@ impl GaugeDetail {
         self
     }
 
-    pub fn font_style<S: Into<String>>(mut self, font_style: S) -> Self {
+    pub fn font_style<F: Into<FontStyle>>(mut self, font_style: F) -> Self {
         self.font_style = Some(font_style.into());
         self
     }
 
-    pub fn font_weight<S: Into<String>>(mut self, font_weight: S) -> Self {
+    pub fn font_weight<F: Into<FontWeight>>(mut self, font_weight: F) -> Self {
         self.font_weight = Some(font_weight.into());
         self
     }
 
-    pub fn font_family<S: Into<String>>(mut self, font_family: S) -> Self {
+    pub fn font_family<F: Into<FontFamily>>(mut self, font_family: F) -> Self {
         self.font_family = Some(font_family.into());
         self
     }

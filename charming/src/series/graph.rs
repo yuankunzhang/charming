@@ -122,6 +122,7 @@ pub struct GraphNodeLabel {
     #[serde(skip_serializing_if = "Option::is_none")]
     color: Option<String>,
 
+    //TODO: I think this should be f64, would be a breaking change
     #[serde(skip_serializing_if = "Option::is_none")]
     font_size: Option<u64>,
 }

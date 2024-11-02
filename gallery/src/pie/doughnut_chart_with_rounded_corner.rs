@@ -1,6 +1,8 @@
 use charming::{
     component::Legend,
-    element::{Emphasis, Label, LabelLine, LabelPosition, Tooltip, Trigger},
+    element::{
+        font_settings::FontWeight, Emphasis, Label, LabelLine, LabelPosition, Tooltip, Trigger,
+    },
     series::Pie,
     Chart,
 };
@@ -16,8 +18,12 @@ pub fn chart() -> Chart {
                 .avoid_label_overlap(false)
                 .label(Label::new().show(false).position(LabelPosition::Center))
                 .emphasis(
-                    Emphasis::new()
-                        .label(Label::new().show(true).font_size(40).font_weight("bold")),
+                    Emphasis::new().label(
+                        Label::new()
+                            .show(true)
+                            .font_size(40)
+                            .font_weight(FontWeight::Bold),
+                    ),
                 )
                 .label_line(LabelLine::new().show(false))
                 .data(vec![
