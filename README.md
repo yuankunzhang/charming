@@ -308,3 +308,9 @@ You can also clone the repo and run `cargo run --bin gallery` to view the intera
 <a href="./gallery/src/tree/from_left_to_right_tree.rs"><img src="./img/tree/from_left_to_right_tree.svg" width="40%" alt="From Left to Right Tree" /></a>
 <a href="./gallery/src/tree/multiple_trees.rs"><img src="./img/tree/multiple_trees.svg" width="40%" alt="Multiple Trees" /></a>
 </div>
+
+### Custom Charts
+
+<div align="center">
+<a href="./gallery/src/candlestick/ohlc.rs"><img src="./img/candlestick/ohlc.svg" width="40%" alt="Custom Error Bar/Candle Stick" /></a>
+</div>
