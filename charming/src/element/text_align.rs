@@ -1,6 +1,6 @@
 use serde::Serialize;
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
 pub enum TextAlign {
     Auto,
@@ -9,7 +9,7 @@ pub enum TextAlign {
     Center,
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
 pub enum TextVerticalAlign {
     Auto,

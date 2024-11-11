@@ -5,7 +5,7 @@ use crate::{
     element::{Label, LineStyle},
 };
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
 pub enum AxisPointerType {
     Line,
@@ -14,7 +14,7 @@ pub enum AxisPointerType {
     None,
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
 pub enum AxisPointerAxis {
     X,

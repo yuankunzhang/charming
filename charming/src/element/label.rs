@@ -7,7 +7,7 @@ use super::{
     Formatter,
 };
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "camelCase")]
 pub enum LabelPosition {
     Top,
@@ -29,7 +29,7 @@ pub enum LabelPosition {
     Center,
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
 pub enum LabelAlign {
     Left,
@@ -37,7 +37,7 @@ pub enum LabelAlign {
     Right,
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
 pub enum LabelVerticalAlign {
     Top,

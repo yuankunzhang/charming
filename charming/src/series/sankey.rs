@@ -5,7 +5,7 @@ use crate::{
     element::{Emphasis, ItemStyle, Label, LineStyle, Orient, Tooltip},
 };
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
 pub enum SankeyNodeAlign {
     Left,

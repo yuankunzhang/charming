@@ -5,7 +5,7 @@ use crate::{
     element::{Color, Orient, TextStyle},
 };
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
 pub enum VisualMapType {
     Continuous,

@@ -2,7 +2,7 @@ use serde::Serialize;
 
 use crate::{datatype::CompositeValue, element::Orient};
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
 pub enum SaveAsImageType {
     Png,
@@ -143,7 +143,7 @@ impl DataView {
     }
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
 pub enum MagicTypeType {
     /// For line charts.
@@ -200,7 +200,7 @@ impl MagicType {
     }
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "camelCase")]
 pub enum BrushType {
     Rect,
