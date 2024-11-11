@@ -69,6 +69,9 @@ pub struct AngleAxis {
     log_base: Option<f64>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    start_value: Option<f64>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     silent: Option<bool>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -128,6 +131,7 @@ impl AngleAxis {
             max_interval: None,
             interval: None,
             log_base: None,
+            start_value: None,
             silent: None,
             trigger_event: None,
             axis_line: None,
@@ -224,6 +228,11 @@ impl AngleAxis {
 
     pub fn log_base<F: Into<f64>>(mut self, log_base: F) -> Self {
         self.log_base = Some(log_base.into());
+        self
+    }
+
+    pub fn start_value<F: Into<f64>>(mut self, start_value: F) -> Self {
+        self.start_value = Some(start_value.into());
         self
     }
 
