@@ -50,6 +50,9 @@ pub struct SingleAxis {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     max: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    start_value: Option<f64>,
 }
 
 impl Default for SingleAxis {
@@ -73,6 +76,7 @@ impl SingleAxis {
             inverse: None,
             min: None,
             max: None,
+            start_value: None,
         }
     }
 
@@ -133,6 +137,11 @@ impl SingleAxis {
 
     pub fn max<S: Into<String>>(mut self, max: S) -> Self {
         self.max = Some(max.into());
+        self
+    }
+
+    pub fn start_value<F: Into<f64>>(mut self, start_value: F) -> Self {
+        self.start_value = Some(start_value.into());
         self
     }
 }

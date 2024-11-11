@@ -98,6 +98,9 @@ pub struct Axis {
     #[serde(skip_serializing_if = "Option::is_none")]
     log_base: Option<f64>,
 
+    #[serde(skip_serializing_if = "Option::is_none")]
+    start_value: Option<f64>,
+
     /// Settings related to axis label.
     #[serde(skip_serializing_if = "Option::is_none")]
     axis_label: Option<AxisLabel>,
@@ -157,6 +160,7 @@ impl Axis {
             interval: None,
             align_ticks: None,
             log_base: None,
+            start_value: None,
             axis_label: None,
             axis_tick: None,
             axis_line: None,
@@ -274,6 +278,11 @@ impl Axis {
 
     pub fn log_base<F: Into<f64>>(mut self, log_base: F) -> Self {
         self.log_base = Some(log_base.into());
+        self
+    }
+
+    pub fn start_value<F: Into<f64>>(mut self, start_value: F) -> Self {
+        self.start_value = Some(start_value.into());
         self
     }
 
