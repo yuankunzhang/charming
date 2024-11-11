@@ -5,7 +5,7 @@ use crate::{
     element::{smoothness::Smoothness, ColorBy, CoordinateSystem, Emphasis, LineStyle},
 };
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
 pub enum ProgressiveChunkMode {
     Sequential,

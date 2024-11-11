@@ -2,7 +2,7 @@ use serde::Serialize;
 
 use crate::element::{AxisPointer, Color, Formatter, Padding};
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
 pub enum TriggerOn {
     Mousemove,
@@ -13,7 +13,7 @@ pub enum TriggerOn {
 }
 
 /// Types of triggering.
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
 pub enum Trigger {
     Item,

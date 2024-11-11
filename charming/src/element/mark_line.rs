@@ -4,7 +4,7 @@ use crate::datatype::CompositeValue;
 
 use super::{label::Label, line_style::LineStyle, symbol::Symbol};
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
 pub enum MarkLineDataType {
     Min,

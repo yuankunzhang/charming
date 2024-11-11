@@ -5,7 +5,7 @@ use crate::{
     element::{ColorBy, CoordinateSystem, Emphasis, ItemStyle, Label, LabelLine, Tooltip},
 };
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
 pub enum PieRoseType {
     Radius,

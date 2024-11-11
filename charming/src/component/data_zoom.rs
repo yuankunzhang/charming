@@ -5,7 +5,7 @@ use crate::{
     element::{Color, DataBackground, Orient, TextStyle},
 };
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "camelCase")]
 pub enum FilterMode {
     Filter,
@@ -14,7 +14,7 @@ pub enum FilterMode {
     None,
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
 pub enum DataZoomType {
     Inside,

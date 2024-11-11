@@ -5,7 +5,7 @@ use crate::{
     element::{ColorBy, Emphasis, ItemStyle, Label, LabelLine, Orient, Sort, Tooltip},
 };
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
 pub enum Align {
     Left,
