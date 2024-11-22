@@ -1,11 +1,11 @@
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
 use crate::{
     datatype::{CompositeValue, DataFrame, DataPoint},
     element::{CoordinateSystem, DimensionEncode},
 };
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 pub struct Bar3d {
     #[serde(rename = "type")]
     type_: String,
@@ -31,6 +31,7 @@ pub struct Bar3d {
     #[serde(skip_serializing_if = "Option::is_none")]
     encode: Option<DimensionEncode>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: DataFrame,
 }

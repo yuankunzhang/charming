@@ -1,6 +1,6 @@
-use serde::Serialize;
+use serde::{de::Visitor, Deserialize, Deserializer, Serialize};
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "camelCase")]
 pub enum FontStyle {
     Normal,
@@ -8,7 +8,7 @@ pub enum FontStyle {
     Oblique,
 }
 
-#[derive(Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Debug, Deserialize, PartialEq, PartialOrd, Clone)]
 pub enum FontWeight {
     Normal,
     Bold,
@@ -89,6 +89,39 @@ impl Serialize for FontFamily {
             FontFamily::Fantasy => serializer.serialize_str("fantasy"),
             FontFamily::Custom(val) => serializer.serialize_str(val),
         }
+    }
+}
+
+impl<'de> Deserialize<'de> for FontFamily {
+    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+    where
+        D: Deserializer<'de>,
+    {
+        struct FontFamilyVisitor;
+
+        impl<'de> Visitor<'de> for FontFamilyVisitor {
+            type Value = FontFamily;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter) -> std::fmt::Result {
+                formatter.write_str("a string representing a font family")
+            }
+
+            fn visit_str<E>(self, value: &str) -> Result<FontFamily, E>
+            where
+                E: serde::de::Error,
+            {
+                match value {
+                    "serif" => Ok(FontFamily::Serif),
+                    "sans-serif" => Ok(FontFamily::SansSerif),
+                    "monospace" => Ok(FontFamily::MonoSpace),
+                    "cursive" => Ok(FontFamily::Cursive),
+                    "fantasy" => Ok(FontFamily::Fantasy),
+                    custom => Ok(FontFamily::Custom(custom.to_string())),
+                }
+            }
+        }
+
+        deserializer.deserialize_str(FontFamilyVisitor)
     }
 }
 

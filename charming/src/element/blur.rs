@@ -1,8 +1,8 @@
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
 use super::{item_style::ItemStyle, label::Label};
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Blur {
     #[serde(skip_serializing_if = "Option::is_none")]

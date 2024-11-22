@@ -2,7 +2,7 @@ use serde::{Deserialize, Serialize};
 
 use crate::element::{CoordinateSystem, Label, LabelLayout, LineStyle, ScaleLimit, Tooltip};
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct GraphLayoutCircular {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -26,7 +26,7 @@ impl GraphLayoutCircular {
     }
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct GraphLayoutForce {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -88,7 +88,7 @@ impl GraphLayoutForce {
     }
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
 pub enum GraphLayout {
     None,
@@ -107,7 +107,7 @@ impl From<&str> for GraphLayout {
     }
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct GraphNodeLabel {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -208,7 +208,7 @@ pub struct GraphData {
     pub categories: Vec<GraphCategory>,
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Graph {
     #[serde(rename = "type")]
@@ -265,12 +265,15 @@ pub struct Graph {
     #[serde(skip_serializing_if = "Option::is_none")]
     line_style: Option<LineStyle>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     categories: Vec<GraphCategory>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     links: Vec<GraphLink>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: Vec<GraphNode>,
 

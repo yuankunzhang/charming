@@ -1,18 +1,18 @@
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
 use crate::{
     datatype::CompositeValue,
     element::{Color, Orient, TextStyle},
 };
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
 pub enum VisualMapType {
     Continuous,
     Piecewise,
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct VisualMapPiece {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -125,9 +125,10 @@ impl From<(i64, i64, &str)> for VisualMapPiece {
     }
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct VisualMapChannel {
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     color: Vec<Color>,
 }
@@ -149,13 +150,14 @@ impl VisualMapChannel {
     }
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct VisualMap {
     #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(rename = "type")]
     type_: Option<VisualMapType>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     color: Vec<Color>,
 
@@ -174,6 +176,7 @@ pub struct VisualMap {
     #[serde(skip_serializing_if = "Option::is_none")]
     max: Option<f64>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     categories: Vec<String>,
 

@@ -1,11 +1,11 @@
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
 use crate::{
     datatype::{DataFrame, DataPoint},
     element::{ColorBy, CoordinateSystem, ItemStyle, Tooltip},
 };
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Boxplot {
     #[serde(rename = "type")]
@@ -41,6 +41,7 @@ pub struct Boxplot {
     #[serde(skip_serializing_if = "Option::is_none")]
     z: Option<usize>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: DataFrame,
 }

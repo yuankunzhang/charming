@@ -5,14 +5,14 @@ use crate::{
     element::{Blur, Emphasis, ItemStyle, Label, Select, Symbol, Tooltip},
 };
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
 pub enum TreeLayout {
     Orthogonal,
     Radial,
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 pub enum TreeOrient {
     #[serde(rename = "LR")]
     LeftRight,
@@ -24,14 +24,14 @@ pub enum TreeOrient {
     BottomTop,
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
 pub enum TreeEdgeShape {
     Curve,
     Polyline,
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct TreeLeaves {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -71,7 +71,7 @@ pub struct TreeNode {
 }
 
 /// The tree diagram is mainly used to display the tree data structure.
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Tree {
     #[serde(rename = "type")]
@@ -183,6 +183,7 @@ pub struct Tree {
     #[serde(skip_serializing_if = "Option::is_none")]
     tooltip: Option<Tooltip>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: Vec<TreeNode>,
 }

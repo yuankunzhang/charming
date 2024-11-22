@@ -2,7 +2,7 @@ use serde::{Deserialize, Serialize};
 
 use crate::element::{Emphasis, ItemStyle, Label, Sort, Tooltip};
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct SunburstLevel {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -67,6 +67,7 @@ pub struct SunburstNode {
     #[serde(skip_deserializing)]
     item_style: Option<ItemStyle>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     children: Vec<SunburstNode>,
 }
@@ -117,7 +118,7 @@ impl From<(&str, f64, &str)> for SunburstNode {
     }
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Sunburst {
     #[serde(rename = "type")]
@@ -147,12 +148,14 @@ pub struct Sunburst {
     #[serde(skip_serializing_if = "Option::is_none")]
     sort: Option<Sort>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     levels: Vec<SunburstLevel>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     tooltip: Option<Tooltip>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: Vec<SunburstNode>,
 }

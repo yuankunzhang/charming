@@ -1,4 +1,8 @@
-use serde::{ser::SerializeSeq, Serialize};
+use serde::{
+    de::{SeqAccess, Visitor},
+    ser::SerializeSeq,
+    Deserialize, Deserializer, Serialize,
+};
 
 /// Padding space around content.
 #[derive(Debug, PartialEq, PartialOrd, Clone)]
@@ -31,6 +35,53 @@ impl Serialize for Padding {
                 s.end()
             }
         }
+    }
+}
+
+impl<'de> Deserialize<'de> for Padding {
+    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+    where
+        D: Deserializer<'de>,
+    {
+        struct PaddingVisitor;
+
+        impl<'de> Visitor<'de> for PaddingVisitor {
+            type Value = Padding;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter) -> std::fmt::Result {
+                formatter.write_str("a single float, a pair of floats, or four floats")
+            }
+
+            fn visit_f64<E>(self, value: f64) -> Result<Padding, E>
+            where
+                E: serde::de::Error,
+            {
+                Ok(Padding::Single(value))
+            }
+
+            fn visit_seq<V>(self, mut seq: V) -> Result<Padding, V::Error>
+            where
+                V: SeqAccess<'de>,
+            {
+                let first: f64 = seq
+                    .next_element()?
+                    .ok_or_else(|| serde::de::Error::invalid_length(0, &self))?;
+                if let Some(second) = seq.next_element()? {
+                    if let Some(third) = seq.next_element()? {
+                        let fourth: f64 = seq
+                            .next_element()?
+                            .ok_or_else(|| serde::de::Error::invalid_length(3, &self))?;
+                        Ok(Padding::Quadruple(first, second, third, fourth))
+                    } else {
+                        Ok(Padding::Double(first, second))
+                    }
+                } else {
+                    Ok(Padding::Single(first))
+                }
+            }
+        }
+
+        deserializer.deserialize_any(PaddingVisitor)
     }
 }
 

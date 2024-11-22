@@ -1,8 +1,8 @@
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
 use crate::element::{AxisPointer, Color, Formatter, Padding};
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
 pub enum TriggerOn {
     Mousemove,
@@ -13,7 +13,7 @@ pub enum TriggerOn {
 }
 
 /// Types of triggering.
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
 pub enum Trigger {
     Item,
@@ -21,7 +21,7 @@ pub enum Trigger {
     None,
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Tooltip {
     #[serde(skip_serializing_if = "Option::is_none")]

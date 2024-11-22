@@ -1,4 +1,4 @@
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
 use crate::{
     datatype::{DataFrame, DataPoint},
@@ -9,7 +9,7 @@ use crate::{
     },
 };
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct GaugeDetail {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -107,7 +107,7 @@ impl GaugeDetail {
     }
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct GaugeTitle {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -142,7 +142,7 @@ impl GaugeTitle {
     }
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct GaugeProgress {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -213,7 +213,7 @@ impl GaugeProgress {
     }
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Gauge {
     #[serde(rename = "type")]
@@ -291,6 +291,7 @@ pub struct Gauge {
     #[serde(skip_serializing_if = "Option::is_none")]
     tooltip: Option<Tooltip>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: DataFrame,
 }

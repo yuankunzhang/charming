@@ -1,4 +1,4 @@
-use serde::Serialize;
+use serde::{Deserialize, Deserializer, Serialize};
 
 pub static RAW_MARK: &str = "#*#*#*#";
 
@@ -8,6 +8,44 @@ pub struct RawString(String);
 impl Serialize for RawString {
     fn serialize<S: serde::Serializer>(&self, serializer: S) -> Result<S::Ok, S::Error> {
         serializer.serialize_str(format!("{}{}{}", RAW_MARK, self.0, RAW_MARK).as_str())
+    }
+}
+
+impl<'de> Deserialize<'de> for RawString {
+    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+    where
+        D: Deserializer<'de>,
+    {
+        struct RawStringVisitor;
+
+        impl<'de> serde::de::Visitor<'de> for RawStringVisitor {
+            type Value = RawString;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter) -> std::fmt::Result {
+                formatter.write_str("a string wrapped with special RAW_MARK")
+            }
+
+            fn visit_str<E>(self, value: &str) -> Result<RawString, E>
+            where
+                E: serde::de::Error,
+            {
+                let mark_len = RAW_MARK.len();
+                if value.starts_with(RAW_MARK)
+                    && value.ends_with(RAW_MARK)
+                    && value.len() >= 2 * mark_len
+                {
+                    let core = &value[mark_len..value.len() - mark_len];
+                    Ok(RawString(core.to_string()))
+                } else {
+                    Err(E::custom(format!(
+                        "string does not start and end with {}",
+                        RAW_MARK
+                    )))
+                }
+            }
+        }
+
+        deserializer.deserialize_str(RawStringVisitor)
     }
 }
 

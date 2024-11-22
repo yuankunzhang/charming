@@ -1,8 +1,8 @@
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
 use crate::element::{AxisType, NameLocation};
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct ParallelAxis {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -39,6 +39,7 @@ pub struct ParallelAxis {
     #[serde(skip_serializing_if = "Option::is_none")]
     start_value: Option<f64>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: Vec<String>,
 }

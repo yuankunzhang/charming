@@ -99,7 +99,7 @@ use component::{
 };
 use datatype::Dataset;
 use element::{process_raw_strings, AxisPointer, Color, MarkLine, Tooltip};
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 use serde_with::{formats::PreferOne, serde_as, OneOrMany};
 use series::Series;
 /**
@@ -237,9 +237,10 @@ mouse pointer.
 zoom, restore, and reset.
  */
 #[serde_as]
-#[derive(Serialize, Debug, PartialEq, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Chart {
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     title: Vec<Title>,
 
@@ -252,54 +253,69 @@ pub struct Chart {
     #[serde(skip_serializing_if = "Option::is_none")]
     toolbox: Option<Toolbox>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     grid: Vec<Grid>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     #[serde(rename = "grid3D")]
     grid3d: Vec<Grid3D>,
 
+    #[serde(default)]
     #[serde_as(as = "OneOrMany<_, PreferOne>")]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     x_axis: Vec<Axis>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     #[serde(rename = "xAxis3D")]
     x_axis3d: Vec<Axis3D>,
 
+    #[serde(default)]
     #[serde_as(as = "OneOrMany<_, PreferOne>")]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     y_axis: Vec<Axis>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     #[serde(rename = "yAxis3D")]
     y_axis3d: Vec<Axis3D>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     #[serde(rename = "zAxis3D")]
     z_axis3d: Vec<Axis3D>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     polar: Vec<PolarCoordinate>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     angle_axis: Vec<AngleAxis>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     radius_axis: Vec<RadiusAxis>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Option::is_none")]
     single_axis: Option<SingleAxis>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     parallel_axis: Vec<ParallelAxis>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     axis_pointer: Vec<AxisPointer>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     visual_map: Vec<VisualMap>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data_zoom: Vec<DataZoom>,
 
@@ -309,9 +325,11 @@ pub struct Chart {
     #[serde(skip_serializing_if = "Option::is_none")]
     dataset: Option<Dataset>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     radar: Vec<RadarCoordinate>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     color: Vec<Color>,
 
@@ -324,9 +342,11 @@ pub struct Chart {
     #[serde(skip_serializing_if = "Option::is_none")]
     aria: Option<Aria>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     series: Vec<Series>,
 
+    #[serde(default)]
     #[serde(skip_serializing)]
     geo_maps: Vec<GeoMap>,
 }

@@ -1,4 +1,8 @@
-use serde::{ser::SerializeSeq, Serialize};
+use serde::{
+    de::{SeqAccess, Visitor},
+    ser::SerializeSeq,
+    Deserialize, Deserializer, Serialize,
+};
 
 use crate::{
     datatype::CompositeValue,
@@ -37,6 +41,42 @@ impl Serialize for ThemeRiverData {
     }
 }
 
+impl<'de> Deserialize<'de> for ThemeRiverData {
+    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+    where
+        D: Deserializer<'de>,
+    {
+        struct ThemeRiverDataVisitor;
+
+        impl<'de> Visitor<'de> for ThemeRiverDataVisitor {
+            type Value = ThemeRiverData;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter) -> std::fmt::Result {
+                formatter.write_str("a sequence of three CompositeValue elements")
+            }
+
+            fn visit_seq<V>(self, mut seq: V) -> Result<ThemeRiverData, V::Error>
+            where
+                V: SeqAccess<'de>,
+            {
+                let date = seq
+                    .next_element()?
+                    .ok_or_else(|| serde::de::Error::invalid_length(0, &self))?;
+                let value = seq
+                    .next_element()?
+                    .ok_or_else(|| serde::de::Error::invalid_length(1, &self))?;
+                let name = seq
+                    .next_element()?
+                    .ok_or_else(|| serde::de::Error::invalid_length(2, &self))?;
+
+                Ok(ThemeRiverData { date, value, name })
+            }
+        }
+
+        deserializer.deserialize_seq(ThemeRiverDataVisitor)
+    }
+}
+
 impl<D, V, N> From<(D, V, N)> for ThemeRiverData
 where
     D: Into<CompositeValue>,
@@ -48,7 +88,7 @@ where
     }
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct ThemeRiver {
     #[serde(rename = "type")]
@@ -93,6 +133,7 @@ pub struct ThemeRiver {
     #[serde(skip_serializing_if = "Option::is_none")]
     tooltip: Option<Tooltip>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: Vec<ThemeRiverData>,
 }

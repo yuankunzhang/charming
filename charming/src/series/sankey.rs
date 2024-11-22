@@ -5,7 +5,7 @@ use crate::{
     element::{Emphasis, ItemStyle, Label, LineStyle, Orient, Tooltip},
 };
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
 pub enum SankeyNodeAlign {
     Left,
@@ -92,7 +92,7 @@ where
     }
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Sankey {
     #[serde(rename = "type")]
@@ -146,12 +146,14 @@ pub struct Sankey {
     #[serde(skip_serializing_if = "Option::is_none")]
     line_style: Option<LineStyle>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     links: Vec<SankeyLink>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     tooltip: Option<Tooltip>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: Vec<SankeyNode>,
 }

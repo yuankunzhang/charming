@@ -1,13 +1,13 @@
 use std::collections::HashMap;
 
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
 use crate::{
     datatype::CompositeValue,
     element::{Color, Icon, ItemStyle, LabelAlign, LineStyle, Orient, Padding, TextStyle},
 };
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
 pub enum LegendType {
     /// Simple legend.
@@ -17,7 +17,7 @@ pub enum LegendType {
     Scroll,
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
 pub enum LegendSelectedMode {
     /// Multiple selection.
@@ -27,7 +27,7 @@ pub enum LegendSelectedMode {
     Single,
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct LegendItem {
     pub name: String,
@@ -69,7 +69,7 @@ impl From<(String, String)> for LegendItem {
     }
 }
 
-#[derive(Serialize, Debug, PartialEq, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Legend {
     /// Type of legend.
@@ -172,6 +172,7 @@ pub struct Legend {
     #[serde(skip_serializing_if = "Option::is_none")]
     inactive_color: Option<Color>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: Vec<LegendItem>,
 }

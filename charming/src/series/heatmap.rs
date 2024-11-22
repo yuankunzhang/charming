@@ -1,11 +1,11 @@
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
 use crate::{
     datatype::DataFrame,
     element::{CoordinateSystem, Emphasis, ItemStyle, Label, Tooltip},
 };
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Heatmap {
     #[serde(rename = "type")]
@@ -62,6 +62,7 @@ pub struct Heatmap {
     #[serde(skip_serializing_if = "Option::is_none")]
     tooltip: Option<Tooltip>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: Vec<DataFrame>,
 }

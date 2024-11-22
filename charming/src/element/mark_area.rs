@@ -1,8 +1,8 @@
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
 use super::{blur::Blur, emphasis::Emphasis, item_style::ItemStyle, label::Label};
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct MarkAreaData {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -46,7 +46,7 @@ impl MarkAreaData {
     }
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct MarkArea {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -64,6 +64,7 @@ pub struct MarkArea {
     #[serde(skip_serializing_if = "Option::is_none")]
     blur: Option<Blur>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: Vec<(MarkAreaData, MarkAreaData)>,
 }

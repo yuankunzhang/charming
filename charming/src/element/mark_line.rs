@@ -1,10 +1,14 @@
-use serde::{ser::SerializeSeq, Serialize};
+use serde::{
+    de::{SeqAccess, Visitor},
+    ser::SerializeSeq,
+    Deserialize, Deserializer, Serialize,
+};
 
 use crate::datatype::CompositeValue;
 
 use super::{label::Label, line_style::LineStyle, symbol::Symbol};
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
 pub enum MarkLineDataType {
     Min,
@@ -25,7 +29,7 @@ impl From<&str> for MarkLineDataType {
     }
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct MarkLineData {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -151,7 +155,47 @@ impl Serialize for MarkLineVariant {
     }
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+impl<'de> Deserialize<'de> for MarkLineVariant {
+    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+    where
+        D: Deserializer<'de>,
+    {
+        struct MarkLineVariantVisitor;
+
+        impl<'de> Visitor<'de> for MarkLineVariantVisitor {
+            type Value = MarkLineVariant;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter) -> std::fmt::Result {
+                formatter.write_str("a single MarkLineData or a sequence of two MarkLineData")
+            }
+
+            fn visit_newtype_struct<E>(self, value: E) -> Result<Self::Value, E::Error>
+            where
+                E: Deserializer<'de>,
+            {
+                let data = MarkLineData::deserialize(value)?;
+                Ok(MarkLineVariant::Simple(data))
+            }
+
+            fn visit_seq<V>(self, mut seq: V) -> Result<Self::Value, V::Error>
+            where
+                V: SeqAccess<'de>,
+            {
+                let start = seq
+                    .next_element()?
+                    .ok_or_else(|| serde::de::Error::invalid_length(0, &self))?;
+                let end = seq
+                    .next_element()?
+                    .ok_or_else(|| serde::de::Error::invalid_length(1, &self))?;
+                Ok(MarkLineVariant::StartToEnd(start, end))
+            }
+        }
+
+        deserializer.deserialize_any(MarkLineVariantVisitor)
+    }
+}
+
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct MarkLine {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -166,6 +210,7 @@ pub struct MarkLine {
     #[serde(skip_serializing_if = "Option::is_none")]
     z: Option<f64>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     symbol: Vec<Symbol>,
 
@@ -175,6 +220,7 @@ pub struct MarkLine {
     #[serde(skip_serializing_if = "Option::is_none")]
     silent: Option<bool>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: Vec<MarkLineVariant>,
 }

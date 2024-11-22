@@ -1,6 +1,6 @@
 use std::vec;
 
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
 use crate::{
     datatype::{DataFrame, DataPoint},
@@ -9,7 +9,7 @@ use crate::{
     },
 };
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Bar {
     #[serde(rename = "type")]
@@ -72,6 +72,7 @@ pub struct Bar {
     #[serde(skip_serializing_if = "Option::is_none")]
     tooltip: Option<Tooltip>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: DataFrame,
 }

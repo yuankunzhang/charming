@@ -1,11 +1,11 @@
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
 use crate::{
     datatype::{DataFrame, DataPoint},
     element::{AreaStyle, ColorBy, Emphasis, LineStyle, Symbol, Tooltip},
 };
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Radar {
     #[serde(rename = "type")]
@@ -17,6 +17,7 @@ pub struct Radar {
     #[serde(skip_serializing_if = "Option::is_none")]
     color_by: Option<ColorBy>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: DataFrame,
 

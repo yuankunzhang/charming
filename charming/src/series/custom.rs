@@ -1,4 +1,4 @@
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
 use crate::{
     datatype::{CompositeValue, DataFrame, DataPoint, Dimension},
@@ -8,7 +8,7 @@ use crate::{
     },
 };
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Custom {
     type_: String,
@@ -58,6 +58,7 @@ pub struct Custom {
     #[serde(skip_serializing_if = "Option::is_none")]
     selected_mode: Option<bool>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     dimensions: Vec<Dimension>,
 
@@ -67,6 +68,7 @@ pub struct Custom {
     #[serde(skip_serializing_if = "Option::is_none")]
     tooltip: Option<Tooltip>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: DataFrame,
 }
