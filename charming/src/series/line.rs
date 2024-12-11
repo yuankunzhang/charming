@@ -80,6 +80,12 @@ pub struct Line {
     #[serde(skip_serializing_if = "Option::is_none")]
     tooltip: Option<Tooltip>,
 
+    #[serde(skip_serializing_if = "Option::is_none")]
+    silent: Option<bool>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    z: Option<i32>,
+
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: DataFrame,
 }
@@ -116,6 +122,8 @@ impl Line {
             x_axis_index: None,
             y_axis_index: None,
             tooltip: None,
+            silent: None,
+            z: None,
             data: vec![],
         }
     }
@@ -229,6 +237,16 @@ impl Line {
 
     pub fn tooltip(mut self, tooltip: Tooltip) -> Self {
         self.tooltip = Some(tooltip);
+        self
+    }
+
+    pub fn silent(mut self, silent: bool) -> Self {
+        self.silent = Some(silent);
+        self
+    }
+
+    pub fn z(mut self, z: i32) -> Self {
+        self.z = Some(z);
         self
     }
 
