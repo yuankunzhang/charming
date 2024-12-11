@@ -245,8 +245,8 @@ impl Line {
         self
     }
 
-    pub fn z(mut self, z: i32) -> Self {
-        self.z = Some(z);
+    pub fn z<I: Into<i32>>(mut self, z: I) -> Self {
+        self.z = Some(z.into());
         self
     }
 
