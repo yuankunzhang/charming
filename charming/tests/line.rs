@@ -1,10 +1,5 @@
 use assert_json_diff::assert_json_eq;
-use charming::{
-    component::Axis,
-    element::{AxisType, Emphasis},
-    series::Line,
-    Chart,
-};
+use charming::{component::Axis, element::AxisType, series::Line, Chart};
 use serde_json::json;
 
 #[test]
@@ -23,11 +18,6 @@ fn basic_line_chart() {
           {
             "data": [150, 230, 224, 218, 135, 147, 260],
             "type": "line",
-            "silent": false,
-            "z": 3,
-            "emphasis": {
-              "disabled": false
-            }
           }
         ],
       }
@@ -40,13 +30,7 @@ fn basic_line_chart() {
                 .data(vec!["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]),
         )
         .y_axis(Axis::new().type_(AxisType::Value))
-        .series(
-            Line::new()
-                .silent(false)
-                .z(3)
-                .emphasis(Emphasis::new().disabled(false))
-                .data(vec![150, 230, 224, 218, 135, 147, 260]),
-        );
+        .series(Line::new().data(vec![150, 230, 224, 218, 135, 147, 260]));
 
     let charming_json = serde_json::from_str::<serde_json::Value>(&chart.to_string()).unwrap();
     println!("{}", serde_json::to_string_pretty(&echarts_json).unwrap());
