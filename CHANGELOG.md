@@ -1,9 +1,7 @@
 # Changelog
 
-## [Unreleased]
-
-## 0.4.1 - 11/03/2024 (tbd)
-- Starts of Changelog
+## Unreleased (tbd)
+- Start of Changelog
 - Deriving a lot of common functionality (Debug, Clone, etc.) [#86](https://github.com/yuankunzhang/charming/pull/86)
 - The wonderful dz! macro [#100](https://github.com/yuankunzhang/charming/pull/100)
 - Some new fields, e.g. Label for Scatter plot, ItemSyle for BoxPlot, MarkLine's precision, Tooltips [#96](https://github.com/yuankunzhang/charming/pull/96), [#99](https://github.com/yuankunzhang/charming/pull/99), [#102](https://github.com/yuankunzhang/charming/pull/102)
@@ -15,6 +13,5 @@
 - Added startValue to axis types [#123](https://github.com/yuankunzhang/charming/pull/123)
 - Added step line support [#107](https://github.com/yuankunzhang/charming/pull/107)
 
-<a name="breaking_changes_0.4.1">[Breaking Changes:](#breaking_changes_0.4.1)</a>
+### Breaking changes
 - None
-
