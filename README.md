@@ -2,7 +2,6 @@
 
 [![crates.io](https://img.shields.io/crates/v/charming.svg)](https://crates.io/crates/charming)
 [![docs.rs](https://docs.rs/charming/badge.svg)](https://docs.rs/charming)
-[![discord](https://dcbadge.vercel.app/api/server/u3wmVPcW?style=flat)](https://discord.gg/u3wmVPcW)
 
 Charming is a powerful and versatile chart rendering library for Rust that leverages the power of [Apache ECharts](https://echarts.apache.org/en/index.html) to deliver high-quality data visualizations. Built with the Rust programming language, this library aims to provide the Rust ecosystem with an intuitive and effective way to generate and visualize charts, using a declarative and user-friendly API.
 
@@ -147,7 +146,7 @@ use charming::WasmRenderer;
 // Chart dimension 1000x800.
 let renderer = WasmRenderer::new(1000, 800);
 // Render the chart in the WebAssembly runtime
-renderer.render(&chart).unwrap();
+renderer.render("my-chart-id", &chart).unwrap();
 ```
 
 ### Themes
