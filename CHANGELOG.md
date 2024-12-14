@@ -13,6 +13,7 @@
 - Fixed some serialization bugs [#97](https://github.com/yuankunzhang/charming/pull/97)
 - Fixed a bug where the ssr renderer did not work [#88](https://github.com/yuankunzhang/charming/pull/88)
 - Added startValue to axis types [#123](https://github.com/yuankunzhang/charming/pull/123)
+- Added step line support [#107](https://github.com/yuankunzhang/charming/pull/107)
 
 <a name="breaking_changes_0.4.1">[Breaking Changes:](#breaking_changes_0.4.1)</a>
 - None
