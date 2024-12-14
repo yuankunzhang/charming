@@ -4,7 +4,7 @@ use crate::{
     datatype::{DataFrame, DataPoint},
     element::{
         smoothness::Smoothness, AreaStyle, CoordinateSystem, DimensionEncode, Emphasis, ItemStyle,
-        Label, LineStyle, MarkArea, MarkLine, MarkPoint, Symbol, SymbolSize, Tooltip,
+        Label, LineStyle, MarkArea, MarkLine, MarkPoint, Step, Symbol, SymbolSize, Tooltip,
     },
 };
 
@@ -52,6 +52,9 @@ pub struct Line {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     smooth: Option<Smoothness>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    step: Option<Step>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     connect_nulls: Option<bool>,
@@ -113,6 +116,7 @@ impl Line {
             item_style: None,
             emphasis: None,
             smooth: None,
+            step: None,
             connect_nulls: None,
             mark_point: None,
             mark_line: None,
@@ -192,6 +196,11 @@ impl Line {
     /// Smoothness.
     pub fn smooth<S: Into<Smoothness>>(mut self, smooth: S) -> Self {
         self.smooth = Some(smooth.into());
+        self
+    }
+
+    pub fn step<S: Into<Step>>(mut self, step: S) -> Self {
+        self.step = Some(step.into());
         self
     }
 
