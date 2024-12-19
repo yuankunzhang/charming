@@ -11,6 +11,7 @@ pub mod line_gradient;
 pub mod rainfall;
 pub mod rainfall_vs_evaporation;
 pub mod smoothed_line;
+pub mod split_legend;
 pub mod stacked_area;
 pub mod stacked_line;
 pub mod step_line;

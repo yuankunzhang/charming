@@ -93,7 +93,7 @@ pub mod theme;
 pub use renderer::*;
 
 use component::{
-    AngleAxis, Aria, Axis, Axis3D, DataZoom, GeoMap, Grid, Grid3D, Legend, ParallelAxis,
+    AngleAxis, Aria, Axis, Axis3D, DataZoom, GeoMap, Grid, Grid3D, LegendConfig, ParallelAxis,
     ParallelCoordinate, PolarCoordinate, RadarCoordinate, RadiusAxis, SaveAsImageType, SingleAxis,
     Title, Toolbox, VisualMap,
 };
@@ -247,7 +247,7 @@ pub struct Chart {
     tooltip: Option<Tooltip>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    legend: Option<Legend>,
+    legend: Option<LegendConfig>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     toolbox: Option<Toolbox>,
@@ -381,8 +381,8 @@ impl Chart {
         self
     }
 
-    pub fn legend(mut self, legend: Legend) -> Self {
-        self.legend = Some(legend);
+    pub fn legend<L: Into<LegendConfig>>(mut self, legend: L) -> Self {
+        self.legend = Some(legend.into());
         self
     }
 
