@@ -7,6 +7,25 @@ use crate::{
     element::{Color, Icon, ItemStyle, LabelAlign, LineStyle, Orient, Padding, TextStyle},
 };
 
+#[derive(Debug, PartialEq, Serialize, Clone)]
+#[serde(untagged)]
+pub enum LegendConfig {
+    Single(Legend),
+    Multiple(Vec<Legend>),
+}
+
+impl From<Legend> for LegendConfig {
+    fn from(legend: Legend) -> Self {
+        LegendConfig::Single(legend)
+    }
+}
+
+impl From<Vec<Legend>> for LegendConfig {
+    fn from(legends: Vec<Legend>) -> Self {
+        LegendConfig::Multiple(legends)
+    }
+}
+
 #[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
 pub enum LegendType {

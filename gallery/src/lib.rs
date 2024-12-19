@@ -123,6 +123,7 @@ lazy_static! {
         insert!(m, line, smoothed_line);
         insert!(m, line, stacked_area);
         insert!(m, line, stacked_line);
+        insert!(m, line, split_legend);
         insert!(m, line, step_line);
         insert!(m, line, temperature_change);
         insert!(m, line, two_value_axes_in_polar);
