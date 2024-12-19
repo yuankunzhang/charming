@@ -10,13 +10,13 @@ use crate::{
 #[derive(Debug, PartialEq, Serialize, Clone)]
 #[serde(untagged)]
 pub enum LegendConfig {
-    Single(Legend),
+    Single(Box<Legend>),
     Multiple(Vec<Legend>),
 }
 
 impl From<Legend> for LegendConfig {
     fn from(legend: Legend) -> Self {
-        LegendConfig::Single(legend)
+        Self::Single(Box::new(legend))
     }
 }
 
