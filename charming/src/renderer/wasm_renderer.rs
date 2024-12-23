@@ -3,7 +3,6 @@ use serde::Serialize;
 use serde_wasm_bindgen::to_value;
 use wasm_bindgen::prelude::*;
 use wasm_bindgen::JsValue;
-use web_sys::js_sys::JSON;
 
 pub struct WasmRenderer {
     theme: Theme,
@@ -68,7 +67,7 @@ impl WasmRenderer {
 
     pub fn update(echarts: &Echarts, chart: &Chart) {
         let json_str = serde_json::to_string(chart).unwrap();
-        let option = JSON::parse(&json_str).unwrap();
+        let option = js_sys::JSON::parse(&json_str).unwrap();
         echarts.set_option(option);
     }
 }

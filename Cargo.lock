@@ -354,6 +354,7 @@ dependencies = [
  "deno_core",
  "handlebars",
  "image",
+ "js-sys",
  "resvg",
  "serde",
  "serde-wasm-bindgen",
