@@ -22,6 +22,7 @@ serde_json = "1.0"
 serde_v8 = { version = "0.220", optional = true }
 serde_with = "3.11.0"
 wasm-bindgen = { version = "0.2", optional = true }
+js-sys = { version = "0.3", optional = true }
 
 [dev-dependencies]
 assert-json-diff = "2.0.2"
@@ -39,7 +40,7 @@ features = [
 default = ["html"]
 html = ["handlebars"]
 ssr = ["html", "deno_core", "image", "resvg", "serde_v8"]
-wasm = ["serde-wasm-bindgen", "wasm-bindgen", "web-sys"]
+wasm = ["serde-wasm-bindgen", "wasm-bindgen", "web-sys", "js-sys"]
 
 [package.metadata.docs.rs]
 all-features = true
