@@ -126,6 +126,7 @@ lazy_static! {
         insert!(m, line, split_legend);
         insert!(m, line, step_line);
         insert!(m, line, temperature_change);
+        insert!(m, line, time_axis);
         insert!(m, line, two_value_axes_in_polar);
         m
     };
