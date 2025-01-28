@@ -16,4 +16,5 @@ pub mod stacked_area;
 pub mod stacked_line;
 pub mod step_line;
 pub mod temperature_change;
+pub mod time_axis;
 pub mod two_value_axes_in_polar;

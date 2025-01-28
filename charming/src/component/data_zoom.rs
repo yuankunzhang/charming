@@ -71,10 +71,10 @@ pub struct DataZoom {
     end: Option<f64>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    start_value: Option<f64>,
+    start_value: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    end_value: Option<f64>,
+    end_value: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     min_span: Option<f64>,
@@ -240,12 +240,12 @@ impl DataZoom {
         self
     }
 
-    pub fn start_value<F: Into<f64>>(mut self, start_value: F) -> Self {
+    pub fn start_value<C: Into<CompositeValue>>(mut self, start_value: C) -> Self {
         self.start_value = Some(start_value.into());
         self
     }
 
-    pub fn end_value<F: Into<f64>>(mut self, end_value: F) -> Self {
+    pub fn end_value<C: Into<CompositeValue>>(mut self, end_value: C) -> Self {
         self.end_value = Some(end_value.into());
         self
     }
