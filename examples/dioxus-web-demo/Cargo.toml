@@ -7,8 +7,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-dioxus = "0.3"
-dioxus-web = "0.3"
+dioxus = { version = "0.6", features = ["web"] }
 
 charming = { path = "../../charming", features = ["wasm"] }
 
