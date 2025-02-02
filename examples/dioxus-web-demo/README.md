@@ -40,7 +40,7 @@ script = [
 ## Getting started
 
 ```sh
-dioxus serve
+dioxus serve --platform web
 ```
 
 <http://localhost:8080/>
