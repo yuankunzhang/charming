@@ -118,8 +118,8 @@ impl AxisLabel {
         self
     }
 
-    pub fn custom_values<C: Into<CompositeValue>>(mut self, custom_value: C) -> Self {
-        self.custom_values.push(custom_value.into());
+    pub fn custom_values<C: Into<CompositeValue>>(mut self, custom_values: Vec<C>) -> Self {
+        self.custom_values = custom_values.into_iter().map(|c| c.into()).collect();
         self
     }
 }
