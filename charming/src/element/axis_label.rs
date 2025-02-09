@@ -1,5 +1,7 @@
 use serde::Serialize;
 
+use crate::datatype::CompositeValue;
+
 use super::{
     color::Color,
     font_settings::{FontFamily, FontStyle, FontWeight},
@@ -38,6 +40,9 @@ pub struct AxisLabel {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     interval: Option<f64>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    custom_values: Option<Vec<CompositeValue>>,
 }
 
 impl Default for AxisLabel {
@@ -59,6 +64,7 @@ impl AxisLabel {
             formatter: None,
             rotate: None,
             interval: None,
+            custom_values: None,
         }
     }
 
@@ -109,6 +115,11 @@ impl AxisLabel {
 
     pub fn interval<F: Into<f64>>(mut self, interval: F) -> Self {
         self.interval = Some(interval.into());
+        self
+    }
+
+    pub fn custom_values(mut self, custom_values: Vec<CompositeValue>) -> Self {
+        self.custom_values = Some(custom_values);
         self
     }
 }
