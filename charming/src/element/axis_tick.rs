@@ -22,8 +22,8 @@ pub struct AxisTick {
     #[serde(skip_serializing_if = "Option::is_none")]
     line_style: Option<LineStyle>,
 
-    #[serde(skip_serializing_if = "Option::is_none")]
-    custom_values: Option<Vec<CompositeValue>>,
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    custom_values: Vec<CompositeValue>,
 }
 
 impl Default for AxisTick {
@@ -40,7 +40,7 @@ impl AxisTick {
             length: None,
             distance: None,
             line_style: None,
-            custom_values: None,
+            custom_values: vec![],
         }
     }
 
@@ -69,8 +69,8 @@ impl AxisTick {
         self
     }
 
-    pub fn custom_values(mut self, custom_values: Vec<CompositeValue>) -> Self {
-        self.custom_values = Some(custom_values);
+    pub fn custom_values<C: Into<CompositeValue>>(mut self, custom_value: C) -> Self {
+        self.custom_values.push(custom_value.into());
         self
     }
 }

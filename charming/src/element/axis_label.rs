@@ -41,8 +41,8 @@ pub struct AxisLabel {
     #[serde(skip_serializing_if = "Option::is_none")]
     interval: Option<f64>,
 
-    #[serde(skip_serializing_if = "Option::is_none")]
-    custom_values: Option<Vec<CompositeValue>>,
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    custom_values: Vec<CompositeValue>,
 }
 
 impl Default for AxisLabel {
@@ -64,7 +64,7 @@ impl AxisLabel {
             formatter: None,
             rotate: None,
             interval: None,
-            custom_values: None,
+            custom_values: vec![],
         }
     }
 
@@ -118,8 +118,8 @@ impl AxisLabel {
         self
     }
 
-    pub fn custom_values(mut self, custom_values: Vec<CompositeValue>) -> Self {
-        self.custom_values = Some(custom_values);
+    pub fn custom_values<C: Into<CompositeValue>>(mut self, custom_value: C) -> Self {
+        self.custom_values.push(custom_value.into());
         self
     }
 }
