@@ -2,8 +2,8 @@ use charming::{
     component::{Axis, Grid, Legend, Title},
     df,
     element::{
-        Color, ColorStop, Emphasis, EmphasisFocus, Formatter, ItemStyle, Label, LabelPosition,
-        LineStyle, LineStyleType, SplitLine,
+        Color, ColorStop, Emphasis, EmphasisFocus, FormatterFunction, ItemStyle, Label,
+        LabelPosition, LineStyle, LineStyleType, SplitLine,
     },
     series::Scatter,
     Chart,
@@ -94,8 +94,9 @@ pub fn chart() -> Chart {
                     Emphasis::new().focus(EmphasisFocus::Series).label(
                         Label::new()
                             .show(true)
-                            .formatter(Formatter::Function(
-                                "function (param) { return param.data[3]; }".into(),
+                            .formatter(FormatterFunction::new_with_args(
+                                "params",
+                                "return params.data[3];",
                             ))
                             .position(LabelPosition::Top),
                     ),
@@ -125,8 +126,9 @@ pub fn chart() -> Chart {
                     Emphasis::new().focus(EmphasisFocus::Series).label(
                         Label::new()
                             .show(true)
-                            .formatter(Formatter::Function(
-                                "function (param) { return param.data[3]; }".into(),
+                            .formatter(FormatterFunction::new_with_args(
+                                "params",
+                                "return params.data[3];",
                             ))
                             .position(LabelPosition::Top),
                     ),

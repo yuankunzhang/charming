@@ -1,8 +1,8 @@
 use charming::{
     component::{Axis, Grid, Title},
     element::{
-        AreaStyle, AxisLabel, AxisPointer, AxisPointerType, AxisType, Formatter, ItemStyle, Label,
-        LineStyle, Symbol, Tooltip, Trigger,
+        AreaStyle, AxisLabel, AxisPointer, AxisPointerType, AxisType, FormatterFunction, ItemStyle,
+        Label, LineStyle, Symbol, Tooltip, Trigger,
     },
     series::Line,
     Chart,
@@ -41,10 +41,8 @@ pub fn chart() -> Chart {
                     ),
                 )
                 .formatter(
-                    Formatter::Function(
-                        format!("function (params) {{ return (params[2].name + '<br />' + ((params[2].value - {}) * 100).toFixed(1) + '%'); }}", base
-                    ).into())
-                ),
+                    FormatterFunction::new_with_args("params", &format!("return (params[2].name + '<br />' + ((params[2].value - {}) * 100).toFixed(1) + '%');", base)),
+                )
         )
         .grid(Grid::new().left("3%").right("4%").bottom("3%").contain_label(true))
         .x_axis(
@@ -53,21 +51,19 @@ pub fn chart() -> Chart {
                 .data(data.iter().map(|x| x.date.clone()).collect())
                 .axis_label(
                     AxisLabel::new().formatter(
-                        Formatter::Function(
-                            "function (value, idx) { var date = new Date(value); return idx === 0 ? value : [date.getMonth() + 1, date.getDate()].join('-'); }".into())
-                        )
-                    )
+                        FormatterFunction::new_with_args("value, idx", "var date = new Date(value); return idx === 0 ? value : [date.getMonth() + 1, date.getDate()].join('-');")
+                    ))
                 .boundary_gap(false)
         )
         .y_axis(
             Axis::new()
                 .axis_label(AxisLabel::new().formatter(
-                    Formatter::Function(format!("function (val) {{ return (val - {}) * 100 + '%'; }}", base).into()))
+                    FormatterFunction::new_with_args("val", &format!("return (val - {}) * 100 + '%';", base)))
                 )
                 .axis_pointer(
                     AxisPointer::new().label(
                         Label::new().formatter(
-                            Formatter::Function(format!("function (params) {{ return ((params.value - {}) * 100).toFixed(1) + '%'; }}", base).into())
+                            FormatterFunction::new_with_args("params", &format!("return ((params.value - {}) * 100).toFixed(1) + '%';", base))
                         )
                     )
                 ).split_number(3)
