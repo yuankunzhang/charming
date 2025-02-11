@@ -1,4 +1,4 @@
-use crate::{element::process_raw_strings, theme::Theme, Chart, EchartsError};
+use crate::{theme::Theme, Chart, EchartsError};
 use serde::Serialize;
 use serde_wasm_bindgen::to_value;
 use wasm_bindgen::prelude::*;
