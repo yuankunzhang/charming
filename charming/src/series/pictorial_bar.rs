@@ -7,7 +7,7 @@ use crate::{
     },
 };
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct PictorialBar {
     #[serde(rename = "type")]

@@ -5,7 +5,7 @@ use crate::{
     element::{ColorBy, CoordinateSystem, ItemStyle, Tooltip},
 };
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Boxplot {
     #[serde(rename = "type")]

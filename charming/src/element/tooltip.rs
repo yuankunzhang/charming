@@ -21,7 +21,7 @@ pub enum Trigger {
     None,
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Tooltip {
     #[serde(skip_serializing_if = "Option::is_none")]

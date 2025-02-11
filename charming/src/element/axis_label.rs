@@ -6,7 +6,7 @@ use super::{
     Formatter,
 };
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct AxisLabel {
     #[serde(skip_serializing_if = "Option::is_none")]

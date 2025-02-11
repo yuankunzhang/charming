@@ -15,7 +15,7 @@ pub enum EmphasisFocus {
     Adjacency,
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Emphasis {
     #[serde(skip_serializing_if = "Option::is_none")]

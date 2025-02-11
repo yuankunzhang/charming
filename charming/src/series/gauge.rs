@@ -9,7 +9,7 @@ use crate::{
     },
 };
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct GaugeDetail {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -213,7 +213,7 @@ impl GaugeProgress {
     }
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Gauge {
     #[serde(rename = "type")]

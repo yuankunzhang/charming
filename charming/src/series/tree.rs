@@ -31,7 +31,7 @@ pub enum TreeEdgeShape {
     Polyline,
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct TreeLeaves {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -71,7 +71,7 @@ pub struct TreeNode {
 }
 
 /// The tree diagram is mainly used to display the tree data structure.
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Tree {
     #[serde(rename = "type")]
