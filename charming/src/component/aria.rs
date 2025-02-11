@@ -202,7 +202,7 @@ Chart::new()
     .series(Bar::new().data(vec![140, 230, 120, 50, 30, 150, 120]));
 ```
  */
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Aria {
     /// Whether to enable WAI-ARIA.

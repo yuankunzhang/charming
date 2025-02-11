@@ -12,7 +12,7 @@ pub enum ProgressiveChunkMode {
     Mod,
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Parallel {
     #[serde(rename = "type")]

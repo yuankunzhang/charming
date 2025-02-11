@@ -48,7 +48,7 @@ where
     }
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct ThemeRiver {
     #[serde(rename = "type")]

@@ -6,7 +6,7 @@ use crate::element::{
 };
 
 /// The angle axis in Polar Coordinate.
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct AngleAxis {
     #[serde(skip_serializing_if = "Option::is_none")]

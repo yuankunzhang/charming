@@ -5,7 +5,7 @@ use crate::{
     element::{CoordinateSystem, Emphasis, ItemStyle, Label, Tooltip},
 };
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Heatmap {
     #[serde(rename = "type")]

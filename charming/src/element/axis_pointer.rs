@@ -78,7 +78,7 @@ impl AxisPointerLink {
 
 /// Axis Pointer is a tool for displaying reference line and axis value under
 /// mouse pointer.
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct AxisPointer {
     /// Component ID.

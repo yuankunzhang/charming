@@ -51,7 +51,7 @@ pub enum LabelVerticalAlign {
     Bottom,
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Label {
     #[serde(skip_serializing_if = "Option::is_none")]

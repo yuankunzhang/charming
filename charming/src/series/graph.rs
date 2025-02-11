@@ -208,7 +208,7 @@ pub struct GraphData {
     pub categories: Vec<GraphCategory>,
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Graph {
     #[serde(rename = "type")]
