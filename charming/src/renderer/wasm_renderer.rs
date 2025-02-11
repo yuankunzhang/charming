@@ -1,4 +1,4 @@
-use crate::{theme::Theme, Chart, EchartsError};
+use crate::{element::process_raw_strings, theme::Theme, Chart, EchartsError};
 use serde::Serialize;
 use serde_wasm_bindgen::to_value;
 use wasm_bindgen::prelude::*;
@@ -66,9 +66,8 @@ impl WasmRenderer {
     }
 
     pub fn update(echarts: &Echarts, chart: &Chart) {
-        let json_str = serde_json::to_string(chart).unwrap();
-        let option = js_sys::JSON::parse(&json_str).unwrap();
-        echarts.set_option(option);
+        let js = serde_wasm_bindgen::to_value(&chart).unwrap();
+        echarts.set_option(js);
     }
 }
 
