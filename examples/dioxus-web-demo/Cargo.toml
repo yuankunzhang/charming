@@ -7,11 +7,27 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-dioxus = { version = "0.6", features = ["web"] }
-
+dioxus = { version = "0.6", features = [] }
 charming = { path = "../../charming", features = ["wasm"] }
 
 # Debug
-log = "0.4.19"
-dioxus-logger = "0.4.1"
+dioxus-logger = "0.6"
 console_error_panic_hook = "0.1.7"
+
+[features]
+default = ["web"]
+web = ["dioxus/web"]
+desktop = ["dioxus/desktop"]
+mobile = ["dioxus/mobile"]
+
+[profile]
+
+[profile.wasm-dev]
+inherits = "dev"
+opt-level = 1
+
+[profile.server-dev]
+inherits = "dev"
+
+[profile.android-dev]
+inherits = "dev"
