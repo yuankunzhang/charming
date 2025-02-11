@@ -12,6 +12,7 @@
 - Fixed a bug where the ssr renderer did not work [#88](https://github.com/yuankunzhang/charming/pull/88)
 - Added startValue to axis types [#123](https://github.com/yuankunzhang/charming/pull/123)
 - Added step line support [#107](https://github.com/yuankunzhang/charming/pull/107)
+- Many more small changes
 
 ### Breaking changes
-- None
+- Enable the use of formatter in wasm [#148](https://github.com/yuankunzhang/charming/pull/148)
