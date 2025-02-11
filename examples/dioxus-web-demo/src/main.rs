@@ -1,21 +1,34 @@
-use dioxus::{document::Script, prelude::*};
-use log::LevelFilter;
+use dioxus::prelude::*;
+use dioxus_logger::tracing::{info, Level};
 
-use charming::{component::Axis, element::AxisType, series::Line, Chart, WasmRenderer};
+use charming::{
+    component::Axis,
+    element::{formatter::FormatterFunction, AxisType, Tooltip},
+    series::Line,
+    Chart, WasmRenderer,
+};
 
 fn main() {
     // Init debug
-    dioxus_logger::init(LevelFilter::Info).expect("failed to init logger");
+    dioxus_logger::init(Level::INFO).expect("failed to init logger");
     console_error_panic_hook::set_once();
 
-    log::info!("starting app");
-    dioxus::LaunchBuilder::new().launch(|| app());
+    info!("starting app");
+    dioxus::launch(App);
 }
 
-fn app() -> Element {
+#[component]
+fn App() -> Element {
     let renderer = use_signal(|| WasmRenderer::new(600, 400));
     use_effect(move || {
         let chart = Chart::new()
+            .tooltip(Tooltip::new().formatter(FormatterFunction::new_with_args(
+                "params",
+                r#"
+                    var tooltip = "Value: ".concat(String(params.value));
+                    return tooltip;
+                "#,
+            )))
             .x_axis(
                 Axis::new()
                     .type_(AxisType::Category)
@@ -28,18 +41,15 @@ fn app() -> Element {
     });
 
     rsx! (
-        div {
-            style: "text-align: center;",
+        div { style: "text-align: center;",
             h1 { "🌗 Dioxus + Charming 🚀" }
             h3 { "Frontend that scales." }
-            p { "Dioxus is a portable, performant, and ergonomic framework for building cross-platform user interfaces in Rust." }
+            p {
+                "Dioxus is a portable, performant, and ergonomic framework for building cross-platform user interfaces in Rust."
+            }
         }
-        div {
-          style: "width: 100%; text-align: center;",
-          div {
-            id: "chart",
-            style: "display: inline-block;",
-          }
+        div { style: "width: 100%; text-align: center;",
+            div { id: "chart", style: "display: inline-block;" }
         }
     )
 }

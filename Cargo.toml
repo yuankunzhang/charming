@@ -1,3 +1,4 @@
 [workspace]
 resolver = "2"
 members = ["charming", "gallery"]
+exclude = ["examples/dioxus-web-demo", "examples/leptos-demo", "examples/yew-demo"]
