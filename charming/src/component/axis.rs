@@ -101,6 +101,14 @@ pub struct Axis {
     #[serde(skip_serializing_if = "Option::is_none")]
     start_value: Option<f64>,
 
+    /// Value of all graphical elements in x axis.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    z_level: Option<f64>,
+
+    /// Value of all graphical elements in x axis, which controls order of drawing graphical components.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    z: Option<f64>,
+
     /// Settings related to axis label.
     #[serde(skip_serializing_if = "Option::is_none")]
     axis_label: Option<AxisLabel>,
@@ -161,6 +169,8 @@ impl Axis {
             align_ticks: None,
             log_base: None,
             start_value: None,
+            z_level: None,
+            z: None,
             axis_label: None,
             axis_tick: None,
             axis_line: None,
@@ -283,6 +293,16 @@ impl Axis {
 
     pub fn start_value<F: Into<f64>>(mut self, start_value: F) -> Self {
         self.start_value = Some(start_value.into());
+        self
+    }
+
+    pub fn z_level<F: Into<f64>>(mut self, z_level: F) -> Self {
+        self.z_level = Some(z_level.into());
+        self
+    }
+
+    pub fn z<F: Into<f64>>(mut self, z: F) -> Self {
+        self.z = Some(z.into());
         self
     }
 
