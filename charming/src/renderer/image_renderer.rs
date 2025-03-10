@@ -1,12 +1,9 @@
-use std::io::Cursor;
+use std::{io::Cursor, sync::Arc};
 
 use deno_core::{v8, JsRuntime, RuntimeOptions};
 use handlebars::Handlebars;
 use image::RgbaImage;
-use resvg::{
-    tiny_skia::Pixmap,
-    usvg::{self, TreeTextToPath},
-};
+use resvg::{tiny_skia::Pixmap, usvg};
 
 use crate::{theme::Theme, Chart, EchartsError};
 
@@ -28,7 +25,7 @@ pub use image::ImageFormat;
 
 pub struct ImageRenderer {
     js_runtime: JsRuntime,
-    fontdb: usvg::fontdb::Database,
+    fontdb: Arc<usvg::fontdb::Database>,
     theme: Theme,
     width: u32,
     height: u32,
@@ -60,7 +57,7 @@ impl ImageRenderer {
 
         Self {
             js_runtime: runtime,
-            fontdb,
+            fontdb: Arc::new(fontdb),
             theme: Theme::Default,
             width,
             height,
@@ -129,12 +126,13 @@ impl ImageRenderer {
                 "Rendered image cannot be greater than i32::MAX/4".to_string(),
             ))?;
 
-        let mut tree: usvg::Tree =
-            usvg::TreeParsing::from_data(svg.as_bytes(), &usvg::Options::default())
-                .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))?;
-
-        tree.convert_text(&self.fontdb);
-        resvg::Tree::from_usvg(&tree).render(usvg::Transform::identity(), &mut pixels.as_mut());
+        let options = usvg::Options {
+            fontdb: Arc::clone(&self.fontdb),
+            ..Default::default()
+        };
+        let tree = usvg::Tree::from_data(svg.as_bytes(), &options)
+            .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))?;
+        resvg::render(&tree, usvg::Transform::identity(), &mut pixels.as_mut());
 
         let img = RgbaImage::from_vec(self.width, self.height, pixels.take()).ok_or(
             EchartsError::ImageRenderingError(
