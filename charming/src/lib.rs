@@ -24,6 +24,7 @@ provides three types of renderers:
   engine to execute the JavaScript code of Echarts and generate an image file.
   This renderer is disabled by default, and you need to enable the `ssr`
   (Server-Side Rendering) feature to use it.
+  To render raster images like PNG the `ssr-raster` feature must also be enabled.
 - **WASM renderer**: [`WasmRenderer`] renders a chart in a WebAssembly runtime.
   This renderer is disabled by default, and you need to enable the `wasm`
   feature to use it. Note that the `wasm` feature and `ssr` feature are
