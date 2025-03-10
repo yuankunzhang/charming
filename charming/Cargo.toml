@@ -8,7 +8,7 @@ repository = "https://github.com/yuankunzhang/charming"
 documentation = "https://github.com/yuankunzhang/charming"
 keywords = ["echarts", "visualization", "chart", "plot"]
 categories = ["visualization", "graphics"]
-license = "MIT/Apache-2.0"
+license = "MIT OR Apache-2.0"
 readme = "../README.md"
 
 [dependencies]
