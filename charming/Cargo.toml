@@ -14,7 +14,7 @@ readme = "../README.md"
 [dependencies]
 deno_core = { version = "0.311", optional = true }
 handlebars = { version = "4.3", optional = true }
-image = { version = "0.24", optional = true }
+image = { version = "0.25", optional = true }
 resvg = { version = "0.36", optional = true }
 serde = { version = "1.0", features = ["derive"] }
 serde-wasm-bindgen = { version = "0.6", optional = true }
