@@ -42,3 +42,27 @@ impl Theme {
         }
     }
 }
+
+impl TryFrom<&str> for Theme {
+    type Error = String;
+
+    fn try_from(name: &str) -> Result<Self, Self::Error> {
+        match name {
+            "" => Ok(Theme::Default),
+            "dark" => Ok(Theme::Dark),
+            "vintage" => Ok(Theme::Vintage),
+            "westeros" => Ok(Theme::Westeros),
+            "essos" => Ok(Theme::Essos),
+            "wonderland" => Ok(Theme::Wonderland),
+            "walden" => Ok(Theme::Walden),
+            "chalk" => Ok(Theme::Chalk),
+            "infographic" => Ok(Theme::Infographic),
+            "macarons" => Ok(Theme::Macarons),
+            "roma" => Ok(Theme::Roma),
+            "shine" => Ok(Theme::Shine),
+            "purple-passion" => Ok(Theme::PurplePassion),
+            "halloween" => Ok(Theme::Halloween),
+            _ => Err(format!("unrecognized theme {name:?}")),
+        }
+    }
+}
