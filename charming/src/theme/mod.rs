@@ -1,4 +1,4 @@
-#[derive(Default)]
+#[derive(Clone, Debug, Default, PartialEq, Eq)]
 pub enum Theme {
     #[default]
     Default,
