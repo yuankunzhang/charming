@@ -104,6 +104,10 @@ As another example, the code file [gallery/src/dataset/encode_and_matrix.rs](./g
 
 ![](img/encode-and-matrix.svg)
 
+### MSRV
+
+We do not provide any minimal supported Rust version and it is usually the latest stable release as the deno dependency upgrades their version very frequently.
+
 ### Crate Feature Flags
 
 The following two feature flags are available, **note that they can't be used together**:

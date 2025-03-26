@@ -10,6 +10,7 @@ keywords = ["echarts", "visualization", "chart", "plot"]
 categories = ["visualization", "graphics"]
 license = "MIT OR Apache-2.0"
 readme = "../README.md"
+rust-version = "1.85"
 
 [dependencies]
 deno_core = { version = "0.341", optional = true }
