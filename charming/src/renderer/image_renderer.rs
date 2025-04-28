@@ -1,12 +1,14 @@
-use std::io::Cursor;
-
 use deno_core::{v8, JsRuntime, RuntimeOptions};
 use handlebars::Handlebars;
+
+#[cfg(feature = "ssr-raster")]
 use image::RgbaImage;
-use resvg::{
-    tiny_skia::Pixmap,
-    usvg::{self, TreeTextToPath},
-};
+#[cfg(feature = "ssr-raster")]
+use resvg::{tiny_skia::Pixmap, usvg};
+#[cfg(feature = "ssr-raster")]
+use std::io::Cursor;
+#[cfg(feature = "ssr-raster")]
+use std::sync::Arc;
 
 use crate::{theme::Theme, Chart, EchartsError};
 
@@ -24,11 +26,14 @@ chart.setOption({{{ chart_option }}});
 chart.renderToSVGString();
 "#;
 
+#[cfg(feature = "ssr-raster")]
+#[cfg_attr(docsrs, doc(cfg(feature = "ssr-raster")))]
 pub use image::ImageFormat;
 
 pub struct ImageRenderer {
     js_runtime: JsRuntime,
-    fontdb: usvg::fontdb::Database,
+    #[cfg(feature = "ssr-raster")]
+    fontdb: Arc<usvg::fontdb::Database>,
     theme: Theme,
     width: u32,
     height: u32,
@@ -50,17 +55,24 @@ impl ImageRenderer {
             )
             .unwrap();
 
+        #[cfg(feature = "ssr-raster")]
         let mut fontdb = usvg::fontdb::Database::default();
+        #[cfg(feature = "ssr-raster")]
         fontdb.load_system_fonts();
 
-        #[cfg(all(unix, not(any(target_os = "macos", target_os = "android"))))]
+        #[cfg(all(
+            feature = "ssr-raster",
+            unix,
+            not(any(target_os = "macos", target_os = "android"))
+        ))]
         {
             set_default_fonts(&mut fontdb);
         }
 
         Self {
             js_runtime: runtime,
-            fontdb,
+            #[cfg(feature = "ssr-raster")]
+            fontdb: Arc::new(fontdb),
             theme: Theme::Default,
             width,
             height,
@@ -105,6 +117,8 @@ impl ImageRenderer {
     }
 
     /// Render a chart to a given image format in bytes
+    #[cfg(feature = "ssr-raster")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "ssr-raster")))]
     pub fn render_format(
         &mut self,
         image_format: ImageFormat,
@@ -123,18 +137,21 @@ impl ImageRenderer {
     }
 
     /// Given an svg str, render it into an [`image::ImageBuffer`]
+    #[cfg(feature = "ssr-raster")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "ssr-raster")))]
     fn render_svg_to_buf(&mut self, svg: &str) -> Result<image::RgbaImage, EchartsError> {
         let mut pixels =
             Pixmap::new(self.width, self.height).ok_or(EchartsError::ImageRenderingError(
                 "Rendered image cannot be greater than i32::MAX/4".to_string(),
             ))?;
 
-        let mut tree: usvg::Tree =
-            usvg::TreeParsing::from_data(svg.as_bytes(), &usvg::Options::default())
-                .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))?;
-
-        tree.convert_text(&self.fontdb);
-        resvg::Tree::from_usvg(&tree).render(usvg::Transform::identity(), &mut pixels.as_mut());
+        let options = usvg::Options {
+            fontdb: Arc::clone(&self.fontdb),
+            ..Default::default()
+        };
+        let tree = usvg::Tree::from_data(svg.as_bytes(), &options)
+            .map_err(|error| EchartsError::ImageRenderingError(error.to_string()))?;
+        resvg::render(&tree, usvg::Transform::identity(), &mut pixels.as_mut());
 
         let img = RgbaImage::from_vec(self.width, self.height, pixels.take()).ok_or(
             EchartsError::ImageRenderingError(
@@ -157,6 +174,8 @@ impl ImageRenderer {
     }
 
     /// Render and save chart as the given image format
+    #[cfg(feature = "ssr-raster")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "ssr-raster")))]
     pub fn save_format<P: AsRef<std::path::Path>>(
         &mut self,
         image_format: ImageFormat,
@@ -170,7 +189,12 @@ impl ImageRenderer {
     }
 }
 
-#[cfg(all(unix, not(any(target_os = "macos", target_os = "android"))))]
+#[cfg(all(
+    feature = "ssr-raster",
+    unix,
+    not(any(target_os = "macos", target_os = "android"))
+))]
+#[cfg_attr(docsrs, doc(cfg(feature = "ssr-raster")))]
 fn set_default_fonts(fontdb: &mut usvg::fontdb::Database) {
     let sans_serif_fonts = vec![
         "DejaVu Sans",
@@ -218,7 +242,12 @@ fn set_default_fonts(fontdb: &mut usvg::fontdb::Database) {
     }
 }
 
-#[cfg(all(unix, not(any(target_os = "macos", target_os = "android"))))]
+#[cfg(all(
+    feature = "ssr-raster",
+    unix,
+    not(any(target_os = "macos", target_os = "android"))
+))]
+#[cfg_attr(docsrs, doc(cfg(feature = "ssr-raster")))]
 fn font_exists(fontdb: &usvg::fontdb::Database, family: &str) -> bool {
     fontdb
         .query(&usvg::fontdb::Query {

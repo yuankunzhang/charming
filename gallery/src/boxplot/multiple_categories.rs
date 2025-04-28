@@ -78,12 +78,12 @@ pub fn chart() -> Chart {
 }
 
 fn make_data() -> Vec<Vec<f64>> {
-    let mut rng = rand::thread_rng();
+    let mut rng = rand::rng();
     let mut data = vec![];
     for _ in 0..18 {
         let mut data0 = vec![];
         for _ in 0..100 {
-            data0.push(rng.gen::<f64>() * 200.0);
+            data0.push(rng.random::<f64>() * 200.0);
         }
         data.push(data0);
     }

@@ -8,20 +8,22 @@ repository = "https://github.com/yuankunzhang/charming"
 documentation = "https://github.com/yuankunzhang/charming"
 keywords = ["echarts", "visualization", "chart", "plot"]
 categories = ["visualization", "graphics"]
-license = "MIT/Apache-2.0"
+license = "MIT OR Apache-2.0"
 readme = "../README.md"
+rust-version = "1.85"
 
 [dependencies]
-deno_core = { version = "0.311", optional = true }
-handlebars = { version = "4.3", optional = true }
-image = { version = "0.24", optional = true }
-resvg = { version = "0.36", optional = true }
+deno_core = { version = "0.343", optional = true }
+handlebars = { version = "6.0", optional = true }
+image = { version = "0.25", optional = true }
+resvg = { version = "0.45", features = ["text"], optional = true }
 serde = { version = "1.0", features = ["derive"] }
-serde-wasm-bindgen = {version = "0.6", optional = true }
+serde-wasm-bindgen = { version = "0.6", optional = true }
 serde_json = "1.0"
-serde_v8 = { version = "0.220", optional = true }
+serde_v8 = { version = "0.252", optional = true }
 serde_with = "3.11.0"
 wasm-bindgen = { version = "0.2", optional = true }
+js-sys = { version = "0.3", optional = true }
 
 [dev-dependencies]
 assert-json-diff = "2.0.2"
@@ -29,17 +31,14 @@ assert-json-diff = "2.0.2"
 [dependencies.web-sys]
 version = "0.3.64"
 optional = true
-features = [
-    "Window",
-    "Document",
-    "Element",
-]
+features = ["Window", "Document", "Element"]
 
 [features]
 default = ["html"]
 html = ["handlebars"]
-ssr = ["html", "deno_core", "image", "resvg", "serde_v8"]
-wasm = ["serde-wasm-bindgen", "wasm-bindgen", "web-sys"]
+ssr = ["html", "deno_core", "serde_v8"]
+ssr-raster = ["ssr", "resvg", "image"]
+wasm = ["serde-wasm-bindgen", "wasm-bindgen", "web-sys", "js-sys"]
 
 [package.metadata.docs.rs]
 all-features = true

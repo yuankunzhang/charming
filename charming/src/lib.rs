@@ -24,6 +24,7 @@ provides three types of renderers:
   engine to execute the JavaScript code of Echarts and generate an image file.
   This renderer is disabled by default, and you need to enable the `ssr`
   (Server-Side Rendering) feature to use it.
+  To render raster images like PNG the `ssr-raster` feature must also be enabled.
 - **WASM renderer**: [`WasmRenderer`] renders a chart in a WebAssembly runtime.
   This renderer is disabled by default, and you need to enable the `wasm`
   feature to use it. Note that the `wasm` feature and `ssr` feature are
@@ -93,7 +94,7 @@ pub mod theme;
 pub use renderer::*;
 
 use component::{
-    AngleAxis, Aria, Axis, Axis3D, DataZoom, GeoMap, Grid, Grid3D, Legend, ParallelAxis,
+    AngleAxis, Aria, Axis, Axis3D, DataZoom, GeoMap, Grid, Grid3D, LegendConfig, ParallelAxis,
     ParallelCoordinate, PolarCoordinate, RadarCoordinate, RadiusAxis, SaveAsImageType, SingleAxis,
     Title, Toolbox, VisualMap,
 };
@@ -248,7 +249,7 @@ pub struct Chart {
     tooltip: Option<Tooltip>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    legend: Option<Legend>,
+    legend: Option<LegendConfig>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     toolbox: Option<Toolbox>,
@@ -401,8 +402,8 @@ impl Chart {
         self
     }
 
-    pub fn legend(mut self, legend: Legend) -> Self {
-        self.legend = Some(legend);
+    pub fn legend<L: Into<LegendConfig>>(mut self, legend: L) -> Self {
+        self.legend = Some(legend.into());
         self
     }
 

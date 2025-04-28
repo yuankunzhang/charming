@@ -2,7 +2,6 @@
 
 [![crates.io](https://img.shields.io/crates/v/charming.svg)](https://crates.io/crates/charming)
 [![docs.rs](https://docs.rs/charming/badge.svg)](https://docs.rs/charming)
-[![discord](https://dcbadge.vercel.app/api/server/u3wmVPcW?style=flat)](https://discord.gg/u3wmVPcW)
 
 Charming is a powerful and versatile chart rendering library for Rust that leverages the power of [Apache ECharts](https://echarts.apache.org/en/index.html) to deliver high-quality data visualizations. Built with the Rust programming language, this library aims to provide the Rust ecosystem with an intuitive and effective way to generate and visualize charts, using a declarative and user-friendly API.
 
@@ -105,6 +104,10 @@ As another example, the code file [gallery/src/dataset/encode_and_matrix.rs](./g
 
 ![](img/encode-and-matrix.svg)
 
+### MSRV
+
+We do not provide any minimal supported Rust version and it is usually the latest stable release as the deno dependency upgrades their version very frequently.
+
 ### Crate Feature Flags
 
 The following two feature flags are available, **note that they can't be used together**:
@@ -147,7 +150,7 @@ use charming::WasmRenderer;
 // Chart dimension 1000x800.
 let renderer = WasmRenderer::new(1000, 800);
 // Render the chart in the WebAssembly runtime
-renderer.render(&chart).unwrap();
+renderer.render("my-chart-id", &chart).unwrap();
 ```
 
 ### Themes
@@ -245,6 +248,7 @@ You can also clone the repo and run `cargo run --bin gallery` to view the intera
 <a href="./gallery/src/line/smoothed_line.rs"><img src="./img/line/smoothed_line.svg" width="40%" alt="Smoothed Line" /></a>
 <a href="./gallery/src/line/stacked_area.rs"><img src="./img/line/stacked_area.svg" width="40%" alt="Stacked Area" /></a>
 <a href="./gallery/src/line/stacked_line.rs"><img src="./img/line/stacked_line.svg" width="40%" alt="Stacked Line" /></a>
+<a href="./gallery/src/line/step_line.rs"><img src="./img/line/step_line.svg" width="40%" alt="Step Line" /></a>
 <a href="./gallery/src/line/temperature_change.rs"><img src="./img/line/temperature_change.svg" width="40%" alt="Temperature Change" /></a>
 <a href="./gallery/src/line/two_value_axes_in_polar.rs"><img src="./img/line/two_value_axes_in_polar.svg" width="40%" alt="Two Value-Axes in Polar" /></a>
 </div>

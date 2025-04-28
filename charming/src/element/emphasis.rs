@@ -29,6 +29,9 @@ pub struct Emphasis {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     label: Option<Label>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    disabled: Option<bool>,
 }
 
 impl Default for Emphasis {
@@ -44,6 +47,7 @@ impl Emphasis {
             item_style: None,
             area_style: None,
             label: None,
+            disabled: None,
         }
     }
 
@@ -64,6 +68,11 @@ impl Emphasis {
 
     pub fn label<L: Into<Label>>(mut self, label: L) -> Self {
         self.label = Some(label.into());
+        self
+    }
+
+    pub fn disabled(mut self, disabled: bool) -> Self {
+        self.disabled = Some(disabled);
         self
     }
 }

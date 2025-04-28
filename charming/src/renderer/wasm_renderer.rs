@@ -54,7 +54,7 @@ impl WasmRenderer {
             })
             .unwrap(),
         );
-        echarts.set_option(to_value(chart).unwrap());
+        Self::update(&echarts, chart);
 
         Ok(echarts)
     }
@@ -66,7 +66,8 @@ impl WasmRenderer {
     }
 
     pub fn update(echarts: &Echarts, chart: &Chart) {
-        echarts.set_option(to_value(chart).unwrap());
+        let js = serde_wasm_bindgen::to_value(&chart).unwrap();
+        echarts.set_option(js);
     }
 }
 

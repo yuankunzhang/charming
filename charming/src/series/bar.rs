@@ -3,7 +3,7 @@ use std::vec;
 use serde::{Deserialize, Serialize};
 
 use crate::{
-    datatype::{DataFrame, DataPoint},
+    datatype::{CompositeValue, DataFrame, DataPoint},
     element::{
         BackgroundStyle, ColorBy, CoordinateSystem, Emphasis, ItemStyle, Label, MarkLine, Tooltip,
     },
@@ -67,7 +67,10 @@ pub struct Bar {
     stack: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    bar_width: Option<f64>,
+    bar_width: Option<CompositeValue>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    bar_gap: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     tooltip: Option<Tooltip>,
@@ -105,6 +108,7 @@ impl Bar {
             mark_line: None,
             stack: None,
             bar_width: None,
+            bar_gap: None,
             tooltip: None,
             data: vec![],
         }
@@ -195,8 +199,13 @@ impl Bar {
         self
     }
 
-    pub fn bar_width<F: Into<f64>>(mut self, bar_width: F) -> Self {
+    pub fn bar_width<C: Into<CompositeValue>>(mut self, bar_width: C) -> Self {
         self.bar_width = Some(bar_width.into());
+        self
+    }
+
+    pub fn bar_gap<C: Into<CompositeValue>>(mut self, bar_gap: C) -> Self {
+        self.bar_gap = Some(bar_gap.into());
         self
     }
 

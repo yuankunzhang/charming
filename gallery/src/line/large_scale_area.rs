@@ -12,14 +12,14 @@ use rand::Rng;
 
 pub fn chart() -> Chart {
     let base_date = NaiveDate::parse_from_str("1968-09-03", "%Y-%m-%d").unwrap();
-    let mut rng = rand::thread_rng();
+    let mut rng = rand::rng();
     let mut dates = vec![];
-    let mut values = vec![rng.gen::<f64>() * 300.];
+    let mut values = vec![rng.random::<f64>() * 300.];
 
     for i in 1..20001 {
         let date = base_date.checked_add_days(Days::new(i)).unwrap();
         dates.push(date.format("%Y/%m/%d").to_string());
-        values.push((rng.gen::<f64>() - 0.5) * 20. + values[(i - 1) as usize]);
+        values.push((rng.random::<f64>() - 0.5) * 20. + values[(i - 1) as usize]);
     }
 
     Chart::new()

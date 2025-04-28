@@ -2,15 +2,14 @@
 name = "charming-gallery"
 version = "0.1.0"
 edition = "2021"
-license = "MIT/Apache-2.0"
+license = "MIT OR Apache-2.0"
 
 [dependencies]
 askama = "0.12.0"
 axum = "0.6.18"
-image = "0.24.6"
+image = "0.25.0"
 chrono = "0.4"
-lazy_static = "1.4.0"
-rand = "0.8.5"
+rand = "0.9.0"
 tokio = "1.29.1"
 charming = { path = "../charming", features = ["ssr"] }
 serde_json = "1.0.99"

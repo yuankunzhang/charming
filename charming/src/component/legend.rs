@@ -1,4 +1,4 @@
-use std::collections::HashMap;
+use std::collections::BTreeMap;
 
 use serde::{Deserialize, Serialize};
 
@@ -6,6 +6,25 @@ use crate::{
     datatype::CompositeValue,
     element::{Color, Icon, ItemStyle, LabelAlign, LineStyle, Orient, Padding, TextStyle},
 };
+
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
+#[serde(untagged)]
+pub enum LegendConfig {
+    Single(Box<Legend>),
+    Multiple(Vec<Legend>),
+}
+
+impl From<Legend> for LegendConfig {
+    fn from(legend: Legend) -> Self {
+        Self::Single(Box::new(legend))
+    }
+}
+
+impl From<Vec<Legend>> for LegendConfig {
+    fn from(legends: Vec<Legend>) -> Self {
+        LegendConfig::Multiple(legends)
+    }
+}
 
 #[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
@@ -69,7 +88,7 @@ impl From<(String, String)> for LegendItem {
     }
 }
 
-#[derive(Serialize, Deserialize, Debug, PartialEq, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Legend {
     /// Type of legend.
@@ -160,8 +179,12 @@ pub struct Legend {
     #[serde(skip_serializing_if = "Option::is_none")]
     formatter: Option<String>,
 
+    // Replaced HashMap by BTreeMap, because implements by default PartialOrd
+    // In the second, BTrreMap has more performance then HashMap (reference below), when used in less thousands of
+    // Dtolnay developer and creator of serde-rs/json-benchmark saw https://users.rust-lang.org/t/hashmap-vs-btreemap/13804#:~:text=Nov%202017-,I%20checked,-just%20now%20and
+    // Judging whether you need to switch to HashMap again will require a special proc_macro and in case of comparison the sorting will be expensive.
     #[serde(skip_serializing_if = "Option::is_none")]
-    selected: Option<HashMap<String, bool>>,
+    selected: Option<BTreeMap<String, bool>>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     selected_mode: Option<LegendSelectedMode>,
