@@ -99,7 +99,7 @@ impl<'de> Deserialize<'de> for FontFamily {
     {
         struct FontFamilyVisitor;
 
-        impl<'de> Visitor<'de> for FontFamilyVisitor {
+        impl Visitor<'_> for FontFamilyVisitor {
             type Value = FontFamily;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter) -> std::fmt::Result {

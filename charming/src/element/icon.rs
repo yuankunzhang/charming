@@ -36,7 +36,7 @@ impl<'de> Deserialize<'de> for Icon {
     {
         struct IconVisitor;
 
-        impl<'de> serde::de::Visitor<'de> for IconVisitor {
+        impl serde::de::Visitor<'_> for IconVisitor {
             type Value = Icon;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter) -> std::fmt::Result {
