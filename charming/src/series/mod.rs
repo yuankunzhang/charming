@@ -115,7 +115,7 @@ impl<'de> Deserialize<'de> for Series {
             None => Err(serde::de::Error::custom("missing series type")),
         };
 
-        Ok(result.map_err(serde::de::Error::custom)?)
+        result.map_err(serde::de::Error::custom)
     }
 }
 
