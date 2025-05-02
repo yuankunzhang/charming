@@ -246,6 +246,9 @@ pub struct Chart {
     title: Vec<Title>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    animation: Option<bool>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     tooltip: Option<Tooltip>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -362,6 +365,7 @@ impl Chart {
     pub fn new() -> Self {
         Self {
             title: vec![],
+            animation: None,
             toolbox: None,
             legend: None,
             tooltip: None,
@@ -394,6 +398,11 @@ impl Chart {
 
     pub fn title(mut self, title: Title) -> Self {
         self.title.push(title);
+        self
+    }
+
+    pub fn animation(mut self, animation: bool) -> Self {
+        self.animation = Some(animation);
         self
     }
 
