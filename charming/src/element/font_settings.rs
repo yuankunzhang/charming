@@ -1,4 +1,5 @@
 use serde::{de::Visitor, Deserialize, Deserializer, Serialize};
+use std::fmt;
 
 #[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "camelCase")]
@@ -8,7 +9,7 @@ pub enum FontStyle {
     Oblique,
 }
 
-#[derive(Debug, Deserialize, PartialEq, PartialOrd, Clone)]
+#[derive(Debug, PartialEq, PartialOrd, Clone)]
 pub enum FontWeight {
     Normal,
     Bold,
@@ -46,6 +47,52 @@ impl Serialize for FontWeight {
             FontWeight::Number(num) => serializer.serialize_i32(*num),
             FontWeight::Custom(val) => serializer.serialize_str(val),
         }
+    }
+}
+
+impl<'de> Deserialize<'de> for FontWeight {
+    fn deserialize<D>(deserializer: D) -> Result<FontWeight, D::Error>
+    where
+        D: Deserializer<'de>,
+    {
+        struct FontWeightVisitor;
+
+        impl<'de> serde::de::Visitor<'de> for FontWeightVisitor {
+            type Value = FontWeight;
+
+            fn expecting(&self, formatter: &mut fmt::Formatter) -> fmt::Result {
+                formatter.write_str("a string like 'normal' or an integer font weight")
+            }
+
+            fn visit_str<E>(self, value: &str) -> Result<FontWeight, E>
+            where
+                E: serde::de::Error,
+            {
+                match value {
+                    "normal" => Ok(FontWeight::Normal),
+                    "bold" => Ok(FontWeight::Bold),
+                    "bolder" => Ok(FontWeight::Bolder),
+                    "lighter" => Ok(FontWeight::Lighter),
+                    other => Ok(FontWeight::Custom(other.to_string())),
+                }
+            }
+
+            fn visit_i64<E>(self, value: i64) -> Result<FontWeight, E>
+            where
+                E: serde::de::Error,
+            {
+                Ok(FontWeight::Number(value as i32))
+            }
+
+            fn visit_u64<E>(self, value: u64) -> Result<FontWeight, E>
+            where
+                E: serde::de::Error,
+            {
+                Ok(FontWeight::Number(value as i32))
+            }
+        }
+
+        deserializer.deserialize_any(FontWeightVisitor)
     }
 }
 
