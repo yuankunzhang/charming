@@ -1,6 +1,8 @@
-use serde::{Deserialize, Serialize};
+use serde::de::{self, Visitor};
+use serde::{Deserialize, Deserializer, Serialize, Serializer};
+use std::fmt;
 
-#[derive(Debug, Deserialize, PartialEq, PartialOrd, Clone, Copy)]
+#[derive(Debug, PartialEq, PartialOrd, Clone, Copy)]
 pub enum Smoothness {
     Single(f64),
     Boolean(bool),
@@ -15,6 +17,39 @@ impl Serialize for Smoothness {
             Smoothness::Single(smoothness) => serializer.serialize_f64(*smoothness),
             Smoothness::Boolean(smoothness) => serializer.serialize_bool(*smoothness),
         }
+    }
+}
+
+impl<'de> Deserialize<'de> for Smoothness {
+    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+    where
+        D: Deserializer<'de>,
+    {
+        struct SmoothnessVisitor;
+
+        impl<'de> Visitor<'de> for SmoothnessVisitor {
+            type Value = Smoothness;
+
+            fn expecting(&self, formatter: &mut fmt::Formatter) -> fmt::Result {
+                formatter.write_str("a float or a boolean")
+            }
+
+            fn visit_f64<E>(self, value: f64) -> Result<Smoothness, E>
+            where
+                E: de::Error,
+            {
+                Ok(Smoothness::Single(value))
+            }
+
+            fn visit_bool<E>(self, value: bool) -> Result<Smoothness, E>
+            where
+                E: de::Error,
+            {
+                Ok(Smoothness::Boolean(value))
+            }
+        }
+
+        deserializer.deserialize_any(SmoothnessVisitor)
     }
 }
 
