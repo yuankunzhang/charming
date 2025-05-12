@@ -8,6 +8,30 @@ mod tests {
     };
 
     #[test]
+    fn test_gallery_serialize_and_deserialize() {
+        for (key, chart_tree) in charming_gallery::CHARTS.iter() {
+            for (sub_key, chart_builder) in chart_tree.iter() {
+                let chart = chart_builder();
+                let json_string = serde_json::to_string(&chart).unwrap_or_else(|e| {
+                    panic!(
+                        "Shold be able to serialize sub chart: {sub_key} in {key} charts category, error message: {e}"
+                    )
+                });
+                let deserialized_chart = serde_json::from_str(&json_string).unwrap_or_else(|e| {
+                    panic!(
+                        "Shold be able to deserialize sub chart: {sub_key} in {key} charts category, error message: {e}"
+                    )
+                });
+
+                assert_eq!(
+                    chart, deserialized_chart,
+                    "Deserialized chart should be equal to original chart"
+                );
+            }
+        }
+    }
+
+    #[test]
     fn test_deserialize_chart() {
         let chart = Chart::new()
             .title(Title::new().text("Demo: Yew + Charming"))
