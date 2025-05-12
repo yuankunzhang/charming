@@ -4,7 +4,7 @@ use crate::datatype::CompositeValue;
 
 use super::line_style::LineStyle;
 
-#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct AxisTick {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -22,26 +22,13 @@ pub struct AxisTick {
     #[serde(skip_serializing_if = "Option::is_none")]
     line_style: Option<LineStyle>,
 
-    #[serde(skip_serializing_if = "Vec::is_empty")]
+    #[serde(skip_serializing_if = "Vec::is_empty", default)]
     custom_values: Vec<CompositeValue>,
-}
-
-impl Default for AxisTick {
-    fn default() -> Self {
-        Self::new()
-    }
 }
 
 impl AxisTick {
     pub fn new() -> Self {
-        Self {
-            show: None,
-            split_number: None,
-            length: None,
-            distance: None,
-            line_style: None,
-            custom_values: vec![],
-        }
+        Self::default()
     }
 
     pub fn show(mut self, show: bool) -> Self {
