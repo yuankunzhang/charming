@@ -1,6 +1,6 @@
 #![allow(clippy::large_enum_variant)]
 
-use serde::{Deserialize, Deserializer, Serialize};
+use serde::Serialize;
 
 pub mod bar;
 pub mod bar3d;
@@ -76,48 +76,60 @@ pub enum Series {
     Treemap(treemap::Treemap),
 }
 
-impl<'de> Deserialize<'de> for Series {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: Deserializer<'de>,
-    {
-        let value = serde_json::Value::deserialize(deserializer)?;
+macro_rules! impl_series_deserialize {
+    ($($variant:ident => $type_str:literal),* $(,)?) => {
+        impl<'de> serde::Deserialize<'de> for Series {
+            fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                let value = serde_json::Value::deserialize(deserializer)?;
 
-        let result = match value.get("type").and_then(serde_json::Value::as_str) {
-            Some(type_) => match type_ {
-                "bar" => serde_json::from_value(value).map(Series::Bar),
-                "bar3d" => serde_json::from_value(value).map(Series::Bar3d),
-                "boxplot" => serde_json::from_value(value).map(Series::Boxplot),
-                "candlestick" => serde_json::from_value(value).map(Series::Candlestick),
-                "custom" => serde_json::from_value(value).map(Series::Custom),
-                "effectScatter" => serde_json::from_value(value).map(Series::EffectScatter),
-                "funnel" => serde_json::from_value(value).map(Series::Funnel),
-                "gauge" => serde_json::from_value(value).map(Series::Gauge),
-                "graph" => serde_json::from_value(value).map(Series::Graph),
-                "heatmap" => serde_json::from_value(value).map(Series::Heatmap),
-                "line" => serde_json::from_value(value).map(Series::Line),
-                "map" => serde_json::from_value(value).map(Series::Map),
-                "parallel" => serde_json::from_value(value).map(Series::Parallel),
-                "pictorialBar" => serde_json::from_value(value).map(Series::PictorialBar),
-                "pie" => serde_json::from_value(value).map(Series::Pie),
-                "radar" => serde_json::from_value(value).map(Series::Radar),
-                "sankey" => serde_json::from_value(value).map(Series::Sankey),
-                "scatter" => serde_json::from_value(value).map(Series::Scatter),
-                "sunburst" => serde_json::from_value(value).map(Series::Sunburst),
-                "themeRiver" => serde_json::from_value(value).map(Series::ThemeRiver),
-                "tree" => serde_json::from_value(value).map(Series::Tree),
-                "treemap" => serde_json::from_value(value).map(Series::Treemap),
-                unknown => Err(serde::de::Error::custom(format!(
-                    "unknown series type: {}",
-                    unknown
-                ))),
-            },
-            None => Err(serde::de::Error::custom("missing series type")),
-        };
+                let type_str = value
+                    .get("type")
+                    .and_then(|v| v.as_str())
+                    .ok_or_else(|| serde::de::Error::missing_field("type"))?;
 
-        result.map_err(serde::de::Error::custom)
-    }
+                match type_str {
+                    $(
+                        $type_str => Ok(Series::$variant(
+                            serde_json::from_value(value).map_err(serde::de::Error::custom)?
+                        )),
+                    )*
+                    _ => Err(serde::de::Error::unknown_variant(
+                        type_str,
+                        &[$($type_str),*]
+                    )),
+                }
+            }
+        }
+    };
 }
+
+impl_series_deserialize!(
+    Bar => "bar",
+    Bar3d => "bar3D",
+    Boxplot => "boxplot",
+    Candlestick => "candlestick",
+    Custom => "custom",
+    EffectScatter => "effectScatter",
+    Funnel => "funnel",
+    Gauge => "gauge",
+    Graph => "graph",
+    Heatmap => "heatmap",
+    Line => "line",
+    Map => "map",
+    Parallel => "parallel",
+    PictorialBar => "pictorialBar",
+    Pie => "pie",
+    Radar => "radar",
+    Sankey => "sankey",
+    Scatter => "scatter",
+    Sunburst => "sunburst",
+    ThemeRiver => "themeRiver",
+    Tree => "tree",
+    Treemap => "treemap",
+);
 
 macro_rules! impl_series {
     ($($variant:ident),*) => {
