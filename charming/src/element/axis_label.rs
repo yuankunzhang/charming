@@ -8,7 +8,7 @@ use super::{
     Formatter,
 };
 
-#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct AxisLabel {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -41,31 +41,13 @@ pub struct AxisLabel {
     #[serde(skip_serializing_if = "Option::is_none")]
     interval: Option<f64>,
 
-    #[serde(skip_serializing_if = "Vec::is_empty")]
+    #[serde(skip_serializing_if = "Vec::is_empty", default)]
     custom_values: Vec<CompositeValue>,
-}
-
-impl Default for AxisLabel {
-    fn default() -> Self {
-        Self::new()
-    }
 }
 
 impl AxisLabel {
     pub fn new() -> Self {
-        Self {
-            show: None,
-            distance: None,
-            font_style: None,
-            font_weight: None,
-            font_family: None,
-            font_size: None,
-            color: None,
-            formatter: None,
-            rotate: None,
-            interval: None,
-            custom_values: vec![],
-        }
+        Self::default()
     }
 
     pub fn show(mut self, show: bool) -> Self {
