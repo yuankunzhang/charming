@@ -17,16 +17,6 @@ mod tests {
                         "Shold be able to serialize sub chart: {sub_key} in {key} charts category, error message: {e}"
                     )
                 });
-                if [
-                    "area_pieces",
-                    "line",
-                    "data_transform_filter",
-                    "temperature_change",
-                ]
-                .contains(sub_key)
-                {
-                    continue;
-                }
 
                 let deserialized_chart:Chart = serde_json::from_str(&json_string).unwrap_or_else(|e| {
                     panic!(
@@ -34,11 +24,13 @@ mod tests {
                     )
                 });
 
+                // Many types produce different enums, need to check Eq, PartialEq traits
                 if [
                     "boxplot_light_velocity",
                     "boxplot_light_velocity2",
                     "multiple_categories",
                     "shanghai_index",
+                    "data_transform_filter",
                     "organ_data",
                     "les_miserables",
                     "confidence_band",
@@ -53,9 +45,7 @@ mod tests {
                 {
                     continue;
                 }
-                if chart != deserialized_chart {
-                    panic!("aa {sub_key}");
-                }
+
                 assert_eq!(
                     chart, deserialized_chart,
                     "Deserialized chart should be equal to original chart: {sub_key} in {key} charts category"
