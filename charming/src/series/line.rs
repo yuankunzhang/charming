@@ -89,7 +89,7 @@ pub struct Line {
     #[serde(skip_serializing_if = "Option::is_none")]
     z: Option<i32>,
 
-    #[serde(skip_serializing_if = "Vec::is_empty")]
+    #[serde(skip_serializing_if = "Vec::is_empty", default)]
     data: DataFrame,
 }
 
