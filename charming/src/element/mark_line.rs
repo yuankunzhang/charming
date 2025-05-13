@@ -1,5 +1,5 @@
 use serde::{
-    de::{SeqAccess, Visitor},
+    de::{self, SeqAccess, Visitor},
     ser::SerializeSeq,
     Deserialize, Deserializer, Serialize,
 };
@@ -177,17 +177,33 @@ impl<'de> Deserialize<'de> for MarkLineVariant {
                 Ok(MarkLineVariant::Simple(data))
             }
 
+            fn visit_map<A>(self, map: A) -> Result<Self::Value, A::Error>
+            where
+                A: de::MapAccess<'de>,
+            {
+                // Deserialize a single object using a map access
+                let value: MarkLineData =
+                    Deserialize::deserialize(de::value::MapAccessDeserializer::new(map))?;
+                Ok(MarkLineVariant::Simple(value))
+            }
+
             fn visit_seq<V>(self, mut seq: V) -> Result<Self::Value, V::Error>
             where
                 V: SeqAccess<'de>,
             {
-                let start = seq
+                let first: MarkLineData = seq
                     .next_element()?
-                    .ok_or_else(|| serde::de::Error::invalid_length(0, &self))?;
-                let end = seq
+                    .ok_or_else(|| de::Error::invalid_length(0, &self))?;
+                let second: MarkLineData = seq
                     .next_element()?
-                    .ok_or_else(|| serde::de::Error::invalid_length(1, &self))?;
-                Ok(MarkLineVariant::StartToEnd(start, end))
+                    .ok_or_else(|| de::Error::invalid_length(1, &self))?;
+                if (seq.next_element::<MarkLineData>()?).is_some() {
+                    return Err(de::Error::invalid_length(
+                        3,
+                        &"expected array of exactly two elements",
+                    ));
+                }
+                Ok(MarkLineVariant::StartToEnd(first, second))
             }
         }
 
@@ -195,7 +211,7 @@ impl<'de> Deserialize<'de> for MarkLineVariant {
     }
 }
 
-#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MarkLine {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -220,29 +236,13 @@ pub struct MarkLine {
     #[serde(skip_serializing_if = "Option::is_none")]
     silent: Option<bool>,
 
-    #[serde(default)]
-    #[serde(skip_serializing_if = "Vec::is_empty")]
+    #[serde(skip_serializing_if = "Vec::is_empty", default)]
     data: Vec<MarkLineVariant>,
-}
-
-impl Default for MarkLine {
-    fn default() -> Self {
-        Self::new()
-    }
 }
 
 impl MarkLine {
     pub fn new() -> Self {
-        Self {
-            label: None,
-            line_style: None,
-            zlevel: None,
-            z: None,
-            symbol: vec![],
-            precision: None,
-            silent: None,
-            data: vec![],
-        }
+        Self::default()
     }
 
     pub fn label<L: Into<Label>>(mut self, label: L) -> Self {
