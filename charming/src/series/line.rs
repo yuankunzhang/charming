@@ -4,7 +4,8 @@ use crate::{
     datatype::{DataFrame, DataPoint},
     element::{
         smoothness::Smoothness, AreaStyle, CoordinateSystem, DimensionEncode, Emphasis, ItemStyle,
-        Label, LineStyle, MarkArea, MarkLine, MarkPoint, Step, Symbol, SymbolSize, Tooltip,
+        Label, LineStyle, MarkArea, MarkLine, MarkPoint, Sampling, Step, Symbol, SymbolSize,
+        Tooltip,
     },
 };
 
@@ -34,6 +35,9 @@ pub struct Line {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     stack: Option<String>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    sampling: Option<Sampling>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     label: Option<Label>,
@@ -110,6 +114,7 @@ impl Line {
             symbol_size: None,
             show_symbol: None,
             stack: None,
+            sampling: None,
             label: None,
             line_style: None,
             area_style: None,
@@ -165,6 +170,11 @@ impl Line {
 
     pub fn stack<S: Into<String>>(mut self, stack: S) -> Self {
         self.stack = Some(stack.into());
+        self
+    }
+
+    pub fn sampling(mut self, sampling: Sampling) -> Self {
+        self.sampling = Some(sampling);
         self
     }
 

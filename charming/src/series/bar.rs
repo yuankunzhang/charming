@@ -5,7 +5,8 @@ use serde::Serialize;
 use crate::{
     datatype::{CompositeValue, DataFrame, DataPoint},
     element::{
-        BackgroundStyle, ColorBy, CoordinateSystem, Emphasis, ItemStyle, Label, MarkLine, Tooltip,
+        BackgroundStyle, ColorBy, CoordinateSystem, Emphasis, ItemStyle, Label, MarkLine, Sampling,
+        Tooltip,
     },
 };
 
@@ -67,6 +68,9 @@ pub struct Bar {
     stack: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    sampling: Option<Sampling>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     bar_width: Option<CompositeValue>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -106,6 +110,7 @@ impl Bar {
             emphais: None,
             mark_line: None,
             stack: None,
+            sampling: None,
             bar_width: None,
             bar_gap: None,
             tooltip: None,
@@ -195,6 +200,11 @@ impl Bar {
 
     pub fn stack<S: Into<String>>(mut self, stack: S) -> Self {
         self.stack = Some(stack.into());
+        self
+    }
+
+    pub fn sampling(mut self, sampling: Sampling) -> Self {
+        self.sampling = Some(sampling);
         self
     }
 
