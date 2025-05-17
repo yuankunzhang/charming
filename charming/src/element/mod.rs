@@ -1,6 +1,7 @@
 pub(crate) mod raw_string;
 
 pub mod anchor;
+pub mod animation_duration;
 pub mod area_style;
 pub mod axis_label;
 pub mod axis_line;
@@ -52,6 +53,7 @@ pub mod tooltip;
 pub(crate) use raw_string::*;
 
 pub use anchor::*;
+pub use animation_duration::*;
 pub use area_style::*;
 pub use axis_label::*;
 pub use axis_line::*;
