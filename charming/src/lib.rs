@@ -367,8 +367,8 @@ impl Chart {
         Self {
             title: vec![],
             animation: None,
-            animation_duration: None,
             animation_threshold: None,
+            animation_duration: None,
             animation_easing: None,
             animation_delay: None,
             animation_duration_update: None,
@@ -419,8 +419,8 @@ impl Chart {
         self
     }
 
-    pub fn animation_duration<A: Into<AnimationTime>>(mut self, animation_duration: A) -> Self {
-        self.animation_duration = Some(animation_duration.into());
+    pub fn animation_duration<A: Into<AnimationTime>>(mut self, animation_time: A) -> Self {
+        self.animation_duration = Some(animation_time.into());
         self
     }
 
@@ -429,16 +429,13 @@ impl Chart {
         self
     }
 
-    pub fn animation_delay<A: Into<AnimationTime>>(mut self, animation_delay: A) -> Self {
-        self.animation_delay = Some(animation_delay.into());
+    pub fn animation_delay<A: Into<AnimationTime>>(mut self, animation_time: A) -> Self {
+        self.animation_delay = Some(animation_time.into());
         self
     }
 
-    pub fn animation_duration_update<A: Into<AnimationTime>>(
-        mut self,
-        animation_duration_update: A,
-    ) -> Self {
-        self.animation_duration_update = Some(animation_duration_update.into());
+    pub fn animation_duration_update<A: Into<AnimationTime>>(mut self, animation_time: A) -> Self {
+        self.animation_duration_update = Some(animation_time.into());
         self
     }
 
@@ -447,11 +444,8 @@ impl Chart {
         self
     }
 
-    pub fn animation_delay_update<A: Into<AnimationTime>>(
-        mut self,
-        animation_delay_update: A,
-    ) -> Self {
-        self.animation_delay_update = Some(animation_delay_update.into());
+    pub fn animation_delay_update<A: Into<AnimationTime>>(mut self, animation_time: A) -> Self {
+        self.animation_delay_update = Some(animation_time.into());
         self
     }
 
