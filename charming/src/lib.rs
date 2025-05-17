@@ -257,6 +257,9 @@ pub struct Chart {
     animation_easing: Option<Easing>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    animation_delay: Option<AnimationTime>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     tooltip: Option<Tooltip>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -358,6 +361,7 @@ impl Chart {
             animation_duration: None,
             animation_threshold: None,
             animation_easing: None,
+            animation_delay: None,
             toolbox: None,
             legend: None,
             tooltip: None,
@@ -410,6 +414,11 @@ impl Chart {
 
     pub fn animation_easing(mut self, easing: Easing) -> Self {
         self.animation_easing = Some(easing);
+        self
+    }
+
+    pub fn animation_delay<A: Into<AnimationTime>>(mut self, animation_delay: A) -> Self {
+        self.animation_delay = Some(animation_delay.into());
         self
     }
 
