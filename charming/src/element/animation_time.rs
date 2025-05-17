@@ -3,19 +3,19 @@ use serde::Serialize;
 
 #[derive(Serialize, Debug, PartialEq, Clone)]
 #[serde(untagged)]
-pub enum AnimationDuration {
+pub enum AnimationTime {
     Number(f64),
     Function(JsFunction),
 }
 
-impl From<f64> for AnimationDuration {
+impl From<f64> for AnimationTime {
     fn from(f: f64) -> Self {
-        AnimationDuration::Number(f)
+        AnimationTime::Number(f)
     }
 }
 
-impl From<JsFunction> for AnimationDuration {
+impl From<JsFunction> for AnimationTime {
     fn from(f: JsFunction) -> Self {
-        AnimationDuration::Function(f)
+        AnimationTime::Function(f)
     }
 }

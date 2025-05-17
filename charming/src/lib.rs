@@ -99,9 +99,7 @@ use component::{
     Title, Toolbox, VisualMap,
 };
 use datatype::Dataset;
-use element::{
-    process_raw_strings, AnimationDuration, AxisPointer, Color, Easing, MarkLine, Tooltip,
-};
+use element::{process_raw_strings, AnimationTime, AxisPointer, Color, Easing, MarkLine, Tooltip};
 use serde::Serialize;
 use serde_with::{formats::PreferOne, serde_as, OneOrMany};
 use series::Series;
@@ -250,7 +248,7 @@ pub struct Chart {
     animation: Option<bool>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    animation_duration: Option<AnimationDuration>,
+    animation_duration: Option<AnimationTime>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     animation_threshold: Option<f64>,
@@ -405,7 +403,7 @@ impl Chart {
         self
     }
 
-    pub fn animation_duration<A: Into<AnimationDuration>>(mut self, animation_duration: A) -> Self {
+    pub fn animation_duration<A: Into<AnimationTime>>(mut self, animation_duration: A) -> Self {
         self.animation_duration = Some(animation_duration.into());
         self
     }
