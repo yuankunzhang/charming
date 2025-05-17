@@ -1,4 +1,4 @@
-use crate::{theme::Theme, Chart, EchartsError};
+use crate::{element::Easing, theme::Theme, Chart, EchartsError};
 use serde::Serialize;
 use serde_wasm_bindgen::to_value;
 use wasm_bindgen::prelude::*;
@@ -110,47 +110,10 @@ pub struct Animation {
 }
 
 /// available easing functions in echarts
-#[derive(Clone, Debug, Default, Serialize, Copy)]
-#[serde(rename_all = "camelCase")]
-pub enum Easing {
-    #[default]
-    Linear,
-    QuadraticIn,
-    QuadraticOut,
-    QuadraticInOut,
-    CubicIn,
-    CubicOut,
-    CubicInOut,
-    QuarticIn,
-    QuarticOut,
-    QuarticInOut,
-    QuinticIn,
-    QuinticOut,
-    QuinticInOut,
-    SinusoidalIn,
-    SinusoidalOut,
-    SinusoidalInOut,
-    ExponentialIn,
-    ExponentialOut,
-    ExponentialInOut,
-    CircularIn,
-    CircularOut,
-    CircularInOut,
-    ElasticIn,
-    ElasticOut,
-    ElasticInOut,
-    BackIn,
-    BackOut,
-    BackInOut,
-    BounceIn,
-    BounceOut,
-    BounceInOut,
-}
-
 impl Default for Animation {
     fn default() -> Self {
         Self {
-            duration: 100,
+            duration: 0,
             easing: Some(Easing::default()),
         }
     }
