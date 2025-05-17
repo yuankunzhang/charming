@@ -248,6 +248,9 @@ pub struct Chart {
     animation: Option<bool>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    animation_threshold: Option<f64>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     tooltip: Option<Tooltip>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -346,6 +349,7 @@ impl Chart {
         Self {
             title: vec![],
             animation: None,
+            animation_threshold: None,
             toolbox: None,
             legend: None,
             tooltip: None,
@@ -383,6 +387,11 @@ impl Chart {
 
     pub fn animation(mut self, animation: bool) -> Self {
         self.animation = Some(animation);
+        self
+    }
+
+    pub fn animation_threshold<F: Into<f64>>(mut self, animation_threshold: F) -> Self {
+        self.animation_threshold = Some(animation_threshold.into());
         self
     }
 
