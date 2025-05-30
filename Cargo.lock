@@ -450,6 +450,7 @@ name = "charming"
 version = "0.5.0"
 dependencies = [
  "assert-json-diff",
+ "charming-gallery",
  "deno_core",
  "handlebars",
  "image",
