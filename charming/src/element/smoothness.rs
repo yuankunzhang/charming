@@ -1,5 +1,5 @@
 use serde::de::{self, Visitor};
-use serde::{Deserialize, Deserializer, Serialize, Serializer};
+use serde::{Deserialize, Deserializer, Serialize};
 use std::fmt;
 
 #[derive(Debug, PartialEq, PartialOrd, Clone, Copy)]
@@ -27,7 +27,7 @@ impl<'de> Deserialize<'de> for Smoothness {
     {
         struct SmoothnessVisitor;
 
-        impl<'de> Visitor<'de> for SmoothnessVisitor {
+        impl Visitor<'_> for SmoothnessVisitor {
             type Value = Smoothness;
 
             fn expecting(&self, formatter: &mut fmt::Formatter) -> fmt::Result {

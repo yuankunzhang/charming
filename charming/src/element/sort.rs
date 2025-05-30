@@ -23,7 +23,7 @@ impl<'de> Deserialize<'de> for Sort {
     fn deserialize<D: Deserializer<'de>>(deserializer: D) -> Result<Self, D::Error> {
         struct SortVisitor;
 
-        impl<'de> Visitor<'de> for SortVisitor {
+        impl Visitor<'_> for SortVisitor {
             type Value = Sort;
 
             fn expecting(&self, formatter: &mut fmt::Formatter) -> fmt::Result {

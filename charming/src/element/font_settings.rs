@@ -57,7 +57,7 @@ impl<'de> Deserialize<'de> for FontWeight {
     {
         struct FontWeightVisitor;
 
-        impl<'de> serde::de::Visitor<'de> for FontWeightVisitor {
+        impl serde::de::Visitor<'_> for FontWeightVisitor {
             type Value = FontWeight;
 
             fn expecting(&self, formatter: &mut fmt::Formatter) -> fmt::Result {
