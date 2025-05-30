@@ -43,6 +43,9 @@ mod tests {
                 ]
                 .contains(sub_key)
                 {
+                    println!(
+                        "Many types produce different enums, need to check Eq, PartialEq traits"
+                    );
                     continue;
                 }
 

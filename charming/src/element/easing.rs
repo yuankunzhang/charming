@@ -1,6 +1,6 @@
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
-#[derive(Clone, Debug, Default, Serialize, Copy, PartialEq)]
+#[derive(Clone, Debug, Default, Serialize, Deserialize, Copy, PartialEq)]
 #[serde(rename_all = "camelCase")]
 pub enum Easing {
     Linear,

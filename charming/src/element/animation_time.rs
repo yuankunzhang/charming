@@ -1,7 +1,7 @@
 use crate::element::js_function::JsFunction;
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
-#[derive(Serialize, Debug, PartialEq, Clone)]
+#[derive(Serialize, Deserialize, PartialOrd, Debug, PartialEq, Clone)]
 #[serde(untagged)]
 pub enum AnimationTime {
     Number(f64),
