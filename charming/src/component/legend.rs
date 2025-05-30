@@ -4,7 +4,9 @@ use serde::{Deserialize, Serialize};
 
 use crate::{
     datatype::CompositeValue,
-    element::{Color, Icon, ItemStyle, LabelAlign, LineStyle, Orient, Padding, TextStyle},
+    element::{
+        AnimationTime, Color, Icon, ItemStyle, LabelAlign, LineStyle, Orient, Padding, TextStyle,
+    },
 };
 
 #[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
@@ -198,6 +200,12 @@ pub struct Legend {
     #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: Vec<LegendItem>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    animation: Option<bool>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    animation_duration_update: Option<AnimationTime>,
 }
 
 impl Default for Legend {
@@ -236,6 +244,8 @@ impl Legend {
             border_color: None,
             inactive_color: None,
             data: vec![],
+            animation: None,
+            animation_duration_update: None,
         }
     }
 
@@ -369,6 +379,16 @@ impl Legend {
 
     pub fn data<L: Into<LegendItem>>(mut self, data: Vec<L>) -> Self {
         self.data = data.into_iter().map(|s| s.into()).collect();
+        self
+    }
+
+    pub fn animation(mut self, animation: bool) -> Self {
+        self.animation = Some(animation);
+        self
+    }
+
+    pub fn animation_duration_update<A: Into<AnimationTime>>(mut self, animation_time: A) -> Self {
+        self.animation_duration_update = Some(animation_time.into());
         self
     }
 }

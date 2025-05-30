@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased (tbd)
+## 0.5.0
 - Start of Changelog
 - Deriving a lot of common functionality (Debug, Clone, etc.) [#86](https://github.com/yuankunzhang/charming/pull/86)
 - The wonderful dz! macro [#100](https://github.com/yuankunzhang/charming/pull/100)
@@ -12,7 +12,13 @@
 - Fixed a bug where the ssr renderer did not work [#88](https://github.com/yuankunzhang/charming/pull/88)
 - Added startValue to axis types [#123](https://github.com/yuankunzhang/charming/pull/123)
 - Added step line support [#107](https://github.com/yuankunzhang/charming/pull/107)
-- Many more small changes
+- Updated dependencies [#153](https://github.com/yuankunzhang/charming/pull/153)
+- Added animation fields to chart [#162](https://github.com/yuankunzhang/charming/pull/162) [#165](https://github.com/yuankunzhang/charming/pull/165)
+- Added sampling configuration [#166](https://github.com/yuankunzhang/charming/pull/166)
+- Updated dioxus examples [#149](https://github.com/yuankunzhang/charming/pull/149) [#150](https://github.com/yuankunzhang/charming/pull/150)
+- Updated leptos examples [#134](https://github.com/yuankunzhang/charming/pull/134)
+- Many more smaller changes
 
 ### Breaking changes
 - Enable the use of formatter in wasm [#148](https://github.com/yuankunzhang/charming/pull/148)
+- Disable default image import with ssr feature [#154](https://github.com/yuankunzhang/charming/pull/154)

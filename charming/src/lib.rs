@@ -99,7 +99,7 @@ use component::{
     Title, Toolbox, VisualMap,
 };
 use datatype::Dataset;
-use element::{process_raw_strings, AxisPointer, Color, MarkLine, Tooltip};
+use element::{process_raw_strings, AnimationTime, AxisPointer, Color, Easing, MarkLine, Tooltip};
 use serde::{Deserialize, Serialize};
 use serde_with::{formats::PreferOne, serde_as, OneOrMany};
 use series::Series;
@@ -249,6 +249,27 @@ pub struct Chart {
     animation: Option<bool>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    animation_duration: Option<AnimationTime>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    animation_threshold: Option<f64>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    animation_easing: Option<Easing>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    animation_delay: Option<AnimationTime>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    animation_duration_update: Option<AnimationTime>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    animation_easing_update: Option<Easing>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
+    animation_delay_update: Option<AnimationTime>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     tooltip: Option<Tooltip>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -366,6 +387,13 @@ impl Chart {
         Self {
             title: vec![],
             animation: None,
+            animation_threshold: None,
+            animation_duration: None,
+            animation_easing: None,
+            animation_delay: None,
+            animation_duration_update: None,
+            animation_easing_update: None,
+            animation_delay_update: None,
             toolbox: None,
             legend: None,
             tooltip: None,
@@ -403,6 +431,41 @@ impl Chart {
 
     pub fn animation(mut self, animation: bool) -> Self {
         self.animation = Some(animation);
+        self
+    }
+
+    pub fn animation_threshold<F: Into<f64>>(mut self, animation_threshold: F) -> Self {
+        self.animation_threshold = Some(animation_threshold.into());
+        self
+    }
+
+    pub fn animation_duration<A: Into<AnimationTime>>(mut self, animation_time: A) -> Self {
+        self.animation_duration = Some(animation_time.into());
+        self
+    }
+
+    pub fn animation_easing(mut self, easing: Easing) -> Self {
+        self.animation_easing = Some(easing);
+        self
+    }
+
+    pub fn animation_delay<A: Into<AnimationTime>>(mut self, animation_time: A) -> Self {
+        self.animation_delay = Some(animation_time.into());
+        self
+    }
+
+    pub fn animation_duration_update<A: Into<AnimationTime>>(mut self, animation_time: A) -> Self {
+        self.animation_duration_update = Some(animation_time.into());
+        self
+    }
+
+    pub fn animation_easing_update(mut self, easing: Easing) -> Self {
+        self.animation_easing_update = Some(easing);
+        self
+    }
+
+    pub fn animation_delay_update<A: Into<AnimationTime>>(mut self, animation_time: A) -> Self {
+        self.animation_delay_update = Some(animation_time.into());
         self
     }
 

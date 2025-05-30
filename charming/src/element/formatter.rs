@@ -1,3 +1,4 @@
+use crate::element::js_function::JsFunction;
 use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
@@ -30,7 +31,7 @@ impl FormatterFunction {
 #[serde(untagged)]
 pub enum Formatter {
     String(String),
-    Function(FormatterFunction),
+    Function(JsFunction),
 }
 
 impl From<&str> for Formatter {
@@ -39,8 +40,8 @@ impl From<&str> for Formatter {
     }
 }
 
-impl From<FormatterFunction> for Formatter {
-    fn from(f: FormatterFunction) -> Self {
+impl From<JsFunction> for Formatter {
+    fn from(f: JsFunction) -> Self {
         Formatter::Function(f)
     }
 }
