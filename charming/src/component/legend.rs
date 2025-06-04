@@ -181,10 +181,6 @@ pub struct Legend {
     #[serde(skip_serializing_if = "Option::is_none")]
     formatter: Option<String>,
 
-    // Replaced HashMap by BTreeMap, because implements by default PartialOrd
-    // In the second, BTrreMap has more performance then HashMap (reference below), when used in less thousands of
-    // Dtolnay developer and creator of serde-rs/json-benchmark saw https://users.rust-lang.org/t/hashmap-vs-btreemap/13804#:~:text=Nov%202017-,I%20checked,-just%20now%20and
-    // Judging whether you need to switch to HashMap again will require a special proc_macro and in case of comparison the sorting will be expensive.
     #[serde(skip_serializing_if = "Option::is_none")]
     selected: Option<BTreeMap<String, bool>>,
 
