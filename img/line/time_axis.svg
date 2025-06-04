@@ -1,0 +1,280 @@
+<svg width="600" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 600 450">
+<rect width="600" height="450" x="0" y="0" fill="none"></rect>
+<path d="M121.8 362.5L540 362.5" fill="transparent" stroke="#E0E6F1" class="zr45-cls-243"></path>
+<path d="M121.8 319.5L540 319.5" fill="transparent" stroke="#E0E6F1" class="zr45-cls-243"></path>
+<path d="M121.8 276.5L540 276.5" fill="transparent" stroke="#E0E6F1" class="zr45-cls-243"></path>
+<path d="M121.8 233.5L540 233.5" fill="transparent" stroke="#E0E6F1" class="zr45-cls-243"></path>
+<path d="M121.8 189.5L540 189.5" fill="transparent" stroke="#E0E6F1" class="zr45-cls-243"></path>
+<path d="M121.8 146.5L540 146.5" fill="transparent" stroke="#E0E6F1" class="zr45-cls-243"></path>
+<path d="M121.8 103.5L540 103.5" fill="transparent" stroke="#E0E6F1" class="zr45-cls-243"></path>
+<path d="M121.8 60.5L540 60.5" fill="transparent" stroke="#E0E6F1" class="zr45-cls-243"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="-6" transform="translate(121.76 45)" fill="#6E7079">Attendance</text>
+<path d="M121.8 362.5L540 362.5" fill="transparent" stroke="#6E7079" stroke-linecap="round" class="zr45-cls-243"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(555 362.5)" fill="#6E7079">Year</text>
+<path d="M122.5 362.5L122.5 367.5" fill="transparent" stroke="#6E7079" class="zr45-cls-243"></path>
+<path d="M205.5 362.5L205.5 367.5" fill="transparent" stroke="#6E7079" class="zr45-cls-243"></path>
+<path d="M289.5 362.5L289.5 367.5" fill="transparent" stroke="#6E7079" class="zr45-cls-243"></path>
+<path d="M373.5 362.5L373.5 367.5" fill="transparent" stroke="#6E7079" class="zr45-cls-243"></path>
+<path d="M456.5 362.5L456.5 367.5" fill="transparent" stroke="#6E7079" class="zr45-cls-243"></path>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(113.76 362.5)" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(113.76 319.2857)" fill="#6E7079">1,000,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(113.76 276.0714)" fill="#6E7079">2,000,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(113.76 232.8571)" fill="#6E7079">3,000,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(113.76 189.6429)" fill="#6E7079">4,000,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(113.76 146.4286)" fill="#6E7079">5,000,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(113.76 103.2143)" fill="#6E7079">6,000,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(113.76 60)" fill="#6E7079">7,000,000</text>
+<text dominant-baseline="central" text-anchor="middle" style="font: normal normal 12px sans-serif" y="6" transform="translate(121.76 370.5)" fill="#6E7079">2018</text>
+<text dominant-baseline="central" text-anchor="middle" style="font: normal normal 12px sans-serif" y="6" transform="translate(205.3622 370.5)" fill="#6E7079">2019</text>
+<text dominant-baseline="central" text-anchor="middle" style="font: normal normal 12px sans-serif" y="6" transform="translate(288.9644 370.5)" fill="#6E7079">2020</text>
+<text dominant-baseline="central" text-anchor="middle" style="font: normal normal 12px sans-serif" y="6" transform="translate(372.7956 370.5)" fill="#6E7079">2021</text>
+<text dominant-baseline="central" text-anchor="middle" style="font: normal normal 12px sans-serif" y="6" transform="translate(456.3978 370.5)" fill="#6E7079">2022</text>
+<g clip-path="url(#zr45-c0)">
+<path d="M540 121.9C540 121.9 493.3 137.8 456.4 166.7C409.7 203.3 421.9 235.3 372.8 253C338.2 265.5 313.6 265.5 289 265.5C229.9 265.5 264.6 80.6 205.4 80.6C181 80.6 121.8 81.4 121.8 81.4" fill="transparent" stroke="#5470c6" stroke-width="2" stroke-linejoin="bevel" class="zr45-cls-245"></path>
+</g>
+<g clip-path="url(#zr45-c1)">
+<path d="M540 188.7C540 188.7 497.7 208.6 456.4 230.5C414.1 253 417.4 277.4 372.8 277.4C333.7 277.4 329.3 277.4 289 271.8C245.6 265.8 248.2 237.2 205.4 237.2C164.6 237.2 121.8 257.5 121.8 257.5" fill="transparent" stroke="#91cc75" stroke-width="2" stroke-linejoin="bevel" class="zr45-cls-245"></path>
+</g>
+<g clip-path="url(#zr45-c2)">
+<path d="M540 292.1C540 292.1 498 292.7 456.4 296.9C414.4 301.2 414.5 302.1 372.8 308.9C330.7 315.8 330.8 324.4 289 324.4C247 324.4 247.6 306.5 205.4 306.5C164 306.5 121.8 310.1 121.8 310.1" fill="transparent" stroke="#fac858" stroke-width="2" stroke-linejoin="bevel" class="zr45-cls-245"></path>
+</g>
+<g clip-path="url(#zr45-c3)">
+<path d="M540 320.9C540 320.9 498.1 320.9 456.4 323.7C414.5 326.5 414.6 328.2 372.8 332.7C330.9 337.2 330.7 341.8 289 341.8C247 341.8 247.5 327.3 205.4 327.3C163.9 327.3 121.8 329 121.8 329" fill="transparent" stroke="#ee6666" stroke-width="2" stroke-linejoin="bevel" class="zr45-cls-245"></path>
+</g>
+<g clip-path="url(#zr45-c4)">
+<path d="M540 353.6C540 353.6 498.2 353.6 456.4 353.6C414.6 353.5 414.6 352.4 372.8 352.4C330.9 352.4 330.9 355.2 289 355.2C247.2 355.2 247.2 354.6 205.4 354.6C163.6 354.6 121.8 355.2 121.8 355.2" fill="transparent" stroke="#73c0de" stroke-width="2" stroke-linejoin="bevel" class="zr45-cls-245"></path>
+</g>
+<g clip-path="url(#zr45-c5)">
+<path d="M540 351.7C540 351.7 498.2 351.7 456.4 352.4C414.6 353.1 414.6 353.8 372.8 355C330.9 356.1 330.9 357 289 357C247.2 357 247.2 356.2 205.4 356.2C163.6 356.2 121.8 356.9 121.8 356.9" fill="transparent" stroke="#3ba272" stroke-width="2" stroke-linejoin="bevel" class="zr45-cls-245"></path>
+</g>
+<g clip-path="url(#zr45-c6)">
+<path d="M540 361.4C540 361.4 498.2 361.6 456.4 361.8C414.6 362 414.6 362.1 372.8 362.2C330.9 362.3 330.9 362.3 289 362.3C247.2 362.3 247.2 361.7 205.4 361.7C163.6 361.7 121.8 361.8 121.8 361.8" fill="transparent" stroke="#fc8452" stroke-width="2" stroke-linejoin="bevel" class="zr45-cls-245"></path>
+</g>
+<g clip-path="url(#zr45-c7)">
+<path d="M540 359.5C540 359.5 498.2 359.6 456.4 359.6C414.6 359.6 414.6 359.6 372.8 359.6C330.9 359.6 330.9 359.9 289 360C247.2 360.1 247.2 360.1 205.4 360.1C163.6 360.2 121.8 360.2 121.8 360.2" fill="transparent" stroke="#9a60b4" stroke-width="2" stroke-linejoin="bevel" class="zr45-cls-245"></path>
+</g>
+<g clip-path="url(#zr45-c8)">
+<path d="M540 361C540 361 498.2 361 456.4 361.1C414.6 361.2 414.6 361.6 372.8 361.8C330.9 362 330.9 362 289 362C247.2 362 247.2 361.3 205.4 361.3C163.6 361.3 121.8 361.5 121.8 361.5" fill="transparent" stroke="#ea7ccc" stroke-width="2" stroke-linejoin="bevel" class="zr45-cls-245"></path>
+</g>
+<g clip-path="url(#zr45-c9)">
+<path d="M540 361.8C540 361.8 498.2 361.8 456.4 361.9C414.6 361.9 414.6 362 372.8 362.2C330.9 362.3 330.9 362.3 289 362.3C247.2 362.3 247.2 361.9 205.4 361.9C163.6 361.9 121.8 362.1 121.8 362.1" fill="transparent" stroke="#5470c6" stroke-width="2" stroke-linejoin="bevel" class="zr45-cls-245"></path>
+</g>
+<g clip-path="url(#zr45-c10)">
+<path d="M540 362.1C540 362.1 498.2 362.1 456.4 362.1C414.6 362.1 414.6 362.2 372.8 362.2C330.9 362.2 330.9 362.2 289 362.2C247.2 362.2 247.2 362.2 205.4 362.2C163.6 362.2 121.8 362.2 121.8 362.2" fill="transparent" stroke="#91cc75" stroke-width="2" stroke-linejoin="bevel" class="zr45-cls-245"></path>
+</g>
+<g clip-path="url(#zr45-c11)">
+<path d="M540 362.1C540 362.1 498.2 362.2 456.4 362.2C414.6 362.2 414.6 362.2 372.8 362.3C330.9 362.3 330.9 362.4 289 362.4C247.2 362.4 247.2 362.2 205.4 362.2C163.6 362.2 121.8 362.2 121.8 362.2" fill="transparent" stroke="#fac858" stroke-width="2" stroke-linejoin="bevel" class="zr45-cls-245"></path>
+</g>
+<g clip-path="url(#zr45-c12)">
+<path d="M540 362.5C540 362.5 498.2 362.5 456.4 362.5C414.6 362.5 414.6 362.5 372.8 362.5C330.9 362.5 330.9 362.5 289 362.5C247.2 362.5 247.2 362.5 205.4 362.5C163.6 362.5 121.8 362.5 121.8 362.5" fill="transparent" stroke="#ee6666" stroke-width="2" stroke-linejoin="bevel" class="zr45-cls-245"></path>
+</g>
+<g clip-path="url(#zr45-c13)">
+<path d="M540 362.4C540 362.4 498.2 362.4 456.4 362.4C414.6 362.4 414.6 362.4 372.8 362.4C330.9 362.4 330.9 362.5 289 362.5C247.2 362.5 247.2 362.4 205.4 362.4C163.6 362.4 121.8 362.4 121.8 362.4" fill="transparent" stroke="#73c0de" stroke-width="2" stroke-linejoin="bevel" class="zr45-cls-245"></path>
+</g>
+<g clip-path="url(#zr45-c14)">
+<path d="M540 360.5C540 360.5 498.2 361 456.4 361.2C414.6 361.3 414.6 361.2 372.8 361.3C330.9 361.4 330.9 361.8 289 361.8C247.2 361.8 247.2 361.5 205.4 361.5C163.6 361.5 121.8 361.6 121.8 361.6" fill="transparent" stroke="#3ba272" stroke-width="2" stroke-linejoin="bevel" class="zr45-cls-245"></path>
+</g>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,540,121.9223)" fill="#fff" stroke="#5470c6" ecmeta_series_index="0" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,456.3978,166.6774)" fill="#fff" stroke="#5470c6" ecmeta_series_index="0" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,372.7956,252.9912)" fill="#fff" stroke="#5470c6" ecmeta_series_index="0" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,288.9644,265.4524)" fill="#fff" stroke="#5470c6" ecmeta_series_index="0" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,205.3622,80.5969)" fill="#fff" stroke="#5470c6" ecmeta_series_index="0" ecmeta_data_index="4" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,121.76,81.3786)" fill="#fff" stroke="#5470c6" ecmeta_series_index="0" ecmeta_data_index="5" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,540,188.7462)" fill="#fff" stroke="#91cc75" ecmeta_series_index="1" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,456.3978,230.5242)" fill="#fff" stroke="#91cc75" ecmeta_series_index="1" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,372.7956,277.3734)" fill="#fff" stroke="#91cc75" ecmeta_series_index="1" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,288.9644,271.7962)" fill="#fff" stroke="#91cc75" ecmeta_series_index="1" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,205.3622,237.1554)" fill="#fff" stroke="#91cc75" ecmeta_series_index="1" ecmeta_data_index="4" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,121.76,257.4858)" fill="#fff" stroke="#91cc75" ecmeta_series_index="1" ecmeta_data_index="5" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,540,292.0512)" fill="#fff" stroke="#fac858" ecmeta_series_index="2" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,456.3978,296.9226)" fill="#fff" stroke="#fac858" ecmeta_series_index="2" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,372.7956,308.9253)" fill="#fff" stroke="#fac858" ecmeta_series_index="2" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,288.9644,324.4205)" fill="#fff" stroke="#fac858" ecmeta_series_index="2" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,205.3622,306.4837)" fill="#fff" stroke="#fac858" ecmeta_series_index="2" ecmeta_data_index="4" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,121.76,310.115)" fill="#fff" stroke="#fac858" ecmeta_series_index="2" ecmeta_data_index="5" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,540,320.9383)" fill="#fff" stroke="#ee6666" ecmeta_series_index="3" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,456.3978,323.7203)" fill="#fff" stroke="#ee6666" ecmeta_series_index="3" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,372.7956,332.6681)" fill="#fff" stroke="#ee6666" ecmeta_series_index="3" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,288.9644,341.7619)" fill="#fff" stroke="#ee6666" ecmeta_series_index="3" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,205.3622,327.2693)" fill="#fff" stroke="#ee6666" ecmeta_series_index="3" ecmeta_data_index="4" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,121.76,329.0374)" fill="#fff" stroke="#ee6666" ecmeta_series_index="3" ecmeta_data_index="5" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,540,353.6108)" fill="#fff" stroke="#73c0de" ecmeta_series_index="4" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,456.3978,353.5737)" fill="#fff" stroke="#73c0de" ecmeta_series_index="4" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,372.7956,352.3852)" fill="#fff" stroke="#73c0de" ecmeta_series_index="4" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,288.9644,355.2401)" fill="#fff" stroke="#73c0de" ecmeta_series_index="4" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,205.3622,354.5773)" fill="#fff" stroke="#73c0de" ecmeta_series_index="4" ecmeta_data_index="4" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,121.76,355.2152)" fill="#fff" stroke="#73c0de" ecmeta_series_index="4" ecmeta_data_index="5" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,540,351.6864)" fill="#fff" stroke="#3ba272" ecmeta_series_index="5" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,456.3978,352.4127)" fill="#fff" stroke="#3ba272" ecmeta_series_index="5" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,372.7956,354.9727)" fill="#fff" stroke="#3ba272" ecmeta_series_index="5" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,288.9644,357.0289)" fill="#fff" stroke="#3ba272" ecmeta_series_index="5" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,205.3622,356.187)" fill="#fff" stroke="#3ba272" ecmeta_series_index="5" ecmeta_data_index="4" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,121.76,356.8721)" fill="#fff" stroke="#3ba272" ecmeta_series_index="5" ecmeta_data_index="5" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,540,361.3615)" fill="#fff" stroke="#fc8452" ecmeta_series_index="6" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,456.3978,361.7667)" fill="#fff" stroke="#fc8452" ecmeta_series_index="6" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,372.7956,362.1817)" fill="#fff" stroke="#fc8452" ecmeta_series_index="6" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,288.9644,362.2504)" fill="#fff" stroke="#fc8452" ecmeta_series_index="6" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,205.3622,361.7272)" fill="#fff" stroke="#fc8452" ecmeta_series_index="6" ecmeta_data_index="4" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,121.76,361.7846)" fill="#fff" stroke="#fc8452" ecmeta_series_index="6" ecmeta_data_index="5" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,540,359.471)" fill="#fff" stroke="#9a60b4" ecmeta_series_index="7" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,456.3978,359.6168)" fill="#fff" stroke="#9a60b4" ecmeta_series_index="7" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,372.7956,359.5728)" fill="#fff" stroke="#9a60b4" ecmeta_series_index="7" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,288.9644,360.0174)" fill="#fff" stroke="#9a60b4" ecmeta_series_index="7" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,205.3622,360.1461)" fill="#fff" stroke="#9a60b4" ecmeta_series_index="7" ecmeta_data_index="4" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,121.76,360.2141)" fill="#fff" stroke="#9a60b4" ecmeta_series_index="7" ecmeta_data_index="5" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,540,361.0068)" fill="#fff" stroke="#ea7ccc" ecmeta_series_index="8" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,456.3978,361.1162)" fill="#fff" stroke="#ea7ccc" ecmeta_series_index="8" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,372.7956,361.8161)" fill="#fff" stroke="#ea7ccc" ecmeta_series_index="8" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,288.9644,361.9874)" fill="#fff" stroke="#ea7ccc" ecmeta_series_index="8" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,205.3622,361.3488)" fill="#fff" stroke="#ea7ccc" ecmeta_series_index="8" ecmeta_data_index="4" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,121.76,361.4779)" fill="#fff" stroke="#ea7ccc" ecmeta_series_index="8" ecmeta_data_index="5" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,540,361.8406)" fill="#fff" stroke="#5470c6" ecmeta_series_index="9" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,456.3978,361.8633)" fill="#fff" stroke="#5470c6" ecmeta_series_index="9" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,372.7956,362.1523)" fill="#fff" stroke="#5470c6" ecmeta_series_index="9" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,288.9644,362.2949)" fill="#fff" stroke="#5470c6" ecmeta_series_index="9" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,205.3622,361.9171)" fill="#fff" stroke="#5470c6" ecmeta_series_index="9" ecmeta_data_index="4" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,121.76,362.0641)" fill="#fff" stroke="#5470c6" ecmeta_series_index="9" ecmeta_data_index="5" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,540,362.1167)" fill="#fff" stroke="#91cc75" ecmeta_series_index="10" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,456.3978,362.124)" fill="#fff" stroke="#91cc75" ecmeta_series_index="10" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,372.7956,362.2216)" fill="#fff" stroke="#91cc75" ecmeta_series_index="10" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,288.9644,362.2223)" fill="#fff" stroke="#91cc75" ecmeta_series_index="10" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,205.3622,362.2023)" fill="#fff" stroke="#91cc75" ecmeta_series_index="10" ecmeta_data_index="4" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,121.76,362.1873)" fill="#fff" stroke="#91cc75" ecmeta_series_index="10" ecmeta_data_index="5" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,540,362.1492)" fill="#fff" stroke="#fac858" ecmeta_series_index="11" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,456.3978,362.2094)" fill="#fff" stroke="#fac858" ecmeta_series_index="11" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,372.7956,362.2956)" fill="#fff" stroke="#fac858" ecmeta_series_index="11" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,288.9644,362.3926)" fill="#fff" stroke="#fac858" ecmeta_series_index="11" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,205.3622,362.2345)" fill="#fff" stroke="#fac858" ecmeta_series_index="11" ecmeta_data_index="4" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,121.76,362.2383)" fill="#fff" stroke="#fac858" ecmeta_series_index="11" ecmeta_data_index="5" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,540,362.468)" fill="#fff" stroke="#ee6666" ecmeta_series_index="12" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,456.3978,362.4792)" fill="#fff" stroke="#ee6666" ecmeta_series_index="12" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,372.7956,362.4968)" fill="#fff" stroke="#ee6666" ecmeta_series_index="12" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,288.9644,362.488)" fill="#fff" stroke="#ee6666" ecmeta_series_index="12" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,205.3622,362.4761)" fill="#fff" stroke="#ee6666" ecmeta_series_index="12" ecmeta_data_index="4" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,121.76,362.4752)" fill="#fff" stroke="#ee6666" ecmeta_series_index="12" ecmeta_data_index="5" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,540,362.4078)" fill="#fff" stroke="#73c0de" ecmeta_series_index="13" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,456.3978,362.3889)" fill="#fff" stroke="#73c0de" ecmeta_series_index="13" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,372.7956,362.404)" fill="#fff" stroke="#73c0de" ecmeta_series_index="13" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,288.9644,362.4527)" fill="#fff" stroke="#73c0de" ecmeta_series_index="13" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,205.3622,362.3954)" fill="#fff" stroke="#73c0de" ecmeta_series_index="13" ecmeta_data_index="4" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,121.76,362.4124)" fill="#fff" stroke="#73c0de" ecmeta_series_index="13" ecmeta_data_index="5" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,540,360.4942)" fill="#fff" stroke="#3ba272" ecmeta_series_index="14" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,456.3978,361.1514)" fill="#fff" stroke="#3ba272" ecmeta_series_index="14" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,372.7956,361.2585)" fill="#fff" stroke="#3ba272" ecmeta_series_index="14" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,288.9644,361.784)" fill="#fff" stroke="#3ba272" ecmeta_series_index="14" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,205.3622,361.5027)" fill="#fff" stroke="#3ba272" ecmeta_series_index="14" ecmeta_data_index="4" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,121.76,361.6361)" fill="#fff" stroke="#3ba272" ecmeta_series_index="14" ecmeta_data_index="5" ecmeta_ssr_type="chart" class="zr45-cls-246"></path>
+<path d="M0 0l418.2 0l0 30l-418.2 0Z" transform="matrix(1,0,0,-1,124.56,442.5)" fill="rgb(47,69,84)" fill-opacity="0" class="zr45-cls-243"></path>
+<g clip-path="url(#zr45-c15)">
+<polygon points="418.2 0 0 0 0 18.5 38 14.5 76 6.7 114.1 5.6 152.1 22.2 190.1 22.1 228.1 24.3 266.2 24.4 304.2 23.7 342.2 23.6 380.2 23 418.2 24.2" transform="matrix(1,0,0,-1,124.56,442.5)" fill="#d2dbee" fill-opacity="0.2" class="zr45-cls-243"></polygon>
+</g>
+<g clip-path="url(#zr45-c16)">
+<polygon points="418.2 0 0 0 0 18.5 38 14.5 76 6.7 114.1 5.6 152.1 22.2 190.1 22.1 228.1 24.3 266.2 24.4 304.2 23.7 342.2 23.6 380.2 23 418.2 24.2" transform="matrix(1,0,0,-1,124.56,442.5)" fill="#8fb0f7" fill-opacity="0.2" class="zr45-cls-243"></polygon>
+</g>
+<g clip-path="url(#zr45-c17)">
+<polygon points="418.2 0 0 0 0 18.5 38 14.5 76 6.7 114.1 5.6 152.1 22.2 190.1 22.1 228.1 24.3 266.2 24.4 304.2 23.7 342.2 23.6 380.2 23 418.2 24.2" transform="matrix(1,0,0,-1,124.56,442.5)" fill="#d2dbee" fill-opacity="0.2" class="zr45-cls-243"></polygon>
+</g>
+<g clip-path="url(#zr45-c15)">
+<polyline points="0 18.5 38 14.5 76 6.7 114.1 5.6 152.1 22.2 190.1 22.1 228.1 24.3 266.2 24.4 304.2 23.7 342.2 23.6 380.2 23 418.2 24.2" transform="matrix(1,0,0,-1,124.56,442.5)" fill="transparent" stroke="#d2dbee" stroke-width="0.5" class="zr45-cls-243"></polyline>
+</g>
+<g clip-path="url(#zr45-c16)">
+<polyline points="0 18.5 38 14.5 76 6.7 114.1 5.6 152.1 22.2 190.1 22.1 228.1 24.3 266.2 24.4 304.2 23.7 342.2 23.6 380.2 23 418.2 24.2" transform="matrix(1,0,0,-1,124.56,442.5)" fill="transparent" stroke="#8fb0f7" stroke-width="0.5" class="zr45-cls-243"></polyline>
+</g>
+<g clip-path="url(#zr45-c17)">
+<polyline points="0 18.5 38 14.5 76 6.7 114.1 5.6 152.1 22.2 190.1 22.1 228.1 24.3 266.2 24.4 304.2 23.7 342.2 23.6 380.2 23 418.2 24.2" transform="matrix(1,0,0,-1,124.56,442.5)" fill="transparent" stroke="#d2dbee" stroke-width="0.5" class="zr45-cls-243"></polyline>
+</g>
+<path d="M0 0l418.2 0l0 30l-418.2 0Z" transform="matrix(1,0,0,-1,124.56,442.5)" fill="transparent" class="zr45-cls-247"></path>
+<path d="M228.2 0l190.1 0l0 30l-190.1 0Z" transform="matrix(1,0,0,-1,124.56,442.5)" fill="rgb(135,175,255)" fill-opacity="0.2" class="zr45-cls-243"></path>
+<path d="M3.5 0.5L414.5 0.5A3 3 0 0 1 417.5 3.5L417.5 26.5A3 3 0 0 1 414.5 29.5L3.5 29.5A3 3 0 0 1 0.5 26.5L0.5 3.5A3 3 0 0 1 3.5 0.5" transform="matrix(1,0,0,-1,124.56,442.5)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#d2dbee" class="zr45-cls-243"></path>
+<path d="M228.2 29.5L418.2 29.5L418.2 34.5A2 2 0 0 1 416.2 36.5L230.2 36.5A2 2 0 0 1 228.2 34.5L228.2 29.5" transform="matrix(1,0,0,-1,124.56,442.5)" fill="#D2DBEE" fill-opacity="0.7" class="zr45-cls-243"></path>
+<path d="M-2.2 -1.7C-1.9 -1.7 -1.7 -1.5 -1.7 -1.1L-1.7 1.1C-1.7 1.5 -1.9 1.7 -2.2 1.7C-2.6 1.7 -2.8 1.5 -2.8 1.1L-2.8 -1.1C-2.8 -1.5 -2.6 -1.7 -2.2 -1.7ZM0 -1.7C0.4 -1.7 0.6 -1.5 0.6 -1.1L0.6 1.1C0.6 1.5 0.4 1.7 0 1.7C-0.4 1.7 -0.6 1.5 -0.6 1.1L-0.6 -1.1C-0.6 -1.5 -0.4 -1.7 0 -1.7ZM2.2 -1.7C2.6 -1.7 2.8 -1.5 2.8 -1.1L2.8 1.1C2.8 1.5 2.6 1.7 2.2 1.7C1.9 1.7 1.7 1.5 1.7 1.1L1.7 -1.1C1.7 -1.5 1.9 -1.7 2.2 -1.7Z" transform="matrix(1,0,0,-1,447.7644,409.5)" fill="#fff" class="zr45-cls-243"></path>
+<path d="M0 1.63L0 2M0 0L0 0.38M-0.1 0.38L0.1 0.38A0.1 0.1 0 0 1 0.2 0.47L0.2 1.52A0.1 0.1 0 0 1 0.1 1.62L-0.1 1.63A0.1 0.1 0 0 1 -0.2 1.52L-0.2 0.47A0.1 0.1 0 0 1 -0.1 0.37Z" transform="matrix(15,0,0,-15,353.7288,442.5)" fill="#fff" stroke="#ACB8D1" stroke-width="0.06666666666666667" class="zr45-cls-248"></path>
+<path d="M0 1.63L0 2M0 0L0 0.38M-0.1 0.38L0.1 0.38A0.1 0.1 0 0 1 0.2 0.47L0.2 1.52A0.1 0.1 0 0 1 0.1 1.62L-0.1 1.63A0.1 0.1 0 0 1 -0.2 1.52L-0.2 0.47A0.1 0.1 0 0 1 -0.1 0.37Z" transform="matrix(15,0,0,-15,541.8,442.5)" fill="#fff" stroke="#ACB8D1" stroke-width="0.06666666666666667" class="zr45-cls-248"></path>
+<path d="M-5 -5l10 0l0 10l-10 0Z" transform="translate(595 5)" fill="transparent" stroke="#ccc" stroke-width="0" class="zr45-cls-243"></path>
+<path d="M-285.3 -5l570.5 0l0 28l-570.5 0Z" transform="translate(300 5)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#ccc" stroke-width="0" class="zr45-cls-243"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:18px;font-family:sans-serif;font-weight:bold;" xml:space="preserve" y="9" transform="translate(300 5)" fill="#464646">Usage of Sports Facilities Managed by Sport Singapore (2012–2023)</text>
+<defs >
+<clipPath id="zr45-c0">
+<path d="M120 59l422 0l0 304.5l-422 0Z" fill="#000" class="zr45-cls-244"></path>
+</clipPath>
+<clipPath id="zr45-c1">
+<path d="M120 59l422 0l0 304.5l-422 0Z" fill="#000" class="zr45-cls-244"></path>
+</clipPath>
+<clipPath id="zr45-c2">
+<path d="M120 59l422 0l0 304.5l-422 0Z" fill="#000" class="zr45-cls-244"></path>
+</clipPath>
+<clipPath id="zr45-c3">
+<path d="M120 59l422 0l0 304.5l-422 0Z" fill="#000" class="zr45-cls-244"></path>
+</clipPath>
+<clipPath id="zr45-c4">
+<path d="M120 59l422 0l0 304.5l-422 0Z" fill="#000" class="zr45-cls-244"></path>
+</clipPath>
+<clipPath id="zr45-c5">
+<path d="M120 59l422 0l0 304.5l-422 0Z" fill="#000" class="zr45-cls-244"></path>
+</clipPath>
+<clipPath id="zr45-c6">
+<path d="M120 59l422 0l0 304.5l-422 0Z" fill="#000" class="zr45-cls-244"></path>
+</clipPath>
+<clipPath id="zr45-c7">
+<path d="M120 59l422 0l0 304.5l-422 0Z" fill="#000" class="zr45-cls-244"></path>
+</clipPath>
+<clipPath id="zr45-c8">
+<path d="M120 59l422 0l0 304.5l-422 0Z" fill="#000" class="zr45-cls-244"></path>
+</clipPath>
+<clipPath id="zr45-c9">
+<path d="M120 59l422 0l0 304.5l-422 0Z" fill="#000" class="zr45-cls-244"></path>
+</clipPath>
+<clipPath id="zr45-c10">
+<path d="M120 59l422 0l0 304.5l-422 0Z" fill="#000" class="zr45-cls-244"></path>
+</clipPath>
+<clipPath id="zr45-c11">
+<path d="M120 59l422 0l0 304.5l-422 0Z" fill="#000" class="zr45-cls-244"></path>
+</clipPath>
+<clipPath id="zr45-c12">
+<path d="M120 59l422 0l0 304.5l-422 0Z" fill="#000" class="zr45-cls-244"></path>
+</clipPath>
+<clipPath id="zr45-c13">
+<path d="M120 59l422 0l0 304.5l-422 0Z" fill="#000" class="zr45-cls-244"></path>
+</clipPath>
+<clipPath id="zr45-c14">
+<path d="M120 59l422 0l0 304.5l-422 0Z" fill="#000" class="zr45-cls-244"></path>
+</clipPath>
+<clipPath id="zr45-c15">
+<path d="M0 0l228.2 0l0 30l-228.2 0Z" transform="matrix(1,0,0,-1,124.56,442.5)" fill="#000" class="zr45-cls-244"></path>
+</clipPath>
+<clipPath id="zr45-c16">
+<path d="M228.2 0l190.1 0l0 30l-190.1 0Z" transform="matrix(1,0,0,-1,124.56,442.5)" fill="#000" class="zr45-cls-244"></path>
+</clipPath>
+<clipPath id="zr45-c17">
+<path d="M418.2 0l0 0l0 30l0 0Z" transform="matrix(1,0,0,-1,124.56,442.5)" fill="#000" class="zr45-cls-244"></path>
+</clipPath>
+</defs>
+<style ><![CDATA[
+.zr45-cls-243:hover {
+pointer-events:none;
+}
+.zr45-cls-244:hover {
+cursor:pointer;
+fill:rgba(0,0,0,1);
+}
+.zr45-cls-245:hover {
+cursor:pointer;
+}
+.zr45-cls-246:hover {
+cursor:pointer;
+fill:rgba(255,255,255,1);
+}
+.zr45-cls-247:hover {
+cursor:pointer;
+fill:rgba(0,0,0,0);
+}
+.zr45-cls-248:hover {
+cursor:pointer;
+fill:rgba(255,255,255,1);
+stroke:#8FB0F7;
+}
+
+]]>
+
+</style>
+</svg>

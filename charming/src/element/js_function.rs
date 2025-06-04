@@ -14,7 +14,7 @@ impl JsFunction {
     #[cfg(not(target_arch = "wasm32"))]
     pub fn new_with_args(args: &str, body: &str) -> JsFunction {
         JsFunction {
-            value: super::RawString::from(format!("function({}) {{ {} }}", args, body)),
+            value: super::RawString::from(format!("function({args}) {{ {body} }}")),
         }
     }
 

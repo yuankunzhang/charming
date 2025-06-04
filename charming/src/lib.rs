@@ -633,10 +633,10 @@ impl std::error::Error for EchartsError {}
 impl std::fmt::Display for EchartsError {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
         match self {
-            Self::HtmlRenderingError(msg) => write!(f, "HTML rendering error: {}", msg),
-            Self::ImageRenderingError(msg) => write!(f, "Image rendering error: {}", msg),
-            Self::JsRuntimeError(msg) => write!(f, "JavaScript runtime error: {}", msg),
-            Self::WasmError(msg) => write!(f, "WebAssembly runtime error: {}", msg),
+            Self::HtmlRenderingError(msg) => write!(f, "HTML rendering error: {msg}"),
+            Self::ImageRenderingError(msg) => write!(f, "Image rendering error: {msg}"),
+            Self::JsRuntimeError(msg) => write!(f, "JavaScript runtime error: {msg}"),
+            Self::WasmError(msg) => write!(f, "WebAssembly runtime error: {msg}"),
         }
     }
 }

@@ -1,7 +1,7 @@
 [package]
 name = "charming"
 description = "A visualization library for Rust"
-version = "0.5.0"
+version = "0.5.1"
 edition = "2021"
 authors = ["Yuankun Zhang <i@yuankun.me>"]
 repository = "https://github.com/yuankunzhang/charming"
@@ -28,6 +28,8 @@ js-sys = { version = "0.3", optional = true }
 [dev-dependencies]
 assert-json-diff = "2.0.2"
 charming-gallery = { path = "../gallery"}
+resvg = "0.45"
+test_each_file = "0.3.5"
 
 [dependencies.web-sys]
 version = "0.3.64"

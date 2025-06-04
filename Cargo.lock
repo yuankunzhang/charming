@@ -447,7 +447,7 @@ checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 
 [[package]]
 name = "charming"
-version = "0.5.0"
+version = "0.5.1"
 dependencies = [
  "assert-json-diff",
  "charming-gallery",
@@ -461,6 +461,7 @@ dependencies = [
  "serde_json",
  "serde_v8",
  "serde_with",
+ "test_each_file",
  "wasm-bindgen",
  "web-sys",
 ]
@@ -2690,6 +2691,18 @@ name = "target-lexicon"
 version = "0.12.16"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "61c41af27dd6d1e27b1b16b489db798443478cef1f06a660c96db617ba5de3b1"
+
+[[package]]
+name = "test_each_file"
+version = "0.3.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e5b980155ee175f5b054bafd14e434b89c151ffae1a8bd9d607425a7a6911e2b"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+ "unicode-ident",
+]
 
 [[package]]
 name = "thiserror"

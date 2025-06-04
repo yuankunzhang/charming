@@ -160,7 +160,7 @@ impl From<&str> for MagicTypeType {
             "line" => Self::Line,
             "bar" => Self::Bar,
             "stack" => Self::Stack,
-            _ => panic!("Invalid magic type type: {}", s),
+            _ => panic!("Invalid magic type type: {s}"),
         }
     }
 }
