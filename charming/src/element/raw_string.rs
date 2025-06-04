@@ -21,8 +21,8 @@ where
 }
 
 pub(crate) fn process_raw_strings(s: &str) -> String {
-    let left_mark = format!("\"{}", RAW_MARK);
-    let right_mark = format!("{}\"", RAW_MARK);
+    let left_mark = format!("\"{RAW_MARK}");
+    let right_mark = format!("{RAW_MARK}\"");
 
     let mut output = String::with_capacity(s.len());
     let mut pos = 0;

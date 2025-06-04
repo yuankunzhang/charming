@@ -18,7 +18,7 @@ impl From<&str> for DimensionType {
             "int" => Self::Int,
             "ordinal" => Self::Ordinal,
             "time" => Self::Time,
-            _ => panic!("Invalid dimension type: {}", s),
+            _ => panic!("Invalid dimension type: {s}"),
         }
     }
 }
