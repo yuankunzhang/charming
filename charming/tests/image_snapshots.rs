@@ -20,13 +20,13 @@ fn image_snapshot(old_path: &Path) {
     }
 
     if !test_path.exists() {
-        panic!("Unable to find {:?}, did you run \n`cargo r --bin generate_images img_test` \nto create the images for comparison?", test_path)
+        panic!("Unable to find {test_path:?}, did you run \n`cargo r --bin generate_images img_test` \nto create the images for comparison?")
     };
 
     let mut opt = usvg::Options::default();
     opt.fontdb_mut().load_system_fonts();
 
-    let old_pixmap = get_rgba_data(&old_path, &opt);
+    let old_pixmap = get_rgba_data(old_path, &opt);
     let test_pixmap = get_rgba_data(&test_path, &opt);
 
     assert_eq!(old_pixmap, test_pixmap);
@@ -34,7 +34,7 @@ fn image_snapshot(old_path: &Path) {
 
 fn get_rgba_data(path: &Path, opt: &Options) -> Pixmap {
     let svg_data = std::fs::read(path).unwrap();
-    let tree = usvg::Tree::from_data(&svg_data, &opt).unwrap();
+    let tree = usvg::Tree::from_data(&svg_data, opt).unwrap();
 
     let pixmap_size = tree.size().to_int_size();
     let mut pixmap = tiny_skia::Pixmap::new(pixmap_size.width(), pixmap_size.height()).unwrap();
