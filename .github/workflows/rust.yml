@@ -16,6 +16,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Build
         run: cargo build --verbose
+      - name: Generate test images
+        run: cargo run --bin generate_images img_test
       - name: Run tests
         run: cargo test --verbose
 
