@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.5.1
+- Updated leptos example to fix warnings [#173](https://github.com/yuankunzhang/charming/pull/173)
+- Updated image generation to include themes [#174](https://github.com/yuankunzhang/charming/pull/174)
+- Fix nightly clippy lints [#175](https://github.com/yuankunzhang/charming/pull/175)
+- Updated README.md to show images on crates.io [#176](https://github.com/yuankunzhang/charming/pull/176)
+- Added image snapshot testing [#177](https://github.com/yuankunzhang/charming/pull/177)
+
 ## 0.5.0
 - Start of Changelog
 - Deriving a lot of common functionality (Debug, Clone, etc.) [#86](https://github.com/yuankunzhang/charming/pull/86)
