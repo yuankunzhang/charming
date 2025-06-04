@@ -1,0 +1,68 @@
+<svg width="600" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 600 450">
+<rect width="600" height="450" x="0" y="0" fill="none"></rect>
+<path d="M60 382.5l480 0l0 -53.7l-480 0Z" fill="rgb(250,250,250)" fill-opacity="0.2" class="zr9-cls-36"></path>
+<path d="M60 328.8l480 0l0 -53.7l-480 0Z" fill="rgb(210,219,238)" fill-opacity="0.2" class="zr9-cls-36"></path>
+<path d="M60 275l480 0l0 -53.7l-480 0Z" fill="rgb(250,250,250)" fill-opacity="0.2" class="zr9-cls-36"></path>
+<path d="M60 221.3l480 0l0 -53.7l-480 0Z" fill="rgb(210,219,238)" fill-opacity="0.2" class="zr9-cls-36"></path>
+<path d="M60 167.5l480 0l0 -53.7l-480 0Z" fill="rgb(250,250,250)" fill-opacity="0.2" class="zr9-cls-36"></path>
+<path d="M60 113.8l480 0l0 -53.7l-480 0Z" fill="rgb(210,219,238)" fill-opacity="0.2" class="zr9-cls-36"></path>
+<path d="M60 382.5L540 382.5" fill="transparent" stroke="#E0E6F1" class="zr9-cls-36"></path>
+<path d="M60 329.5L540 329.5" fill="transparent" stroke="#E0E6F1" class="zr9-cls-36"></path>
+<path d="M60 275.5L540 275.5" fill="transparent" stroke="#E0E6F1" class="zr9-cls-36"></path>
+<path d="M60 221.5L540 221.5" fill="transparent" stroke="#E0E6F1" class="zr9-cls-36"></path>
+<path d="M60 167.5L540 167.5" fill="transparent" stroke="#E0E6F1" class="zr9-cls-36"></path>
+<path d="M60 114.5L540 114.5" fill="transparent" stroke="#E0E6F1" class="zr9-cls-36"></path>
+<path d="M60 60.5L540 60.5" fill="transparent" stroke="#E0E6F1" class="zr9-cls-36"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" y="-6" transform="translate(60 45)" fill="#6E7079">km/s minus 299,000</text>
+<path d="M60 382.5L540 382.5" fill="transparent" stroke="#6E7079" stroke-linecap="round" class="zr9-cls-36"></path>
+<path d="M60.5 382.5L60.5 387.5" fill="transparent" stroke="#6E7079" class="zr9-cls-36"></path>
+<path d="M156.5 382.5L156.5 387.5" fill="transparent" stroke="#6E7079" class="zr9-cls-36"></path>
+<path d="M252.5 382.5L252.5 387.5" fill="transparent" stroke="#6E7079" class="zr9-cls-36"></path>
+<path d="M348.5 382.5L348.5 387.5" fill="transparent" stroke="#6E7079" class="zr9-cls-36"></path>
+<path d="M444.5 382.5L444.5 387.5" fill="transparent" stroke="#6E7079" class="zr9-cls-36"></path>
+<path d="M540.5 382.5L540.5 387.5" fill="transparent" stroke="#6E7079" class="zr9-cls-36"></path>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 382.5)" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 328.75)" fill="#6E7079">200</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 275)" fill="#6E7079">400</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 221.25)" fill="#6E7079">600</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 167.5)" fill="#6E7079">800</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 113.75)" fill="#6E7079">1,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 60)" fill="#6E7079">1,200</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(108 390.5)" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(204 390.5)" fill="#6E7079">1</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(300 390.5)" fill="#6E7079">2</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(396 390.5)" fill="#6E7079">3</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(492 390.5)" fill="#6E7079">4</text>
+<path d="M83 154.1L133 154.1L133 119.1L83 119.1ZM108 206.5L108 154.1M108 66.7L108 119.1M83 206.5L133 206.5M83 66.7L133 66.7M83 129.9L133 129.9" fill="#fff" stroke="#5470c6" ecmeta_series_index="0" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr9-cls-37"></path>
+<path d="M179 167.5L229 167.5L229 144.7L179 144.7ZM204 201.8L204 167.5M204 110.4L204 144.7M179 201.8L229 201.8M179 110.4L229 110.4M179 155.4L229 155.4" fill="#fff" stroke="#5470c6" ecmeta_series_index="0" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr9-cls-37"></path>
+<path d="M275 156.8L325 156.8L325 146L275 146ZM300 172.9L300 156.8M300 129.9L300 146M275 172.9L325 172.9M275 129.9L325 129.9M275 152.7L325 152.7" fill="#fff" stroke="#5470c6" ecmeta_series_index="0" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr9-cls-37"></path>
+<path d="M371 176.2L421 176.2L421 150L371 150ZM396 215.5L396 176.2M396 110.7L396 150M371 215.5L421 215.5M371 110.7L421 110.7M371 163.5L421 163.5" fill="#fff" stroke="#5470c6" ecmeta_series_index="0" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr9-cls-37"></path>
+<path d="M467 165.5L517 165.5L517 148.7L467 148.7ZM492 190.7L492 165.5M492 123.5L492 148.7M467 190.7L517 190.7M467 123.5L517 123.5M467 159.4L517 159.4" fill="#fff" stroke="red" ecmeta_series_index="0" ecmeta_data_index="4" ecmeta_ssr_type="chart" class="zr9-cls-37"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,300,124.5)" fill="#91cc75" fill-opacity="0.8" ecmeta_series_index="1" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr9-cls-38"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,300,119.125)" fill="#91cc75" fill-opacity="0.8" ecmeta_series_index="1" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr9-cls-38"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,300,180.9375)" fill="#91cc75" fill-opacity="0.8" ecmeta_series_index="1" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr9-cls-38"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(5,0,0,5,492,119.125)" fill="#91cc75" fill-opacity="0.8" ecmeta_series_index="1" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr9-cls-38"></path>
+<path d="M-123.7 -5l247.4 0l0 28l-247.4 0Z" transform="translate(300 5)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#ccc" stroke-width="0" class="zr9-cls-36"></path>
+<path d="M-4.5 -4.5l150 0l0 49l-150 0Z" transform="translate(65 410)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#999" class="zr9-cls-36"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:18px;font-family:sans-serif;font-weight:bold;" xml:space="preserve" y="9" transform="translate(300 5)" fill="#464646">Michelson-Morley Experiment</text>
+<path d="M0 0l140.3 0l0 40l-140.3 0Z" transform="translate(65 410)" fill="transparent" class="zr9-cls-36"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:sans-serif;" xml:space="preserve" y="10" transform="translate(65 410)" fill="#464646">upper: Q3 + 1.5 * IQR </text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:sans-serif;" xml:space="preserve" y="30" transform="translate(65 410)" fill="#464646">lower: Q1 - 1.5 * IQR</text>
+<style ><![CDATA[
+.zr9-cls-36:hover {
+pointer-events:none;
+}
+.zr9-cls-37:hover {
+cursor:pointer;
+fill:rgba(255,255,255,1);
+stroke-width:2;
+}
+.zr9-cls-38:hover {
+cursor:pointer;
+fill:rgba(159,224,128,1);
+}
+
+]]>
+
+</style>
+</svg>

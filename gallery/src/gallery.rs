@@ -26,7 +26,7 @@ async fn main() {
 async fn index() -> impl IntoResponse {
     let mut template = IndexTemplate::new();
     for (key, value) in CHARTS.iter() {
-        template.collection(key, value.iter().map(|(k, _)| *k).collect::<Vec<_>>());
+        template.collection(key, value.keys().copied().collect::<Vec<_>>());
     }
     HtmlTemplate(template)
 }
@@ -78,7 +78,7 @@ where
             Ok(body) => Html(body).into_response(),
             Err(e) => (
                 StatusCode::INTERNAL_SERVER_ERROR,
-                format!("Template error: {}", e),
+                format!("Template error: {e}"),
             )
                 .into_response(),
         }

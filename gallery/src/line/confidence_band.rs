@@ -41,7 +41,7 @@ pub fn chart() -> Chart {
                     ),
                 )
                 .formatter(
-                    JsFunction::new_with_args("params", &format!("return (params[2].name + '<br />' + ((params[2].value - {}) * 100).toFixed(1) + '%');", base)),
+                    JsFunction::new_with_args("params", &format!("return (params[2].name + '<br />' + ((params[2].value - {base}) * 100).toFixed(1) + '%');")),
                 )
         )
         .grid(Grid::new().left("3%").right("4%").bottom("3%").contain_label(true))
@@ -58,12 +58,12 @@ pub fn chart() -> Chart {
         .y_axis(
             Axis::new()
                 .axis_label(AxisLabel::new().formatter(
-                    JsFunction::new_with_args("val", &format!("return (val - {}) * 100 + '%';", base)))
+                    JsFunction::new_with_args("val", &format!("return (val - {base}) * 100 + '%';")))
                 )
                 .axis_pointer(
                     AxisPointer::new().label(
                         Label::new().formatter(
-                            JsFunction::new_with_args("params", &format!("return ((params.value - {}) * 100).toFixed(1) + '%';", base))
+                            JsFunction::new_with_args("params", &format!("return ((params.value - {base}) * 100).toFixed(1) + '%';"))
                         )
                     )
                 ).split_number(3)
