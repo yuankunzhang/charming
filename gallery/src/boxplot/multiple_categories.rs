@@ -5,7 +5,7 @@ use charming::{
     series::Boxplot,
     Chart,
 };
-use rand::Rng;
+use rand::{Rng, SeedableRng};
 
 pub fn chart() -> Chart {
     let data0 = make_data();
@@ -78,7 +78,7 @@ pub fn chart() -> Chart {
 }
 
 fn make_data() -> Vec<Vec<f64>> {
-    let mut rng = rand::rng();
+    let mut rng = rand::rngs::SmallRng::seed_from_u64(1337);
     let mut data = vec![];
     for _ in 0..18 {
         let mut data0 = vec![];
