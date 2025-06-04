@@ -98,11 +98,11 @@ fn main() {
 
 This code creates the following SVG file:
 
-![](img/nightingale.svg)
+![](img/pie/nightingale.svg)
 
 As another example, the code file [gallery/src/dataset/encode_and_matrix.rs](./gallery/src/dataset/encode_and_matrix.rs) draws a complex chart with four sub-charts:
 
-![](img/encode-and-matrix.svg)
+![](img/dataset/encode_and_matrix.svg)
 
 ### MSRV
 
@@ -110,9 +110,10 @@ We do not provide any minimal supported Rust version and it is usually the lates
 
 ### Crate Feature Flags
 
-The following two feature flags are available, **note that they can't be used together**:
+The following feature flags are available, **note that `ssr` and `wasm` can't be used together**:
 
 - `ssr` - Enables the `ImageRenderer`, which provides the capability to generate image files.
+- `ssr-raster` Enables raster support to the `ImageRenderer` (png, jpg, etc.)
 - `wasm` - Enables the `WasmRenderer`, which provides the capability to render charts in WebAssembly runtime.
 
 ### Renderers
