@@ -1,16 +1,17 @@
-use serde::{ser::SerializeSeq, Serialize};
+use serde::{de::Visitor, ser::SerializeSeq, Deserialize, Deserializer, Serialize};
 
 use crate::element::RawString;
 
 use super::{DataSource, Dimension};
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 pub struct Source {
     source: DataSource,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     id: Option<String>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     dimensions: Vec<Dimension>,
 }
@@ -62,7 +63,7 @@ where
     }
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Transform {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -146,6 +147,61 @@ impl Serialize for Dataset {
             s.serialize_element(&transform)?;
         }
         s.end()
+    }
+}
+
+impl<'de> Deserialize<'de> for Dataset {
+    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+    where
+        D: Deserializer<'de>,
+    {
+        struct DatasetVisitor;
+
+        impl<'de> Visitor<'de> for DatasetVisitor {
+            type Value = Dataset;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter) -> std::fmt::Result {
+                formatter.write_str("a sequence of Sources followed by Transforms")
+            }
+
+            fn visit_seq<V>(self, mut seq: V) -> Result<Dataset, V::Error>
+            where
+                V: serde::de::SeqAccess<'de>,
+            {
+                let mut sources = Vec::new();
+                let mut transforms = Vec::new();
+                let mut parsing_sources = true; // Initially, we are parsing Sources
+
+                // Attempt to parse elements as `Source` until it fails
+                while parsing_sources {
+                    match seq.next_element::<Source>() {
+                        Ok(Some(source)) => sources.push(source),
+                        Ok(None) => {
+                            // End of sequence
+                            return Ok(Dataset {
+                                sources,
+                                transforms,
+                            });
+                        }
+                        Err(_) => {
+                            parsing_sources = false; // Switch to parsing Transforms
+                        }
+                    }
+                }
+
+                // Continue parsing the rest as `Transform`
+                while let Some(transform) = seq.next_element::<Transform>()? {
+                    transforms.push(transform);
+                }
+
+                Ok(Dataset {
+                    sources,
+                    transforms,
+                })
+            }
+        }
+
+        deserializer.deserialize_seq(DatasetVisitor)
     }
 }
 

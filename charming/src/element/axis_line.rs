@@ -1,4 +1,4 @@
-use serde::{ser::SerializeSeq, Serialize};
+use serde::{de::Visitor, ser::SerializeSeq, Deserialize, Deserializer, Serialize};
 
 use super::color::Color;
 
@@ -14,6 +14,38 @@ impl Serialize for ColorSegment {
     }
 }
 
+impl<'de> Deserialize<'de> for ColorSegment {
+    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+    where
+        D: Deserializer<'de>,
+    {
+        struct ColorSegmentVisitor;
+
+        impl<'de> Visitor<'de> for ColorSegmentVisitor {
+            type Value = ColorSegment;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter) -> std::fmt::Result {
+                formatter.write_str("a sequence with a float and a Color")
+            }
+
+            fn visit_seq<V>(self, mut seq: V) -> Result<ColorSegment, V::Error>
+            where
+                V: serde::de::SeqAccess<'de>,
+            {
+                let position: f64 = seq
+                    .next_element()?
+                    .ok_or_else(|| serde::de::Error::invalid_length(0, &self))?;
+                let color: Color = seq
+                    .next_element()?
+                    .ok_or_else(|| serde::de::Error::invalid_length(1, &self))?;
+                Ok(ColorSegment(position, color))
+            }
+        }
+
+        deserializer.deserialize_seq(ColorSegmentVisitor)
+    }
+}
+
 impl From<(f64, &str)> for ColorSegment {
     fn from(tuple: (f64, &str)) -> Self {
         Self(tuple.0, tuple.1.into())
@@ -26,7 +58,7 @@ impl From<(f64, Color)> for ColorSegment {
     }
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct AxisLineStyle {
     color: Vec<ColorSegment>,
@@ -117,7 +149,7 @@ impl From<(f64, &str, f64)> for AxisLineStyle {
     }
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct AxisLine {
     #[serde(skip_serializing_if = "Option::is_none")]

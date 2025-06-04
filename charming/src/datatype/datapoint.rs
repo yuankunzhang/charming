@@ -1,12 +1,12 @@
 use std::fmt::Debug;
 
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
 use crate::element::ItemStyle;
 
 use super::CompositeValue;
 
-#[derive(Serialize, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct DataPointItem {
     value: CompositeValue,
@@ -72,7 +72,7 @@ where
     }
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(untagged)]
 #[allow(clippy::large_enum_variant)]
 pub enum DataPoint {

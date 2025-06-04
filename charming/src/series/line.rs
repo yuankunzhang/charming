@@ -1,4 +1,4 @@
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
 use crate::{
     datatype::{DataFrame, DataPoint},
@@ -9,7 +9,7 @@ use crate::{
     },
 };
 
-#[derive(Serialize, Debug, PartialEq, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Line {
     #[serde(rename = "type")]
@@ -93,7 +93,7 @@ pub struct Line {
     #[serde(skip_serializing_if = "Option::is_none")]
     z: Option<i32>,
 
-    #[serde(skip_serializing_if = "Vec::is_empty")]
+    #[serde(skip_serializing_if = "Vec::is_empty", default)]
     data: DataFrame,
 }
 

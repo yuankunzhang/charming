@@ -1,4 +1,4 @@
-use serde::{ser::SerializeSeq, Serialize};
+use serde::{de::Visitor, ser::SerializeSeq, Deserialize, Deserializer, Serialize};
 
 /// The boundary gap on both sides of a coordinate axis. The setting and
 /// behavior of category axes and non-category axes are different.
@@ -29,6 +29,45 @@ impl Serialize for BoundaryGap {
                 s.end()
             }
         }
+    }
+}
+
+impl<'de> Deserialize<'de> for BoundaryGap {
+    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+    where
+        D: Deserializer<'de>,
+    {
+        struct BoundaryGapVisitor;
+
+        impl<'de> Visitor<'de> for BoundaryGapVisitor {
+            type Value = BoundaryGap;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter) -> std::fmt::Result {
+                formatter.write_str("a boolean or a sequence of two strings")
+            }
+
+            fn visit_bool<E>(self, value: bool) -> Result<BoundaryGap, E>
+            where
+                E: serde::de::Error,
+            {
+                Ok(BoundaryGap::CategoryAxis(value))
+            }
+
+            fn visit_seq<V>(self, mut seq: V) -> Result<BoundaryGap, V::Error>
+            where
+                V: serde::de::SeqAccess<'de>,
+            {
+                let min: String = seq
+                    .next_element()?
+                    .ok_or_else(|| serde::de::Error::invalid_length(0, &self))?;
+                let max: String = seq
+                    .next_element()?
+                    .ok_or_else(|| serde::de::Error::invalid_length(1, &self))?;
+                Ok(BoundaryGap::NonCategoryAxis(min, max))
+            }
+        }
+
+        deserializer.deserialize_any(BoundaryGapVisitor)
     }
 }
 

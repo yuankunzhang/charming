@@ -1,8 +1,8 @@
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
 use crate::{datatype::CompositeValue, element::Orient};
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
 pub enum SaveAsImageType {
     Png,
@@ -10,7 +10,7 @@ pub enum SaveAsImageType {
     Svg,
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct SaveAsImage {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -64,7 +64,7 @@ impl SaveAsImage {
     }
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Restore {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -99,7 +99,7 @@ impl Restore {
     }
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct DataView {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -143,7 +143,7 @@ impl DataView {
     }
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
 pub enum MagicTypeType {
     /// For line charts.
@@ -165,7 +165,7 @@ impl From<&str> for MagicTypeType {
     }
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct MagicType {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -200,7 +200,7 @@ impl MagicType {
     }
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "camelCase")]
 pub enum BrushType {
     Rect,
@@ -211,9 +211,10 @@ pub enum BrushType {
     Clear,
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Brush {
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     type_: Vec<BrushType>,
 }
@@ -235,7 +236,7 @@ impl Brush {
     }
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct ToolboxDataZoom {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -259,7 +260,7 @@ impl ToolboxDataZoom {
     }
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Feature {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -330,7 +331,7 @@ impl Feature {
     }
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Toolbox {
     #[serde(skip_serializing_if = "Option::is_none")]

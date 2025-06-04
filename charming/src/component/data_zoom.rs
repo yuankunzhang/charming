@@ -1,11 +1,11 @@
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
 use crate::{
     datatype::CompositeValue,
     element::{Color, DataBackground, Orient, TextStyle},
 };
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "camelCase")]
 pub enum FilterMode {
     Filter,
@@ -14,7 +14,7 @@ pub enum FilterMode {
     None,
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
 pub enum DataZoomType {
     Inside,
@@ -25,7 +25,7 @@ pub enum DataZoomType {
 /// DataZoom component is used for zooming a specific area, which enables user
 /// to investigate data in detail, or get an overview of the data, or get rid
 /// of outlier points.
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct DataZoom {
     #[serde(skip_serializing_if = "Option::is_none")]

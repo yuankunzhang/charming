@@ -1,8 +1,8 @@
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
 use crate::datatype::CompositeValue;
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct DimensionEncode {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -17,6 +17,7 @@ pub struct DimensionEncode {
     #[serde(skip_serializing_if = "Option::is_none")]
     item_name: Option<String>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     tooltip: Vec<CompositeValue>,
 }

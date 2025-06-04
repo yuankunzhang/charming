@@ -1,6 +1,6 @@
-use std::collections::HashMap;
+use std::collections::BTreeMap;
 
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
 use crate::{
     datatype::CompositeValue,
@@ -9,7 +9,7 @@ use crate::{
     },
 };
 
-#[derive(Debug, PartialEq, Serialize, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(untagged)]
 pub enum LegendConfig {
     Single(Box<Legend>),
@@ -28,7 +28,7 @@ impl From<Vec<Legend>> for LegendConfig {
     }
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
 pub enum LegendType {
     /// Simple legend.
@@ -38,7 +38,7 @@ pub enum LegendType {
     Scroll,
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
 pub enum LegendSelectedMode {
     /// Multiple selection.
@@ -48,7 +48,7 @@ pub enum LegendSelectedMode {
     Single,
 }
 
-#[derive(Serialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct LegendItem {
     pub name: String,
@@ -90,7 +90,7 @@ impl From<(String, String)> for LegendItem {
     }
 }
 
-#[derive(Serialize, Debug, PartialEq, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Legend {
     /// Type of legend.
@@ -182,7 +182,7 @@ pub struct Legend {
     formatter: Option<String>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    selected: Option<HashMap<String, bool>>,
+    selected: Option<BTreeMap<String, bool>>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
     selected_mode: Option<LegendSelectedMode>,
@@ -193,6 +193,7 @@ pub struct Legend {
     #[serde(skip_serializing_if = "Option::is_none")]
     inactive_color: Option<Color>,
 
+    #[serde(default)]
     #[serde(skip_serializing_if = "Vec::is_empty")]
     data: Vec<LegendItem>,
 

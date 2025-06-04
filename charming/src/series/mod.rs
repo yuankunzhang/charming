@@ -76,6 +76,61 @@ pub enum Series {
     Treemap(treemap::Treemap),
 }
 
+macro_rules! impl_series_deserialize {
+    ($($variant:ident => $type_str:literal),* $(,)?) => {
+        impl<'de> serde::Deserialize<'de> for Series {
+            fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                let value = serde_json::Value::deserialize(deserializer)?;
+
+                let type_str = value
+                    .get("type")
+                    .and_then(|v| v.as_str())
+                    .ok_or_else(|| serde::de::Error::missing_field("type"))?;
+
+                match type_str {
+                    $(
+                        $type_str => Ok(Series::$variant(
+                            serde_json::from_value(value).map_err(serde::de::Error::custom)?
+                        )),
+                    )*
+                    _ => Err(serde::de::Error::unknown_variant(
+                        type_str,
+                        &[$($type_str),*]
+                    )),
+                }
+            }
+        }
+    };
+}
+
+impl_series_deserialize!(
+    Bar => "bar",
+    Bar3d => "bar3D",
+    Boxplot => "boxplot",
+    Candlestick => "candlestick",
+    Custom => "custom",
+    EffectScatter => "effectScatter",
+    Funnel => "funnel",
+    Gauge => "gauge",
+    Graph => "graph",
+    Heatmap => "heatmap",
+    Line => "line",
+    Map => "map",
+    Parallel => "parallel",
+    PictorialBar => "pictorialBar",
+    Pie => "pie",
+    Radar => "radar",
+    Sankey => "sankey",
+    Scatter => "scatter",
+    Sunburst => "sunburst",
+    ThemeRiver => "themeRiver",
+    Tree => "tree",
+    Treemap => "treemap",
+);
+
 macro_rules! impl_series {
     ($($variant:ident),*) => {
         impl Serialize for Series {

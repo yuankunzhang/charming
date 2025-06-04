@@ -27,6 +27,7 @@ js-sys = { version = "0.3", optional = true }
 
 [dev-dependencies]
 assert-json-diff = "2.0.2"
+charming-gallery = { path = "../gallery"}
 resvg = "0.45"
 test_each_file = "0.3.5"
 
