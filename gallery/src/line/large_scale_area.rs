@@ -8,11 +8,11 @@ use charming::{
     Chart,
 };
 use chrono::{Days, NaiveDate};
-use rand::Rng;
+use rand::{Rng, SeedableRng};
 
 pub fn chart() -> Chart {
     let base_date = NaiveDate::parse_from_str("1968-09-03", "%Y-%m-%d").unwrap();
-    let mut rng = rand::rng();
+    let mut rng = rand::rngs::SmallRng::seed_from_u64(1337);
     let mut dates = vec![];
     let mut values = vec![rng.random::<f64>() * 300.];
 
