@@ -451,6 +451,7 @@ version = "0.5.1"
 dependencies = [
  "assert-json-diff",
  "charming-gallery",
+ "charming_macros",
  "deno_core",
  "handlebars",
  "image",
