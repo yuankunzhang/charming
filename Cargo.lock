@@ -486,8 +486,11 @@ dependencies = [
 name = "charming_macros"
 version = "0.1.0"
 dependencies = [
+ "charming",
  "proc-macro2",
  "quote",
+ "serde",
+ "serde_with",
  "syn",
 ]
 
