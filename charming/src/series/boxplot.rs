@@ -26,13 +26,5 @@ pub struct Boxplot {
     item_style: Option<ItemStyle>,
     z: Option<usize>,
     #[serde(skip_serializing_if = "Vec::is_empty", default)]
-    #[charming_skip_setter]
     data: DataFrame,
-}
-
-impl Boxplot {
-    pub fn data<D: Into<DataPoint>>(mut self, data: Vec<D>) -> Self {
-        self.data = data.into_iter().map(|d| d.into()).collect();
-        self
-    }
 }

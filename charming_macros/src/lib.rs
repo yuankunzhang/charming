@@ -149,6 +149,15 @@ pub fn derive(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
                         pub fn #field_ident<#field_ident_shorthand: Into #field_generic_type >(mut self, #field_ident: #field_ident_shorthand) -> Self {self.#field_ident.push(#field_ident.into());
                         self}
                     });
+                } else if type_wrapper == "DataFrame" && generate_setter {
+                    fields_init_values.push(quote! { #field_ident: DataFrame::default() });
+
+                    fields_setter.push(quote! {
+                        pub fn data<D: Into<DataPoint>>(mut self, data: Vec<D>) -> Self {
+                            self.data = data.into_iter().map(|d| d.into()).collect();
+                            self
+                        }
+                    });
                 };
             }
             _ => todo!(),
