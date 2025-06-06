@@ -1,3 +1,4 @@
+use charming_macros::CharmingSetters;
 use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, Debug, PartialEq, Clone)]
@@ -20,39 +21,15 @@ where
     }
 }
 
-#[derive(Serialize, Deserialize, Debug, PartialEq, Clone)]
+#[serde_with::apply(
+  Option => #[serde(skip_serializing_if = "Option::is_none")],
+  Vec => #[serde(default, skip_serializing_if = "Vec::is_empty")]
+)]
+#[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct GeoMap {
-    #[serde(skip_serializing_if = "Option::is_none")]
     name: Option<String>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
     opt: Option<GeoMapOpt>,
-}
-
-impl Default for GeoMap {
-    fn default() -> Self {
-        Self::new()
-    }
-}
-
-impl GeoMap {
-    pub fn new() -> Self {
-        GeoMap {
-            name: None,
-            opt: None,
-        }
-    }
-
-    pub fn map_name<S: Into<String>>(mut self, name: S) -> Self {
-        self.name = Some(name.into());
-        self
-    }
-
-    pub fn opt<M: Into<GeoMapOpt>>(mut self, opt: M) -> Self {
-        self.opt = Some(opt.into());
-        self
-    }
 }
 
 impl From<&str> for GeoMap {
@@ -64,7 +41,7 @@ impl From<&str> for GeoMap {
 impl From<(&str, &str)> for GeoMap {
     fn from((name, svg): (&str, &str)) -> Self {
         GeoMap::new()
-            .map_name(name.to_string())
+            .name(name.to_string())
             .opt(GeoMapOpt::Svg(svg.to_string()))
     }
 }
