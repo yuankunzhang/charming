@@ -1,3 +1,4 @@
+use charming_macros::CharmingSetters;
 use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
@@ -23,49 +24,17 @@ impl From<&str> for DimensionType {
     }
 }
 
-#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
+#[serde_with::apply(
+  Option => #[serde(skip_serializing_if = "Option::is_none")],
+  Vec => #[serde(default, skip_serializing_if = "Vec::is_empty")]
+)]
+#[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Dimension {
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(rename = "type")]
     type_: Option<DimensionType>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
     name: Option<String>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
     display_name: Option<String>,
-}
-
-impl Default for Dimension {
-    fn default() -> Self {
-        Self::new()
-    }
-}
-
-impl Dimension {
-    pub fn new() -> Self {
-        Self {
-            type_: None,
-            name: None,
-            display_name: None,
-        }
-    }
-
-    pub fn type_<D: Into<DimensionType>>(mut self, type_: D) -> Self {
-        self.type_ = Some(type_.into());
-        self
-    }
-
-    pub fn name<S: Into<String>>(mut self, name: S) -> Self {
-        self.name = Some(name.into());
-        self
-    }
-
-    pub fn display_name<S: Into<String>>(mut self, display_name: S) -> Self {
-        self.display_name = Some(display_name.into());
-        self
-    }
 }
 
 impl From<&str> for Dimension {
