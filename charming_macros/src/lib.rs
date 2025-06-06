@@ -1,3 +1,99 @@
+#![cfg_attr(docsrs, feature(doc_cfg))]
+/*!
+CharmingSetters is a derive macro for the Charming chart rendering library. It is used to remove a lot of boilerplate code in the library by implementing common methods to set the fields of structs.
+
+Example without the macro
+```rust
+use serde::{Serialize, Deserialize};
+use charming::component::Title;
+use charming::element::{Color, Tooltip};
+use charming::datatype::{DataFrame, DataPoint};
+
+#[serde_with::apply(
+  Option => #[serde(skip_serializing_if = "Option::is_none")],
+  Vec => #[serde(default, skip_serializing_if = "Vec::is_empty")]
+)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
+struct Component {
+    title: Vec<Title>,
+    tooltip: Option<Tooltip>,
+    color: Vec<Color>,
+    position: Option<(String, String)>,
+    data: DataFrame
+
+    // many fields cut for brevity
+}
+// For setting these fields with the setter pattern we would need to implement the following
+// methods manually when we are not using the derive macro
+impl Component {
+    pub fn new() -> Self {
+        Self {
+            title: Vec::new(),
+            tooltip: None,
+            color: Vec::new(),
+            position: None,
+            data: DataFrame::default(),
+        }
+    }
+    pub fn title<T: Into<Title>>(mut self, title: T) -> Self {
+        self.title.push(title.into());
+        self
+    }
+    pub fn tooltip<T: Into<Tooltip>>(mut self, tooltip: T) -> Self {
+        self.tooltip = Some(tooltip.into());
+        self
+    }
+    pub fn color<C: Into<Color>>(mut self, color: Vec<C>) -> Self {
+        self.color = color.into_iter().map(|c| c.into()).collect();
+        self
+    }
+    pub fn position<S: Into<String>>(mut self, position: (S, S)) -> Self {
+        self.position = Some((position.0.into(), position.1.into()));
+        self
+    }
+    pub fn data<D: Into<DataPoint>>(mut self, data: Vec<D>) -> Self {
+        self.data = data.into_iter().map(|d| d.into()).collect();
+        self
+    }
+    // many methods cut for brevity
+}
+```
+
+Example with the macro
+```rust
+use serde::{Serialize, Deserialize};
+use charming::component::Title;
+use charming::element::{Color, Tooltip};
+use charming::datatype::{DataFrame, DataPoint};
+use charming_macros::CharmingSetters;
+
+#[serde_with::apply(
+  Option => #[serde(skip_serializing_if = "Option::is_none")],
+  Vec => #[serde(default, skip_serializing_if = "Vec::is_empty")]
+)]
+#[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, PartialOrd, Clone)]
+struct Component {
+    title: Vec<Title>,
+    tooltip: Option<Tooltip>,
+    #[charming_set_vec]
+    color: Vec<Color>,
+    #[charming_skip_setter]
+    position: Option<(String, String)>,
+    data: DataFrame
+
+    // many fields cut for brevity
+}
+
+impl Component {
+    pub fn position<S: Into<String>>(mut self, position: (S, S)) -> Self {
+        self.position = Some((position.0.into(), position.1.into()));
+        self
+    }
+}
+// All other methods from the previous example are now getting generated automatically
+
+```
+*/
 use proc_macro2::{Ident, Span};
 use quote::quote;
 use syn::{ItemStruct, parse_macro_input};
