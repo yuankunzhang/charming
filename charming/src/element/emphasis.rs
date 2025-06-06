@@ -1,6 +1,6 @@
-use serde::{Deserialize, Serialize};
-
 use super::{item_style::ItemStyle, AreaStyle, Label};
+use charming_macros::CharmingSetters;
+use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
@@ -15,64 +15,16 @@ pub enum EmphasisFocus {
     Adjacency,
 }
 
-#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
+#[serde_with::apply(
+  Option => #[serde(skip_serializing_if = "Option::is_none")],
+  Vec => #[serde(default, skip_serializing_if = "Vec::is_empty")]
+)]
+#[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Emphasis {
-    #[serde(skip_serializing_if = "Option::is_none")]
     focus: Option<EmphasisFocus>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
     item_style: Option<ItemStyle>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
     area_style: Option<AreaStyle>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
     label: Option<Label>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
     disabled: Option<bool>,
-}
-
-impl Default for Emphasis {
-    fn default() -> Self {
-        Self::new()
-    }
-}
-
-impl Emphasis {
-    pub fn new() -> Self {
-        Self {
-            focus: None,
-            item_style: None,
-            area_style: None,
-            label: None,
-            disabled: None,
-        }
-    }
-
-    pub fn focus<E: Into<EmphasisFocus>>(mut self, emphasis: E) -> Self {
-        self.focus = Some(emphasis.into());
-        self
-    }
-
-    pub fn item_style<I: Into<ItemStyle>>(mut self, item_style: I) -> Self {
-        self.item_style = Some(item_style.into());
-        self
-    }
-
-    pub fn area_style<A: Into<AreaStyle>>(mut self, area_style: A) -> Self {
-        self.area_style = Some(area_style.into());
-        self
-    }
-
-    pub fn label<L: Into<Label>>(mut self, label: L) -> Self {
-        self.label = Some(label.into());
-        self
-    }
-
-    pub fn disabled(mut self, disabled: bool) -> Self {
-        self.disabled = Some(disabled);
-        self
-    }
 }

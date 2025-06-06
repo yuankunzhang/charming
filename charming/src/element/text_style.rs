@@ -1,93 +1,29 @@
-use serde::{Deserialize, Serialize};
-
 use super::{
     color::Color,
     font_settings::{FontFamily, FontStyle, FontWeight},
 };
+use charming_macros::CharmingSetters;
+use serde::{Deserialize, Serialize};
 
-#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
+#[serde_with::apply(
+  Option => #[serde(skip_serializing_if = "Option::is_none")],
+  Vec => #[serde(default, skip_serializing_if = "Vec::is_empty")]
+)]
+#[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct TextStyle {
-    #[serde(skip_serializing_if = "Option::is_none")]
     color: Option<Color>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
     font_style: Option<FontStyle>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
     font_weight: Option<FontWeight>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
     font_family: Option<FontFamily>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
     font_size: Option<f64>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
     line_height: Option<f64>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
     align: Option<String>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[charming_skip_setter]
     padding: Option<[f64; 4]>,
 }
 
-impl Default for TextStyle {
-    fn default() -> Self {
-        Self::new()
-    }
-}
-
 impl TextStyle {
-    pub fn new() -> Self {
-        Self {
-            color: None,
-            font_style: None,
-            font_weight: None,
-            font_family: None,
-            font_size: None,
-            line_height: None,
-            align: None,
-            padding: None,
-        }
-    }
-
-    pub fn color<C: Into<Color>>(mut self, color: C) -> Self {
-        self.color = Some(color.into());
-        self
-    }
-
-    pub fn font_style<F: Into<FontStyle>>(mut self, font_style: F) -> Self {
-        self.font_style = Some(font_style.into());
-        self
-    }
-
-    pub fn font_weight<F: Into<FontWeight>>(mut self, font_weight: F) -> Self {
-        self.font_weight = Some(font_weight.into());
-        self
-    }
-
-    pub fn font_family<F: Into<FontFamily>>(mut self, font_family: F) -> Self {
-        self.font_family = Some(font_family.into());
-        self
-    }
-
-    pub fn font_size<F: Into<f64>>(mut self, font_size: F) -> Self {
-        self.font_size = Some(font_size.into());
-        self
-    }
-
-    pub fn line_height<F: Into<f64>>(mut self, line_height: F) -> Self {
-        self.line_height = Some(line_height.into());
-        self
-    }
-
-    pub fn align<S: Into<String>>(mut self, align: S) -> Self {
-        self.align = Some(align.into());
-        self
-    }
-
     pub fn padding<F: Into<f64> + Copy>(mut self, padding: [F; 4]) -> Self {
         self.padding = Some([
             padding[0].into(),

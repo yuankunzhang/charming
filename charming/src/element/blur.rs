@@ -1,38 +1,14 @@
+use super::{item_style::ItemStyle, label::Label};
+use charming_macros::CharmingSetters;
 use serde::{Deserialize, Serialize};
 
-use super::{item_style::ItemStyle, label::Label};
-
-#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
+#[serde_with::apply(
+  Option => #[serde(skip_serializing_if = "Option::is_none")],
+  Vec => #[serde(default, skip_serializing_if = "Vec::is_empty")]
+)]
+#[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Blur {
-    #[serde(skip_serializing_if = "Option::is_none")]
     label: Option<Label>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
     item_style: Option<ItemStyle>,
-}
-
-impl Default for Blur {
-    fn default() -> Self {
-        Self::new()
-    }
-}
-
-impl Blur {
-    pub fn new() -> Self {
-        Self {
-            label: None,
-            item_style: None,
-        }
-    }
-
-    pub fn label<L: Into<Label>>(mut self, label: L) -> Self {
-        self.label = Some(label.into());
-        self
-    }
-
-    pub fn item_style<S: Into<ItemStyle>>(mut self, item_style: S) -> Self {
-        self.item_style = Some(item_style.into());
-        self
-    }
 }
