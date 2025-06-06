@@ -174,6 +174,12 @@ pub fn derive(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
 
             #(#fields_setter)*
         }
+
+        impl Default for #struct_ident {
+            fn default() -> Self {
+                Self::new()
+            }
+        }
     }
     .into()
 }
