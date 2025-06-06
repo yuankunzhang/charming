@@ -37,12 +37,5 @@ pub struct Parallel {
     progressive_threshold: Option<f64>,
     progressive_chunk_mode: Option<ProgressiveChunkMode>,
     #[serde(skip_serializing_if = "Vec::is_empty", default)]
-    #[charming_skip_setter]
     data: DataFrame,
-}
-impl Parallel {
-    pub fn data<D: Into<DataPoint>>(mut self, data: Vec<D>) -> Self {
-        self.data = data.into_iter().map(|d| d.into()).collect();
-        self
-    }
 }

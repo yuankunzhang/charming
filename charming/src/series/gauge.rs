@@ -97,18 +97,12 @@ pub struct Gauge {
     title: Option<GaugeTitle>,
     tooltip: Option<Tooltip>,
     #[serde(skip_serializing_if = "Vec::is_empty", default)]
-    #[charming_skip_setter]
     data: DataFrame,
 }
 
 impl Gauge {
     pub fn center<S: Into<String>>(mut self, center: (S, S)) -> Self {
         self.center = Some((center.0.into(), center.1.into()));
-        self
-    }
-
-    pub fn data<D: Into<DataPoint>>(mut self, data: Vec<D>) -> Self {
-        self.data = data.into_iter().map(|d| d.into()).collect();
         self
     }
 }

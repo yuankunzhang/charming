@@ -22,13 +22,5 @@ pub struct Bar3d {
     shading: Option<String>,
     encode: Option<DimensionEncode>,
     #[serde(skip_serializing_if = "Vec::is_empty", default)]
-    #[charming_skip_setter]
     data: DataFrame,
-}
-
-impl Bar3d {
-    pub fn data<D: Into<DataPoint>>(mut self, data: Vec<D>) -> Self {
-        self.data = data.into_iter().map(|d| d.into()).collect();
-        self
-    }
 }

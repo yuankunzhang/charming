@@ -17,9 +17,6 @@ pub struct Radar {
     type_: String,
     area_style: Option<AreaStyle>,
     color_by: Option<ColorBy>,
-    #[serde(skip_serializing_if = "Vec::is_empty", default)]
-    #[charming_skip_setter]
-    data: DataFrame,
     id: Option<String>,
     name: Option<String>,
     radar_index: Option<f64>,
@@ -30,11 +27,6 @@ pub struct Radar {
     tooltip: Option<Tooltip>,
     line_style: Option<LineStyle>,
     emphasis: Option<Emphasis>,
-}
-
-impl Radar {
-    pub fn data<D: Into<DataPoint>>(mut self, data: Vec<D>) -> Self {
-        self.data = data.into_iter().map(|d| d.into()).collect();
-        self
-    }
+    #[serde(skip_serializing_if = "Vec::is_empty", default)]
+    data: DataFrame,
 }

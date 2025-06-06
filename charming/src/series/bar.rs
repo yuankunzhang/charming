@@ -41,13 +41,5 @@ pub struct Bar {
     bar_gap: Option<CompositeValue>,
     tooltip: Option<Tooltip>,
     #[serde(skip_serializing_if = "Vec::is_empty", default)]
-    #[charming_skip_setter]
     data: DataFrame,
-}
-
-impl Bar {
-    pub fn data<D: Into<DataPoint>>(mut self, data: Vec<D>) -> Self {
-        self.data = data.into_iter().map(|d| d.into()).collect();
-        self
-    }
 }

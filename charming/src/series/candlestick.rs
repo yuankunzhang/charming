@@ -22,12 +22,5 @@ pub struct Candlestick {
     legend_hover_link: Option<bool>,
     tooltip: Option<Tooltip>,
     #[serde(skip_serializing_if = "Vec::is_empty", default)]
-    #[charming_skip_setter]
     data: DataFrame,
-}
-impl Candlestick {
-    pub fn data<D: Into<DataPoint>>(mut self, data: Vec<D>) -> Self {
-        self.data = data.into_iter().map(|d| d.into()).collect();
-        self
-    }
 }
