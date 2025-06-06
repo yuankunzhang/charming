@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = ["charming", "gallery"]
+members = ["charming", "charming_macros", "gallery"]
 exclude = [
   "examples/dioxus-web-demo",
   "examples/dioxus-desktop-demo",
