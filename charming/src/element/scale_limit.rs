@@ -1,36 +1,13 @@
+use charming_macros::CharmingSetters;
 use serde::{Deserialize, Serialize};
 
-#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
+#[serde_with::apply(
+  Option => #[serde(skip_serializing_if = "Option::is_none")],
+  Vec => #[serde(default, skip_serializing_if = "Vec::is_empty")]
+)]
+#[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct ScaleLimit {
-    #[serde(skip_serializing_if = "Option::is_none")]
     min: Option<f64>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
     max: Option<f64>,
-}
-
-impl Default for ScaleLimit {
-    fn default() -> Self {
-        Self::new()
-    }
-}
-
-impl ScaleLimit {
-    pub fn new() -> Self {
-        Self {
-            min: None,
-            max: None,
-        }
-    }
-
-    pub fn min<F: Into<f64>>(mut self, min: F) -> Self {
-        self.min = Some(min.into());
-        self
-    }
-
-    pub fn max<F: Into<f64>>(mut self, max: F) -> Self {
-        self.max = Some(max.into());
-        self
-    }
 }

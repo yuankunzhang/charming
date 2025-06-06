@@ -1,35 +1,14 @@
+use super::line_style::LineStyle;
+use charming_macros::CharmingSetters;
 use serde::{Deserialize, Serialize};
 
-use super::line_style::LineStyle;
-
-#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
+#[serde_with::apply(
+  Option => #[serde(skip_serializing_if = "Option::is_none")],
+  Vec => #[serde(default, skip_serializing_if = "Vec::is_empty")]
+)]
+#[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct MinorSplitLine {
     show: Option<bool>,
     line_style: Option<LineStyle>,
-}
-
-impl Default for MinorSplitLine {
-    fn default() -> Self {
-        Self::new()
-    }
-}
-
-impl MinorSplitLine {
-    pub fn new() -> MinorSplitLine {
-        MinorSplitLine {
-            show: None,
-            line_style: None,
-        }
-    }
-
-    pub fn show(mut self, show: bool) -> MinorSplitLine {
-        self.show = Some(show);
-        self
-    }
-
-    pub fn line_style<F: Into<LineStyle>>(mut self, line_style: F) -> MinorSplitLine {
-        self.line_style = Some(line_style.into());
-        self
-    }
 }
