@@ -10,13 +10,7 @@ use charming::{
 
 pub fn chart() -> Chart {
     Chart::new()
-        .color(vec![
-            "#80ffa5".into(),
-            "#00ddff".into(),
-            "#37a2ff".into(),
-            "#ff0087".into(),
-            "#ffbf00".into(),
-        ])
+        .color(vec!["#80ffa5", "#00ddff", "#37a2ff", "#ff0087", "#ffbf00"])
         .title(Title::new().text("Gradient Stacked Area Chart"))
         .tooltip(
             Tooltip::new().trigger(Trigger::Axis).axis_pointer(
