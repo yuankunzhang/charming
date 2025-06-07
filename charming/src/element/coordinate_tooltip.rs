@@ -1,38 +1,24 @@
 #![allow(dead_code)]
 
-use serde::Serialize;
-
-use crate::datatype::CompositeValue;
-
 use super::{Color, Formatter, Padding, TextStyle, Trigger};
+use crate::datatype::CompositeValue;
+use charming_macros::CharmingSetters;
+use serde::{Deserialize, Serialize};
 
-#[derive(Serialize)]
+#[serde_with::apply(
+  Option => #[serde(skip_serializing_if = "Option::is_none")],
+  Vec => #[serde(default, skip_serializing_if = "Vec::is_empty")]
+)]
+#[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct CoordinateTooltip {
-    #[serde(skip_serializing_if = "Option::is_none")]
     show: Option<bool>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
     trigger: Option<Trigger>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
     position: Option<CompositeValue>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
     formatter: Option<Formatter>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
     value_formatter: Option<Formatter>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
     background_color: Option<Color>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
     border_color: Option<Color>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
     padding: Option<Padding>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
     text_style: Option<TextStyle>,
 }

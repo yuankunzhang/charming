@@ -1,27 +1,13 @@
+use crate::element::AxisType;
+use charming_macros::CharmingSetters;
 use serde::{Deserialize, Serialize};
 
-use crate::element::AxisType;
-
-#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
+#[serde_with::apply(
+  Option => #[serde(skip_serializing_if = "Option::is_none")],
+  Vec => #[serde(default, skip_serializing_if = "Vec::is_empty")]
+)]
+#[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Axis3D {
-    #[serde(skip_serializing_if = "Option::is_none")]
     type_: Option<AxisType>,
-}
-
-impl Default for Axis3D {
-    fn default() -> Self {
-        Self::new()
-    }
-}
-
-impl Axis3D {
-    pub fn new() -> Self {
-        Self { type_: None }
-    }
-
-    pub fn type_<A: Into<AxisType>>(mut self, type_: A) -> Self {
-        self.type_ = Some(type_.into());
-        self
-    }
 }

@@ -1,3 +1,4 @@
+use charming_macros::CharmingSetters;
 use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
@@ -19,67 +20,19 @@ impl From<&str> for MarkPointDataType {
     }
 }
 
-#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
+#[serde_with::apply(
+  Option => #[serde(skip_serializing_if = "Option::is_none")],
+  Vec => #[serde(default, skip_serializing_if = "Vec::is_empty")]
+)]
+#[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct MarkPointData {
-    #[serde(skip_serializing_if = "Option::is_none")]
     #[serde(rename = "type")]
     type_: Option<MarkPointDataType>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
     name: Option<String>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
     x_axis: Option<f64>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
     y_axis: Option<f64>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
     value: Option<f64>,
-}
-
-impl Default for MarkPointData {
-    fn default() -> Self {
-        Self::new()
-    }
-}
-
-impl MarkPointData {
-    pub fn new() -> Self {
-        Self {
-            type_: None,
-            name: None,
-            x_axis: None,
-            y_axis: None,
-            value: None,
-        }
-    }
-
-    pub fn type_<T: Into<MarkPointDataType>>(mut self, type_: T) -> Self {
-        self.type_ = Some(type_.into());
-        self
-    }
-
-    pub fn name<S: Into<String>>(mut self, name: S) -> Self {
-        self.name = Some(name.into());
-        self
-    }
-
-    pub fn x_axis<F: Into<f64>>(mut self, x_axis: F) -> Self {
-        self.x_axis = Some(x_axis.into());
-        self
-    }
-
-    pub fn y_axis<F: Into<f64>>(mut self, y_axis: F) -> Self {
-        self.y_axis = Some(y_axis.into());
-        self
-    }
-
-    pub fn value<F: Into<f64>>(mut self, value: F) -> Self {
-        self.value = Some(value.into());
-        self
-    }
 }
 
 impl From<(&str, &str)> for MarkPointData {
@@ -88,27 +41,13 @@ impl From<(&str, &str)> for MarkPointData {
     }
 }
 
-#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
+#[serde_with::apply(
+  Option => #[serde(skip_serializing_if = "Option::is_none")],
+  Vec => #[serde(default, skip_serializing_if = "Vec::is_empty")]
+)]
+#[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct MarkPoint {
-    #[serde(default)]
-    #[serde(skip_serializing_if = "Vec::is_empty")]
+    #[charming_set_vec]
     data: Vec<MarkPointData>,
-}
-
-impl Default for MarkPoint {
-    fn default() -> Self {
-        Self::new()
-    }
-}
-
-impl MarkPoint {
-    pub fn new() -> Self {
-        Self { data: vec![] }
-    }
-
-    pub fn data<D: Into<MarkPointData>>(mut self, data: Vec<D>) -> Self {
-        self.data = data.into_iter().map(|d| d.into()).collect();
-        self
-    }
 }

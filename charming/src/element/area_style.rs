@@ -1,6 +1,6 @@
-use serde::{Deserialize, Serialize};
-
 use super::color::Color;
+use charming_macros::CharmingSetters;
+use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
@@ -10,46 +10,14 @@ pub enum OriginPosition {
     End,
 }
 
-#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
+#[serde_with::apply(
+  Option => #[serde(skip_serializing_if = "Option::is_none")],
+  Vec => #[serde(default, skip_serializing_if = "Vec::is_empty")]
+)]
+#[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct AreaStyle {
-    #[serde(skip_serializing_if = "Option::is_none")]
     color: Option<Color>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
     origin: Option<OriginPosition>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
     opacity: Option<f64>,
-}
-
-impl Default for AreaStyle {
-    fn default() -> Self {
-        Self::new()
-    }
-}
-
-impl AreaStyle {
-    pub fn new() -> Self {
-        Self {
-            color: None,
-            origin: None,
-            opacity: None,
-        }
-    }
-
-    pub fn color<C: Into<Color>>(mut self, color: C) -> Self {
-        self.color = Some(color.into());
-        self
-    }
-
-    pub fn origin<O: Into<OriginPosition>>(mut self, origin: O) -> Self {
-        self.origin = Some(origin.into());
-        self
-    }
-
-    pub fn opacity<F: Into<f64>>(mut self, opacity: F) -> Self {
-        self.opacity = Some(opacity.into());
-        self
-    }
 }
