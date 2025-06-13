@@ -25,7 +25,7 @@ provides three types of renderers:
   This renderer is disabled by default, and you need to enable the `ssr`
   (Server-Side Rendering) feature to use it.
   To render raster images like PNG the `ssr-raster` feature must also be enabled.
-- **WASM renderer**: [`WasmRenderer`] renders a chart in a WebAssembly runtime.
+- **WASM renderer**: `WasmRenderer` renders a chart in a WebAssembly runtime.
   This renderer is disabled by default, and you need to enable the `wasm`
   feature to use it. Note that the `wasm` feature and `ssr` feature are
   mutually exclusive.
@@ -165,7 +165,7 @@ let chart = Chart::new()
 
 ### Legend
 
-[`Legend`] is the legend of a chart, which is used to show the meaning of the
+[`Legend`](crate::component::Legend) is the legend of a chart, which is used to show the meaning of the
 symbols and colors in the chart. A chart can have multiple legends.
 
 ```rust
@@ -204,7 +204,7 @@ let chart = Chart::new()
 
 ### Polar Coordinate
 
-[`Polar`] is the polar coordinate system. Polar coordinate can be used in
+[`PolarCoordinate`] is the polar coordinate system. Polar coordinate can be used in
 scatter and line charts. Every polar coordinate has an [`AngleAxis`] and a
 [`RadiusAxis`].
 

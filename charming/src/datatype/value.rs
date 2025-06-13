@@ -88,6 +88,17 @@ where
     }
 }
 
+/// The `val` macro can construct a [CompositeValue]::Array.
+/// ```rust
+/// use charming::datatype::CompositeValue;
+/// use charming::val;
+///
+/// let data: CompositeValue = val![
+///    1,
+///    "name1",
+///    Some(1)
+/// ];
+/// ```
 #[macro_export]
 macro_rules! val {
     ($($x:expr),*) => {

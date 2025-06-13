@@ -15,7 +15,7 @@ use super::DataPoint;
 ///     [  7.2,    8.8,   18,   57]
 /// ]
 ///
-/// We can use the [`df`] macro to construct a DataFrame. For example, to
+/// We can use the [`df`](crate::df) macro to construct a DataFrame. For example, to
 /// construct the above DataFrame, you can write code like this:
 ///
 /// ```rust
@@ -35,7 +35,7 @@ use super::DataPoint;
 ///
 /// data: [1, 1, 2, 3, 5, 7, 13]
 ///
-/// We can use the second form of the [`df`] macro to construct the above
+/// We can use the second form of the [`df`](crate::df) macro to construct the above
 /// simplified DataFrame. For example, to construct the above DataFrame, you
 /// can write code like this:
 ///
@@ -48,6 +48,18 @@ use super::DataPoint;
 ///
 pub type DataFrame = Vec<DataPoint>;
 
+/// The `df` macro can construct a [DataFrame].
+/// ```rust
+/// use charming::datatype::DataFrame;
+/// use charming::df;
+///
+/// let data: DataFrame = df![
+///    [3.4, 4.5, 15, 43],
+///    [4.2, 2.3, 20, 91],
+///    [10.8, 9.5, 30, 18],
+///    [7.2, 8.8, 18, 57]
+/// ];
+/// ```
 #[macro_export]
 macro_rules! df {
     ($([$($x:expr),*]),* $(,)?) => {
@@ -70,9 +82,19 @@ macro_rules! df {
     };
 }
 
-/// Code below is modified (using df! as reference) from ChatGPT generated code.
-/// The main objective of macro dz! is to transpose mixed data type vectors,
-/// aka columns or dimensions into ECharts dataframe format.
+/// The `dz` macro can construct a [DataFrame] from mixed data types.
+/// ```rust
+/// use charming::datatype::DataFrame;
+/// use charming::dz;
+///
+/// let data: DataFrame = dz![
+///    [44056, 13334],
+///    [81.8, 76.9],
+///    [23968973, 1376048943],
+///    ["Australia", "China"],
+///    [2015, 2015]
+/// ];
+/// ```
 #[macro_export]
 macro_rules! dz {
     /*
