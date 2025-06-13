@@ -49,20 +49,20 @@
 <path d="M500.5 256.5L500.5 380" fill="transparent" stroke="#E0E6F1" class="zr17-cls-64"></path>
 <path d="M540.5 256.5L540.5 380" fill="transparent" stroke="#E0E6F1" class="zr17-cls-64"></path>
 <path d="M60.5 193.5L60.5 60" fill="transparent" stroke="#6E7079" stroke-linecap="round" class="zr17-cls-64"></path>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" y="-6" transform="translate(60 45)" fill="#6E7079">Life Expectancy</text>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="-6" transform="translate(342 45)" fill="#6E7079">Income</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:10px;font-family:sans-serif;" xml:space="preserve" y="-5" transform="translate(60 45)" fill="#6E7079">Life Expectancy</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:10px;font-family:sans-serif;" y="-5" transform="translate(342 45)" fill="#6E7079">Income</text>
 <path d="M60.5 380L60.5 256.5" fill="transparent" stroke="#6E7079" stroke-linecap="round" class="zr17-cls-64"></path>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="-6" transform="translate(60 241.5)" fill="#6E7079">Population</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:10px;font-family:sans-serif;" y="-5" transform="translate(60 241.5)" fill="#6E7079">Population</text>
 <path d="M342.5 380L342.5 256.5" fill="transparent" stroke="#6E7079" stroke-linecap="round" class="zr17-cls-64"></path>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="-6" transform="translate(342 241.5)" fill="#6E7079">Population</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:10px;font-family:sans-serif;" y="-5" transform="translate(342 241.5)" fill="#6E7079">Population</text>
 <path d="M60 193.5L258 193.5" fill="transparent" stroke="#6E7079" stroke-linecap="round" class="zr17-cls-64"></path>
 <text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(273 193.5)" fill="#6E7079">Income</text>
 <path d="M342 193.5L540 193.5" fill="transparent" stroke="#6E7079" stroke-linecap="round" class="zr17-cls-64"></path>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(555 193.5)" fill="#6E7079">Country</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" transform="translate(555 193.5)" fill="#6E7079">Country</text>
 <path d="M60 380.5L258 380.5" fill="transparent" stroke="#6E7079" stroke-linecap="round" class="zr17-cls-64"></path>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="translate(273 380)" fill="#6E7079">Income</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" transform="translate(273 380)" fill="#6E7079">Income</text>
 <path d="M342 380.5L540 380.5" fill="transparent" stroke="#6E7079" stroke-linecap="round" class="zr17-cls-64"></path>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="translate(555 380)" fill="#6E7079">Life Expectancy</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" xml:space="preserve" transform="translate(555 380)" fill="#6E7079">Life Expectancy</text>
 <path d="M60 193.5L55 193.5" fill="transparent" stroke="#6E7079" class="zr17-cls-64"></path>
 <path d="M60 167.5L55 167.5" fill="transparent" stroke="#6E7079" class="zr17-cls-64"></path>
 <path d="M60 140.5L55 140.5" fill="transparent" stroke="#6E7079" class="zr17-cls-64"></path>
@@ -122,73 +122,73 @@
 <path d="M461.5 380L461.5 385" fill="transparent" stroke="#6E7079" class="zr17-cls-64"></path>
 <path d="M500.5 380L500.5 385" fill="transparent" stroke="#6E7079" class="zr17-cls-64"></path>
 <path d="M540.5 380L540.5 385" fill="transparent" stroke="#6E7079" class="zr17-cls-64"></path>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 193.5)" fill="#6E7079">0</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 166.8)" fill="#6E7079">20</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 140.1)" fill="#6E7079">40</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 113.4)" fill="#6E7079">60</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 86.7)" fill="#6E7079">80</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 60)" fill="#6E7079">100</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(334 193.5)" fill="#6E7079">0</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(334 174.4286)" fill="#6E7079">10,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(334 155.3571)" fill="#6E7079">20,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(334 136.2857)" fill="#6E7079">30,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(334 117.2143)" fill="#6E7079">40,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(334 98.1429)" fill="#6E7079">50,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(334 79.0714)" fill="#6E7079">60,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(334 60)" fill="#6E7079">70,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 380)" fill="#6E7079">0</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 355.3)" fill="#6E7079">300,000,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 330.6)" fill="#6E7079">600,000,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 305.9)" fill="#6E7079">900,000,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 281.2)" fill="#6E7079">1,200,000,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 256.5)" fill="#6E7079">1,500,000,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(334 380)" fill="#6E7079">0</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(334 355.3)" fill="#6E7079">300,000,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(334 330.6)" fill="#6E7079">600,000,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(334 305.9)" fill="#6E7079">900,000,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(334 281.2)" fill="#6E7079">1,200,000,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(334 256.5)" fill="#6E7079">1,500,000,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,60,201.5)" fill="#6E7079">0</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,88.2857,201.5)" fill="#6E7079">10,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,116.5714,201.5)" fill="#6E7079">20,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,144.8571,201.5)" fill="#6E7079">30,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,173.1429,201.5)" fill="#6E7079">40,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,201.4286,201.5)" fill="#6E7079">50,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,229.7143,201.5)" fill="#6E7079">60,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,258,201.5)" fill="#6E7079">70,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,342,201.5)" fill="#6E7079">Australia</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,353,201.5)" fill="#6E7079">Canada</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,364,201.5)" fill="#6E7079">China</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,375,201.5)" fill="#6E7079">Cuba</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,386,201.5)" fill="#6E7079">Finland</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,397,201.5)" fill="#6E7079">France</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,408,201.5)" fill="#6E7079">Germany</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,419,201.5)" fill="#6E7079">Iceland</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,430,201.5)" fill="#6E7079">India</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,441,201.5)" fill="#6E7079">Japan</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.643,-0.766,0.766,0.643,452,201.5)" fill="#6E7079">North Korea</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.643,-0.766,0.766,0.643,463,201.5)" fill="#6E7079">South Korea</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.643,-0.766,0.766,0.643,474,201.5)" fill="#6E7079">New Zealand</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,485,201.5)" fill="#6E7079">Norway</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,496,201.5)" fill="#6E7079">Poland</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,507,201.5)" fill="#6E7079">Russia</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,518,201.5)" fill="#6E7079">Turkey</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.643,-0.766,0.766,0.643,529,201.5)" fill="#6E7079">United Kingdom</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.643,-0.766,0.766,0.643,540,201.5)" fill="#6E7079">United States</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,60,388)" fill="#6E7079">0</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,88.2857,388)" fill="#6E7079">10,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,116.5714,388)" fill="#6E7079">20,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,144.8571,388)" fill="#6E7079">30,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,173.1429,388)" fill="#6E7079">40,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,201.4286,388)" fill="#6E7079">50,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,229.7143,388)" fill="#6E7079">60,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,258,388)" fill="#6E7079">70,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,342,388)" fill="#6E7079">0</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,381.6,388)" fill="#6E7079">20</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,421.2,388)" fill="#6E7079">40</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,460.8,388)" fill="#6E7079">60</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,500.4,388)" fill="#6E7079">80</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,540,388)" fill="#6E7079">100</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="translate(52 193.5)" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="translate(52 166.8)" fill="#6E7079">20</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="translate(52 140.1)" fill="#6E7079">40</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="translate(52 113.4)" fill="#6E7079">60</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="translate(52 86.7)" fill="#6E7079">80</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="translate(52 60)" fill="#6E7079">100</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="translate(334 193.5)" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="translate(334 174.4286)" fill="#6E7079">10,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="translate(334 155.3571)" fill="#6E7079">20,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="translate(334 136.2857)" fill="#6E7079">30,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="translate(334 117.2143)" fill="#6E7079">40,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="translate(334 98.1429)" fill="#6E7079">50,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="translate(334 79.0714)" fill="#6E7079">60,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="translate(334 60)" fill="#6E7079">70,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="translate(52 380)" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="translate(52 355.3)" fill="#6E7079">300,000,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="translate(52 330.6)" fill="#6E7079">600,000,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="translate(52 305.9)" fill="#6E7079">900,000,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="translate(52 281.2)" fill="#6E7079">1,200,000,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="translate(52 256.5)" fill="#6E7079">1,500,000,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="translate(334 380)" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="translate(334 355.3)" fill="#6E7079">300,000,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="translate(334 330.6)" fill="#6E7079">600,000,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="translate(334 305.9)" fill="#6E7079">900,000,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="translate(334 281.2)" fill="#6E7079">1,200,000,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="translate(334 256.5)" fill="#6E7079">1,500,000,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,60,201.5)" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,88.2857,201.5)" fill="#6E7079">10,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,116.5714,201.5)" fill="#6E7079">20,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,144.8571,201.5)" fill="#6E7079">30,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,173.1429,201.5)" fill="#6E7079">40,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,201.4286,201.5)" fill="#6E7079">50,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,229.7143,201.5)" fill="#6E7079">60,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,258,201.5)" fill="#6E7079">70,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,342,201.5)" fill="#6E7079">Australia</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,353,201.5)" fill="#6E7079">Canada</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,364,201.5)" fill="#6E7079">China</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,375,201.5)" fill="#6E7079">Cuba</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,386,201.5)" fill="#6E7079">Finland</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,397,201.5)" fill="#6E7079">France</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,408,201.5)" fill="#6E7079">Germany</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,419,201.5)" fill="#6E7079">Iceland</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,430,201.5)" fill="#6E7079">India</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,441,201.5)" fill="#6E7079">Japan</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.643,-0.766,0.766,0.643,452,201.5)" fill="#6E7079">North Korea</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.643,-0.766,0.766,0.643,463,201.5)" fill="#6E7079">South Korea</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.643,-0.766,0.766,0.643,474,201.5)" fill="#6E7079">New Zealand</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,485,201.5)" fill="#6E7079">Norway</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,496,201.5)" fill="#6E7079">Poland</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,507,201.5)" fill="#6E7079">Russia</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,518,201.5)" fill="#6E7079">Turkey</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.643,-0.766,0.766,0.643,529,201.5)" fill="#6E7079">United Kingdom</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.643,-0.766,0.766,0.643,540,201.5)" fill="#6E7079">United States</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,60,388)" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,88.2857,388)" fill="#6E7079">10,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,116.5714,388)" fill="#6E7079">20,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,144.8571,388)" fill="#6E7079">30,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,173.1429,388)" fill="#6E7079">40,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,201.4286,388)" fill="#6E7079">50,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,229.7143,388)" fill="#6E7079">60,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,258,388)" fill="#6E7079">70,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,342,388)" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,381.6,388)" fill="#6E7079">20</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,421.2,388)" fill="#6E7079">40</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,460.8,388)" fill="#6E7079">60</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,500.4,388)" fill="#6E7079">80</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:8px;font-family:sans-serif;" transform="matrix(0.643,-0.766,0.766,0.643,540,388)" fill="#6E7079">100</text>
 <path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(1.25,0,0,1.25,62.3053,148.0433)" fill="#5470c6" fill-opacity="0.8" ecmeta_series_index="0" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr17-cls-65"></path>
 <path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(1.25,0,0,1.25,63.7167,141.435)" fill="#5470c6" fill-opacity="0.8" ecmeta_series_index="0" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr17-cls-65"></path>
 <path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(1.25,0,0,1.25,62.7861,150.78)" fill="#5470c6" fill-opacity="0.8" ecmeta_series_index="0" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr17-cls-65"></path>

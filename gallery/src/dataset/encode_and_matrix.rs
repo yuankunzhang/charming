@@ -1,7 +1,7 @@
 use charming::{
     component::{Axis, Feature, Grid, Legend, Toolbox, ToolboxDataZoom},
     datatype::{CompositeValue, Dataset},
-    element::{AxisLabel, AxisType, DimensionEncode, Tooltip},
+    element::{AxisLabel, AxisType, DimensionEncode, TextStyle, Tooltip},
     series::Scatter,
     Chart,
 };
@@ -27,53 +27,64 @@ pub fn chart() -> Chart {
                 .type_(AxisType::Value)
                 .grid_index(0)
                 .name("Income")
-                .axis_label(AxisLabel::new().rotate(50).interval(0)),
+                .axis_label(AxisLabel::new().rotate(50).interval(0).font_size(8)),
         )
         .x_axis(
             Axis::new()
                 .type_(AxisType::Category)
                 .grid_index(1)
                 .name("Country")
+                .name_text_style(TextStyle::new().font_size(10))
                 .boundary_gap(false)
-                .axis_label(AxisLabel::new().rotate(50).interval(0)),
+                .axis_label(AxisLabel::new().rotate(50).interval(0).font_size(8)),
         )
         .x_axis(
             Axis::new()
                 .type_(AxisType::Value)
                 .grid_index(2)
                 .name("Income")
-                .axis_label(AxisLabel::new().rotate(50).interval(0)),
+                .name_text_style(TextStyle::new().font_size(10))
+                .axis_label(AxisLabel::new().rotate(50).interval(0).font_size(8)),
         )
         .x_axis(
             Axis::new()
                 .type_(AxisType::Value)
                 .grid_index(3)
                 .name("Life Expectancy")
-                .axis_label(AxisLabel::new().rotate(50).interval(0)),
+                .name_text_style(TextStyle::new().font_size(10))
+                .axis_label(AxisLabel::new().rotate(50).interval(0).font_size(8)),
         )
         .y_axis(
             Axis::new()
                 .type_(AxisType::Value)
                 .grid_index(0)
-                .name("Life Expectancy"),
+                .name("Life Expectancy")
+                .name_text_style(TextStyle::new().font_size(10))
+                .axis_label(AxisLabel::new().font_size(8)),
         )
         .y_axis(
             Axis::new()
                 .type_(AxisType::Value)
                 .grid_index(1)
-                .name("Income"),
+                .name("Income")
+                .name_text_style(TextStyle::new().font_size(10))
+                .axis_label(AxisLabel::new().font_size(8)),
         )
         .y_axis(
             Axis::new()
                 .type_(AxisType::Value)
                 .grid_index(2)
-                .name("Population"),
+                .name("Population")
+                .name_text_style(TextStyle::new().font_size(10))
+                .axis_label(AxisLabel::new().font_size(8)),
         )
         .y_axis(
             Axis::new()
                 .type_(AxisType::Value)
                 .grid_index(3)
-                .name("Population"),
+                .name("Population")
+                .name_text_style(TextStyle::new().font_size(10))
+                .axis_label(AxisLabel::new().font_size(8)),
         )
         .dataset(Dataset::new().source(data))
         .series(
