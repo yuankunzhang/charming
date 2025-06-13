@@ -1,12 +1,11 @@
+use super::JsFunction;
 use serde::{Deserialize, Serialize};
 
-use super::RawString;
-
-#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, Clone)]
 #[serde(untagged)]
 pub enum SymbolSize {
     Number(f64),
-    Function(RawString),
+    Function(JsFunction),
 }
 
 impl From<i64> for SymbolSize {
@@ -21,8 +20,8 @@ impl From<f64> for SymbolSize {
     }
 }
 
-impl From<&str> for SymbolSize {
-    fn from(s: &str) -> Self {
-        SymbolSize::Function(RawString::from(s))
+impl From<JsFunction> for SymbolSize {
+    fn from(f: JsFunction) -> Self {
+        SymbolSize::Function(f)
     }
 }

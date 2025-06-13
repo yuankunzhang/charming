@@ -1,7 +1,7 @@
 use charming::{
     component::{AngleAxis, Legend, PolarCoordinate, RadiusAxis, Title},
     df,
-    element::{AxisLabel, AxisLine, AxisType, CoordinateSystem, SplitLine, Tooltip},
+    element::{AxisLabel, AxisLine, AxisType, CoordinateSystem, JsFunction, SplitLine, Tooltip},
     series::Scatter,
     Chart,
 };
@@ -212,7 +212,7 @@ pub fn chart() -> Chart {
             Scatter::new()
                 .name("Punch Card")
                 .coordinate_system(CoordinateSystem::Polar)
-                .symbol_size("function (val) {return val[2] * 2;}")
+                .symbol_size(JsFunction::new_with_args("val", "return val[2] * 2;"))
                 .data(data),
         )
 }

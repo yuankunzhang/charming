@@ -89,7 +89,10 @@ pub fn chart() -> Chart {
             Scatter::new()
                 .name("1990")
                 .data(data0)
-                .symbol_size("function (data) { return Math.sqrt(data[2]) / 5e2; }")
+                .symbol_size(JsFunction::new_with_args(
+                    "data",
+                    "return Math.sqrt(data[2]) / 5e2;",
+                ))
                 .emphasis(
                     Emphasis::new().focus(EmphasisFocus::Series).label(
                         Label::new()
@@ -121,7 +124,10 @@ pub fn chart() -> Chart {
             Scatter::new()
                 .name("2015")
                 .data(data1)
-                .symbol_size("function (data) { return Math.sqrt(data[2]) / 5e2; }")
+                .symbol_size(JsFunction::new_with_args(
+                    "data",
+                    "return Math.sqrt(data[2]) / 5e2;",
+                ))
                 .emphasis(
                     Emphasis::new().focus(EmphasisFocus::Series).label(
                         Label::new()
