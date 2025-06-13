@@ -12,7 +12,7 @@ A single decal pattern.
   Option => #[serde(skip_serializing_if = "Option::is_none")],
   Vec => #[serde(default, skip_serializing_if = "Vec::is_empty")]
 )]
-#[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct DecalItem {
     /// The symbol type of the decal.
@@ -44,7 +44,7 @@ pub struct DecalItem {
 /**
 Decal patterns to be applied to series data.
  */
-#[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 #[serde_with::apply(
   Option => #[serde(skip_serializing_if = "Option::is_none")],

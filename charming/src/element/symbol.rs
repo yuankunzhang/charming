@@ -1,7 +1,7 @@
-use super::RawString;
+use super::JsFunction;
 use serde::{de::Visitor, Deserialize, Deserializer, Serialize};
 
-#[derive(Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Debug, PartialEq, Clone)]
 pub enum Symbol {
     Circle,
     Rect,
@@ -12,7 +12,7 @@ pub enum Symbol {
     Arrow,
     None,
     Custom(String),
-    Callback(RawString),
+    Callback(JsFunction),
 }
 
 impl Serialize for Symbol {
@@ -67,9 +67,9 @@ impl<'de> Deserialize<'de> for Symbol {
             where
                 M: serde::de::MapAccess<'de>,
             {
-                let raw_string =
-                    RawString::deserialize(serde::de::value::MapAccessDeserializer::new(map))?;
-                Ok(Symbol::Callback(raw_string))
+                let js_function =
+                    JsFunction::deserialize(serde::de::value::MapAccessDeserializer::new(map))?;
+                Ok(Symbol::Callback(js_function))
             }
         }
 
