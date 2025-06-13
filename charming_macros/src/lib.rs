@@ -13,7 +13,7 @@ use charming::datatype::{DataFrame, DataPoint};
   Option => #[serde(skip_serializing_if = "Option::is_none")],
   Vec => #[serde(default, skip_serializing_if = "Vec::is_empty")]
 )]
-#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, Clone)]
 struct Component {
     title: Vec<Title>,
     tooltip: Option<Tooltip>,
@@ -71,7 +71,7 @@ use charming_macros::CharmingSetters;
   Option => #[serde(skip_serializing_if = "Option::is_none")],
   Vec => #[serde(default, skip_serializing_if = "Vec::is_empty")]
 )]
-#[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, Clone)]
 struct Component {
     title: Vec<Title>,
     tooltip: Option<Tooltip>,

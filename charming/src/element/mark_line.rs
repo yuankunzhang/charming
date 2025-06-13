@@ -29,7 +29,7 @@ impl From<&str> for MarkLineDataType {
     }
 }
 
-#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct MarkLineData {
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -134,7 +134,7 @@ impl From<(&str, &str)> for MarkLineData {
     }
 }
 
-#[derive(Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Debug, PartialEq, Clone)]
 #[allow(clippy::large_enum_variant)]
 pub enum MarkLineVariant {
     Simple(MarkLineData),
@@ -211,7 +211,7 @@ impl<'de> Deserialize<'de> for MarkLineVariant {
     }
 }
 
-#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone, Default)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct MarkLine {
     #[serde(skip_serializing_if = "Option::is_none")]

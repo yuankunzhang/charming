@@ -3,7 +3,7 @@ use dioxus_logger::tracing::{info, Level};
 
 use charming::{
     component::Axis,
-    element::{formatter::FormatterFunction, AxisType, Tooltip},
+    element::{AxisType, JsFunction, Tooltip},
     series::Line,
     Chart, WasmRenderer,
 };
@@ -22,7 +22,7 @@ fn App() -> Element {
     let renderer = use_signal(|| WasmRenderer::new(600, 400));
     use_effect(move || {
         let chart = Chart::new()
-            .tooltip(Tooltip::new().formatter(FormatterFunction::new_with_args(
+            .tooltip(Tooltip::new().formatter(JsFunction::new_with_args(
                 "params",
                 r#"
                     var tooltip = "Value: ".concat(String(params.value));

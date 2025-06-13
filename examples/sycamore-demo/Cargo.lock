@@ -81,6 +81,7 @@ checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 name = "charming"
 version = "0.5.1"
 dependencies = [
+ "charming_macros",
  "handlebars",
  "js-sys",
  "serde",
@@ -89,6 +90,15 @@ dependencies = [
  "serde_with",
  "wasm-bindgen",
  "web-sys",
+]
+
+[[package]]
+name = "charming_macros"
+version = "0.1.0"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
 ]
 
 [[package]]

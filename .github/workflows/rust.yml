@@ -1,3 +1,4 @@
+---
 name: Rust
 
 on:
@@ -21,18 +22,67 @@ jobs:
       - name: Run tests
         run: cargo test --verbose
 
+  wasm:
+    name: Build wasm examples
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: stable
+          targets: wasm32-unknown-unknown
+      - name: Install binstall
+        uses: cargo-bins/cargo-binstall@main
+      - name: Install wasm-bindgen
+        run: cargo binstall wasm-bindgen-cli --no-confirm
+      - name: Install dioxus-cli
+        run: cargo binstall dioxus-cli --no-confirm
+      - name: Install trunk
+        run: cargo binstall trunk --no-confirm
+      - name: Build dioxus-web example with dx
+        working-directory: examples/dioxus-web-demo
+        run: dx build --verbose --trace
+      - name: Build leptos example with trunk
+        working-directory: examples/leptos-demo
+        run: trunk build --verbose
+      - name: Build yew example with trunk
+        working-directory: examples/yew-demo
+        run: trunk build --verbose
+      - name: Build sycamore example with trunk
+        working-directory: examples/sycamore-demo
+        run: trunk build --verbose
+
+  dioxus_desktop:
+    name: Build dioxus desktop example
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install binstall
+      uses: cargo-bins/cargo-binstall@main
+    - name: Install dioxus-cli
+      run: cargo binstall dioxus-cli --no-confirm
+    - name: Get ubuntu package information
+      run: sudo apt update
+    - name: Install ubuntu dependencies
+      run: sudo apt install -y libwebkit2gtk-4.1-dev build-essential curl wget file libxdo-dev libssl-dev libayatana-appindicator3-dev librsvg2-dev
+    - name: Build dioxus-desktop example with dx
+      working-directory: examples/dioxus-desktop-demo
+      run: dx build --verbose --trace
+
   linting:
     name: Linting and formatting
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions-rust-lang/setup-rust-toolchain@v1
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@master
         with:
-          components: rustfmt
-      - name: Rustfmt Check
-        uses: actions-rust-lang/rustfmt@v1
-      - uses: actions/checkout@v4
-      - name: Run Clippy
+          toolchain: stable
+          components: clippy, rustfmt
+      - name: Run format
+        run: cargo fmt --check
+      - name: Run clippy
         run: cargo clippy --all-targets --all-features
 
   msrv:
@@ -40,6 +90,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: cargo install cargo-msrv
+      - name: Install binstall
+        uses: cargo-bins/cargo-binstall@main
+      - run: cargo binstall cargo-msrv
       - name: verify current msrv
         run: cargo msrv verify --path charming
