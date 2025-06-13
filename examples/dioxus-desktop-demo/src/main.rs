@@ -1,6 +1,6 @@
 use charming::{
     component::Axis,
-    element::{formatter::FormatterFunction, AxisType, Tooltip},
+    element::{AxisType, Tooltip},
     series::Line,
     Chart,
 };
