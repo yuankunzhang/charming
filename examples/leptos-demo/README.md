@@ -1,11 +1,11 @@
-# charming with dioxus-web
+# charming with leptos
 
 ## Prerequisites
 - [Rust](https://www.rust-lang.org/)
-- [Dioxus CLI](https://dioxus.org/)
+- [trunk](https://trunkrs.dev/)
 - Rust target for WebAssembly: `wasm32-unknown-unknown`
 
 ## Running the example
 ```sh
-dx serve
+trunk serve
 ```
