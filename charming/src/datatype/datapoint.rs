@@ -105,16 +105,6 @@ impl From<DataPointItem> for DataPoint {
     }
 }
 
-#[macro_export]
-macro_rules! dp {
-    ($v:expr) => {
-        DataPoint::new($v)
-    };
-    ($v:expr, $name:expr) => {
-        DataPoint::new($v).name($name)
-    };
-}
-
 #[cfg(test)]
 mod test {
     use super::*;
