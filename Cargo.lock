@@ -665,9 +665,9 @@ dependencies = [
 
 [[package]]
 name = "deno_core"
-version = "0.348.0"
+version = "0.350.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7902cd1dde9e8ffc953428933f37f9b943dc123265709220cded6277946cadf7"
+checksum = "e273b731fce500130790e777cb2631dc451db412975304d23816c1e444a10c5b"
 dependencies = [
  "anyhow",
  "az",
@@ -709,9 +709,9 @@ checksum = "fe4dccb6147bb3f3ba0c7a48e993bfeb999d2c2e47a81badee80e2b370c8d695"
 
 [[package]]
 name = "deno_error"
-version = "0.5.7"
+version = "0.6.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e983933fb4958fbe1e0a63c1e89a2af72b12c409e86404e547955564e6e217b8"
+checksum = "612ec3fc481fea759141b0c57810889b0a4fb6fee8f10748677bfe492fd30486"
 dependencies = [
  "deno_error_macro",
  "libc",
@@ -723,9 +723,9 @@ dependencies = [
 
 [[package]]
 name = "deno_error_macro"
-version = "0.5.7"
+version = "0.6.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a1ad5ae3ef15db33e917d6ed54b53d0a98d068c4d1217eb35a4997423203c3ef"
+checksum = "8380a4224d5d2c3f84da4d764c4326cac62e9a1e3d4960442d29136fc07be863"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -734,9 +734,9 @@ dependencies = [
 
 [[package]]
 name = "deno_ops"
-version = "0.224.0"
+version = "0.226.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "55db7994eccbdad457ca5091c545af712234c8f6e4389cadb2a24d2ecbbe7e89"
+checksum = "c28b12489187c71fa123731cc783d48beb17ae5df04da991909cc2ae5a3d0ef9"
 dependencies = [
  "indexmap 2.8.0",
  "proc-macro-rules",
@@ -751,9 +751,9 @@ dependencies = [
 
 [[package]]
 name = "deno_path_util"
-version = "0.3.2"
+version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c238a664a0a6f1ce0ff2b73c6854811526d00f442a12f878cb8555b23fe13aa3"
+checksum = "516f813389095889776b81cc9108ff6f336fd9409b4b12fc0138aea23d2708e1"
 dependencies = [
  "deno_error",
  "percent-encoding",
@@ -2421,9 +2421,9 @@ dependencies = [
 
 [[package]]
 name = "serde_v8"
-version = "0.257.0"
+version = "0.259.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7c57c63e9203f1d1383df0943e080955999e984e96ecc9557c3bae48e483edfa"
+checksum = "c7e4c5f439cffc03021c8bfd380cd1ef6acb4788a72b7e54bf4a83c73f91f8a0"
 dependencies = [
  "deno_error",
  "num-bigint",
@@ -2676,9 +2676,23 @@ dependencies = [
 
 [[package]]
 name = "sys_traits"
-version = "0.1.8"
+version = "0.1.16"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "638f0e61b5134e56b2abdf4c704fd44672603f15ca09013f314649056f3fee4d"
+checksum = "dc4707edf3196e8037ee45018d1bb1bfb233b0e4fc440fa3d3f25bc69bfdaf26"
+dependencies = [
+ "sys_traits_macros",
+]
+
+[[package]]
+name = "sys_traits_macros"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "181f22127402abcf8ee5c83ccd5b408933fec36a6095cf82cda545634692657e"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+]
 
 [[package]]
 name = "system-deps"
@@ -3222,9 +3236,9 @@ dependencies = [
 
 [[package]]
 name = "wasm_dep_analyzer"
-version = "0.2.0"
+version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2eeee3bdea6257cc36d756fa745a70f9d393571e47d69e0ed97581676a5369ca"
+checksum = "e51cf5f08b357e64cd7642ab4bbeb11aecab9e15520692129624fb9908b8df2c"
 dependencies = [
  "deno_error",
  "thiserror 2.0.12",
