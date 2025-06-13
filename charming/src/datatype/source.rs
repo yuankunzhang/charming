@@ -48,6 +48,13 @@ impl From<Vec<Vec<CompositeValue>>> for DataSource {
     }
 }
 
+/// The `ds` macro can construct a [DataSource] from an array of mixed datatypes.
+/// ```rust
+/// use charming::datatype::DataSource;
+/// use charming::ds;
+///
+/// let data: DataSource = ds!([1i32, "Tuesday", 3.0f32], ["Monday", 2i32, "Wednesday"]);
+/// ```
 #[macro_export]
 macro_rules! ds {
     ($([$($x:expr),* $(,)?]),* $(,)?) => {

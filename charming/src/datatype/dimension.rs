@@ -58,6 +58,16 @@ impl From<(&str, &str, &str)> for Dimension {
     }
 }
 
+/// The `dim` macro can construct a Vec<[Dimension]>.
+/// ```rust
+/// use charming::datatype::Dimension;
+/// use charming::dim;
+///
+/// let data: Vec<Dimension> = dim![
+///    "name1",
+///    ("name2", "number")
+/// ];
+/// ```
 #[macro_export]
 macro_rules! dim {
     ($($x:expr),*) => {
