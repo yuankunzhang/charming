@@ -5,7 +5,7 @@ use crate::{
 use charming_macros::CharmingSetters;
 use serde::{Deserialize, Serialize};
 
-#[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, PartialOrd, Clone)]
+#[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Geo {
     show: Option<bool>,
