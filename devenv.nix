@@ -81,6 +81,7 @@ in
         allFeatures = true;
         offline = false;
         denyWarnings = true;
+        extraArgs = "--all-targets";
       };
     };
   };

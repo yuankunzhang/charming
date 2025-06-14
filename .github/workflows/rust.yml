@@ -83,7 +83,7 @@ jobs:
       - name: Run format
         run: cargo fmt --check
       - name: Run clippy
-        run: cargo clippy --all-features -- --deny warnings
+        run: cargo clippy --all-features --all-targets -- --deny warnings
 
   msrv:
     name: MSRV check
