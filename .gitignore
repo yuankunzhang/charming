@@ -2,3 +2,12 @@ target/
 dist/
 .idea/
 img_test
+
+# Devenv
+.devenv*
+
+# direnv
+.direnv
+
+# pre-commit
+.pre-commit-config.yaml

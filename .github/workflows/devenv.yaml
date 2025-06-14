@@ -1,0 +1,26 @@
+---
+name: "Devenv CI"
+
+on:  # yamllint disable-line rule:truthy
+  push:
+  pull_request:
+    branches: ["main"]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  tests:
+    name: Devenv test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: cachix/install-nix-action@v26
+    - uses: cachix/cachix-action@v14
+      with:
+        name: devenv
+    - name: Install devenv.sh
+      run: nix profile install nixpkgs#devenv
+
+    - name: Build the devenv shell, run pre-commit hooks and tests
+      run: devenv test

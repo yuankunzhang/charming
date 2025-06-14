@@ -1,7 +1,7 @@
 ---
 name: Rust
 
-on:
+on:  # yamllint disable-line rule:truthy
   push:
   pull_request:
     branches: ["main"]
@@ -83,7 +83,7 @@ jobs:
       - name: Run format
         run: cargo fmt --check
       - name: Run clippy
-        run: cargo clippy --all-targets --all-features
+        run: cargo clippy --all-features --all-targets -- --deny warnings
 
   msrv:
     name: MSRV check
