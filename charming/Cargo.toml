@@ -32,6 +32,7 @@ charming-gallery = { path = "../gallery" }
 resvg = "0.45"
 test_each_file = "0.3.5"
 chrono = "0.4.41"
+pretty_assertions = "1.4.1"
 
 [dependencies.web-sys]
 version = "0.3.64"
