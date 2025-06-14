@@ -39,9 +39,10 @@ fn make_data() -> Vec<DataFrame> {
     let naive_date = NaiveDate::from_ymd_opt(2017, 1, 1).unwrap();
     let mut data: Vec<DataFrame> = Vec::with_capacity(151);
     for day in naive_date.iter_days().take(151) {
+        let value: f64 = rng.random_range(0.0..10000.0);
         data.push(vec![
             day.format("%Y-%m-%d").to_string().into(),
-            rng.random_range(0.0..10000.0).into(),
+            value.floor().into(),
         ]);
     }
     data
