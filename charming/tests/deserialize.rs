@@ -49,7 +49,7 @@ mod tests {
                     continue;
                 }
 
-                assert_eq!(
+                pretty_assertions::assert_eq!(
                     chart, deserialized_chart,
                     "Deserialized chart should be equal to original chart: {sub_key} in {key} charts category"
                 );
@@ -73,8 +73,9 @@ mod tests {
         let chart_deserialized =
             serde_json::from_str(&chart_str).expect("Should be able to deserialize chart");
 
-        assert_eq!(
-            chart, chart_deserialized,
+        pretty_assertions::assert_eq!(
+            chart,
+            chart_deserialized,
             "Deserialized chart should be equal to original chart"
         );
     }

@@ -7,6 +7,7 @@ mod aria;
 mod bar;
 mod bar3d;
 mod boxplot;
+mod calendar;
 mod candlestick;
 mod dataset;
 mod funnel;
@@ -61,6 +62,12 @@ static BOXPLOT_CHARTS: LazyLock<BTreeMap<&'static str, fn() -> Chart>> = LazyLoc
     insert!(m, boxplot, boxplot_light_velocity2);
     insert!(m, boxplot, data_transform_simple_aggregate);
     insert!(m, boxplot, multiple_categories);
+    m
+});
+static CALENDAR_CHARTS: LazyLock<BTreeMap<&'static str, fn() -> Chart>> = LazyLock::new(|| {
+    let mut m = BTreeMap::new();
+    insert!(m, calendar, simple_calendar);
+    insert!(m, calendar, heatmap_calendar);
     m
 });
 static CANDLESTICK_CHARTS: LazyLock<BTreeMap<&'static str, fn() -> Chart>> = LazyLock::new(|| {
@@ -200,6 +207,7 @@ pub static CHARTS: LazyLock<BTreeMap<&'static str, BTreeMap<&'static str, fn() -
         m.insert("bar", BAR_CHARTS.clone());
         m.insert("bar3d", BAR3D_CHARTS.clone());
         m.insert("boxplot", BOXPLOT_CHARTS.clone());
+        m.insert("calendar", CALENDAR_CHARTS.clone());
         m.insert("candlestick", CANDLESTICK_CHARTS.clone());
         m.insert("dataset", DATASET_CHARTS.clone());
         m.insert("funnel", FUNNEL_CHARTS.clone());

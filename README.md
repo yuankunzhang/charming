@@ -295,6 +295,13 @@ You can also clone the repo and run `cargo run --bin gallery` to view the intera
 <a href="https://github.com/yuankunzhang/charming/tree/main/gallery/src/scatter/punch_card_of_github.rs"><img src="https://github.com/yuankunzhang/charming/blob/main/img/scatter/punch_card_of_github.svg" width="40%" alt="Punch Card of Github" /></a>
 </div>
 
+### Calendar Charts
+
+<div align="center">
+<a href="https://github.com/yuankunzhang/charming/tree/main/gallery/src/calendar/simple_calendar.rs"><img src="https://github.com/yuankunzhang/charming/blob/main/img/calendar/simple_calendar.svg" width="40%" alt="Simple Calendar" /></a>
+<a href="https://github.com/yuankunzhang/charming/tree/main/gallery/src/calendar/heatmap_calendar.rs"><img src="https://github.com/yuankunzhang/charming/blob/main/img/calendar/heatmap_calendar.svg" width="40%" alt="Heatmap Calendar" /></a>
+</div>
+
 ### Sunburst Charts
 
 <div align="center">
