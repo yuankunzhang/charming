@@ -95,9 +95,9 @@ pub use renderer::*;
 
 use charming_macros::CharmingSetters;
 use component::{
-    AngleAxis, Aria, Axis, Axis3D, DataZoom, GeoMap, Grid, Grid3D, LegendConfig, ParallelAxis,
-    ParallelCoordinate, PolarCoordinate, RadarCoordinate, RadiusAxis, SaveAsImageType, SingleAxis,
-    Title, Toolbox, VisualMap,
+    AngleAxis, Aria, Axis, Axis3D, Calendar, DataZoom, GeoMap, Grid, Grid3D, LegendConfig,
+    ParallelAxis, ParallelCoordinate, PolarCoordinate, RadarCoordinate, RadiusAxis,
+    SaveAsImageType, SingleAxis, Title, Toolbox, VisualMap,
 };
 use datatype::Dataset;
 use element::{process_raw_strings, AnimationTime, AxisPointer, Color, Easing, MarkLine, Tooltip};
@@ -280,6 +280,7 @@ pub struct Chart {
     visual_map: Vec<VisualMap>,
     data_zoom: Vec<DataZoom>,
     parallel: Option<ParallelCoordinate>,
+    calendar: Option<Calendar>,
     dataset: Option<Dataset>,
     radar: Vec<RadarCoordinate>,
     #[charming_set_vec]

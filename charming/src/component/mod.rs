@@ -26,6 +26,7 @@ pub use angle_axis::*;
 pub use aria::*;
 pub use axis::*;
 pub use axis3d::*;
+pub use calendar::*;
 pub use data_zoom::*;
 pub use geo::*;
 pub use geo_map::*;
