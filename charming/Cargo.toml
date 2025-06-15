@@ -14,14 +14,14 @@ rust-version = "1.85"
 
 [dependencies]
 charming_macros = { path = "../charming_macros", version = "0.1" }
-deno_core = { version = "0.350", optional = true }
+deno_core = { version = "0.351", optional = true }
 handlebars = { version = "6.0", optional = true }
 image = { version = "0.25", optional = true }
 resvg = { version = "0.45", features = ["text"], optional = true }
 serde = { version = "1.0", features = ["derive"] }
 serde-wasm-bindgen = { version = "0.6", optional = true }
 serde_json = "1.0"
-serde_v8 = { version = "0.259", optional = true }
+serde_v8 = { version = "0.260", optional = true }
 serde_with = "3.11.0"
 wasm-bindgen = { version = "0.2", optional = true }
 js-sys = { version = "0.3", optional = true }
