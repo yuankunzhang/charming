@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.6.0
+- Add deserialization support [#172](https://github.com/yuankunzhang/charming/pull/172)
+- Add a custom derive macro to reduce internal code [#181](https://github.com/yuankunzhang/charming/pull/181)
+- Add a sycamore example [#184](https://github.com/yuankunzhang/charming/pull/184)
+- Update CI to check for wasm builds [#185](https://github.com/yuankunzhang/charming/pull/185)
+- Replace RawString with JsFunction [#186](https://github.com/yuankunzhang/charming/pull/186)
+- Update docs (especially user facing macros) [#188](https://github.com/yuankunzhang/charming/pull/188)
+- Add devenv - Nix developer environment [#191](https://github.com/yuankunzhang/charming/pull/191)
+- Add calendar support [#192](https://github.com/yuankunzhang/charming/pull/192)
+- Update dependencies and many more small changes
+
+### Breaking changes
+- Name change in GeoMap [#181](https://github.com/yuankunzhang/charming/pull/181)
+- Change GraphNodeModel FontSize type [#181](https://github.com/yuankunzhang/charming/pull/181)
+- Change dataset_index type [#181](https://github.com/yuankunzhang/charming/pull/181)
+- More implicit call of `.into` [#181](https://github.com/yuankunzhang/charming/pull/181)
+- Remove FormatterFunction [#186](https://github.com/yuankunzhang/charming/pull/186)
+- Replace RawString with JsFunction in components [#186](https://github.com/yuankunzhang/charming/pull/186)
+
 ## 0.5.1
 - Updated leptos example to fix warnings [#173](https://github.com/yuankunzhang/charming/pull/173)
 - Updated image generation to include themes [#174](https://github.com/yuankunzhang/charming/pull/174)
