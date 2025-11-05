@@ -1,6 +1,6 @@
 use crate::{
     datatype::{DataFrame, DataPoint},
-    element::{ColorBy, CoordinateSystem, Tooltip},
+    element::{ColorBy, CoordinateSystem, ItemStyle, Tooltip},
 };
 use charming_macros::CharmingSetters;
 use serde::{Deserialize, Serialize};
@@ -17,6 +17,7 @@ pub struct Candlestick {
     type_: String,
     id: Option<String>,
     name: Option<String>,
+    item_style: Option<ItemStyle>,
     coordiate_system: Option<CoordinateSystem>,
     color_by: Option<ColorBy>,
     legend_hover_link: Option<bool>,
