@@ -3,25 +3,25 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(untagged)]
-pub enum SymbolSize {
+pub enum SymbolRotate {
     Number(f64),
     Function(JsFunction),
 }
 
-impl From<i64> for SymbolSize {
+impl From<i64> for SymbolRotate {
     fn from(n: i64) -> Self {
-        SymbolSize::Number(n as f64)
+        SymbolRotate::Number(n as f64)
     }
 }
 
-impl From<f64> for SymbolSize {
+impl From<f64> for SymbolRotate {
     fn from(n: f64) -> Self {
-        SymbolSize::Number(n)
+        SymbolRotate::Number(n)
     }
 }
 
-impl From<JsFunction> for SymbolSize {
+impl From<JsFunction> for SymbolRotate {
     fn from(f: JsFunction) -> Self {
-        SymbolSize::Function(f)
+        SymbolRotate::Function(f)
     }
 }

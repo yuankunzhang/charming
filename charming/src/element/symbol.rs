@@ -1,7 +1,7 @@
 use super::JsFunction;
 use serde::{de::Visitor, Deserialize, Deserializer, Serialize};
 
-#[derive(Debug, PartialEq, Clone)]
+#[derive(Debug, PartialEq, PartialOrd, Clone)]
 pub enum Symbol {
     Circle,
     Rect,
