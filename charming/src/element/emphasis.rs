@@ -1,3 +1,5 @@
+use crate::element::blur_scope::BlurScope;
+
 use super::{item_style::ItemStyle, AreaStyle, Label};
 use charming_macros::CharmingSetters;
 use serde::{Deserialize, Serialize};
@@ -19,7 +21,7 @@ pub enum EmphasisFocus {
   Option => #[serde(skip_serializing_if = "Option::is_none")],
   Vec => #[serde(default, skip_serializing_if = "Vec::is_empty")]
 )]
-#[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, Clone)]
+#[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Emphasis {
     focus: Option<EmphasisFocus>,
@@ -27,4 +29,5 @@ pub struct Emphasis {
     area_style: Option<AreaStyle>,
     label: Option<Label>,
     disabled: Option<bool>,
+    blur_scope: Option<BlurScope>,
 }
