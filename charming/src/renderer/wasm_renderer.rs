@@ -42,8 +42,7 @@ impl WasmRenderer {
         let element = document
             .get_element_by_id(id)
             .ok_or(EchartsError::WasmError(format!(
-                "no element with id `{}` found",
-                id
+                "no element with id `{id}` found",
             )))?;
         let echarts = init(
             &element,
