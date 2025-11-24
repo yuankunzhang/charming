@@ -38,8 +38,7 @@ impl<'de> Deserialize<'de> for RawString {
                     Ok(RawString(core.to_string()))
                 } else {
                     Err(E::custom(format!(
-                        "string does not start and end with {}",
-                        RAW_MARK
+                        "string does not start and end with {RAW_MARK}"
                     )))
                 }
             }
@@ -116,13 +115,13 @@ mod test {
 
     #[test]
     fn raw_strings() {
-        let s = format!("\"{}foobar{}\"", RAW_MARK, RAW_MARK);
+        let s = format!("\"{RAW_MARK}foobar{RAW_MARK}\"");
         assert_eq!(process_raw_strings(&s), "foobar");
 
-        let s = format!("foo\"{}bar{}\"baz", RAW_MARK, RAW_MARK);
+        let s = format!("foo\"{RAW_MARK}bar{RAW_MARK}\"baz");
         assert_eq!(process_raw_strings(&s), "foobarbaz");
 
-        let s = format!("foo\"{}b\\na\\nr{}\"baz", RAW_MARK, RAW_MARK);
+        let s = format!("foo\"{RAW_MARK}b\\na\\nr{RAW_MARK}\"baz");
         assert_eq!(process_raw_strings(&s), "foob\na\nrbaz");
     }
 }
