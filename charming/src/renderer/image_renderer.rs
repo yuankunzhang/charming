@@ -1,4 +1,4 @@
-use deno_core::{v8, JsRuntime, RuntimeOptions};
+use deno_core::{JsRuntime, RuntimeOptions, v8};
 use handlebars::Handlebars;
 
 #[cfg(feature = "ssr-raster")]
@@ -10,7 +10,7 @@ use std::io::Cursor;
 #[cfg(feature = "ssr-raster")]
 use std::sync::Arc;
 
-use crate::{theme::Theme, Chart, EchartsError};
+use crate::{Chart, EchartsError, theme::Theme};
 
 static CODE_TEMPLATE: &str = r#"
 {{#if theme_source}}{{{ theme_source }}}{{/if}}

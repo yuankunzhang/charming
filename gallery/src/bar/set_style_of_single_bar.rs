@@ -1,10 +1,10 @@
 use charming::{
+    Chart,
     component::Axis,
     datatype::DataPointItem,
     df,
     element::{AxisType, ItemStyle},
     series::Bar,
-    Chart,
 };
 
 pub fn chart() -> Chart {

@@ -1,9 +1,9 @@
 use charming::{
+    Chart,
     component::{Axis, DataZoom, DataZoomType, Grid, Legend, Title},
     datatype::{Dataset, Transform},
     element::{AxisPointer, AxisPointerType, AxisType, SplitArea, SplitLine, Tooltip, Trigger},
     series::Boxplot,
-    Chart,
 };
 use rand::{Rng, SeedableRng};
 

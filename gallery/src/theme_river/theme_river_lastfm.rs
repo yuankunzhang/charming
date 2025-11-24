@@ -1,4 +1,4 @@
-use charming::{component::SingleAxis, element::Label, series::ThemeRiver, Chart};
+use charming::{Chart, component::SingleAxis, element::Label, series::ThemeRiver};
 
 pub fn chart() -> Chart {
     let raw_data = vec![

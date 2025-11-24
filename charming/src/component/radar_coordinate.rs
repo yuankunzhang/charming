@@ -1,8 +1,8 @@
 use crate::{
     datatype::CompositeValue,
     element::{
-        font_settings::{FontFamily, FontStyle, FontWeight},
         AxisLabel, AxisLine, AxisTick, Color, Formatter, Padding, Shape, SplitArea, SplitLine,
+        font_settings::{FontFamily, FontStyle, FontWeight},
     },
 };
 use charming_macros::CharmingSetters;

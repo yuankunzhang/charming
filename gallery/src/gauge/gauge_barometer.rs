@@ -1,8 +1,7 @@
 use charming::{
-    df,
+    Chart, df,
     element::{Anchor, AxisLabel, AxisLine, AxisTick, ItemStyle, LineStyle, Pointer, SplitLine},
     series::{Gauge, GaugeDetail, GaugeTitle},
-    Chart,
 };
 
 pub fn chart() -> Chart {

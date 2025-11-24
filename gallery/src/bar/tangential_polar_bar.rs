@@ -1,8 +1,8 @@
 use charming::{
+    Chart,
     component::{AngleAxis, PolarCoordinate, RadiusAxis, Title},
     element::{AxisType, CoordinateSystem, Label, LabelPosition, Tooltip},
     series::Bar,
-    Chart,
 };
 
 pub fn chart() -> Chart {

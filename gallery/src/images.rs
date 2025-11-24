@@ -1,6 +1,6 @@
 use std::{env, path::Path};
 
-use charming::{theme::Theme, ImageRenderer};
+use charming::{ImageRenderer, theme::Theme};
 use charming_gallery::CHARTS;
 
 fn main() {

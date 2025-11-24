@@ -1,6 +1,6 @@
 use super::color::Color;
 use charming_macros::CharmingSetters;
-use serde::{de::Visitor, ser::SerializeSeq, Deserialize, Deserializer, Serialize};
+use serde::{Deserialize, Deserializer, Serialize, de::Visitor, ser::SerializeSeq};
 
 #[derive(Debug, PartialEq, PartialOrd, Clone)]
 pub struct ColorSegment(f64, Color);

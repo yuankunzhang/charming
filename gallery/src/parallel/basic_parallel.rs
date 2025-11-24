@@ -1,9 +1,9 @@
 use charming::{
+    Chart,
     component::ParallelAxis,
     df,
     element::{AxisType, LineStyle},
     series::Parallel,
-    Chart,
 };
 
 pub fn chart() -> Chart {

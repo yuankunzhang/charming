@@ -1,4 +1,4 @@
-use serde::{de::Visitor, Deserialize, Serialize};
+use serde::{Deserialize, Serialize, de::Visitor};
 
 #[derive(Debug, PartialEq, PartialOrd, Clone)]
 pub enum Step {
@@ -11,11 +11,7 @@ pub enum Step {
 
 impl From<bool> for Step {
     fn from(value: bool) -> Self {
-        if value {
-            Step::True
-        } else {
-            Step::False
-        }
+        if value { Step::True } else { Step::False }
     }
 }
 

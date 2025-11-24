@@ -101,7 +101,7 @@ where
 /// ```
 #[macro_export]
 macro_rules! val {
-    ($($x:expr),*) => {
+    ($($x:expr_2021),*) => {
         $crate::datatype::CompositeValue::from(vec![
             $(
                 $crate::datatype::CompositeValue::from($x)

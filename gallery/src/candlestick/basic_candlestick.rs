@@ -1,4 +1,4 @@
-use charming::{component::Axis, df, series::Candlestick, Chart};
+use charming::{Chart, component::Axis, df, series::Candlestick};
 
 pub fn chart() -> Chart {
     Chart::new()

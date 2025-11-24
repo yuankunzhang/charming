@@ -1,7 +1,7 @@
 use super::{DataSource, Dimension};
 use crate::element::RawString;
 use charming_macros::CharmingSetters;
-use serde::{de::Visitor, ser::SerializeSeq, Deserialize, Deserializer, Serialize};
+use serde::{Deserialize, Deserializer, Serialize, de::Visitor, ser::SerializeSeq};
 
 #[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 pub struct Source {

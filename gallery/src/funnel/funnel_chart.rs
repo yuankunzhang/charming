@@ -1,4 +1,5 @@
 use charming::{
+    Chart,
     component::{DataView, Feature, Legend, Restore, SaveAsImage, Title, Toolbox},
     df,
     element::{
@@ -6,7 +7,6 @@ use charming::{
         Tooltip, Trigger,
     },
     series::Funnel,
-    Chart,
 };
 
 pub fn chart() -> Chart {

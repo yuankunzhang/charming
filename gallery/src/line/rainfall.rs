@@ -1,6 +1,7 @@
 #![allow(clippy::approx_constant)]
 
 use charming::{
+    Chart,
     component::{
         Axis, DataZoom, DataZoomType, Feature, Grid, Legend, Restore, SaveAsImage, Title, Toolbox,
         ToolboxDataZoom,
@@ -10,7 +11,6 @@ use charming::{
         ItemStyle, Label, LineStyle, MarkArea, MarkAreaData, NameLocation, Tooltip, Trigger,
     },
     series::Line,
-    Chart,
 };
 
 pub fn chart() -> Chart {

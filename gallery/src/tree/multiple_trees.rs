@@ -1,11 +1,11 @@
 use charming::{
+    Chart,
     component::Legend,
     element::{
         Emphasis, EmphasisFocus, Label, LabelAlign, LabelPosition, LabelVerticalAlign, Orient,
         Tooltip, Trigger, TriggerOn,
     },
     series::{Tree, TreeLeaves, TreeNode},
-    Chart,
 };
 
 pub fn chart() -> Chart {

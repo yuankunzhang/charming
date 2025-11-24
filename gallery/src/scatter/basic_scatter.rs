@@ -1,4 +1,4 @@
-use charming::{component::Axis, series::Scatter, Chart};
+use charming::{Chart, component::Axis, series::Scatter};
 
 pub fn chart() -> Chart {
     Chart::new().x_axis(Axis::new()).y_axis(Axis::new()).series(

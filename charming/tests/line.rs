@@ -1,5 +1,5 @@
 use assert_json_diff::assert_json_eq;
-use charming::{component::Axis, element::AxisType, series::Line, Chart};
+use charming::{Chart, component::Axis, element::AxisType, series::Line};
 use serde_json::json;
 
 #[test]

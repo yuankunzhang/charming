@@ -1,9 +1,9 @@
 use charming::{
+    Chart,
     component::{Axis3D, Grid3D, VisualMap},
     datatype::{CompositeValue, Dataset},
     element::{AxisType, DimensionEncode, Tooltip},
     series::Bar3d,
-    Chart,
 };
 
 pub fn chart() -> Chart {

@@ -1,11 +1,11 @@
 use charming::{
+    Chart,
     component::{Axis, Feature, SaveAsImage, Title, Toolbox, VisualMap, VisualMapPiece},
     element::{
         AxisLabel, AxisPointer, AxisPointerType, AxisType, ItemStyle, JsFunction, MarkArea,
         MarkAreaData, Tooltip, Trigger,
     },
     series::Line,
-    Chart,
 };
 
 pub fn chart() -> Chart {

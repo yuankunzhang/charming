@@ -1,10 +1,10 @@
 #[cfg(test)]
 mod tests {
     use charming::{
+        Chart,
         component::{Axis, Title},
         element::AxisType,
         series::Line,
-        Chart,
     };
 
     #[test]
@@ -50,7 +50,8 @@ mod tests {
                 }
 
                 pretty_assertions::assert_eq!(
-                    chart, deserialized_chart,
+                    chart,
+                    deserialized_chart,
                     "Deserialized chart should be equal to original chart: {sub_key} in {key} charts category"
                 );
             }

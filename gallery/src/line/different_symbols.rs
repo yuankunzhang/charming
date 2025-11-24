@@ -1,8 +1,8 @@
 use charming::{
+    Chart,
     component::Axis,
     element::{AxisType, JsFunction, Symbol, SymbolSize},
     series::Line,
-    Chart,
 };
 
 pub fn chart() -> Chart {

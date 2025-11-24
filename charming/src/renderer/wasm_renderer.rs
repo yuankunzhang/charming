@@ -1,8 +1,8 @@
-use crate::{element::Easing, theme::Theme, Chart, EchartsError};
+use crate::{Chart, EchartsError, element::Easing, theme::Theme};
 use serde::Serialize;
 use serde_wasm_bindgen::to_value;
-use wasm_bindgen::prelude::*;
 use wasm_bindgen::JsValue;
+use wasm_bindgen::prelude::*;
 
 pub struct WasmRenderer {
     theme: Theme,
