@@ -10,7 +10,7 @@ keywords = ["echarts", "visualization", "chart", "plot"]
 categories = ["visualization", "graphics"]
 license = "MIT OR Apache-2.0"
 readme = "../README.md"
-rust-version = "1.85"
+rust-version = "1.88"
 
 [dependencies]
 charming_macros = { path = "../charming_macros", version = "0.1" }
