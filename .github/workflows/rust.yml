@@ -14,7 +14,7 @@ jobs:
     name: Building and testing
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Build
         run: cargo build --verbose
       - name: Generate test images
@@ -26,7 +26,7 @@ jobs:
     name: Build wasm examples
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Setup Rust
         uses: dtolnay/rust-toolchain@master
         with:
@@ -57,7 +57,7 @@ jobs:
     name: Build dioxus desktop example
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
     - name: Install binstall
       uses: cargo-bins/cargo-binstall@main
     - name: Install dioxus-cli
@@ -74,7 +74,7 @@ jobs:
     name: Linting and formatting
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Setup Rust
         uses: dtolnay/rust-toolchain@master
         with:
@@ -89,7 +89,7 @@ jobs:
     name: MSRV check
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Install binstall
         uses: cargo-bins/cargo-binstall@main
       - run: cargo binstall cargo-msrv
