@@ -1,12 +1,12 @@
 use charming::{
+    Chart,
     component::{Axis, Grid, Title},
     datatype::{DataFrame, DataPoint, DataPointItem},
     element::{
-        font_settings::FontWeight, AxisPointer, AxisPointerType, AxisType, ItemStyle, SplitArea,
-        SplitLine, TextStyle, Tooltip, Trigger,
+        AxisPointer, AxisPointerType, AxisType, ItemStyle, SplitArea, SplitLine, TextStyle,
+        Tooltip, Trigger, font_settings::FontWeight,
     },
     series::{Boxplot, Scatter},
-    Chart,
 };
 
 pub fn chart() -> Chart {

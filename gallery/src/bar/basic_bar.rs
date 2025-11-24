@@ -1,4 +1,4 @@
-use charming::{component::Axis, element::AxisType, series::Bar, Chart};
+use charming::{Chart, component::Axis, element::AxisType, series::Bar};
 
 pub fn chart() -> Chart {
     Chart::new()

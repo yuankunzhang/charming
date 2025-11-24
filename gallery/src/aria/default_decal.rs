@@ -1,8 +1,8 @@
 use charming::{
+    Chart,
     component::{Aria, Axis, Decal, Feature, SaveAsImage, SaveAsImageType, Toolbox},
     element::AxisType,
     series::Bar,
-    Chart,
 };
 
 pub fn chart() -> Chart {

@@ -1,8 +1,8 @@
 use super::{
+    Formatter,
     color::Color,
     font_settings::{FontFamily, FontStyle, FontWeight},
     line_style::LineStyle,
-    Formatter,
 };
 use charming_macros::CharmingSetters;
 use serde::{Deserialize, Serialize};

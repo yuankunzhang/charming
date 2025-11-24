@@ -1,9 +1,9 @@
 use crate::{
     datatype::{DataFrame, DataPoint},
     element::{
-        font_settings::{FontFamily, FontStyle, FontWeight},
         Anchor, AxisLabel, AxisLine, AxisTick, Color, ColorBy, Formatter, ItemStyle, Pointer,
         SplitLine, Tooltip,
+        font_settings::{FontFamily, FontStyle, FontWeight},
     },
 };
 use charming_macros::CharmingSetters;

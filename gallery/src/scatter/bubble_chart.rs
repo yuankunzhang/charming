@@ -1,4 +1,5 @@
 use charming::{
+    Chart,
     component::{Axis, Grid, Legend, Title},
     df,
     element::{
@@ -6,7 +7,6 @@ use charming::{
         LineStyle, LineStyleType, SplitLine,
     },
     series::Scatter,
-    Chart,
 };
 
 pub fn chart() -> Chart {

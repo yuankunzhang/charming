@@ -1,6 +1,6 @@
 use handlebars::Handlebars;
 
-use crate::{component::SaveAsImageType, theme::Theme, Chart, EchartsError};
+use crate::{Chart, EchartsError, component::SaveAsImageType, theme::Theme};
 
 pub struct HtmlRenderer {
     title: String,

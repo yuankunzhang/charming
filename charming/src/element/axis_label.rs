@@ -1,7 +1,7 @@
 use super::{
+    Formatter,
     color::Color,
     font_settings::{FontFamily, FontStyle, FontWeight},
-    Formatter,
 };
 use crate::datatype::CompositeValue;
 use charming_macros::CharmingSetters;

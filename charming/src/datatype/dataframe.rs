@@ -62,7 +62,7 @@ pub type DataFrame = Vec<DataPoint>;
 /// ```
 #[macro_export]
 macro_rules! df {
-    ($([$($x:expr),*]),* $(,)?) => {
+    ($([$($x:expr_2021),*]),* $(,)?) => {
         vec![
             $(
                 $crate::datatype::DataPoint::from($crate::datatype::CompositeValue::from(vec![
@@ -73,7 +73,7 @@ macro_rules! df {
             ),*
         ]
     };
-    ($($x:expr),* $(,)?) => {
+    ($($x:expr_2021),* $(,)?) => {
         vec![
             $(
                 $crate::datatype::DataPoint::from($x)
@@ -110,7 +110,7 @@ macro_rules! dz {
     Value(Array([Number(Integer(13334)), Number(Float(76.9)),
     Number(Integer(1376048943)), String("China"), Number(Integer(2015))]))]
     */
-    ($($v:expr),* $(,)?) => {{
+    ($($v:expr_2021),* $(,)?) => {{
         let mut df = Vec::new();
         let mut iterators: Vec<Box<dyn Iterator<Item = $crate::datatype::CompositeValue>>> = vec![
             $(Box::new($v.into_iter().map(|x| $crate::datatype::CompositeValue::from(x))),)*
@@ -139,7 +139,7 @@ macro_rules! dz {
     Value(Array([Number(Integer(13334)), Number(Float(76.9)),
     Number(Integer(1376048943)), String("China"), Number(Integer(2015))]))]
     */
-    ($([$($v:expr),*]),* $(,)?) => {{
+    ($([$($v:expr_2021),*]),* $(,)?) => {{
         let mut df = Vec::new();
         let mut iterators: Vec<_> = vec![$(vec![$($v.into()),*].into_iter()),*];
 

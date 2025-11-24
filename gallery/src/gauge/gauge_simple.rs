@@ -1,7 +1,7 @@
 use charming::{
+    Chart,
     element::Tooltip,
     series::{Gauge, GaugeDetail, GaugeProgress},
-    Chart,
 };
 
 pub fn chart() -> Chart {

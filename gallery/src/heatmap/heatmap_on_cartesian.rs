@@ -1,10 +1,10 @@
 use charming::{
+    Chart,
     component::{Axis, Grid, VisualMap},
     datatype::{CompositeValue, DataFrame},
     df,
     element::{AxisType, Emphasis, ItemStyle, Label, Orient, SplitArea, Tooltip},
     series::Heatmap,
-    Chart,
 };
 
 pub fn chart() -> Chart {

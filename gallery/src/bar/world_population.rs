@@ -1,8 +1,8 @@
 use charming::{
+    Chart,
     component::{Axis, Grid, Legend, Title},
     element::{AxisPointer, AxisPointerType, AxisType, Tooltip, Trigger},
     series::Bar,
-    Chart,
 };
 
 pub fn chart() -> Chart {

@@ -1,9 +1,9 @@
 use charming::{
+    Chart,
     component::{Calendar, Title, VisualMap, VisualMapType},
     datatype::DataFrame,
     element::{CoordinateSystem, ItemStyle, Orient, Tooltip},
     series::Heatmap,
-    Chart,
 };
 use chrono::NaiveDate;
 use rand::{Rng, SeedableRng};

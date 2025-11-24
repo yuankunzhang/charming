@@ -1,5 +1,5 @@
 use super::JsFunction;
-use serde::{de::Visitor, Deserialize, Deserializer, Serialize};
+use serde::{Deserialize, Deserializer, Serialize, de::Visitor};
 
 #[derive(Debug, PartialEq, Clone)]
 pub enum Symbol {

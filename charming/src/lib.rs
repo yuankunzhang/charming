@@ -100,9 +100,9 @@ use component::{
     SaveAsImageType, SingleAxis, Title, Toolbox, VisualMap,
 };
 use datatype::Dataset;
-use element::{process_raw_strings, AnimationTime, AxisPointer, Color, Easing, MarkLine, Tooltip};
+use element::{AnimationTime, AxisPointer, Color, Easing, MarkLine, Tooltip, process_raw_strings};
 use serde::{Deserialize, Serialize};
-use serde_with::{formats::PreferOne, serde_as, OneOrMany};
+use serde_with::{OneOrMany, formats::PreferOne, serde_as};
 use series::Series;
 /**
 The chart representation.

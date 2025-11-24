@@ -1,11 +1,11 @@
 use charming::{
+    Chart,
     component::{
         Axis, DataZoom, DataZoomType, Feature, Restore, SaveAsImage, Title, Toolbox,
         ToolboxDataZoom,
     },
     element::{AreaStyle, AxisType, Color, ColorStop, LineStyle, Symbol, Tooltip, Trigger},
     series::Line,
-    Chart,
 };
 use chrono::{Days, NaiveDate};
 use rand::{Rng, SeedableRng};

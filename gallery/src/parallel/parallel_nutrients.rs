@@ -1,10 +1,10 @@
 use charming::{
+    Chart,
     component::{
         ParallelAxis, ParallelAxisDefault, ParallelCoordinate, Title, VisualMap, VisualMapChannel,
         VisualMapType,
     },
     element::{AxisType, NameLocation, ParallelLayout, TextStyle, Tooltip},
-    Chart,
 };
 
 pub fn chart() -> Chart {

@@ -1,9 +1,9 @@
 use charming::{
+    Chart,
     component::{Axis, Title},
     datatype::{CompositeValue, Dataset, Source, Transform},
     element::{AxisType, DimensionEncode, NameLocation, Tooltip, Trigger},
     series::Line,
-    Chart,
 };
 
 pub fn chart() -> Chart {

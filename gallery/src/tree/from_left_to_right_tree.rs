@@ -1,10 +1,10 @@
 use charming::{
+    Chart,
     element::{
         Emphasis, EmphasisFocus, Label, LabelAlign, LabelPosition, LabelVerticalAlign, Tooltip,
         Trigger, TriggerOn,
     },
     series::{Tree, TreeNode},
-    Chart,
 };
 
 pub fn chart() -> Chart {

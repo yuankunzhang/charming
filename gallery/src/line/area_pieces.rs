@@ -1,11 +1,11 @@
 use charming::{
+    Chart,
     component::{Axis, VisualMap, VisualMapPiece, VisualMapType},
     df,
     element::{
         AreaStyle, AxisType, Label, LineStyle, MarkLine, MarkLineData, MarkLineVariant, Symbol,
     },
     series::Line,
-    Chart,
 };
 
 pub fn chart() -> Chart {

@@ -1,10 +1,10 @@
 use charming::{
+    Chart,
     component::Legend,
     element::{
-        font_settings::FontWeight, Emphasis, Label, LabelLine, LabelPosition, Tooltip, Trigger,
+        Emphasis, Label, LabelLine, LabelPosition, Tooltip, Trigger, font_settings::FontWeight,
     },
     series::Pie,
-    Chart,
 };
 
 pub fn chart() -> Chart {

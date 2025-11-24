@@ -1,4 +1,5 @@
 use charming::{
+    Chart,
     component::{
         Axis, DataView, Feature, Legend, MagicType, MagicTypeType, Restore, SaveAsImage, Title,
         Toolbox, ToolboxDataZoom,
@@ -8,7 +9,6 @@ use charming::{
         MarkLineVariant, MarkPoint, MarkPointData, Symbol, Tooltip, Trigger,
     },
     series::Line,
-    Chart,
 };
 
 pub fn chart() -> Chart {

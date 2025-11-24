@@ -1,4 +1,5 @@
 use charming::{
+    Chart,
     component::{
         Legend, ParallelAxis, ParallelAxisDefault, ParallelCoordinate, VisualMap, VisualMapChannel,
     },
@@ -7,7 +8,6 @@ use charming::{
         AxisLabel, AxisTick, AxisType, LineStyle, NameLocation, SplitLine, TextStyle, Tooltip,
     },
     series::Parallel,
-    Chart,
 };
 use serde::Deserialize;
 

@@ -1,8 +1,8 @@
 use charming::{
+    Chart,
     component::{Legend, Title},
     element::{Label, LabelPosition, LineStyle, Tooltip},
     series::{Graph, GraphData, GraphLayout, GraphLayoutCircular, GraphNodeLabel},
-    Chart,
 };
 
 pub fn chart() -> Chart {

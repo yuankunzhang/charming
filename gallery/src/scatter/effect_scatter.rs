@@ -1,8 +1,8 @@
 use charming::{
+    Chart,
     component::Axis,
     df,
     series::{EffectScatter, Scatter},
-    Chart,
 };
 
 pub fn chart() -> Chart {
