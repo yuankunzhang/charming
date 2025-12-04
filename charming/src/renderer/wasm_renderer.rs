@@ -1,5 +1,6 @@
 use crate::{element::Easing, theme::Theme, Chart, EchartsError};
-use serde::Serialize;
+use charming_macros::CharmingSetters;
+use serde::{Deserialize, Serialize};
 use serde_wasm_bindgen::to_value;
 use wasm_bindgen::prelude::*;
 use wasm_bindgen::JsValue;
@@ -143,56 +144,31 @@ impl Animation {
 }
 
 /// Optional parameters for rendering and updating charts
-#[derive(Clone, Debug, Serialize, Default)]
+#[serde_with::apply(
+    Option => #[serde(skip_serializing_if = "Option::is_none")],
+    Vec => #[serde(default, skip_serializing_if = "Vec::is_empty")]
+)]
+#[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, PartialOrd, Clone, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct RenderOpts {
     /// Whether to not merge with previously set option.
     /// If true, all current components will be removed and new components created.
     /// Default: false (merge with previous option)
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub not_merge: Option<bool>,
+    not_merge: Option<bool>,
 
     /// Whether to not update the chart immediately.
     /// Default: false (update immediately)
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub lazy_update: Option<bool>,
+    lazy_update: Option<bool>,
 
     /// Whether to prevent events from being thrown when calling setOption.
     /// Default: false (events are thrown)
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub silent: Option<bool>,
+    silent: Option<bool>,
 
     /// Specify component main types that will be replaced instead of merged.
     /// For example: ["xAxis", "yAxis", "series"]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub replace_merge: Option<Vec<String>>,
+    replace_merge: Option<Vec<String>>,
 }
 
-impl RenderOpts {
-    pub fn new() -> Self {
-        Self::default()
-    }
-
-    pub fn not_merge(mut self, not_merge: bool) -> Self {
-        self.not_merge = Some(not_merge);
-        self
-    }
-
-    pub fn lazy_update(mut self, lazy_update: bool) -> Self {
-        self.lazy_update = Some(lazy_update);
-        self
-    }
-
-    pub fn silent(mut self, silent: bool) -> Self {
-        self.silent = Some(silent);
-        self
-    }
-
-    pub fn replace_merge(mut self, replace_merge: Vec<String>) -> Self {
-        self.replace_merge = Some(replace_merge);
-        self
-    }
-}
 
 #[wasm_bindgen]
 extern "C" {
