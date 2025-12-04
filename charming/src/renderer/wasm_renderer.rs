@@ -1,5 +1,6 @@
 use crate::{Chart, EchartsError, element::Easing, theme::Theme};
-use serde::Serialize;
+use charming_macros::CharmingSetters;
+use serde::{Deserialize, Serialize};
 use serde_wasm_bindgen::to_value;
 use wasm_bindgen::JsValue;
 use wasm_bindgen::prelude::*;
@@ -33,6 +34,15 @@ impl WasmRenderer {
     }
 
     pub fn render(&self, id: &str, chart: &Chart) -> Result<Echarts, EchartsError> {
+        self.render_with_opts(id, chart, RenderOpts::default())
+    }
+
+    pub fn render_with_opts(
+        &self,
+        id: &str,
+        chart: &Chart,
+        opts: RenderOpts,
+    ) -> Result<Echarts, EchartsError> {
         let window = web_sys::window().ok_or(EchartsError::WasmError(
             "no `window` object found".to_string(),
         ))?;
@@ -53,7 +63,7 @@ impl WasmRenderer {
             })
             .unwrap(),
         );
-        Self::update(&echarts, chart);
+        Self::update_with_opts(&echarts, chart, opts);
 
         Ok(echarts)
     }
@@ -65,8 +75,13 @@ impl WasmRenderer {
     }
 
     pub fn update(echarts: &Echarts, chart: &Chart) {
+        Self::update_with_opts(echarts, chart, RenderOpts::default())
+    }
+
+    pub fn update_with_opts(echarts: &Echarts, chart: &Chart, opts: RenderOpts) {
         let js = serde_wasm_bindgen::to_value(&chart).unwrap();
-        echarts.set_option(js);
+        let opts_js = to_value(&opts).expect("could not convert RenderOpts to `JsValue`");
+        echarts.set_option(js, opts_js);
     }
 }
 
@@ -127,6 +142,32 @@ impl Animation {
     }
 }
 
+/// Optional parameters for rendering and updating charts
+#[serde_with::apply(
+    Option => #[serde(skip_serializing_if = "Option::is_none")],
+    Vec => #[serde(default, skip_serializing_if = "Vec::is_empty")]
+)]
+#[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, PartialOrd, Clone, Default)]
+#[serde(rename_all = "camelCase")]
+pub struct RenderOpts {
+    /// Whether to not merge with previously set option.
+    /// If true, all current components will be removed and new components created.
+    /// Default: false (merge with previous option)
+    not_merge: Option<bool>,
+
+    /// Whether to not update the chart immediately.
+    /// Default: false (update immediately)
+    lazy_update: Option<bool>,
+
+    /// Whether to prevent events from being thrown when calling setOption.
+    /// Default: false (events are thrown)
+    silent: Option<bool>,
+
+    /// Specify component main types that will be replaced instead of merged.
+    /// For example: ["xAxis", "yAxis", "series"]
+    replace_merge: Option<Vec<String>>,
+}
+
 #[wasm_bindgen]
 extern "C" {
     #[wasm_bindgen(js_name = echarts)]
@@ -136,7 +177,7 @@ extern "C" {
     fn init(id: &web_sys::Element, theme: &str, size: JsValue) -> Echarts;
 
     #[wasm_bindgen(method, js_name = "setOption")]
-    fn set_option(this: &Echarts, option: JsValue);
+    fn set_option(this: &Echarts, option: JsValue, opts: JsValue);
 
     #[wasm_bindgen(method, js_name = "resize")]
     pub fn resize(this: &Echarts, opts: JsValue);
