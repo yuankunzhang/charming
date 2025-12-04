@@ -2,7 +2,7 @@
 name = "charming"
 description = "A visualization library for Rust"
 version = "0.6.0"
-edition = "2021"
+edition = "2024"
 authors = ["Yuankun Zhang <i@yuankun.me>"]
 repository = "https://github.com/yuankunzhang/charming"
 documentation = "https://github.com/yuankunzhang/charming"
@@ -10,7 +10,7 @@ keywords = ["echarts", "visualization", "chart", "plot"]
 categories = ["visualization", "graphics"]
 license = "MIT OR Apache-2.0"
 readme = "../README.md"
-rust-version = "1.85"
+rust-version = "1.88"
 
 [dependencies]
 charming_macros = { path = "../charming_macros", version = "0.1" }

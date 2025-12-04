@@ -1,8 +1,8 @@
 use charming::{
+    Chart,
     component::Axis,
     element::{AxisType, BackgroundStyle},
     series::Bar,
-    Chart,
 };
 
 pub fn chart() -> Chart {

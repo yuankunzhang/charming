@@ -1,8 +1,8 @@
 use charming::{
+    Chart,
     component::{Legend, RadarCoordinate, Title},
     element::{AreaStyle, Tooltip, Trigger},
     series::Radar,
-    Chart,
 };
 
 pub fn chart() -> Chart {

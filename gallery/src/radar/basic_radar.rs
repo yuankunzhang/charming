@@ -1,7 +1,7 @@
 use charming::{
+    Chart,
     component::{Legend, RadarCoordinate, Title},
     series::Radar,
-    Chart,
 };
 
 pub fn chart() -> Chart {

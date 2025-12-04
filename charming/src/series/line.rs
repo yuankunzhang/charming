@@ -1,9 +1,9 @@
 use crate::{
     datatype::{DataFrame, DataPoint},
     element::{
-        smoothness::Smoothness, AreaStyle, CoordinateSystem, DimensionEncode, Emphasis, ItemStyle,
-        Label, LineStyle, MarkArea, MarkLine, MarkPoint, Sampling, Step, Symbol, SymbolSize,
-        Tooltip,
+        AreaStyle, CoordinateSystem, DimensionEncode, Emphasis, ItemStyle, Label, LineStyle,
+        MarkArea, MarkLine, MarkPoint, Sampling, Step, Symbol, SymbolSize, Tooltip,
+        smoothness::Smoothness,
     },
 };
 use charming_macros::CharmingSetters;

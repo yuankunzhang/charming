@@ -1,11 +1,11 @@
 use charming::{
+    Chart,
     component::{Axis, Grid, Title},
     element::{
         AreaStyle, AxisLabel, AxisPointer, AxisPointerType, AxisType, ItemStyle, JsFunction, Label,
         LineStyle, Symbol, Tooltip, Trigger,
     },
     series::Line,
-    Chart,
 };
 use serde::Deserialize;
 

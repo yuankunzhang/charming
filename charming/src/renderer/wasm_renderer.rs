@@ -1,9 +1,9 @@
-use crate::{element::Easing, theme::Theme, Chart, EchartsError};
+use crate::{Chart, EchartsError, element::Easing, theme::Theme};
 use charming_macros::CharmingSetters;
 use serde::{Deserialize, Serialize};
 use serde_wasm_bindgen::to_value;
-use wasm_bindgen::prelude::*;
 use wasm_bindgen::JsValue;
+use wasm_bindgen::prelude::*;
 
 pub struct WasmRenderer {
     theme: Theme,
@@ -52,8 +52,7 @@ impl WasmRenderer {
         let element = document
             .get_element_by_id(id)
             .ok_or(EchartsError::WasmError(format!(
-                "no element with id `{}` found",
-                id
+                "no element with id `{id}` found",
             )))?;
         let echarts = init(
             &element,
@@ -168,7 +167,6 @@ pub struct RenderOpts {
     /// For example: ["xAxis", "yAxis", "series"]
     replace_merge: Option<Vec<String>>,
 }
-
 
 #[wasm_bindgen]
 extern "C" {

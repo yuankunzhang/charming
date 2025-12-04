@@ -187,22 +187,21 @@ pub fn derive(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
                         }
                         syn::Meta::List(_meta_list) => (),
                         syn::Meta::NameValue(meta_name_value) => {
-                            if let Some(segment) = meta_name_value.path.segments.last() {
-                                if let "charming_type" = segment.ident.to_string().as_str() {
-                                    match &meta_name_value.value {
-                                        syn::Expr::Lit(expr_lit) => {
-                                            if let syn::Lit::Str(lit_str) = &expr_lit.lit {
-                                                let value = lit_str.value();
+                            if let Some(segment) = meta_name_value.path.segments.last()
+                                && let "charming_type" = segment.ident.to_string().as_str()
+                            {
+                                match &meta_name_value.value {
+                                    syn::Expr::Lit(expr_lit) => {
+                                        if let syn::Lit::Str(lit_str) = &expr_lit.lit {
+                                            let value = lit_str.value();
 
-                                                // This sets the String to whatever value was provided in the `new` method, it is used to provide a value to type_
-                                                fields_init_values.push(
-                                                    quote! { #field_ident: #value.to_string() },
-                                                )
-                                            }
+                                            // This sets the String to whatever value was provided in the `new` method, it is used to provide a value to type_
+                                            fields_init_values
+                                                .push(quote! { #field_ident: #value.to_string() })
                                         }
-                                        _ => {
-                                            panic!("charming_type needs a string literal")
-                                        }
+                                    }
+                                    _ => {
+                                        panic!("charming_type needs a string literal")
                                     }
                                 }
                             }

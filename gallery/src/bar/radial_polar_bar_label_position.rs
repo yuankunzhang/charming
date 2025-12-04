@@ -1,9 +1,9 @@
 use charming::{
+    Chart,
     component::{AngleAxis, PolarCoordinate, RadiusAxis, Title},
     datatype::CompositeValue,
     element::{AxisType, CoordinateSystem, Label, LabelPosition, Tooltip},
     series::Bar,
-    Chart,
 };
 
 pub fn chart() -> Chart {

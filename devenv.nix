@@ -68,6 +68,7 @@ in
   languages.rust = {
     enable = true;
     channel = "stable";
+    version = "1.88.0";
     targets = [ "wasm32-unknown-unknown" ];
   };
 

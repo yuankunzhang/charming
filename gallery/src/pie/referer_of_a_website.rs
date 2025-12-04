@@ -1,9 +1,9 @@
 use charming::{
+    Chart,
     component::{Legend, Title},
     df,
     element::{Emphasis, ItemStyle, Orient, Tooltip, Trigger},
     series::Pie,
-    Chart,
 };
 
 pub fn chart() -> Chart {

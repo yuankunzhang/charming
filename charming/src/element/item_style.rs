@@ -10,7 +10,10 @@ use serde::{Deserialize, Serialize};
 #[serde(rename_all = "camelCase")]
 pub struct ItemStyle {
     color: Option<Color>,
+    color0: Option<Color>,
     border_color: Option<Color>,
+    border_color0: Option<Color>,
+    border_color_doji: Option<Color>,
     border_width: Option<f64>,
     border_radius: Option<f64>,
     border_type: Option<BorderType>,

@@ -1,9 +1,9 @@
 use charming::{
+    Chart,
     component::{Legend, LegendType, RadarCoordinate, Title, VisualMap},
     datatype::{DataPoint, DataPointItem},
     element::{AreaStyle, Emphasis, LineStyle, Symbol, Tooltip, Trigger},
     series::Radar,
-    Chart,
 };
 
 pub fn chart() -> Chart {

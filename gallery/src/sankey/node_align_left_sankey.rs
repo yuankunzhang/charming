@@ -1,8 +1,8 @@
 use charming::{
+    Chart,
     component::Title,
     element::{Emphasis, EmphasisFocus, LineStyle, Tooltip, Trigger, TriggerOn},
     series::{Sankey, SankeyLink, SankeyNode, SankeyNodeAlign},
-    Chart,
 };
 use serde::Deserialize;
 

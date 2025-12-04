@@ -1,4 +1,4 @@
-use serde::{de::Visitor, ser::SerializeSeq, Deserialize, Deserializer, Serialize};
+use serde::{Deserialize, Deserializer, Serialize, de::Visitor, ser::SerializeSeq};
 
 /// The boundary gap on both sides of a coordinate axis. The setting and
 /// behavior of category axes and non-category axes are different.

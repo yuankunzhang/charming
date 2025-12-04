@@ -1,7 +1,7 @@
 use serde::{
+    Deserialize, Deserializer, Serialize,
     de::{self, SeqAccess, Visitor},
     ser::SerializeSeq,
-    Deserialize, Deserializer, Serialize,
 };
 
 use crate::datatype::CompositeValue;

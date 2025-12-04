@@ -1,9 +1,9 @@
 use charming::{
+    Chart,
     component::{DataView, Feature, Legend, Restore, SaveAsImage, Title, Toolbox},
     df,
     element::{Label, LabelPosition, Orient, Sort, Tooltip, Trigger},
     series::Funnel,
-    Chart,
 };
 
 pub fn chart() -> Chart {

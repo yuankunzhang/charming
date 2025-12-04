@@ -3,13 +3,13 @@
 use std::vec;
 
 use charming::{
+    Chart,
     component::{
         Axis, DataZoom, DataZoomType, Feature, Grid, Legend, Restore, SaveAsImage, Title, Toolbox,
         ToolboxDataZoom,
     },
     element::{AxisLine, AxisPointer, AxisPointerLink, AxisType, Tooltip, Trigger},
     series::Line,
-    Chart,
 };
 
 pub fn chart() -> Chart {

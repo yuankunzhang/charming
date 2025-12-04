@@ -1,4 +1,5 @@
 use charming::{
+    Chart,
     component::{
         Axis, Brush, BrushType, DataZoom, DataZoomType, Feature, Grid, Legend, Toolbox,
         ToolboxDataZoom,
@@ -8,7 +9,6 @@ use charming::{
         SplitArea, SplitLine, Tooltip, Trigger,
     },
     series::Custom,
-    Chart,
 };
 
 pub fn chart() -> Chart {

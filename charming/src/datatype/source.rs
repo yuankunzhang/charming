@@ -57,7 +57,7 @@ impl From<Vec<Vec<CompositeValue>>> for DataSource {
 /// ```
 #[macro_export]
 macro_rules! ds {
-    ($([$($x:expr),* $(,)?]),* $(,)?) => {
+    ($([$($x:expr_2021),* $(,)?]),* $(,)?) => {
         $crate::datatype::DataSource::from(vec![
             $(
                 vec![

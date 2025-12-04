@@ -1,6 +1,6 @@
 use crate::{
     datatype::{DataFrame, DataPoint},
-    element::{smoothness::Smoothness, ColorBy, CoordinateSystem, Emphasis, LineStyle},
+    element::{ColorBy, CoordinateSystem, Emphasis, LineStyle, smoothness::Smoothness},
 };
 use charming_macros::CharmingSetters;
 use serde::{Deserialize, Serialize};

@@ -1,8 +1,8 @@
 use charming::{
+    Chart,
     component::{DataView, Feature, Legend, Restore, SaveAsImage, Toolbox},
     element::ItemStyle,
     series::{Pie, PieRoseType},
-    Chart,
 };
 
 pub fn chart() -> Chart {

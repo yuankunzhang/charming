@@ -70,7 +70,7 @@ impl From<(&str, &str, &str)> for Dimension {
 /// ```
 #[macro_export]
 macro_rules! dim {
-    ($($x:expr),*) => {
+    ($($x:expr_2021),*) => {
         vec![
             $(
                 $crate::datatype::Dimension::from($x)

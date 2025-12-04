@@ -1,7 +1,7 @@
 use charming::{
+    Chart,
     element::{Emphasis, EmphasisFocus},
     series::Sankey,
-    Chart,
 };
 
 pub fn chart() -> Chart {

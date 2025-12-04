@@ -20,7 +20,9 @@ fn image_snapshot(old_path: &Path) {
     }
 
     if !test_path.exists() {
-        panic!("Unable to find {test_path:?}, did you run \n`cargo r --bin generate_images img_test` \nto create the images for comparison?")
+        panic!(
+            "Unable to find {test_path:?}, did you run \n`cargo r --bin generate_images img_test` \nto create the images for comparison?"
+        )
     };
 
     let mut opt = usvg::Options::default();

@@ -1,4 +1,4 @@
-use super::{item_style::ItemStyle, AreaStyle, Label};
+use super::{AreaStyle, Label, item_style::ItemStyle};
 use charming_macros::CharmingSetters;
 use serde::{Deserialize, Serialize};
 

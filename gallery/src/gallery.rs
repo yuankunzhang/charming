@@ -1,10 +1,9 @@
 use askama::Template;
 use axum::{
-    extract,
+    Router, extract,
     http::StatusCode,
     response::{Html, IntoResponse, Response},
     routing::get,
-    Router,
 };
 use charming::HtmlRenderer;
 use charming_gallery::CHARTS;

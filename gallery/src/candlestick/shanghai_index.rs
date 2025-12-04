@@ -1,4 +1,5 @@
 use charming::{
+    Chart,
     component::{Axis, DataZoom, Grid, Legend},
     datatype::CompositeValue,
     element::{
@@ -6,7 +7,6 @@ use charming::{
         TextStyle, Tooltip, Trigger,
     },
     series::{Candlestick, Line},
-    Chart,
 };
 
 pub fn chart() -> Chart {

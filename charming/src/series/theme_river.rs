@@ -4,9 +4,9 @@ use crate::{
 };
 use charming_macros::CharmingSetters;
 use serde::{
+    Deserialize, Deserializer, Serialize,
     de::{SeqAccess, Visitor},
     ser::SerializeSeq,
-    Deserialize, Deserializer, Serialize,
 };
 
 #[derive(Debug, PartialEq, PartialOrd, Clone)]

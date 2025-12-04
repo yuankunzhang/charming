@@ -1,4 +1,5 @@
 use charming::{
+    Chart,
     component::{Axis, Grid, Title},
     df,
     element::{
@@ -6,7 +7,6 @@ use charming::{
         Symbol, Tooltip,
     },
     series::Scatter,
-    Chart,
 };
 
 pub fn chart() -> Chart {

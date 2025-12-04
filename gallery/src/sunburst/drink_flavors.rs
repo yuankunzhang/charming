@@ -1,10 +1,10 @@
 use charming::{
+    Chart,
     component::Title,
     element::{
         Emphasis, EmphasisFocus, ItemStyle, Label, LabelAlign, LabelPosition, Sort, TextStyle,
     },
     series::{Sunburst, SunburstLevel, SunburstNode},
-    Chart,
 };
 use serde::{Deserialize, Serialize};
 
