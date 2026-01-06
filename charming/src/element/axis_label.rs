@@ -3,7 +3,7 @@ use super::{
     color::Color,
     font_settings::{FontFamily, FontStyle, FontWeight},
 };
-use crate::datatype::CompositeValue;
+use crate::{datatype::CompositeValue, element::LabelAlign};
 use charming_macros::CharmingSetters;
 use serde::{Deserialize, Serialize};
 
@@ -24,5 +24,8 @@ pub struct AxisLabel {
     formatter: Option<Formatter>,
     rotate: Option<f64>,
     interval: Option<f64>,
+    align: Option<LabelAlign>,
+    align_min_label: Option<LabelAlign>,
+    align_max_label: Option<LabelAlign>,
     custom_values: Vec<CompositeValue>,
 }
