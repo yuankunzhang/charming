@@ -1,3 +1,5 @@
+use std::pin::pin;
+
 use deno_core::{JsRuntime, RuntimeOptions, v8};
 use handlebars::Handlebars;
 
@@ -103,9 +105,13 @@ impl ImageRenderer {
 
         match result {
             Ok(global) => {
-                let scope = &mut self.js_runtime.handle_scope();
-                let local = v8::Local::new(scope, global);
-                let value = serde_v8::from_v8::<serde_json::Value>(scope, local);
+                let context = self.js_runtime.main_context();
+                let mut scope = pin!(v8::HandleScope::new(self.js_runtime.v8_isolate()));
+                let mut scope = scope.as_mut().init();
+                let context_local = v8::Local::new(&scope, context);
+                let mut scope = v8::ContextScope::new(&mut scope, context_local);
+                let local = v8::Local::new(&scope, global);
+                let value = serde_v8::from_v8::<serde_json::Value>(&mut scope, local);
 
                 match value {
                     Ok(value) => Ok(value.as_str().unwrap().to_string()),
