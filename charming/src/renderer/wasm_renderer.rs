@@ -185,6 +185,6 @@ extern "C" {
     pub fn dispose(this: &Echarts);
 }
 
-/// Enable dispose on on_cleanup function in Leptos
+// Enable dispose on on_cleanup function in Leptos
 unsafe impl Sync for Echarts {}
 unsafe impl Send for Echarts {}
