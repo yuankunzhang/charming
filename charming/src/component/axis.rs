@@ -7,8 +7,10 @@ use crate::{
 };
 use charming_macros::CharmingSetters;
 use serde::{Deserialize, Serialize};
+use serde_with::{DefaultOnNull, serde_as};
 
 /// Axis in cartesian coordinate.
+#[serde_as]
 #[serde_with::apply(
   Option => #[serde(skip_serializing_if = "Option::is_none")],
   Vec => #[serde(default, skip_serializing_if = "Vec::is_empty")]
@@ -76,5 +78,6 @@ pub struct Axis {
     /// Settings related to split line.
     split_line: Option<SplitLine>,
     #[charming_set_vec]
+    #[serde_as(deserialize_as = "DefaultOnNull")]
     data: Vec<String>,
 }

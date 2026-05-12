@@ -14,13 +14,13 @@ mod tests {
                 let chart = chart_builder();
                 let json_string = serde_json::to_string(&chart).unwrap_or_else(|e| {
                     panic!(
-                        "Shold be able to serialize sub chart: {sub_key} in {key} charts category, error message: {e}"
+                        "Should be able to serialize sub chart: {sub_key} in {key} charts category, error message: {e}"
                     )
                 });
 
                 let deserialized_chart:Chart = serde_json::from_str(&json_string).unwrap_or_else(|e| {
                     panic!(
-                        "Shold be able to deserialize sub chart: {sub_key} in {key} charts category, error message: {e}"
+                        "Should be able to deserialize sub chart: {sub_key} in {key} charts category, error message: {e}"
                     )
                 });
 
@@ -91,5 +91,129 @@ mod tests {
             result.is_err(),
             "Expected an error for incomplete data, but deserialization succeeded"
         );
+    }
+
+    #[test]
+    fn test_deserialize_chart_more_flexibility() {
+        let chart_str = r##"{
+          "animationDurationUpdate": 800,
+          "animationEasingUpdate": "quinticInOut",
+          "grid": {
+            "bottom": "50",
+            "containsLabel": true,
+            "left": "70",
+            "right": "30",
+            "show": false,
+            "top": "40"
+          },
+          "legend": {
+            "bottom": 10,
+            "data": [
+              "Type1",
+              "Type2",
+              "Type3",
+              "Type4",
+              "Type5",
+              "Type6"
+            ],
+            "itemGap": 15,
+            "itemHeight": 14,
+            "itemWidth": 14,
+            "orient": "horizontal",
+            "show": true,
+            "textStyle": {
+              "fontSize": 12
+            }
+          },
+          "series": [
+            {
+              "animation": true,
+              "animationDuration": 1000,
+              "animationEasing": "bounceOut",
+              "data": [
+                {
+                  "name": "Type1",
+                  "value": 3750
+                },
+                {
+                  "name": "Type2",
+                  "value": 1100
+                },
+                {
+                  "name": "Type3",
+                  "value": 3000
+                },
+                {
+                  "name": "Type4",
+                  "value": 500
+                },
+                {
+                  "name": "Type5",
+                  "value": 12000
+                },
+                {
+                  "name": "Type6",
+                  "value": 12000
+                }
+              ],
+              "emphasis": {
+                "itemStyle": {
+                  "shadowBlur": 10,
+                  "shadowColor": "rgba(0, 0, 0, 0.5)",
+                  "shadowOffsetX": 0
+                }
+              },
+              "name": "",
+              "radius": "50%",
+              "type": "pie"
+            }
+          ],
+          "textStyle": {
+            "color": "#000A26",
+            "fontFamily": "Inter",
+            "fontSize": 12
+          },
+          "title": {
+            "left": 5,
+            "show": false,
+            "text": "Demo pie chart",
+            "textStyle": {
+              "color": "#000A26",
+              "fontSize": 18,
+              "fontWeight": 600
+            }
+          },
+          "tooltip": {
+            "axisPointer": {
+              "type": "shadow"
+            },
+            "show": true,
+            "trigger": "item"
+          },
+          "xAxis": {
+            "axisPointer": {
+              "show": false
+            },
+            "data": [],
+            "name": "",
+            "nameGap": 30,
+            "nameLocation": "middle",
+            "show": false,
+            "type": "category"
+          },
+          "yAxis": {
+            "axisPointer": {
+              "show": false
+            },
+            "data": null,
+            "name": "",
+            "nameGap": 70,
+            "nameLocation": "middle",
+            "show": false,
+            "type": "value"
+          }
+        }"##;
+
+        serde_json::from_str::<Chart>(chart_str).expect("Should be able to deserialize chart");
     }
 }

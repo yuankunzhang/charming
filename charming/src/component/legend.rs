@@ -6,7 +6,8 @@ use crate::{
 };
 use charming_macros::CharmingSetters;
 use serde::{Deserialize, Serialize};
-use std::collections::BTreeMap;
+use serde_with::{DisplayFromStr, PickFirst, serde_as};
+use std::{collections::BTreeMap, str::FromStr};
 
 #[derive(Serialize, Deserialize, Debug, PartialEq, Clone)]
 #[serde(untagged)]
@@ -56,6 +57,17 @@ pub struct LegendItem {
     pub icon: Option<Icon>,
 }
 
+impl FromStr for LegendItem {
+    type Err = std::convert::Infallible;
+
+    fn from_str(name: &str) -> Result<Self, Self::Err> {
+        Ok(Self {
+            name: name.to_string(),
+            icon: None,
+        })
+    }
+}
+
 impl From<&str> for LegendItem {
     fn from(name: &str) -> Self {
         Self {
@@ -89,6 +101,7 @@ impl From<(String, String)> for LegendItem {
     }
 }
 
+#[serde_as]
 #[serde_with::apply(
   Option => #[serde(skip_serializing_if = "Option::is_none")],
   Vec => #[serde(default, skip_serializing_if = "Vec::is_empty")]
@@ -146,6 +159,7 @@ pub struct Legend {
     border_color: Option<Color>,
     inactive_color: Option<Color>,
     #[charming_set_vec]
+    #[serde_as(as = "Vec<PickFirst<(_, DisplayFromStr)>>")]
     data: Vec<LegendItem>,
     animation: Option<bool>,
     animation_duration_update: Option<AnimationTime>,
