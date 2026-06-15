@@ -34,6 +34,7 @@ pub struct Pie {
     clockwise: Option<bool>,
     avoid_label_overlap: Option<bool>,
     start_angle: Option<f64>,
+    pad_angle: Option<f64>,
     rose_type: Option<PieRoseType>,
     label: Option<Label>,
     label_line: Option<LabelLine>,
