@@ -66,6 +66,7 @@ let chart = Chart::new()
 
 let mut renderer = ImageRenderer::new(1000, 800);
 renderer.save(&chart, "./nightingale.svg");
+# std::fs::remove_file("./nightingale.svg");
 ```
 
 ## Themes
@@ -85,9 +86,10 @@ use charming::component::Title;
 ImageRenderer::new(1000, 800)
     .theme(Theme::Westeros)
     .save(
-    &Chart::new().title(Title::new().text("Westeros")),
+        &Chart::new().title(Title::new().text("Westeros")),
         "./westeros.svg",
-);
+    );
+# std::fs::remove_file("./westeros.svg");
 ```
 
 Future versions of Charming will support custom themes.
