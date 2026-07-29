@@ -500,6 +500,7 @@ dependencies = [
  "serde_v8",
  "serde_with",
  "test_each_file",
+ "tokio",
  "wasm-bindgen",
  "web-sys",
 ]

@@ -33,6 +33,8 @@ resvg = "0.47"
 test_each_file = "0.3.7"
 chrono = "0.4.45"
 pretty_assertions = "1.4.1"
+# Required for doctests
+tokio = { version = "1.29.1", features = ["rt"] }
 
 [dependencies.web-sys]
 version = "0.3.103"
