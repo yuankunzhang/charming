@@ -14,11 +14,11 @@ readme = "../README.md"
 proc-macro = true
 
 [dependencies]
-proc-macro2 = "1.0.95"
-quote = "1.0.40"
-syn = { version = "2.0.101", features = ["full"] }
+proc-macro2 = "1.0.107"
+quote = "1.0.47"
+syn = { version = "3.0.3", features = ["full"] }
 
 [dev-dependencies]
 charming = { path = "../charming" }
 serde = { version = "1.0", features = ["derive"] }
-serde_with = "3.11.0"
+serde_with = "3.21.0"
