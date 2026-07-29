@@ -40,6 +40,9 @@ use charming::{
     Chart, ImageRenderer
 };
 
+# let runtime = tokio::runtime::Runtime::new().unwrap();
+# let _guard = runtime.enter();
+
 let chart = Chart::new()
     .legend(Legend::new().top("bottom"))
     .series(
@@ -62,7 +65,8 @@ let chart = Chart::new()
     );
 
 let mut renderer = ImageRenderer::new(1000, 800);
-renderer.save(&chart, "/tmp/nightingale.svg");
+renderer.save(&chart, "./nightingale.svg");
+# std::fs::remove_file("./nightingale.svg");
 ```
 
 ## Themes
@@ -76,10 +80,16 @@ use charming::{Chart, ImageRenderer};
 use charming::theme::Theme;
 use charming::component::Title;
 
-ImageRenderer::new(1000, 800).theme(Theme::Westeros).save(
-    &Chart::new().title(Title::new().text("Westeros")),
-    "/tmp/westeros.svg",
-);
+# let runtime = tokio::runtime::Runtime::new().unwrap();
+# let _guard = runtime.enter();
+
+ImageRenderer::new(1000, 800)
+    .theme(Theme::Westeros)
+    .save(
+        &Chart::new().title(Title::new().text("Westeros")),
+        "./westeros.svg",
+    );
+# std::fs::remove_file("./westeros.svg");
 ```
 
 Future versions of Charming will support custom themes.
