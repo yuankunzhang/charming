@@ -65,7 +65,7 @@ let chart = Chart::new()
     );
 
 let mut renderer = ImageRenderer::new(1000, 800);
-renderer.save(&chart, "/tmp/nightingale.svg");
+renderer.save(&chart, "./nightingale.svg");
 ```
 
 ## Themes
@@ -82,8 +82,11 @@ use charming::component::Title;
 # let runtime = tokio::runtime::Runtime::new().unwrap();
 # let _guard = runtime.enter();
 
+ImageRenderer::new(1000, 800)
+    .theme(Theme::Westeros)
+    .save(
     &Chart::new().title(Title::new().text("Westeros")),
-    "/tmp/westeros.svg",
+        "./westeros.svg",
 );
 ```
 
