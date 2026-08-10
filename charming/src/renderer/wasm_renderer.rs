@@ -8,6 +8,7 @@ pub struct WasmRenderer {
     theme: Theme,
     width: Option<u32>,
     height: Option<u32>,
+    renderer: Renderer
 }
 
 impl WasmRenderer {
@@ -16,6 +17,7 @@ impl WasmRenderer {
             theme: Theme::Default,
             width: Some(width),
             height: Some(height),
+            renderer: Renderer::Svg
         }
     }
 
@@ -24,6 +26,7 @@ impl WasmRenderer {
             theme: Theme::Default,
             width,
             height,
+            renderer: Renderer::Svg
         }
     }
 
@@ -47,9 +50,10 @@ impl WasmRenderer {
         let echarts = init(
             &element,
             self.theme.to_str().0,
-            to_value(&ChartSize {
+            to_value(&ChartOptions {
                 width: self.width,
                 height: self.height,
+                renderer: self.renderer
             })
             .unwrap(),
         );
@@ -70,10 +74,27 @@ impl WasmRenderer {
     }
 }
 
+/// Rendering mode used by ECharts.
+///
+/// ECharts supports both Canvas and SVG rendering.
+#[derive(Clone, Copy, Debug, Serialize)]
+#[serde(rename_all = "lowercase")]
+pub enum Renderer {
+    Canvas,
+    Svg,
+}
+
+impl Default for Renderer {
+    fn default() -> Self {
+        Self::Svg
+    }
+}
+
 #[derive(Clone, Debug, Serialize, Copy)]
-struct ChartSize {
+struct ChartOptions {
     width: Option<u32>,
     height: Option<u32>,
+    renderer: Renderer
 }
 
 #[derive(Clone, Debug, Serialize, Copy)]
