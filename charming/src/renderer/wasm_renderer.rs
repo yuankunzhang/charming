@@ -35,6 +35,14 @@ impl WasmRenderer {
         self
     }
 
+    /// Sets the rendering mode used by ECharts.
+    ///
+    /// Defaults to [`Renderer::Svg`].
+    pub fn renderer(mut self, renderer: Renderer) -> Self {
+        self.renderer = renderer;
+        self
+    }
+
     pub fn render(&self, id: &str, chart: &Chart) -> Result<Echarts, EchartsError> {
         let window = web_sys::window().ok_or(EchartsError::WasmError(
             "no `window` object found".to_string(),
