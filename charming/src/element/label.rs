@@ -81,6 +81,9 @@ pub struct Label {
     shadow_blur: Option<f64>,
     shadow_offset_x: Option<f64>,
     shadow_offset_y: Option<f64>,
+
+    height: Option<f64>,
+    width: Option<f64>,
 }
 
 impl Label {
