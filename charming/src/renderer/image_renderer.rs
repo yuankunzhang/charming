@@ -34,6 +34,7 @@ pub use image::ImageFormat;
 
 pub struct ImageRenderer {
     js_runtime: JsRuntime,
+    tokio_runtime: Option<tokio::runtime::Runtime>,
     #[cfg(feature = "ssr-raster")]
     fontdb: Arc<usvg::fontdb::Database>,
     theme: Theme,
@@ -41,8 +42,26 @@ pub struct ImageRenderer {
     height: u32,
 }
 
+impl Drop for ImageRenderer {
+    fn drop(&mut self) {
+        if let Some(rt) = self.tokio_runtime.take() {
+            rt.shutdown_background();
+        }
+    }
+}
+
 impl ImageRenderer {
     pub fn new(width: u32, height: u32) -> Self {
+        let tokio_runtime = match tokio::runtime::Handle::try_current() {
+            Ok(_) => None,
+            Err(_) => Some(
+                tokio::runtime::Builder::new_current_thread()
+                    .enable_time()
+                    .build()
+                    .expect("Failed to build tokio runtime for the V8 isolate"),
+            ),
+        };
+        let _guard = tokio_runtime.as_ref().map(|rt| rt.enter());
         let mut runtime = JsRuntime::new(RuntimeOptions::default());
         runtime
             .execute_script(
@@ -73,6 +92,7 @@ impl ImageRenderer {
 
         Self {
             js_runtime: runtime,
+            tokio_runtime,
             #[cfg(feature = "ssr-raster")]
             fontdb: Arc::new(fontdb),
             theme: Theme::Default,
