@@ -117,7 +117,7 @@ pub struct DataZoom {
     /// Inside, Slider
     throttle: Option<f64>,
     /// Inside, Slider
-    range_mode: Option<Vec<RangeMode>>,
+    range_mode: Option<[RangeMode; 2]>,
     /// Slider
     left: Option<CompositeValue>,
     /// Slider
