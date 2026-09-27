@@ -61,7 +61,7 @@ impl ImageRenderer {
                     .expect("Failed to build tokio runtime for the V8 isolate"),
             ),
         };
-        let _guard = tokio_runtime.as_ref().map(|rt| rt.enter());
+        let guard = tokio_runtime.as_ref().map(|rt| rt.enter());
         let mut runtime = JsRuntime::new(RuntimeOptions::default());
         runtime
             .execute_script(
@@ -75,6 +75,7 @@ impl ImageRenderer {
                 include_str!("../asset/echarts-5.5.1.min.js").to_string(),
             )
             .unwrap();
+        drop(guard);
 
         #[cfg(feature = "ssr-raster")]
         let mut fontdb = usvg::fontdb::Database::default();
