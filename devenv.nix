@@ -87,7 +87,7 @@ in
     cd $DEVENV_ROOT/examples/dioxus-desktop-demo
     dx build
 
-    # Build wasm examples 
+    # Build wasm examples
     cd $DEVENV_ROOT/examples/dioxus-web-demo
     dx build
     cd $DEVENV_ROOT/examples/leptos-demo
