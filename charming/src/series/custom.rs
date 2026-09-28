@@ -1,7 +1,7 @@
 use crate::{
     datatype::{CompositeValue, DataFrame, DataPoint, Dimension},
     element::{
-        ColorBy, CoordinateSystem, DimensionEncode, ItemStyle, LabelLayout, LabelLine, RawString,
+        ColorBy, CoordinateSystem, DimensionEncode, ItemStyle, JsFunction, LabelLayout, LabelLine,
         Tooltip,
     },
 };
@@ -28,7 +28,7 @@ pub struct Custom {
     polar_index: Option<CompositeValue>,
     geo_index: Option<CompositeValue>,
     calendar_index: Option<CompositeValue>,
-    render_item: Option<RawString>,
+    render_item: Option<JsFunction>,
     item_style: Option<ItemStyle>,
     label_line: Option<LabelLine>,
     label_layout: Option<LabelLayout>,
