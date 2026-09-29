@@ -68,6 +68,46 @@ impl WasmRenderer {
         let js = serde_wasm_bindgen::to_value(&chart).unwrap();
         echarts.set_option(js);
     }
+    /// Enable disposing of chart instance
+    /// # Example
+    /// ```no_run
+    /// use charming::renderer::WasmRenderer;
+    /// use charming::Chart;
+    /// // assume `chart` is an instance of `Echarts`
+    /// # let chart = WasmRenderer::new(800,600).render("chart-id",&Chart::new()).unwrap();
+    /// WasmRenderer::dispose_chart(&chart);
+    /// ```
+    /// # Leptos Integration Example
+    ///
+    /// ```no_run
+    /// use charming::renderer::WasmRenderer;
+    /// use charming::Chart;
+    /// use leptos::prelude::*;
+    /// use std::sync::{Arc, Mutex};
+    /// #[component]
+    /// fn MyChartComponent(chart: Box<dyn Fn()-> Chart>) -> impl IntoView {
+    ///     let e_charts: Arc<Mutex<Option<Echarts>>> = Arc::new(Mutex::new(None));
+    ///     let chart_clone = e_charts.clone();
+    ///     on_cleanup(move || {
+    ///         if let Some(chart) = chart_clone.lock().unwrap().as_ref() {
+    ///             // In sometimes, you might want to dispose of the chart to free up resources,specially when the chart using custom renderItem.
+    ///            WasmRenderer::dispose_chart(chart);
+    ///         }
+    ///     });
+    ///     Effect::new(
+    ///         move |_| {
+    ///             let render = WasmRenderer::new_opt(None,None);
+    ///            *e_charts.lock().unwrap()= render.render("my-chart", &chart()).ok();
+    ///         }
+    ///     );
+    ///     view! {
+    ///         <div id="my-chart" class="w-full h-full"></div>
+    ///     }
+    /// }
+    /// ```
+    pub fn dispose_chart(echarts: &Echarts) {
+        echarts.dispose();
+    }
 }
 
 #[derive(Clone, Debug, Serialize, Copy)]
@@ -140,4 +180,11 @@ extern "C" {
 
     #[wasm_bindgen(method, js_name = "resize")]
     pub fn resize(this: &Echarts, opts: JsValue);
+
+    #[wasm_bindgen(method, js_name = "dispose")]
+    pub fn dispose(this: &Echarts);
 }
+
+// Enable dispose on on_cleanup function in Leptos
+unsafe impl Sync for Echarts {}
+unsafe impl Send for Echarts {}
