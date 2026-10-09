@@ -4,10 +4,35 @@ use serde_wasm_bindgen::to_value;
 use wasm_bindgen::JsValue;
 use wasm_bindgen::prelude::*;
 
+#[derive(Clone, Debug, Serialize)]
+struct InitOptions {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    width: Option<u32>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    height: Option<u32>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    renderer: Option<String>,
+}
+
 pub struct WasmRenderer {
     theme: Theme,
     width: Option<u32>,
     height: Option<u32>,
+    renderer: Option<Renderer>,
+}
+
+pub enum Renderer {
+    Canvas,
+    Svg,
+}
+
+impl Renderer {
+    fn as_str(&self) -> &str {
+        match self {
+            Renderer::Canvas => "canvas",
+            Renderer::Svg => "svg",
+        }
+    }
 }
 
 impl WasmRenderer {
@@ -16,14 +41,20 @@ impl WasmRenderer {
             theme: Theme::Default,
             width: Some(width),
             height: Some(height),
+            renderer: None,
         }
     }
 
+    pub fn renderer(mut self, renderer: Renderer) -> Self {
+        self.renderer = Some(renderer);
+        self
+    }
     pub fn new_opt(width: Option<u32>, height: Option<u32>) -> Self {
         Self {
             theme: Theme::Default,
             width,
             height,
+            renderer: None,
         }
     }
 
@@ -44,20 +75,21 @@ impl WasmRenderer {
             .ok_or(EchartsError::WasmError(format!(
                 "no element with id `{id}` found",
             )))?;
+
         let echarts = init(
             &element,
             self.theme.to_str().0,
-            to_value(&ChartSize {
+            to_value(&InitOptions {
                 width: self.width,
                 height: self.height,
+                renderer: self.renderer.as_ref().map(|r| r.as_str().to_string()),
             })
             .unwrap(),
         );
-        Self::update(&echarts, chart);
 
+        Self::update(&echarts, chart);
         Ok(echarts)
     }
-
     /// Resizes a chart with options specified in [`ChartResize`]
     pub fn resize_chart(echarts: &Echarts, chart_size: ChartResize) {
         echarts
@@ -68,12 +100,6 @@ impl WasmRenderer {
         let js = serde_wasm_bindgen::to_value(&chart).unwrap();
         echarts.set_option(js);
     }
-}
-
-#[derive(Clone, Debug, Serialize, Copy)]
-struct ChartSize {
-    width: Option<u32>,
-    height: Option<u32>,
 }
 
 #[derive(Clone, Debug, Serialize, Copy)]
