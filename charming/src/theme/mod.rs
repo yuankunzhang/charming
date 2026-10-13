@@ -19,6 +19,7 @@ pub enum Theme {
 }
 
 impl Theme {
+    #[cfg(any(feature = "html", feature = "ssr"))]
     pub(crate) fn to_str(&self) -> (&'static str, &'static str) {
         match self {
             Theme::Default => ("", ""),
