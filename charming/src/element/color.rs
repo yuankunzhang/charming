@@ -3,6 +3,8 @@ use serde::ser::{SerializeStruct, Serializer};
 use serde::{Deserialize, Serialize};
 use std::fmt;
 
+use crate::element::JsFunction;
+
 #[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
 #[serde(rename_all = "snake_case")]
 pub enum ColorBy {
@@ -38,6 +40,7 @@ impl ColorStop {
 #[derive(Debug, PartialEq, PartialOrd, Clone)]
 pub enum Color {
     Value(String),
+    Function(JsFunction),
     LinearGradient {
         x: f64,
         y: f64,
@@ -60,6 +63,7 @@ impl Serialize for Color {
     {
         match self {
             Color::Value(rgb) => serializer.serialize_str(rgb),
+            Color::Function(f) => f.serialize(serializer),
             Color::LinearGradient {
                 x,
                 y,

@@ -1,9 +1,14 @@
+use std::collections::HashMap;
+
 use super::{
     Formatter,
     color::Color,
     font_settings::{FontFamily, FontStyle, FontWeight},
 };
-use crate::{datatype::CompositeValue, element::LabelAlign};
+use crate::{
+    datatype::CompositeValue,
+    element::{LabelAlign, TextStyle},
+};
 use charming_macros::CharmingSetters;
 use serde::{Deserialize, Serialize};
 
@@ -15,6 +20,7 @@ use serde::{Deserialize, Serialize};
 #[serde(rename_all = "camelCase")]
 pub struct AxisLabel {
     show: Option<bool>,
+    inside: Option<bool>,
     distance: Option<f64>,
     font_style: Option<FontStyle>,
     font_weight: Option<FontWeight>,
@@ -28,4 +34,5 @@ pub struct AxisLabel {
     align_min_label: Option<LabelAlign>,
     align_max_label: Option<LabelAlign>,
     custom_values: Vec<CompositeValue>,
+    rich: Option<HashMap<String, TextStyle>>,
 }

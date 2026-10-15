@@ -65,7 +65,8 @@ impl WasmRenderer {
     }
 
     pub fn update(echarts: &Echarts, chart: &Chart) {
-        let js = serde_wasm_bindgen::to_value(&chart).unwrap();
+        let serializer = serde_wasm_bindgen::Serializer::new().serialize_maps_as_objects(true);
+        let js = chart.serialize(&serializer).unwrap();
         echarts.set_option(js);
     }
 }
