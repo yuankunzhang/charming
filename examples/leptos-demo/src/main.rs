@@ -2,12 +2,11 @@ use charming::{
     component::{Axis, Title},
     element::AxisType,
     series::Line,
-    Chart, WasmRenderer,
+    Chart, Renderer, WasmRenderer,
 };
 use leptos::prelude::*;
 use leptos_use::use_interval_fn;
 use leptos_use::utils::Pausable;
-
 
 #[component]
 fn App() -> impl IntoView {
@@ -26,14 +25,19 @@ fn App() -> impl IntoView {
             .y_axis(Axis::new().type_(AxisType::Value))
             .series(Line::new().data(local));
 
-        let renderer = WasmRenderer::new(600, 400);
+        let renderer = WasmRenderer::new(600, 400).renderer(Renderer::Svg);
         renderer.render("chart", &chart).unwrap();
     });
 
-    let Pausable { pause, resume, is_active: _ } = use_interval_fn(
+    let Pausable {
+        pause,
+        resume,
+        is_active: _,
+    } = use_interval_fn(
         move || {
             data.update(|d| d.rotate_right(1));
-        }, 1000
+        },
+        1000,
     );
     view! {
         <div>
