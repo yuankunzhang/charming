@@ -162,7 +162,7 @@ jobs:
           tar -xzf "$RUNNER_TEMP/binstall.tgz" -C "$RUNNER_TEMP" cargo-binstall
           install "$RUNNER_TEMP/cargo-binstall" "$HOME/.cargo/bin/cargo-binstall"
           cargo binstall -V
-          cargo binstall --no-confirm "wasm-bindgen-cli@${versions[1]}" "dioxus-cli@${versions[2]}" "trunk@${versions[3]}"
+          cargo binstall --locked --no-confirm "wasm-bindgen-cli@${versions[1]}" "dioxus-cli@${versions[2]}" "trunk@${versions[3]}"
       - name: Install desktop libraries
         if: matrix.name == 'dioxus-desktop-demo'
         run: |
