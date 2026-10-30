@@ -178,11 +178,38 @@ jobs:
     if: always()
     runs-on: ubuntu-24.04
     timeout-minutes: 60
+    env:
+      CARGO_INCREMENTAL: '0'
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           persist-credentials: false
       - uses: cachix/install-nix-action@8887e596b4ee1134dae06b98d573bd674693f47c # v26
+        with:
+          install_url: https://releases.nixos.org/nix/nix-2.34.6/install
+      - name: Cache Nix store
+        id: nix-cache
+        uses: nix-community/cache-nix-action@7df957e333c1e5da7721f60227dbba6d06080569 # v7
+        with:
+          primary-key: nix-v1-${{ runner.os }}-${{ runner.arch }}-2.34.6-${{ hashFiles('flake.lock', 'flake.nix', 'nix/**', 'rust-toolchain.toml', 'ci/tools.toml') }}
+          restore-prefixes-first-match: nix-v1-${{ runner.os }}-${{ runner.arch }}-2.34.6-
+      - name: Cache Cargo dependencies and build artifacts
+        if: needs.preflight.outputs.nix_full == 'true'
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: |
+            ~/.cargo/registry/index
+            ~/.cargo/registry/cache
+            ~/.cargo/git/db
+            target
+            examples/dioxus-desktop-demo/target
+            examples/dioxus-web-demo/target
+            examples/leptos-demo/target
+            examples/sycamore-demo/target
+            examples/yew-demo/target
+          key: cargo-v1-${{ steps.nix-cache.outputs.primary-key }}-${{ hashFiles('**/Cargo.lock', '**/Cargo.toml', '.cargo/**', '.github/workflows/rust.yml') }}
+          restore-keys: |
+            cargo-v1-${{ steps.nix-cache.outputs.primary-key }}-
       - uses: cachix/cachix-action@18cf96c7c98e048e10a83abd92116114cd8504be # v14
         with:
           name: devenv
