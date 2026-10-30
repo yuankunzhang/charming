@@ -161,7 +161,7 @@ jobs:
           curl --fail --location --retry 3 "https://github.com/cargo-bins/cargo-binstall/releases/download/v${versions[0]}/cargo-binstall-x86_64-unknown-linux-musl.tgz" -o "$RUNNER_TEMP/binstall.tgz"
           tar -xzf "$RUNNER_TEMP/binstall.tgz" -C "$RUNNER_TEMP" cargo-binstall
           install "$RUNNER_TEMP/cargo-binstall" "$HOME/.cargo/bin/cargo-binstall"
-          cargo binstall --version
+          cargo binstall -V
           cargo binstall --no-confirm "wasm-bindgen-cli@${versions[1]}" "dioxus-cli@${versions[2]}" "trunk@${versions[3]}"
       - name: Install desktop libraries
         if: matrix.name == 'dioxus-desktop-demo'
