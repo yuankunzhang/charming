@@ -164,9 +164,11 @@ def run(task, name=None):
         command(["cargo", "check", "-p", "charming", "--lib", "--locked"],
                 env=dict(os.environ, RUSTUP_TOOLCHAIN=rust_version()))
     elif task == "stable":
-        env = dict(os.environ, RUSTUP_TOOLCHAIN="stable")
-        command(["rustc", "--version"], env=env)
-        base = ["cargo", "check", "-p", "charming", "--lib", "--locked"]
+        rustc = command(["rustup", "which", "--toolchain", "stable", "rustc"], capture=True).strip()
+        # Nix's direct compiler can precede rustup proxies on PATH.
+        env = dict(os.environ, RUSTC=rustc)
+        command(["rustup", "run", "stable", "rustc", "--version"], env=env)
+        base = ["rustup", "run", "stable", "cargo", "check", "-p", "charming", "--lib", "--locked"]
         for extra in (["--no-default-features"], [],
                       ["--no-default-features", "--features", "wasm", "--target",
                        "wasm32-unknown-unknown"]):

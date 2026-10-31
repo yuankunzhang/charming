@@ -285,14 +285,23 @@ class RunnerTests(unittest.TestCase):
         self.assertEqual([c.args[0] for c in example.call_args_list], list(check.EXAMPLES))
 
     def test_stable_overrides_toolchain_and_checks_three_modes(self):
-        with patch.object(check, "command") as command:
+        with patch.dict(os.environ, RUSTC="/nix/store/pinned/bin/rustc", RUSTUP_TOOLCHAIN="1.98.1"), \
+             patch.object(check, "command", return_value="/rustup/stable/bin/rustc\n") as command:
             check.run("stable")
-        self.assertEqual(command.call_count, 4)
-        for call in command.call_args_list:
-            self.assertEqual(call.kwargs["env"]["RUSTUP_TOOLCHAIN"], "stable")
-        self.assertIn("--no-default-features", command.call_args_list[1].args[0])
-        self.assertNotIn("--no-default-features", command.call_args_list[2].args[0])
-        self.assertEqual(command.call_args_list[3].args[0][-4:],
+        self.assertEqual(command.call_count, 5)
+        self.assertEqual(command.call_args_list[0].args[0],
+                         ["rustup", "which", "--toolchain", "stable", "rustc"])
+        self.assertTrue(command.call_args_list[0].kwargs["capture"])
+        self.assertEqual(command.call_args_list[1].args[0],
+                         ["rustup", "run", "stable", "rustc", "--version"])
+        for call in command.call_args_list[1:]:
+            self.assertEqual(call.args[0][:3], ["rustup", "run", "stable"])
+            self.assertEqual(call.kwargs["env"]["RUSTC"], "/rustup/stable/bin/rustc")
+        for call in command.call_args_list[2:]:
+            self.assertEqual(call.args[0][3:9], ["cargo", "check", "-p", "charming", "--lib", "--locked"])
+        self.assertIn("--no-default-features", command.call_args_list[2].args[0])
+        self.assertNotIn("--no-default-features", command.call_args_list[3].args[0])
+        self.assertEqual(command.call_args_list[4].args[0][-4:],
                          ["--features", "wasm", "--target", "wasm32-unknown-unknown"])
 
     def test_preflight_checks_versions_and_conflicts_without_metadata(self):

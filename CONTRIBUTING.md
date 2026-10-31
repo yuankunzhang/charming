@@ -42,6 +42,17 @@ Trunk's metadata step can still edit its example lock: the runner checks that
 lock before and after the build, including failed builds, and leaves any change
 available for inspection.
 
+The separate `stable` task requires rustup on PATH and an up-to-date stable
+installation with the WASM target:
+
+```sh
+rustup toolchain install stable --profile minimal --target wasm32-unknown-unknown
+```
+
+It invokes Cargo through `rustup run stable` and selects that toolchain's
+compiler explicitly, including inside `nix develop`. The flake itself provides
+the fixed project toolchain; `all` and `nix-full` use that fixed toolchain.
+
 ## CI selection and local verification
 
 The Rust workflow runs on main pull requests, main pushes and manual dispatch.
