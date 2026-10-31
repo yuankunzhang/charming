@@ -106,7 +106,15 @@ As another example, the code file [gallery/src/dataset/encode_and_matrix.rs](./g
 
 ### MSRV
 
-We do not provide any minimal supported Rust version and it is usually the latest stable release as the deno dependency upgrades their version very frequently.
+The minimum supported Rust version (MSRV) is declared in
+[charming/Cargo.toml](charming/Cargo.toml). The fixed development toolchain in
+[rust-toolchain.toml](rust-toolchain.toml) agrees with it. See
+[CONTRIBUTING.md](CONTRIBUTING.md) for the MSRV policy and verification commands.
+
+For development, enter the Linux environment with `nix develop` and use
+`python3 scripts/check.py run all`. Native all-features linting does not verify
+the WASM target or every feature combination; CI checks WASM compilation and
+the five examples separately.
 
 ### Crate Feature Flags
 
