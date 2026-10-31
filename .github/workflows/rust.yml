@@ -155,14 +155,42 @@ jobs:
           rustup default "$toolchain"
           rustc --version
           cargo --version
-      - name: Install fixed build tools
+      - name: Configure example build tools
+        id: example-tools
+        env:
+          EXAMPLE_NAME: ${{ matrix.name }}
         run: |
-          mapfile -t versions < <(python3 -c 'import tomllib; t=tomllib.load(open("ci/tools.toml", "rb")); print("\n".join(t[k] for k in ("cargo-binstall", "wasm-bindgen", "dioxus-cli", "trunk")))')
-          curl --fail --location --retry 3 "https://github.com/cargo-bins/cargo-binstall/releases/download/v${versions[0]}/cargo-binstall-x86_64-unknown-linux-musl.tgz" -o "$RUNNER_TEMP/binstall.tgz"
+          python3 - <<'PY'
+          import os
+          import tomllib
+          from pathlib import Path
+
+          tools = tomllib.loads(Path("ci/tools.toml").read_text())
+          builder = "dioxus-cli" if os.environ["EXAMPLE_NAME"].startswith("dioxus-") else "trunk"
+          packages = f"wasm-bindgen-cli@{tools['wasm-bindgen']} {builder}@{tools[builder]}"
+          key = f"{builder}-{tools['wasm-bindgen']}-{tools[builder]}-{tools['cargo-binstall']}"
+          with open(os.environ["GITHUB_OUTPUT"], "a") as output:
+              print(f"packages={packages}", file=output)
+              print(f"key={key}", file=output)
+          PY
+          echo "$RUNNER_TEMP/charming-tools/bin" >> "$GITHUB_PATH"
+      - name: Cache example build tools
+        id: example-tools-cache
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ${{ runner.temp }}/charming-tools
+          key: example-tools-v1-${{ runner.os }}-${{ runner.arch }}-ubuntu24-${{ hashFiles('rust-toolchain.toml') }}-${{ steps.example-tools.outputs.key }}
+      - name: Install fixed build tools
+        if: steps.example-tools-cache.outputs.cache-hit != 'true'
+        env:
+          TOOL_PACKAGES: ${{ steps.example-tools.outputs.packages }}
+        run: |
+          version=$(python3 -c 'import tomllib; print(tomllib.load(open("ci/tools.toml", "rb"))["cargo-binstall"])')
+          curl --fail --location --retry 3 "https://github.com/cargo-bins/cargo-binstall/releases/download/v${version}/cargo-binstall-x86_64-unknown-linux-musl.tgz" -o "$RUNNER_TEMP/binstall.tgz"
           tar -xzf "$RUNNER_TEMP/binstall.tgz" -C "$RUNNER_TEMP" cargo-binstall
-          install "$RUNNER_TEMP/cargo-binstall" "$HOME/.cargo/bin/cargo-binstall"
-          cargo binstall -V
-          cargo binstall --locked --no-confirm "wasm-bindgen-cli@${versions[1]}" "dioxus-cli@${versions[2]}" "trunk@${versions[3]}"
+          "$RUNNER_TEMP/cargo-binstall" -V
+          read -r -a packages <<< "$TOOL_PACKAGES"
+          "$RUNNER_TEMP/cargo-binstall" --locked --no-confirm --root "$RUNNER_TEMP/charming-tools" "${packages[@]}"
       - name: Install desktop libraries
         if: matrix.name == 'dioxus-desktop-demo'
         run: |
