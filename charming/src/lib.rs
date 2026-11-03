@@ -87,6 +87,7 @@ Future versions of Charming will support custom themes.
 pub mod component;
 pub mod datatype;
 pub mod element;
+mod render_option;
 pub mod renderer;
 pub mod series;
 pub mod theme;
@@ -100,7 +101,7 @@ use component::{
     SaveAsImageType, SingleAxis, Title, Toolbox, VisualMap,
 };
 use datatype::Dataset;
-use element::{AnimationTime, AxisPointer, Color, Easing, MarkLine, Tooltip, process_raw_strings};
+use element::{AnimationTime, AxisPointer, Color, Easing, MarkLine, Tooltip};
 use serde::{Deserialize, Serialize};
 use serde_with::{OneOrMany, formats::PreferOne, serde_as};
 use series::Series;
@@ -293,6 +294,15 @@ pub struct Chart {
     geo_map: Vec<GeoMap>,
 }
 impl Chart {
+    /// Export an expression that builds ECharts options from data and trusted JavaScript source.
+    ///
+    /// Use Serde to save JSON. This method replaces `Chart`'s `Display` implementation.
+    /// Export does not validate JavaScript syntax. HTML executes it in the browser
+    /// (inline scripts must be allowed); SSR reports execution errors as `JsRuntimeError`.
+    pub fn to_javascript(&self) -> Result<String, EchartsError> {
+        render_option::RenderOption::new(self)?.to_javascript()
+    }
+
     pub fn save_as_image_type(&self) -> Option<&SaveAsImageType> {
         self.toolbox
             .as_ref()
@@ -300,18 +310,9 @@ impl Chart {
     }
 }
 
-impl std::fmt::Display for Chart {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "{}",
-            process_raw_strings(&serde_json::to_string_pretty(self).unwrap())
-        )
-    }
-}
-
 #[derive(Debug)]
 pub enum EchartsError {
+    SerializationError(String),
     HtmlRenderingError(String),
     ImageRenderingError(String),
     JsRuntimeError(String),
@@ -322,6 +323,7 @@ impl std::error::Error for EchartsError {}
 impl std::fmt::Display for EchartsError {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
         match self {
+            Self::SerializationError(msg) => write!(f, "Serialization error: {msg}"),
             Self::HtmlRenderingError(msg) => write!(f, "HTML rendering error: {msg}"),
             Self::ImageRenderingError(msg) => write!(f, "Image rendering error: {msg}"),
             Self::JsRuntimeError(msg) => write!(f, "JavaScript runtime error: {msg}"),

@@ -1,5 +1,5 @@
 use super::{DataSource, Dimension};
-use crate::element::RawString;
+use crate::element::JsExpression;
 use charming_macros::CharmingSetters;
 use serde::{Deserialize, Deserializer, Serialize, de::Visitor, ser::SerializeSeq};
 
@@ -70,10 +70,19 @@ where
 #[serde(rename_all = "camelCase")]
 pub struct Transform {
     id: Option<String>,
-    transform: Option<RawString>,
+    #[charming_skip_setter]
+    transform: Option<JsExpression>,
     from_dataset_id: Option<String>,
     from_dataset_index: Option<i32>,
     from_transform_result: Option<i32>,
+}
+
+impl Transform {
+    /// Set a trusted JavaScript object expression, saved with the `expression` tag.
+    pub fn transform<S: Into<String>>(mut self, source: S) -> Self {
+        self.transform = Some(JsExpression::from(source));
+        self
+    }
 }
 
 impl From<&str> for Transform {
@@ -121,28 +130,19 @@ impl<'de> Deserialize<'de> for Dataset {
             {
                 let mut sources = Vec::new();
                 let mut transforms = Vec::new();
-                let mut parsing_sources = true; // Initially, we are parsing Sources
-
-                // Attempt to parse elements as `Source` until it fails
-                while parsing_sources {
-                    match seq.next_element::<Source>() {
-                        Ok(Some(source)) => sources.push(source),
-                        Ok(None) => {
-                            // End of sequence
-                            return Ok(Dataset {
-                                sources,
-                                transforms,
-                            });
+                while let Some(value) = seq.next_element::<serde_json::Value>()? {
+                    if value.get("source").is_some() {
+                        if !transforms.is_empty() {
+                            return Err(serde::de::Error::custom(
+                                "dataset sources must precede transforms",
+                            ));
                         }
-                        Err(_) => {
-                            parsing_sources = false; // Switch to parsing Transforms
-                        }
+                        sources
+                            .push(serde_json::from_value(value).map_err(serde::de::Error::custom)?);
+                    } else {
+                        transforms
+                            .push(serde_json::from_value(value).map_err(serde::de::Error::custom)?);
                     }
-                }
-
-                // Continue parsing the rest as `Transform`
-                while let Some(transform) = seq.next_element::<Transform>()? {
-                    transforms.push(transform);
                 }
 
                 Ok(Dataset {

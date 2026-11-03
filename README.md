@@ -12,6 +12,46 @@ Highlights:
 - Ready to use in WebAssembly environments.
 - Rendering to multiple formats, including HTML, SVG, PNG, JPEG, GIF, WEBP, PNM, TIFF, TGA, DDS, BMP, ICO, HDR, OPENEXR, FARBFELD, AVIF, and QOI.
 
+## JavaScript callbacks and saved charts
+
+The next incompatible release (planned for 0.7.0) stores JavaScript source in
+the same form on native and WASM targets. This change does not bump the package
+version or publish a release. `JsFunction::from` accepts a complete function
+expression; `JsFunction::new_with_args(args, body)` builds one. Construction,
+cloning and serialization do not execute JavaScript. Equality compares source
+text and ordering is lexicographic.
+
+Save charts with `serde_json::to_string(&chart)` and read them with
+`serde_json::from_str::<Chart>(...)`. Function fields use
+`{"type":"function","source":"function(value) { return value * 2; }"}`.
+Dataset transform expressions use `{"type":"expression","source":"..."}`.
+Both tags are checked on read. Formatter strings remain strings, including
+literal `#*#*#*#` markers. Old callback JSON is no longer accepted as code;
+there is no legacy reader. Dataset sources must precede transforms.
+
+`Chart` no longer implements `Display`. Replace `chart.to_string()` with
+`chart.to_javascript()?` to export an expression that creates runtime ECharts
+options, or use Serde for JSON. HTML and SSR use that same expression.
+`WasmRenderer::update(&instance, &chart)` now returns `Result<(), EchartsError>`;
+handle it as you would `render`.
+
+Only supply trusted JavaScript source. HTML requires inline scripts to be
+allowed; this export adds no `eval` requirement. Export and HTML generation do
+not check JavaScript syntax: errors appear when the browser executes the code.
+Serialization failures return `SerializationError`, SSR execution failures
+return `JsRuntimeError`, and synchronous WASM preparation or ECharts call
+failures return `WasmError`. WASM evaluates source with `eval`, so its page
+must allow it. Preparation finishes before ECharts initialization or update.
+On `setOption` failure, WASM disposes an instance created by that render call
+and retains an existing instance. Updates do not promise rollback. Errors from
+later interactive callbacks belong to the JavaScript runtime.
+
+ECharts remains at 5.5.1. The follow-up integration of
+[#221](https://github.com/yuankunzhang/charming/pull/221) should reuse `JsFunction`
+for `Color::Function` and remove its duplicate Custom and WASM conversion code.
+DataZoom, rich text and the outstanding maintainer review stay in that PR;
+retain PanagiotisS and Yuankun's contribution credits when integrating it.
+
 ## Themes
 
 <table>

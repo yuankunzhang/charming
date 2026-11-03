@@ -43,7 +43,7 @@ impl<'de> Deserialize<'de> for Symbol {
             type Value = Symbol;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter) -> std::fmt::Result {
-                formatter.write_str("a string or a structured RawString for callbacks")
+                formatter.write_str("a string or a JavaScript function source object")
             }
 
             fn visit_str<E>(self, value: &str) -> Result<Symbol, E>
