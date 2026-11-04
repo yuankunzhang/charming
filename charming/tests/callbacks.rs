@@ -4,7 +4,7 @@ use charming::{
     Chart,
     component::Axis,
     datatype::{Dataset, Source, Transform},
-    element::{AnimationTime, Formatter, JsFunction, Label, Symbol, SymbolSize, Tooltip},
+    element::{AnimationTime, Color, Formatter, JsFunction, Label, Symbol, SymbolSize, Tooltip},
     series::{Custom, Line},
 };
 use serde::{Serialize, de::DeserializeOwned};
@@ -86,6 +86,26 @@ fn source_json_and_callback_variants_round_trip() {
         json!("old source"),
     ] {
         assert!(serde_json::from_value::<JsFunction>(value).is_err());
+    }
+}
+
+#[test]
+fn color_callback_round_trip_and_validation() {
+    let color = Color::Function(JsFunction::new_with_args("p", "return p.color;"));
+    assert_eq!(
+        serde_json::to_value(&color).unwrap(),
+        json!({"type":"function", "source":"function(p) { return p.color; }"})
+    );
+    assert_eq!(color, round_trip(&color));
+    let plain = Color::from("#123456");
+    assert_eq!(serde_json::to_value(&plain).unwrap(), json!("#123456"));
+    assert_eq!(plain, round_trip(&plain));
+    for value in [
+        json!({"type":"expression", "source":"x"}),
+        json!({"type":"function", "source":42}),
+        json!({"type":"function"}),
+    ] {
+        assert!(serde_json::from_value::<Color>(value).is_err());
     }
 }
 

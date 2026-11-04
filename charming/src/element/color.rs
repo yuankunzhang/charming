@@ -1,3 +1,4 @@
+use super::JsFunction;
 use serde::de::{self, Deserializer, MapAccess, Unexpected, Visitor};
 use serde::ser::{SerializeStruct, Serializer};
 use serde::{Deserialize, Serialize};
@@ -38,6 +39,7 @@ impl ColorStop {
 #[derive(Debug, PartialEq, PartialOrd, Clone)]
 pub enum Color {
     Value(String),
+    Function(JsFunction),
     LinearGradient {
         x: f64,
         y: f64,
@@ -60,6 +62,7 @@ impl Serialize for Color {
     {
         match self {
             Color::Value(rgb) => serializer.serialize_str(rgb),
+            Color::Function(function) => function.serialize(serializer),
             Color::LinearGradient {
                 x,
                 y,
@@ -106,7 +109,7 @@ impl<'de> Deserialize<'de> for Color {
             type Value = Color;
 
             fn expecting(&self, formatter: &mut fmt::Formatter) -> fmt::Result {
-                formatter.write_str("a string or a gradient object with type field")
+                formatter.write_str("a string, gradient or function object with type field")
             }
 
             fn visit_str<E>(self, value: &str) -> Result<Self::Value, E>
@@ -141,6 +144,9 @@ impl<'de> Deserialize<'de> for Color {
                 let temp_value = JsonValue::Object(temp_map);
 
                 match type_value {
+                    "function" => serde_json::from_value(temp_value)
+                        .map(Color::Function)
+                        .map_err(de::Error::custom),
                     "linear" => {
                         #[derive(Deserialize)]
                         struct LinearGradientDef {
@@ -183,7 +189,10 @@ impl<'de> Deserialize<'de> for Color {
                             color_stops: gradient.color_stops,
                         })
                     }
-                    other => Err(de::Error::unknown_variant(other, &["linear", "radial"])),
+                    other => Err(de::Error::unknown_variant(
+                        other,
+                        &["linear", "radial", "function"],
+                    )),
                 }
             }
         }

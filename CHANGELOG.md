@@ -18,10 +18,21 @@
   SSR returns `JsRuntimeError`, and synchronous WASM failures return `WasmError`.
   Serialization failures return `SerializationError`; later interaction errors
   remain JavaScript runtime errors.
+- Integrate #221 with the shared callback source contract: add
+  `Color::Function(JsFunction)` and axis label `inside` and `rich` styles.
+  The new `Color` variant requires downstream exhaustive matches to be updated.
+- Extend slider and inside DataZoom options with label templates and callbacks,
+  data shadow visibility, handle and brush styles, emphasis, sizing, drawing
+  order, mouse modifiers and two-ended range modes. Add `NumberOrArray`,
+  `StringOrNumber`, `MouseZoom`, `MouseWheelModifier`, `RangeMode` and
+  `DataZoomEmphasis`; reuse `ItemStyle` with new dash offset, cap, join and miter
+  limit properties and the `BorderCap` and `BorderJoin` enums.
 
 These are breaking changes intended for 0.7.0, without a version bump or release
 in this change. Old callback JSON has no compatibility reader. ECharts stays
-at 5.5.1; #221 will reuse this source contract in its follow-up integration.
+at 5.5.1; `handle_label`, `emphasis.handle_label` and `HandleLabel` are deferred
+until an engine upgrade supporting these 5.6.0 additions. ECharts 6.x is outside
+this integration.
 
 ## 0.6.0
 - Add deserialization support [#172](https://github.com/yuankunzhang/charming/pull/172)
