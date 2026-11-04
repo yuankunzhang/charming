@@ -1,4 +1,4 @@
-pub(crate) mod raw_string;
+pub(crate) mod js_expression;
 
 pub mod anchor;
 pub mod animation_time;
@@ -54,7 +54,7 @@ pub mod text_align;
 pub mod text_style;
 pub mod tooltip;
 
-pub(crate) use raw_string::*;
+pub(crate) use js_expression::*;
 
 pub use anchor::*;
 pub use animation_time::*;

@@ -42,7 +42,7 @@ impl HtmlRenderer {
                     "height": self.height,
                     "chart_id": "chart",
                     "canvas_type": canvas_type,
-                    "chart_option": chart.to_string(),
+                    "chart_option": chart.to_javascript()?,
                 }),
             )
             .map_err(|error| EchartsError::HtmlRenderingError(error.to_string()))?;

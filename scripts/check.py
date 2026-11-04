@@ -7,8 +7,10 @@ import os
 from pathlib import Path
 import re
 import shlex
+import shutil
 import subprocess
 import sys
+import tempfile
 import tomllib
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -140,6 +142,44 @@ def example(name):
                     raise ValueError(message)
 
 
+def wasm_browser():
+    binaries = {}
+    for name in ("wasm-bindgen-test-runner", "chromium", "chromedriver"):
+        path = shutil.which(name)
+        if path is None:
+            raise ValueError(f"wasm-browser: missing {name} on PATH")
+        binaries[name] = path
+    cli_version(binaries["wasm-bindgen-test-runner"], tools()["wasm-bindgen"])
+    for name in ("chromium", "chromedriver"):
+        print(command([binaries[name], "--version"], capture=True).strip(), flush=True)
+    with tempfile.TemporaryDirectory(prefix="charming-wasm-browser-") as directory:
+        directory = Path(directory)
+        webdriver = directory / "webdriver.json"
+        webdriver.write_text(json.dumps({"goog:chromeOptions": {
+            "binary": binaries["chromium"],
+            "args": ["--headless", "--disable-dev-shm-usage"],
+        }}))
+        runner = directory / "runner"
+        runner.write_text("#!/bin/sh\nexec " + shlex.quote(binaries["wasm-bindgen-test-runner"]) + ' "$@"\n')
+        runner.chmod(0o700)
+        env = dict(os.environ)
+        # Isolate this invocation from persistent browser/remote-driver settings.
+        for name in ("NO_HEADLESS", "WASM_BINDGEN_TEST_ONLY_NODE", "WASM_BINDGEN_TEST_ADDRESS",
+                     "CHROMEDRIVER_REMOTE", "GECKODRIVER", "GECKODRIVER_REMOTE",
+                     "SAFARIDRIVER", "SAFARIDRIVER_REMOTE"):
+            env.pop(name, None)
+        env.update(
+            CARGO_TARGET_WASM32_UNKNOWN_UNKNOWN_RUNNER=str(runner),
+            WASM_BINDGEN_USE_BROWSER="1",
+            WASM_BINDGEN_TEST_ONLY_WEB="1",
+            CHROMEDRIVER=binaries["chromedriver"],
+            WASM_BINDGEN_TEST_WEBDRIVER_JSON=str(webdriver),
+        )
+        command(["cargo", "test", "-p", "charming", "--locked", "--target",
+                 "wasm32-unknown-unknown", "--no-default-features", "--features", "wasm",
+                 "--test", "wasm_callbacks"], env=env)
+
+
 def run(task, name=None):
     print(f"task: {task}" + (f" {name}" if name else ""), flush=True)
     if task == "preflight":
@@ -148,6 +188,8 @@ def run(task, name=None):
         environment()
     elif task == "example":
         example(name)
+    elif task == "wasm-browser":
+        wasm_browser()
     elif task == "native":
         for argv in (
             ["cargo", "build", "--workspace", "--locked"],
@@ -315,7 +357,7 @@ def main():
     runner = commands.add_parser("run")
     runner.add_argument("task", choices=("preflight", "native", "fmt", "clippy", "msrv",
                         "stable", "example", "env", "nix-format", "all", "all-nix",
-                        "nix-smoke", "nix-full"))
+                        "nix-smoke", "nix-full", "wasm-browser"))
     runner.add_argument("name", nargs="?", choices=EXAMPLES)
     selector = commands.add_parser("select")
     selector.add_argument("--event", required=True)

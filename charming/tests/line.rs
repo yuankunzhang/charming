@@ -32,7 +32,7 @@ fn basic_line_chart() {
         .y_axis(Axis::new().type_(AxisType::Value))
         .series(Line::new().data(vec![150, 230, 224, 218, 135, 147, 260]));
 
-    let charming_json = serde_json::from_str::<serde_json::Value>(&chart.to_string()).unwrap();
+    let charming_json = serde_json::to_value(&chart).unwrap();
     println!("{}", serde_json::to_string_pretty(&echarts_json).unwrap());
     println!("{}", serde_json::to_string_pretty(&charming_json).unwrap());
     assert_json_eq!(echarts_json, charming_json);

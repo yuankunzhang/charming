@@ -32,6 +32,19 @@ python3 scripts/check.py run nix-smoke
 python3 scripts/check.py run nix-full
 ```
 
+Run the manual Chromium callback acceptance target with the browser and driver
+from the flake's locked nixpkgs:
+
+```sh
+nix shell --inputs-from . nixpkgs#chromium nixpkgs#chromedriver --command nix develop --no-update-lock-file --command python3 scripts/check.py run wasm-browser
+```
+
+This target uses temporary runner/WebDriver configuration and embedded ECharts
+5.5.1. It runs WASM assembly and exported JavaScript expressions in Chromium;
+it does not test a complete HTML page, raster rendering or a feature/browser
+matrix. It is separate from `all`, `all-nix` and CI selection. Existing native
+SSR snapshot assertions and baselines remain the CI coverage for SVG output.
+
 Use the repository path to `scripts/check.py` when outside its root. `all` runs
 preflight, native, format, Clippy, MSRV and all five examples. `stable` separately
 checks core without default features, default HTML, and WASM on the latest

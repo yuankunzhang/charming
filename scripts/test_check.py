@@ -209,6 +209,60 @@ class GateTests(unittest.TestCase):
 
 
 class RunnerTests(unittest.TestCase):
+    def test_wasm_browser_missing_tools(self):
+        for missing in ("wasm-bindgen-test-runner", "chromium", "chromedriver"):
+            with self.subTest(missing=missing), patch.object(check.shutil, "which",
+                    side_effect=lambda name: None if name == missing else f"/bin/{name}"), \
+                 patch.object(check, "command") as command:
+                with self.assertRaisesRegex(ValueError, f"missing {missing}"):
+                    check.run("wasm-browser")
+                command.assert_not_called()
+
+    def test_wasm_browser_uses_temporary_config_and_cleans_on_success_and_failure(self):
+        for fails in (False, True):
+            with self.subTest(fails=fails):
+                paths = []
+
+                def invoke(argv, **kwargs):
+                    if argv[0] != "cargo":
+                        return "version"
+                    self.assertEqual(argv, ["cargo", "test", "-p", "charming", "--locked",
+                        "--target", "wasm32-unknown-unknown", "--no-default-features",
+                        "--features", "wasm", "--test", "wasm_callbacks"])
+                    env = kwargs["env"]
+                    config = Path(env["WASM_BINDGEN_TEST_WEBDRIVER_JSON"])
+                    runner = Path(env["CARGO_TARGET_WASM32_UNKNOWN_UNKNOWN_RUNNER"])
+                    paths.extend((config, runner))
+                    self.assertEqual(json.loads(config.read_text())["goog:chromeOptions"], {
+                        "binary": "/tools/chromium", "args": ["--headless", "--disable-dev-shm-usage"],
+                    })
+                    self.assertTrue(os.access(runner, os.X_OK))
+                    self.assertIn('exec /tools/wasm-bindgen-test-runner "$@"', runner.read_text())
+                    self.assertEqual(env["WASM_BINDGEN_USE_BROWSER"], "1")
+                    self.assertEqual(env["WASM_BINDGEN_TEST_ONLY_WEB"], "1")
+                    self.assertEqual(env["CHROMEDRIVER"], "/tools/chromedriver")
+                    self.assertNotIn("NO_HEADLESS", env)
+                    self.assertNotIn("CHROMEDRIVER_REMOTE", env)
+                    if fails:
+                        raise subprocess.CalledProcessError(42, argv)
+
+                with patch.object(check.shutil, "which", side_effect=lambda name: f"/tools/{name}"), \
+                     patch.object(check, "cli_version"), patch.object(check, "command", side_effect=invoke), \
+                     patch.dict(os.environ, NO_HEADLESS="1", CHROMEDRIVER_REMOTE="http://unused"):
+                    if fails:
+                        with self.assertRaises(subprocess.CalledProcessError):
+                            check.run("wasm-browser")
+                    else:
+                        check.run("wasm-browser")
+                self.assertEqual(len(paths), 2)
+                self.assertTrue(all(not path.exists() for path in paths))
+
+    def test_wasm_browser_cli_argument(self):
+        with patch.object(check.sys, "argv", ["check.py", "run", "wasm-browser"]), \
+             patch.object(check, "wasm_browser") as browser:
+            self.assertEqual(check.main(), 0)
+        browser.assert_called_once_with()
+
     def test_native_stops_at_first_failed_subprocess(self):
         error = subprocess.CalledProcessError(42, ["cargo", "build"])
         with patch.object(check.subprocess, "run", side_effect=error) as run:

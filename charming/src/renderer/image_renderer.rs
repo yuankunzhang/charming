@@ -118,7 +118,7 @@ impl ImageRenderer {
                     "theme_source": theme_source,
                     "width": self.width,
                     "height": self.height,
-                    "chart_option": chart.to_string(),
+                    "chart_option": chart.to_javascript()?,
                 }),
             )
             .expect("Failed to render template");
