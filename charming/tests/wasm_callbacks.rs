@@ -2,12 +2,16 @@
 
 use charming::{
     Chart, EchartsError, WasmRenderer,
-    component::{Axis, Legend, Title},
+    component::{Axis, DataZoom, DataZoomType, Grid, Legend, RangeMode, Title},
     datatype::{Dataset, Source, Transform},
-    element::{AnimationTime, Formatter, JsFunction, Label, Symbol, SymbolSize, Tooltip},
-    series::{Custom, Line},
+    element::{
+        AnimationTime, AreaStyle, AxisLabel, AxisType, Color, DataBackground, Formatter, ItemStyle,
+        JsFunction, Label, Symbol, SymbolSize, TextStyle, Tooltip,
+    },
+    series::{Bar, Custom, Line},
 };
 use js_sys::{Reflect, eval};
+use std::collections::HashMap;
 use wasm_bindgen::JsValue;
 use wasm_bindgen_test::*;
 
@@ -238,4 +242,143 @@ fn repeated_render_and_update_use_current_source() {
         Some("third")
     );
     js("instance.dispose()");
+}
+
+#[wasm_bindgen_test]
+fn color_rich_axis_and_data_zoom_execute_after_readback() {
+    setup();
+    let make = |shadow, formatter: Formatter| {
+        read_back(&Chart::new()
+            .animation(false)
+            .grid(Grid::new().bottom(90))
+            .x_axis(Axis::new().type_(AxisType::Category).data(vec!["A", "B", "C"])
+                .axis_label(AxisLabel::new().inside(false).interval(0).formatter("{accent|{value}}")
+                    .rich(HashMap::from([("accent".to_owned(), TextStyle::new().color("#13579b"))]))))
+            .y_axis(Axis::new())
+            .series(Bar::new().data(vec![10, 20, 30]).item_style(ItemStyle::new()
+                .color(Color::Function(JsFunction::new_with_args("p",
+                    "globalThis.integrationColorCalls++; return p.dataIndex % 2 ? '#2b7d91' : '#c13a57';")))))
+            .data_zoom(DataZoom::new().type_(DataZoomType::Slider).x_axis_index(0)
+                .bottom(20).height(30).start(0).end(100)
+                .range_mode([RangeMode::Percent, RangeMode::Percent])
+                .show_data_shadow(shadow).show_detail(true).label_formatter(formatter)
+                .data_background(DataBackground::new().area_style(AreaStyle::new().color("#9b31e7")))
+                .selected_data_background(DataBackground::new().area_style(AreaStyle::new().color("#9b31e7"))))
+            .data_zoom(DataZoom::new().type_(DataZoomType::Inside).x_axis_index(0)
+                .range_mode([RangeMode::Percent, RangeMode::Percent])))
+    };
+    let initial = make(
+        true,
+        JsFunction::new_with_args(
+            "value, text",
+            "globalThis.integrationLabelCalls++; return 'fn-' + text;",
+        )
+        .into(),
+    );
+    let updated = make(false, "template-{value}".into());
+    for use_wasm in [true, false] {
+        js(r#"
+            globalThis.integrationColorCalls = 0;
+            globalThis.integrationLabelCalls = 0;
+            (() => {
+                const init = echarts.init;
+                globalThis.integrationRestoreInit = () => { echarts.init = init; };
+                echarts.init = function(...args) {
+                    const instance = init(...args);
+                    const setOption = instance.setOption;
+                    instance.setOption = function(option, ...rest) {
+                        globalThis.integrationCaptured = option;
+                        return setOption.call(this, option, ...rest);
+                    };
+                    return instance;
+                };
+            })();
+        "#);
+        let result = (|| -> Result<(), JsValue> {
+            let instance = if use_wasm {
+                Some(
+                    WasmRenderer::new(400, 300)
+                        .render("chart", &initial)
+                        .map_err(|error| JsValue::from_str(&error.to_string()))?,
+                )
+            } else {
+                None
+            };
+            if let Some(instance) = &instance {
+                Reflect::set(
+                    &js_sys::global(),
+                    &"integrationInstance".into(),
+                    instance.as_ref(),
+                )?;
+            } else {
+                eval(
+                    "globalThis.integrationInstance = echarts.init(document.getElementById('expression'), null, {renderer:'svg', width:400, height:300})",
+                )?;
+                let option = eval(&initial.to_javascript().unwrap())?;
+                Reflect::set(&js_sys::global(), &"integrationOption".into(), &option)?;
+                eval("integrationInstance.setOption(integrationOption)")?;
+            }
+            // Slider labels remain hidden until interaction; inspect the engine's text objects.
+            eval(
+                r#"
+                (() => {
+                    const data = integrationInstance.getModel().getSeriesByIndex(0).getData();
+                    if (!(integrationColorCalls > 0 && data.count() === 3 &&
+                        ['#c13a57', '#2b7d91', '#c13a57'].every((color, i) => data.getItemGraphicEl(i).style.fill === color)))
+                        throw new Error('color callback did not paint the bars');
+                    const rich = integrationCaptured.xAxis.axisLabel.rich;
+                    if (!(Object.getPrototypeOf(rich) === Object.prototype &&
+                        Object.keys(rich).join(',') === 'accent' && rich.accent.color === '#13579b'))
+                        throw new Error('rich styles were not preserved as an ordinary object');
+                    const drawn = integrationInstance.getZr().storage.getDisplayList(true);
+                    const labels = drawn.filter(el => el.type === 'tspan' && el.style.fill === '#13579b');
+                    if (labels.map(el => el.style.text).sort().join(',') !== 'A,B,C')
+                        throw new Error('rich axis text or fill was not rendered');
+                    if (!drawn.some(el => el.type === 'polygon' && el.style.fill === '#9b31e7'))
+                        throw new Error('enabled slider data shadow was not drawn');
+                    const view = integrationInstance.getViewOfComponentModel(integrationInstance.getModel().getComponent('dataZoom', 0));
+                    if (!(integrationLabelCalls > 0 && view._displayables.handleLabels.map(el => el.style.text).join(',') === 'fn-A,fn-C'))
+                        throw new Error('function slider labels were not generated');
+                })();
+            "#,
+            )?;
+            if let Some(instance) = &instance {
+                WasmRenderer::update(instance, &updated)
+                    .map_err(|error| JsValue::from_str(&error.to_string()))?;
+            } else {
+                let option = eval(&updated.to_javascript().unwrap())?;
+                Reflect::set(&js_sys::global(), &"integrationOption".into(), &option)?;
+                eval("integrationInstance.setOption(integrationOption)")?;
+            }
+            eval(
+                r#"
+                (() => {
+                    const drawn = integrationInstance.getZr().storage.getDisplayList(true);
+                    if (drawn.some(el => el.type === 'polygon' && el.style.fill === '#9b31e7'))
+                        throw new Error('disabled slider data shadow is still drawn');
+                    const view = integrationInstance.getViewOfComponentModel(integrationInstance.getModel().getComponent('dataZoom', 0));
+                    if (view._displayables.handleLabels.map(el => el.style.text).join(',') !== 'template-A,template-C')
+                        throw new Error('template slider labels were not generated');
+                    integrationInstance.dispatchAction({type:'dataZoom', dataZoomIndex:1, start:50, end:100});
+                    const data = integrationInstance.getModel().getSeriesByIndex(0).getData();
+                    if (!(data.count() === 2 && data.getName(0) === 'B' && data.getName(1) === 'C'))
+                        throw new Error('inside zoom did not retain only B and C');
+                })();
+            "#,
+            )?;
+            Ok(())
+        })();
+        js(r#"
+            echarts.dispose(document.getElementById('chart'));
+            echarts.dispose(document.getElementById('expression'));
+            integrationRestoreInit();
+            delete globalThis.integrationRestoreInit;
+            delete globalThis.integrationInstance;
+            delete globalThis.integrationCaptured;
+            delete globalThis.integrationOption;
+            delete globalThis.integrationColorCalls;
+            delete globalThis.integrationLabelCalls;
+        "#);
+        result.unwrap();
+    }
 }

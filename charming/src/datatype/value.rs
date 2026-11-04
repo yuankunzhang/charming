@@ -33,6 +33,50 @@ impl From<f64> for NumericValue {
 
 #[derive(Debug, Clone, PartialEq, PartialOrd, Serialize, Deserialize)]
 #[serde(untagged)]
+pub enum NumberOrArray {
+    Number(NumericValue),
+    Array(Vec<NumericValue>),
+}
+
+impl<N: Into<NumericValue>> From<N> for NumberOrArray {
+    fn from(n: N) -> Self {
+        NumberOrArray::Number(n.into())
+    }
+}
+
+impl<V: Into<NumericValue>> From<Vec<V>> for NumberOrArray {
+    fn from(v: Vec<V>) -> Self {
+        NumberOrArray::Array(v.into_iter().map(Into::into).collect())
+    }
+}
+
+#[derive(Debug, Clone, PartialEq, PartialOrd, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum StringOrNumber {
+    Number(NumericValue),
+    String(String),
+}
+
+impl<N: Into<NumericValue>> From<N> for StringOrNumber {
+    fn from(n: N) -> Self {
+        StringOrNumber::Number(n.into())
+    }
+}
+
+impl From<&str> for StringOrNumber {
+    fn from(s: &str) -> Self {
+        StringOrNumber::String(s.to_string())
+    }
+}
+
+impl From<String> for StringOrNumber {
+    fn from(s: String) -> Self {
+        StringOrNumber::String(s)
+    }
+}
+
+#[derive(Debug, Clone, PartialEq, PartialOrd, Serialize, Deserialize)]
+#[serde(untagged)]
 pub enum CompositeValue {
     Number(NumericValue),
     OptionalNumber(Option<NumericValue>),
