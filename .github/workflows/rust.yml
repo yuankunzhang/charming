@@ -1,97 +1,272 @@
----
 name: Rust
 
-on:  # yamllint disable-line rule:truthy
+on:
   push:
+    branches: [main]
   pull_request:
-    branches: ["main"]
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
 
 env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  build:
-    name: Building and testing
-    runs-on: ubuntu-latest
+  preflight:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    outputs:
+      native: ${{ steps.select.outputs.native }}
+      lint: ${{ steps.select.outputs.lint }}
+      msrv: ${{ steps.select.outputs.msrv }}
+      stable: ${{ steps.select.outputs.stable }}
+      examples_enabled: ${{ steps.select.outputs.examples_enabled }}
+      examples: ${{ steps.select.outputs.examples }}
+      nix_full: ${{ steps.select.outputs.nix_full }}
+      selection: ${{ steps.select.outputs.selection }}
     steps:
-      - uses: actions/checkout@v6
-      - name: Build
-        run: cargo build --verbose
-      - name: Generate test images
-        run: cargo run --bin generate_images img_test
-      - name: Run tests
-        run: cargo test --verbose
-
-  wasm:
-    name: Build wasm examples
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v6
-      - name: Setup Rust
-        uses: dtolnay/rust-toolchain@master
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
-          toolchain: stable
-          targets: wasm32-unknown-unknown
-      - name: Install binstall
-        uses: cargo-bins/cargo-binstall@main
-      - name: Install wasm-bindgen
-        run: cargo binstall wasm-bindgen-cli --no-confirm
-      - name: Install dioxus-cli
-        run: cargo binstall dioxus-cli --no-confirm
-      - name: Install trunk
-        run: cargo binstall trunk --no-confirm
-      - name: Build dioxus-web example with dx
-        working-directory: examples/dioxus-web-demo
-        run: dx build --verbose --trace
-      - name: Build leptos example with trunk
-        working-directory: examples/leptos-demo
-        run: trunk build --verbose
-      - name: Build yew example with trunk
-        working-directory: examples/yew-demo
-        run: trunk build --verbose
-      - name: Build sycamore example with trunk
-        working-directory: examples/sycamore-demo
-        run: trunk build --verbose
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Test CI control logic
+        run: python3 -B -m unittest discover -s scripts -p test_check.py
+      - name: Check workflow
+        run: |
+          version=$(python3 -c 'import tomllib; print(tomllib.load(open("ci/tools.toml", "rb"))["actionlint"])')
+          archive="actionlint_${version}_linux_amd64.tar.gz"
+          checksums="actionlint_${version}_checksums.txt"
+          cd "$RUNNER_TEMP"
+          curl --fail --location --retry 3 -O "https://github.com/rhysd/actionlint/releases/download/v${version}/${archive}"
+          curl --fail --location --retry 3 -O "https://github.com/rhysd/actionlint/releases/download/v${version}/${checksums}"
+          grep "  ${archive}$" "$checksums" | sha256sum --check -
+          tar -xzf "$archive" actionlint
+          ./actionlint --version
+          ./actionlint -shellcheck='' "$GITHUB_WORKSPACE/.github/workflows/rust.yml"
+      - run: python3 scripts/check.py run preflight
+      - id: select
+        name: Select checks
+        env:
+          CI_EVENT: ${{ github.event_name }}
+          CI_BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+          CI_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: python3 scripts/check.py select --event "$CI_EVENT" --base "$CI_BASE" --head "$CI_HEAD"
 
-  dioxus_desktop:
-    name: Build dioxus desktop example
-    runs-on: ubuntu-latest
+  native:
+    needs: preflight
+    if: needs.preflight.outputs.native == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
     steps:
-    - uses: actions/checkout@v6
-    - name: Install binstall
-      uses: cargo-bins/cargo-binstall@main
-    - name: Install dioxus-cli
-      run: cargo binstall dioxus-cli --no-confirm
-    - name: Get ubuntu package information
-      run: sudo apt update
-    - name: Install ubuntu dependencies
-      run: sudo apt install -y libwebkit2gtk-4.1-dev build-essential curl wget file libxdo-dev libssl-dev libayatana-appindicator3-dev librsvg2-dev
-    - name: Build dioxus-desktop example with dx
-      working-directory: examples/dioxus-desktop-demo
-      run: dx build --verbose --trace
-
-  linting:
-    name: Linting and formatting
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v6
-      - name: Setup Rust
-        uses: dtolnay/rust-toolchain@master
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
-          toolchain: stable
-          components: clippy, rustfmt
-      - name: Run format
-        run: cargo fmt --check
-      - name: Run clippy
-        run: cargo clippy --all-features --all-targets -- --deny warnings
+          persist-credentials: false
+      - name: Install and select pinned Rust
+        run: |
+          toolchain=$(python3 -c 'import tomllib; print(tomllib.load(open("rust-toolchain.toml", "rb"))["toolchain"]["channel"])')
+          rustup toolchain install "$toolchain" --profile minimal --component rustfmt --component clippy --target wasm32-unknown-unknown
+          rustup default "$toolchain"
+          rustc --version
+          cargo --version
+      - run: python3 scripts/check.py run native
+
+  lint:
+    needs: preflight
+    if: needs.preflight.outputs.lint == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Install and select pinned Rust
+        run: |
+          toolchain=$(python3 -c 'import tomllib; print(tomllib.load(open("rust-toolchain.toml", "rb"))["toolchain"]["channel"])')
+          rustup toolchain install "$toolchain" --profile minimal --component rustfmt --component clippy --target wasm32-unknown-unknown
+          rustup default "$toolchain"
+          rustc --version
+          cargo --version
+      - run: python3 scripts/check.py run fmt
+      - run: python3 scripts/check.py run clippy
 
   msrv:
-    name: MSRV check
-    runs-on: ubuntu-latest
+    needs: preflight
+    if: needs.preflight.outputs.msrv == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v6
-      - name: Install binstall
-        uses: cargo-bins/cargo-binstall@main
-      - run: cargo binstall cargo-msrv
-      - name: verify current msrv
-        run: cargo msrv verify --path charming
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Install and select pinned Rust
+        run: |
+          toolchain=$(python3 -c 'import tomllib; print(tomllib.load(open("rust-toolchain.toml", "rb"))["toolchain"]["channel"])')
+          rustup toolchain install "$toolchain" --profile minimal --component rustfmt --component clippy --target wasm32-unknown-unknown
+          rustup default "$toolchain"
+          rustc --version
+          cargo --version
+      - run: python3 scripts/check.py run msrv
+
+  stable:
+    needs: preflight
+    if: needs.preflight.outputs.stable == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      RUSTUP_TOOLCHAIN: stable
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Install and select latest stable Rust
+        run: |
+          rustup toolchain install stable --profile minimal --target wasm32-unknown-unknown
+          rustup default stable
+          rustc --version
+          cargo --version
+      - run: python3 scripts/check.py run stable
+
+  examples:
+    needs: preflight
+    if: needs.preflight.outputs.examples_enabled == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJSON(needs.preflight.outputs.examples) }}
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Install and select pinned Rust
+        run: |
+          toolchain=$(python3 -c 'import tomllib; print(tomllib.load(open("rust-toolchain.toml", "rb"))["toolchain"]["channel"])')
+          rustup toolchain install "$toolchain" --profile minimal --component rustfmt --component clippy --target wasm32-unknown-unknown
+          rustup default "$toolchain"
+          rustc --version
+          cargo --version
+      - name: Configure example build tools
+        id: example-tools
+        env:
+          EXAMPLE_NAME: ${{ matrix.name }}
+        run: |
+          python3 - <<'PY'
+          import os
+          import tomllib
+          from pathlib import Path
+
+          tools = tomllib.loads(Path("ci/tools.toml").read_text())
+          builder = "dioxus-cli" if os.environ["EXAMPLE_NAME"].startswith("dioxus-") else "trunk"
+          packages = f"wasm-bindgen-cli@{tools['wasm-bindgen']} {builder}@{tools[builder]}"
+          key = f"{builder}-{tools['wasm-bindgen']}-{tools[builder]}-{tools['cargo-binstall']}"
+          with open(os.environ["GITHUB_OUTPUT"], "a") as output:
+              print(f"packages={packages}", file=output)
+              print(f"key={key}", file=output)
+          PY
+          echo "$RUNNER_TEMP/charming-tools/bin" >> "$GITHUB_PATH"
+      - name: Cache example build tools
+        id: example-tools-cache
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ${{ runner.temp }}/charming-tools
+          key: example-tools-v1-${{ runner.os }}-${{ runner.arch }}-ubuntu24-${{ hashFiles('rust-toolchain.toml') }}-${{ steps.example-tools.outputs.key }}
+      - name: Install fixed build tools
+        if: steps.example-tools-cache.outputs.cache-hit != 'true'
+        env:
+          TOOL_PACKAGES: ${{ steps.example-tools.outputs.packages }}
+        run: |
+          version=$(python3 -c 'import tomllib; print(tomllib.load(open("ci/tools.toml", "rb"))["cargo-binstall"])')
+          curl --fail --location --retry 3 "https://github.com/cargo-bins/cargo-binstall/releases/download/v${version}/cargo-binstall-x86_64-unknown-linux-musl.tgz" -o "$RUNNER_TEMP/binstall.tgz"
+          tar -xzf "$RUNNER_TEMP/binstall.tgz" -C "$RUNNER_TEMP" cargo-binstall
+          "$RUNNER_TEMP/cargo-binstall" -V
+          read -r -a packages <<< "$TOOL_PACKAGES"
+          "$RUNNER_TEMP/cargo-binstall" --locked --no-confirm --root "$RUNNER_TEMP/charming-tools" "${packages[@]}"
+      - name: Install desktop libraries
+        if: matrix.name == 'dioxus-desktop-demo'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libwebkit2gtk-4.1-dev build-essential curl wget file libxdo-dev libssl-dev libayatana-appindicator3-dev librsvg2-dev
+      - name: Build example
+        env:
+          EXAMPLE_NAME: ${{ matrix.name }}
+        run: python3 scripts/check.py run example "$EXAMPLE_NAME"
+
+  nix:
+    needs: preflight
+    if: always()
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env:
+      CARGO_INCREMENTAL: '0'
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: cachix/install-nix-action@8887e596b4ee1134dae06b98d573bd674693f47c # v26
+        with:
+          install_url: https://releases.nixos.org/nix/nix-2.34.6/install
+      - name: Set Nix cache key
+        id: nix-cache-key
+        env:
+          CACHE_KEY: nix-v1-${{ runner.os }}-${{ runner.arch }}-2.34.6-${{ hashFiles('flake.lock', 'flake.nix', 'nix/**', 'rust-toolchain.toml', 'ci/tools.toml') }}
+        run: echo "key=$CACHE_KEY" >> "$GITHUB_OUTPUT"
+      - name: Cache Nix store
+        uses: nix-community/cache-nix-action@7df957e333c1e5da7721f60227dbba6d06080569 # v7
+        with:
+          primary-key: ${{ steps.nix-cache-key.outputs.key }}
+          restore-prefixes-first-match: nix-v1-${{ runner.os }}-${{ runner.arch }}-2.34.6-
+      - name: Cache Cargo dependencies and build artifacts
+        if: needs.preflight.outputs.nix_full == 'true'
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: |
+            ~/.cargo/registry/index
+            ~/.cargo/registry/cache
+            ~/.cargo/git/db
+            target
+            examples/dioxus-desktop-demo/target
+            examples/dioxus-web-demo/target
+            examples/leptos-demo/target
+            examples/sycamore-demo/target
+            examples/yew-demo/target
+          key: cargo-v1-${{ steps.nix-cache-key.outputs.key }}-${{ hashFiles('**/Cargo.lock', '**/Cargo.toml', '.cargo/**', '.github/workflows/rust.yml') }}
+          restore-keys: |
+            cargo-v1-${{ steps.nix-cache-key.outputs.key }}-
+      - uses: cachix/cachix-action@18cf96c7c98e048e10a83abd92116114cd8504be # v14
+        with:
+          name: devenv
+          skipPush: true
+      - name: Check Nix environment
+        env:
+          NIX_FULL: ${{ needs.preflight.outputs.nix_full }}
+        run: |
+          if [ "$NIX_FULL" = false ]; then
+            python3 scripts/check.py run nix-smoke
+          else
+            python3 scripts/check.py run nix-full
+          fi
+
+  ci-gate:
+    needs: [preflight, native, lint, msrv, stable, examples, nix]
+    if: always()
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Require selected checks to succeed
+        env:
+          CI_SELECTION_JSON: ${{ needs.preflight.outputs.selection }}
+          CI_NEEDS_JSON: ${{ toJSON(needs) }}
+        run: python3 scripts/check.py gate

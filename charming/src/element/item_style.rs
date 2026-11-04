@@ -1,4 +1,4 @@
-use super::{border_type::BorderType, color::Color};
+use super::{BorderCap, BorderJoin, border_type::BorderType, color::Color};
 use charming_macros::CharmingSetters;
 use serde::{Deserialize, Serialize};
 
@@ -17,6 +17,10 @@ pub struct ItemStyle {
     border_width: Option<f64>,
     border_radius: Option<f64>,
     border_type: Option<BorderType>,
+    border_dash_offset: Option<f64>,
+    border_cap: Option<BorderCap>,
+    border_join: Option<BorderJoin>,
+    border_miter_limit: Option<f64>,
     opacity: Option<f64>,
     shadow_color: Option<Color>,
     shadow_blur: Option<f64>,

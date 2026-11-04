@@ -1,11 +1,11 @@
 use charming::{
+    Chart,
     component::Axis,
     element::{AxisType, Tooltip},
     series::Line,
-    Chart,
 };
 use dioxus::prelude::*;
-use dioxus_logger::tracing::{info, Level};
+use dioxus_logger::tracing::{Level, info};
 
 fn main() {
     dioxus_logger::init(Level::INFO).expect("failed to init logger");
@@ -26,7 +26,10 @@ fn App() -> Element {
         )
         .y_axis(Axis::new().type_(AxisType::Value))
         .series(Line::new().data(vec![150, 230, 224, 218, 135, 147, 260]));
-    let chart_json = chart.to_string();
+    let chart_json = match chart.to_javascript() {
+        Ok(option) => option,
+        Err(error) => return rsx! { p { "Could not prepare chart: {error}" } },
+    };
     let mount_code = format!(
         r#"
             var millis = 100;

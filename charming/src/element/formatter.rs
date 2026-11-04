@@ -1,7 +1,7 @@
 use crate::element::js_function::JsFunction;
 use serde::{Deserialize, Serialize};
 
-#[derive(Serialize, Deserialize, Debug, PartialEq, Clone)]
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(untagged)]
 pub enum Formatter {
     String(String),

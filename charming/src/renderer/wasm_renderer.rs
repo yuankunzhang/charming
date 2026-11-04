@@ -1,4 +1,9 @@
-use crate::{Chart, EchartsError, element::Easing, theme::Theme};
+use crate::{
+    Chart, EchartsError,
+    element::Easing,
+    render_option::{RenderOption, wasm_error},
+    theme::Theme,
+};
 use serde::Serialize;
 use serde_wasm_bindgen::to_value;
 use wasm_bindgen::JsValue;
@@ -33,6 +38,7 @@ impl WasmRenderer {
     }
 
     pub fn render(&self, id: &str, chart: &Chart) -> Result<Echarts, EchartsError> {
+        let option = prepare(chart)?;
         let window = web_sys::window().ok_or(EchartsError::WasmError(
             "no `window` object found".to_string(),
         ))?;
@@ -44,6 +50,9 @@ impl WasmRenderer {
             .ok_or(EchartsError::WasmError(format!(
                 "no element with id `{id}` found",
             )))?;
+        let is_new = get_instance_by_dom(&element)
+            .map_err(wasm_error)?
+            .is_undefined();
         let echarts = init(
             &element,
             self.theme.to_str().0,
@@ -51,9 +60,15 @@ impl WasmRenderer {
                 width: self.width,
                 height: self.height,
             })
-            .unwrap(),
-        );
-        Self::update(&echarts, chart);
+            .map_err(|error| EchartsError::WasmError(error.to_string()))?,
+        )
+        .map_err(wasm_error)?;
+        if let Err(error) = echarts.set_option(option) {
+            if is_new {
+                let _ = echarts.dispose();
+            }
+            return Err(wasm_error(error));
+        }
 
         Ok(echarts)
     }
@@ -64,11 +79,18 @@ impl WasmRenderer {
             .resize(to_value(&chart_size).expect("could not convert resize options to `JsValue`"));
     }
 
-    pub fn update(echarts: &Echarts, chart: &Chart) {
-        let serializer = serde_wasm_bindgen::Serializer::new().serialize_maps_as_objects(true);
-        let js = chart.serialize(&serializer).unwrap();
-        echarts.set_option(js);
+    /// Prepare all source before applying options. Synchronous failures return `WasmError`.
+    /// Existing instances are retained on failure; updates do not promise rollback.
+    /// Later interaction callback errors are handled by the JavaScript runtime.
+    pub fn update(echarts: &Echarts, chart: &Chart) -> Result<(), EchartsError> {
+        echarts.set_option(prepare(chart)?).map_err(wasm_error)
     }
+}
+
+fn prepare(chart: &Chart) -> Result<JsValue, EchartsError> {
+    RenderOption::new(chart)
+        .map_err(|error| EchartsError::WasmError(error.to_string()))?
+        .to_wasm()
 }
 
 #[derive(Clone, Debug, Serialize, Copy)]
@@ -133,11 +155,17 @@ extern "C" {
     #[wasm_bindgen(js_name = echarts)]
     pub type Echarts;
 
-    #[wasm_bindgen(js_namespace = echarts, js_name = init)]
-    fn init(id: &web_sys::Element, theme: &str, size: JsValue) -> Echarts;
+    #[wasm_bindgen(catch, js_namespace = echarts, js_name = init)]
+    fn init(id: &web_sys::Element, theme: &str, size: JsValue) -> Result<Echarts, JsValue>;
 
-    #[wasm_bindgen(method, js_name = "setOption")]
-    fn set_option(this: &Echarts, option: JsValue);
+    #[wasm_bindgen(catch, js_namespace = echarts, js_name = getInstanceByDom)]
+    fn get_instance_by_dom(element: &web_sys::Element) -> Result<JsValue, JsValue>;
+
+    #[wasm_bindgen(catch, method, js_name = "setOption")]
+    fn set_option(this: &Echarts, option: JsValue) -> Result<(), JsValue>;
+
+    #[wasm_bindgen(catch, method)]
+    fn dispose(this: &Echarts) -> Result<(), JsValue>;
 
     #[wasm_bindgen(method, js_name = "resize")]
     pub fn resize(this: &Echarts, opts: JsValue);

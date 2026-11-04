@@ -1,4 +1,4 @@
-pub(crate) mod raw_string;
+pub(crate) mod js_expression;
 
 pub mod anchor;
 pub mod animation_time;
@@ -50,14 +50,13 @@ pub mod sort;
 pub mod split_area;
 pub mod split_line;
 pub mod step;
-pub mod stroke_style;
 pub mod symbol;
 pub mod symbol_size;
 pub mod text_align;
 pub mod text_style;
 pub mod tooltip;
 
-pub(crate) use raw_string::*;
+pub(crate) use js_expression::*;
 
 pub use anchor::*;
 pub use animation_time::*;
@@ -107,7 +106,6 @@ pub use sort::*;
 pub use split_area::*;
 pub use split_line::*;
 pub use step::*;
-pub use stroke_style::*;
 pub use symbol::*;
 pub use symbol_size::*;
 pub use text_align::*;

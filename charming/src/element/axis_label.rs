@@ -1,5 +1,3 @@
-use std::collections::HashMap;
-
 use super::{
     Formatter,
     color::Color,
@@ -11,6 +9,7 @@ use crate::{
 };
 use charming_macros::CharmingSetters;
 use serde::{Deserialize, Serialize};
+use std::collections::HashMap;
 
 #[serde_with::apply(
   Option => #[serde(skip_serializing_if = "Option::is_none")],
@@ -28,11 +27,11 @@ pub struct AxisLabel {
     font_size: Option<f64>,
     color: Option<Color>,
     formatter: Option<Formatter>,
+    rich: Option<HashMap<String, TextStyle>>,
     rotate: Option<f64>,
     interval: Option<f64>,
     align: Option<LabelAlign>,
     align_min_label: Option<LabelAlign>,
     align_max_label: Option<LabelAlign>,
     custom_values: Vec<CompositeValue>,
-    rich: Option<HashMap<String, TextStyle>>,
 }
