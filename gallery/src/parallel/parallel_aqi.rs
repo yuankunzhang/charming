@@ -68,7 +68,7 @@ pub fn chart() -> Chart {
         )
         .parallel(
             ParallelCoordinate::new()
-                .left("5%")
+                .left("10%")
                 .right("18%")
                 .bottom("100")
                 .parallel_axis_default(

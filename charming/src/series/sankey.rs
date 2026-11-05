@@ -97,6 +97,18 @@ where
 #[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Sankey {
+    roam: Option<crate::element::Roam>,
+    roam_trigger: Option<crate::element::RoamTrigger>,
+    center: Option<crate::datatype::CompositeValue>,
+    zoom: Option<f64>,
+    scale_limit: Option<crate::element::ScaleLimit>,
+    coordinate_system: Option<crate::element::CoordinateSystem>,
+    coordinate_system_usage: Option<crate::element::CoordinateSystemUsage>,
+    coord: Option<crate::datatype::CompositeValue>,
+    matrix_index: Option<f64>,
+    matrix_id: Option<String>,
+    calendar_index: Option<f64>,
+    calendar_id: Option<String>,
     #[serde(rename = "type")]
     #[charming_type = "sankey"]
     type_: String,

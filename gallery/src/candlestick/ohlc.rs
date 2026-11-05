@@ -6,7 +6,7 @@ use charming::{
     },
     element::{
         AxisLine, AxisPointer, AxisPointerLink, AxisPointerType, AxisType, DimensionEncode,
-        SplitArea, SplitLine, Tooltip, Trigger,
+        JsFunction, SplitArea, SplitLine, Tooltip, Trigger,
     },
     series::Custom,
 };
@@ -87,7 +87,7 @@ pub fn chart() -> Chart {
                         .y(vec![1, 2, 3, 4])
                         .tooltip(vec![1, 2, 3, 4]),
                 )
-                .render_item(RENDER_ITEM)
+                .render_item(JsFunction::from(RENDER_ITEM))
                 .data(data),
         )
 }

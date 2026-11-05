@@ -8,7 +8,11 @@ use charming::{
 pub fn chart() -> Chart {
     Chart::new()
         .title(Title::new().text("Tangential Polar Bar Label Position (middle)"))
-        .polar(PolarCoordinate::new().radius(vec!["30", "80%"]))
+        .polar(
+            PolarCoordinate::new()
+                .center(vec!["50%", "55%"])
+                .radius(vec!["30", "72%"]),
+        )
         .angle_axis(AngleAxis::new().start_angle(75).max(4))
         .radius_axis(
             RadiusAxis::new()

@@ -9,13 +9,14 @@ use serde::{Deserialize, Serialize};
 #[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct ItemStyle {
+    area_color: Option<Color>,
     color: Option<Color>,
     color0: Option<Color>,
     border_color: Option<Color>,
     border_color0: Option<Color>,
     border_color_doji: Option<Color>,
     border_width: Option<f64>,
-    border_radius: Option<f64>,
+    border_radius: Option<crate::datatype::CompositeValue>,
     border_type: Option<BorderType>,
     border_dash_offset: Option<f64>,
     border_cap: Option<BorderCap>,

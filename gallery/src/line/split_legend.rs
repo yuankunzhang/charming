@@ -10,7 +10,7 @@ pub fn chart() -> Chart {
         .title(Title::new().text("Split Legend"))
         .tooltip(Tooltip::new().trigger(Trigger::Axis))
         .legend(vec![
-            Legend::new().data(vec![
+            Legend::new().left(10).data(vec![
                 "Penguins",
                 "Giraffes",
                 "Lions",
@@ -23,7 +23,7 @@ pub fn chart() -> Chart {
             Grid::new()
                 .left("3%")
                 .right("4%")
-                .bottom("3%")
+                .bottom(65)
                 .contain_label(true),
         )
         .toolbox(Toolbox::new().feature(Feature::new().save_as_image(SaveAsImage::new())))

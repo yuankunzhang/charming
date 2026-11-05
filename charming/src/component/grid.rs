@@ -52,6 +52,18 @@ impl GridTooltip {
 #[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Grid {
+    outer_bounds_mode: Option<OuterBoundsMode>,
+    outer_bounds: Option<GridOuterBounds>,
+    outer_bounds_contain: Option<OuterBoundsContain>,
+    outer_bounds_clamp_width: Option<CompositeValue>,
+    outer_bounds_clamp_height: Option<CompositeValue>,
+    coordinate_system: Option<crate::element::CoordinateSystem>,
+    coordinate_system_usage: Option<crate::element::CoordinateSystemUsage>,
+    coord: Option<crate::datatype::CompositeValue>,
+    matrix_index: Option<f64>,
+    matrix_id: Option<String>,
+    calendar_index: Option<f64>,
+    calendar_id: Option<String>,
     /// Component ID.
     id: Option<String>,
     /// Whether to show the grid in rectangular coordinate.
@@ -90,4 +102,32 @@ pub struct Grid {
     shadow_offset_y: Option<f64>,
     /// Tooltip settings in the grid.
     tooltip: Option<GridTooltip>,
+}
+
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
+#[serde(rename_all = "camelCase")]
+pub enum OuterBoundsMode {
+    Auto,
+    Same,
+    None,
+}
+
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
+#[serde(rename_all = "camelCase")]
+pub enum OuterBoundsContain {
+    All,
+    AxisLabel,
+    Auto,
+}
+
+#[serde_with::apply(Option => #[serde(skip_serializing_if = "Option::is_none")])]
+#[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, PartialOrd, Clone)]
+#[serde(rename_all = "camelCase")]
+pub struct GridOuterBounds {
+    left: Option<CompositeValue>,
+    right: Option<CompositeValue>,
+    top: Option<CompositeValue>,
+    bottom: Option<CompositeValue>,
+    width: Option<CompositeValue>,
+    height: Option<CompositeValue>,
 }

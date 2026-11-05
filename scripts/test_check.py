@@ -41,6 +41,8 @@ class SelectionTests(unittest.TestCase):
             "CHANGELOG.md": set(),
             "CONTRIBUTING.md": set(),
             "AGENTS.md": set(),
+            "docs/echarts6.md": set(),
+            "docs/unknown.md": all_jobs,
             "LICENSE-MIT": set(),
             ".github/pull_request_template.md": set(),
             "unknown/path": all_jobs,
@@ -64,7 +66,7 @@ class SelectionTests(unittest.TestCase):
 
     def test_mixed_paths_union(self):
         selected = check.select_paths([
-            "README.md", "gallery/src/images.rs", "examples/yew-demo/src/main.rs",
+            "README.md", "docs/echarts6.md", "gallery/src/images.rs", "examples/yew-demo/src/main.rs",
             "examples/leptos-demo/src/main.rs", "examples/yew-demo/src/other.rs",
         ])
         self.assertTrue(selected["native"])
@@ -262,6 +264,53 @@ class RunnerTests(unittest.TestCase):
              patch.object(check, "wasm_browser") as browser:
             self.assertEqual(check.main(), 0)
         browser.assert_called_once_with()
+
+    def test_echarts6_browser_records_gl_and_uses_software_flags(self):
+        for code in (0, 42):
+            with self.subTest(code=code), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                def invoke(argv, **kwargs):
+                    self.assertEqual(argv[-6:], ["--features", "wasm,html", "--test",
+                                                "echarts6_browser", "--", "--nocapture"])
+                    config = Path(kwargs["env"]["WASM_BINDGEN_TEST_WEBDRIVER_JSON"])
+                    args = json.loads(config.read_text())["goog:chromeOptions"]["args"]
+                    self.assertEqual(args[-3:], ["--use-gl=angle", "--use-angle=swiftshader",
+                                                "--enable-unsafe-swiftshader"])
+                    return subprocess.CompletedProcess(argv, code,
+                        "GL renderer: software WebGL\nCHARMING_GL_PNG:data:image/png;base64,cG5n\n")
+                with patch.object(check, "ROOT", root), \
+                     patch.object(check, "tools", return_value={"wasm-bindgen": "0.2.129"}), \
+                     patch.object(check.shutil, "which", side_effect=lambda n: f"/tools/{n}"), \
+                     patch.object(check, "cli_version"), patch.object(check, "command", return_value="version"), \
+                     patch.object(check.subprocess, "run", side_effect=invoke), \
+                     contextlib.redirect_stdout(io.StringIO()):
+                    if code:
+                        with self.assertRaises(subprocess.CalledProcessError):
+                            check.wasm_browser(echarts6=True)
+                    else:
+                        check.wasm_browser(echarts6=True)
+                evidence = root / "target/echarts6-evidence"
+                self.assertIn("CHARMING_GL_PNG", (evidence / "browser.log").read_text())
+                self.assertEqual((evidence / "bar3d.png").exists(), code == 0)
+                if not code:
+                    self.assertEqual((evidence / "bar3d.png").read_bytes(), b"png")
+
+    def test_echarts6_tasks_remain_manual(self):
+        with patch.object(check, "wasm_browser") as browser:
+            check.run("echarts6-browser")
+        browser.assert_called_once_with(echarts6=True)
+        with patch.object(check, "command") as command:
+            check.run("echarts6-raster")
+            check.run("snapshots")
+        self.assertEqual(command.call_args_list[0].args[0], [
+            "cargo", "test", "-p", "charming", "--locked", "--no-default-features",
+            "--features", "ssr-raster", "--test", "echarts6_raster"])
+        self.assertEqual(command.call_args_list[1].args[0], [
+            "cargo", "run", "--locked", "--bin", "generate_images", "--", "img_test"])
+        with patch.object(check, "preflight"), patch.object(check, "command"), \
+             patch.object(check, "example"), patch.object(check, "wasm_browser") as browser:
+            check.run("all")
+        browser.assert_not_called()
 
     def test_native_stops_at_first_failed_subprocess(self):
         error = subprocess.CalledProcessError(42, ["cargo", "build"])

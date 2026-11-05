@@ -1,6 +1,6 @@
 use crate::{
     datatype::CompositeValue,
-    element::{Color, Label, Symbol},
+    element::{Color, Symbol},
 };
 use charming_macros::CharmingSetters;
 use serde::{Deserialize, Serialize};
@@ -104,8 +104,80 @@ pub struct Aria {
     /// enabled, the description of the chart will be automatically and
     /// intelligently generated based on the chart, data title, etc. Users can
     /// also modify the description through `label`.
-    label: Option<Label>,
+    label: Option<AriaLabel>,
     /// Decal patterns are added to series data as an additional hint other
     /// than colors to help differentiate the data.
     decal: Option<Decal>,
+}
+
+#[serde_with::apply(Option => #[serde(skip_serializing_if = "Option::is_none")])]
+#[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, Clone)]
+#[serde(rename_all = "camelCase")]
+pub struct AriaLabel {
+    enabled: Option<bool>,
+    description: Option<String>,
+    general: Option<AriaGeneral>,
+    series: Option<AriaSeries>,
+    data: Option<AriaData>,
+}
+
+#[serde_with::apply(Option => #[serde(skip_serializing_if = "Option::is_none")])]
+#[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, Clone)]
+#[serde(rename_all = "camelCase")]
+pub struct AriaGeneral {
+    with_title: Option<String>,
+    without_title: Option<String>,
+}
+
+#[serde_with::apply(Option => #[serde(skip_serializing_if = "Option::is_none")])]
+#[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, Clone)]
+#[serde(rename_all = "camelCase")]
+pub struct AriaSeparator {
+    middle: Option<String>,
+    end: Option<String>,
+}
+
+#[serde_with::apply(Option => #[serde(skip_serializing_if = "Option::is_none")])]
+#[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, Clone)]
+#[serde(rename_all = "camelCase")]
+pub struct AriaSingleSeries {
+    prefix: Option<String>,
+    with_name: Option<String>,
+    without_name: Option<String>,
+}
+
+#[serde_with::apply(Option => #[serde(skip_serializing_if = "Option::is_none")])]
+#[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, Clone)]
+#[serde(rename_all = "camelCase")]
+pub struct AriaMultipleSeries {
+    prefix: Option<String>,
+    with_name: Option<String>,
+    without_name: Option<String>,
+    separator: Option<AriaSeparator>,
+}
+
+#[serde_with::apply(Option => #[serde(skip_serializing_if = "Option::is_none")])]
+#[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, Clone)]
+#[serde(rename_all = "camelCase")]
+pub struct AriaSeries {
+    max_count: Option<usize>,
+    single: Option<AriaSingleSeries>,
+    multiple: Option<AriaMultipleSeries>,
+}
+
+#[serde_with::apply(
+    Option => #[serde(skip_serializing_if = "Option::is_none")],
+    Vec => #[serde(default, skip_serializing_if = "Vec::is_empty")]
+)]
+#[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, Clone)]
+#[serde(rename_all = "camelCase")]
+pub struct AriaData {
+    max_count: Option<usize>,
+    all_data: Option<String>,
+    partial_data: Option<String>,
+    with_name: Option<String>,
+    without_name: Option<String>,
+    separator: Option<AriaSeparator>,
+    #[charming_set_vec]
+    exclude_dimension_id: Vec<usize>,
 }

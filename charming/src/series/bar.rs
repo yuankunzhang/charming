@@ -16,6 +16,10 @@ use crate::{
 #[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Bar {
+    stack_order: Option<crate::element::StackOrder>,
+    polar_id: Option<String>,
+    x_axis_id: Option<String>,
+    y_axis_id: Option<String>,
     #[serde(rename = "type")]
     #[charming_type = "bar"]
     type_: String,

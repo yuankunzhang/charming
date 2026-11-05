@@ -16,6 +16,12 @@ use serde::{Deserialize, Serialize};
 #[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Line {
+    trigger_event: Option<LineTriggerEvent>,
+    stack_order: Option<crate::element::StackOrder>,
+    polar_index: Option<f64>,
+    polar_id: Option<String>,
+    x_axis_id: Option<String>,
+    y_axis_id: Option<String>,
     #[serde(rename = "type")]
     #[charming_type = "line"]
     type_: String,
@@ -47,4 +53,29 @@ pub struct Line {
     z: Option<i32>,
     #[serde(skip_serializing_if = "Vec::is_empty", default)]
     data: DataFrame,
+}
+
+#[derive(Serialize, Deserialize, Debug, PartialEq, Clone, Copy)]
+#[serde(rename_all = "camelCase")]
+pub enum LineEventTarget {
+    Line,
+    Area,
+}
+
+#[derive(Serialize, Deserialize, Debug, PartialEq, Clone, Copy)]
+#[serde(untagged)]
+pub enum LineTriggerEvent {
+    Bool(bool),
+    Target(LineEventTarget),
+}
+
+impl From<bool> for LineTriggerEvent {
+    fn from(value: bool) -> Self {
+        Self::Bool(value)
+    }
+}
+impl From<LineEventTarget> for LineTriggerEvent {
+    fn from(value: LineEventTarget) -> Self {
+        Self::Target(value)
+    }
 }

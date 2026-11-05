@@ -40,9 +40,9 @@ fn chart() -> Chart {
                     "return 'kept-' + p.value[0];",
                 ))),
         )
-        .series(Custom::new().data(vec![vec![0, 0]]).render_item(
+        .series(Custom::new().data(vec![vec![0, 0]]).render_item(JsFunction::from(
             "function() { return {type: 'text', style: {x: 20, y: 40, text: 'custom-executed'}}; }",
-        ))
+        )))
 }
 
 #[test]

@@ -18,13 +18,14 @@ pub fn chart() -> Chart {
             Title::new()
                 .text("Les Miserables")
                 .subtext("Circular layout")
-                .top("bottom")
-                .left("right"),
+                .top(10)
+                .left("center"),
         )
         .legend(Legend::new().data(legend))
         .tooltip(Tooltip::new())
         .series(
             Graph::new()
+                .zoom(0.62)
                 .name("Les Miserables")
                 .layout(GraphLayout::Circular)
                 .circular(GraphLayoutCircular::new().rotate_label(true))

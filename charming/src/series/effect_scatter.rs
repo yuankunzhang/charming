@@ -49,6 +49,18 @@ pub struct RippleEffect {
 #[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct EffectScatter {
+    clip: Option<bool>,
+    single_axis_index: Option<f64>,
+    single_axis_id: Option<String>,
+    polar_id: Option<String>,
+    geo_id: Option<String>,
+    x_axis_id: Option<String>,
+    y_axis_id: Option<String>,
+    coordinate_system_usage: Option<crate::element::CoordinateSystemUsage>,
+    coord: Option<crate::datatype::CompositeValue>,
+    matrix_index: Option<f64>,
+    matrix_id: Option<String>,
+    calendar_id: Option<String>,
     #[serde(rename = "type")]
     #[charming_type = "effectScatter"]
     type_: String,

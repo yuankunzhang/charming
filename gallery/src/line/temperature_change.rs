@@ -1,8 +1,8 @@
 use charming::{
     Chart,
     component::{
-        Axis, DataView, Feature, Legend, MagicType, MagicTypeType, Restore, SaveAsImage, Title,
-        Toolbox, ToolboxDataZoom,
+        Axis, DataView, Feature, Grid, Legend, MagicType, MagicTypeType, Restore, SaveAsImage,
+        Title, Toolbox, ToolboxDataZoom,
     },
     element::{
         AxisLabel, AxisType, Label, LabelPosition, MarkLine, MarkLineData, MarkLineDataType,
@@ -13,11 +13,12 @@ use charming::{
 
 pub fn chart() -> Chart {
     Chart::new()
+        .grid(Grid::new().top(105))
         .title(Title::new().text("Temperature change in the coming week"))
         .tooltip(Tooltip::new().trigger(Trigger::Axis))
         .legend(Legend::new())
         .toolbox(
-            Toolbox::new().show(true).feature(
+            Toolbox::new().top(50).show(true).feature(
                 Feature::new()
                     .save_as_image(SaveAsImage::new())
                     .restore(Restore::new())
@@ -44,11 +45,13 @@ pub fn chart() -> Chart {
                 .name("Highest")
                 .data(vec![10, 11, 13, 11, 12, 12, 9])
                 .mark_point(MarkPoint::new().data(vec![("max", "Max"), ("min", "Min")]))
-                .mark_line(MarkLine::new().data(vec![MarkLineVariant::Simple(
+                .mark_line(MarkLine::new().label(Label::new().distance(20)).data(
+                    vec![MarkLineVariant::Simple(
                         MarkLineData::new()
                             .type_(MarkLineDataType::Average)
                             .name("Avg"),
-                    )])),
+                    )],
+                )),
         )
         .series(
             Line::new()

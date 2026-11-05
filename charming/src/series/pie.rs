@@ -19,6 +19,16 @@ pub enum PieRoseType {
 #[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Pie {
+    geo_id: Option<String>,
+    x_axis_index: Option<f64>,
+    x_axis_id: Option<String>,
+    y_axis_index: Option<f64>,
+    y_axis_id: Option<String>,
+    coordinate_system_usage: Option<crate::element::CoordinateSystemUsage>,
+    coord: Option<crate::datatype::CompositeValue>,
+    matrix_index: Option<f64>,
+    matrix_id: Option<String>,
+    calendar_id: Option<String>,
     #[serde(rename = "type")]
     #[charming_type = "pie"]
     type_: String,
@@ -26,6 +36,7 @@ pub struct Pie {
     name: Option<String>,
     color_by: Option<ColorBy>,
     legend_hover_link: Option<bool>,
+    #[serde(rename = "coordinateSystem")]
     coordiate_system: Option<CoordinateSystem>,
     geo_index: Option<f64>,
     calendar_index: Option<f64>,

@@ -12,6 +12,11 @@ use serde::{Deserialize, Serialize};
 #[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Boxplot {
+    clip: Option<bool>,
+    x_axis_index: Option<f64>,
+    x_axis_id: Option<String>,
+    y_axis_index: Option<f64>,
+    y_axis_id: Option<String>,
     #[serde(rename = "type")]
     #[charming_type = "boxplot"]
     type_: String,

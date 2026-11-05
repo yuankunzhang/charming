@@ -12,6 +12,15 @@ pub enum VisualMapType {
     Piecewise,
 }
 
+#[serde_with::apply(Option => #[serde(skip_serializing_if = "Option::is_none")])]
+#[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, PartialOrd, Clone)]
+#[serde(rename_all = "camelCase")]
+pub struct VisualMapSeriesTarget {
+    series_index: Option<usize>,
+    series_id: Option<CompositeValue>,
+    dimension: Option<usize>,
+}
+
 #[serde_with::apply(
   Option => #[serde(skip_serializing_if = "Option::is_none")],
   Vec => #[serde(default, skip_serializing_if = "Vec::is_empty")]
@@ -71,13 +80,23 @@ pub struct VisualMapChannel {
 #[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct VisualMap {
+    unbounded_range: Option<bool>,
+    series_id: Option<CompositeValue>,
+    series_targets: Option<Vec<VisualMapSeriesTarget>>,
+    coordinate_system: Option<crate::element::CoordinateSystem>,
+    coordinate_system_usage: Option<crate::element::CoordinateSystemUsage>,
+    coord: Option<crate::datatype::CompositeValue>,
+    matrix_index: Option<f64>,
+    matrix_id: Option<String>,
+    calendar_index: Option<f64>,
+    calendar_id: Option<String>,
     #[serde(rename = "type")]
     type_: Option<VisualMapType>,
     #[charming_set_vec]
     color: Vec<Color>,
     show: Option<bool>,
     dimension: Option<CompositeValue>,
-    series_index: Option<f64>,
+    series_index: Option<CompositeValue>,
     min: Option<f64>,
     max: Option<f64>,
     #[charming_set_vec]

@@ -12,6 +12,7 @@ use serde::{Deserialize, Serialize};
 #[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Radar {
+    radar_id: Option<String>,
     #[serde(rename = "type")]
     #[charming_type = "radar"]
     type_: String,

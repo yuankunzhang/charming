@@ -30,6 +30,7 @@ pub fn chart() -> Chart {
         )
         .legend(
             Legend::new()
+                .top(45)
                 .left(10)
                 .data(vec!["Evaporation", "Precipitation"]),
         )
@@ -58,8 +59,8 @@ pub fn chart() -> Chart {
                 .end(70)
                 .x_axis_index(vec![0, 1]),
         )
-        .grid(Grid::new().left(60).right(50).height("35%"))
-        .grid(Grid::new().left(60).right(50).top("55%").height("35%"))
+        .grid(Grid::new().left(60).right(50).top(100).height("25%"))
+        .grid(Grid::new().left(60).right(50).top("60%").bottom(80))
         .x_axis(
             Axis::new()
                 .type_(AxisType::Category)

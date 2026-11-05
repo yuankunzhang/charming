@@ -10,6 +10,13 @@ use serde::{Deserialize, Serialize};
 #[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct PolarCoordinate {
+    coordinate_system: Option<crate::element::CoordinateSystem>,
+    coordinate_system_usage: Option<crate::element::CoordinateSystemUsage>,
+    coord: Option<crate::datatype::CompositeValue>,
+    matrix_index: Option<f64>,
+    matrix_id: Option<String>,
+    calendar_index: Option<f64>,
+    calendar_id: Option<String>,
     id: Option<String>,
     /// The `zlevel` value of all graphical elements in.
     zlevel: Option<f64>,

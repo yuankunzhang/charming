@@ -12,6 +12,9 @@ fn main() {
 
     let output_dir = Path::new(&args[1]);
     let mut renderer = ImageRenderer::new(600, 450);
+    renderer
+        .register_extension(charming_gallery::echarts6::EXTENSIONS)
+        .unwrap();
 
     for (key, value) in CHARTS.iter() {
         // Not yet supported by SSR.

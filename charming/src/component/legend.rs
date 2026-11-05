@@ -96,6 +96,14 @@ impl From<(String, String)> for LegendItem {
 #[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Legend {
+    trigger_event: Option<bool>,
+    coordinate_system: Option<crate::element::CoordinateSystem>,
+    coordinate_system_usage: Option<crate::element::CoordinateSystemUsage>,
+    coord: Option<crate::datatype::CompositeValue>,
+    matrix_index: Option<f64>,
+    matrix_id: Option<String>,
+    calendar_index: Option<f64>,
+    calendar_id: Option<String>,
     /// Type of legend.
     #[serde(rename = "type")]
     type_: Option<LegendType>,

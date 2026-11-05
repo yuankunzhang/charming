@@ -2,6 +2,19 @@
 
 ## Unreleased
 
+- Upgrade all engine entry points to ECharts 6.1.0 and GL 2.1.0, adopting v6
+  styling and layout. Add Chord, Matrix, Thumbnail, nested coordinates, axis
+  breaks/jitter, new text and interaction options, and usable Map/Lines,
+  Timeline, Brush and Treemap data entry points.
+- Add explicit extension/map/locale registration for HTML, native and WASM
+  rendering. Apply themes, locales and the SVG painter selection consistently.
+  Add WASM full replacement, theme changes, coordinate conversions and action/
+  event methods. Verify official violin and barRange extensions.
+- Serialize calendars as arrays. Custom render-item strings now name a
+  registered renderer; callbacks require explicit `JsFunction`. Correct
+  `AriaLabel` and extend public union variants. See the
+  [migration guide](docs/echarts6.md) for Rust, JSON and engine behavior changes.
+
 - Store callback source identically on native and WASM targets. Functions use
   `{"type":"function","source":"..."}` JSON; dataset expressions use
   `{"type":"expression","source":"..."}`. Readback checks the tags and preserves
@@ -29,10 +42,8 @@
   limit properties and the `BorderCap` and `BorderJoin` enums.
 
 These are breaking changes intended for 0.7.0, without a version bump or release
-in this change. Old callback JSON has no compatibility reader. ECharts stays
-at 5.5.1; `handle_label`, `emphasis.handle_label` and `HandleLabel` are deferred
-until an engine upgrade supporting these 5.6.0 additions. ECharts 6.x is outside
-this integration.
+in this change. Old callback JSON has no compatibility reader. `HandleLabel`
+and its normal/emphasis DataZoom settings are included with the engine upgrade.
 
 ## 0.6.0
 - Add deserialization support [#172](https://github.com/yuankunzhang/charming/pull/172)

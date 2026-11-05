@@ -24,7 +24,7 @@ pub fn chart() -> Chart {
                 .text("Rainfall and Flow Relationship")
                 .left("center"),
         )
-        .grid(Grid::new().bottom(80))
+        .grid(Grid::new().top(95).bottom(80))
         .toolbox(
             Toolbox::new().feature(
                 Feature::new()
@@ -41,7 +41,12 @@ pub fn chart() -> Chart {
                     .label(Label::new().background_color("#505765")),
             ),
         )
-        .legend(Legend::new().data(vec!["Flow", "Rainfall"]).left(10))
+        .legend(
+            Legend::new()
+                .data(vec!["Flow", "Rainfall"])
+                .left(10)
+                .top(45),
+        )
         .data_zoom(DataZoom::new().show(true).realtime(true).start(65).end(85))
         .data_zoom(
             DataZoom::new()

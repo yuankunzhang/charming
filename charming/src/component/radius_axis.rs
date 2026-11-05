@@ -10,6 +10,18 @@ use serde::{Deserialize, Serialize};
 #[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct RadiusAxis {
+    breaks: Option<Vec<crate::element::AxisBreak>>,
+    break_area: Option<crate::element::BreakArea>,
+    break_label_layout: Option<crate::element::BreakLabelLayout>,
+    jitter: Option<f64>,
+    jitter_overlap: Option<bool>,
+    jitter_margin: Option<f64>,
+    name_move_overlap: Option<crate::element::BooleanOrAuto>,
+    contain_shape: Option<bool>,
+    data_min: Option<crate::datatype::StringOrNumber>,
+    data_max: Option<crate::datatype::StringOrNumber>,
+    tooltip: Option<crate::element::AxisTooltip>,
+    polar_id: Option<String>,
     id: Option<String>,
     polar_index: Option<f64>,
     type_: Option<AxisType>,

@@ -2,6 +2,7 @@
 """Shared local, GitHub Actions and Nix checks (Python 3.11+)."""
 
 import argparse
+import base64
 import json
 import os
 from pathlib import Path
@@ -142,7 +143,7 @@ def example(name):
                     raise ValueError(message)
 
 
-def wasm_browser():
+def wasm_browser(echarts6=False):
     binaries = {}
     for name in ("wasm-bindgen-test-runner", "chromium", "chromedriver"):
         path = shutil.which(name)
@@ -155,9 +156,12 @@ def wasm_browser():
     with tempfile.TemporaryDirectory(prefix="charming-wasm-browser-") as directory:
         directory = Path(directory)
         webdriver = directory / "webdriver.json"
+        args = ["--headless", "--disable-dev-shm-usage"]
+        if echarts6:
+            args.extend(["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader"])
         webdriver.write_text(json.dumps({"goog:chromeOptions": {
             "binary": binaries["chromium"],
-            "args": ["--headless", "--disable-dev-shm-usage"],
+            "args": args,
         }}))
         runner = directory / "runner"
         runner.write_text("#!/bin/sh\nexec " + shlex.quote(binaries["wasm-bindgen-test-runner"]) + ' "$@"\n')
@@ -175,9 +179,27 @@ def wasm_browser():
             CHROMEDRIVER=binaries["chromedriver"],
             WASM_BINDGEN_TEST_WEBDRIVER_JSON=str(webdriver),
         )
-        command(["cargo", "test", "-p", "charming", "--locked", "--target",
-                 "wasm32-unknown-unknown", "--no-default-features", "--features", "wasm",
-                 "--test", "wasm_callbacks"], env=env)
+        argv = ["cargo", "test", "-p", "charming", "--locked", "--target",
+                "wasm32-unknown-unknown", "--no-default-features", "--features",
+                "wasm,html" if echarts6 else "wasm", "--test",
+                "echarts6_browser" if echarts6 else "wasm_callbacks"]
+        if echarts6:
+            argv.extend(["--", "--nocapture"])
+            evidence = ROOT / "target/echarts6-evidence"
+            evidence.mkdir(parents=True, exist_ok=True)
+            # Keep the real browser console and command even when a test fails.
+            result = subprocess.run(argv, cwd=ROOT, env=env, text=True,
+                                    stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+            (evidence / "browser.log").write_text(shlex.join(argv) + "\n" + result.stdout)
+            print(re.sub(r"(CHARMING_GL_PNG:data:image/png;base64,)[A-Za-z0-9+/=]+",
+                         r"\1<saved in evidence>", result.stdout), end="", flush=True)
+            result.check_returncode()
+            match = re.search(r"CHARMING_GL_PNG:data:image/png;base64,([A-Za-z0-9+/=]+)", result.stdout)
+            if not match:
+                raise ValueError("echarts6-browser: missing GL foreground PNG evidence")
+            (evidence / "bar3d.png").write_bytes(base64.b64decode(match[1], validate=True))
+        else:
+            command(argv, env=env)
 
 
 def run(task, name=None):
@@ -190,6 +212,13 @@ def run(task, name=None):
         example(name)
     elif task == "wasm-browser":
         wasm_browser()
+    elif task == "echarts6-browser":
+        wasm_browser(echarts6=True)
+    elif task == "echarts6-raster":
+        command(["cargo", "test", "-p", "charming", "--locked", "--no-default-features",
+                 "--features", "ssr-raster", "--test", "echarts6_raster"])
+    elif task == "snapshots":
+        command(["cargo", "run", "--locked", "--bin", "generate_images", "--", "img_test"])
     elif task == "native":
         for argv in (
             ["cargo", "build", "--workspace", "--locked"],
@@ -264,7 +293,7 @@ def select_paths(paths, full_reason=None):
                 or path.endswith(".nix")
                 or path.startswith((".cargo/", "scripts/", "ci/", ".github/workflows/", "nix/"))
             )
-            docs = path in ("README.md", "CHANGELOG.md", "CONTRIBUTING.md", "AGENTS.md",
+            docs = path in ("README.md", "CHANGELOG.md", "CONTRIBUTING.md", "AGENTS.md", "docs/echarts6.md",
                             ".github/pull_request_template.md") or (
                 len(parts) == 1 and path.startswith("LICENSE")
             ) or (len(parts) == 3 and parts[0] == "examples" and parts[2].startswith("README"))
@@ -357,7 +386,8 @@ def main():
     runner = commands.add_parser("run")
     runner.add_argument("task", choices=("preflight", "native", "fmt", "clippy", "msrv",
                         "stable", "example", "env", "nix-format", "all", "all-nix",
-                        "nix-smoke", "nix-full", "wasm-browser"))
+                        "nix-smoke", "nix-full", "wasm-browser", "echarts6-browser",
+                        "echarts6-raster", "snapshots"))
     runner.add_argument("name", nargs="?", choices=EXAMPLES)
     selector = commands.add_parser("select")
     selector.add_argument("--event", required=True)

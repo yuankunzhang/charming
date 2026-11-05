@@ -1,0 +1,34 @@
+<svg width="600" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 600 450">
+<rect width="600" height="450" x="0" y="0" fill="none"></rect>
+<path d="M300 112.5A112.5 112.5 0 0 1 412.3 219.1C333.7 223.2 328.1 243.7 393.7 287.3A112.5 112.5 0 0 1 242.7 321.8C282.8 254 300 191.3 300 112.5Z" fill="#5070dd" fill-opacity="0.2" stroke="source" stroke-width="0" stroke-opacity="0.2" ecmeta_series_index="0" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr21-cls-189"></path>
+<path d="M242.7 321.8A112.5 112.5 0 0 1 187.9 234.8C266.4 227.9 266.3 225.6 187.5 227A112.5 112.5 0 0 1 232.9 134.7C279.9 197.9 282.8 254 242.7 321.8Z" fill="#b6d634" fill-opacity="0.2" stroke="source" stroke-width="0" stroke-opacity="0.2" ecmeta_series_index="0" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr21-cls-190"></path>
+<path d="M232.9 134.7A112.5 112.5 0 0 1 292.2 112.8C297.6 191.3 333.7 223.2 412.3 219.1A112.5 112.5 0 0 1 397.8 280.6C329.3 241.7 279.9 197.9 232.9 134.7Z" fill="#505372" fill-opacity="0.2" stroke="source" stroke-width="0" stroke-opacity="0.2" ecmeta_series_index="0" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr21-cls-191"></path>
+<path d="M300 83.8A5 5 0 0 1 305.2 78.8A146.3 146.3 0 0 1 429.6 292.7A5 5 0 0 1 422.7 294.8L397.8 280.6A112.5 112.5 0 0 0 300 112.5Z" fill="#5070dd" ecmeta_series_index="0" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr21-cls-189"></path>
+<path d="M417.5 303.2A5 5 0 0 1 418.8 310.2A146.3 146.3 0 0 1 154.8 242.9A5 5 0 0 1 159.4 237.3L187.9 234.8A112.5 112.5 0 0 0 393.7 287.3Z" fill="#b6d634" ecmeta_series_index="0" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr21-cls-190"></path>
+<path d="M158.9 227.5A5 5 0 0 1 153.8 222.4A146.3 146.3 0 0 1 284.6 79.6A5 5 0 0 1 290.2 84.2L292.2 112.8A112.5 112.5 0 0 0 187.5 227Z" fill="#505372" ecmeta_series_index="0" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr21-cls-191"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" y="-6" transform="translate(430.7382 148.9468)" fill="#5070dd">A</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(262.6094 371.5555)" fill="#b6d634">B</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" y="-6" transform="translate(188.4868 122.817)" fill="#505372">C</text>
+<path d="M-52.6 -5l105.2 0l0 28l-105.2 0Z" transform="translate(300 20)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#3c3c41" stroke-width="0" class="zr21-cls-192"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:18px;font-family:sans-serif;font-weight:bold;" xml:space="preserve" y="9" transform="translate(300 20)" fill="#3c3c41">Chord flows</text>
+<style ><![CDATA[
+.zr21-cls-189:hover {
+cursor:pointer;
+fill:rgba(88,123,243,1);
+}
+.zr21-cls-190:hover {
+cursor:pointer;
+fill:rgba(200,235,57,1);
+}
+.zr21-cls-191:hover {
+cursor:pointer;
+fill:rgba(88,91,125,1);
+}
+.zr21-cls-192:hover {
+pointer-events:none;
+}
+
+]]>
+
+</style>
+</svg>

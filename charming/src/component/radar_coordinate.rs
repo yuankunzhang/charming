@@ -16,6 +16,11 @@ use serde::{Deserialize, Serialize};
 #[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct RadarAxisName {
+    rich_inherit_plain_label: Option<bool>,
+    min_margin: Option<f64>,
+    text_margin: Option<crate::datatype::NumberOrArray>,
+    line_overflow: Option<crate::element::LineOverflow>,
+    ellipsis: Option<String>,
     /// Whether to display the indicator's name.
     show: Option<bool>,
     /// Formatter of the indicator's name.
@@ -24,7 +29,7 @@ pub struct RadarAxisName {
     font_style: Option<FontStyle>,
     font_weight: Option<FontWeight>,
     font_family: Option<FontFamily>,
-    font_size: Option<f64>,
+    font_size: Option<crate::datatype::StringOrNumber>,
     line_height: Option<f64>,
     background_color: Option<Color>,
     border_color: Option<Color>,
@@ -92,6 +97,14 @@ impl From<(&str, i64, i64)> for RadarIndicator {
 #[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct RadarCoordinate {
+    clockwise: Option<bool>,
+    coordinate_system: Option<crate::element::CoordinateSystem>,
+    coordinate_system_usage: Option<crate::element::CoordinateSystemUsage>,
+    coord: Option<crate::datatype::CompositeValue>,
+    matrix_index: Option<f64>,
+    matrix_id: Option<String>,
+    calendar_index: Option<f64>,
+    calendar_id: Option<String>,
     id: Option<String>,
     /// The `zlevel` value of all graphical elements in.
     zlevel: Option<f64>,

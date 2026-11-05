@@ -25,7 +25,7 @@ pub fn chart() -> Chart {
             Grid::new()
                 .left("3%")
                 .right("4%")
-                .bottom("3%")
+                .bottom(65)
                 .contain_label(true),
         )
         .x_axis(

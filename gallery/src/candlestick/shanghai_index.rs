@@ -29,6 +29,7 @@ pub fn chart() -> Chart {
     Chart::new()
         .legend(
             Legend::new()
+                .top(10)
                 .inactive_color("#777")
                 .data(vec!["日K", "MA5", "MA10", "MA20", "MA30"]),
         )

@@ -62,6 +62,15 @@ pub struct TreeNode {
 #[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Tree {
+    roam_trigger: Option<crate::element::RoamTrigger>,
+    scale_limit: Option<crate::element::ScaleLimit>,
+    coordinate_system: Option<crate::element::CoordinateSystem>,
+    coordinate_system_usage: Option<crate::element::CoordinateSystemUsage>,
+    coord: Option<crate::datatype::CompositeValue>,
+    matrix_index: Option<f64>,
+    matrix_id: Option<String>,
+    calendar_index: Option<f64>,
+    calendar_id: Option<String>,
     #[serde(rename = "type")]
     #[charming_type = "tree"]
     type_: String,
@@ -90,7 +99,7 @@ pub struct Tree {
     symbol_offset: Option<CompositeValue>,
     edge_shape: Option<TreeEdgeShape>,
     edge_fork_position: Option<String>,
-    roam: Option<bool>,
+    roam: Option<crate::element::Roam>,
     initial_tree_depth: Option<f64>,
     item_style: Option<ItemStyle>,
     label: Option<Label>,

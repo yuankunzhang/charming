@@ -29,6 +29,12 @@ impl From<&str> for MarkPointDataType {
 #[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct MarkPointData {
+    x: Option<crate::datatype::StringOrNumber>,
+    y: Option<crate::datatype::StringOrNumber>,
+    coord: Option<crate::datatype::CompositeValue>,
+    relative_to: Option<super::MarkerRelativeTo>,
+    z2: Option<f64>,
+    symbol_offset: Option<crate::datatype::CompositeValue>,
     #[serde(rename = "type")]
     type_: Option<MarkPointDataType>,
     name: Option<String>,
@@ -50,6 +56,12 @@ impl From<(&str, &str)> for MarkPointData {
 #[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct MarkPoint {
+    z: Option<f64>,
+    z2: Option<f64>,
+    symbol_offset: Option<crate::datatype::CompositeValue>,
+    emphasis: Option<Box<super::Emphasis>>,
+    blur: Option<Box<super::Blur>>,
+    select: Option<Box<super::Select>>,
     #[charming_set_vec]
     data: Vec<MarkPointData>,
     symbol: Option<Symbol>,

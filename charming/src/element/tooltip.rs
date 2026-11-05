@@ -9,6 +9,13 @@ pub enum TriggerOn {
     Click,
     #[serde(rename = "mousemove|click")]
     MousemoveAndClick,
+    Mousewheel,
+    #[serde(rename = "mousemove|mousewheel")]
+    MousemoveAndMousewheel,
+    #[serde(rename = "click|mousewheel")]
+    ClickAndMousewheel,
+    #[serde(rename = "mousemove|click|mousewheel")]
+    MousemoveAndClickAndMousewheel,
     None,
 }
 
@@ -28,6 +35,7 @@ pub enum Trigger {
 #[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Tooltip {
+    display_transition: Option<bool>,
     trigger: Option<Trigger>,
     trigger_on: Option<TriggerOn>,
     axis_pointer: Option<AxisPointer>,

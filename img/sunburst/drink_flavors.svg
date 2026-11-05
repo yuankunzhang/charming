@@ -1,671 +1,671 @@
 <svg width="600" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 600 450">
 <rect width="600" height="450" x="0" y="0" fill="none"></rect>
-<path d="M300 146.3A78.8 78.8 0 0 1 322.9 149.7L309.8 192.7A33.8 33.8 0 0 0 300 191.3Z" fill="#da0d68" stroke="white" stroke-width="2" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr66-cls-395"></path>
-<path d="M300 67.5A157.5 157.5 0 0 1 311.6 67.9L305.8 146.5A78.8 78.8 0 0 0 300 146.3Z" fill="#975e6d" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr66-cls-396"></path>
-<path d="M311.6 67.9A157.5 157.5 0 0 1 345.9 74.3L322.9 149.7A78.8 78.8 0 0 0 305.8 146.5Z" fill="#e0719c" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr66-cls-397"></path>
-<path d="M312 63.4A162 162 0 0 1 323.9 64.8L323.2 69.2A157.5 157.5 0 0 0 311.6 67.9Z" fill="#f99e1c" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="4" ecmeta_ssr_type="chart" class="zr66-cls-398"></path>
-<path d="M323.9 64.8A162 162 0 0 1 335.6 67L334.6 71.4A157.5 157.5 0 0 0 323.2 69.2Z" fill="#ef5a78" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="5" ecmeta_ssr_type="chart" class="zr66-cls-399"></path>
-<path d="M335.6 67A162 162 0 0 1 347.2 70L345.9 74.3A157.5 157.5 0 0 0 334.6 71.4Z" fill="#f7f1bd" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="6" ecmeta_ssr_type="chart" class="zr66-cls-400"></path>
-<path d="M322.9 149.7A78.8 78.8 0 0 1 378.6 229.4L333.7 226.9A33.8 33.8 0 0 0 309.8 192.7Z" fill="#da1d23" stroke="white" stroke-width="2" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="7" ecmeta_ssr_type="chart" class="zr66-cls-401"></path>
-<path d="M345.9 74.3A157.5 157.5 0 0 1 387.8 94.2L343.9 159.6A78.8 78.8 0 0 0 322.9 149.7Z" fill="#dd4c51" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="8" ecmeta_ssr_type="chart" class="zr66-cls-402"></path>
-<path d="M347.2 70A162 162 0 0 1 358.5 73.9L356.9 78.1A157.5 157.5 0 0 0 345.9 74.3Z" fill="#3e0317" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="9" ecmeta_ssr_type="chart" class="zr66-cls-403"></path>
-<path d="M358.5 73.9A162 162 0 0 1 369.5 78.7L367.6 82.7A157.5 157.5 0 0 0 356.9 78.1Z" fill="#e62969" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="10" ecmeta_ssr_type="chart" class="zr66-cls-404"></path>
-<path d="M369.5 78.7A162 162 0 0 1 380.1 84.2L377.9 88.1A157.5 157.5 0 0 0 367.6 82.7Z" fill="#6569b0" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="11" ecmeta_ssr_type="chart" class="zr66-cls-405"></path>
-<path d="M380.1 84.2A162 162 0 0 1 390.3 90.5L387.8 94.2A157.5 157.5 0 0 0 377.9 88.1Z" fill="#ef2d36" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="12" ecmeta_ssr_type="chart" class="zr66-cls-406"></path>
-<path d="M387.8 94.2A157.5 157.5 0 0 1 406.1 108.6L353.1 166.8A78.8 78.8 0 0 0 343.9 159.6Z" fill="#c94a44" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="13" ecmeta_ssr_type="chart" class="zr66-cls-407"></path>
-<path d="M390.3 90.5A162 162 0 0 1 400 97.5L397.2 101.1A157.5 157.5 0 0 0 387.8 94.2Z" fill="#b53b54" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="14" ecmeta_ssr_type="chart" class="zr66-cls-408"></path>
-<path d="M400 97.5A162 162 0 0 1 409.1 105.3L406.1 108.6A157.5 157.5 0 0 0 397.2 101.1Z" fill="#a5446f" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="15" ecmeta_ssr_type="chart" class="zr66-cls-409"></path>
-<path d="M406.1 108.6A157.5 157.5 0 0 1 453 187.5L376.5 206.3A78.8 78.8 0 0 0 353.1 166.8Z" fill="#dd4c51" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="16" ecmeta_ssr_type="chart" class="zr66-cls-402"></path>
-<path d="M409.1 105.3A162 162 0 0 1 417.7 113.7L414.4 116.8A157.5 157.5 0 0 0 406.1 108.6Z" fill="#f2684b" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="17" ecmeta_ssr_type="chart" class="zr66-cls-410"></path>
-<path d="M417.7 113.7A162 162 0 0 1 425.6 122.7L422.1 125.5A157.5 157.5 0 0 0 414.4 116.8Z" fill="#e73451" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="18" ecmeta_ssr_type="chart" class="zr66-cls-411"></path>
-<path d="M425.6 122.7A162 162 0 0 1 432.8 132.2L429.1 134.8A157.5 157.5 0 0 0 422.1 125.5Z" fill="#e65656" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="19" ecmeta_ssr_type="chart" class="zr66-cls-412"></path>
-<path d="M432.8 132.2A162 162 0 0 1 439.3 142.3L435.4 144.6A157.5 157.5 0 0 0 429.1 134.8Z" fill="#f89a1c" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="20" ecmeta_ssr_type="chart" class="zr66-cls-413"></path>
-<path d="M439.3 142.3A162 162 0 0 1 445 152.8L441 154.8A157.5 157.5 0 0 0 435.4 144.6Z" fill="#aeb92c" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="21" ecmeta_ssr_type="chart" class="zr66-cls-414"></path>
-<path d="M445 152.8A162 162 0 0 1 450 163.7L445.8 165.4A157.5 157.5 0 0 0 441 154.8Z" fill="#4eb849" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="22" ecmeta_ssr_type="chart" class="zr66-cls-415"></path>
-<path d="M450 163.7A162 162 0 0 1 454.1 174.9L449.8 176.3A157.5 157.5 0 0 0 445.8 165.4Z" fill="#f68a5c" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="23" ecmeta_ssr_type="chart" class="zr66-cls-416"></path>
-<path d="M454.1 174.9A162 162 0 0 1 457.3 186.5L453 187.5A157.5 157.5 0 0 0 449.8 176.3Z" fill="#baa635" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="24" ecmeta_ssr_type="chart" class="zr66-cls-417"></path>
-<path d="M453 187.5A157.5 157.5 0 0 1 457.3 233.7L378.6 229.4A78.8 78.8 0 0 0 376.5 206.3Z" fill="#f7a128" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="25" ecmeta_ssr_type="chart" class="zr66-cls-418"></path>
-<path d="M457.3 186.5A162 162 0 0 1 459.8 198.2L455.3 198.9A157.5 157.5 0 0 0 453 187.5Z" fill="#f26355" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="26" ecmeta_ssr_type="chart" class="zr66-cls-419"></path>
-<path d="M459.8 198.2A162 162 0 0 1 461.3 210.1L456.8 210.5A157.5 157.5 0 0 0 455.3 198.9Z" fill="#e2631e" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="27" ecmeta_ssr_type="chart" class="zr66-cls-420"></path>
-<path d="M461.3 210.1A162 162 0 0 1 462 222L457.5 222.1A157.5 157.5 0 0 0 456.8 210.5Z" fill="#fde404" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="28" ecmeta_ssr_type="chart" class="zr66-cls-421"></path>
-<path d="M462 222A162 162 0 0 1 461.8 234L457.3 233.7A157.5 157.5 0 0 0 457.5 222.1Z" fill="#7eb138" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="29" ecmeta_ssr_type="chart" class="zr66-cls-422"></path>
-<path d="M378.6 229.4A78.8 78.8 0 0 1 355.2 281.2L323.6 249.1A33.8 33.8 0 0 0 333.7 226.9Z" fill="#ebb40f" stroke="white" stroke-width="2" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="30" ecmeta_ssr_type="chart" class="zr66-cls-423"></path>
-<path d="M457.3 233.7A157.5 157.5 0 0 1 438.3 300.4L369.1 262.7A78.8 78.8 0 0 0 378.6 229.4Z" fill="#e1c315" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="31" ecmeta_ssr_type="chart" class="zr66-cls-424"></path>
-<path d="M461.8 234A162 162 0 0 1 460.6 245.9L456.2 245.3A157.5 157.5 0 0 0 457.3 233.7Z" fill="#9ea718" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="32" ecmeta_ssr_type="chart" class="zr66-cls-425"></path>
-<path d="M460.6 245.9A162 162 0 0 1 458.7 257.7L454.3 256.8A157.5 157.5 0 0 0 456.2 245.3Z" fill="#94a76f" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="33" ecmeta_ssr_type="chart" class="zr66-cls-426"></path>
-<path d="M458.7 257.7A162 162 0 0 1 455.8 269.3L451.5 268.1A157.5 157.5 0 0 0 454.3 256.8Z" fill="#d0b24f" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="34" ecmeta_ssr_type="chart" class="zr66-cls-427"></path>
-<path d="M455.8 269.3A162 162 0 0 1 452.1 280.7L447.9 279.2A157.5 157.5 0 0 0 451.5 268.1Z" fill="#8eb646" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="35" ecmeta_ssr_type="chart" class="zr66-cls-428"></path>
-<path d="M452.1 280.7A162 162 0 0 1 447.6 291.8L443.5 289.9A157.5 157.5 0 0 0 447.9 279.2Z" fill="#faef07" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="36" ecmeta_ssr_type="chart" class="zr66-cls-429"></path>
-<path d="M447.6 291.8A162 162 0 0 1 442.2 302.5L438.3 300.4A157.5 157.5 0 0 0 443.5 289.9Z" fill="#c1ba07" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="37" ecmeta_ssr_type="chart" class="zr66-cls-430"></path>
-<path d="M438.3 300.4A157.5 157.5 0 0 1 410.3 337.4L355.2 281.2A78.8 78.8 0 0 0 369.1 262.7Z" fill="#b09733" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="38" ecmeta_ssr_type="chart" class="zr66-cls-431"></path>
-<path d="M442.2 302.5A162 162 0 0 1 436.1 312.8L432.4 310.4A157.5 157.5 0 0 0 438.3 300.4Z" fill="#8f1c53" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="39" ecmeta_ssr_type="chart" class="zr66-cls-432"></path>
-<path d="M436.1 312.8A162 162 0 0 1 429.3 322.6L425.7 319.9A157.5 157.5 0 0 0 432.4 310.4Z" fill="#b34039" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="40" ecmeta_ssr_type="chart" class="zr66-cls-433"></path>
-<path d="M429.3 322.6A162 162 0 0 1 421.7 331.9L418.3 328.9A157.5 157.5 0 0 0 425.7 319.9Z" fill="#ba9232" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="41" ecmeta_ssr_type="chart" class="zr66-cls-434"></path>
-<path d="M421.7 331.9A162 162 0 0 1 413.5 340.6L410.3 337.4A157.5 157.5 0 0 0 418.3 328.9Z" fill="#8b6439" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="42" ecmeta_ssr_type="chart" class="zr66-cls-435"></path>
-<path d="M355.2 281.2A78.8 78.8 0 0 1 302.9 303.7L301.2 258.7A33.8 33.8 0 0 0 323.6 249.1Z" fill="#187a2f" stroke="white" stroke-width="2" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="43" ecmeta_ssr_type="chart" class="zr66-cls-436"></path>
-<path d="M410.3 337.4A157.5 157.5 0 0 1 401.7 345.2L350.9 285.1A78.8 78.8 0 0 0 355.2 281.2Z" fill="#a2b029" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="44" ecmeta_ssr_type="chart" class="zr66-cls-437"></path>
-<path d="M401.7 345.2A157.5 157.5 0 0 1 392.6 352.4L346.3 288.7A78.8 78.8 0 0 0 350.9 285.1Z" fill="#718933" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="45" ecmeta_ssr_type="chart" class="zr66-cls-438"></path>
-<path d="M392.6 352.4A157.5 157.5 0 0 1 317.4 381.5L308.7 303.3A78.8 78.8 0 0 0 346.3 288.7Z" fill="#3aa255" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="46" ecmeta_ssr_type="chart" class="zr66-cls-439"></path>
-<path d="M395.2 356.1A162 162 0 0 1 385.3 362.7L382.9 358.9A157.5 157.5 0 0 0 392.6 352.4Z" fill="#a2bb2b" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="47" ecmeta_ssr_type="chart" class="zr66-cls-440"></path>
-<path d="M385.3 362.7A162 162 0 0 1 374.9 368.7L372.8 364.7A157.5 157.5 0 0 0 382.9 358.9Z" fill="#62aa3c" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="48" ecmeta_ssr_type="chart" class="zr66-cls-441"></path>
-<path d="M374.9 368.7A162 162 0 0 1 364.1 373.8L362.3 369.7A157.5 157.5 0 0 0 372.8 364.7Z" fill="#03a653" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="49" ecmeta_ssr_type="chart" class="zr66-cls-442"></path>
-<path d="M364.1 373.8A162 162 0 0 1 352.9 378.1L351.4 373.9A157.5 157.5 0 0 0 362.3 369.7Z" fill="#038549" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="50" ecmeta_ssr_type="chart" class="zr66-cls-443"></path>
-<path d="M352.9 378.1A162 162 0 0 1 341.4 381.6L340.3 377.3A157.5 157.5 0 0 0 351.4 373.9Z" fill="#28b44b" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="51" ecmeta_ssr_type="chart" class="zr66-cls-444"></path>
-<path d="M341.4 381.6A162 162 0 0 1 329.8 384.2L328.9 379.8A157.5 157.5 0 0 0 340.3 377.3Z" fill="#a3a830" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="52" ecmeta_ssr_type="chart" class="zr66-cls-445"></path>
-<path d="M329.8 384.2A162 162 0 0 1 317.9 386L317.4 381.5A157.5 157.5 0 0 0 328.9 379.8Z" fill="#7ac141" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="53" ecmeta_ssr_type="chart" class="zr66-cls-446"></path>
-<path d="M317.4 381.5A157.5 157.5 0 0 1 305.8 382.4L302.9 303.7A78.8 78.8 0 0 0 308.7 303.3Z" fill="#5e9a80" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="54" ecmeta_ssr_type="chart" class="zr66-cls-447"></path>
-<path d="M302.9 303.7A78.8 78.8 0 0 1 228.3 257.5L269.3 238.9A33.8 33.8 0 0 0 301.2 258.7Z" fill="#0aa3b5" stroke="white" stroke-width="2" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="55" ecmeta_ssr_type="chart" class="zr66-cls-448"></path>
-<path d="M305.8 382.4A157.5 157.5 0 0 1 198.3 345.2L249.1 285.1A78.8 78.8 0 0 0 302.9 303.7Z" fill="#9db2b7" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="56" ecmeta_ssr_type="chart" class="zr66-cls-449"></path>
-<path d="M306 386.9A162 162 0 0 1 294 386.9L294.2 382.4A157.5 157.5 0 0 0 305.8 382.4Z" fill="#8b8c90" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="57" ecmeta_ssr_type="chart" class="zr66-cls-450"></path>
-<path d="M294 386.9A162 162 0 0 1 282.1 386L282.6 381.5A157.5 157.5 0 0 0 294.2 382.4Z" fill="#beb276" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="58" ecmeta_ssr_type="chart" class="zr66-cls-451"></path>
-<path d="M282.1 386A162 162 0 0 1 270.2 384.2L271.1 379.8A157.5 157.5 0 0 0 282.6 381.5Z" fill="#fefef4" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="59" ecmeta_ssr_type="chart" class="zr66-cls-452"></path>
-<path d="M270.2 384.2A162 162 0 0 1 258.6 381.6L259.7 377.3A157.5 157.5 0 0 0 271.1 379.8Z" fill="#744e03" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="60" ecmeta_ssr_type="chart" class="zr66-cls-453"></path>
-<path d="M258.6 381.6A162 162 0 0 1 247.1 378.1L248.6 373.9A157.5 157.5 0 0 0 259.7 377.3Z" fill="#a3a36f" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="61" ecmeta_ssr_type="chart" class="zr66-cls-454"></path>
-<path d="M247.1 378.1A162 162 0 0 1 235.9 373.8L237.7 369.7A157.5 157.5 0 0 0 248.6 373.9Z" fill="#c9b583" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="62" ecmeta_ssr_type="chart" class="zr66-cls-455"></path>
-<path d="M235.9 373.8A162 162 0 0 1 225.1 368.7L227.2 364.7A157.5 157.5 0 0 0 237.7 369.7Z" fill="#978847" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="63" ecmeta_ssr_type="chart" class="zr66-cls-456"></path>
-<path d="M225.1 368.7A162 162 0 0 1 214.7 362.7L217.1 358.9A157.5 157.5 0 0 0 227.2 364.7Z" fill="#9d977f" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="64" ecmeta_ssr_type="chart" class="zr66-cls-457"></path>
-<path d="M214.7 362.7A162 162 0 0 1 204.8 356.1L207.4 352.4A157.5 157.5 0 0 0 217.1 358.9Z" fill="#cc7b6a" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="65" ecmeta_ssr_type="chart" class="zr66-cls-458"></path>
-<path d="M204.8 356.1A162 162 0 0 1 195.4 348.7L198.3 345.2A157.5 157.5 0 0 0 207.4 352.4Z" fill="#db646a" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="66" ecmeta_ssr_type="chart" class="zr66-cls-459"></path>
-<path d="M198.3 345.2A157.5 157.5 0 0 1 156.5 289.9L228.3 257.5A78.8 78.8 0 0 0 249.1 285.1Z" fill="#76c0cb" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="67" ecmeta_ssr_type="chart" class="zr66-cls-460"></path>
-<path d="M195.4 348.7A162 162 0 0 1 186.5 340.6L189.7 337.4A157.5 157.5 0 0 0 198.3 345.2Z" fill="#80a89d" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="68" ecmeta_ssr_type="chart" class="zr66-cls-461"></path>
-<path d="M186.5 340.6A162 162 0 0 1 178.3 331.9L181.7 328.9A157.5 157.5 0 0 0 189.7 337.4Z" fill="#def2fd" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="69" ecmeta_ssr_type="chart" class="zr66-cls-462"></path>
-<path d="M178.3 331.9A162 162 0 0 1 170.7 322.6L174.3 319.9A157.5 157.5 0 0 0 181.7 328.9Z" fill="#7a9bae" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="70" ecmeta_ssr_type="chart" class="zr66-cls-463"></path>
-<path d="M170.7 322.6A162 162 0 0 1 163.9 312.8L167.6 310.4A157.5 157.5 0 0 0 174.3 319.9Z" fill="#039fb8" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="71" ecmeta_ssr_type="chart" class="zr66-cls-464"></path>
-<path d="M163.9 312.8A162 162 0 0 1 157.8 302.5L161.7 300.4A157.5 157.5 0 0 0 167.6 310.4Z" fill="#5e777b" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="72" ecmeta_ssr_type="chart" class="zr66-cls-465"></path>
-<path d="M157.8 302.5A162 162 0 0 1 152.4 291.8L156.5 289.9A157.5 157.5 0 0 0 161.7 300.4Z" fill="#120c0c" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="73" ecmeta_ssr_type="chart" class="zr66-cls-466"></path>
-<path d="M228.3 257.5A78.8 78.8 0 0 1 222.3 212L266.7 219.4A33.8 33.8 0 0 0 269.3 238.9Z" fill="#c94930" stroke="white" stroke-width="2" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="74" ecmeta_ssr_type="chart" class="zr66-cls-467"></path>
-<path d="M156.5 289.9A157.5 157.5 0 0 1 152.1 279.2L226.1 252.1A78.8 78.8 0 0 0 228.3 257.5Z" fill="#caa465" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="75" ecmeta_ssr_type="chart" class="zr66-cls-468"></path>
-<path d="M152.1 279.2A157.5 157.5 0 0 1 148.5 268.1L224.3 246.6A78.8 78.8 0 0 0 226.1 252.1Z" fill="#dfbd7e" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="76" ecmeta_ssr_type="chart" class="zr66-cls-469"></path>
-<path d="M148.5 268.1A157.5 157.5 0 0 1 142.5 222.1L221.3 223.5A78.8 78.8 0 0 0 224.3 246.6Z" fill="#be8663" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="77" ecmeta_ssr_type="chart" class="zr66-cls-470"></path>
-<path d="M144.2 269.3A162 162 0 0 1 141.3 257.7L145.7 256.8A157.5 157.5 0 0 0 148.5 268.1Z" fill="#b9a449" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="78" ecmeta_ssr_type="chart" class="zr66-cls-471"></path>
-<path d="M141.3 257.7A162 162 0 0 1 139.4 245.9L143.8 245.3A157.5 157.5 0 0 0 145.7 256.8Z" fill="#899893" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="79" ecmeta_ssr_type="chart" class="zr66-cls-472"></path>
-<path d="M139.4 245.9A162 162 0 0 1 138.2 234L142.7 233.7A157.5 157.5 0 0 0 143.8 245.3Z" fill="#a1743b" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="80" ecmeta_ssr_type="chart" class="zr66-cls-473"></path>
-<path d="M138.2 234A162 162 0 0 1 138 222L142.5 222.1A157.5 157.5 0 0 0 142.7 233.7Z" fill="#894810" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="81" ecmeta_ssr_type="chart" class="zr66-cls-474"></path>
-<path d="M142.5 222.1A157.5 157.5 0 0 1 144.7 198.9L222.3 212A78.8 78.8 0 0 0 221.3 223.5Z" fill="#ddaf61" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="82" ecmeta_ssr_type="chart" class="zr66-cls-475"></path>
-<path d="M138 222A162 162 0 0 1 138.7 210.1L143.2 210.5A157.5 157.5 0 0 0 142.5 222.1Z" fill="#b7906f" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="83" ecmeta_ssr_type="chart" class="zr66-cls-476"></path>
-<path d="M138.7 210.1A162 162 0 0 1 140.2 198.2L144.7 198.9A157.5 157.5 0 0 0 143.2 210.5Z" fill="#eb9d5f" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="84" ecmeta_ssr_type="chart" class="zr66-cls-477"></path>
-<path d="M222.3 212A78.8 78.8 0 0 1 235.4 179.9L272.3 205.7A33.8 33.8 0 0 0 266.7 219.4Z" fill="#ad213e" stroke="white" stroke-width="2" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="85" ecmeta_ssr_type="chart" class="zr66-cls-478"></path>
-<path d="M144.7 198.9A157.5 157.5 0 0 1 147 187.5L223.5 206.3A78.8 78.8 0 0 0 222.3 212Z" fill="#794752" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="86" ecmeta_ssr_type="chart" class="zr66-cls-479"></path>
-<path d="M147 187.5A157.5 157.5 0 0 1 150.2 176.3L225.1 200.7A78.8 78.8 0 0 0 223.5 206.3Z" fill="#cc3d41" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="87" ecmeta_ssr_type="chart" class="zr66-cls-480"></path>
-<path d="M150.2 176.3A157.5 157.5 0 0 1 170.9 134.8L235.4 179.9A78.8 78.8 0 0 0 225.1 200.7Z" fill="#b14d57" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="88" ecmeta_ssr_type="chart" class="zr66-cls-481"></path>
-<path d="M145.9 174.9A162 162 0 0 1 150 163.7L154.2 165.4A157.5 157.5 0 0 0 150.2 176.3Z" fill="#c78936" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="89" ecmeta_ssr_type="chart" class="zr66-cls-482"></path>
-<path d="M150 163.7A162 162 0 0 1 155 152.8L159 154.8A157.5 157.5 0 0 0 154.2 165.4Z" fill="#8c292c" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="90" ecmeta_ssr_type="chart" class="zr66-cls-483"></path>
-<path d="M155 152.8A162 162 0 0 1 160.7 142.3L164.6 144.6A157.5 157.5 0 0 0 159 154.8Z" fill="#e5762e" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="91" ecmeta_ssr_type="chart" class="zr66-cls-484"></path>
-<path d="M160.7 142.3A162 162 0 0 1 167.2 132.2L170.9 134.8A157.5 157.5 0 0 0 164.6 144.6Z" fill="#a16c5a" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="92" ecmeta_ssr_type="chart" class="zr66-cls-485"></path>
-<path d="M235.4 179.9A78.8 78.8 0 0 1 256.1 159.6L281.2 197A33.8 33.8 0 0 0 272.3 205.7Z" fill="#a87b64" stroke="white" stroke-width="2" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="93" ecmeta_ssr_type="chart" class="zr66-cls-486"></path>
-<path d="M170.9 134.8A157.5 157.5 0 0 1 193.9 108.6L246.9 166.8A78.8 78.8 0 0 0 235.4 179.9Z" fill="#c78869" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="94" ecmeta_ssr_type="chart" class="zr66-cls-487"></path>
-<path d="M167.2 132.2A162 162 0 0 1 174.4 122.7L177.9 125.5A157.5 157.5 0 0 0 170.9 134.8Z" fill="#d4ad12" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="95" ecmeta_ssr_type="chart" class="zr66-cls-488"></path>
-<path d="M174.4 122.7A162 162 0 0 1 182.3 113.7L185.6 116.8A157.5 157.5 0 0 0 177.9 125.5Z" fill="#9d5433" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="96" ecmeta_ssr_type="chart" class="zr66-cls-489"></path>
-<path d="M182.3 113.7A162 162 0 0 1 190.9 105.3L193.9 108.6A157.5 157.5 0 0 0 185.6 116.8Z" fill="#c89f83" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="97" ecmeta_ssr_type="chart" class="zr66-cls-490"></path>
-<path d="M193.9 108.6A157.5 157.5 0 0 1 212.2 94.2L256.1 159.6A78.8 78.8 0 0 0 246.9 166.8Z" fill="#bb764c" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="98" ecmeta_ssr_type="chart" class="zr66-cls-491"></path>
-<path d="M190.9 105.3A162 162 0 0 1 200 97.5L202.8 101.1A157.5 157.5 0 0 0 193.9 108.6Z" fill="#692a19" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="99" ecmeta_ssr_type="chart" class="zr66-cls-492"></path>
-<path d="M200 97.5A162 162 0 0 1 209.7 90.5L212.2 94.2A157.5 157.5 0 0 0 202.8 101.1Z" fill="#470604" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="100" ecmeta_ssr_type="chart" class="zr66-cls-493"></path>
-<path d="M256.1 159.6A78.8 78.8 0 0 1 300 146.3L300 191.3A33.8 33.8 0 0 0 281.2 197Z" fill="#e65832" stroke="white" stroke-width="2" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="101" ecmeta_ssr_type="chart" class="zr66-cls-494"></path>
-<path d="M212.2 94.2A157.5 157.5 0 0 1 254.1 74.3L277.1 149.7A78.8 78.8 0 0 0 256.1 159.6Z" fill="#d45a59" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="102" ecmeta_ssr_type="chart" class="zr66-cls-495"></path>
-<path d="M209.7 90.5A162 162 0 0 1 219.9 84.2L222.1 88.1A157.5 157.5 0 0 0 212.2 94.2Z" fill="#310d0f" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="103" ecmeta_ssr_type="chart" class="zr66-cls-496"></path>
-<path d="M219.9 84.2A162 162 0 0 1 230.5 78.7L232.4 82.7A157.5 157.5 0 0 0 222.1 88.1Z" fill="#ae341f" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="104" ecmeta_ssr_type="chart" class="zr66-cls-497"></path>
-<path d="M230.5 78.7A162 162 0 0 1 241.5 73.9L243.1 78.1A157.5 157.5 0 0 0 232.4 82.7Z" fill="#d78823" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="105" ecmeta_ssr_type="chart" class="zr66-cls-498"></path>
-<path d="M241.5 73.9A162 162 0 0 1 252.8 70L254.1 74.3A157.5 157.5 0 0 0 243.1 78.1Z" fill="#da5c1f" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="106" ecmeta_ssr_type="chart" class="zr66-cls-499"></path>
-<path d="M254.1 74.3A157.5 157.5 0 0 1 265.4 71.4L282.7 148.2A78.8 78.8 0 0 0 277.1 149.7Z" fill="#f89a80" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="107" ecmeta_ssr_type="chart" class="zr66-cls-500"></path>
-<path d="M265.4 71.4A157.5 157.5 0 0 1 276.8 69.2L288.4 147.1A78.8 78.8 0 0 0 282.7 148.2Z" fill="#f37674" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="108" ecmeta_ssr_type="chart" class="zr66-cls-501"></path>
-<path d="M276.8 69.2A157.5 157.5 0 0 1 288.4 67.9L294.2 146.5A78.8 78.8 0 0 0 288.4 147.1Z" fill="#e75b68" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="109" ecmeta_ssr_type="chart" class="zr66-cls-502"></path>
-<path d="M288.4 67.9A157.5 157.5 0 0 1 300 67.5L300 146.3A78.8 78.8 0 0 0 294.2 146.5Z" fill="#d0545f" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="110" ecmeta_ssr_type="chart" class="zr66-cls-503"></path>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.989,0.147,-0.147,0.989,308.2857,169.3636)" fill="#eee" stroke="#da0d68" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Flora</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.037,-0.999,0.999,0.037,305.6351,72.6041)" fill="#eee" stroke="#975e6d" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Black Tea</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.184,-0.983,0.983,0.184,328.0218,75.0966)" fill="#333">Floral</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="3" transform="matrix(0.111,-0.994,0.994,0.111,318.479,59.0255)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Chamomile</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="3" transform="matrix(0.184,-0.983,0.983,0.184,330.6862,60.8435)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Rose</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="3" transform="matrix(0.256,-0.967,0.967,0.256,342.7257,63.558)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Jasmine</text>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.573,0.82,-0.82,0.573,346.1104,192.7836)" fill="#eee" stroke="#da1d23" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Fruity</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.429,-0.903,0.903,0.429,365.4409,87.2548)" fill="#eee" stroke="#dd4c51" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Berry</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="3" transform="matrix(0.327,-0.945,0.945,0.327,354.532,67.1543)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Blackberry</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="3" transform="matrix(0.395,-0.918,0.918,0.395,366.0404,71.6127)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Raspberry</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="3" transform="matrix(0.462,-0.887,0.887,0.462,377.188,76.9088)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Blueberry</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="3" transform="matrix(0.526,-0.85,0.85,0.526,387.9142,83.0137)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Strawberry</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.617,-0.787,0.787,0.617,394.1349,105.0214)" fill="#eee" stroke="#c94a44" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Dried Fruit</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="3" transform="matrix(0.588,-0.809,0.809,0.588,398.1601,89.8942)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Raisin</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="3" transform="matrix(0.646,-0.763,0.763,0.646,407.87,97.5125)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Prune</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.86,-0.511,0.511,0.86,431.1195,147.1287)" fill="#eee" stroke="#dd4c51" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Other Fruit</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="3" transform="matrix(0.701,-0.714,0.714,0.701,416.9907,105.8271)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Coconut</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="3" transform="matrix(0.751,-0.66,0.66,0.751,425.4724,114.7926)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Cherry</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="3" transform="matrix(0.798,-0.603,0.603,0.798,433.2689,124.36)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Pomegranate</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="3" transform="matrix(0.84,-0.542,0.542,0.84,440.3375,134.4771)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Pineapple</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="3" transform="matrix(0.878,-0.479,0.479,0.878,446.6396,145.0886)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Grape</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="3" transform="matrix(0.911,-0.412,0.412,0.911,452.1408,156.1365)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Apple</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="3" transform="matrix(0.939,-0.344,0.344,0.939,456.8111,167.5605)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Peach</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="3" transform="matrix(0.962,-0.274,0.274,0.962,460.6249,179.2983)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Pear</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.996,-0.092,0.092,0.996,451.8495,210.9291)" fill="#333">Citrus Fruit</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="3" transform="matrix(0.979,-0.202,0.202,0.979,463.5614,191.2856)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Grapefruit</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="3" transform="matrix(0.992,-0.129,0.129,0.992,465.6047,203.4571)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Orange</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="3" transform="matrix(0.998,-0.055,0.055,0.998,466.7434,215.7463)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Lemon</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="3" transform="matrix(1,0.018,-0.018,1,466.9715,228.086)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Lime</text>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="-6" transform="matrix(0.412,-0.911,0.911,0.412,351.245,248.195)" fill="#333">Sour/</text>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="matrix(0.412,-0.911,0.911,0.412,351.245,248.195)" fill="#333">Fermented</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.962,0.274,-0.274,0.962,446.6784,266.7336)" fill="#333">Sour</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" x="3" transform="matrix(0.996,0.092,-0.092,0.996,466.2876,240.4088)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Sour Aromatics</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" x="3" transform="matrix(0.986,0.166,-0.166,0.986,464.6955,252.6475)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Acetic Acid</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" x="3" transform="matrix(0.971,0.238,-0.238,0.971,462.2039,264.7352)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Butyric Acid</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" x="3" transform="matrix(0.951,0.309,-0.309,0.951,458.8264,276.6058)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Isovaleric Acid</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" x="3" transform="matrix(0.926,0.378,-0.378,0.926,454.5815,288.1946)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Citric Acid</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" x="3" transform="matrix(0.895,0.446,-0.446,0.895,449.4923,299.4383)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Malic Acid</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" y="-6" transform="matrix(0.798,0.603,-0.603,0.798,421.6976,316.9018)" fill="#333">Alcohol/</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" y="6" transform="matrix(0.798,0.603,-0.603,0.798,421.6976,316.9018)" fill="#333">Fremented</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="3" transform="matrix(0.86,0.511,-0.511,0.86,443.5866,310.2754)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Winey</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="3" transform="matrix(0.82,0.573,-0.573,0.82,436.8967,320.6468)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Whiskey</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="3" transform="matrix(0.775,0.632,-0.632,0.775,429.4591,330.4957)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Fremented</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="3" transform="matrix(0.726,0.687,-0.687,0.726,421.3144,339.7685)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Overripe</text>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="-6" transform="matrix(0.918,-0.395,0.395,0.918,322.2441,276.6649)" fill="#eee" stroke="#187a2f" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Green/</text>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="matrix(0.918,-0.395,0.395,0.918,322.2441,276.6649)" fill="#eee" stroke="#187a2f" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Vegetative</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.674,0.739,-0.739,0.674,402.7386,337.6989)" fill="#333">Olive Oil</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.617,0.787,-0.787,0.617,394.1349,344.9786)" fill="#eee" stroke="#718933" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Raw</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" y="-6" transform="matrix(0.361,0.932,-0.932,0.361,355.0894,367.202)" fill="#eee" stroke="#3aa255" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Green/</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" y="6" transform="matrix(0.361,0.932,-0.932,0.361,355.0894,367.202)" fill="#eee" stroke="#3aa255" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Vegetative</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="3" transform="matrix(0.557,0.83,-0.83,0.557,393.1007,363.6407)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Under-ripe</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="3" transform="matrix(0.495,0.869,-0.869,0.495,382.6075,370.1379)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Peapod</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="3" transform="matrix(0.429,0.903,-0.903,0.429,371.6631,375.8423)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Fresh</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" x="3" transform="matrix(0.361,0.932,-0.932,0.361,360.3274,380.7229)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Dark Green</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="3" transform="matrix(0.291,0.957,-0.957,0.291,348.6621,384.7529)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Vegetative</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="3" transform="matrix(0.22,0.976,-0.976,0.22,336.731,387.9105)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Hay-like</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="3" transform="matrix(0.147,0.989,-0.989,0.147,324.5994,390.1783)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Herb-like</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.074,0.997,-0.997,0.074,311.2625,377.0835)" fill="#333">Beany</text>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.85,0.526,-0.526,0.85,270.3882,272.8247)" fill="#eee" stroke="#0aa3b5" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Other</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.327,-0.945,0.945,0.327,250.2028,369.1405)" fill="#333">Papery/Musty</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="3" transform="matrix(0,1,-1,0,300,392)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Stale</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="-3" transform="matrix(0.074,-0.997,0.997,0.074,287.6666,391.544)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Cardboard</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="-3" transform="matrix(0.147,-0.989,0.989,0.147,275.4006,390.1783)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Papery</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="-3" transform="matrix(0.22,-0.976,0.976,0.22,263.269,387.9105)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Woody</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="-3" transform="matrix(0.291,-0.957,0.957,0.291,251.3379,384.7529)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Moldy/Damp</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="-3" transform="matrix(0.361,-0.932,0.932,0.361,239.6726,380.7229)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Musty/Dusty</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="-3" transform="matrix(0.429,-0.903,0.903,0.429,228.3369,375.8423)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Musty/Earthy</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="-3" transform="matrix(0.495,-0.869,0.869,0.495,217.3925,370.1379)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Animalic</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" x="-3" transform="matrix(0.557,-0.83,0.83,0.557,206.8993,363.6407)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Meaty Brothy</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="-3" transform="matrix(0.617,-0.787,0.787,0.617,196.9145,356.3864)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Phenolic</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.798,-0.603,0.603,0.798,178.3024,316.9018)" fill="#333">Chemical</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="-3" transform="matrix(0.674,-0.739,0.739,0.674,187.4928,348.4145)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Bitter</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="-3" transform="matrix(0.726,-0.687,0.687,0.726,178.6856,339.7685)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Salty</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="-3" transform="matrix(0.775,-0.632,0.632,0.775,170.5409,330.4957)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Medicinal</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="-3" transform="matrix(0.82,-0.573,0.573,0.82,163.1033,320.6468)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Petroleum</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="-3" transform="matrix(0.86,-0.511,0.511,0.86,156.4134,310.2754)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Skunky</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="-3" transform="matrix(0.895,-0.446,0.446,0.895,150.5077,299.4383)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Rubber</text>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.129,0.992,-0.992,0.129,244.22,232.2562)" fill="#eee" stroke="#c94930" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Roasted</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.926,-0.378,0.378,0.926,158.8403,282.7077)" fill="#333">Pipe Tobacco</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.951,-0.309,0.309,0.951,154.9639,272.1251)" fill="#333">Tobacco</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.992,-0.129,0.129,0.992,148.7742,244.6724)" fill="#333">Burnt</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="-3" transform="matrix(0.971,-0.238,0.238,0.971,137.7961,264.7352)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Acrid</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="-3" transform="matrix(0.986,-0.166,0.166,0.986,135.3045,252.6475)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Ashy</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="-3" transform="matrix(0.996,-0.092,0.092,0.996,133.7124,240.4088)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Smoky</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" x="-3" transform="matrix(1,-0.018,0.018,1,133.0285,228.086)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Brown, Roast</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.996,0.092,-0.092,0.996,148.1505,210.9291)" fill="#333">Cereal</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="-3" transform="matrix(0.998,0.055,-0.055,0.998,133.2566,215.7463)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Grain</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="-3" transform="matrix(0.992,0.129,-0.129,0.992,134.3953,203.4571)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Malt</text>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.378,-0.926,0.926,0.378,247.9329,203.7144)" fill="#eee" stroke="#ad213e" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Spices</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.979,0.202,-0.202,0.979,150.64,194.2129)" fill="#eee" stroke="#794752" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Pungent</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.962,0.274,-0.274,0.962,153.3216,183.2664)" fill="#eee" stroke="#cc3d41" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Pepper</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.895,0.446,-0.446,0.895,163.4876,157.0249)" fill="#eee" stroke="#b14d57" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Brown Spice</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="-3" transform="matrix(0.939,0.344,-0.344,0.939,143.1889,167.5605)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Anise</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="-3" transform="matrix(0.911,0.412,-0.412,0.911,147.8592,156.1365)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Nutmeg</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="-3" transform="matrix(0.878,0.479,-0.479,0.878,153.3604,145.0886)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Cinnamon</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="-3" transform="matrix(0.84,0.542,-0.542,0.84,159.6625,134.4771)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Clove</text>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="-6" transform="matrix(0.714,-0.701,0.701,0.714,260.5945,184.8594)" fill="#333">Nutty/</text>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="matrix(0.714,-0.701,0.701,0.714,260.5945,184.8594)" fill="#333">Cocoa</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.751,0.66,-0.66,0.751,185.4219,124.3615)" fill="#333">Nutty</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="-3" transform="matrix(0.798,0.603,-0.603,0.798,166.7311,124.36)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Peanuts</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="-3" transform="matrix(0.751,0.66,-0.66,0.751,174.5276,114.7926)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Hazelnut</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="-3" transform="matrix(0.701,0.714,-0.714,0.701,183.0093,105.8271)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Almond</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.617,0.787,-0.787,0.617,205.8651,105.0214)" fill="#333">Cocoa</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="-3" transform="matrix(0.646,0.763,-0.763,0.646,192.13,97.5125)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Chocolate</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" x="-3" transform="matrix(0.588,0.809,-0.809,0.588,201.8399,89.8942)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Dark Chocolate</text>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.957,-0.291,0.291,0.957,283.6093,171.191)" fill="#eee" stroke="#e65832" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Sweet</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.429,0.903,-0.903,0.429,234.5591,87.2548)" fill="#eee" stroke="#d45a59" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Brown Sugar</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="-3" transform="matrix(0.526,0.85,-0.85,0.526,212.0858,83.0137)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Molasses</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" x="-3" transform="matrix(0.462,0.887,-0.887,0.462,222.812,76.9088)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Maple Syrup</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="-3" transform="matrix(0.395,0.918,-0.918,0.395,233.9596,71.6127)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Caramelized</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" x="-3" transform="matrix(0.327,0.945,-0.945,0.327,245.468,67.1543)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Honey</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.256,0.967,-0.967,0.256,260.984,77.5754)" fill="#333">Vanilla</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" transform="matrix(0.184,0.983,-0.983,0.184,271.9782,75.0966)" fill="#333">Vanillin</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.111,0.994,-0.994,0.111,283.1255,73.4365)" fill="#333">Overall Sweet</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.037,0.999,-0.999,0.037,294.3649,72.6041)" fill="#eee" stroke="#d0545f" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Sweet Aromatics</text>
-<path d="M-5 -5l342.6 0l0 46l-342.6 0Z" transform="translate(5 5)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#ccc" stroke-width="0" class="zr66-cls-504"></path>
-<text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:sans-serif;font-weight:bold;" xml:space="preserve" y="7" transform="translate(5 5)" fill="#464646">WORLD COFFEE RESEARCH SENSORY LEXICON</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" y="30" transform="translate(5 5)" fill="#6E7079">Source: https://worldcoffeeresearch.org/work/sensory-lexicon/</text>
+<path d="M300 184.5A63 63 0 0 1 318.4 187.2L307.9 221.7A27 27 0 0 0 300 220.5Z" fill="#da0d68" stroke="white" stroke-width="2" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr72-cls-526"></path>
+<path d="M300 121.5A126 126 0 0 1 309.3 121.8L304.7 184.7A63 63 0 0 0 300 184.5Z" fill="#975e6d" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr72-cls-527"></path>
+<path d="M309.3 121.8A126 126 0 0 1 336.7 127L318.4 187.2A63 63 0 0 0 304.7 184.7Z" fill="#e0719c" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr72-cls-528"></path>
+<path d="M309.6 117.4A130.5 130.5 0 0 1 319.2 118.4L318.6 122.9A126 126 0 0 0 309.3 121.8Z" fill="#f99e1c" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="4" ecmeta_ssr_type="chart" class="zr72-cls-529"></path>
+<path d="M319.2 118.4A130.5 130.5 0 0 1 328.7 120.2L327.7 124.6A126 126 0 0 0 318.6 122.9Z" fill="#ef5a78" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="5" ecmeta_ssr_type="chart" class="zr72-cls-530"></path>
+<path d="M328.7 120.2A130.5 130.5 0 0 1 338 122.7L336.7 127A126 126 0 0 0 327.7 124.6Z" fill="#f7f1bd" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="6" ecmeta_ssr_type="chart" class="zr72-cls-531"></path>
+<path d="M318.4 187.2A63 63 0 0 1 362.9 251L327 249A27 27 0 0 0 307.9 221.7Z" fill="#da1d23" stroke="white" stroke-width="2" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="7" ecmeta_ssr_type="chart" class="zr72-cls-532"></path>
+<path d="M336.7 127A126 126 0 0 1 370.2 142.9L335.1 195.2A63 63 0 0 0 318.4 187.2Z" fill="#dd4c51" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="8" ecmeta_ssr_type="chart" class="zr72-cls-533"></path>
+<path d="M338 122.7A130.5 130.5 0 0 1 347.1 125.8L345.5 130A126 126 0 0 0 336.7 127Z" fill="#3e0317" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="9" ecmeta_ssr_type="chart" class="zr72-cls-534"></path>
+<path d="M347.1 125.8A130.5 130.5 0 0 1 356 129.6L354.1 133.7A126 126 0 0 0 345.5 130Z" fill="#e62969" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="10" ecmeta_ssr_type="chart" class="zr72-cls-535"></path>
+<path d="M356 129.6A130.5 130.5 0 0 1 364.6 134.1L362.3 138A126 126 0 0 0 354.1 133.7Z" fill="#6569b0" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="11" ecmeta_ssr_type="chart" class="zr72-cls-536"></path>
+<path d="M364.6 134.1A130.5 130.5 0 0 1 372.8 139.2L370.2 142.9A126 126 0 0 0 362.3 138Z" fill="#ef2d36" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="12" ecmeta_ssr_type="chart" class="zr72-cls-537"></path>
+<path d="M370.2 142.9A126 126 0 0 1 384.9 154.4L342.4 200.9A63 63 0 0 0 335.1 195.2Z" fill="#c94a44" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="13" ecmeta_ssr_type="chart" class="zr72-cls-538"></path>
+<path d="M372.8 139.2A130.5 130.5 0 0 1 380.6 144.8L377.8 148.4A126 126 0 0 0 370.2 142.9Z" fill="#b53b54" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="14" ecmeta_ssr_type="chart" class="zr72-cls-539"></path>
+<path d="M380.6 144.8A130.5 130.5 0 0 1 387.9 151.1L384.9 154.4A126 126 0 0 0 377.8 148.4Z" fill="#a5446f" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="15" ecmeta_ssr_type="chart" class="zr72-cls-540"></path>
+<path d="M384.9 154.4A126 126 0 0 1 422.4 217.5L361.2 232.5A63 63 0 0 0 342.4 200.9Z" fill="#dd4c51" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="16" ecmeta_ssr_type="chart" class="zr72-cls-533"></path>
+<path d="M387.9 151.1A130.5 130.5 0 0 1 394.8 157.8L391.5 160.9A126 126 0 0 0 384.9 154.4Z" fill="#f2684b" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="17" ecmeta_ssr_type="chart" class="zr72-cls-541"></path>
+<path d="M394.8 157.8A130.5 130.5 0 0 1 401.2 165.1L397.7 167.9A126 126 0 0 0 391.5 160.9Z" fill="#e73451" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="18" ecmeta_ssr_type="chart" class="zr72-cls-542"></path>
+<path d="M401.2 165.1A130.5 130.5 0 0 1 407 172.8L403.3 175.3A126 126 0 0 0 397.7 167.9Z" fill="#e65656" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="19" ecmeta_ssr_type="chart" class="zr72-cls-543"></path>
+<path d="M407 172.8A130.5 130.5 0 0 1 412.2 180.9L408.3 183.2A126 126 0 0 0 403.3 175.3Z" fill="#f89a1c" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="20" ecmeta_ssr_type="chart" class="zr72-cls-544"></path>
+<path d="M412.2 180.9A130.5 130.5 0 0 1 416.8 189.3L412.8 191.3A126 126 0 0 0 408.3 183.2Z" fill="#aeb92c" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="21" ecmeta_ssr_type="chart" class="zr72-cls-545"></path>
+<path d="M416.8 189.3A130.5 130.5 0 0 1 420.8 198.1L416.6 199.8A126 126 0 0 0 412.8 191.3Z" fill="#4eb849" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="22" ecmeta_ssr_type="chart" class="zr72-cls-546"></path>
+<path d="M420.8 198.1A130.5 130.5 0 0 1 424.1 207.2L419.8 208.6A126 126 0 0 0 416.6 199.8Z" fill="#f68a5c" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="23" ecmeta_ssr_type="chart" class="zr72-cls-547"></path>
+<path d="M424.1 207.2A130.5 130.5 0 0 1 426.8 216.4L422.4 217.5A126 126 0 0 0 419.8 208.6Z" fill="#baa635" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="24" ecmeta_ssr_type="chart" class="zr72-cls-548"></path>
+<path d="M422.4 217.5A126 126 0 0 1 425.8 254.5L362.9 251A63 63 0 0 0 361.2 232.5Z" fill="#f7a128" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="25" ecmeta_ssr_type="chart" class="zr72-cls-549"></path>
+<path d="M426.8 216.4A130.5 130.5 0 0 1 428.7 225.9L424.3 226.6A126 126 0 0 0 422.4 217.5Z" fill="#f26355" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="26" ecmeta_ssr_type="chart" class="zr72-cls-550"></path>
+<path d="M428.7 225.9A130.5 130.5 0 0 1 429.9 235.5L425.5 235.9A126 126 0 0 0 424.3 226.6Z" fill="#e2631e" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="27" ecmeta_ssr_type="chart" class="zr72-cls-551"></path>
+<path d="M429.9 235.5A130.5 130.5 0 0 1 430.5 245.1L426 245.2A126 126 0 0 0 425.5 235.9Z" fill="#fde404" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="28" ecmeta_ssr_type="chart" class="zr72-cls-552"></path>
+<path d="M430.5 245.1A130.5 130.5 0 0 1 430.3 254.7L425.8 254.5A126 126 0 0 0 426 245.2Z" fill="#7eb138" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="29" ecmeta_ssr_type="chart" class="zr72-cls-553"></path>
+<path d="M362.9 251A63 63 0 0 1 344.1 292.5L318.9 266.8A27 27 0 0 0 327 249Z" fill="#ebb40f" stroke="white" stroke-width="2" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="30" ecmeta_ssr_type="chart" class="zr72-cls-554"></path>
+<path d="M425.8 254.5A126 126 0 0 1 410.6 307.8L355.3 277.6A63 63 0 0 0 362.9 251Z" fill="#e1c315" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="31" ecmeta_ssr_type="chart" class="zr72-cls-555"></path>
+<path d="M430.3 254.7A130.5 130.5 0 0 1 429.4 264.3L424.9 263.8A126 126 0 0 0 425.8 254.5Z" fill="#9ea718" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="32" ecmeta_ssr_type="chart" class="zr72-cls-556"></path>
+<path d="M429.4 264.3A130.5 130.5 0 0 1 427.8 273.8L423.4 272.9A126 126 0 0 0 424.9 263.8Z" fill="#94a76f" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="33" ecmeta_ssr_type="chart" class="zr72-cls-557"></path>
+<path d="M427.8 273.8A130.5 130.5 0 0 1 425.5 283.2L421.2 282A126 126 0 0 0 423.4 272.9Z" fill="#d0b24f" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="34" ecmeta_ssr_type="chart" class="zr72-cls-558"></path>
+<path d="M425.5 283.2A130.5 130.5 0 0 1 422.5 292.4L418.3 290.8A126 126 0 0 0 421.2 282Z" fill="#8eb646" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="35" ecmeta_ssr_type="chart" class="zr72-cls-559"></path>
+<path d="M422.5 292.4A130.5 130.5 0 0 1 418.9 301.3L414.8 299.5A126 126 0 0 0 418.3 290.8Z" fill="#faef07" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="36" ecmeta_ssr_type="chart" class="zr72-cls-560"></path>
+<path d="M418.9 301.3A130.5 130.5 0 0 1 414.6 309.9L410.6 307.8A126 126 0 0 0 414.8 299.5Z" fill="#c1ba07" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="37" ecmeta_ssr_type="chart" class="zr72-cls-561"></path>
+<path d="M410.6 307.8A126 126 0 0 1 388.3 337.4L344.1 292.5A63 63 0 0 0 355.3 277.6Z" fill="#b09733" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="38" ecmeta_ssr_type="chart" class="zr72-cls-562"></path>
+<path d="M414.6 309.9A130.5 130.5 0 0 1 409.7 318.2L405.9 315.8A126 126 0 0 0 410.6 307.8Z" fill="#8f1c53" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="39" ecmeta_ssr_type="chart" class="zr72-cls-563"></path>
+<path d="M409.7 318.2A130.5 130.5 0 0 1 404.1 326.1L400.6 323.4A126 126 0 0 0 405.9 315.8Z" fill="#b34039" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="40" ecmeta_ssr_type="chart" class="zr72-cls-564"></path>
+<path d="M404.1 326.1A130.5 130.5 0 0 1 398 333.6L394.7 330.7A126 126 0 0 0 400.6 323.4Z" fill="#ba9232" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="41" ecmeta_ssr_type="chart" class="zr72-cls-565"></path>
+<path d="M398 333.6A130.5 130.5 0 0 1 391.4 340.6L388.3 337.4A126 126 0 0 0 394.7 330.7Z" fill="#8b6439" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="42" ecmeta_ssr_type="chart" class="zr72-cls-566"></path>
+<path d="M344.1 292.5A63 63 0 0 1 302.3 310.5L301 274.5A27 27 0 0 0 318.9 266.8Z" fill="#187a2f" stroke="white" stroke-width="2" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="43" ecmeta_ssr_type="chart" class="zr72-cls-567"></path>
+<path d="M388.3 337.4A126 126 0 0 1 381.4 343.7L340.7 295.6A63 63 0 0 0 344.1 292.5Z" fill="#a2b029" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="44" ecmeta_ssr_type="chart" class="zr72-cls-568"></path>
+<path d="M381.4 343.7A126 126 0 0 1 374.1 349.4L337 298.5A63 63 0 0 0 340.7 295.6Z" fill="#718933" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="45" ecmeta_ssr_type="chart" class="zr72-cls-569"></path>
+<path d="M374.1 349.4A126 126 0 0 1 313.9 372.7L307 310.1A63 63 0 0 0 337 298.5Z" fill="#3aa255" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="46" ecmeta_ssr_type="chart" class="zr72-cls-570"></path>
+<path d="M376.7 353.1A130.5 130.5 0 0 1 368.7 358.5L366.3 354.6A126 126 0 0 0 374.1 349.4Z" fill="#a2bb2b" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="47" ecmeta_ssr_type="chart" class="zr72-cls-571"></path>
+<path d="M368.7 358.5A130.5 130.5 0 0 1 360.3 363.2L358.2 359.2A126 126 0 0 0 366.3 354.6Z" fill="#62aa3c" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="48" ecmeta_ssr_type="chart" class="zr72-cls-572"></path>
+<path d="M360.3 363.2A130.5 130.5 0 0 1 351.6 367.4L349.8 363.2A126 126 0 0 0 358.2 359.2Z" fill="#03a653" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="49" ecmeta_ssr_type="chart" class="zr72-cls-573"></path>
+<path d="M351.6 367.4A130.5 130.5 0 0 1 342.6 370.8L341.1 366.6A126 126 0 0 0 349.8 363.2Z" fill="#038549" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="50" ecmeta_ssr_type="chart" class="zr72-cls-574"></path>
+<path d="M342.6 370.8A130.5 130.5 0 0 1 333.4 373.7L332.2 369.3A126 126 0 0 0 341.1 366.6Z" fill="#28b44b" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="51" ecmeta_ssr_type="chart" class="zr72-cls-575"></path>
+<path d="M333.4 373.7A130.5 130.5 0 0 1 324 375.8L323.2 371.4A126 126 0 0 0 332.2 369.3Z" fill="#a3a830" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="52" ecmeta_ssr_type="chart" class="zr72-cls-576"></path>
+<path d="M324 375.8A130.5 130.5 0 0 1 314.4 377.2L313.9 372.7A126 126 0 0 0 323.2 371.4Z" fill="#7ac141" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="53" ecmeta_ssr_type="chart" class="zr72-cls-577"></path>
+<path d="M313.9 372.7A126 126 0 0 1 304.7 373.4L302.3 310.5A63 63 0 0 0 307 310.1Z" fill="#5e9a80" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="54" ecmeta_ssr_type="chart" class="zr72-cls-578"></path>
+<path d="M302.3 310.5A63 63 0 0 1 242.6 273.5L275.4 258.6A27 27 0 0 0 301 274.5Z" fill="#0aa3b5" stroke="white" stroke-width="2" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="55" ecmeta_ssr_type="chart" class="zr72-cls-579"></path>
+<path d="M304.7 373.4A126 126 0 0 1 218.6 343.7L259.3 295.6A63 63 0 0 0 302.3 310.5Z" fill="#9db2b7" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="56" ecmeta_ssr_type="chart" class="zr72-cls-580"></path>
+<path d="M304.8 377.9A130.5 130.5 0 0 1 295.2 377.9L295.3 373.4A126 126 0 0 0 304.7 373.4Z" fill="#8b8c90" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="57" ecmeta_ssr_type="chart" class="zr72-cls-581"></path>
+<path d="M295.2 377.9A130.5 130.5 0 0 1 285.6 377.2L286.1 372.7A126 126 0 0 0 295.3 373.4Z" fill="#beb276" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="58" ecmeta_ssr_type="chart" class="zr72-cls-582"></path>
+<path d="M285.6 377.2A130.5 130.5 0 0 1 276 375.8L276.8 371.4A126 126 0 0 0 286.1 372.7Z" fill="#fefef4" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="59" ecmeta_ssr_type="chart" class="zr72-cls-583"></path>
+<path d="M276 375.8A130.5 130.5 0 0 1 266.6 373.7L267.8 369.3A126 126 0 0 0 276.8 371.4Z" fill="#744e03" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="60" ecmeta_ssr_type="chart" class="zr72-cls-584"></path>
+<path d="M266.6 373.7A130.5 130.5 0 0 1 257.4 370.8L258.9 366.6A126 126 0 0 0 267.8 369.3Z" fill="#a3a36f" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="61" ecmeta_ssr_type="chart" class="zr72-cls-585"></path>
+<path d="M257.4 370.8A130.5 130.5 0 0 1 248.4 367.4L250.2 363.2A126 126 0 0 0 258.9 366.6Z" fill="#c9b583" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="62" ecmeta_ssr_type="chart" class="zr72-cls-586"></path>
+<path d="M248.4 367.4A130.5 130.5 0 0 1 239.7 363.2L241.8 359.2A126 126 0 0 0 250.2 363.2Z" fill="#978847" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="63" ecmeta_ssr_type="chart" class="zr72-cls-587"></path>
+<path d="M239.7 363.2A130.5 130.5 0 0 1 231.3 358.5L233.7 354.6A126 126 0 0 0 241.8 359.2Z" fill="#9d977f" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="64" ecmeta_ssr_type="chart" class="zr72-cls-588"></path>
+<path d="M231.3 358.5A130.5 130.5 0 0 1 223.3 353.1L225.9 349.4A126 126 0 0 0 233.7 354.6Z" fill="#cc7b6a" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="65" ecmeta_ssr_type="chart" class="zr72-cls-589"></path>
+<path d="M223.3 353.1A130.5 130.5 0 0 1 215.7 347.1L218.6 343.7A126 126 0 0 0 225.9 349.4Z" fill="#db646a" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="66" ecmeta_ssr_type="chart" class="zr72-cls-590"></path>
+<path d="M218.6 343.7A126 126 0 0 1 185.2 299.5L242.6 273.5A63 63 0 0 0 259.3 295.6Z" fill="#76c0cb" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="67" ecmeta_ssr_type="chart" class="zr72-cls-591"></path>
+<path d="M215.7 347.1A130.5 130.5 0 0 1 208.6 340.6L211.7 337.4A126 126 0 0 0 218.6 343.7Z" fill="#80a89d" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="68" ecmeta_ssr_type="chart" class="zr72-cls-592"></path>
+<path d="M208.6 340.6A130.5 130.5 0 0 1 202 333.6L205.3 330.7A126 126 0 0 0 211.7 337.4Z" fill="#def2fd" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="69" ecmeta_ssr_type="chart" class="zr72-cls-593"></path>
+<path d="M202 333.6A130.5 130.5 0 0 1 195.9 326.1L199.4 323.4A126 126 0 0 0 205.3 330.7Z" fill="#7a9bae" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="70" ecmeta_ssr_type="chart" class="zr72-cls-594"></path>
+<path d="M195.9 326.1A130.5 130.5 0 0 1 190.3 318.2L194.1 315.8A126 126 0 0 0 199.4 323.4Z" fill="#039fb8" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="71" ecmeta_ssr_type="chart" class="zr72-cls-595"></path>
+<path d="M190.3 318.2A130.5 130.5 0 0 1 185.4 309.9L189.4 307.8A126 126 0 0 0 194.1 315.8Z" fill="#5e777b" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="72" ecmeta_ssr_type="chart" class="zr72-cls-596"></path>
+<path d="M185.4 309.9A130.5 130.5 0 0 1 181.1 301.3L185.2 299.5A126 126 0 0 0 189.4 307.8Z" fill="#120c0c" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="73" ecmeta_ssr_type="chart" class="zr72-cls-597"></path>
+<path d="M242.6 273.5A63 63 0 0 1 237.9 237.1L273.4 243A27 27 0 0 0 275.4 258.6Z" fill="#c94930" stroke="white" stroke-width="2" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="74" ecmeta_ssr_type="chart" class="zr72-cls-598"></path>
+<path d="M185.2 299.5A126 126 0 0 1 181.7 290.8L240.8 269.2A63 63 0 0 0 242.6 273.5Z" fill="#caa465" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="75" ecmeta_ssr_type="chart" class="zr72-cls-599"></path>
+<path d="M181.7 290.8A126 126 0 0 1 178.8 282L239.4 264.7A63 63 0 0 0 240.8 269.2Z" fill="#dfbd7e" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="76" ecmeta_ssr_type="chart" class="zr72-cls-600"></path>
+<path d="M178.8 282A126 126 0 0 1 174 245.2L237 246.3A63 63 0 0 0 239.4 264.7Z" fill="#be8663" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="77" ecmeta_ssr_type="chart" class="zr72-cls-601"></path>
+<path d="M174.5 283.2A130.5 130.5 0 0 1 172.2 273.8L176.6 272.9A126 126 0 0 0 178.8 282Z" fill="#b9a449" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="78" ecmeta_ssr_type="chart" class="zr72-cls-602"></path>
+<path d="M172.2 273.8A130.5 130.5 0 0 1 170.6 264.3L175.1 263.8A126 126 0 0 0 176.6 272.9Z" fill="#899893" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="79" ecmeta_ssr_type="chart" class="zr72-cls-603"></path>
+<path d="M170.6 264.3A130.5 130.5 0 0 1 169.7 254.7L174.2 254.5A126 126 0 0 0 175.1 263.8Z" fill="#a1743b" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="80" ecmeta_ssr_type="chart" class="zr72-cls-604"></path>
+<path d="M169.7 254.7A130.5 130.5 0 0 1 169.5 245.1L174 245.2A126 126 0 0 0 174.2 254.5Z" fill="#894810" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="81" ecmeta_ssr_type="chart" class="zr72-cls-605"></path>
+<path d="M174 245.2A126 126 0 0 1 175.7 226.6L237.9 237.1A63 63 0 0 0 237 246.3Z" fill="#ddaf61" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="82" ecmeta_ssr_type="chart" class="zr72-cls-606"></path>
+<path d="M169.5 245.1A130.5 130.5 0 0 1 170.1 235.5L174.5 235.9A126 126 0 0 0 174 245.2Z" fill="#b7906f" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="83" ecmeta_ssr_type="chart" class="zr72-cls-607"></path>
+<path d="M170.1 235.5A130.5 130.5 0 0 1 171.3 225.9L175.7 226.6A126 126 0 0 0 174.5 235.9Z" fill="#eb9d5f" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="84" ecmeta_ssr_type="chart" class="zr72-cls-608"></path>
+<path d="M237.9 237.1A63 63 0 0 1 248.4 211.4L277.9 232A27 27 0 0 0 273.4 243Z" fill="#ad213e" stroke="white" stroke-width="2" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="85" ecmeta_ssr_type="chart" class="zr72-cls-609"></path>
+<path d="M175.7 226.6A126 126 0 0 1 177.6 217.5L238.8 232.5A63 63 0 0 0 237.9 237.1Z" fill="#794752" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="86" ecmeta_ssr_type="chart" class="zr72-cls-610"></path>
+<path d="M177.6 217.5A126 126 0 0 1 180.2 208.6L240.1 228A63 63 0 0 0 238.8 232.5Z" fill="#cc3d41" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="87" ecmeta_ssr_type="chart" class="zr72-cls-611"></path>
+<path d="M180.2 208.6A126 126 0 0 1 196.7 175.3L248.4 211.4A63 63 0 0 0 240.1 228Z" fill="#b14d57" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="88" ecmeta_ssr_type="chart" class="zr72-cls-612"></path>
+<path d="M175.9 207.2A130.5 130.5 0 0 1 179.2 198.1L183.4 199.8A126 126 0 0 0 180.2 208.6Z" fill="#c78936" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="89" ecmeta_ssr_type="chart" class="zr72-cls-613"></path>
+<path d="M179.2 198.1A130.5 130.5 0 0 1 183.2 189.3L187.2 191.3A126 126 0 0 0 183.4 199.8Z" fill="#8c292c" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="90" ecmeta_ssr_type="chart" class="zr72-cls-614"></path>
+<path d="M183.2 189.3A130.5 130.5 0 0 1 187.8 180.9L191.7 183.2A126 126 0 0 0 187.2 191.3Z" fill="#e5762e" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="91" ecmeta_ssr_type="chart" class="zr72-cls-615"></path>
+<path d="M187.8 180.9A130.5 130.5 0 0 1 193 172.8L196.7 175.3A126 126 0 0 0 191.7 183.2Z" fill="#a16c5a" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="92" ecmeta_ssr_type="chart" class="zr72-cls-616"></path>
+<path d="M248.4 211.4A63 63 0 0 1 264.9 195.2L284.9 225.1A27 27 0 0 0 277.9 232Z" fill="#a87b64" stroke="white" stroke-width="2" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="93" ecmeta_ssr_type="chart" class="zr72-cls-617"></path>
+<path d="M196.7 175.3A126 126 0 0 1 215.1 154.4L257.6 200.9A63 63 0 0 0 248.4 211.4Z" fill="#c78869" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="94" ecmeta_ssr_type="chart" class="zr72-cls-618"></path>
+<path d="M193 172.8A130.5 130.5 0 0 1 198.8 165.1L202.3 167.9A126 126 0 0 0 196.7 175.3Z" fill="#d4ad12" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="95" ecmeta_ssr_type="chart" class="zr72-cls-619"></path>
+<path d="M198.8 165.1A130.5 130.5 0 0 1 205.2 157.8L208.5 160.9A126 126 0 0 0 202.3 167.9Z" fill="#9d5433" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="96" ecmeta_ssr_type="chart" class="zr72-cls-620"></path>
+<path d="M205.2 157.8A130.5 130.5 0 0 1 212.1 151.1L215.1 154.4A126 126 0 0 0 208.5 160.9Z" fill="#c89f83" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="97" ecmeta_ssr_type="chart" class="zr72-cls-621"></path>
+<path d="M215.1 154.4A126 126 0 0 1 229.8 142.9L264.9 195.2A63 63 0 0 0 257.6 200.9Z" fill="#bb764c" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="98" ecmeta_ssr_type="chart" class="zr72-cls-622"></path>
+<path d="M212.1 151.1A130.5 130.5 0 0 1 219.4 144.8L222.2 148.4A126 126 0 0 0 215.1 154.4Z" fill="#692a19" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="99" ecmeta_ssr_type="chart" class="zr72-cls-623"></path>
+<path d="M219.4 144.8A130.5 130.5 0 0 1 227.2 139.2L229.8 142.9A126 126 0 0 0 222.2 148.4Z" fill="#470604" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="100" ecmeta_ssr_type="chart" class="zr72-cls-624"></path>
+<path d="M264.9 195.2A63 63 0 0 1 300 184.5L300 220.5A27 27 0 0 0 284.9 225.1Z" fill="#e65832" stroke="white" stroke-width="2" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="101" ecmeta_ssr_type="chart" class="zr72-cls-625"></path>
+<path d="M229.8 142.9A126 126 0 0 1 263.3 127L281.6 187.2A63 63 0 0 0 264.9 195.2Z" fill="#d45a59" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="102" ecmeta_ssr_type="chart" class="zr72-cls-626"></path>
+<path d="M227.2 139.2A130.5 130.5 0 0 1 235.4 134.1L237.7 138A126 126 0 0 0 229.8 142.9Z" fill="#310d0f" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="103" ecmeta_ssr_type="chart" class="zr72-cls-627"></path>
+<path d="M235.4 134.1A130.5 130.5 0 0 1 244 129.6L245.9 133.7A126 126 0 0 0 237.7 138Z" fill="#ae341f" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="104" ecmeta_ssr_type="chart" class="zr72-cls-628"></path>
+<path d="M244 129.6A130.5 130.5 0 0 1 252.9 125.8L254.5 130A126 126 0 0 0 245.9 133.7Z" fill="#d78823" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="105" ecmeta_ssr_type="chart" class="zr72-cls-629"></path>
+<path d="M252.9 125.8A130.5 130.5 0 0 1 262 122.7L263.3 127A126 126 0 0 0 254.5 130Z" fill="#da5c1f" stroke="white" stroke-width="3" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="106" ecmeta_ssr_type="chart" class="zr72-cls-630"></path>
+<path d="M263.3 127A126 126 0 0 1 272.3 124.6L286.1 186A63 63 0 0 0 281.6 187.2Z" fill="#f89a80" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="107" ecmeta_ssr_type="chart" class="zr72-cls-631"></path>
+<path d="M272.3 124.6A126 126 0 0 1 281.4 122.9L290.7 185.2A63 63 0 0 0 286.1 186Z" fill="#f37674" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="108" ecmeta_ssr_type="chart" class="zr72-cls-632"></path>
+<path d="M281.4 122.9A126 126 0 0 1 290.7 121.8L295.3 184.7A63 63 0 0 0 290.7 185.2Z" fill="#e75b68" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="109" ecmeta_ssr_type="chart" class="zr72-cls-633"></path>
+<path d="M290.7 121.8A126 126 0 0 1 300 121.5L300 184.5A63 63 0 0 0 295.3 184.7Z" fill="#d0545f" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="110" ecmeta_ssr_type="chart" class="zr72-cls-634"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:10px;font-family:sans-serif;" transform="matrix(0.989,0.147,-0.147,0.989,306.6286,202.9909)" fill="#eee" stroke="#da0d68" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Flora</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.037,-0.999,0.999,0.037,304.4711,126.5826)" fill="#eee" stroke="#975e6d" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Black Tea</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" transform="matrix(0.184,-0.983,0.983,0.184,322.2337,128.5603)" fill="#333">Floral</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" x="3" transform="matrix(0.111,-0.994,0.994,0.111,314.9934,112.8321)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Chamomile</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" x="3" transform="matrix(0.184,-0.983,0.983,0.184,324.8981,114.3071)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Rose</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" x="3" transform="matrix(0.256,-0.967,0.967,0.256,334.6667,116.5097)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Jasmine</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:10px;font-family:sans-serif;" transform="matrix(0.573,0.82,-0.82,0.573,336.8883,221.7269)" fill="#eee" stroke="#da1d23" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Fruity</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" transform="matrix(0.429,-0.903,0.903,0.429,351.9236,138.2071)" fill="#eee" stroke="#dd4c51" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Berry</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" x="3" transform="matrix(0.327,-0.945,0.945,0.327,344.246,119.4276)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Blackberry</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" x="3" transform="matrix(0.395,-0.918,0.918,0.395,353.5836,123.045)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Raspberry</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" x="3" transform="matrix(0.462,-0.887,0.887,0.462,362.6286,127.3422)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Blueberry</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" x="3" transform="matrix(0.526,-0.85,0.85,0.526,371.3316,132.2956)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Strawberry</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.617,-0.787,0.787,0.617,374.6907,152.3039)" fill="#eee" stroke="#c94a44" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Dried Fruit</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" x="3" transform="matrix(0.588,-0.809,0.809,0.588,379.6449,137.8782)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Raisin</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" x="3" transform="matrix(0.646,-0.763,0.763,0.646,387.5233,144.0595)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Prune</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.86,-0.511,0.511,0.86,404.0358,185.7136)" fill="#eee" stroke="#dd4c51" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Other Fruit</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" x="3" transform="matrix(0.701,-0.714,0.714,0.701,394.9236,150.8058)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Coconut</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" x="3" transform="matrix(0.751,-0.66,0.66,0.751,401.8055,158.0802)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Cherry</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" x="3" transform="matrix(0.798,-0.603,0.603,0.798,408.1313,165.843)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Pomegranate</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" x="3" transform="matrix(0.84,-0.542,0.542,0.84,413.8666,174.0518)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Pineapple</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" x="3" transform="matrix(0.878,-0.479,0.479,0.878,418.98,182.6617)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Grape</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" x="3" transform="matrix(0.911,-0.412,0.412,0.911,423.4436,191.6257)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Apple</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" x="3" transform="matrix(0.939,-0.344,0.344,0.939,427.2329,200.8949)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Peach</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" x="3" transform="matrix(0.962,-0.274,0.274,0.962,430.3274,210.4187)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Pear</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.996,-0.092,0.092,0.996,420.4838,236.3355)" fill="#333">Citrus Fruit</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" x="3" transform="matrix(0.979,-0.202,0.202,0.979,432.71,220.1449)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Grapefruit</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" x="3" transform="matrix(0.992,-0.129,0.129,0.992,434.3679,230.0206)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Orange</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" x="3" transform="matrix(0.998,-0.055,0.055,0.998,435.2918,239.9917)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Lemon</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" x="3" transform="matrix(1,0.018,-0.018,1,435.4769,250.0039)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Lime</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:10px;font-family:sans-serif;" y="-5" transform="matrix(0.412,-0.911,0.911,0.412,340.996,266.056)" fill="#333">Sour/</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:10px;font-family:sans-serif;" y="5" transform="matrix(0.412,-0.911,0.911,0.412,340.996,266.056)" fill="#333">Fermented</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" transform="matrix(0.962,0.274,-0.274,0.962,416.3809,280.6132)" fill="#333">Sour</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" xml:space="preserve" x="3" transform="matrix(0.996,0.092,-0.092,0.996,434.922,260.0024)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Sour Aromatics</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" xml:space="preserve" x="3" transform="matrix(0.986,0.166,-0.166,0.986,433.6302,269.9326)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Acetic Acid</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" xml:space="preserve" x="3" transform="matrix(0.971,0.238,-0.238,0.971,431.6086,279.7402)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Butyric Acid</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" xml:space="preserve" x="3" transform="matrix(0.951,0.309,-0.309,0.951,428.8682,289.3718)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Isovaleric Acid</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" xml:space="preserve" x="3" transform="matrix(0.926,0.378,-0.378,0.926,425.4239,298.7747)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Citric Acid</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" xml:space="preserve" x="3" transform="matrix(0.895,0.446,-0.446,0.895,421.2946,307.8975)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Malic Acid</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" y="-5" transform="matrix(0.798,0.603,-0.603,0.798,396.5601,320.4188)" fill="#333">Alcohol/</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" y="5" transform="matrix(0.798,0.603,-0.603,0.798,396.5601,320.4188)" fill="#333">Fremented</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" x="3" transform="matrix(0.86,0.511,-0.511,0.86,416.5029,316.6905)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Winey</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" x="3" transform="matrix(0.82,0.573,-0.573,0.82,411.0748,325.1056)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Whiskey</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" x="3" transform="matrix(0.775,0.632,-0.632,0.775,405.0401,333.0968)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Fremented</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" x="3" transform="matrix(0.726,0.687,-0.687,0.726,398.4317,340.6206)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Overripe</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:10px;font-family:sans-serif;" y="-5" transform="matrix(0.918,-0.395,0.395,0.918,317.7953,288.8319)" fill="#eee" stroke="#187a2f" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Green/</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:10px;font-family:sans-serif;" y="5" transform="matrix(0.918,-0.395,0.395,0.918,317.7953,288.8319)" fill="#eee" stroke="#187a2f" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Vegetative</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.674,0.739,-0.739,0.674,381.5172,336.9201)" fill="#333">Olive Oil</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" transform="matrix(0.617,0.787,-0.787,0.617,374.6907,342.6961)" fill="#eee" stroke="#718933" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Raw</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" y="-5" transform="matrix(0.361,0.932,-0.932,0.361,343.7102,360.3291)" fill="#eee" stroke="#3aa255" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Green/</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" y="5" transform="matrix(0.361,0.932,-0.932,0.361,343.7102,360.3291)" fill="#eee" stroke="#3aa255" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Vegetative</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" x="3" transform="matrix(0.557,0.83,-0.83,0.557,375.5398,359.9899)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Under-ripe</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" x="3" transform="matrix(0.495,0.869,-0.869,0.495,367.0259,365.2616)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Peapod</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" x="3" transform="matrix(0.429,0.903,-0.903,0.429,358.1458,369.89)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Fresh</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" xml:space="preserve" x="3" transform="matrix(0.361,0.932,-0.932,0.361,348.9482,373.85)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Dark Green</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" x="3" transform="matrix(0.291,0.957,-0.957,0.291,339.4833,377.1199)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Vegetative</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" x="3" transform="matrix(0.22,0.976,-0.976,0.22,329.8027,379.6819)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Hay-like</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" x="3" transform="matrix(0.147,0.989,-0.989,0.147,319.9594,381.5219)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Herb-like</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" transform="matrix(0.074,0.997,-0.997,0.074,308.9362,368.1696)" fill="#333">Beany</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:10px;font-family:sans-serif;" transform="matrix(0.85,0.526,-0.526,0.85,276.3106,285.7598)" fill="#eee" stroke="#0aa3b5" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Other</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" transform="matrix(0.327,-0.945,0.945,0.327,260.4888,361.8672)" fill="#333">Papery/Musty</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" x="3" transform="matrix(0,1,-1,0,300,383)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Stale</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" x="-3" transform="matrix(0.074,-0.997,0.997,0.074,289.993,382.63)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Cardboard</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" x="-3" transform="matrix(0.147,-0.989,0.989,0.147,280.0406,381.5219)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Papery</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" x="-3" transform="matrix(0.22,-0.976,0.976,0.22,270.1973,379.6819)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Woody</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" x="-3" transform="matrix(0.291,-0.957,0.957,0.291,260.5167,377.1199)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Moldy/Damp</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" x="-3" transform="matrix(0.361,-0.932,0.932,0.361,251.0518,373.85)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Musty/Dusty</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" x="-3" transform="matrix(0.429,-0.903,0.903,0.429,241.8542,369.89)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Musty/Earthy</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" x="-3" transform="matrix(0.495,-0.869,0.869,0.495,232.9741,365.2616)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Animalic</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" xml:space="preserve" x="-3" transform="matrix(0.557,-0.83,0.83,0.557,224.4602,359.9899)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Meaty Brothy</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" x="-3" transform="matrix(0.617,-0.787,0.787,0.617,216.3588,354.1039)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Phenolic</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" transform="matrix(0.798,-0.603,0.603,0.798,203.4399,320.4188)" fill="#333">Chemical</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" x="-3" transform="matrix(0.674,-0.739,0.739,0.674,208.7142,347.6357)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Bitter</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" x="-3" transform="matrix(0.726,-0.687,0.687,0.726,201.5683,340.6206)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Salty</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" x="-3" transform="matrix(0.775,-0.632,0.632,0.775,194.9599,333.0968)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Medicinal</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" x="-3" transform="matrix(0.82,-0.573,0.573,0.82,188.9252,325.1056)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Petroleum</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" x="-3" transform="matrix(0.86,-0.511,0.511,0.86,183.4971,316.6905)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Skunky</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" x="-3" transform="matrix(0.895,-0.446,0.446,0.895,178.7054,307.8975)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Rubber</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:10px;font-family:sans-serif;" transform="matrix(0.129,0.992,-0.992,0.129,255.376,253.305)" fill="#eee" stroke="#c94930" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Roasted</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.926,-0.378,0.378,0.926,187.9978,293.2877)" fill="#333">Pipe Tobacco</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" transform="matrix(0.951,-0.309,0.309,0.951,184.9222,284.8911)" fill="#333">Tobacco</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" transform="matrix(0.992,-0.129,0.129,0.992,180.011,263.1089)" fill="#333">Burnt</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" x="-3" transform="matrix(0.971,-0.238,0.238,0.971,168.3914,279.7402)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Acrid</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" x="-3" transform="matrix(0.986,-0.166,0.166,0.986,166.3698,269.9326)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Ashy</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" x="-3" transform="matrix(0.996,-0.092,0.092,0.996,165.078,260.0024)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Smoky</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" xml:space="preserve" x="-3" transform="matrix(1,-0.018,0.018,1,164.5231,250.0039)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Brown, Roast</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" transform="matrix(0.996,0.092,-0.092,0.996,179.5162,236.3355)" fill="#333">Cereal</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" x="-3" transform="matrix(0.998,0.055,-0.055,0.998,164.7082,239.9917)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Grain</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" x="-3" transform="matrix(0.992,0.129,-0.129,0.992,165.6321,230.0206)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Malt</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:10px;font-family:sans-serif;" transform="matrix(0.378,-0.926,0.926,0.378,258.3463,230.4715)" fill="#eee" stroke="#ad213e" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Spices</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" transform="matrix(0.979,0.202,-0.202,0.979,181.4914,223.0722)" fill="#eee" stroke="#794752" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Pungent</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" transform="matrix(0.962,0.274,-0.274,0.962,183.6191,214.3868)" fill="#eee" stroke="#cc3d41" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Pepper</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.895,0.446,-0.446,0.895,191.6852,193.5657)" fill="#eee" stroke="#b14d57" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Brown Spice</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" x="-3" transform="matrix(0.939,0.344,-0.344,0.939,172.7671,200.8949)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Anise</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" x="-3" transform="matrix(0.911,0.412,-0.412,0.911,176.5564,191.6257)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Nutmeg</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" x="-3" transform="matrix(0.878,0.479,-0.479,0.878,181.02,182.6617)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Cinnamon</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" x="-3" transform="matrix(0.84,0.542,-0.542,0.84,186.1334,174.0518)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Clove</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:10px;font-family:sans-serif;" y="-5" transform="matrix(0.714,-0.701,0.701,0.714,268.4756,215.3875)" fill="#333">Nutty/</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:10px;font-family:sans-serif;" y="5" transform="matrix(0.714,-0.701,0.701,0.714,268.4756,215.3875)" fill="#333">Cocoa</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" transform="matrix(0.751,0.66,-0.66,0.751,209.0888,167.6491)" fill="#333">Nutty</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" x="-3" transform="matrix(0.798,0.603,-0.603,0.798,191.8687,165.843)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Peanuts</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" x="-3" transform="matrix(0.751,0.66,-0.66,0.751,198.1945,158.0802)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Hazelnut</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" x="-3" transform="matrix(0.701,0.714,-0.714,0.701,205.0764,150.8058)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Almond</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" transform="matrix(0.617,0.787,-0.787,0.617,225.3093,152.3039)" fill="#333">Cocoa</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" x="-3" transform="matrix(0.646,0.763,-0.763,0.646,212.4767,144.0595)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Chocolate</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" xml:space="preserve" x="-3" transform="matrix(0.588,0.809,-0.809,0.588,220.3551,137.8782)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Dark Chocolate</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:10px;font-family:sans-serif;" transform="matrix(0.957,-0.291,0.291,0.957,286.8875,204.4528)" fill="#eee" stroke="#e65832" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Sweet</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.429,0.903,-0.903,0.429,248.0764,138.2071)" fill="#eee" stroke="#d45a59" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Brown Sugar</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" x="-3" transform="matrix(0.526,0.85,-0.85,0.526,228.6684,132.2956)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Molasses</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" xml:space="preserve" x="-3" transform="matrix(0.462,0.887,-0.887,0.462,237.3714,127.3422)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Maple Syrup</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" x="-3" transform="matrix(0.395,0.918,-0.918,0.395,246.4164,123.045)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Caramelized</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:10px;font-family:sans-serif;" x="-3" transform="matrix(0.327,0.945,-0.945,0.327,255.754,119.4276)" fill="#333" stroke="rgb(255,255,255)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Honey</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" transform="matrix(0.256,0.967,-0.967,0.256,269.043,130.5271)" fill="#333">Vanilla</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" transform="matrix(0.184,0.983,-0.983,0.184,277.7663,128.5603)" fill="#333">Vanillin</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.111,0.994,-0.994,0.111,286.611,127.243)" fill="#333">Overall Sweet</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:10px;font-family:sans-serif;" xml:space="preserve" transform="matrix(0.037,0.999,-0.999,0.037,295.5289,126.5826)" fill="#eee" stroke="#d0545f" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">Sweet Aromatics</text>
+<path d="M-171.3 -5l342.6 0l0 46l-342.6 0Z" transform="translate(300 10)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#3c3c41" stroke-width="0" class="zr72-cls-635"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:14px;font-family:sans-serif;font-weight:bold;" xml:space="preserve" y="7" transform="translate(300 10)" fill="#3c3c41">WORLD COFFEE RESEARCH SENSORY LEXICON</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" y="30" transform="translate(300 10)" fill="#86878c">Source: https://worldcoffeeresearch.org/work/sensory-lexicon/</text>
 <style ><![CDATA[
-.zr66-cls-395:hover {
+.zr72-cls-526:hover {
 cursor:pointer;
 fill:rgba(239,14,114,1);
 }
-.zr66-cls-396:hover {
+.zr72-cls-527:hover {
 cursor:pointer;
 fill:rgba(166,103,119,1);
 }
-.zr66-cls-397:hover {
+.zr72-cls-528:hover {
 cursor:pointer;
 fill:rgba(246,124,171,1);
 }
-.zr66-cls-398:hover {
+.zr72-cls-529:hover {
 cursor:pointer;
 fill:rgba(255,173,30,1);
 }
-.zr66-cls-399:hover {
+.zr72-cls-530:hover {
 cursor:pointer;
 fill:rgba(255,99,132,1);
 }
-.zr66-cls-400:hover {
+.zr72-cls-531:hover {
 cursor:pointer;
 fill:rgba(255,255,207,1);
 }
-.zr66-cls-401:hover {
+.zr72-cls-532:hover {
 cursor:pointer;
 fill:rgba(239,31,38,1);
 }
-.zr66-cls-402:hover {
+.zr72-cls-533:hover {
 cursor:pointer;
 fill:rgba(243,83,89,1);
 }
-.zr66-cls-403:hover {
+.zr72-cls-534:hover {
 cursor:pointer;
 fill:rgba(68,3,25,1);
 }
-.zr66-cls-404:hover {
+.zr72-cls-535:hover {
 cursor:pointer;
 fill:rgba(253,45,115,1);
 }
-.zr66-cls-405:hover {
+.zr72-cls-536:hover {
 cursor:pointer;
 fill:rgba(111,115,193,1);
 }
-.zr66-cls-406:hover {
+.zr72-cls-537:hover {
 cursor:pointer;
 fill:rgba(255,49,59,1);
 }
-.zr66-cls-407:hover {
+.zr72-cls-538:hover {
 cursor:pointer;
 fill:rgba(221,81,74,1);
 }
-.zr66-cls-408:hover {
+.zr72-cls-539:hover {
 cursor:pointer;
 fill:rgba(199,64,92,1);
 }
-.zr66-cls-409:hover {
+.zr72-cls-540:hover {
 cursor:pointer;
 fill:rgba(181,74,122,1);
 }
-.zr66-cls-410:hover {
+.zr72-cls-541:hover {
 cursor:pointer;
 fill:rgba(255,114,82,1);
 }
-.zr66-cls-411:hover {
+.zr72-cls-542:hover {
 cursor:pointer;
 fill:rgba(254,57,89,1);
 }
-.zr66-cls-412:hover {
+.zr72-cls-543:hover {
 cursor:pointer;
 fill:rgba(253,94,94,1);
 }
-.zr66-cls-413:hover {
+.zr72-cls-544:hover {
 cursor:pointer;
 fill:rgba(255,169,30,1);
 }
-.zr66-cls-414:hover {
+.zr72-cls-545:hover {
 cursor:pointer;
 fill:rgba(191,203,48,1);
 }
-.zr66-cls-415:hover {
+.zr72-cls-546:hover {
 cursor:pointer;
 fill:rgba(85,202,80,1);
 }
-.zr66-cls-416:hover {
+.zr72-cls-547:hover {
 cursor:pointer;
 fill:rgba(255,151,101,1);
 }
-.zr66-cls-417:hover {
+.zr72-cls-548:hover {
 cursor:pointer;
 fill:rgba(204,182,58,1);
 }
-.zr66-cls-418:hover {
+.zr72-cls-549:hover {
 cursor:pointer;
 fill:rgba(255,177,44,1);
 }
-.zr66-cls-419:hover {
+.zr72-cls-550:hover {
 cursor:pointer;
 fill:rgba(255,108,93,1);
 }
-.zr66-cls-420:hover {
+.zr72-cls-551:hover {
 cursor:pointer;
 fill:rgba(248,108,33,1);
 }
-.zr66-cls-421:hover {
+.zr72-cls-552:hover {
 cursor:pointer;
 fill:rgba(255,250,4,1);
 }
-.zr66-cls-422:hover {
+.zr72-cls-553:hover {
 cursor:pointer;
 fill:rgba(138,194,61,1);
 }
-.zr66-cls-423:hover {
+.zr72-cls-554:hover {
 cursor:pointer;
 fill:rgba(255,198,16,1);
 }
-.zr66-cls-424:hover {
+.zr72-cls-555:hover {
 cursor:pointer;
 fill:rgba(247,214,23,1);
 }
-.zr66-cls-425:hover {
+.zr72-cls-556:hover {
 cursor:pointer;
 fill:rgba(173,183,26,1);
 }
-.zr66-cls-426:hover {
+.zr72-cls-557:hover {
 cursor:pointer;
 fill:rgba(162,183,122,1);
 }
-.zr66-cls-427:hover {
+.zr72-cls-558:hover {
 cursor:pointer;
 fill:rgba(228,195,86,1);
 }
-.zr66-cls-428:hover {
+.zr72-cls-559:hover {
 cursor:pointer;
 fill:rgba(156,200,77,1);
 }
-.zr66-cls-429:hover {
+.zr72-cls-560:hover {
 cursor:pointer;
 fill:rgba(255,255,7,1);
 }
-.zr66-cls-430:hover {
+.zr72-cls-561:hover {
 cursor:pointer;
 fill:rgba(212,204,7,1);
 }
-.zr66-cls-431:hover {
+.zr72-cls-562:hover {
 cursor:pointer;
 fill:rgba(193,166,56,1);
 }
-.zr66-cls-432:hover {
+.zr72-cls-563:hover {
 cursor:pointer;
 fill:rgba(157,30,91,1);
 }
-.zr66-cls-433:hover {
+.zr72-cls-564:hover {
 cursor:pointer;
 fill:rgba(196,70,62,1);
 }
-.zr66-cls-434:hover {
+.zr72-cls-565:hover {
 cursor:pointer;
 fill:rgba(204,160,55,1);
 }
-.zr66-cls-435:hover {
+.zr72-cls-566:hover {
 cursor:pointer;
 fill:rgba(152,110,62,1);
 }
-.zr66-cls-436:hover {
+.zr72-cls-567:hover {
 cursor:pointer;
 fill:rgba(26,134,51,1);
 }
-.zr66-cls-437:hover {
+.zr72-cls-568:hover {
 cursor:pointer;
 fill:rgba(178,193,45,1);
 }
-.zr66-cls-438:hover {
+.zr72-cls-569:hover {
 cursor:pointer;
 fill:rgba(124,150,56,1);
 }
-.zr66-cls-439:hover {
+.zr72-cls-570:hover {
 cursor:pointer;
 fill:rgba(63,178,93,1);
 }
-.zr66-cls-440:hover {
+.zr72-cls-571:hover {
 cursor:pointer;
 fill:rgba(178,205,47,1);
 }
-.zr66-cls-441:hover {
+.zr72-cls-572:hover {
 cursor:pointer;
 fill:rgba(107,187,66,1);
 }
-.zr66-cls-442:hover {
+.zr72-cls-573:hover {
 cursor:pointer;
 fill:rgba(3,182,91,1);
 }
-.zr66-cls-443:hover {
+.zr72-cls-574:hover {
 cursor:pointer;
 fill:rgba(3,146,80,1);
 }
-.zr66-cls-444:hover {
+.zr72-cls-575:hover {
 cursor:pointer;
 fill:rgba(44,198,82,1);
 }
-.zr66-cls-445:hover {
+.zr72-cls-576:hover {
 cursor:pointer;
 fill:rgba(179,184,52,1);
 }
-.zr66-cls-446:hover {
+.zr72-cls-577:hover {
 cursor:pointer;
 fill:rgba(134,212,71,1);
 }
-.zr66-cls-447:hover {
+.zr72-cls-578:hover {
 cursor:pointer;
 fill:rgba(103,169,140,1);
 }
-.zr66-cls-448:hover {
+.zr72-cls-579:hover {
 cursor:pointer;
 fill:rgba(11,179,199,1);
 }
-.zr66-cls-449:hover {
+.zr72-cls-580:hover {
 cursor:pointer;
 fill:rgba(172,195,201,1);
 }
-.zr66-cls-450:hover {
+.zr72-cls-581:hover {
 cursor:pointer;
 fill:rgba(152,154,158,1);
 }
-.zr66-cls-451:hover {
+.zr72-cls-582:hover {
 cursor:pointer;
 fill:rgba(209,195,129,1);
 }
-.zr66-cls-452:hover {
+.zr72-cls-583:hover {
 cursor:pointer;
 fill:rgba(255,255,255,1);
 }
-.zr66-cls-453:hover {
+.zr72-cls-584:hover {
 cursor:pointer;
 fill:rgba(127,85,3,1);
 }
-.zr66-cls-454:hover {
+.zr72-cls-585:hover {
 cursor:pointer;
 fill:rgba(179,179,122,1);
 }
-.zr66-cls-455:hover {
+.zr72-cls-586:hover {
 cursor:pointer;
 fill:rgba(221,199,144,1);
 }
-.zr66-cls-456:hover {
+.zr72-cls-587:hover {
 cursor:pointer;
 fill:rgba(166,149,78,1);
 }
-.zr66-cls-457:hover {
+.zr72-cls-588:hover {
 cursor:pointer;
 fill:rgba(172,166,139,1);
 }
-.zr66-cls-458:hover {
+.zr72-cls-589:hover {
 cursor:pointer;
 fill:rgba(224,135,116,1);
 }
-.zr66-cls-459:hover {
+.zr72-cls-590:hover {
 cursor:pointer;
 fill:rgba(240,110,116,1);
 }
-.zr66-cls-460:hover {
+.zr72-cls-591:hover {
 cursor:pointer;
 fill:rgba(129,211,223,1);
 }
-.zr66-cls-461:hover {
+.zr72-cls-592:hover {
 cursor:pointer;
 fill:rgba(140,184,172,1);
 }
-.zr66-cls-462:hover {
+.zr72-cls-593:hover {
 cursor:pointer;
 fill:rgba(244,255,255,1);
 }
-.zr66-cls-463:hover {
+.zr72-cls-594:hover {
 cursor:pointer;
 fill:rgba(134,170,191,1);
 }
-.zr66-cls-464:hover {
+.zr72-cls-595:hover {
 cursor:pointer;
 fill:rgba(3,174,202,1);
 }
-.zr66-cls-465:hover {
+.zr72-cls-596:hover {
 cursor:pointer;
 fill:rgba(103,130,135,1);
 }
-.zr66-cls-466:hover {
+.zr72-cls-597:hover {
 cursor:pointer;
 fill:rgba(19,13,13,1);
 }
-.zr66-cls-467:hover {
+.zr72-cls-598:hover {
 cursor:pointer;
 fill:rgba(221,80,52,1);
 }
-.zr66-cls-468:hover {
+.zr72-cls-599:hover {
 cursor:pointer;
 fill:rgba(222,180,111,1);
 }
-.zr66-cls-469:hover {
+.zr72-cls-600:hover {
 cursor:pointer;
 fill:rgba(245,207,138,1);
 }
-.zr66-cls-470:hover {
+.zr72-cls-601:hover {
 cursor:pointer;
 fill:rgba(209,147,108,1);
 }
-.zr66-cls-471:hover {
+.zr72-cls-602:hover {
 cursor:pointer;
 fill:rgba(203,180,80,1);
 }
-.zr66-cls-472:hover {
+.zr72-cls-603:hover {
 cursor:pointer;
 fill:rgba(150,167,161,1);
 }
-.zr66-cls-473:hover {
+.zr72-cls-604:hover {
 cursor:pointer;
 fill:rgba(177,127,64,1);
 }
-.zr66-cls-474:hover {
+.zr72-cls-605:hover {
 cursor:pointer;
 fill:rgba(150,79,17,1);
 }
-.zr66-cls-475:hover {
+.zr72-cls-606:hover {
 cursor:pointer;
 fill:rgba(243,192,106,1);
 }
-.zr66-cls-476:hover {
+.zr72-cls-607:hover {
 cursor:pointer;
 fill:rgba(201,158,122,1);
 }
-.zr66-cls-477:hover {
+.zr72-cls-608:hover {
 cursor:pointer;
 fill:rgba(255,172,104,1);
 }
-.zr66-cls-478:hover {
+.zr72-cls-609:hover {
 cursor:pointer;
 fill:rgba(190,36,68,1);
 }
-.zr66-cls-479:hover {
+.zr72-cls-610:hover {
 cursor:pointer;
 fill:rgba(133,78,90,1);
 }
-.zr66-cls-480:hover {
+.zr72-cls-611:hover {
 cursor:pointer;
 fill:rgba(224,67,71,1);
 }
-.zr66-cls-481:hover {
+.zr72-cls-612:hover {
 cursor:pointer;
 fill:rgba(194,84,95,1);
 }
-.zr66-cls-482:hover {
+.zr72-cls-613:hover {
 cursor:pointer;
 fill:rgba(218,150,59,1);
 }
-.zr66-cls-483:hover {
+.zr72-cls-614:hover {
 cursor:pointer;
 fill:rgba(154,45,48,1);
 }
-.zr66-cls-484:hover {
+.zr72-cls-615:hover {
 cursor:pointer;
 fill:rgba(251,129,50,1);
 }
-.zr66-cls-485:hover {
+.zr72-cls-616:hover {
 cursor:pointer;
 fill:rgba(177,118,99,1);
 }
-.zr66-cls-486:hover {
+.zr72-cls-617:hover {
 cursor:pointer;
 fill:rgba(184,135,110,1);
 }
-.zr66-cls-487:hover {
+.zr72-cls-618:hover {
 cursor:pointer;
 fill:rgba(218,149,115,1);
 }
-.zr66-cls-488:hover {
+.zr72-cls-619:hover {
 cursor:pointer;
 fill:rgba(233,190,19,1);
 }
-.zr66-cls-489:hover {
+.zr72-cls-620:hover {
 cursor:pointer;
 fill:rgba(172,92,56,1);
 }
-.zr66-cls-490:hover {
+.zr72-cls-621:hover {
 cursor:pointer;
 fill:rgba(220,174,144,1);
 }
-.zr66-cls-491:hover {
+.zr72-cls-622:hover {
 cursor:pointer;
 fill:rgba(205,129,83,1);
 }
-.zr66-cls-492:hover {
+.zr72-cls-623:hover {
 cursor:pointer;
 fill:rgba(115,46,27,1);
 }
-.zr66-cls-493:hover {
+.zr72-cls-624:hover {
 cursor:pointer;
 fill:rgba(78,6,4,1);
 }
-.zr66-cls-494:hover {
+.zr72-cls-625:hover {
 cursor:pointer;
 fill:rgba(253,96,55,1);
 }
-.zr66-cls-495:hover {
+.zr72-cls-626:hover {
 cursor:pointer;
 fill:rgba(233,99,97,1);
 }
-.zr66-cls-496:hover {
+.zr72-cls-627:hover {
 cursor:pointer;
 fill:rgba(53,14,16,1);
 }
-.zr66-cls-497:hover {
+.zr72-cls-628:hover {
 cursor:pointer;
 fill:rgba(191,57,34,1);
 }
-.zr66-cls-498:hover {
+.zr72-cls-629:hover {
 cursor:pointer;
 fill:rgba(236,149,38,1);
 }
-.zr66-cls-499:hover {
+.zr72-cls-630:hover {
 cursor:pointer;
 fill:rgba(239,101,34,1);
 }
-.zr66-cls-500:hover {
+.zr72-cls-631:hover {
 cursor:pointer;
 fill:rgba(255,169,140,1);
 }
-.zr66-cls-501:hover {
+.zr72-cls-632:hover {
 cursor:pointer;
 fill:rgba(255,129,127,1);
 }
-.zr66-cls-502:hover {
+.zr72-cls-633:hover {
 cursor:pointer;
 fill:rgba(254,100,114,1);
 }
-.zr66-cls-503:hover {
+.zr72-cls-634:hover {
 cursor:pointer;
 fill:rgba(228,92,104,1);
 }
-.zr66-cls-504:hover {
+.zr72-cls-635:hover {
 pointer-events:none;
 }
 

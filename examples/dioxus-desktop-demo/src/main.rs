@@ -43,7 +43,7 @@ fn App() -> Element {
         "#
     );
     rsx! {
-        document::Script { src: asset!("/assets/echarts-5.5.1.min.js") }
+        document::Script { src: asset!("/assets/echarts-6.1.0.min.js") }
         div { style: "text-align: center;",
             h1 { "🌗 Dioxus + Charming 🚀" }
             h3 { "Frontend that scales." }

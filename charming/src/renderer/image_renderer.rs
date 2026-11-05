@@ -16,11 +16,12 @@ use crate::{Chart, EchartsError, theme::Theme};
 
 static CODE_TEMPLATE: &str = r#"
 {{#if theme_source}}{{{ theme_source }}}{{/if}}
-var chart = echarts.init(null, {{#if theme}}'{{ theme }}'{{else}}null{{/if}}, {
+var chart = echarts.init(null, {{{ theme }}}, {
     renderer: 'svg',
     ssr: true,
     width: {{ width }},
-    height: {{ height }}
+    height: {{ height }},
+    locale: {{{ locale }}}
 });
 
 chart.setOption({ animation: false, progressive: 0 });
@@ -38,6 +39,7 @@ pub struct ImageRenderer {
     #[cfg(feature = "ssr-raster")]
     fontdb: Arc<usvg::fontdb::Database>,
     theme: Theme,
+    locale: Option<String>,
     width: u32,
     height: u32,
 }
@@ -72,7 +74,7 @@ impl ImageRenderer {
         runtime
             .execute_script(
                 "[echarts.js]",
-                include_str!("../asset/echarts-5.5.1.min.js").to_string(),
+                include_str!("../asset/echarts-6.1.0.min.js").to_string(),
             )
             .unwrap();
         drop(guard);
@@ -97,6 +99,7 @@ impl ImageRenderer {
             #[cfg(feature = "ssr-raster")]
             fontdb: Arc::new(fontdb),
             theme: Theme::Default,
+            locale: None,
             width,
             height,
         }
@@ -107,6 +110,21 @@ impl ImageRenderer {
         self
     }
 
+    /// Set the locale passed to ECharts initialization.
+    pub fn locale(mut self, locale: impl Into<String>) -> Self {
+        self.locale = Some(locale.into());
+        self
+    }
+
+    /// Execute trusted extension, map, theme or locale registration source.
+    /// The source must support ECharts' DOM-free server runtime.
+    pub fn register_extension(&mut self, source: &str) -> Result<(), EchartsError> {
+        self.js_runtime
+            .execute_script("[extension]", source.to_owned())
+            .map(|_| ())
+            .map_err(|error| EchartsError::JsRuntimeError(error.to_string()))
+    }
+
     /// Render chart to an SVG String
     pub fn render(&mut self, chart: &Chart) -> Result<String, EchartsError> {
         let (theme, theme_source) = self.theme.to_str();
@@ -114,7 +132,8 @@ impl ImageRenderer {
             .render_template(
                 CODE_TEMPLATE,
                 &serde_json::json!({
-                    "theme": theme,
+                    "theme": serde_json::to_string(theme).unwrap(),
+                    "locale": serde_json::to_string(&self.locale).unwrap(),
                     "theme_source": theme_source,
                     "width": self.width,
                     "height": self.height,
