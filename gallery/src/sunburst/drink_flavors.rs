@@ -14,6 +14,7 @@ pub fn chart() -> Chart {
     Chart::new()
         .title(
             Title::new()
+                .top(5)
                 .text("WORLD COFFEE RESEARCH SENSORY LEXICON")
                 .subtext("Source: https://worldcoffeeresearch.org/work/sensory-lexicon/")
                 .text_style(TextStyle::new().font_size(14).align("center"))
@@ -22,26 +23,28 @@ pub fn chart() -> Chart {
         )
         .series(
             Sunburst::new()
+                .center(("50%", "55%"))
                 .radius(("0%", "95%"))
                 .emphasis(Emphasis::new().focus(EmphasisFocus::Ancestor))
                 .sort(Sort::None)
                 .levels(vec![
                     SunburstLevel::new(),
                     SunburstLevel::new()
-                        .r0("15%")
-                        .r("35%")
+                        .r0("12%")
+                        .r("28%")
                         .item_style(ItemStyle::new().border_width(2))
-                        .label(Label::new().rotate("tangential")),
+                        .label(Label::new().font_size(10).rotate("tangential")),
                     SunburstLevel::new()
-                        .r0("35%")
-                        .r("70%")
-                        .label(Label::new().align(LabelAlign::Right)),
+                        .r0("28%")
+                        .r("56%")
+                        .label(Label::new().font_size(10).align(LabelAlign::Right)),
                     SunburstLevel::new()
-                        .r0("70%")
-                        .r("72%")
+                        .r0("56%")
+                        .r("58%")
                         .item_style(ItemStyle::new().border_width(3))
                         .label(
                             Label::new()
+                                .font_size(10)
                                 .position(LabelPosition::Outside)
                                 .padding((3, 3, 3, 3))
                                 .silent(false),

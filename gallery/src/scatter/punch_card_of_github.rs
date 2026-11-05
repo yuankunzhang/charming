@@ -180,7 +180,11 @@ pub fn chart() -> Chart {
     Chart::new()
         .title(Title::new().text("Punch Card of Github"))
         .legend(Legend::new().left("right").data(vec!["Punch Card"]))
-        .polar(PolarCoordinate::new())
+        .polar(
+            PolarCoordinate::new()
+                .center(vec!["50%", "53%"])
+                .radius("70%"),
+        )
         .tooltip(Tooltip::new())
         .angle_axis(
             AngleAxis::new()

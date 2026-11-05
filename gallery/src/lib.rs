@@ -10,6 +10,7 @@ mod boxplot;
 mod calendar;
 mod candlestick;
 mod dataset;
+pub mod echarts6;
 mod funnel;
 mod gauge;
 mod geo;
@@ -203,6 +204,15 @@ static TREEMAP_CHARTS: LazyLock<BTreeMap<&'static str, fn() -> Chart>> = LazyLoc
 pub static CHARTS: LazyLock<BTreeMap<&'static str, BTreeMap<&'static str, fn() -> Chart>>> =
     LazyLock::new(|| {
         let mut m = BTreeMap::new();
+        m.insert(
+            "echarts6",
+            BTreeMap::from([
+                ("matrix", echarts6::matrix as fn() -> Chart),
+                ("chord", echarts6::chord as fn() -> Chart),
+                ("violin", echarts6::violin as fn() -> Chart),
+                ("bar_range", echarts6::bar_range as fn() -> Chart),
+            ]),
+        );
         m.insert("aria", ARIA_CHARTS.clone());
         m.insert("bar", BAR_CHARTS.clone());
         m.insert("bar3d", BAR3D_CHARTS.clone());

@@ -6,6 +6,7 @@ pub mod bar;
 pub mod bar3d;
 pub mod boxplot;
 pub mod candlestick;
+pub mod chord;
 pub mod custom;
 pub mod effect_scatter;
 pub mod funnel;
@@ -30,6 +31,7 @@ pub use bar::*;
 pub use bar3d::*;
 pub use boxplot::*;
 pub use candlestick::*;
+pub use chord::*;
 pub use custom::*;
 pub use effect_scatter::*;
 pub use funnel::*;
@@ -56,6 +58,7 @@ pub enum Series {
     Bar3d(bar3d::Bar3d),
     Boxplot(boxplot::Boxplot),
     Candlestick(candlestick::Candlestick),
+    Chord(chord::Chord),
     Custom(custom::Custom),
     EffectScatter(effect_scatter::EffectScatter),
     Funnel(funnel::Funnel),
@@ -63,6 +66,7 @@ pub enum Series {
     Graph(graph::Graph),
     Heatmap(heatmap::Heatmap),
     Line(line::Line),
+    Lines(lines::Lines),
     Map(map::Map),
     Parallel(parallel::Parallel),
     PictorialBar(pictorial_bar::PictorialBar),
@@ -74,6 +78,18 @@ pub enum Series {
     ThemeRiver(theme_river::ThemeRiver),
     Tree(tree::Tree),
     Treemap(treemap::Treemap),
+}
+
+// Keep each concrete series' deserialization frame separate. Otherwise debug
+// WASM reserves scratch space for every match arm on its small linear-memory stack.
+#[inline(never)]
+fn deserialize_series<T: serde::de::DeserializeOwned, E: serde::de::Error>(
+    value: serde_json::Value,
+    constructor: fn(T) -> Series,
+) -> Result<Series, E> {
+    serde_json::from_value(value)
+        .map(constructor)
+        .map_err(E::custom)
 }
 
 macro_rules! impl_series_deserialize {
@@ -92,9 +108,7 @@ macro_rules! impl_series_deserialize {
 
                 match type_str {
                     $(
-                        $type_str => Ok(Series::$variant(
-                            serde_json::from_value(value).map_err(serde::de::Error::custom)?
-                        )),
+                        $type_str => deserialize_series(value, Series::$variant),
                     )*
                     _ => Err(serde::de::Error::unknown_variant(
                         type_str,
@@ -111,6 +125,7 @@ impl_series_deserialize!(
     Bar3d => "bar3D",
     Boxplot => "boxplot",
     Candlestick => "candlestick",
+    Chord => "chord",
     Custom => "custom",
     EffectScatter => "effectScatter",
     Funnel => "funnel",
@@ -118,6 +133,7 @@ impl_series_deserialize!(
     Graph => "graph",
     Heatmap => "heatmap",
     Line => "line",
+    Lines => "lines",
     Map => "map",
     Parallel => "parallel",
     PictorialBar => "pictorialBar",
@@ -159,12 +175,14 @@ impl_series!(
     Boxplot,
     Custom,
     Candlestick,
+    Chord,
     EffectScatter,
     Funnel,
     Gauge,
     Graph,
     Heatmap,
     Line,
+    Lines,
     Map,
     Parallel,
     PictorialBar,

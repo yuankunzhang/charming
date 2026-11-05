@@ -17,7 +17,11 @@ pub fn chart() -> Chart {
     Chart::new()
         .title(Title::new().text("Two Value-Axes in Polar"))
         .legend(Legend::new().data(vec!["line"]))
-        .polar(PolarCoordinate::new().center(vec!["50%", "54%"]))
+        .polar(
+            PolarCoordinate::new()
+                .center(vec!["50%", "52%"])
+                .radius("70%"),
+        )
         .tooltip(
             Tooltip::new()
                 .trigger(Trigger::Axis)

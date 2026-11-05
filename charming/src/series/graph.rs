@@ -104,6 +104,24 @@ pub struct GraphData {
 #[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Graph {
+    preserve_aspect: Option<crate::element::PreserveAspect>,
+    preserve_aspect_align: Option<crate::element::LabelAlign>,
+    preserve_aspect_vertical_align: Option<crate::element::LabelVerticalAlign>,
+    roam_trigger: Option<crate::element::RoamTrigger>,
+    center: Option<crate::datatype::CompositeValue>,
+    zoom: Option<f64>,
+    single_axis_index: Option<f64>,
+    single_axis_id: Option<String>,
+    polar_index: Option<f64>,
+    polar_id: Option<String>,
+    geo_id: Option<String>,
+    x_axis_id: Option<String>,
+    y_axis_id: Option<String>,
+    coordinate_system_usage: Option<crate::element::CoordinateSystemUsage>,
+    coord: Option<crate::datatype::CompositeValue>,
+    matrix_index: Option<f64>,
+    matrix_id: Option<String>,
+    calendar_id: Option<String>,
     #[serde(rename = "type")]
     #[charming_type = "graph"]
     type_: String,
@@ -119,7 +137,7 @@ pub struct Graph {
     layout: Option<GraphLayout>,
     circular: Option<GraphLayoutCircular>,
     force: Option<GraphLayoutForce>,
-    roam: Option<bool>,
+    roam: Option<crate::element::Roam>,
     label: Option<Label>,
     label_layout: Option<LabelLayout>,
     scale_limit: Option<ScaleLimit>,

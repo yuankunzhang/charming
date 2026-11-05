@@ -9,6 +9,8 @@ use serde::{Deserialize, Serialize};
 #[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct SplitLine {
+    show_min_line: Option<bool>,
+    show_max_line: Option<bool>,
     show: Option<bool>,
     distance: Option<f64>,
     line_style: Option<LineStyle>,

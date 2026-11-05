@@ -44,12 +44,20 @@ pub enum RangeMode {
     Percent,
 }
 
+#[serde_with::apply(Option => #[serde(skip_serializing_if = "Option::is_none")])]
+#[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, PartialOrd, Clone)]
+#[serde(rename_all = "camelCase")]
+pub struct HandleLabel {
+    show: Option<bool>,
+}
+
 #[serde_with::apply(
   Option => #[serde(skip_serializing_if = "Option::is_none")]
 )]
 #[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct DataZoomEmphasis {
+    handle_label: Option<HandleLabel>,
     handle_style: Option<ItemStyle>,
     move_handle_style: Option<ItemStyle>,
 }
@@ -64,6 +72,22 @@ pub struct DataZoomEmphasis {
 #[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct DataZoom {
+    handle_label: Option<HandleLabel>,
+    cursor_grab: Option<String>,
+    cursor_grabbing: Option<String>,
+    single_axis_index: Option<CompositeValue>,
+    x_axis_id: Option<CompositeValue>,
+    y_axis_id: Option<CompositeValue>,
+    radius_axis_id: Option<CompositeValue>,
+    angle_axis_id: Option<CompositeValue>,
+    single_axis_id: Option<CompositeValue>,
+    coordinate_system: Option<crate::element::CoordinateSystem>,
+    coordinate_system_usage: Option<crate::element::CoordinateSystemUsage>,
+    coord: Option<crate::datatype::CompositeValue>,
+    matrix_index: Option<f64>,
+    matrix_id: Option<String>,
+    calendar_index: Option<f64>,
+    calendar_id: Option<String>,
     #[serde(rename = "type")]
     type_: Option<DataZoomType>,
     /// Component ID.
@@ -108,8 +132,8 @@ pub struct DataZoom {
     x_axis_index: Option<CompositeValue>,
     y_axis_index: Option<CompositeValue>,
     disabled: Option<bool>,
-    radius_axis_index: Option<f64>,
-    angle_axis_index: Option<f64>,
+    radius_axis_index: Option<CompositeValue>,
+    angle_axis_index: Option<CompositeValue>,
     filter_mode: Option<FilterMode>,
     text_style: Option<TextStyle>,
     handle_icon: Option<String>,

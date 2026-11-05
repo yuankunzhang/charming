@@ -5,12 +5,46 @@ use crate::{
 use charming_macros::CharmingSetters;
 use serde::{Deserialize, Serialize};
 
+/// Region overrides, also usable as a GeoJSON feature's `properties.echartsStyle`.
+#[serde_with::apply(Option => #[serde(skip_serializing_if = "Option::is_none")])]
+#[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, Clone)]
+#[serde(rename_all = "camelCase")]
+pub struct GeoRegion {
+    name: Option<String>,
+    selected: Option<bool>,
+    silent: Option<bool>,
+    item_style: Option<ItemStyle>,
+    label: Option<Label>,
+    emphasis: Option<Emphasis>,
+    select: Option<Select>,
+    blur: Option<Blur>,
+    tooltip: Option<crate::element::Tooltip>,
+}
+
+#[serde_with::apply(Option => #[serde(skip_serializing_if = "Option::is_none")])]
 #[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Geo {
+    id: Option<String>,
+    width: Option<CompositeValue>,
+    height: Option<CompositeValue>,
+    roam_trigger: Option<crate::element::RoamTrigger>,
+    clip: Option<bool>,
+    preserve_aspect: Option<crate::element::PreserveAspect>,
+    preserve_aspect_align: Option<crate::element::LabelAlign>,
+    preserve_aspect_vertical_align: Option<crate::element::LabelVerticalAlign>,
+    regions: Option<Vec<GeoRegion>>,
+    tooltip: Option<crate::element::Tooltip>,
+    coordinate_system: Option<crate::element::CoordinateSystem>,
+    coordinate_system_usage: Option<crate::element::CoordinateSystemUsage>,
+    coord: Option<crate::datatype::CompositeValue>,
+    matrix_index: Option<f64>,
+    matrix_id: Option<String>,
+    calendar_index: Option<f64>,
+    calendar_id: Option<String>,
     show: Option<bool>,
     map: Option<String>,
-    roam: Option<bool>,
+    roam: Option<crate::element::Roam>,
     #[charming_skip_setter]
     center: Option<(String, String)>,
     aspect_scale: Option<f64>,

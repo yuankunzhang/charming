@@ -9,6 +9,9 @@ use serde::{Deserialize, Serialize};
 #[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Select {
+    line_style: Option<super::LineStyle>,
+    edge_label: Option<Label>,
+    z2: Option<f64>,
     disabled: Option<bool>,
     label: Option<Label>,
     item_style: Option<ItemStyle>,

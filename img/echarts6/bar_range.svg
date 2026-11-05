@@ -1,0 +1,40 @@
+<svg width="600" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 600 450">
+<rect width="600" height="450" x="0" y="0" fill="none"></rect>
+<path d="M60 400.5L570 400.5" fill="none" pointer-events="visible" stroke="#dbdee4" class="zr20-cls-187"></path>
+<path d="M60 316.5L570 316.5" fill="none" pointer-events="visible" stroke="#dbdee4" class="zr20-cls-187"></path>
+<path d="M60 232.5L570 232.5" fill="none" pointer-events="visible" stroke="#dbdee4" class="zr20-cls-187"></path>
+<path d="M60 149.5L570 149.5" fill="none" pointer-events="visible" stroke="#dbdee4" class="zr20-cls-187"></path>
+<path d="M60 65.5L570 65.5" fill="none" pointer-events="visible" stroke="#dbdee4" class="zr20-cls-187"></path>
+<path d="M60 400.5L570 400.5" fill="none" pointer-events="visible" stroke="#54555a" stroke-linecap="round" class="zr20-cls-187"></path>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 400)" fill="#54555a">0</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 316.25)" fill="#54555a">2</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 232.5)" fill="#54555a">4</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 148.75)" fill="#54555a">6</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 65)" fill="#54555a">8</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(145 408)" fill="#54555a">A</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(315 408)" fill="#54555a">B</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(485 408)" fill="#54555a">C</text>
+<path d="M106.5 232.5L183.5 232.5A4 4 0 0 1 187.5 236.5L187.5 354.1A4 4 0 0 1 183.5 358.1L106.5 358.1A4 4 0 0 1 102.5 354.1L102.5 236.5A4 4 0 0 1 106.5 232.5Z" fill="#10b981" ecmeta_series_index="0" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr20-cls-188"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font: 12px sans-serif" y="-6" transform="translate(145 222.5)" fill="#333">4℃</text>
+<text dominant-baseline="central" text-anchor="middle" style="font: 12px sans-serif" y="6" transform="translate(145 368.125)" fill="#333">1℃</text>
+<path d="M276.5 65L353.5 65A4 4 0 0 1 357.5 69L357.5 270.4A4 4 0 0 1 353.5 274.4L276.5 274.4A4 4 0 0 1 272.5 270.4L272.5 69A4 4 0 0 1 276.5 65Z" fill="#10b981" ecmeta_series_index="0" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr20-cls-188"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font: 12px sans-serif" y="-6" transform="translate(315 55)" fill="#333">8℃</text>
+<text dominant-baseline="central" text-anchor="middle" style="font: 12px sans-serif" y="6" transform="translate(315 284.375)" fill="#333">3℃</text>
+<path d="M446.5 148.8L523.5 148.8A4 4 0 0 1 527.5 152.8L527.5 312.3A4 4 0 0 1 523.5 316.3L446.5 316.3A4 4 0 0 1 442.5 312.3L442.5 152.8A4 4 0 0 1 446.5 148.8Z" fill="#10b981" ecmeta_series_index="0" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr20-cls-188"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font: 12px sans-serif" y="-6" transform="translate(485 138.75)" fill="#333">6℃</text>
+<text dominant-baseline="central" text-anchor="middle" style="font: 12px sans-serif" y="6" transform="translate(485 326.25)" fill="#333">2℃</text>
+<path d="M-116 -5l231.9 0l0 28l-231.9 0Z" transform="translate(300 20)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#3c3c41" stroke-width="0" class="zr20-cls-187"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:18px;font-family:sans-serif;font-weight:bold;" xml:space="preserve" y="9" transform="translate(300 20)" fill="#3c3c41">Official barRange extension</text>
+<style ><![CDATA[
+.zr20-cls-187:hover {
+pointer-events:none;
+}
+.zr20-cls-188:hover {
+cursor:pointer;
+fill:rgba(17,203,141,1);
+}
+
+]]>
+
+</style>
+</svg>

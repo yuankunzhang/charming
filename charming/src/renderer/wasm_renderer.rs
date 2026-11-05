@@ -1,5 +1,6 @@
 use crate::{
     Chart, EchartsError,
+    component::SaveAsImageType,
     element::Easing,
     render_option::{RenderOption, wasm_error},
     theme::Theme,
@@ -13,12 +14,14 @@ pub struct WasmRenderer {
     theme: Theme,
     width: Option<u32>,
     height: Option<u32>,
+    locale: Option<String>,
 }
 
 impl WasmRenderer {
     pub fn new(width: u32, height: u32) -> Self {
         Self {
             theme: Theme::Default,
+            locale: None,
             width: Some(width),
             height: Some(height),
         }
@@ -27,6 +30,7 @@ impl WasmRenderer {
     pub fn new_opt(width: Option<u32>, height: Option<u32>) -> Self {
         Self {
             theme: Theme::Default,
+            locale: None,
             width,
             height,
         }
@@ -37,8 +41,26 @@ impl WasmRenderer {
         self
     }
 
+    /// Set the locale passed to ECharts initialization.
+    pub fn locale(mut self, locale: impl Into<String>) -> Self {
+        self.locale = Some(locale.into());
+        self
+    }
+
+    /// Execute trusted registration source in the global ECharts environment.
+    pub fn register_extension(source: &str) -> Result<(), EchartsError> {
+        let source = serde_json::to_string(source).expect("a string serializes to JSON");
+        js_sys::eval(&format!("(0, eval)({source})"))
+            .map(|_| ())
+            .map_err(wasm_error)
+    }
+
     pub fn render(&self, id: &str, chart: &Chart) -> Result<Echarts, EchartsError> {
         let option = prepare(chart)?;
+        let (theme, source) = self.theme.to_str();
+        if !source.is_empty() {
+            Self::register_extension(source)?;
+        }
         let window = web_sys::window().ok_or(EchartsError::WasmError(
             "no `window` object found".to_string(),
         ))?;
@@ -55,10 +77,15 @@ impl WasmRenderer {
             .is_undefined();
         let echarts = init(
             &element,
-            self.theme.to_str().0,
-            to_value(&ChartSize {
+            theme,
+            to_value(&ChartInit {
                 width: self.width,
                 height: self.height,
+                locale: self.locale.as_deref(),
+                renderer: match chart.save_as_image_type() {
+                    Some(SaveAsImageType::Svg) => "svg",
+                    _ => "canvas",
+                },
             })
             .map_err(|error| EchartsError::WasmError(error.to_string()))?,
         )
@@ -85,6 +112,86 @@ impl WasmRenderer {
     pub fn update(echarts: &Echarts, chart: &Chart) -> Result<(), EchartsError> {
         echarts.set_option(prepare(chart)?).map_err(wasm_error)
     }
+
+    /// Replace all options. Call this with the complete current chart before changing theme.
+    pub fn replace(echarts: &Echarts, chart: &Chart) -> Result<(), EchartsError> {
+        let options = js_sys::Object::new();
+        js_sys::Reflect::set(&options, &"notMerge".into(), &true.into()).map_err(wasm_error)?;
+        echarts
+            .set_option_with_options(prepare(chart)?, options.into())
+            .map_err(wasm_error)
+    }
+
+    /// Change theme after [`Self::replace`]; merge-only updates may not survive a theme change.
+    pub fn set_theme(echarts: &Echarts, theme: Theme, silent: bool) -> Result<(), EchartsError> {
+        let (name, source) = theme.to_str();
+        if !source.is_empty() {
+            Self::register_extension(source)?;
+        }
+        let options = js_sys::Object::new();
+        js_sys::Reflect::set(&options, &"silent".into(), &silent.into()).map_err(wasm_error)?;
+        echarts
+            .change_theme(
+                if name.is_empty() { "default" } else { name },
+                options.into(),
+            )
+            .map_err(wasm_error)
+    }
+
+    pub fn convert_to_layout(
+        echarts: &Echarts,
+        finder: JsValue,
+        value: JsValue,
+        options: Option<JsValue>,
+    ) -> Result<JsValue, EchartsError> {
+        echarts
+            .to_layout(finder, value, options.unwrap_or(JsValue::UNDEFINED))
+            .map_err(wasm_error)
+    }
+
+    pub fn convert_to_pixel(
+        echarts: &Echarts,
+        finder: JsValue,
+        value: JsValue,
+        options: Option<JsValue>,
+    ) -> Result<JsValue, EchartsError> {
+        echarts
+            .to_pixel(finder, value, options.unwrap_or(JsValue::UNDEFINED))
+            .map_err(wasm_error)
+    }
+
+    pub fn convert_from_pixel(
+        echarts: &Echarts,
+        finder: JsValue,
+        value: JsValue,
+        options: Option<JsValue>,
+    ) -> Result<JsValue, EchartsError> {
+        echarts
+            .from_pixel(finder, value, options.unwrap_or(JsValue::UNDEFINED))
+            .map_err(wasm_error)
+    }
+
+    pub fn dispatch_action(echarts: &Echarts, payload: JsValue) -> Result<(), EchartsError> {
+        echarts.action(payload).map_err(wasm_error)
+    }
+
+    /// The caller must retain the function (and its Rust Closure) until it is unbound.
+    pub fn on(
+        echarts: &Echarts,
+        event: &str,
+        handler: &js_sys::Function,
+    ) -> Result<(), EchartsError> {
+        echarts.bind_event(event, handler).map_err(wasm_error)
+    }
+
+    /// Unbind the same function previously passed to [`Self::on`].
+    pub fn off(
+        echarts: &Echarts,
+        event: &str,
+        handler: &js_sys::Function,
+    ) -> Result<(), EchartsError> {
+        echarts.unbind_event(event, handler).map_err(wasm_error)
+    }
 }
 
 fn prepare(chart: &Chart) -> Result<JsValue, EchartsError> {
@@ -94,9 +201,14 @@ fn prepare(chart: &Chart) -> Result<JsValue, EchartsError> {
 }
 
 #[derive(Clone, Debug, Serialize, Copy)]
-struct ChartSize {
+struct ChartInit<'a> {
+    #[serde(skip_serializing_if = "Option::is_none")]
     width: Option<u32>,
+    #[serde(skip_serializing_if = "Option::is_none")]
     height: Option<u32>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    locale: Option<&'a str>,
+    renderer: &'a str,
 }
 
 #[derive(Clone, Debug, Serialize, Copy)]
@@ -163,6 +275,50 @@ extern "C" {
 
     #[wasm_bindgen(catch, method, js_name = "setOption")]
     fn set_option(this: &Echarts, option: JsValue) -> Result<(), JsValue>;
+
+    #[wasm_bindgen(catch, method, js_name = setOption)]
+    fn set_option_with_options(
+        this: &Echarts,
+        option: JsValue,
+        options: JsValue,
+    ) -> Result<(), JsValue>;
+
+    #[wasm_bindgen(catch, method, js_name = setTheme)]
+    fn change_theme(this: &Echarts, name: &str, options: JsValue) -> Result<(), JsValue>;
+
+    #[wasm_bindgen(catch, method, js_name = convertToLayout)]
+    fn to_layout(
+        this: &Echarts,
+        finder: JsValue,
+        value: JsValue,
+        options: JsValue,
+    ) -> Result<JsValue, JsValue>;
+
+    #[wasm_bindgen(catch, method, js_name = convertToPixel)]
+    fn to_pixel(
+        this: &Echarts,
+        finder: JsValue,
+        value: JsValue,
+        options: JsValue,
+    ) -> Result<JsValue, JsValue>;
+
+    #[wasm_bindgen(catch, method, js_name = convertFromPixel)]
+    fn from_pixel(
+        this: &Echarts,
+        finder: JsValue,
+        value: JsValue,
+        options: JsValue,
+    ) -> Result<JsValue, JsValue>;
+
+    #[wasm_bindgen(catch, method, js_name = dispatchAction)]
+    fn action(this: &Echarts, payload: JsValue) -> Result<(), JsValue>;
+
+    #[wasm_bindgen(catch, method, js_name = on)]
+    fn bind_event(this: &Echarts, event: &str, handler: &js_sys::Function) -> Result<(), JsValue>;
+
+    #[wasm_bindgen(catch, method, js_name = off)]
+    fn unbind_event(this: &Echarts, event: &str, handler: &js_sys::Function)
+    -> Result<(), JsValue>;
 
     #[wasm_bindgen(catch, method)]
     fn dispose(this: &Echarts) -> Result<(), JsValue>;

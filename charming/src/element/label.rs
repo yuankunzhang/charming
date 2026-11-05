@@ -61,7 +61,7 @@ pub struct Label {
     show: Option<bool>,
     position: Option<LabelPosition>,
     distance: Option<f64>,
-    rotate: Option<String>,
+    rotate: Option<LabelRotation>,
     #[charming_skip_setter]
     offset: Option<(f64, f64)>,
     formatter: Option<Formatter>,
@@ -69,7 +69,7 @@ pub struct Label {
     font_style: Option<FontStyle>,
     font_weight: Option<FontWeight>,
     font_family: Option<FontFamily>,
-    font_size: Option<f64>,
+    font_size: Option<crate::datatype::StringOrNumber>,
     #[charming_skip_setter]
     padding: Option<(f64, f64, f64, f64)>,
     align: Option<LabelAlign>,
@@ -84,6 +84,60 @@ pub struct Label {
 
     height: Option<f64>,
     width: Option<f64>,
+    rich: Option<std::collections::HashMap<String, super::TextStyle>>,
+    rich_inherit_plain_label: Option<bool>,
+    min_margin: Option<f64>,
+    text_margin: Option<crate::datatype::NumberOrArray>,
+    overflow: Option<TextOverflow>,
+    line_overflow: Option<LineOverflow>,
+    ellipsis: Option<String>,
+    line_height: Option<f64>,
+}
+
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone)]
+#[serde(untagged)]
+pub enum LabelRotation {
+    Number(f64),
+    Bool(bool),
+    String(String),
+}
+
+impl From<f64> for LabelRotation {
+    fn from(value: f64) -> Self {
+        Self::Number(value)
+    }
+}
+
+impl From<bool> for LabelRotation {
+    fn from(value: bool) -> Self {
+        Self::Bool(value)
+    }
+}
+
+impl From<&str> for LabelRotation {
+    fn from(value: &str) -> Self {
+        Self::String(value.to_owned())
+    }
+}
+
+impl From<String> for LabelRotation {
+    fn from(value: String) -> Self {
+        Self::String(value)
+    }
+}
+
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
+#[serde(rename_all = "camelCase")]
+pub enum TextOverflow {
+    Break,
+    BreakAll,
+    Truncate,
+}
+
+#[derive(Serialize, Deserialize, Debug, PartialEq, PartialOrd, Clone, Copy)]
+#[serde(rename_all = "camelCase")]
+pub enum LineOverflow {
+    Truncate,
 }
 
 impl Label {

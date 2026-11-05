@@ -1,73 +1,55 @@
 <svg width="600" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 600 450">
 <rect width="600" height="450" x="0" y="0" fill="none"></rect>
-<path d="M60 380.5L540 380.5" fill="transparent" stroke="#E0E6F1" class="zr31-cls-152"></path>
-<path d="M60 316.5L540 316.5" fill="transparent" stroke="#E0E6F1" class="zr31-cls-152"></path>
-<path d="M60 252.5L540 252.5" fill="transparent" stroke="#E0E6F1" class="zr31-cls-152"></path>
-<path d="M60 188.5L540 188.5" fill="transparent" stroke="#E0E6F1" class="zr31-cls-152"></path>
-<path d="M60 124.5L540 124.5" fill="transparent" stroke="#E0E6F1" class="zr31-cls-152"></path>
-<path d="M60 60.5L540 60.5" fill="transparent" stroke="#E0E6F1" class="zr31-cls-152"></path>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="-6" transform="translate(60 45)" fill="#6E7079">Income</text>
-<path d="M60 380.5L540 380.5" fill="transparent" stroke="#6E7079" stroke-linecap="round" class="zr31-cls-152"></path>
-<path d="M60.5 380L60.5 385" fill="transparent" stroke="#6E7079" class="zr31-cls-152"></path>
-<path d="M96.5 380L96.5 385" fill="transparent" stroke="#6E7079" class="zr31-cls-152"></path>
-<path d="M132.5 380L132.5 385" fill="transparent" stroke="#6E7079" class="zr31-cls-152"></path>
-<path d="M169.5 380L169.5 385" fill="transparent" stroke="#6E7079" class="zr31-cls-152"></path>
-<path d="M205.5 380L205.5 385" fill="transparent" stroke="#6E7079" class="zr31-cls-152"></path>
-<path d="M242.5 380L242.5 385" fill="transparent" stroke="#6E7079" class="zr31-cls-152"></path>
-<path d="M278.5 380L278.5 385" fill="transparent" stroke="#6E7079" class="zr31-cls-152"></path>
-<path d="M314.5 380L314.5 385" fill="transparent" stroke="#6E7079" class="zr31-cls-152"></path>
-<path d="M351.5 380L351.5 385" fill="transparent" stroke="#6E7079" class="zr31-cls-152"></path>
-<path d="M387.5 380L387.5 385" fill="transparent" stroke="#6E7079" class="zr31-cls-152"></path>
-<path d="M423.5 380L423.5 385" fill="transparent" stroke="#6E7079" class="zr31-cls-152"></path>
-<path d="M460.5 380L460.5 385" fill="transparent" stroke="#6E7079" class="zr31-cls-152"></path>
-<path d="M496.5 380L496.5 385" fill="transparent" stroke="#6E7079" class="zr31-cls-152"></path>
-<path d="M532.5 380L532.5 385" fill="transparent" stroke="#6E7079" class="zr31-cls-152"></path>
-<path d="M540.5 380L540.5 385" fill="transparent" stroke="#6E7079" class="zr31-cls-152"></path>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 380)" fill="#6E7079">0</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 316)" fill="#6E7079">10,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 252)" fill="#6E7079">20,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 188)" fill="#6E7079">30,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 124)" fill="#6E7079">40,000</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(52 60)" fill="#6E7079">50,000</text>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(63.6364 388)" fill="#6E7079">1950</text>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(100 388)" fill="#6E7079">1955</text>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(136.3636 388)" fill="#6E7079">1960</text>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(172.7273 388)" fill="#6E7079">1965</text>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(209.0909 388)" fill="#6E7079">1970</text>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(245.4545 388)" fill="#6E7079">1975</text>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(281.8182 388)" fill="#6E7079">1980</text>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(318.1818 388)" fill="#6E7079">1985</text>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(354.5455 388)" fill="#6E7079">1990</text>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(390.9091 388)" fill="#6E7079">1995</text>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(427.2727 388)" fill="#6E7079">2000</text>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(463.6364 388)" fill="#6E7079">2005</text>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(500 388)" fill="#6E7079">2010</text>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(536.3636 388)" fill="#6E7079">2015</text>
-<g clip-path="url(#zr31-c0)">
-<path d="M63.6 333.6L70.9 329.5L78.2 325.2L85.5 320.8L92.7 316.5L100 309.6L107.3 304.8L114.5 300.7L121.8 297.5L129.1 291.9L136.4 285.2L143.6 282L150.9 278.4L158.2 276.2L165.5 270.6L172.7 265.8L180 263.1L187.3 262.8L194.5 256.8L201.8 249.4L209.1 244.2L216.4 241.2L223.6 236L230.9 229.8L238.2 228.6L245.5 228.8L252.7 220.6L260 215.7L267.3 210.8L274.5 203.9L281.8 202.3L289.1 201.8L296.4 203.1L303.6 199.3L310.9 193.5L318.2 189L325.5 184.7L332.7 181.7L340 175.8L347.3 170.7L354.5 178.6L361.8 169.8L369.1 167.4L376.4 170.8L383.6 166.4L390.9 163.4L398.2 162.3L405.5 158.7L412.7 154.4L420 150L427.3 143.5L434.5 139.9L441.8 140.3L449.1 142.1L456.4 139.3L463.6 137.4L470.9 128.1L478.2 119.6L485.5 116.3L492.7 130.6L500 120L507.3 110.7L514.5 105.1L521.8 105.5L529.1 102L536.4 98.1" fill="transparent" stroke="#5470c6" stroke-width="2" stroke-linejoin="bevel" class="zr31-cls-154"></path>
+<path d="M90 370.5L540 370.5" fill="none" pointer-events="visible" stroke="#dbdee4" class="zr37-cls-281"></path>
+<path d="M90 309.5L540 309.5" fill="none" pointer-events="visible" stroke="#dbdee4" class="zr37-cls-281"></path>
+<path d="M90 248.5L540 248.5" fill="none" pointer-events="visible" stroke="#dbdee4" class="zr37-cls-281"></path>
+<path d="M90 187.5L540 187.5" fill="none" pointer-events="visible" stroke="#dbdee4" class="zr37-cls-281"></path>
+<path d="M90 126.5L540 126.5" fill="none" pointer-events="visible" stroke="#dbdee4" class="zr37-cls-281"></path>
+<path d="M90 65.5L540 65.5" fill="none" pointer-events="visible" stroke="#dbdee4" class="zr37-cls-281"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="-6" transform="translate(90 50)" fill="#54555a">Income</text>
+<path d="M90 370.5L540 370.5" fill="none" pointer-events="visible" stroke="#54555a" stroke-linecap="round" class="zr37-cls-281"></path>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(82 370)" fill="#54555a">0</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(82 309)" fill="#54555a">10,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(82 248)" fill="#54555a">20,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(82 187)" fill="#54555a">30,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(82 126)" fill="#54555a">40,000</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(82 65)" fill="#54555a">50,000</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(93.4091 378)" fill="#54555a">1950</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(134.3182 378)" fill="#54555a">1956</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(175.2273 378)" fill="#54555a">1962</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(216.1364 378)" fill="#54555a">1968</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(257.0455 378)" fill="#54555a">1974</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(297.9545 378)" fill="#54555a">1980</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(338.8636 378)" fill="#54555a">1986</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(379.7727 378)" fill="#54555a">1992</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(420.6818 378)" fill="#54555a">1998</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(461.5909 378)" fill="#54555a">2004</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(502.5 378)" fill="#54555a">2010</text>
+<g clip-path="url(#zr37-c0)">
+<path d="M93.4 325.8L100.2 321.9L107 317.8L113.9 313.6L120.7 309.5L127.5 302.9L134.3 298.3L141.1 294.5L148 291.4L154.8 286.1L161.6 279.7L168.4 276.6L175.2 273.2L182 271.1L188.9 265.7L195.7 261.2L202.5 258.6L209.3 258.3L216.1 252.6L223 245.5L229.8 240.6L236.6 237.7L243.4 232.8L250.2 226.9L257 225.7L263.9 225.9L270.7 218.1L277.5 213.4L284.3 208.7L291.1 202.2L298 200.6L304.8 200.1L311.6 201.4L318.4 197.8L325.2 192.3L332 187.9L338.9 183.9L345.7 181L352.5 175.4L359.3 170.5L366.1 178L373 169.7L379.8 167.4L386.6 170.6L393.4 166.4L400.2 163.6L407 162.6L413.9 159.1L420.7 155L427.5 150.8L434.3 144.6L441.1 141.1L448 141.5L454.8 143.3L461.6 140.6L468.4 138.8L475.2 130L482 121.8L488.9 118.7L495.7 132.3L502.5 122.1L509.3 113.3L516.1 108L523 108.4L529.8 105L536.6 101.3" fill="none" pointer-events="visible" stroke="#5070dd" stroke-width="2" stroke-linejoin="bevel" class="zr37-cls-283"></path>
 </g>
-<g clip-path="url(#zr31-c1)">
-<path d="M63.6 329.4L70.9 326.9L78.2 325.9L85.5 324.8L92.7 322.4L100 319.5L107.3 316.6L114.5 313.2L121.8 311.6L129.1 310.2L136.4 305.5L143.6 302.1L150.9 298.3L158.2 295.3L165.5 290.6L172.7 287.1L180 283L187.3 279.1L194.5 275.5L201.8 269L209.1 263.6L216.4 259.1L223.6 254.8L230.9 248.9L238.2 245.6L245.5 246.6L252.7 241.4L260 237.5L267.3 233.3L274.5 228.7L281.8 226.6L289.1 225.2L296.4 221.6L303.6 218.8L310.9 216.8L318.2 214.1L325.5 210.7L332.7 207.4L340 200.2L347.3 194.8L354.5 191.4L361.8 189.9L369.1 187.8L376.4 189.8L383.6 186.1L390.9 182.7L398.2 180.7L405.5 176.8L412.7 170.3L420 164.3L427.3 157.4L434.5 154.7L441.8 153.9L449.1 153.6L456.4 149L463.6 147.1L470.9 143.2L478.2 139.1L485.5 140L492.7 148.2L500 144.8L507.3 141.1L514.5 141.7L521.8 141.2L529.1 141.8L536.4 139.4" fill="transparent" stroke="#91cc75" stroke-width="2" stroke-linejoin="bevel" class="zr31-cls-154"></path>
+<g clip-path="url(#zr37-c1)">
+<path d="M93.4 321.7L100.2 319.4L107 318.5L113.9 317.4L120.7 315.1L127.5 312.3L134.3 309.6L141.1 306.3L148 304.8L154.8 303.4L161.6 299L168.4 295.8L175.2 292.1L182 289.3L188.9 284.8L195.7 281.5L202.5 277.5L209.3 273.9L216.1 270.4L223 264.2L229.8 259.1L236.6 254.8L243.4 250.6L250.2 245L257 241.9L263.9 242.8L270.7 237.9L277.5 234.2L284.3 230.1L291.1 225.8L298 223.8L304.8 222.5L311.6 219L318.4 216.4L325.2 214.5L332 211.9L338.9 208.6L345.7 205.5L352.5 198.6L359.3 193.5L366.1 190.2L373 188.8L379.8 186.8L386.6 188.7L393.4 185.2L400.2 182L407 180L413.9 176.3L420.7 170.1L427.5 164.4L434.3 157.9L441.1 155.3L448 154.5L454.8 154.2L461.6 149.9L468.4 148L475.2 144.3L482 140.4L488.9 141.2L495.7 149.1L502.5 145.9L509.3 142.3L516.1 142.9L523 142.4L529.8 143L536.6 140.6" fill="none" pointer-events="visible" stroke="#b6d634" stroke-width="2" stroke-linejoin="bevel" class="zr37-cls-283"></path>
 </g>
-<path d="M-5 -5l357.6 0l0 28l-357.6 0Z" transform="translate(5 5)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#ccc" stroke-width="0" class="zr31-cls-152"></path>
-<text dominant-baseline="central" text-anchor="start" style="font-size:18px;font-family:sans-serif;font-weight:bold;" xml:space="preserve" y="9" transform="translate(5 5)" fill="#464646">Income of Germany and France since 1950</text>
+<path d="M-178.8 -5l357.6 0l0 28l-357.6 0Z" transform="translate(300 20)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#3c3c41" stroke-width="0" class="zr37-cls-281"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:18px;font-family:sans-serif;font-weight:bold;" xml:space="preserve" y="9" transform="translate(300 20)" fill="#3c3c41">Income of Germany and France since 1950</text>
 <defs >
-<clipPath id="zr31-c0">
-<path d="M59 59l482 0l0 322l-482 0Z" fill="#000" class="zr31-cls-153"></path>
+<clipPath id="zr37-c0">
+<path d="M89 64l452 0l0 307l-452 0Z" fill="#000" class="zr37-cls-282"></path>
 </clipPath>
-<clipPath id="zr31-c1">
-<path d="M59 59l482 0l0 322l-482 0Z" fill="#000" class="zr31-cls-153"></path>
+<clipPath id="zr37-c1">
+<path d="M89 64l452 0l0 307l-452 0Z" fill="#000" class="zr37-cls-282"></path>
 </clipPath>
 </defs>
 <style ><![CDATA[
-.zr31-cls-152:hover {
+.zr37-cls-281:hover {
 pointer-events:none;
 }
-.zr31-cls-153:hover {
+.zr37-cls-282:hover {
 cursor:pointer;
 fill:rgba(0,0,0,1);
 }
-.zr31-cls-154:hover {
+.zr37-cls-283:hover {
 cursor:pointer;
 }
 

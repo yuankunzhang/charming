@@ -16,6 +16,8 @@ pub struct DataPointItem {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     item_style: Option<ItemStyle>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    cursor: Option<crate::element::Cursor>,
 }
 
 impl DataPointItem {
@@ -24,7 +26,13 @@ impl DataPointItem {
             value: value.into(),
             name: None,
             item_style: None,
+            cursor: None,
         }
+    }
+
+    pub fn cursor(mut self, cursor: crate::element::Cursor) -> Self {
+        self.cursor = Some(cursor);
+        self
     }
 
     pub fn name<S: Into<String>>(mut self, name: S) -> Self {

@@ -1,6 +1,6 @@
 use charming::{
     Chart,
-    component::{Axis, Feature, SaveAsImage, Title, Toolbox, VisualMap, VisualMapPiece},
+    component::{Axis, Feature, Grid, SaveAsImage, Title, Toolbox, VisualMap, VisualMapPiece},
     element::{
         AxisLabel, AxisPointer, AxisPointerType, AxisType, ItemStyle, JsFunction, MarkArea,
         MarkAreaData, Tooltip, Trigger,
@@ -10,6 +10,7 @@ use charming::{
 
 pub fn chart() -> Chart {
     Chart::new()
+        .grid(Grid::new().top(100))
         .title(
             Title::new()
                 .text("Distribution of Electricity")

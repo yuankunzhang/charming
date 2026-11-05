@@ -96,12 +96,14 @@ pub use renderer::*;
 
 use charming_macros::CharmingSetters;
 use component::{
-    AngleAxis, Aria, Axis, Axis3D, Calendar, DataZoom, GeoMap, Grid, Grid3D, LegendConfig,
-    ParallelAxis, ParallelCoordinate, PolarCoordinate, RadarCoordinate, RadiusAxis,
-    SaveAsImageType, SingleAxis, Title, Toolbox, VisualMap,
+    AngleAxis, Aria, Axis, Axis3D, BrushComponent, Calendar, DataZoom, Geo, GeoMap, Grid, Grid3D,
+    LegendConfig, Matrix, ParallelAxis, ParallelCoordinate, PolarCoordinate, RadarCoordinate,
+    RadiusAxis, SaveAsImageType, SingleAxis, Thumbnail, Timeline, Title, Toolbox, VisualMap,
 };
 use datatype::Dataset;
-use element::{AnimationTime, AxisPointer, Color, Easing, MarkLine, Tooltip};
+use element::{
+    AnimationTime, AxisPointer, BooleanOrAuto, Color, Easing, MarkLine, TextStyle, Tooltip,
+};
 use serde::{Deserialize, Serialize};
 use serde_with::{OneOrMany, formats::PreferOne, serde_as};
 use series::Series;
@@ -281,7 +283,19 @@ pub struct Chart {
     visual_map: Vec<VisualMap>,
     data_zoom: Vec<DataZoom>,
     parallel: Option<ParallelCoordinate>,
-    calendar: Option<Calendar>,
+    calendar: Vec<Calendar>,
+    geo: Vec<Geo>,
+    matrix: Vec<Matrix>,
+    thumbnail: Vec<Thumbnail>,
+    timeline: Option<Timeline>,
+    brush: Option<BrushComponent>,
+    options: Vec<Chart>,
+    base_option: Option<Box<Chart>>,
+    text_style: Option<TextStyle>,
+    rich_inherit_plain_label: Option<bool>,
+    dark_mode: Option<BooleanOrAuto>,
+    legacy_view_coord_sys_center_base: Option<bool>,
+    legacy_min_max_dont_inverse_axis: Option<bool>,
     dataset: Option<Dataset>,
     radar: Vec<RadarCoordinate>,
     #[charming_set_vec]

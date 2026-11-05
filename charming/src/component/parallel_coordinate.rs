@@ -15,6 +15,17 @@ use serde::{Deserialize, Serialize};
 #[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct ParallelAxisDefault {
+    breaks: Option<Vec<crate::element::AxisBreak>>,
+    break_area: Option<crate::element::BreakArea>,
+    break_label_layout: Option<crate::element::BreakLabelLayout>,
+    jitter: Option<f64>,
+    jitter_overlap: Option<bool>,
+    jitter_margin: Option<f64>,
+    name_move_overlap: Option<crate::element::BooleanOrAuto>,
+    contain_shape: Option<bool>,
+    data_min: Option<crate::datatype::StringOrNumber>,
+    data_max: Option<crate::datatype::StringOrNumber>,
+    tooltip: Option<crate::element::AxisTooltip>,
     #[serde(rename = "type")]
     type_: Option<AxisType>,
     name: Option<String>,
@@ -49,6 +60,13 @@ pub struct ParallelAxisDefault {
 #[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct ParallelCoordinate {
+    coordinate_system: Option<crate::element::CoordinateSystem>,
+    coordinate_system_usage: Option<crate::element::CoordinateSystemUsage>,
+    coord: Option<crate::datatype::CompositeValue>,
+    matrix_index: Option<f64>,
+    matrix_id: Option<String>,
+    calendar_index: Option<f64>,
+    calendar_id: Option<String>,
     id: Option<String>,
     zlevel: Option<f64>,
     z: Option<f64>,

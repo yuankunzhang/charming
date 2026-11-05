@@ -16,6 +16,18 @@ use serde::{Deserialize, Serialize};
 #[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Axis {
+    breaks: Option<Vec<crate::element::AxisBreak>>,
+    break_area: Option<crate::element::BreakArea>,
+    break_label_layout: Option<crate::element::BreakLabelLayout>,
+    jitter: Option<f64>,
+    jitter_overlap: Option<bool>,
+    jitter_margin: Option<f64>,
+    name_move_overlap: Option<crate::element::BooleanOrAuto>,
+    contain_shape: Option<bool>,
+    data_min: Option<crate::datatype::StringOrNumber>,
+    data_max: Option<crate::datatype::StringOrNumber>,
+    tooltip: Option<crate::element::AxisTooltip>,
+    grid_id: Option<String>,
     /// Type of axis.
     #[serde(rename = "type")]
     type_: Option<AxisType>,

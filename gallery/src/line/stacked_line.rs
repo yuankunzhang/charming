@@ -25,7 +25,7 @@ pub fn chart() -> Chart {
             Grid::new()
                 .left("3%")
                 .right("4%")
-                .bottom("3%")
+                .bottom(85)
                 .contain_label(true),
         )
         .toolbox(Toolbox::new().feature(Feature::new().save_as_image(SaveAsImage::new())))

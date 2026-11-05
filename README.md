@@ -36,7 +36,8 @@ options, or use Serde for JSON. HTML and SSR use that same expression.
 handle it as you would `render`.
 
 Only supply trusted JavaScript source. HTML requires inline scripts to be
-allowed; this export adds no `eval` requirement. Export and HTML generation do
+allowed. HTML extension/theme registration also uses `eval`; exported option
+expressions alone do not. Export and HTML generation do
 not check JavaScript syntax: errors appear when the browser executes the code.
 Serialization failures return `SerializationError`, SSR execution failures
 return `JsRuntimeError`, and synchronous WASM preparation or ECharts call
@@ -46,11 +47,12 @@ On `setOption` failure, WASM disposes an instance created by that render call
 and retains an existing instance. Updates do not promise rollback. Errors from
 later interactive callbacks belong to the JavaScript runtime.
 
-ECharts remains at 5.5.1. The follow-up integration of
-[#221](https://github.com/yuankunzhang/charming/pull/221) should reuse `JsFunction`
-for `Color::Function` and remove its duplicate Custom and WASM conversion code.
-DataZoom, rich text and the outstanding maintainer review stay in that PR;
-retain PanagiotisS and Yuankun's contribution credits when integrating it.
+Charming now uses ECharts 6.1.0 and GL 2.1.0 with the v6 default appearance.
+See the [ECharts 6 migration guide](docs/echarts6.md) for calendar arrays,
+named Custom renderers, new chart/layout options, resource registration and
+browser instance methods. The DataZoom and callback integration from
+[#221](https://github.com/yuankunzhang/charming/pull/221) remains part of this
+foundation, with PanagiotisS and Yuankun's contribution credits preserved.
 
 ## Themes
 

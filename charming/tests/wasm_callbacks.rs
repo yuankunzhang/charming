@@ -22,11 +22,11 @@ fn js(source: &str) -> JsValue {
 }
 
 fn setup() {
-    js(include_str!("../src/asset/echarts-5.5.1.min.js"));
+    js(include_str!("../src/asset/echarts-6.1.0.min.js"));
     js(
         "document.getElementById('charming-test-root')?.remove(); const fixture = document.createElement('div'); fixture.id = 'charming-test-root'; fixture.innerHTML = '<div id=chart></div><div id=expression></div>'; document.body.appendChild(fixture); globalThis.customCalls = 0; globalThis.formatterCalls = 0;",
     );
-    assert_eq!(js("echarts.version").as_string().unwrap(), "5.5.1");
+    assert_eq!(js("echarts.version").as_string().unwrap(), "6.1.0");
 }
 
 fn chart() -> Chart {
@@ -38,8 +38,8 @@ fn chart() -> Chart {
                 .id("filtered").from_dataset_id("input")))
         .series(Line::new().dataset_id("filtered").label(Label::new().show(true)
             .formatter(JsFunction::new_with_args("p", "globalThis.formatterCalls++; globalThis.formatted = option + values + p.value[0]; return globalThis.formatted;"))))
-        .series(Custom::new().data(vec![vec![0, 0]]).render_item(
-            "function() { globalThis.customCalls++; return {type: 'circle', shape: {cx: 10, cy: 10, r: 2}}; }"))
+        .series(Custom::new().data(vec![vec![0, 0]]).render_item(JsFunction::from(
+            "function() { globalThis.customCalls++; return {type: 'circle', shape: {cx: 10, cy: 10, r: 2}}; }")))
 }
 
 fn read_back(chart: &Chart) -> Chart {

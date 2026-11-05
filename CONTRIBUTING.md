@@ -40,10 +40,24 @@ nix shell --inputs-from . nixpkgs#chromium nixpkgs#chromedriver --command nix de
 ```
 
 This target uses temporary runner/WebDriver configuration and embedded ECharts
-5.5.1. It runs WASM assembly and exported JavaScript expressions in Chromium;
-it does not test a complete HTML page, raster rendering or a feature/browser
-matrix. It is separate from `all`, `all-nix` and CI selection. Existing native
-SSR snapshot assertions and baselines remain the CI coverage for SVG output.
+6.1.0. It runs WASM assembly and exported JavaScript expressions in Chromium.
+Additional manual ECharts 6 acceptance tasks are:
+
+```sh
+nix shell --inputs-from . nixpkgs#chromium nixpkgs#chromedriver --command nix develop --no-update-lock-file --command python3 scripts/check.py run echarts6-browser
+nix develop --no-update-lock-file --command python3 scripts/check.py run echarts6-raster
+nix develop --no-update-lock-file --command python3 scripts/check.py run snapshots
+```
+
+`echarts6-browser` exercises new layouts, themes, locales, extensions and instance
+methods, complete HTML pages with the fixed CDN, and Bar3D with ANGLE SwiftShader
+software WebGL. Its log and GL PNG are saved under `target/echarts6-evidence`.
+`echarts6-raster` decodes PNGs from the public native renderer and checks data
+foreground. `snapshots` only generates `img_test`; compare and review changes
+before replacing any baseline. These tasks stay outside `all`, `all-nix` and
+automatic CI. They do not establish other browsers/platforms, Leptos hydration
+or a complete feature matrix. Existing native SSR pixel assertions remain the
+CI coverage for SVG output.
 
 Use the repository path to `scripts/check.py` when outside its root. `all` runs
 preflight, native, format, Clippy, MSRV and all five examples. `stable` separately
@@ -105,8 +119,8 @@ Explain intentional compatibility changes in the pull request. The native task
 builds the workspace, generates `img_test`, then runs existing tests, including
 87 SSR (server-side rendering) image snapshots. Keep their baselines and
 assertions meaningful. Native `--all-features` linting does not establish WASM
-target support or a complete feature matrix. Browser execution and new raster
-runtime tests are outside this CI migration.
+target support or a complete feature matrix. Browser execution and raster runtime
+acceptance remain manual tasks outside automatic CI.
 
 When upgrading WASM tools, synchronize wasm-bindgen and its macro crates,
 js-sys/web-sys and wasm-bindgen-futures (where present) across all six Cargo

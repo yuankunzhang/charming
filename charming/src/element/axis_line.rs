@@ -93,6 +93,7 @@ impl From<(f64, &str, f64)> for AxisLineStyle {
 #[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, PartialOrd, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct AxisLine {
+    break_line: Option<bool>,
     show: Option<bool>,
     on_zero: Option<bool>,
     round_cap: Option<bool>,

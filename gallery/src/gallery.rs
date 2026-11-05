@@ -33,7 +33,10 @@ async fn index() -> impl IntoResponse {
 async fn render(
     extract::Path((r#type, name)): extract::Path<(String, String)>,
 ) -> impl IntoResponse {
-    let renderer = HtmlRenderer::new(format!("{type} - {name}"), 1000, 800);
+    let mut renderer = HtmlRenderer::new(format!("{type} - {name}"), 1000, 800);
+    if r#type == "echarts6" && matches!(name.as_str(), "violin" | "bar_range") {
+        renderer = renderer.extension_source(charming_gallery::echarts6::EXTENSIONS);
+    }
 
     let chart = match CHARTS.get(r#type.as_str()) {
         Some(charts) => match charts.get(name.as_str()) {

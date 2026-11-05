@@ -1,0 +1,76 @@
+<svg width="600" height="450" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 600 450">
+<rect width="600" height="450" x="0" y="0" fill="none"></rect>
+<path d="M70 65l500 0l0 315l-500 0Z" fill="none" pointer-events="visible" stroke="#54555a" stroke-width="0" class="zr22-cls-193"></path>
+<path d="M236.5 170.5l167 0l0 105l-167 0Z" fill="none" pointer-events="visible" stroke="#cfd2d7" class="zr22-cls-193"></path>
+<path d="M403.5 170.5l167 0l0 105l-167 0Z" fill="none" pointer-events="visible" stroke="#cfd2d7" class="zr22-cls-193"></path>
+<path d="M236.5 275.5l167 0l0 105l-167 0Z" fill="none" pointer-events="visible" stroke="#cfd2d7" class="zr22-cls-193"></path>
+<path d="M403.5 275.5l167 0l0 105l-167 0Z" fill="none" pointer-events="visible" stroke="#cfd2d7" class="zr22-cls-193"></path>
+<path d="M70.5 65.5l166 0l0 105l-166 0Z" fill="none" pointer-events="visible" class="zr22-cls-193"></path>
+<path d="M236.5 65.5l167 0l0 105l-167 0Z" fill="none" pointer-events="visible" stroke="#cfd2d7" class="zr22-cls-193"></path>
+<path d="M403.5 65.5l167 0l0 105l-167 0Z" fill="none" pointer-events="visible" stroke="#cfd2d7" class="zr22-cls-193"></path>
+<path d="M70.5 170.5l166 0l0 105l-166 0Z" fill="none" pointer-events="visible" stroke="#cfd2d7" class="zr22-cls-193"></path>
+<path d="M70.5 275.5l166 0l0 105l-166 0Z" fill="none" pointer-events="visible" stroke="#cfd2d7" class="zr22-cls-193"></path>
+<g clip-path="url(#zr22-c0)">
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" transform="translate(320 118)" fill="#54555a">East</text>
+</g>
+<g clip-path="url(#zr22-c1)">
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" transform="translate(487 118)" fill="#54555a">West</text>
+</g>
+<g clip-path="url(#zr22-c2)">
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" transform="translate(153.5 223)" fill="#54555a">Spring</text>
+</g>
+<g clip-path="url(#zr22-c3)">
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" transform="translate(153.5 328)" fill="#54555a">Summer</text>
+</g>
+<path d="M70 170.5L570 170.5" fill="none" pointer-events="visible" stroke="#b7b9be" class="zr22-cls-193"></path>
+<path d="M236.5 65L236.5 380" fill="none" pointer-events="visible" stroke="#b7b9be" class="zr22-cls-193"></path>
+<path d="M70.5 65.5l500 0l0 315l-500 0Z" fill="none" pointer-events="visible" stroke="#54555a" class="zr22-cls-193"></path>
+<path d="M236.7 170l166.7 0l0 105l-166.7 0Z" fill="rgb(186,198,242)" ecmeta_series_index="0" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr22-cls-194"></path>
+<path d="M403.3 170l166.7 0l0 105l-166.7 0Z" fill="rgb(146,166,234)" ecmeta_series_index="0" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr22-cls-195"></path>
+<path d="M236.7 275l166.7 0l0 105l-166.7 0Z" fill="rgb(120,144,229)" ecmeta_series_index="0" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr22-cls-196"></path>
+<path d="M403.3 275l166.7 0l0 105l-166.7 0Z" fill="rgb(93,123,224)" ecmeta_series_index="0" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr22-cls-197"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" transform="translate(320 222.5)" fill="#333">2</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" transform="translate(486.6667 222.5)" fill="#333">5</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" transform="translate(320 327.5)" fill="#333">7</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" transform="translate(486.6667 327.5)" fill="#eee" stroke="rgb(93,123,224)" stroke-width="2" paint-order="stroke" stroke-miterlimit="2">9</text>
+<path d="M-67.2 -5l134.4 0l0 28l-134.4 0Z" transform="translate(300 20)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#3c3c41" stroke-width="0" class="zr22-cls-193"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:18px;font-family:sans-serif;font-weight:bold;" xml:space="preserve" y="9" transform="translate(300 20)" fill="#3c3c41">Matrix heatmap</text>
+<defs >
+<clipPath id="zr22-c0">
+<path d="M-83 -52l166 0l0 104l-166 0Z" transform="translate(320 118)" fill="#000" class="zr22-cls-193"></path>
+</clipPath>
+<clipPath id="zr22-c1">
+<path d="M-83 -52l166 0l0 104l-166 0Z" transform="translate(487 118)" fill="#000" class="zr22-cls-193"></path>
+</clipPath>
+<clipPath id="zr22-c2">
+<path d="M-82.5 -52l165 0l0 104l-165 0Z" transform="translate(153.5 223)" fill="#000" class="zr22-cls-193"></path>
+</clipPath>
+<clipPath id="zr22-c3">
+<path d="M-82.5 -52l165 0l0 104l-165 0Z" transform="translate(153.5 328)" fill="#000" class="zr22-cls-193"></path>
+</clipPath>
+</defs>
+<style ><![CDATA[
+.zr22-cls-193:hover {
+pointer-events:none;
+}
+.zr22-cls-194:hover {
+cursor:pointer;
+fill:rgba(204,217,255,1);
+}
+.zr22-cls-195:hover {
+cursor:pointer;
+fill:rgba(160,182,255,1);
+}
+.zr22-cls-196:hover {
+cursor:pointer;
+fill:rgba(132,158,251,1);
+}
+.zr22-cls-197:hover {
+cursor:pointer;
+fill:rgba(102,135,246,1);
+}
+
+]]>
+
+</style>
+</svg>
