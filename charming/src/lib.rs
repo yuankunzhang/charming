@@ -92,6 +92,7 @@ pub mod renderer;
 pub mod series;
 pub mod theme;
 
+#[cfg(any(feature = "html", feature = "ssr", feature = "wasm"))]
 pub use renderer::*;
 
 use charming_macros::CharmingSetters;
@@ -249,6 +250,7 @@ zoom, restore, and reset.
 #[derive(Serialize, Deserialize, CharmingSetters, Debug, PartialEq, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Chart {
+    #[serde_as(as = "OneOrMany<_, PreferOne>")]
     title: Vec<Title>,
     animation: Option<bool>,
     animation_duration: Option<AnimationTime>,
@@ -261,6 +263,7 @@ pub struct Chart {
     tooltip: Option<Tooltip>,
     legend: Option<LegendConfig>,
     toolbox: Option<Toolbox>,
+    #[serde_as(as = "OneOrMany<_, PreferOne>")]
     grid: Vec<Grid>,
     #[serde(rename = "grid3D")]
     grid3d: Vec<Grid3D>,
